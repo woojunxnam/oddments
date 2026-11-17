@@ -7713,5 +7713,182 @@ window.MPJE_CH30_QUESTIONS = [
     "verified": "2026-11-17",
     "revision": 1,
     "note": "This asks how to establish successful remediation and RESTORE normal BUDs, rather than E30-160 initial ISO7 excursion treatment or E30-215 ISO5 18CFU initial recall. Board policy directly verified; subscribed USP full text not represented as accessed."
+  },
+  {
+    "id": "E30-226",
+    "set": 46,
+    "area": 1,
+    "kind": "single",
+    "topic": "Pharmacist continuing education audit: proof and retention",
+    "topicKey": "licensure-ce",
+    "stem": "A Massachusetts pharmacist earned three hours of qualifying non-ACPE professional education 18 months ago. Those credits do NOT appear in NABP CPE Monitor, and the Board requests proof during a random CE audit. The pharmacist has only a calendar entry showing the seminar title. Which action best addresses 247 CMR 4.06 and Board Policy 2021-04?",
+    "choices": [
+      {
+        "text": "Tell the Board that CPE Monitor is the only acceptable record and therefore the missing non-ACPE credit cannot be checked.",
+        "why": "Incorrect. Board Policy 2021-04 recognizes certain non-ACPE credits but requires the pharmacist to retain sufficient completion documentation when the education does not appear in CPE Monitor; the Board may request those records."
+      },
+      {
+        "text": "Provide retained evidence of successful completion showing the approved provider, participant, program title/number, completion date, and hours; maintain such records for the required period and provide them on audit.",
+        "why": "Correct. 247 CMR 4.06(1)-(2) requires documentation or statements of credit containing the specified identifying details, maintained at least two years from completion and submitted on Board request/random audit. Policy 2021-04 further describes evidence expected for non-ACPE activity."
+      },
+      {
+        "text": "Submit the personal calendar entry alone because a pharmacist's own note is automatically equivalent to a statement of completed contact hours.",
+        "why": "Incorrect. An unauthenticated calendar entry showing only a seminar title does not demonstrate successful completion or identify all required provider, participant, activity, date and credit details."
+      },
+      {
+        "text": "Refuse the audit request until the next license renewal because the Board may verify CE only at the end of a biennial renewal period.",
+        "why": "Incorrect. Section 4.06(2) expressly permits random audits and Board requests for documentation independent of the moment of renewal."
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "citation": "247 CMR 4.06(1)–(2) (CE completion records retained at least two years and provided on audit); Board Policy 2021-04 §I (most recent two full calendar years; non-ACPE certificate details)",
+    "url": "https://www.mass.gov/doc/247-cmr-4-personal-registration-renewal-continuing-education-requirement/download",
+    "verified": "2026-11-17",
+    "revision": 1,
+    "note": "Tests authentic CE records on random audit, not E30-201 deliberate fabrication or E30-146 compounding specialty hour quota."
+  },
+  {
+    "id": "E30-227",
+    "set": 46,
+    "area": 2,
+    "kind": "multi",
+    "topic": "42 CFR Part 2 intermediary: patient request for disclosure recipient list",
+    "topicKey": "privacy-part2",
+    "stem": "A federally assisted Part 2 treatment program received a patient's valid written consent using a GENERAL designation for disclosures through a named intermediary. The patient now sends that intermediary a WRITTEN request for a list of recipients of identifying records disclosed under that designation in the preceding three years. Which statements accurately describe 42 CFR 2.24? SELECT ALL THAT APPLY.",
+    "choices": [
+      {
+        "text": "The intermediary must respond to the patient's qualifying written request within 30 days of receipt.",
+        "why": "Correct. Under 42 CFR 2.24(b)(1), an intermediary named on the general-designation consent must respond in 30 or fewer days after receiving the qualifying written request."
+      },
+      {
+        "text": "The intermediary may refuse to identify recipient organizations because the patient previously consented to disclosures through a general designation.",
+        "why": "Incorrect. The list requirement specifically protects patients who used general-designation consents; prior consent does not waive their ability to learn who received information under that designation."
+      },
+      {
+        "text": "For disclosures within the permitted three-year lookback, the list must identify the entities receiving information, disclosure date, and a brief description of the patient-identifying information disclosed.",
+        "why": "Correct. Section 2.24(a) limits the written request to the previous three years and §2.24(b)(2) specifies recipient entity name(s), date and a brief description of identifying information."
+      },
+      {
+        "text": "This intermediary list automatically establishes an unrestricted, immediately effective right to a full accounting of every HIPAA treatment disclosure through any technology, regardless of applicable HHS compliance-date limits.",
+        "why": "Incorrect. The narrow §2.24 intermediary list is not the broader §2.25 electronic-health-record accounting right. HHS has stated that the §2.25 accounting compliance date depends on the separate HIPAA accounting rule update; the two rights should not be conflated."
+      }
+    ],
+    "correct": [
+      "A",
+      "C"
+    ],
+    "citation": "42 CFR 2.24(a)–(b) (specific intermediary's 30-day response and 3-year request); contrast 42 CFR 2.25 and HHS 2024 Part 2 final-rule fact sheet (accounting compliance-date caveat)",
+    "url": "https://www.ecfr.gov/current/title-42/chapter-I/subchapter-A/part-2/section-2.24",
+    "verified": "2026-11-17",
+    "revision": 1,
+    "note": "Distinct from E30-028 consent/SUD notes and E30-203 notice/fundraising; narrower intermediary-rights rule avoids treating the deferred general accounting implementation as effective."
+  },
+  {
+    "id": "E30-228",
+    "set": 46,
+    "area": 2,
+    "kind": "single",
+    "topic": "Lenalidomide REMS: expired pharmacy confirmation number",
+    "topicKey": "rems",
+    "stem": "A Lenalidomide REMS-certified pharmacy has a valid new lenalidomide prescription from a certified prescriber for an appropriately enrolled patient. All risk-category and pregnancy-test obligations have been met. The pharmacy obtained the required REMS CONFIRMATION number 26 hours ago but has not yet handed over or shipped the drug. The confirmation was not renewed. What must it do?",
+    "choices": [
+      {
+        "text": "Dispense immediately because once a confirmation number is issued it remains valid until the prescriber writes the next prescription.",
+        "why": "Incorrect. The Lenalidomide REMS Pharmacy Guide limits a pharmacy confirmation number's validity to 24 hours. A confirmation obtained 26 hours earlier is no longer sufficient for dispensing."
+      },
+      {
+        "text": "Do not dispense until the expired confirmation has been canceled and a new valid REMS confirmation is obtained; continue the required counseling and Medication Guide steps.",
+        "why": "Correct. The active Lenalidomide REMS pharmacy procedures state that a confirmation number is valid for only 24 hours. When it has expired, the pharmacy must cancel the old number and obtain a new one before dispensing while complying with the remaining REMS safeguards."
+      },
+      {
+        "text": "Convert the order into an ordinary Schedule VI prescription with automatic refills because enrollment in the REMS makes subsequent confirmation optional.",
+        "why": "Incorrect. A REMS is a distribution/safe-use restriction, not a controlled-schedule exception. Lenalidomide REMS independently requires confirmation before each dispensing and does not allow ordinary automatic refills."
+      },
+      {
+        "text": "Send the medication without the Medication Guide if the prescriber countersigns the expired number, because pharmacist certification alone satisfies the REMS.",
+        "why": "Incorrect. A prescriber countersignature cannot extend the 24-hour program confirmation; pharmacist certification also does not cancel the Medication Guide and patient-counseling requirements."
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "citation": "FDA-approved Lenalidomide REMS Pharmacy Guide, steps 3–4: valid 24-hour pharmacy confirmation, cancellation/reissue when expired, Medication Guide; 247 CMR 9.01(21) (comply with product REMS)",
+    "url": "https://www.lenalidomiderems.com/pharmacist-resources/index.html",
+    "verified": "2026-11-17",
+    "revision": 1,
+    "note": "Specific current program source: https://www.lenalidomiderems.com/media/wp-content/uploads/LEN_Pharmacy_Guide.pdf. Distinct from E30-063 isotretinoin windows and E30-183 esketamine REMS site administration."
+  },
+  {
+    "id": "E30-229",
+    "set": 46,
+    "area": 3,
+    "kind": "single",
+    "topic": "Massachusetts generic interchange: special container label and manufacturer",
+    "topicKey": "label-packaging",
+    "stem": "A Massachusetts Drug Store Pharmacy receives a brand-name tablet prescription without 'no substitution' and lawfully dispenses a LOWER-COST interchangeable generic manufactured by Company Z. The pharmacist accurately applies all routine label elements. Which additional interchange labeling follows 247 CMR 9.05(3)?",
+    "choices": [
+      {
+        "text": "The label needs only the originally prescribed brand name; the identity of the actual lower-cost generic manufacturer is confidential commercial information.",
+        "why": "Incorrect. Section 9.05(3)(a) specifically requires the label to identify the actual generic product and its manufacturer in an interchange statement; showing only the prescribed brand would not communicate what was dispensed."
+      },
+      {
+        "text": "The pharmacy may label the generic as if it were the brand when both are therapeutically equivalent, with no interchange statement if the price is lower.",
+        "why": "Incorrect. Therapeutic interchangeability authorizes selection under applicable circumstances but does not waive the separate container labeling obligation in §9.05(3)."
+      },
+      {
+        "text": "Use 'Interchange' (or the commonly understood abbreviation 'IC') with the generic drug name and Company Z as manufacturer; the prescribed brand may additionally be identified in the permitted form.",
+        "why": "Correct. Section 9.05(3)(a),(c)-(d) requires the 'Interchange' generic name/manufacturer presentation for a less expensive dispensed generic and permits recognized abbreviations, e.g. 'IC', plus an optional 'for [prescribed brand]' notation."
+      },
+      {
+        "text": "The pharmacy must print the manufacturer's complete legal corporate name in full and is never permitted to abbreviate 'interchange' or the manufacturer's name.",
+        "why": "Incorrect. Section 9.05(3)(d) expressly allows commonly understood abbreviations, including 'IC' and recognized abbreviations for manufacturer names."
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "citation": "247 CMR 9.05(3)(a)–(e), generic/brand interchange container label and abbreviations; M.G.L. c.112 §12D (interchange authority)",
+    "url": "https://www.mass.gov/doc/247-cmr-9-professional-practice-standards/download",
+    "verified": "2026-11-17",
+    "revision": 1,
+    "note": "Not E30-194 missing pharmacist initials or E30-019 whether interchange is required; tests exact label identifying actual substituted product and manufacturer."
+  },
+  {
+    "id": "E30-230",
+    "set": 46,
+    "area": 4,
+    "kind": "multi",
+    "topic": "Hospital nursing-unit controlled-stock accountability and witnessed waste",
+    "topicKey": "pharmacy-operations",
+    "stem": "A Massachusetts hospital moves bulk Schedule II–V controlled drugs from its pharmacy to an authorized nursing-unit medication cart. Its procedures are being evaluated against the Massachusetts DPH 'General accountability guidelines for controlled substances in hospitals and clinics with pharmacies.' Which measures comply? SELECT ALL THAT APPLY.",
+    "choices": [
+      {
+        "text": "Use a double-locked, permanently affixed cabinet or medication cart for nursing-unit Schedule II–V stock, with hard-copy or electronic perpetual inventory.",
+        "why": "Correct. Massachusetts DPH's nursing-unit accountability guidance states that Schedule II–V controlled drugs must be in a double-locked, permanently affixed unit/cart with perpetual inventory records."
+      },
+      {
+        "text": "Permit any unlicensed visitor to access the cart if the nurse on duty says the visitor is trustworthy and the medication orders are patient-specific.",
+        "why": "Incorrect. The DPH guidance restricts controlled-substance access to licensed, authorized staff; familiarity or visitor trust does not replace controlled inventory security."
+      },
+      {
+        "text": "Have unused Schedule II–V portions wasted under the facility's controlled procedures by two licensed staff with co-signed documentation, unless more restrictive hospital policy applies.",
+        "why": "Correct. The state DPH accountability guidance specifies two licensed staff and co-signature for disposal of unused Schedule II–V portions, subject to stricter facility policy."
+      },
+      {
+        "text": "Skip documented nursing/pharmacy management accountability reviews once the cart has a software audit log, because electronic data eliminates ongoing diversion monitoring.",
+        "why": "Incorrect. DPH calls for a documented quality-assurance review of controlled substances administered on nursing units not less than once weekly; an access log does not replace the management review."
+      }
+    ],
+    "correct": [
+      "A",
+      "C"
+    ],
+    "citation": "Massachusetts DPH General Accountability Guidelines for Controlled Substances in Hospitals and Clinics with Pharmacies, Nursing Units—General and Schedule II–V; 105 CMR 700.005 (security and accountability); 247 CMR 9.12 (separate institutional ADD)",
+    "url": "https://www.mass.gov/info-details/general-accountability-guidelines-for-controlled-substances-in-hospitals-and-clinics-with-pharmacies",
+    "verified": "2026-11-17",
+    "revision": 1,
+    "note": "Explicitly tests documented nursing-unit stock security and waste, not E30-155 patient-specific order authorization for a hospital automated dispensing device. DPH guidance is identified as guidance rather than represented as independently enacted regulation."
   }
 ];
