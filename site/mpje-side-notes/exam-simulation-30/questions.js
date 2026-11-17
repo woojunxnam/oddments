@@ -7536,5 +7536,182 @@ window.MPJE_CH30_QUESTIONS = [
     "verified": "2026-11-17",
     "revision": 1,
     "note": "Novel DEA final/initial inventory and 14-day business-transfer reporting compared with E30-065 MA facility licensing and E30-180 reverse distributor destruction."
+  },
+  {
+    "id": "E30-221",
+    "set": 45,
+    "area": 1,
+    "kind": "single",
+    "topic": "Technician immunization authorization: biennial continuing training",
+    "topicKey": "technician-scope",
+    "stem": "A Massachusetts licensed, nationally certified pharmacy technician completed the full initial vaccine-administration training and on-the-job skills assessment in 2023. The technician has current CPR certification and remains otherwise qualified, but completed NO immunization-related CE or updated training in the last three years. The pharmacy plans to assign vaccines tomorrow. What requirement must be addressed first under revised Board Policy 2023-02?",
+    "choices": [
+      {
+        "text": "Repeat an entire new 1,500-hour pharmacy technician trainee experience because immunization authorization always expires after two years.",
+        "why": "Incorrect. Policy 2023-02 establishes a biennial immunization education/update requirement, not an automatic reset of the technician licensure/training-employment pathway after two years."
+      },
+      {
+        "text": "Complete at least two hours of immunization-related continuing education or updated training within the required two-year cycle before returning to the vaccinator role.",
+        "why": "Correct. Revised Policy 2023-02, §III(D)(5), requires at least two hours of immunization-related continuing education or updated training every two years. The prior initial six-hour program and two on-the-job hours do not substitute for maintaining this ongoing requirement."
+      },
+      {
+        "text": "No additional training is necessary while national certification and CPR remain active, because vaccine training is permanently valid once completed.",
+        "why": "Incorrect. National technician certification and CPR are separate prerequisites. The policy expressly adds periodic immunization-specific education or updated training regardless of those other credentials."
+      },
+      {
+        "text": "A supervising pharmacist may waive the biennial education entirely by reviewing the technician's last five administered vaccines.",
+        "why": "Incorrect. Supervising-pharmacist clinical oversight does not create an exception to the Board's specified two-hours-every-two-years requirement. Reviewing past injections alone is not the stated education or updated training."
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "citation": "Massachusetts Board Policy 2023-02, revised September 4, 2025, §III(D)(1)–(5): initial qualifications and two-hour immunization CE/updated training every two years",
+    "url": "https://www.mass.gov/doc/2023-02-vaccine-administration-pdf/download",
+    "verified": "2026-11-17",
+    "revision": 1,
+    "note": "Unlike E30-062/191, tests continued eligibility after initial training rather than 500 post-license work hours or vaccine selection."
+  },
+  {
+    "id": "E30-222",
+    "set": 45,
+    "area": 2,
+    "kind": "multi",
+    "topic": "Community CDTM: adding a different diagnosis to an individual referral",
+    "topicKey": "cdtm-patient-practice",
+    "stem": "A community pharmacist's current CDTM agreement includes protocols for hypertension and diabetes. One adult patient has signed informed consent, but the supervising physician's written patient-specific referral identifies HYPERTENSION only and no diabetes comorbidity. The patient asks the pharmacist to start diabetes drug therapy under the existing agreement. Which statements follow 247 CMR 16.03–16.04? SELECT ALL THAT APPLY.",
+    "choices": [
+      {
+        "text": "The pharmacist may start any diabetes drug listed in the general CDTM protocol solely because that disease appears in the agreement, even though it is absent from this patient's referral.",
+        "why": "Incorrect. The community pathway requires the physician's individual referral to specify the patient's primary and secondary diagnoses; a broad agreement listing diabetes does not automatically make the patient referred for that condition."
+      },
+      {
+        "text": "The supervising physician should include the patient's diabetes diagnosis in a valid written referral or subsequent referral before CDTM management of that added condition.",
+        "why": "Correct. Under 247 CMR 16.03(5)(c)(2), the supervising physician must specify each primary and secondary diagnosis in the written patient referral or a subsequent referral. Community-CDTM prescribing for comorbidities additionally must be authorized in the patient referral."
+      },
+      {
+        "text": "The physician must obtain and record written informed consent for this collaboration, provide the patient a copy, and maintain the original consent while supplying the pharmacist a copy as required.",
+        "why": "Correct. Sections 16.03(5)(c)-(d) and 16.04(1) require patient-specific written informed consent and defined distribution/record custody. The physician retains the original and transmits a copy to the pharmacist within 24 hours."
+      },
+      {
+        "text": "A revised patient referral can authorize community CDTM prescriptions for Schedule III insulin-related sedatives because the physician verbally agrees.",
+        "why": "Incorrect. Community CDTM authorized prescribing is limited to qualifying Schedule VI drugs for the named diagnoses, not federally controlled Schedule II–V drugs, regardless of an otherwise valid referral or informal physician permission."
+      }
+    ],
+    "correct": [
+      "B",
+      "C"
+    ],
+    "citation": "247 CMR 16.03(5)(c)(1)–(4),(d),(e)(1)(b)(ix),(e)(3)–(4); 247 CMR 16.04(1) (patient-specific referral/consent and community CDTM prescriptive limits)",
+    "url": "https://www.mass.gov/doc/247-cmr-16-collaborative-drug-therapy-management/download",
+    "verified": "2026-11-17",
+    "revision": 1,
+    "note": "Distinct from E30-036 diabetes dose modification already under a diabetes-specific referral; tests a new diagnosis absent from the individual referral."
+  },
+  {
+    "id": "E30-223",
+    "set": 45,
+    "area": 2,
+    "kind": "single",
+    "topic": "PDMA practitioner sample distribution versus retail-pharmacy resale",
+    "topicKey": "drug-integrity",
+    "stem": "A manufacturer proposes sending sealed 'Drug Sample — Not for Resale' packages by courier to a hospital pharmacy at the signed WRITTEN request of a physician licensed to prescribe the drug. The manufacturer verifies the physician's authority before shipment; a hospital recipient signs the required receipt, and the samples will be provided only under lawful practitioner sample procedures. Which assessment is most accurate?",
+    "choices": [
+      {
+        "text": "The manufacturer must refuse because all shipment of drug samples to any pharmacy is forbidden, even when a physician has submitted the specific request allowed by federal law.",
+        "why": "Incorrect. 21 CFR 203.30–203.31 expressly permit qualifying manufacturer or authorized-distributor shipments to a hospital or other healthcare-entity pharmacy at a licensed practitioner's written request when verification, delivery receipt and other rules are met."
+      },
+      {
+        "text": "This hospital-practitioner sample route can be lawful, but the samples may not then become ordinary retail saleable stock or be used for pharmacy repackaging/compounding resale.",
+        "why": "Correct. Federal PDMA rules recognize the licensed-practitioner request and hospital-pharmacy recipient with documented receipt. Massachusetts 247 CMR 9.01(6) separately prohibits pharmacies accepting/purchasing samples for compounding, repacking, or reselling them."
+      },
+      {
+        "text": "A hospital recipient can sell the samples to outpatients at full retail price as soon as the receipt is signed because the receipt converts the inventory to commercial product.",
+        "why": "Incorrect. The signed receipt provides required traceability and confirmation of sample delivery; it does not authorize selling products marked as drug samples not for resale."
+      },
+      {
+        "text": "Only a verbal promise by the physician is needed, and the supplier need not verify prescribing licensure or obtain a documented delivery receipt.",
+        "why": "Incorrect. 21 CFR 203.30(a) imposes an advance signed written request, verification of the requester's prescriptive authority, and a written recipient receipt returned to the manufacturer or distributor, among other requirements."
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "citation": "21 CFR 203.30(a)(1)–(4),(b)–(c), 203.31(a) (PDMA drug sample requests and receipts); 247 CMR 9.01(6) (sample resale/compounding/repackaging restriction)",
+    "url": "https://www.ecfr.gov/current/title-21/chapter-I/subchapter-C/part-203/subpart-D/section-203.30",
+    "verified": "2026-11-17",
+    "revision": 1,
+    "note": "Unlike E30-132, which tests illegal pharmacy resale of samples, tests the authorized clinician-request sample supply chain and recipient records."
+  },
+  {
+    "id": "E30-224",
+    "set": 45,
+    "area": 3,
+    "kind": "single",
+    "topic": "Unfilled electronic CII transfer: direct licensed-pharmacist communication and electronic annotations",
+    "topicKey": "refills-transfers",
+    "stem": "A patient requests transfer of an UNFILLED electronic Schedule II prescription from Massachusetts retail Pharmacy A to another registered Massachusetts retail Pharmacy B. Both systems can transfer the original EPCS without altering any content. Pharmacy A instead proposes to print a PDF, email it to B's technician, and delete the old electronic record. Which procedure complies with Massachusetts Policy 2023-10 and 21 CFR 1306.08?",
+    "choices": [
+      {
+        "text": "A may send the printed PDF to a technician at B because the transfer remains electronically documented in an email attachment.",
+        "why": "Incorrect. Federal 21 CFR 1306.08(f)(1) requires an EPCS initial-fill transfer to stay in electronic prescription form; a PDF, email document or fax intermediary is not lawful conversion of that electronic prescription."
+      },
+      {
+        "text": "The certified technician at A can conduct the entire Schedule II transfer without pharmacist involvement when the pharmacies share a cloud platform.",
+        "why": "Incorrect. Section 1306.08(f)(3) requires communication directly between TWO licensed pharmacists for the controlled initial-fill transfer. Massachusetts technician authority for Schedule VI transfers does not extend to Schedule II EPCS."
+      },
+      {
+        "text": "A may delete the transmitting pharmacy's EPCS record after sending it once because DEA requires the receiving pharmacy alone to retain proof of the transfer.",
+        "why": "Incorrect. 21 CFR 1306.08(f)(4)-(h) requires specified annotations at both transferring and receiving pharmacies and retention of electronic transfer records by both for two years."
+      },
+      {
+        "text": "Use the authorized one-time electronic EPCS transmission directly between licensed pharmacists, preserve the full prescription unchanged, and record the transferring/receiving pharmacy and pharmacist details at both sites.",
+        "why": "Correct. Massachusetts Policy 2023-10 adopts 21 CFR 1306.08(e)-(h) for unfilled Schedule II–V EPCS. The electronic prescription stays intact, both pharmacists communicate directly, required dates/DEA IDs/names are annotated and retained at both pharmacies."
+      }
+    ],
+    "correct": [
+      "D"
+    ],
+    "citation": "MA Board Policy 2023-10 I–II (Unfilled Prescriptions); 21 CFR 1306.08(e)–(h) (initial-fill EPCS transfer, documentation, retention); 247 CMR 9.14",
+    "url": "https://www.mass.gov/doc/2023-10-unfilled-prescriptions-pdf/download",
+    "verified": "2026-11-17",
+    "revision": 1,
+    "note": "Compared with E30-007 generic permission to transfer unfilled Rx, tests conversion prohibition, licensed-pharmacist actor, annotations and bilateral records."
+  },
+  {
+    "id": "E30-225",
+    "set": 45,
+    "area": 4,
+    "kind": "multi",
+    "topic": "After 2026 viable-air action result: repeat EM and normal BUD restoration",
+    "topicKey": "sterile-hazardous-compounding",
+    "stem": "A Massachusetts sterile-compounding pharmacy had an above-action-level VIABLE AIR result in its ISO 7 buffer room. It notified the Board and performed an RCA, appropriate remediation, CAPA and risk assessment; no nonviable particle excursion or additional Board restriction exists. The pharmacy now wants to return to ordinary beyond-use dates. Under Board Policy 2026-03, which actions are correct? SELECT ALL THAT APPLY.",
+    "choices": [
+      {
+        "text": "Perform repeat environmental monitoring based on the affected ISO-classified area and action-level type; re-sample ALL sampling locations in the affected ISO area at the same time.",
+        "why": "Correct. Policy 2026-03 §IV(B)(1) permits repeat EM focused on the affected classified area/type as supported by the monitoring plan, but requires all sampling locations within that affected area to be re-sampled simultaneously."
+      },
+      {
+        "text": "Immediately restore ordinary Category 2 BUDs after completing a deep clean, without microbiology results, because the original excursion was viable rather than nonviable.",
+        "why": "Incorrect. Under §IV(B)(2), restoration of standard BUDs depends on repeat EM falling below action levels; deep cleaning alone, particularly a sample collected immediately after cleaning, is not accepted proof of sustained control."
+      },
+      {
+        "text": "If proper remediation has occurred and repeat EM is below the policy's action levels, the pharmacy may resume its standard BUDs or compounding, as otherwise permitted.",
+        "why": "Correct. Policy §IV(B)(2) expressly allows restoration of standard BUDs or resumption of compounding when repeat EM is below action levels, subject to compliance with otherwise applicable sterile standards."
+      },
+      {
+        "text": "If repeat EM still exceeds the action level, it is sufficient to record a numerical improvement and ignore the Board's response and remediation requirements.",
+        "why": "Incorrect. Section IV(B)(3) sends repeated action-level results back to §III response duties. A smaller but still above-threshold CFU reading is not clearance and cannot automatically support normal BUDs."
+      }
+    ],
+    "correct": [
+      "A",
+      "C"
+    ],
+    "citation": "MA Board Policy 2026-03 §IV(A)–(C), especially IV(B)(1)–(3), Environmental Monitoring action level response (adopted September 3, 2026); USP <797> applicable EM standards",
+    "url": "https://www.mass.gov/doc/2026-03-action-level-environmental-monitoring-results/download",
+    "verified": "2026-11-17",
+    "revision": 1,
+    "note": "This asks how to establish successful remediation and RESTORE normal BUDs, rather than E30-160 initial ISO7 excursion treatment or E30-215 ISO5 18CFU initial recall. Board policy directly verified; subscribed USP full text not represented as accessed."
   }
 ];
