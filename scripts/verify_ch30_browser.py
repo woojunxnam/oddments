@@ -232,11 +232,65 @@ def verify(base_url: str) -> None:
         verify_latest_set(browser, target)
         verify_unanswered_mode(browser, target)
         verify_legacy_random_session(browser, target)
+        verify_legal_revision_archive(browser, target)
         browser.close()
         print("PASS: fixed per-question check; two mistakes auto-bookmark; wrong review recovery")
         print("PASS: manual saved questions; Random 10 quotas and new combination; per-item random feedback")
         print("PASS: localStorage persistence, 5-question and 10-question modes, no browser JS exceptions")
 
+
+def verify_legal_revision_archive(browser, target: str) -> None:
+    """Previously answered, revised IDs must lose current credit without losing old history."""
+    context = browser.new_context(viewport={"width": 390, "height": 844})
+    page = context.new_page()
+    page.goto(target + "?set=41", wait_until="domcontentloaded", timeout=60000)
+    page.locator('#question-grid [data-question-id="E30-203"]').wait_for(timeout=30000)
+    page.evaluate("""() => {
+      localStorage.setItem('mpje-side-notes-ch30-question-progress-v1',
+        JSON.stringify({version:1,migratedFixed:true,migratedRandom:true,items:{
+          'E30-203':{attempts:3,wrongCount:2,needsReview:true,saved:true,lastCorrect:false},
+          'E30-209':{attempts:1,wrongCount:0,needsReview:false,saved:false,lastCorrect:true},
+          'E30-028':{attempts:4,wrongCount:1,needsReview:false,saved:true,lastCorrect:true}
+        }}));
+      localStorage.setItem('mpje-side-notes-ch30-v1',JSON.stringify({
+        set:41,answers:{'E30-203':['A','D'],'E30-202':['C']},
+        checked:{'E30-203':true,'E30-202':true},submitted:{41:true}
+      }));
+      localStorage.setItem('mpje-side-notes-ch30-random10-v1',JSON.stringify({
+        ids:['E30-203','E30-001','E30-002','E30-003','E30-028','E30-005','E30-006','E30-007','E30-004','E30-015'],
+        answers:{'E30-203':['A','D'],'E30-001':['C']},
+        checked:{'E30-203':true,'E30-001':true},submitted:false,mode:'all'
+      }));
+    }""")
+    page.reload(wait_until="domcontentloaded")
+    values = page.evaluate("""() => {
+      const p=window.MPJE_CH30_PROGRESS;
+      const f=JSON.parse(localStorage.getItem('mpje-side-notes-ch30-v1'));
+      const r=JSON.parse(localStorage.getItem('mpje-side-notes-ch30-random10-v1'));
+      return {current:p.get('E30-203'),old:p.getArchived('E30-203'),
+        current209:p.get('E30-209'),old209:p.getArchived('E30-209'),
+        untouched:p.get('E30-028'),fixed203:f.checked['E30-203'],
+        fixed202:f.checked['E30-202'],random203:r.checked['E30-203'],
+        random001:r.checked['E30-001']};
+    }""")
+    assert values['current']['attempts']==0 and values['current']['saved'], values
+    assert len(values['old'])==1 and values['old'][0]['attempts']==3, values
+    assert values['old'][0]['wrongCount']==2, values
+    assert values['current209']['attempts']==0 and values['old209'][0]['attempts']==1, values
+    assert values['untouched']['attempts']==4 and values['untouched']['saved'], values
+    assert values['fixed203'] is None and values['fixed202'] is True, values
+    assert values['random203'] is None and values['random001'] is True, values
+    card = page.locator('#question-grid [data-question-id="E30-203"]')
+    assert card.locator('.exam-feedback').count()==0, "Stale answer exposed revised key"
+    assert card.locator('.exam-history').count()>=1
+    page.reload(wait_until="domcontentloaded")
+    again=page.evaluate("""() => ({
+      attempts:window.MPJE_CH30_PROGRESS.get('E30-203').attempts,
+      archive:window.MPJE_CH30_PROGRESS.getArchived('E30-203').length
+    })""")
+    assert again=={"attempts":0,"archive":1}, again
+    context.close()
+    print("PASS: question revision archives old mistakes, retains bookmarks and unrelated IDs; clears old fixed/random selected answers")
 
 def main() -> None:
     parser = argparse.ArgumentParser()

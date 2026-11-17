@@ -1,0 +1,27 @@
+# Massachusetts MPJE Chapter 30 — Source-Based Legal and Realism Corrections
+
+**Dated:** November 17, 2026 ET. **Starting question count:** 215 (no new IDs). **Purpose:** Seven directly edited legally reviewed question objects and safe versioned browser history. No changes to original Korean notes.
+
+| Original ID | Issue detected | Revised legal decision | Official primary links |
+| --- | --- | --- | --- |
+| E30-203 | Duplicate of E30-028 (TPO and counseling-note consent) | 42 CFR Part 2 first-service privacy notice and a patient's right to opt out of fundraising, SATA A/C | [42 CFR §2.22](https://www.ecfr.gov/current/title-42/chapter-I/subchapter-A/part-2/subpart-B/section-2.22); [HHS 2026 Part 2 Fact Sheet](https://www.hhs.gov/hipaa/for-professionals/regulatory-initiatives/fact-sheet-42-cfr-part-2-final-rule/index.html) |
+| E30-209 | Hypothetical federal nonprescription codeine product, not a real verified NDC | Real FDA-labeled Rx-only promethazine/codeine 6.25mg/10mg per 5mL, NDC 70752-139, federal and MA Schedule V; lack of prescription bars sale (B) | [FDA DailyMed label](https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=9aca56ec-28f8-4679-9f90-ec3e82deb9ac), [MA c.94C §17](https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXV/Chapter94C/Section17), [21 CFR §1306.26](https://www.ecfr.gov/current/title-21/chapter-II/part-1306/section-1306.26) |
+| E30-189 | Assumed unnamed active butalbital exemption without identifying an exact product | Actual exempt Fioricet 50/300/40 package NDC 52544-080-01 (DEA product code 52544-080) versus FDA CIII 50/325/40 repackaged NDC 72162-2665-1; MA VI vs III (C) | [DEA April 1, 2026 Table of Exempted Prescription Products](https://deaecom.gov/schedules/exempt/exempt_rx_list.pdf), [FDA DailyMed A](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=c018be7d-f7b8-45e2-97b8-8e7a71740657&version=11), [FDA DailyMed B](https://www.dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=8a4cf981-37f7-4bc9-a9d7-b134a5fd0894), [DEA final Oct. 9, 2026 (effective Nov. 9) — inactive NDCs only](https://www.govinfo.gov/content/pkg/FR-2026-10-09/html/2026-20757.htm) |
+| E30-191 | Overlapping 500-hour vaccination eligibility and weak distractors | Reframed roles for pharmacy intern, licensed qualified/nonqualified technician and pharmacist-only clinical selection, SATA A/C | [Board Policy 2023-02, revised Sept. 4, 2025](https://www.mass.gov/doc/2023-02-vaccine-administration-pdf/download) |
+| E30-207 | Very easy extreme-word distractors | New diagnosis migraine **with aura** = CDC U.S. MEC Category 4 combined hormonal contraindication; alternatives require independent assessment, SBA C | [Massachusetts 2026 prescribing circular](https://www.mass.gov/doc/pharmacist-prescribing-of-certain-medications/download), [CDC U.S. MEC](https://www.cdc.gov/contraception/hcp/usspr/classifications-mec-contraception.html) |
+| E30-211 | Trivial permanent-waiver distractors | Board-approved waiver expires on its fifth anniversary; applying for successor does NOT extend original, SBA D | [247 CMR 14.01(5)](https://www.mass.gov/doc/247-cmr-14-petition-for-waiver/download) |
+| E30-215 | Easily eliminated distractors and long answer | Final ISO5 viable-air 18 CFU exceeds >15-CFU significant-loss threshold; notify Board within ONE business day after report, engage microbiologist, recall still-within-BUD CSPs, contact prescribers and monitor adverse events, SBA A | [Massachusetts Board Policy 2026-03](https://www.mass.gov/doc/2026-03-action-level-environmental-monitoring-results/download) |
+
+**Exempted-product caveat:** DEA's Oct. 9, 2026 final determination specifically said the revocation does not affect ACTIVE exempted NDCs. The two product codes above are FDA-labeled differently; future updates to FDA/DEA registries require re-verification. Do not generalize an exemption across a drug class or dosage forms.
+
+## Preserving older study results
+
+All seven modified items carry `revision: 2` while retaining their stable original IDs and set positions. The browser's existing `localStorage` progress state is extended with archival entries for previous versions; the old wrongCount, attempts, correctness flag and bookmarks are preserved as archived facts. Current attempts are reset ONLY for revised content; the previously saved bookmark remains. Previously selected/checked options in the fixed-set and Random 10 local states are invalidated ONLY for revised IDs, with all other items and history intact.
+
+The published-site Playwright verifier now includes `verify_legal_revision_archive`, checking legacy progress, old wrong counts, saved bookmarks, unaffected E30-028, fixed E30-202 and random E30-001; it checks no old revised key is exposed and subsequent reload does not repeatedly archive. This test must pass after GitHub Pages deployment.
+
+## Honest quality scope
+
+**Reviewed and reauthored seven IDs.** The existing historical 208 other JSON objects remain semantically unchanged. The 17 previously targeted Batch A cases are not equivalent to an independently audited 215-case bank. Official URLs, selected regulation text, and four-option answer rationale consistency were checked for these seven; full re-adjudication of all remaining 198 historical cases is a separately tracked source-evidence gate.
+
+**Next gate:** merge to `main`, verify Topic Inventory generator, live question count and published browser behavior; then complete legal evidence grading for every other question before declaring 240 eligible for the final two full-length mock forms.

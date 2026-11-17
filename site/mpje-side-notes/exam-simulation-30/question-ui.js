@@ -149,6 +149,12 @@
       card.append(banner, details, reference);
     }
     card.append(actions);
+    const archive = typeof progress.getArchived === 'function' ? progress.getArchived(q.id) : [];
+    if (archive.length) {
+      const priorAttempts = archive.reduce((sum, x) => sum + (x.attempts || 0), 0);
+      card.append(el('p', 'exam-history', priorAttempts +
+        ' prior-version attempt(s) safely archived; revised question requires a new answer. Saved bookmark retained.'));
+    }
     const record = progress.get(q.id);
     if (record.wrongCount > 0) {
       const history = el('p', 'exam-history', 'Incorrect attempts: ' + record.wrongCount +
