@@ -6314,5 +6314,177 @@ window.MPJE_CH30_QUESTIONS = [
     "url": "https://www.usp.org/compounding/general-chapter-hazardous-drugs-handling-healthcare",
     "verified": "2026-11-17",
     "note": "Hazardous-drug spills need prompt trained containment, appropriate PPE and readily available kits. Isolate the area, handle contamination as hazardous waste, and document/evaluate any exposed personnel; routine housekeeping or drains are not substitutes."
+  },
+  {
+    "id": "E30-186",
+    "set": 38,
+    "area": 1,
+    "kind": "single",
+    "topicKey": "workforce-supervision",
+    "topic": "Category 2 sterile-compounding technician: overdue ongoing aseptic competency despite passing initial test",
+    "stem": "A Massachusetts sterile compounding pharmacy qualified a licensed technician for Category 2 CSPs eight months ago. The technician initially passed the required garbing and aseptic manipulation assessments, but has completed neither the scheduled repeat garbing nor media-fill-based aseptic manipulation competency during the intervening eight months. The technician wants to resume preparation tomorrow under a pharmacist's direct observation, and the pharmacist offers to perform final validation afterward. What should the designated supervisor require first?",
+    "choices": [
+      {
+        "text": "Allow the technician to compound because initial media-fill qualification is permanent as long as a pharmacist signs every final CSP label.",
+        "why": "Incorrect. Current USP <797> §§2.2–2.3 require ongoing garbing and aseptic-manipulation competency at least EVERY SIX MONTHS for Category 1 and 2 personnel who compound. Pharmacist final validation does not replace those personnel qualification prerequisites."
+      },
+      {
+        "text": "Require successful overdue ongoing garbing and aseptic-manipulation competency evaluations before returning the technician to Category 2 compounding; retain the pharmacist's independent final validation.",
+        "why": "Correct. The technician's last successful ongoing assessments were eight months ago, exceeding the Category 2 six-month interval. USP <797> requires those activities at the specified intervals, including media-fill assessment followed by glove sampling and associated testing. Massachusetts pharmacists remain responsible for final validation under 247 CMR 9.04(1)."
+      },
+      {
+        "text": "Ask only for a renewed national technician certification because certification alone resets USP <797> competency intervals.",
+        "why": "Incorrect. Professional certification is not the same as facility-specific cleanroom garbing and aseptic compounding qualification. USP <797> personnel competency recurs regardless of national technician certification status."
+      },
+      {
+        "text": "Permit Category 2 compounding under observation until one year has elapsed because Category 2 personnel follow the annual oversight-only competency interval.",
+        "why": "Incorrect. The every-12-month interval applies to some personnel who have DIRECT OVERSIGHT but do not compound; Category 1/2 active compounding personnel must satisfy the SIX-month competency intervals. Being observed does not make the compounding technician an oversight-only person."
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "citation": "Current USP <797> §§2.2–2.3/Table 1 and associated aseptic manipulation competency requirements (official Nov. 1, 2023); USP official FAQs updated Dec. 11, 2023; 247 CMR 9.01(3), 9.04(1)",
+    "url": "https://pages.usp.org/rs/711-SXF-172/images/USP_HQS_797_FAQs_December2023_V6__002.pdf?version=0",
+    "verified": "2026-11-17",
+    "note": "Category 1/2 personnel who actively compound sterile preparations require recurring garbing and aseptic-manipulation competency at least every six months. Oversight-only yearly assessments and the pharmacist's final check do not extend that interval."
+  },
+  {
+    "id": "E30-187",
+    "set": 38,
+    "area": 2,
+    "kind": "single",
+    "topicKey": "bulk-compounding-eligibility",
+    "topic": "FDA 503A bulk drug eligibility: nomination alone without monograph, approved-product component or actual 503A list",
+    "stem": "A Massachusetts state-licensed 503A compounding pharmacy has a patient-specific prescription requesting a nonsterile medicine compounded from bulk Substance X. FDA confirms that X has NO applicable USP/NF monograph, is NOT a component of an FDA-approved drug, and is NOT on FDA's established 503A bulks list. A supplier notes only that someone NOMINATED X for future FDA review; the supplier provides a valid certificate of analysis and is FDA-registered. Assume no temporary enforcement-discretion statement applicable to X is being invoked. Which conclusion is correct about qualifying for the FD&C Act §503A bulk-ingredient exemptions?",
+    "choices": [
+      {
+        "text": "A nomination automatically places X on the 503A bulks list until FDA expressly rejects the nomination.",
+        "why": "Incorrect. FDA distinguishes substances nominated for evaluation from substances actually included on the established 503A bulks list. A nomination alone does not satisfy 21 U.S.C. §353a(b)(1)(A)'s statutory ingredient eligibility requirement."
+      },
+      {
+        "text": "The supplier's certificate of analysis and FDA establishment registration independently make X eligible even though none of the three listed substantive ingredient pathways applies.",
+        "why": "Incorrect. Valid COA and supplier registration are additional necessary conditions for qualifying 503A bulk substances, not substitutes for an applicable USP/NF monograph, FDA-approved product component status, or inclusion on the established 503A list."
+      },
+      {
+        "text": "The individual patient prescription makes all bulk ingredients eligible, regardless of their legal monograph, FDA approval or bulks-list status.",
+        "why": "Incorrect. A patient-specific prescription is a separate prerequisite for the 503A exemption pathway and does not override §503A's limits on which BULK DRUG SUBSTANCES may be used."
+      },
+      {
+        "text": "Do not treat the proposed compound as satisfying the statutory 503A bulk-substance exemption on the stated evidence; select a lawfully eligible ingredient or pursue another authorized route.",
+        "why": "Correct. FDA's 503A bulks explanation and FD&C Act §503A(b)(1)(A) require one of three substantive eligibility bases: a compliant applicable compendial monograph, FDA-approved-drug component, or actual inclusion on the established 503A bulks list, with COA and manufacturer registration additionally required. No route is satisfied for X. A separate FDA enforcement-discretion policy, if any, requires its own current specific analysis."
+      }
+    ],
+    "correct": [
+      "D"
+    ],
+    "citation": "FD&C Act §503A(b)(1)(A) (21 U.S.C. §353a(b)(1)(A)); FDA 'Bulk Drug Substances Used in Compounding Under Section 503A' (updated 2026); FDA 503A bulks list regulations and category-status distinctions",
+    "url": "https://www.fda.gov/drugs/human-drug-compounding/bulk-drug-substances-used-compounding-under-section-503a-fdc-act",
+    "verified": "2026-11-17",
+    "note": "A 503A pharmacy's valid patient Rx and supplier COA do not by themselves make a bulk API eligible. Check USP/NF monograph, FDA-approved-product component, or the actual FDA 503A bulks list; mere nomination is not list inclusion."
+  },
+  {
+    "id": "E30-188",
+    "set": 38,
+    "area": 2,
+    "kind": "multi",
+    "topicKey": "interchange-product-equivalence",
+    "topic": "Massachusetts nonemergency drug interchange: same active ingredient but strength and dosage form must match",
+    "stem": "A Massachusetts pharmacist receives an otherwise valid prescription for a brand-name extended-release oral tablet (Drug A, 100 mg). The patient has not requested the brand, and the prescriber has not indicated 'no substitution.' Products available include (X) a cheaper FDA Orange Book A-rated generic extended-release TABLET 100 mg of Drug A, (Y) the same drug as an FDA-approved immediate-release tablet 100 mg, and (Z) the same extended-release drug as a 50-mg tablet. Assume all other prescription and safety requirements are satisfied. Under 105 CMR 720 and Massachusetts pharmacy interchange rules, which statements are accurate? SELECT ALL THAT APPLY.",
+    "choices": [
+      {
+        "text": "Product X can qualify for ordinary interchange because the same drug, strength and dosage form has a therapeutically equivalent A-rated generic and the prescriber did not prohibit substitution.",
+        "why": "Correct. 105 CMR 720.050 and 720.200 base interchange on products therapeutically equivalent to the prescribed drug in the same active ingredient, dosage form and strength (or separately specifically listed). The stated Orange Book A rating supports the appropriate same-strength ER tablet substitution."
+      },
+      {
+        "text": "Product Y is automatically interchangeable because its milligram strength is the same, even though its release mechanism and dosage form differ.",
+        "why": "Incorrect. Identical strength alone is insufficient: immediate-release and extended-release forms are not treated as automatically equivalent. Under 105 CMR 720.020, pharmaceutical equivalence includes dosage form/route and in practice an appropriate Orange Book equivalence designation; a prescriber-authorized change may be needed."
+      },
+      {
+        "text": "Product Z is automatically equivalent if the pharmacy gives two 50-mg tablets instead of one 100-mg tablet, because arithmetic equality replaces the legal same-strength requirement.",
+        "why": "Incorrect. Different tablet strength and tablet count are not the identical 100-mg dosage-unit product contemplated by an ordinary legally interchangeable equivalent. The pharmacist may clarify a distinct therapeutic substitution with the practitioner, but cannot infer automatic equivalence from arithmetic."
+      },
+      {
+        "text": "If the pharmacist needs a product with a different dosage form or strength, the pharmacist should obtain an appropriate lawful prescriber clarification or authorization rather than silently treat it as mandatory generic interchange.",
+        "why": "Correct. The Massachusetts List of Interchangeable Drug Products operates on equivalent active ingredients, forms and strengths. A clinically plausible change in formulation or dosage may require prescriber consultation and documentation rather than substitution under the ordinary interchange mandate."
+      }
+    ],
+    "correct": [
+      "A",
+      "D"
+    ],
+    "citation": "105 CMR 720.020 (pharmaceutical/interchangeable equivalence), 720.050 and 720.200 Appendix A (Massachusetts List and Orange Book A-rated equivalent comparison); M.G.L. c.112 §12D; 247 CMR 9.05",
+    "url": "https://www.mass.gov/regulations/105-CMR-72000-list-of-interchangeable-drug-products",
+    "verified": "2026-11-17",
+    "note": "Massachusetts nonemergency generic interchange depends on recognized therapeutic equivalence of the actual dosage form and strength, not merely the same chemical name or equal total milligrams from a different formulation."
+  },
+  {
+    "id": "E30-189",
+    "set": 38,
+    "area": 3,
+    "kind": "single",
+    "topicKey": "drug-schedule-identification",
+    "topic": "Butalbital products and 2026 DEA NDC-specific exemption revocation versus generic class scheduling",
+    "stem": "On November 17, 2026, a Massachusetts pharmacist compares two commercially marketed butalbital combination products: Product A has an ACTIVE NDC that the pharmacist has just verified REMAINS on DEA's current Table of Exempted Prescription Products; Product B has a different NDC that is NOT on the exemption table, contains a nonexempt butalbital combination, and carries the manufacturer's federal CIII classification. Both require prescriptions. DEA's October 9, 2026 notice revoked exemptions for certain INACTIVE NDCs effective November 9. Which conclusion is best supported?",
+    "choices": [
+      {
+        "text": "DEA's November 9, 2026 determination revoked every butalbital combination exemption, including currently active listed NDCs.",
+        "why": "Incorrect. DEA's October 9 final determination explicitly limited revocation to specified inactive or discontinued NDCs and said active exempted NDC products are NOT impacted. The pharmacist cannot generalize the limited revocation to all butalbital products."
+      },
+      {
+        "text": "Because butalbital itself is Schedule III, every product containing it must be federally Schedule III even when DEA currently lists that precise NDC as an exempt prescription product.",
+        "why": "Incorrect. Section 1308.32 establishes exemptions for qualifying specific nonnarcotic prescription products; active, approved NDC listings matter. Butalbital's underlying Schedule III ingredient status does not eliminate a product's expressly retained exemption."
+      },
+      {
+        "text": "Classify by the exact verified product/NDC: Product A remains federally exempt and, as a prescription drug not otherwise in Massachusetts Schedules I–V, is Massachusetts Schedule VI; Product B is federally CIII and correspondingly Massachusetts Schedule III.",
+        "why": "Correct. DEA's final determination effective Nov. 9, 2026 states active listed exemptions are unaffected, while unlisted nonexempt combinations retain federal Schedule III under 21 CFR 1308.13(c)(3). Massachusetts 105 CMR 700.002(C),(F) adopts corresponding federal controlled schedules and categorizes other prescription drugs in Schedule VI. The pharmacy should verify the precise NDC and current DEA exemption status rather than assume the entire butalbital class has one schedule."
+      },
+      {
+        "text": "The pharmacy may determine Product B is exempt solely because it has the same broad combination-drug ingredients as Product A; the NDC and exemption listing are irrelevant.",
+        "why": "Incorrect. Under 21 CFR 1308.31–1308.32 DEA exemptions are specific to approved marketed formulations/products. A combination with superficially similar ingredients does not automatically inherit a different NDC's exemption, especially after the 2026 inactive-product removals."
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "citation": "21 CFR 1308.13(c)(3) and 1308.31–1308.32; DEA Final Determination 'Removal of Exemption Status for Inactive Butalbital Products' (91 FR 64618, Oct. 9, 2026; effective Nov. 9, 2026); 105 CMR 700.002(C),(F); DEA current Table of Exempted Prescription Products by NDC",
+    "url": "https://www.govinfo.gov/content/pkg/FR-2026-10-09/html/2026-20757.htm",
+    "verified": "2026-11-17",
+    "note": "Butalbital is normally federal Schedule III, but only specific qualifying currently exempt prescription NDCs avoid federal control and become Massachusetts Schedule VI; the November 2026 DEA revocation targeted INACTIVE NDCs and did not revoke active exemptions."
+  },
+  {
+    "id": "E30-190",
+    "set": 38,
+    "area": 4,
+    "kind": "multi",
+    "topicKey": "sterile-hazardous-compounding",
+    "topic": "USP <797> Category 2 nonhazardous sterile IV bag: ISO-classified suite versus SCA and tested BUD limits",
+    "stem": "A Massachusetts hospital pharmacy aseptically compounds a NONHAZARDOUS Category 2 IV preparation from only sterile manufactured components. It has a qualified ISO Class 5 laminar airflow PEC in a properly maintained ISO Class 7 positive-pressure buffer room with an ISO Class 8 anteroom, and suitable personnel/monitoring. No sterility test is performed, stability data support at least 10 days under refrigeration, and no component imposes a shorter BUD. Under the currently official USP <797>, which statements are correct? SELECT ALL THAT APPLY.",
+    "choices": [
+      {
+        "text": "The stated ISO 5 PEC in an appropriate classified buffer/anteroom cleanroom suite can support Category 2 compounding when other <797> requirements are satisfied.",
+        "why": "Correct. The normal Category 2 nonhazardous aseptic-compounding configuration is an ISO 5 PEC in a properly classified cleanroom suite (e.g., ISO 7 buffer and ISO 8 anteroom). Facility and personnel/EM requirements still apply."
+      },
+      {
+        "text": "Moving the ISO 5 hood to a nonclassified segregated compounding area automatically retains all Category 2 BUDs because ISO 5 primary airflow alone determines category eligibility.",
+        "why": "Incorrect. Category 2 preparation requires the appropriate classified cleanroom environment; an unclassified SCA generally supports only Category 1 and its shorter BUD limits under USP <797>. ISO 5 primary control by itself does not make an SCA an ISO-classified Category 2 suite."
+      },
+      {
+        "text": "For an aseptically prepared Category 2 CSP containing only sterile starting components and no sterility test, a BUD of up to four days at controlled room temperature or ten days refrigerated may be assigned when supported by stability and all other conditions.",
+        "why": "Correct. USP <797> §14.3/Table 12 gives these maximum BUDs for this particular sterile-starting-component, aseptic, untested Category 2 formulation. Shorter stability limits would supersede them; not all Category 2 formulations share these values."
+      },
+      {
+        "text": "Because the product is Category 2, it always requires completed sterility testing before any BUD can be assigned, even for a short BUD.",
+        "why": "Incorrect. USP <797> includes explicit Category 2 maximum BUDs WITHOUT sterility testing for specified sterile-component cases. Longer assigned BUDs or other category formulations may have separate testing requirements, but sterility testing is not universally mandatory for every Category 2 CSP."
+      }
+    ],
+    "correct": [
+      "A",
+      "C"
+    ],
+    "citation": "Official USP <797> §§4.1 and 14.3/Table 12 (revision official Nov. 1, 2023); USP <797> official FAQs updated Dec. 11, 2023, Q181 and room-classification guidance; 247 CMR 9.01(3)",
+    "url": "https://pages.usp.org/rs/711-SXF-172/images/USP_HQS_797_FAQs_December2023_V6__002.pdf?version=0",
+    "verified": "2026-11-17",
+    "note": "Category 2 nonhazardous sterile CSPs require a properly classified cleanroom suite and ISO 5 PEC. From sterile components without sterility testing, maxima are four days at room temperature or ten days refrigerated when stability supports them."
   }
 ];
