@@ -14,7 +14,7 @@
     if (text !== undefined) n.textContent = text;
     return n;
   };
-  let state = {set: sets[0] || 1, answers: {}, checked: {}, submitted: {}};
+  let state = {set: sets[0] || 1, answers: {}, checked: {}, submitted: {}, revisions: {}};
   try {
     const raw = JSON.parse(localStorage.getItem(key) || '{}');
     if (raw && raw.answers && typeof raw.answers === 'object') {
@@ -22,12 +22,23 @@
         set: sets.includes(Number(raw.set)) ? Number(raw.set) : sets[0],
         answers: raw.answers,
         checked: raw.checked && typeof raw.checked === 'object' ? raw.checked : {},
-        submitted: raw.submitted && typeof raw.submitted === 'object' ? raw.submitted : {}
+        submitted: raw.submitted && typeof raw.submitted === 'object' ? raw.submitted : {},
+        revisions: raw.revisions && typeof raw.revisions === 'object' ? raw.revisions : {}
       };
     }
   } catch (_) { /* Optional browser storage */ }
   // Preserve previously submitted all-five sets without re-counting attempts.
   all.forEach(q => { if (state.submitted[q.set]) state.checked[q.id] = true; });
+  // Preserve other questions from a previously submitted set; invalidate
+  // checked flags and selections only when THIS question's content changed.
+  all.forEach(q => {
+    const current = Number(q.revision) || 1;
+    if (current <= (Number(state.revisions[q.id]) || 1)) return;
+    delete state.answers[q.id];
+    delete state.checked[q.id];
+    delete state.submitted[q.set];
+    state.revisions[q.id] = current;
+  });
   const requestedSet = Number(new URLSearchParams(window.location.search).get('set'));
   if (sets.includes(requestedSet)) state.set = requestedSet;
   function save() { try { localStorage.setItem(key, JSON.stringify(state)); } catch (_) {} }
