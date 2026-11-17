@@ -209,10 +209,10 @@ Once the bank actually contains **215** vetted questions (assuming no intervenin
 
 | Sets | Planned IDs | Status now | After authoring record |
 | --- | --- | --- | --- |
-| 36–38 | E30-176–190 | MERGED: PR #259 (19a7d0f); public verification remains a separate gate | Source audit: [Sets 36–38](MPJE_CH30_SETS36-38_EDITORIAL_AUDIT_2026-11-17.md); confirm merged SHA, Python Inventory, Pages run and published browser checks |
-| 39–41 | E30-191–205 | MERGED PR #260 (cf1f3dd26f); Pages/browser release verification in progress | Source audit: [Sets 39–41](MPJE_CH30_SETS39-41_EDITORIAL_AUDIT_2026-11-17.md); verify merged SHA, inventory, Pages and public quiz |
-| 42–43 | E30-206–215 | AUTHOR-REVIEWED in PR; merge and public release verification pending | [Sets 42–43 audit](MPJE_CH30_SETS42-43_EDITORIAL_AUDIT_2026-11-17.md); record merge and published browser checks |
-| Post-40 | All 215 | PENDING RELEASE / QUALITY REVIEW | New micro-skill coverage/legal-risk/realism report after actual merger/publication |
+| 36–38 | E30-176–190 | MERGED PR #259; published on current 215-item site; live release verified via Pages run #44118130626 | Source audit: [Sets 36–38](MPJE_CH30_SETS36-38_EDITORIAL_AUDIT_2026-11-17.md); confirm merged SHA, Python Inventory, Pages run and published browser checks |
+| 39–41 | E30-191–205 | MERGED PR #260; published on current 215-item site; live release verified via Pages run #44118130626 | Source audit: [Sets 39–41](MPJE_CH30_SETS39-41_EDITORIAL_AUDIT_2026-11-17.md); verify merged SHA, inventory, Pages and public quiz |
+| 42–43 | E30-206–215 | MERGED PR #261 (400218a73a); Pages run #44118130626 SUCCESS incl. Chapter 30 browser tests | [Sets 42–43 audit](MPJE_CH30_SETS42-43_EDITORIAL_AUDIT_2026-11-17.md); record merge and published browser checks |
+| Post-40 | All 215 | EDITORIAL CHECKPOINT REVIEW COMPLETED in PR #262; full external legal review STILL PENDING | [Report](MPJE_CH30_AFTER_40_QUALITY_REVIEW_2026-11-17.md) + [215-row ledger](MPJE_CH30_215_MICROSKILL_LEDGER_2026-11-17.json); quality risks and targeted corrections documented |
 
 ### Exclusions
 - No new question objects, solution keys, or publication counters may be added solely from planning.
