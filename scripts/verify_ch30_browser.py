@@ -80,8 +80,11 @@ def verify_unanswered_mode(browser, target: str) -> None:
       const items = {};
       all.forEach(q => {
         if (!unseen.includes(q.id)) {
+          // Simulate attempts graded against this question's current content.
+          // A legacy revision-1 attempt to a revised question is intentionally
+          // archived and becomes unseen in the real app, so do not seed it here.
           items[q.id] = {attempts:1, wrongCount:0, needsReview:false,
-            saved:false, lastCorrect:true};
+            saved:false, lastCorrect:true, revision:Number(q.revision)||1};
         }
       });
       localStorage.setItem('mpje-side-notes-ch30-question-progress-v1',
