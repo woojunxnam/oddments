@@ -34,7 +34,7 @@
 | E30-134 | B | 21 CFR1308.11(e)(6) unapproved GHB CI versus §1308.13(c)(6) FDA-approved GHB-containing drug CIII | [Primary source](https://www.ecfr.gov/current/title-21/chapter-II/part-1308/section-1308.11) |
 | E30-139 | A | 21 CFR1308.15(e)(5),1308.13(c)(7),1308.14(c)(59) | [Primary source](https://www.ecfr.gov/current/title-21/chapter-II/part-1308/section-1308.15) |
 | E30-144 | A | 21 CFR1308.13(f)(84) testosterone; §1308.14(c)(49) phenobarbital; (f)(10) phentermine as of Nov12 2026 | [Primary source](https://www.ecfr.gov/current/title-21/chapter-II/part-1308/section-1308.13) |
-| E30-154 | C | DEA final rule 85 FR 51639 cannabidiol FDA CBD removal; 21 CFR1308.12(f)(1) nabilone; MA VI | [Primary source](https://www.govinfo.gov/content/pkg/FR-2020-08-21/pdf/2020-18329.pdf) |
+| E30-154 | C | DEA final rule 85 FR 51639 cannabidiol FDA CBD removal; 21 CFR1308.12(f)(1) nabilone; MA VI | [Primary source](https://www.deadiversion.usdoj.gov/faq/cs-faq.html) |
 | E30-159 | D | 21 CFR1308.13(c)(11) perampanel,1308.14(c)(12) clobazam,1308.15(e)(1) brivaracetam | [Primary source](https://www.ecfr.gov/current/title-21/chapter-II/part-1308/section-1308.13) |
 | E30-164 | D | 21 CFR1308.14(c)(17) daridorexant, (c)(54) suvorexant; unscheduled ramelteon Rx | [Primary source](https://www.ecfr.gov/current/title-21/chapter-II/part-1308/section-1308.14) |
 | E30-169 | B | 21 CFR1308.14(c)(7) carisoprodol, MA VI prescriptions for unscheduled baclofen/cyclobenzaprine | [Primary source](https://www.ecfr.gov/current/title-21/chapter-II/part-1308/section-1308.14) |
