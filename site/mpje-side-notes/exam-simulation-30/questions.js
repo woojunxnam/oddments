@@ -7890,5 +7890,182 @@ window.MPJE_CH30_QUESTIONS = [
     "verified": "2026-11-17",
     "revision": 1,
     "note": "Explicitly tests documented nursing-unit stock security and waste, not E30-155 patient-specific order authorization for a hospital automated dispensing device. DPH guidance is identified as guidance rather than represented as independently enacted regulation."
+  },
+  {
+    "id": "E30-231",
+    "set": 47,
+    "area": 1,
+    "kind": "single",
+    "topic": "PharmD graduate residency before pharmacist licensure: continuing pharmacy intern status",
+    "topicKey": "intern-education",
+    "stem": "A 2026 PharmD graduate from an approved pharmacy school has accepted a Massachusetts hospital residency. Their Massachusetts pharmacy INTERN license is active, but the Board has not issued a pharmacist license. The resident will work under the direct supervision of a registered pharmacist preceptor. What is permissible under 247 CMR 8.01?",
+    "choices": [
+      {
+        "text": "The graduate is automatically a Massachusetts pharmacist as soon as the PharmD diploma is awarded and may independently perform final dispensing validation.",
+        "why": "Incorrect. A degree or residency acceptance is not a Board-issued pharmacist license. 247 CMR 9.04(1) reserves final dispensing validation to the licensed pharmacist, regardless of graduation status."
+      },
+      {
+        "text": "The graduate must cease all pharmacy-intern duties on graduation day even with an active intern license and a supervising preceptor.",
+        "why": "Incorrect. Section 8.01(10) expressly permits a graduate of an approved school to continue acting in the capacity of pharmacy intern until becoming licensed as a pharmacist."
+      },
+      {
+        "text": "The graduate may continue to practice in the pharmacy-INTERN capacity with an active Massachusetts intern license and appropriate pharmacist supervision during the residency, until pharmacist licensure is obtained.",
+        "why": "Correct. 247 CMR 8.01(8) allows approved-school PharmD residents to hold a Massachusetts pharmacy intern license with pharmacist supervision, and subsection (10) preserves the intern role for graduates before pharmacist licensure."
+      },
+      {
+        "text": "The hospital may replace the intern license with an out-of-state pharmacist license because any United States state license automatically permits independent Massachusetts residency dispensing.",
+        "why": "Incorrect. The specific Massachusetts license or authorized intern status remains necessary. A pharmacist license in another state does not independently grant Massachusetts pharmacist authority."
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "citation": "247 CMR 8.01(3),(8)(a)–(b),(10) (PharmD graduate resident and intern continuation); 247 CMR 9.04(1) (pharmacist final dispensing process validation)",
+    "url": "https://www.mass.gov/doc/247-cmr-8-pharmacy-interns-and-technicians/download",
+    "verified": "2026-11-17",
+    "revision": 1,
+    "note": "Differentiates post-graduation supervised hospital resident status from E30-166 foreign graduate FPGEE authorization and E30-181 acceptance of out-of-state hours."
+  },
+  {
+    "id": "E30-232",
+    "set": 47,
+    "area": 2,
+    "kind": "multi",
+    "topic": "MIIS pre-vaccination lookup: influenza versus zoster and COVID-19",
+    "topicKey": "immunization",
+    "stem": "A Massachusetts pharmacy offers routine adult influenza, recombinant zoster, and COVID-19 immunizations under otherwise valid standing orders. The pharmacist has current access to the Massachusetts Immunization Information System (MIIS), and the patients have no separate exemption. Under Board Policy 2023-02 revised 2025, which statements are correct? SELECT ALL THAT APPLY.",
+    "choices": [
+      {
+        "text": "The policy excludes INFLUENZA vaccination from its general mandatory pre-administration MIIS lookup requirement.",
+        "why": "Correct. Policy 2023-02 §IV(E) requires reviewing MIIS before vaccines OTHER THAN influenza or COVID-19. The exemption is to that particular pre-administration lookup, not to the separate vaccine-record reporting requirements."
+      },
+      {
+        "text": "For a routine recombinant ZOSTER vaccine, the pharmacy must check MIIS before administration to make sure the requested vaccination was not already administered by another provider.",
+        "why": "Correct. The zoster vaccine is not one of the influenza/COVID-19 exceptions listed in §IV(E); the pharmacy must review MIIS in advance under the Board's vaccination policy."
+      },
+      {
+        "text": "The same policy mandates MIIS review before each COVID-19 dose and gives no other way to verify prior vaccine formulation or dates.",
+        "why": "Incorrect. Section IV(F) RECOMMENDS checking earlier COVID-19 vaccine formulation and dates and recognizes MIIS, pharmacy/EHR records or the vaccination card; that is not the identical mandatory pre-lookup rule used for zoster."
+      },
+      {
+        "text": "Because influenza is excepted from pre-administration MIIS review, any influenza vaccine given at this pharmacy may be omitted entirely from MIIS reporting.",
+        "why": "Incorrect. Section IV(G) requires pharmacy personnel to report administered vaccination information to MIIS, and 105 CMR 222.100 generally imposes a 72-hour reporting duty. A lookup exception is not a reporting waiver."
+      }
+    ],
+    "correct": [
+      "A",
+      "B"
+    ],
+    "citation": "Board Policy 2023-02 §§IV(E)–(G), revised September 4, 2025; 105 CMR 222.100(A) (MIIS immunization reporting)",
+    "url": "https://www.mass.gov/doc/2023-02-vaccine-administration-pdf/download",
+    "verified": "2026-11-17",
+    "revision": 1,
+    "note": "Does not repeat E30-037 patient's MIIS data-sharing objection or E30-093 federal VIS/record fields; focuses on influenza/COVID-19 exception vs zoster mandatory precheck."
+  },
+  {
+    "id": "E30-233",
+    "set": 47,
+    "area": 2,
+    "kind": "single",
+    "topic": "2026 Part 2 unsecured SUD-record breach notification under HIPAA-equivalent rule",
+    "topicKey": "hipaa-breach",
+    "stem": "A federally assisted substance-use-disorder treatment program subject to 42 CFR Part 2 discovers and confirms a BREACH of unsecured Part 2 patient records affecting 120 individuals. No low-probability-of-compromise finding or other exception applies. Under the Part 2 breach rule in force during November 2026, which notification plan is most accurate?",
+    "choices": [
+      {
+        "text": "Because fewer than 500 individuals are affected, Part 2 requires neither patient notices nor reporting to HHS.",
+        "why": "Incorrect. The HIPAA-equivalent breach rules apply to Part 2 records. The 500-person threshold changes some Secretary/media notification timing, but does not eliminate the obligation to notify affected patients of an actual breach."
+      },
+      {
+        "text": "Notify the affected patients without unreasonable delay (no later than 60 calendar days after discovery) and report this under-500 breach to HHS within 60 days after the end of the calendar year.",
+        "why": "Correct. 42 CFR 2.16(b) applies HIPAA Breach Notification Rule requirements. 45 CFR 164.404 requires individual notification without unreasonable delay and within 60 calendar days, while §164.408(c) permits the annual HHS report for breaches affecting fewer than 500 people within 60 days after the end of the calendar year."
+      },
+      {
+        "text": "Give the notice only to the facility's qualified service organization because any Part 2 breach notice to patients would itself violate Part 2 confidentiality rules.",
+        "why": "Incorrect. Part 2's confidentiality protections do not prohibit the specific notifications required by §2.16(b). An appropriately handled qualified service organization does not replace individual breach notices."
+      },
+      {
+        "text": "Report to the Massachusetts Board of Pharmacy within seven business days and omit HHS notification, because Part 2 programs are not HIPAA covered entities.",
+        "why": "Incorrect. Part 2 independently establishes breach notification obligations even for programs not otherwise HIPAA covered; a Board pharmacy-reporting clock does not replace Part 2's HHS/individual notifications."
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "citation": "42 CFR 2.16(b) (Part 2 unsecured-record breach adopts HIPAA Breach Rule); 45 CFR 164.404(b) (individual notices), 164.408(c) (under-500 Secretary annual report); HHS OCR Part 2 breach guidance (compliance February 16, 2026)",
+    "url": "https://www.hhs.gov/hipaa/part-2/index.html",
+    "verified": "2026-11-17",
+    "revision": 1,
+    "note": "E30-033 tests exactly-500 HIPAA breach media boundary; E30-073 tests encryption/compromise risk. This scenario tests Part 2 applicability to a 120-patient unsecured SUD record breach after February 2026."
+  },
+  {
+    "id": "E30-234",
+    "set": 47,
+    "area": 3,
+    "kind": "single",
+    "topic": "Automatic-refill program: patient enrollment consent and opt-out",
+    "topicKey": "refills-transfers",
+    "stem": "A Massachusetts retail pharmacy wants to activate automatic monthly refills for a patient's valid Schedule VI maintenance prescription. The patient has authorized refills on file but has NEVER agreed to enroll in auto-refill. The patient later says they do not want automated fills. Which workflow follows 247 CMR 9.19(13)?",
+    "choices": [
+      {
+        "text": "Enroll the patient automatically because having refills remaining on the original prescription is legally the same as consenting to a pharmacy's automatic refill program.",
+        "why": "Incorrect. Prescription refill authorization from the prescriber and patient agreement to participate in pharmacy AUTOMATION are separate matters. §9.19(13) expressly requires obtaining and recording patient/agent consent before enrollment."
+      },
+      {
+        "text": "Obtain and record the patient's or agent's consent BEFORE enrollment and give the patient a way to discontinue participation; authorized refills alone do not waive either requirement.",
+        "why": "Correct. Section 9.19(13) requires prior recorded patient/agent consent and a mechanism to end participation in an automatic refill program. Refill validity and amount remain independently governed by prescription laws."
+      },
+      {
+        "text": "A pharmacy may refuse to process any future ordinary refill unless the patient agrees to join its automatic refill system permanently.",
+        "why": "Incorrect. Section 9.19(13) recognizes a patient's ability to stop the program. Participating in auto-refill is not an additional legal prerequisite to otherwise authorized ordinary refills."
+      },
+      {
+        "text": "Once enrolled, the pharmacy may continue automatically dispensing after the prescription expires because the original enrollment consent replaces future prescriptions.",
+        "why": "Incorrect. Auto-refill consent cannot extend the legal issuance/refill validity of the underlying Schedule VI prescription under 247 CMR 9.04(12)."
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "citation": "247 CMR 9.19(13) (patient/agent recorded consent before auto-refill enrollment; discontinuation method); 247 CMR 9.04(12) (separate Schedule VI prescription validity)",
+    "url": "https://www.mass.gov/doc/247-cmr-9-professional-practice-standards/download",
+    "verified": "2026-11-17",
+    "revision": 1,
+    "note": "Under-tested patient-choice automatic-refill practice, distinct from E30-084 transferring remaining refills and E30-089 unclaimed return-to-stock."
+  },
+  {
+    "id": "E30-235",
+    "set": 47,
+    "area": 4,
+    "kind": "multi",
+    "topic": "Workplace prescription collection and direct handoff: lawful pharmacy-agent workflow",
+    "topicKey": "medication-delivery-shipping",
+    "stem": "A Massachusetts community pharmacy offers to collect prescriptions at a nearby factory for employees and eligible family members, then deliver completed prescriptions to the factory. It uses its own identified, authorized agents and satisfies other dispensing and counseling requirements. Under 247 CMR 9.04(9), which steps are lawful or required? SELECT ALL THAT APPLY.",
+    "choices": [
+      {
+        "text": "Limit the service to employees or others regularly affiliated with the location and eligible immediate family members who live at the same address as those employees or affiliates.",
+        "why": "Correct. Section 9.04(9)(a) allows this particular workplace/group-affiliation collection pathway only for persons regularly employed/affiliated or their immediate family members residing at the same address."
+      },
+      {
+        "text": "Leave prescriptions not immediately collected in a locked workplace drawer overnight so that the employer can distribute them later, rather than returning them to the pharmacy.",
+        "why": "Incorrect. Section 9.04(9)(c)-(d) requires direct dispensing to the patient or agent and the return of medication not directly dispensed; medications may not be left or stored at the workplace."
+      },
+      {
+        "text": "Have a pharmacist, pharmacy employee or authorized pharmacy agent personally collect prescriptions and dispense the medications DIRECTLY to each patient or the patient's agent.",
+        "why": "Correct. Sections 9.04(9)(b)-(c) require in-person collection by an authorized pharmacy representative and direct handoff of filled medications to the patient or agent. A generic employer mailroom drop does not satisfy this narrow program."
+      },
+      {
+        "text": "Assume the employer is solely responsible for the pharmacy's delivery agent, so the pharmacy and pharmacist have no legal accountability for that agent's conduct.",
+        "why": "Incorrect. Section 9.04(9)(e) expressly holds the pharmacy and pharmacist responsible for conduct of the pharmacy employee or authorized agent acting on their behalf."
+      }
+    ],
+    "correct": [
+      "A",
+      "C"
+    ],
+    "citation": "247 CMR 9.04(9)(a)–(e) (collection at industrial plants/workplaces, eligible recipients, direct handoff and undistributed return)",
+    "url": "https://www.mass.gov/doc/247-cmr-9-professional-practice-standards/download",
+    "verified": "2026-11-17",
+    "revision": 1,
+    "note": "Distinct from E30-110 failed mail delivery with temperature excursion and E30-138 inpatient bedside-delivery consent. Tests workplace direct custody and pharmacy-agent accountability."
   }
 ];
