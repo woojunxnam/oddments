@@ -6424,33 +6424,34 @@ window.MPJE_CH30_QUESTIONS = [
     "area": 3,
     "kind": "single",
     "topicKey": "drug-schedule-identification",
-    "topic": "Butalbital products and 2026 DEA NDC-specific exemption revocation versus generic class scheduling",
-    "stem": "On November 17, 2026, a Massachusetts pharmacist compares two commercially marketed butalbital combination products: Product A has an ACTIVE NDC that the pharmacist has just verified REMAINS on DEA's current Table of Exempted Prescription Products; Product B has a different NDC that is NOT on the exemption table, contains a nonexempt butalbital combination, and carries the manufacturer's federal CIII classification. Both require prescriptions. DEA's October 9, 2026 notice revoked exemptions for certain INACTIVE NDCs effective November 9. Which conclusion is best supported?",
+    "topic": "Actual 2026 exempt Fioricet NDC versus federal CIII butalbital combination product",
+    "stem": "A Massachusetts pharmacist checks two actual butalbital combination capsules in November 2026. Product A: Fioricet 50 mg butalbital/300 mg acetaminophen/40 mg caffeine, package NDC 52544-080-01 (product NDC 52544-080), appears on DEA's April 1, 2026 exempt prescription-product list; its FDA DailyMed label says DEA Schedule 'None'. Product B: butalbital/acetaminophen/caffeine 50/325/40 capsules, NDC 72162-2665-1, which FDA DailyMed labels DEA Schedule CIII. DEA's November 9, 2026 determination removed specified INACTIVE NDC exemptions, not active ones. Both require prescriptions. Which classification applies?",
     "choices": [
       {
-        "text": "DEA's November 9, 2026 determination revoked every butalbital combination exemption, including currently active listed NDCs.",
-        "why": "Incorrect. DEA's October 9 final determination explicitly limited revocation to specified inactive or discontinued NDCs and said active exempted NDC products are NOT impacted. The pharmacist cannot generalize the limited revocation to all butalbital products."
+        "text": "Both become federal CIII after November 9 because DEA revoked every butalbital-containing combination exemption.",
+        "why": "Incorrect. The October 9 final DEA determination targeted specified inactive NDCs and expressly did not revoke active exemption listings, including Fioricet product 52544-080."
       },
       {
-        "text": "Because butalbital itself is Schedule III, every product containing it must be federally Schedule III even when DEA currently lists that precise NDC as an exempt prescription product.",
-        "why": "Incorrect. Section 1308.32 establishes exemptions for qualifying specific nonnarcotic prescription products; active, approved NDC listings matter. Butalbital's underlying Schedule III ingredient status does not eliminate a product's expressly retained exemption."
+        "text": "Both are federally exempt because acetaminophen and caffeine always cancel out butalbital control regardless of the actual marketed product and NDC.",
+        "why": "Incorrect. Exemption under 21 CFR 1308.31–.32 is PRODUCT-specific, not an entire-ingredient-class exemption. Product B has its own FDA DailyMed federal CIII listing."
       },
       {
-        "text": "Classify by the exact verified product/NDC: Product A remains federally exempt and, as a prescription drug not otherwise in Massachusetts Schedules I–V, is Massachusetts Schedule VI; Product B is federally CIII and correspondingly Massachusetts Schedule III.",
-        "why": "Correct. DEA's final determination effective Nov. 9, 2026 states active listed exemptions are unaffected, while unlisted nonexempt combinations retain federal Schedule III under 21 CFR 1308.13(c)(3). Massachusetts 105 CMR 700.002(C),(F) adopts corresponding federal controlled schedules and categorizes other prescription drugs in Schedule VI. The pharmacy should verify the precise NDC and current DEA exemption status rather than assume the entire butalbital class has one schedule."
+        "text": "Product A remains federally exempt and Massachusetts Schedule VI as an otherwise noncontrolled prescription drug; Product B is federally and Massachusetts Schedule III.",
+        "why": "Correct. DEA's April 2026 exempt table lists Fioricet 52544-080; FDA DailyMed labels its 52544-080-01 package 'DEA None'. FDA DailyMed July 2026 labels Product B NDC 72162-2665-1 CIII. MA 105 CMR 700.002(C),(F) applies the respective III and VI classifications."
       },
       {
-        "text": "The pharmacy may determine Product B is exempt solely because it has the same broad combination-drug ingredients as Product A; the NDC and exemption listing are irrelevant.",
-        "why": "Incorrect. Under 21 CFR 1308.31–1308.32 DEA exemptions are specific to approved marketed formulations/products. A combination with superficially similar ingredients does not automatically inherit a different NDC's exemption, especially after the 2026 inactive-product removals."
+        "text": "The pharmacy can assign both products the exemption tied to NDC 52544-080 because their therapeutic purpose and butalbital amount are similar.",
+        "why": "Incorrect. Each product's current DEA exemption and marketed NDC must be verified independently. Product B's different 50/325/40 preparation does not inherit exemption from Fioricet 50/300/40."
       }
     ],
     "correct": [
       "C"
     ],
-    "citation": "21 CFR 1308.13(c)(3) and 1308.31–1308.32; DEA Final Determination 'Removal of Exemption Status for Inactive Butalbital Products' (91 FR 64618, Oct. 9, 2026; effective Nov. 9, 2026); 105 CMR 700.002(C),(F); DEA current Table of Exempted Prescription Products by NDC",
-    "url": "https://www.govinfo.gov/content/pkg/FR-2026-10-09/html/2026-20757.htm",
+    "citation": "DEA Table of Exempted Prescription Products Apr. 1, 2026 (NDC 52544-080); 91 FR 64618 Oct. 9, 2026 effective Nov. 9; FDA DailyMed Fioricet NDC 52544-080-01 (DEA None) and butalbital/APAP/caffeine NDC 72162-2665-1 (CIII); 105 CMR 700.002(C),(F)",
+    "url": "https://deaecom.gov/schedules/exempt/exempt_rx_list.pdf",
     "verified": "2026-11-17",
-    "note": "Butalbital is normally federal Schedule III, but only specific qualifying currently exempt prescription NDCs avoid federal control and become Massachusetts Schedule VI; the November 2026 DEA revocation targeted INACTIVE NDCs and did not revoke active exemptions."
+    "note": "Specific verified exemption and two actual FDA marketed NDCs replace prior hypothetical unconfirmed products. DEA's Oct 9 final revocation removed only specified inactive NDCs.",
+    "revision": 2
   },
   {
     "id": "E30-190",
@@ -6493,34 +6494,35 @@ window.MPJE_CH30_QUESTIONS = [
     "area": 1,
     "kind": "multi",
     "topicKey": "workforce-supervision",
-    "topic": "Pediatric immunization: technician, intern and trainee qualification",
-    "stem": "A Massachusetts pharmacy offers an age-appropriate, properly authorized influenza vaccine to a FIVE-YEAR-OLD. A qualified immunizing pharmacist is present, all patient assessment, counseling, consent, VIS, MIIS and emergency-readiness steps will be completed, and everyone described has current CPR certification and the required immunization-specific training UNLESS expressly stated otherwise. Under Board Policy 2023-02 as revised September 4, 2025, which proposed personnel assignments are permissible? SELECT ALL THAT APPLY.",
+    "topic": "Pediatric vaccine roles: intern/technician credentials and pharmacist clinical selection",
+    "stem": "A Massachusetts pharmacy offers routine influenza vaccine to an eligible FIVE-YEAR-OLD under a valid standing order. A qualified pharmacist selects the formulation, completes screening/counseling, consent, VIS, MIIS and emergency procedures, and supervises vaccinators. Each proposed worker has CPR; further credentials and vaccine training are specified below. Which workers can administer under Board Policy 2023-02 revised Sept. 4, 2025? SELECT ALL THAT APPLY.",
     "choices": [
       {
-        "text": "A Massachusetts-registered pharmacy intern with the required immunization training may administer the indicated vaccine under the required pharmacist supervision.",
-        "why": "Correct. The revised Massachusetts vaccine policy permits an appropriately trained pharmacy intern to administer vaccines to eligible patients at least five years old under the policy's pharmacist supervision and other safeguards."
+        "text": "A Massachusetts-registered pharmacy intern with all required intern vaccination training and direct pharmacist supervision.",
+        "why": "Correct. Board Policy 2023-02 permits suitably trained registered pharmacy interns to administer designated vaccines to patients age five and older with required pharmacist supervision."
       },
       {
-        "text": "A licensed pharmacy technician TRAINEE may administer simply by completing the same training as a technician, if the supervising pharmacist observes the injection.",
-        "why": "Incorrect. The policy names qualifying licensed pharmacy technicians but does not extend its vaccinator authorization to technician trainees. Training and observation alone do not confer the licensure status."
+        "text": "A licensed noncertified pharmacy technician who completed all vaccine training but has only 420 documented post-license hours, no accepted national certification, and pharmacist supervision.",
+        "why": "Incorrect. The policy's technician pathway requires national certification OR at least 500 documented hours worked AFTER technician licensure in addition to vaccine training."
       },
       {
-        "text": "A Massachusetts-licensed, NON-nationally-certified pharmacy technician with 520 documented hours AFTER technician licensure may administer after completing the policy's technician-specific training and supervision requirements.",
-        "why": "Correct. Under the September 2025 revision, a licensed technician qualifies through national certification OR at least 500 documented hours of work after technician licensure, plus the applicable training/CPR/supervision requirements. The 520 hours here are post-license."
+        "text": "A licensed noncertified pharmacy technician with 520 documented post-license work hours, all required vaccine-specific training and the supervising pharmacist's approval.",
+        "why": "Correct. Policy 2023-02 §III(D) permits a qualified licensed technician with 500+ post-license hours as an alternative to national certification, subject to the training and supervision described."
       },
       {
-        "text": "A nationally certified pharmacy technician may independently assess whether a child needs the vaccine and choose which formulation to administer, without the supervising pharmacist making the clinical determination.",
-        "why": "Incorrect. Certification does not shift the vaccine assessment, vaccine-selection and patient-counseling responsibilities from the supervising pharmacist to the technician. The technician may carry out authorized administration, not independent clinical selection."
+        "text": "A nationally certified and vaccine-trained technician administering after the pharmacy's algorithm selected the vaccine, without the pharmacist completing the patient-specific clinical assessment and formulation selection.",
+        "why": "Incorrect. The supervising pharmacist, not a technician or automated algorithm alone, remains responsible for patient assessment, vaccine selection and counseling under the policy."
       }
     ],
     "correct": [
       "A",
       "C"
     ],
-    "citation": "247 CMR 8.00 and Massachusetts Board Policy 2023-02, Vaccine Administration (revised September 4, 2025), immunizer qualification, age five and supervising pharmacist duties",
+    "citation": "Massachusetts Board Vaccine Administration Policy 2023-02, revised Sept. 4, 2025, §§II–IV; 247 CMR 8.00",
     "url": "https://www.mass.gov/doc/2023-02-vaccine-administration-pdf/download",
     "verified": "2026-11-17",
-    "note": "Age five does not mean every pharmacy worker may vaccinate. Verify intern or licensed technician credentials, technician national certification OR 500 post-license work hours, training, CPR, and pharmacist assessment/supervision."
+    "note": "Some threshold overlap with E30-062 remains; distinguishes intern eligibility and nondelegable pharmacist vaccine-selection tasks.",
+    "revision": 2
   },
   {
     "id": "E30-192",
@@ -6905,34 +6907,35 @@ window.MPJE_CH30_QUESTIONS = [
     "area": 2,
     "kind": "multi",
     "topicKey": "privacy-part2",
-    "topic": "2026 Part 2 disclosures: TPO downstream use versus distinct SUD counseling-note consent",
-    "stem": "A federally assisted Massachusetts addiction treatment program is subject to 42 CFR Part 2. The patient signed one valid consent authorizing future treatment, payment and health care operations (TPO) disclosures of ordinary Part 2 records to a HIPAA-covered receiving hospital. Separately, the program's clinician keeps analytical SUD COUNSELING NOTES apart from the ordinary medical record, and the patient has NOT consented to disclosure of those separate notes. A prosecutor also asks for Part 2 records to investigate the patient; no Part 2 qualifying court order or specific judicial-use consent exists. Under the Part 2 rule whose compliance deadline was February 16, 2026, which statements are correct? SELECT ALL THAT APPLY.",
+    "topic": "42 CFR Part 2 patient notice at first service and right to decline fundraising",
+    "stem": "A federally assisted Massachusetts SUD treatment program subject to 42 CFR Part 2 begins ordinary outpatient services for a new adult patient in November 2026. The program posts its privacy notice online but has not provided it to the patient. The program wants to use its Part 2 records to send fundraising letters for the benefit of the program. The patient specifically asks NOT to receive fundraising communications. Which statements comply with current Part 2? SELECT ALL THAT APPLY.",
     "choices": [
       {
-        "text": "The receiving HIPAA-covered hospital may generally redisclose ordinary Part 2 records obtained under the valid TPO consent as HIPAA permits, subject to Part 2's distinct limits on using records against the patient.",
-        "why": "Correct. Under the 2024 final Part 2 rule, compliant by Feb. 16, 2026, TPO consent can cover future TPO disclosure, and HIPAA-covered recipients may further use/redisclose within HIPAA allowances; this does not remove the proceeding-against-patient safeguard."
+        "text": "The program must furnish its Part 2 Notice of Privacy Practices to this patient no later than the initial service delivery; merely posting it online does not satisfy the patient-specific notice obligation.",
+        "why": "Correct. 42 CFR 2.22(a),(b),(c)(1) requires a plain-language Part 2 notice by first nonemergency service delivery. Website availability is a separate duty, not a substitute for furnishing the notice."
       },
       {
-        "text": "The ordinary TPO consent automatically authorizes release of the clinician's separately kept SUD counseling notes for all future treatment and insurance activities.",
-        "why": "Incorrect. HHS's final rule expressly protects separately maintained SUD counseling notes and requires specific, separate patient consent; a broad ordinary TPO consent is not enough."
+        "text": "The program needs a separate signed opt-IN from every patient before engaging in any fundraising under Part 2, even if patients have a clear and conspicuous chance to decline.",
+        "why": "Incorrect. Under 42 CFR 2.22(b)(1)(iii)(B), fundraising for the benefit of the program uses a clear, conspicuous OPT-OUT approach. This circumstance does not require universal separate opt-in consent for fundraising."
       },
       {
-        "text": "The prosecutor may demand identifying Part 2 treatment records for a case against this patient merely because HIPAA ordinarily permits some law-enforcement disclosures.",
-        "why": "Incorrect. Part 2 maintains a special protection against using such records in legal proceedings against a patient without appropriate consent or a qualifying court order and required legal process."
+        "text": "The program must give a clear opportunity to elect not to receive fundraising communications before using records for that purpose and must honor the patient's expressed opt-out.",
+        "why": "Correct. Sections 2.22(b)(1)(iii)(B) and (b)(1)(iv)(G) make opt-out notice and the patient's election central to the Part 2 fundraising pathway; treatment enrollment does not revoke this right."
       },
       {
-        "text": "The patient can file a Part 2 privacy complaint with HHS OCR, and the program must respect the rule's privacy notice and individual-rights requirements.",
-        "why": "Correct. HHS's updated Part 2 guidance explicitly adds a right to complain to OCR beginning Feb. 16, 2026, together with notice and privacy protections. Such rights do not depend on the patient proving a separate HIPAA violation."
+        "text": "Because the patient is already receiving services, the clinic may continue fundraising letters after the opt-out so long as the mailing does not list the patient's SUD diagnosis.",
+        "why": "Incorrect. The patient's express election to refuse fundraising communications remains applicable. Omitting a diagnosis does not nullify 42 CFR 2.22's right to elect not to receive them."
       }
     ],
     "correct": [
       "A",
-      "D"
+      "C"
     ],
-    "citation": "42 CFR Part 2 (2024 Final Rule compliance February 16, 2026), especially separate SUD counseling-note consent and HIPAA-recipient TPO redisclosure; HHS Fact Sheet updated January 30, 2026",
-    "url": "https://www.hhs.gov/hipaa/for-professionals/regulatory-initiatives/fact-sheet-42-cfr-part-2-final-rule/index.html",
+    "citation": "42 CFR 2.22(a), (b)(1)(iii)(B), (b)(1)(iv)(G), (c)(1), (c)(3); HHS Part 2 Final Rule (compliance February 16, 2026)",
+    "url": "https://www.ecfr.gov/current/title-42/chapter-I/subchapter-A/part-2/subpart-B/section-2.22",
     "verified": "2026-11-17",
-    "note": "Single TPO consent does NOT cover separately maintained SUD counseling notes, or let investigators bypass special Part 2 proceeding protections. HIPAA-covered TPO recipients can generally redisclose as HIPAA permits."
+    "note": "Tests first-service notice and fundraising opt-out, distinct from E30-028's Part 2 TPO consent and SUD counseling-note disclosure.",
+    "revision": 2
   },
   {
     "id": "E30-204",
@@ -7044,33 +7047,34 @@ window.MPJE_CH30_QUESTIONS = [
     "area": 2,
     "kind": "single",
     "topicKey": "public-health-prescribing",
-    "topic": "Contraceptive return visit: new migraine with aura",
-    "stem": "A Massachusetts pharmacist prescribed a combined estrogen/progestin oral contraceptive after screening an eligible adult eight months ago. Today the patient requests a NEW pharmacist-issued prescription for the same pills, but a newly completed self-screen identifies newly diagnosed migraine WITH visual aura. The pharmacist is properly trained; no emergency override or separate valid prescription is presented. What is the best action under 2026 Massachusetts guidance and current U.S. MEC?",
+    "topic": "Return combined oral contraception Rx: new migraine with aura",
+    "stem": "Eight months after a Massachusetts pharmacist prescribed a combined estrogen/progestin pill, a 26-year-old requests a NEW prescription for that product. A current self-screen documents newly diagnosed migraine WITH visual aura. No other contraceptive method has yet been screened and no separate emergency-supply exception is present. Under the 2026 DPH pharmacist prescribing guidelines and CDC U.S. MEC, which decision is BEST?",
     "choices": [
       {
-        "text": "Prescribe the same combined pill for 12 months because the original pharmacist assessment remains valid indefinitely.",
-        "why": "Incorrect. DPH's prescribing authority requires current self-screen; a prior normal screen does not override a new contraindication. The 12-month supply maximum is not a safety exemption."
+        "text": "Supply another 30 days of the combined pill while contacting the original clinician because previous well-tolerated use justifies a short bridge after a newly identified risk.",
+        "why": "Incorrect. Migraine with aura is CDC U.S. MEC Category 4 for combined hormonal contraception. A short repeat does not remove that established contraindication."
       },
       {
-        "text": "Refuse any hormonal birth control permanently because migraine aura makes every progestin-only contraceptive medically ineligible.",
-        "why": "Incorrect. U.S. MEC gives combined hormonal contraception Category 4 with migraine aura, but it does not assign that contraindication to every other hormonal method. An individualized alternative evaluation is appropriate."
+        "text": "Switch immediately to any progestin-only product without completing a new patient-specific screening because the aura contraindication automatically establishes another method's eligibility.",
+        "why": "Incorrect. Progestin-only options do not share the same categorical aura risk, but each new method still requires its own eligibility assessment and relevant screening."
       },
       {
-        "text": "Decline to issue a new estrogen-containing combined-pill prescription, explain the newly identified risk, document the assessment, and facilitate appropriate alternative-method evaluation or referral.",
-        "why": "Correct. CDC U.S. MEC makes migraine WITH aura Category 4 (unacceptable health risk) for combined hormonal contraception. DPH Circular DCP 26-08-125 requires risk-based screening and appropriate counseling/clinical referral."
+        "text": "Decline to issue the requested combined pill, record/counsel about the new contraindication, and evaluate a guideline-appropriate alternative or arrange clinical referral.",
+        "why": "Correct. CDC U.S. MEC Category 4 applies to combined hormonal contraceptives for migraine with aura; MA DCP 26-08-125 requires risk-based screening and appropriate response."
       },
       {
-        "text": "Require all repeat oral-contraception patients to show a primary care visit solely because pharmacist-originated refills are never allowed without one.",
-        "why": "Incorrect. Circular DCP 26-08-125 states absence of a clinical visit does not itself preclude pharmacist prescriptions with refills. This specific case turns on the new clinical contraindication."
+        "text": "Issue the same combined pill with instructions to stop if another episode occurs because a single report of visual aura does not satisfy the CDC contraindication.",
+        "why": "Incorrect. Migraine WITH aura is Category 4; there is no requirement for another subsequent aura episode before acting on the current diagnosis."
       }
     ],
     "correct": [
       "C"
     ],
-    "citation": "M.G.L. c.94C §19F; DPH Circular DCP 26-08-125, August 25, 2026; CDC U.S. MEC 2024 combined hormonal contraception, migraine with aura Category 4",
+    "citation": "M.G.L. c94C §19F; DPH Circular DCP 26-08-125 Aug. 25, 2026; CDC U.S. MEC 2024, CHC with migraine with aura Category 4",
     "url": "https://www.mass.gov/doc/pharmacist-prescribing-of-certain-medications/download",
     "verified": "2026-11-17",
-    "note": "Re-screen before each new pharmacist-issued hormonal Rx. Migraine WITH aura: combined hormonal contraception is CDC Category 4; new safety data outweigh previous eligibility."
+    "note": "Return-visit contraindication vs initial prescribing; practical distractors examine bridge and alternative contraception screening.",
+    "revision": 2
   },
   {
     "id": "E30-208",
@@ -7112,33 +7116,34 @@ window.MPJE_CH30_QUESTIONS = [
     "area": 3,
     "kind": "single",
     "topicKey": "drug-schedule-identification",
-    "topic": "Federal retail no-Rx Schedule V exception versus Massachusetts law",
-    "stem": "At a Massachusetts pharmacy, a 35-year-old asks to purchase a codeine-containing cough product. Assume this EXACT, lawfully marketed product is federally Schedule V and qualifies as NONPRESCRIPTION under federal FDA rules, and the requested amount, identification, age and logbook satisfy every condition of 21 CFR 1306.26. However, NO prescription has been issued, and no applicable Massachusetts emergency or other exception exists. Can the pharmacist sell it without a prescription?",
+    "topic": "FDA-labeled Rx-only codeine/promethazine Schedule V: state and federal no-Rx sale",
+    "stem": "A Massachusetts customer requests 60 mL of FDA-marketed promethazine hydrochloride/codeine phosphate oral solution (6.25 mg/10 mg per 5 mL), product NDC 70752-139. Its actual FDA DailyMed label says 'Rx Only' and federal 'CV'. The customer presents photo ID and offers to sign the federal nonprescription Schedule V purchase log, but NO authorized prescription has been issued. No emergency or other exception applies. What is the pharmacist's lawful response?",
     "choices": [
       {
-        "text": "Yes; the federal 21 CFR 1306.26 retail exception overrides any state prescription requirement when purchaser conditions are met.",
-        "why": "Incorrect. Section 1306.26(f) expressly conditions federal nonprescription dispensing on the absence of a prescription requirement under any other federal, state or local law."
+        "text": "Sell the 60 mL under federal 21 CFR 1306.26 because small Schedule V quantities are automatically nonprescription after identification and logbook entry.",
+        "why": "Incorrect. The exact marketed NDC is FDA Rx Only, and federal §1306.26(f) cannot override another law requiring a prescription. Massachusetts c94C §17(c) requires a valid Rx for this Schedule V product."
       },
       {
-        "text": "No; Massachusetts M.G.L. c.94C §17 requires a practitioner prescription for Schedule V outside authorized exceptions, and the federal allowance does not displace the stricter state rule.",
-        "why": "Correct. Massachusetts §17(c) expressly requires a prescription for Schedule V. Federal §1306.26(f) is conditional on state law permitting nonprescription sale; the buyer's otherwise compliant status does not create an exception."
+        "text": "Do not dispense without a valid prescriber prescription; the FDA Rx-only labeling and Massachusetts Schedule V prescription requirement are not replaced by the customer's ID, requested quantity or log signature.",
+        "why": "Correct. FDA DailyMed NDC 70752-139 lists Rx Only and Schedule CV. M.G.L. c94C §17(c) requires a prescription outside specific exceptions; 21 CFR 1306.26(f) does not supersede stricter state law."
       },
       {
-        "text": "Yes; a manufacturer-sealed single bottle is automatically exempt from state Schedule V dispensing requirements.",
-        "why": "Incorrect. Manufacturer packaging does not constitute a prescriber's order or an exception to Massachusetts §17(c)."
+        "text": "Dispense as long as the prescriber's office confirms the customer has a cough without actually issuing a prescription, because the clinical indication is the only required authorization.",
+        "why": "Incorrect. Confirming a diagnosis is not issuing a prescription. The patient must have an appropriately authorized order under Massachusetts c94C §17."
       },
       {
-        "text": "Yes; if the pharmacist signs the federal logbook, that signature counts as the Massachusetts practitioner prescription.",
-        "why": "Incorrect. An OTC purchaser log entry is separate from a prescription lawfully issued by a prescriber. The federal logbook cannot satisfy a missing state prescription."
+        "text": "Reclassify the syrup as Massachusetts Schedule VI because it also contains promethazine, and apply the Schedule VI pharmacist emergency continuity supply pathway.",
+        "why": "Incorrect. The codeine combination is federally Schedule V per its FDA label and Massachusetts follows the federal V classification. An additional nonnarcotic ingredient does not turn this specifically labeled C-V product into Schedule VI."
       }
     ],
     "correct": [
       "B"
     ],
-    "citation": "21 CFR 1306.26(f), conditional federal retail dispensing; M.G.L. c.94C §17(b)–(c), MA electronic prescription requirement; 21 CFR 1308.15 Schedule V formulation threshold",
-    "url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXV/Chapter94C/Section17",
+    "citation": "FDA DailyMed promethazine HCl/codeine phosphate NDC 70752-139 (Rx Only, Schedule CV); M.G.L. c94C §17(c); 21 CFR 1306.26(f); 105 CMR 700.002(E)",
+    "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=9aca56ec-28f8-4679-9f90-ec3e82deb9ac",
     "verified": "2026-11-17",
-    "note": "Federal Schedule V OTC sale is permitted ONLY where other law does not require a prescription. Massachusetts Schedule V prescription requirement controls in the stated no-exception case; no specific marketed codeine NDC is claimed."
+    "note": "Real FDA-labeled Rx-only product, replacing an unsupported hypothetical OTC codeine NDC.",
+    "revision": 2
   },
   {
     "id": "E30-210",
@@ -7181,33 +7186,34 @@ window.MPJE_CH30_QUESTIONS = [
     "area": 1,
     "kind": "single",
     "topicKey": "board-waivers",
-    "topic": "Board waiver expired while renewal petition pending",
-    "stem": "A Massachusetts pharmacy received a Board-approved waiver of a specific 247 CMR requirement on November 15, 2021. The fifth anniversary passed on November 15, 2026. The manager of record submitted a complete petition for a successor waiver before expiration, but as of November 17, 2026 the Board has not granted another waiver. What must the pharmacy do now?",
+    "topic": "Board waiver fifth-anniversary expiration and pending successor petition",
+    "stem": "A Massachusetts pharmacy received a specific 247 CMR Board waiver on November 15, 2021. The manager submitted a new waiver petition November 1, 2026, but as of November 17, 2026 the Board has NOT granted a subsequent waiver. The original fifth anniversary passed two days ago; no independent extension was granted. Which procedure is permitted today?",
     "choices": [
       {
-        "text": "Continue using the old waiver because any renewal petition automatically extends a previously approved waiver.",
-        "why": "Incorrect. 247 CMR 14.01(5)(c) permits requesting another waiver but does not create an automatic bridge or extension."
+        "text": "Continue under the 2021 waiver because the timely and complete renewal petition automatically preserves the earlier authorization.",
+        "why": "Incorrect. 247 CMR 14.01(5)(b)–(d) gives no automatic renewal stay when a successive petition is filed."
       },
       {
-        "text": "Treat the first waiver as permanent unless the Board explicitly cancels it in a disciplinary decision.",
-        "why": "Incorrect. The regulation sets automatic fifth-anniversary expiration for waivers granted after June 30, 2013."
+        "text": "Continue for a default 30-day administrative grace period starting on the fifth anniversary, subject only to later Board review.",
+        "why": "Incorrect. The waiver expires on its fifth anniversary and §14.01(5)(d) provides no automatic 30-day grace."
       },
       {
-        "text": "Have the PIC approve the submitted waiver petition as an internal pharmacy policy without waiting for the Board.",
-        "why": "Incorrect. Petition submission and PIC management do not confer the Board's express waiver-granting authority."
+        "text": "Continue if the MOR documents that patient-safety controls are unchanged from 2021, without waiting for Board waiver approval.",
+        "why": "Incorrect. A manager's safety analysis does not replace the Board's grant of a subsequent waiver."
       },
       {
-        "text": "Return to compliance with the underlying 247 CMR rule unless and until the Board grants a subsequent waiver.",
-        "why": "Correct. Under 247 CMR 14.01(5)(d), compliance with all applicable regulations resumes after an approved waiver expires unless the Board has granted a subsequent waiver."
+        "text": "Comply with the underlying 247 CMR requirement after the old waiver expired unless and until the Board grants another waiver.",
+        "why": "Correct. Section 14.01(5)(d) requires following applicable regulations once a waiver expires unless the Board granted a subsequent waiver."
       }
     ],
     "correct": [
       "D"
     ],
-    "citation": "247 CMR 14.01(1),(2),(5)(b)–(d), Petition for Waiver, effective September 22, 2017",
+    "citation": "247 CMR 14.01(5)(b)–(d), Petition for Waiver, effective Sept. 22, 2017",
     "url": "https://www.mass.gov/doc/247-cmr-14-petition-for-waiver/download",
     "verified": "2026-11-17",
-    "note": "A post-2013 Board waiver expires after FIVE years; petition filed before expiration does not extend it without Board approval."
+    "note": "Submission of a successor petition is not an extension of the fifth-anniversary waiver.",
+    "revision": 2
   },
   {
     "id": "E30-212",
@@ -7319,32 +7325,33 @@ window.MPJE_CH30_QUESTIONS = [
     "area": 4,
     "kind": "single",
     "topicKey": "sterile-hazardous-compounding",
-    "topic": "ISO5 18-CFU viable action result: 2026-03 Board recall and reporting response",
-    "stem": "On November 17, 2026 a Massachusetts licensed sterile-compounding pharmacy receives a completed microbiology report showing 18 colony-forming units (CFU) in a viable air sample from its ISO Class 5 primary engineering control. Some CSPs compounded there have been dispensed and remain WITHIN their BUDs. The site has not completed remediation. What is the MOST appropriate response under current Board Policy 2026-03?",
+    "topic": "ISO5 viable air 18 CFU: 2026 Board recall and reporting",
+    "stem": "A Massachusetts sterile-compounding pharmacy receives a FINAL viable-air report showing 18 CFU recovered at its ISO Class 5 primary engineering control. Some CSPs prepared there have already been dispensed and are WITHIN their assigned BUDs; another separate ISO 5 PEC has acceptable results. No remediation has been completed. What is the best response under Board Policy 2026-03?",
     "choices": [
       {
-        "text": "Immediately investigate and stop affected ordinary compounding, notify the Board within one business day of the report, engage a microbiologist, recall CSPs still within BUDs, contact prescribers, monitor for adverse events, and perform appropriate remediation/risk assessment.",
-        "why": "Correct. Policy 2026-03 §II requires one-business-day report; §III(C) defines ISO5 >15 CFU as significant loss of control requiring within-BUD recall, prescriber contact, adverse-event surveillance and microbiologist. Affected production remains restricted pending remediation per §§III–V."
+        "text": "Stop affected routine compounding, promptly investigate, notify the Board within one business day of report receipt, consult a microbiologist, recall the within-BUD CSPs, contact prescribers and monitor for adverse events; make risk-based decisions about the unaffected PEC.",
+        "why": "Correct. Policy 2026-03 §§II,III(C),V mandates reporting in one business day; ISO5 >15 CFU is significant loss of control with microbiologist, recall, prescriber contact and surveillance requirements."
       },
       {
-        "text": "Release normal Category 2 CSPs because 18 CFU is below a 20-CFU ISO5 action level and does not require further investigation.",
-        "why": "Incorrect. ISO5 viable-air action level is >1 CFU and significant loss-of-control criterion is >15 CFU; 18 exceeds both."
+        "text": "Report the result, but continue Category 1 CSPs in the contaminated PEC with their shorter BUDs while a single repeat sample is pending.",
+        "why": "Incorrect. A significant loss of ISO5 control invokes stricter policy response; simply shortening BUD does not permit unrestricted routine compounding in an affected PEC."
       },
       {
-        "text": "Continue sterile compounding after a routine wipe-down; report to the Board in the next annual renewal instead of making an immediate notification.",
-        "why": "Incorrect. Immediate investigation/remediation and notification within one business day of microbiology report receipt are mandatory under the 2026 Board policy."
+        "text": "Quarantine undistributed CSPs but delay recall of already-dispensed within-BUD CSPs until a second sample establishes persistence of the 18-CFU excursion.",
+        "why": "Incorrect. The finalized report exceeds the >15 CFU significant loss criterion; the policy requires a within-BUD CSP recall rather than awaiting another positive sample."
       },
       {
-        "text": "Permanently shut down every other clean ISO5 PEC in the building regardless of a risk assessment, even if only one PEC had an action result.",
-        "why": "Incorrect. The 2026 policy permits continued operation in unaffected ISO5 PECs when a documented risk assessment deems it appropriate and all other requirements are met; an automatic permanent facility-wide closure is not the rule."
+        "text": "Notify the Board within one business day measured from SAMPLE COLLECTION and recall only expired CSPs that were prepared before that sample.",
+        "why": "Incorrect. The Board notification clock starts when the microbiology report is RECEIVED; required recall concerns CSPs still WITHIN their BUDs."
       }
     ],
     "correct": [
       "A"
     ],
-    "citation": "Massachusetts Board Policy 2026-03 Action Level Environmental Monitoring Results (adopted Sep. 3, 2026), §§I–V; 247 CMR 9.01(3); USP <797> EM",
+    "citation": "Board Policy 2026-03 adopted Sept. 3, 2026, §§II,III(C),V; USP <797>; 247 CMR 9.01(3)",
     "url": "https://www.mass.gov/doc/2026-03-action-level-environmental-monitoring-results/download",
     "verified": "2026-11-17",
-    "note": "18CFU at ISO5 meets both action level >1 and significant loss of control >15. Notify Board in 1 business day, microbiologist, recall within-BUD CSPs, contact prescribers and adverse surveillance."
+    "note": "18 CFU ISO5 triggers action (>1 CFU) and significant loss (>15 CFU); reporting, recall and subsequent risk-based re-entry requirements.",
+    "revision": 2
   }
 ];
