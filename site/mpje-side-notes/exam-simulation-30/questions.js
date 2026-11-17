@@ -7359,5 +7359,182 @@ window.MPJE_CH30_QUESTIONS = [
     "verified": "2026-11-17",
     "note": "18 CFU ISO5 triggers action (>1 CFU) and significant loss (>15 CFU); reporting, recall and subsequent risk-based re-entry requirements.",
     "revision": 2
+  },
+  {
+    "id": "E30-216",
+    "set": 44,
+    "area": 1,
+    "kind": "multi",
+    "topic": "Civil pharmacy negligence: limited prior-authorization notice duty versus Board discipline",
+    "topicKey": "board-discipline",
+    "stem": "A Massachusetts pharmacy repeatedly receives a valid antiseizure prescription, but the patient's insurer requires prior authorization (PA). Staff know that the patient risks an interruption of essential treatment. They tell the patient only that there is an 'insurance problem' and do not inform the prescriber that a PA is required. Based on the Massachusetts Supreme Judicial Court's pharmacy-negligence decisions, which statements are correct? SELECT ALL THAT APPLY.",
+    "choices": [
+      {
+        "text": "A pharmacy may owe a limited duty to take reasonable steps to notify BOTH the patient and prescriber that prior authorization is needed.",
+        "why": "Correct. In Correa v. Schoeck, 479 Mass. 686 (2018), the SJC recognized a limited duty to take reasonable steps to notify the patient and prescribing clinician of a PA barrier at each attempted fill; no universal duty to obtain the insurer's approval was imposed."
+      },
+      {
+        "text": "The pharmacy must guarantee approval of the insurance authorization and keep contacting the prescriber until the prescriber confirms receiving every message.",
+        "why": "Incorrect. Correa expressly rejected an open-ended duty to ensure that the physician received and acted on a PA request; the duty is to take reasonable notification steps, not to guarantee insurer coverage or prescriber response."
+      },
+      {
+        "text": "A civil negligence duty does not require a prior formal Board disciplinary order; proving civil liability still requires the applicable elements, including breach, causation, and injury.",
+        "why": "Correct. Civil negligence and professional license discipline are separate processes. The SJC's limited duty analysis does not depend on a Board conviction, but proving duty alone does not establish compensable negligence without breach and injury caused by it."
+      },
+      {
+        "text": "Once an insurer rejects a claim, Massachusetts law categorically eliminates any pharmacy duty to communicate the reason to a patient or prescriber.",
+        "why": "Incorrect. The specific PA communication duty recognized in Correa is a counterexample. A payment rejection is not an automatic blanket exemption from reasonable patient/prescriber notice, particularly where a serious treatment gap is known."
+      }
+    ],
+    "correct": [
+      "A",
+      "C"
+    ],
+    "citation": "Correa v. Schoeck, 479 Mass. 686, 694–702 (2018); Cottam v. CVS Pharmacy, 436 Mass. 316, 319–326 (2002); distinguish 247 CMR 10.03 Board discipline",
+    "url": "https://law.justia.com/cases/massachusetts/supreme-court/volumes/479/479mass686.html",
+    "verified": "2026-11-17",
+    "revision": 1,
+    "note": "Novelty vs E30-096/101/161/201: asks about a specific MA Supreme Judicial Court civil duty in insurance PA communication, not automatic Board sanction; original exam-style case, not recalled content."
+  },
+  {
+    "id": "E30-217",
+    "set": 44,
+    "area": 2,
+    "kind": "single",
+    "topic": "Limited-English-proficiency counseling: interpreter access and HIPAA",
+    "topicKey": "counseling-dur",
+    "stem": "A Massachusetts pharmacy is covered by Section 1557 because it receives qualifying HHS financial assistance. A patient who has limited English proficiency accepts counseling for a new medicine but cannot understand the pharmacist's English explanation. The pharmacy has immediate access to a qualified remote interpreter. What should it do?",
+    "choices": [
+      {
+        "text": "Ask the patient's 12-year-old child to interpret as the default because a family member is always the preferred source of medical interpretation.",
+        "why": "Incorrect. Section 1557's language-access protections generally prohibit reliance on accompanying minors for interpreting except narrowly defined exigent circumstances; convenience and assumed fluency do not establish qualified medical interpretation."
+      },
+      {
+        "text": "Arrange accurate, timely qualified language assistance without charging the patient, and counsel through the interpreter while protecting privacy; HIPAA ordinarily permits necessary treatment-related disclosure without separate authorization.",
+        "why": "Correct. 45 CFR 92.201 requires meaningful, timely, accurate, no-cost language assistance in covered health programs. An appropriate qualified interpreter can facilitate counseling while protecting confidentiality; HIPAA generally permits provider use of interpreters for treatment or health care operations."
+      },
+      {
+        "text": "Require the patient to pay for the remote interpreter before any counseling because the drug itself is covered by insurance.",
+        "why": "Incorrect. Section 1557's required language assistance must be free of charge to the individual with limited English proficiency. Drug insurance coverage does not transfer this accessibility cost to the patient."
+      },
+      {
+        "text": "Have any bilingual cashier translate clinical directions without checking competence or confidentiality, because fluent conversation automatically qualifies that employee as a medical interpreter.",
+        "why": "Incorrect. Qualified interpretation requires accuracy, impartiality, relevant terminology and privacy safeguards. Being conversationally bilingual is not a categorical substitute for qualified healthcare interpretation."
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "citation": "45 CFR 92.201(a)–(c) (meaningful access; qualified language assistance); 45 CFR 164.506(c) (HIPAA TPO); HHS OCR Section 1557 language-access guidance",
+    "url": "https://www.hhs.gov/sites/default/files/ocr-dcl-section-1557-language-access.pdf",
+    "verified": "2026-11-17",
+    "revision": 1,
+    "note": "Tests LEP access and interpreter privacy, distinct from E30-003/092/137 delegation of counseling and alternative contact."
+  },
+  {
+    "id": "E30-218",
+    "set": 44,
+    "area": 2,
+    "kind": "single",
+    "topic": "Controlled substance office stock disguised as patient prescription",
+    "topicKey": "controlled-prescriptions",
+    "stem": "A DEA-registered physician sends a Schedule II oxycodone 'prescription' to a retail pharmacy listing the clinic as the patient and requesting 80 tablets for a shared cabinet. The physician intends to dispense doses later to whichever patients need them. No individual patient is named. What is the pharmacist's best response?",
+    "choices": [
+      {
+        "text": "Fill the order as a normal outpatient prescription because the physician has a DEA registration and will document each future patient later.",
+        "why": "Incorrect. A practitioner's valid DEA registration does not turn general office inventory into a patient-specific prescription. 21 CFR 1306.04(b) explicitly prohibits using an individual-practitioner prescription to obtain stock for future general dispensing."
+      },
+      {
+        "text": "Enter the doctor's own name as the patient and dispense, provided the doctor initials the pharmacy's stock log.",
+        "why": "Incorrect. Relabeling the clinic's planned office stock as a personal prescription would not create a legitimate patient-specific order. Documented intent still remains supply for general office dispensing."
+      },
+      {
+        "text": "Do not fill it as a prescription; distinguish acquisition of practitioner office inventory through lawful controlled-substance ordering/distribution from an order for a particular patient's treatment.",
+        "why": "Correct. 21 CFR 1306.04(b) prohibits an individual practitioner issuing a controlled prescription to supply general dispensing stock. If the practitioner may lawfully acquire stock, that requires appropriate registrant purchasing or transfer processes rather than a disguised retail prescription."
+      },
+      {
+        "text": "Dispense it if the practice promises to provide patient names at month's end, because retrospective patient assignment satisfies 21 CFR 1306.05.",
+        "why": "Incorrect. A prescription must be legitimate at issuance and bear required patient information; a month-end accounting cannot retroactively convert a general stock replenishment into lawful patient-specific prescribing."
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "citation": "21 CFR 1306.04(a)–(b) (legitimate medical purpose; prohibition on Rx for office stock); 21 CFR 1306.05(a) (patient information); 21 CFR Part 1305 for qualifying Schedule II registrant orders",
+    "url": "https://www.ecfr.gov/current/title-21/chapter-II/part-1306/section-1306.04",
+    "verified": "2026-11-17",
+    "revision": 1,
+    "note": "Differs from E30-024 pharmacy-to-pharmacy five-percent distribution and E30-178 patient-specific red flags; physician is buying general office stock rather than treating a named patient."
+  },
+  {
+    "id": "E30-219",
+    "set": 44,
+    "area": 3,
+    "kind": "single",
+    "topic": "Poison Prevention Packaging Act: product exceptions versus patient waiver",
+    "topicKey": "label-packaging",
+    "stem": "A pharmacy dispenses (X) sublingual nitroglycerin tablets, (Y) a cyclic oral contraceptive in the manufacturer's mnemonic dispenser, and (Z) ordinary oral antibiotic tablets. The patient and prescribers have requested no conventional-container waiver. Which description follows the federal PPPA prescription-drug packaging provisions?",
+    "choices": [
+      {
+        "text": "All three products universally require child-resistant packaging because every drug taken by mouth is included with no exceptions.",
+        "why": "Incorrect. 16 CFR 1700.14(a)(10) expressly excepts specified products, including sublingual nitroglycerin and qualifying cyclic hormonal contraceptives in manufacturer mnemonic dispensers."
+      },
+      {
+        "text": "X and the qualifying Y are listed exemptions; Z ordinarily needs compliant special packaging unless a separate valid exception or consumer/prescriber request applies.",
+        "why": "Correct. Section 1700.14(a)(10)(i) exempts sublingual nitroglycerin; (iv) exempts certain cyclically administered contraceptives in manufacturers' mnemonic packages. An otherwise covered ordinary oral antibiotic remains subject to special-packaging requirements absent a valid exception."
+      },
+      {
+        "text": "Every package of any hormonal contraceptive is exempt, including loose tablets moved into an ordinary pharmacy vial regardless of the container.",
+        "why": "Incorrect. The cited cyclic contraceptive exception is tied to a qualifying manufacturer's mnemonic dispenser and specified hormone activity; it does not convert all repackaged contraceptive tablets into a blanket exemption."
+      },
+      {
+        "text": "A pharmacist may choose non-child-resistant packaging for Z based solely on convenience without an applicable statutory exemption or any patient/prescriber request.",
+        "why": "Incorrect. The pharmacist cannot unilaterally replace PPPA-compliant packaging simply for convenience. A qualifying request or specific product-based exception is needed under the PPPA."
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "citation": "16 CFR 1700.14(a)(10)(i),(iv) (special-packaging exemptions); 16 CFR 1701.1 and PPPA consumer/prescriber conventional-packaging requests; CPSC Healthcare Professional Guide (2023)",
+    "url": "https://www.ecfr.gov/current/title-16/chapter-II/subchapter-E/part-1700/section-1700.14",
+    "verified": "2026-11-17",
+    "revision": 1,
+    "note": "Unlike E30-029, tests expressly exempt product/package types rather than carrying forward a patient-specific child-resistant waiver."
+  },
+  {
+    "id": "E30-220",
+    "set": 44,
+    "area": 4,
+    "kind": "multi",
+    "topic": "DEA pharmacy closure/ownership transfer: registration and controlled-stock records",
+    "topicKey": "controlled-inventory",
+    "stem": "A Massachusetts DEA-registered pharmacy is being acquired by a different legal owner, which will operate under its own appropriate DEA authority. The outgoing registrant will discontinue its controlled-substance business by transferring remaining stock, including Schedule II medications, to the buyer. No DEA Special Agent in Charge waiver of advance notice applies. Which steps meet 21 CFR 1301.52? SELECT ALL THAT APPLY.",
+    "choices": [
+      {
+        "text": "Send the required transfer information to the DEA Special Agent in Charge at least 14 days before the proposed controlled-stock business transfer, absent an individual waiver.",
+        "why": "Correct. Under 21 CFR 1301.52(d), a registrant discontinuing controlled business by transferring stock to another person generally submits prescribed information to the local Special Agent in Charge at least 14 days in advance unless this period is waived."
+      },
+      {
+        "text": "Take a complete inventory on the transfer date serving as the seller's final and buyer's initial inventory, preserve copies for both parties, and use DEA Form 222 or authorized electronic ordering for Schedule II transfers.",
+        "why": "Correct. Section 1301.52(d)(1)-(2) uses the on-transfer inventory for both registrants and directs Schedule I–II transfers to Part 1305 order forms, in addition to transferring the required controlled-substance records."
+      },
+      {
+        "text": "Skip the transfer-date inventory because the seller's annual accounting statement already lists the acquisition price of all narcotics.",
+        "why": "Incorrect. A financial asset valuation does not replace the mandatory complete controlled-substance inventory required at the transfer, nor does it satisfy the required registrant records."
+      },
+      {
+        "text": "Continue indefinitely using the seller's DEA registration at the new entity solely because the pharmacy name and Manager of Record did not change.",
+        "why": "Incorrect. Under §1301.52(a)-(b), DEA registration does not automatically transfer to a different legal registrant. DEA authority must independently support the acquiring registrant's operations; name or MOR continuity is not a substitute."
+      }
+    ],
+    "correct": [
+      "A",
+      "B"
+    ],
+    "citation": "21 CFR 1301.52(a)–(b),(d)(1)–(2); 21 CFR 1304.11 (inventory); 21 CFR Part 1305 (Schedule II orders); 247 CMR 6.11 (separate MA pharmacy ownership process)",
+    "url": "https://www.ecfr.gov/current/title-21/chapter-II/part-1301/section-1301.52",
+    "verified": "2026-11-17",
+    "revision": 1,
+    "note": "Novel DEA final/initial inventory and 14-day business-transfer reporting compared with E30-065 MA facility licensing and E30-180 reverse distributor destruction."
   }
 ];
