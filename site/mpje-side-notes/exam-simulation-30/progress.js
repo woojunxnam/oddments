@@ -5,15 +5,16 @@
   const KEY = 'mpje-side-notes-ch30-question-progress-v1';
   const all = Array.isArray(window.MPJE_CH30_QUESTIONS) ? window.MPJE_CH30_QUESTIONS : [];
   const known = new Map(all.map(q => [q.id, q]));
+  const revisionOf = id => Math.max(1, Number(known.get(id)?.revision) || 1);
   const subscribers = new Set();
   const blank = () => ({attempts: 0, wrongCount: 0, needsReview: false, saved: false, lastCorrect: null});
-  const fresh = () => ({version: 1, items: {}, migratedFixed: false, migratedRandom: false});
+  const fresh = () => ({version: 1, items: {}, archives: {}, migratedFixed: false, migratedRandom: false});
   let state = fresh();
   let storageAvailable = true;
   try {
     const raw = JSON.parse(localStorage.getItem(KEY) || 'null');
     if (raw && raw.version === 1 && raw.items && typeof raw.items === 'object') {
-      state = {version: 1, items: raw.items, migratedFixed: !!raw.migratedFixed, migratedRandom: !!raw.migratedRandom};
+      state = {version: 1, items: raw.items, archives: raw.archives && typeof raw.archives === 'object' ? raw.archives : {}, migratedFixed: !!raw.migratedFixed, migratedRandom: !!raw.migratedRandom};
     }
     localStorage.setItem(KEY, JSON.stringify(state));
   } catch (_) { storageAvailable = false; }
@@ -26,7 +27,8 @@
       wrongCount: Number.isInteger(value.wrongCount) && value.wrongCount >= 0 ? value.wrongCount : 0,
       needsReview: value.needsReview === true,
       saved: value.saved === true,
-      lastCorrect: typeof value.lastCorrect === 'boolean' ? value.lastCorrect : null
+      lastCorrect: typeof value.lastCorrect === 'boolean' ? value.lastCorrect : null,
+      revision: revisionOf(id)
     };
   }
   function persist() {
@@ -51,6 +53,7 @@
     const correct = isCorrect(q, selected);
     const current = item(id);
     current.attempts += 1;
+    current.revision = revisionOf(id);
     current.lastCorrect = correct;
     if (correct) {
       current.needsReview = false;
@@ -122,17 +125,48 @@
     persist();
   }
   migrate();
+  // New questions are versioned: an old result must never be credited to a
+  // changed stem/key, but every old attempt and bookmark is retained.
+  function upgradeRevised() {
+    let updated = false;
+    if (!state.archives || typeof state.archives !== 'object') state.archives = {};
+    for (const q of all) {
+      const revision = revisionOf(q.id);
+      const old = state.items[q.id];
+      const prior = Number(old?.revision) || 1;
+      if (revision <= prior) continue;
+      if (old && typeof old === 'object') {
+        if (!Array.isArray(state.archives[q.id])) state.archives[q.id] = [];
+        state.archives[q.id].push({
+          revision: prior, attempts: Number(old.attempts) || 0,
+          wrongCount: Number(old.wrongCount) || 0, needsReview: !!old.needsReview,
+          saved: !!old.saved, lastCorrect: typeof old.lastCorrect === 'boolean' ? old.lastCorrect : null
+        });
+        state.items[q.id] = {...blank(), saved: !!old.saved, revision};
+      } else {
+        state.items[q.id] = {...blank(), revision};
+      }
+      updated = true;
+    }
+    if (updated) persist();
+  }
+  upgradeRevised();
+  function getArchived(id) {
+    const records = state.archives?.[id];
+    return Array.isArray(records) ? records.map(entry => ({...entry})) : [];
+  }
   window.addEventListener('storage', event => {
     if (event.key !== KEY || !event.newValue) return;
     try {
       const remote = JSON.parse(event.newValue);
       if (!remote || remote.version !== 1 || !remote.items) return;
-      state = remote;
+      state = { ...remote, archives: remote.archives && typeof remote.archives === 'object' ? remote.archives : {} };
+      upgradeRevised();
       emit({type: 'external'});
     } catch (_) { /* Do not apply corrupt cross-tab data. */ }
   });
   window.MPJE_CH30_PROGRESS = Object.freeze({
-    get: item, record, setSaved, toggleSaved, wrongIds, savedIds, count,
+    get: item, getArchived, record, setSaved, toggleSaved, wrongIds, savedIds, count,
     get storageAvailable() { return storageAvailable; },
     subscribe(fn) { subscribers.add(fn); return () => subscribers.delete(fn); }
   });
