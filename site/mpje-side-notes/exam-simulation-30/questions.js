@@ -6486,5 +6486,521 @@ window.MPJE_CH30_QUESTIONS = [
     "url": "https://pages.usp.org/rs/711-SXF-172/images/USP_HQS_797_FAQs_December2023_V6__002.pdf?version=0",
     "verified": "2026-11-17",
     "note": "Category 2 nonhazardous sterile CSPs require a properly classified cleanroom suite and ISO 5 PEC. From sterile components without sterility testing, maxima are four days at room temperature or ten days refrigerated when stability supports them."
+  },
+  {
+    "id": "E30-191",
+    "set": 39,
+    "area": 1,
+    "kind": "multi",
+    "topicKey": "workforce-supervision",
+    "topic": "Pediatric immunization: technician, intern and trainee qualification",
+    "stem": "A Massachusetts pharmacy offers an age-appropriate, properly authorized influenza vaccine to a FIVE-YEAR-OLD. A qualified immunizing pharmacist is present, all patient assessment, counseling, consent, VIS, MIIS and emergency-readiness steps will be completed, and everyone described has current CPR certification and the required immunization-specific training UNLESS expressly stated otherwise. Under Board Policy 2023-02 as revised September 4, 2025, which proposed personnel assignments are permissible? SELECT ALL THAT APPLY.",
+    "choices": [
+      {
+        "text": "A Massachusetts-registered pharmacy intern with the required immunization training may administer the indicated vaccine under the required pharmacist supervision.",
+        "why": "Correct. The revised Massachusetts vaccine policy permits an appropriately trained pharmacy intern to administer vaccines to eligible patients at least five years old under the policy's pharmacist supervision and other safeguards."
+      },
+      {
+        "text": "A licensed pharmacy technician TRAINEE may administer simply by completing the same training as a technician, if the supervising pharmacist observes the injection.",
+        "why": "Incorrect. The policy names qualifying licensed pharmacy technicians but does not extend its vaccinator authorization to technician trainees. Training and observation alone do not confer the licensure status."
+      },
+      {
+        "text": "A Massachusetts-licensed, NON-nationally-certified pharmacy technician with 520 documented hours AFTER technician licensure may administer after completing the policy's technician-specific training and supervision requirements.",
+        "why": "Correct. Under the September 2025 revision, a licensed technician qualifies through national certification OR at least 500 documented hours of work after technician licensure, plus the applicable training/CPR/supervision requirements. The 520 hours here are post-license."
+      },
+      {
+        "text": "A nationally certified pharmacy technician may independently assess whether a child needs the vaccine and choose which formulation to administer, without the supervising pharmacist making the clinical determination.",
+        "why": "Incorrect. Certification does not shift the vaccine assessment, vaccine-selection and patient-counseling responsibilities from the supervising pharmacist to the technician. The technician may carry out authorized administration, not independent clinical selection."
+      }
+    ],
+    "correct": [
+      "A",
+      "C"
+    ],
+    "citation": "247 CMR 8.00 and Massachusetts Board Policy 2023-02, Vaccine Administration (revised September 4, 2025), immunizer qualification, age five and supervising pharmacist duties",
+    "url": "https://www.mass.gov/doc/2023-02-vaccine-administration-pdf/download",
+    "verified": "2026-11-17",
+    "note": "Age five does not mean every pharmacy worker may vaccinate. Verify intern or licensed technician credentials, technician national certification OR 500 post-license work hours, training, CPR, and pharmacist assessment/supervision."
+  },
+  {
+    "id": "E30-192",
+    "set": 39,
+    "area": 2,
+    "kind": "single",
+    "topicKey": "public-health-prescribing",
+    "topic": "HIV prevention: transition from a finite PEP course to indicated PrEP assessment",
+    "stem": "A properly trained Massachusetts pharmacist independently supplied a guideline-concordant 28-day oral HIV postexposure prophylaxis (PEP) regimen after a qualifying recent exposure. At follow-up, the patient reports finishing the course but continuing HIV exposure risk. The patient asks the pharmacist to provide another 28-day PEP course each month instead of discussing other prevention. The pharmacist's practice meets the applicable MCSR and prescribing requirements. What is the MOST appropriate next step under Massachusetts' 2026 HIV prevention prescribing framework?",
+    "choices": [
+      {
+        "text": "Automatically dispense monthly PEP courses without reassessment because an initial PEP prescription establishes permanent ongoing eligibility.",
+        "why": "Incorrect. PEP is a time-limited response to an exposure, not a standing indefinitely renewable substitute for ongoing prevention. Continuing risk calls for current clinical assessment."
+      },
+      {
+        "text": "Refuse to discuss oral PrEP because pharmacist prescribing authority applies only before any PEP exposure has occurred.",
+        "why": "Incorrect. Massachusetts authorizes appropriately trained pharmacists to prescribe oral PrEP under the separate statewide guidance when the patient meets its requirements. Prior PEP use does not, by itself, bar a PrEP assessment."
+      },
+      {
+        "text": "Evaluate the patient for an appropriate transition to oral PrEP using the current PrEP guidance, required HIV screening and clinical assessment, and arrange follow-up or referral as indicated; do not automatically renew PEP.",
+        "why": "Correct. Massachusetts c.94C §19F and DPH Circular DCP 26-08-125 authorize pharmacist prescribing for both HIV PEP and oral PrEP, each under its own statewide guideline. Ongoing exposure risk after completing a PEP course requires PrEP eligibility/testing and follow-up evaluation, not automatic repeated PEP."
+      },
+      {
+        "text": "Start oral PrEP without any HIV-status evaluation because a recent course of PEP is proof that the patient is HIV-negative.",
+        "why": "Incorrect. Taking PEP does not substitute for the required HIV evaluation before PrEP initiation; potential acute HIV infection and the guideline's testing/follow-up remain important."
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "citation": "M.G.L. c.94C §19F; DPH Circular DCP 26-08-125, Pharmacist Prescribing of Certain Medications; Massachusetts Pharmacist Oral PrEP Guidelines 8-2026 and PEP Guidelines 9-2026",
+    "url": "https://www.mass.gov/lists/guidelines-for-pharmacists-to-prescribe-oral-prep-pep-sti-treatment-and-doxypep",
+    "verified": "2026-11-17",
+    "note": "PEP is a finite postexposure course; sustained risk after PEP prompts a NEW PrEP evaluation under its separate guideline and required testing, not automatic monthly PEP renewal."
+  },
+  {
+    "id": "E30-193",
+    "set": 39,
+    "area": 2,
+    "kind": "single",
+    "topicKey": "public-health-prescribing",
+    "topic": "Pharmacist STI treatment authority versus gonorrhea EPT",
+    "stem": "A Massachusetts pharmacist has a valid license/MCSR, has completed accredited STI-TREATMENT prescribing training, and is prepared to apply the 2026 statewide STI treatment guideline. A 24-year-old patient has documentation of a positive gonorrhea test and asks for appropriate pharmacist-prescribed treatment. The patient ALSO asks for a separate prescription for an unexamined partner labeled only 'EPT' based on the Board's expedited partner therapy policy. Assume no other diagnosis, contraindication or independent prescriber order. Which is the BEST legal distinction?",
+    "choices": [
+      {
+        "text": "Neither request is within any pharmacist pathway because Massachusetts pharmacists may independently prescribe for chlamydia but never for gonorrhea.",
+        "why": "Incorrect. The 2026 Massachusetts independent pharmacist STI-treatment guidance expressly includes gonorrhea as well as chlamydia; the existence of a condition-specific pathway does not mean the pharmacist must refuse all gonorrhea evaluation."
+      },
+      {
+        "text": "The pharmacist may evaluate and prescribe treatment for the diagnosed patient IF every requirement of the 2026 guideline is met, but cannot extend the CHLAMYDIA-only EPT prescription mechanism to an unexamined gonorrhea partner.",
+        "why": "Correct. These are two different authorities: 2026 pharmacist independent STI-treatment guidelines cover eligible gonorrhea patients, whereas Board Policy 2020-08's special EPT protocol is limited to partners of people diagnosed with chlamydia. The partner requires an appropriate authorized clinical/prescribing route."
+      },
+      {
+        "text": "The 2026 pharmacist authority automatically amends all EPT policies to include gonorrhea, so both prescriptions may be issued without further partner assessment.",
+        "why": "Incorrect. A new authority to treat a patient does not expand the separate EPT policy. Massachusetts Policy 2020-08 explicitly states that its EPT procedure applies only to chlamydia."
+      },
+      {
+        "text": "The pharmacist may supply the partner's gonorrhea treatment as EPT only if the first patient promises to deliver it personally.",
+        "why": "Incorrect. Promised delivery by the index patient does not change the disease-specific scope of the Board's EPT policy; gonorrhea is not covered by that chlamydia-only mechanism."
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "citation": "M.G.L. c.94C §19F; DPH Pharmacist Guidance for STI Treatment 8-2026, including gonorrhea; Massachusetts Board/DCP Policy 2020-08 Expedited Partner Therapy Prescriptions (May 25, 2023), chlamydia only",
+    "url": "https://www.mass.gov/policy-statement/expedited-partner-therapy-prescriptions",
+    "verified": "2026-11-17",
+    "note": "Separate independently prescribed gonorrhea treatment for an assessed patient from chlamydia-only EPT for an unexamined partner. The 2026 STI authority does not silently expand EPT."
+  },
+  {
+    "id": "E30-194",
+    "set": 39,
+    "area": 3,
+    "kind": "single",
+    "topicKey": "label-packaging",
+    "topic": "Prescription labeling: pharmacist initials and Schedule VI label validity",
+    "stem": "A Massachusetts retail pharmacy fills a valid non-compounded Schedule VI tablet prescription in the correct child-resistant container. The computer-generated label shows the date filled, pharmacy name/address, prescription serial, patient's name, prescriber's name, medicine, directions, applicable cautions and tablet count. HOWEVER, it shows only the pharmacy's internal employee login number in a back-office record; the label itself omits the filling pharmacist's initials. The pharmacist has completed the final clinical/dispensing review. What must occur before lawful handoff?",
+    "choices": [
+      {
+        "text": "Nothing further; the prescription serial number legally substitutes for the pharmacist's initials when records are computerized.",
+        "why": "Incorrect. M.G.L. c.94C §21 specifies both the pharmacy's serial number and the filling pharmacist's initials as distinct label elements; an internal login does not erase the separate label obligation."
+      },
+      {
+        "text": "Dispense as labeled because Schedule VI drugs are outside the Massachusetts controlled-substance labeling law.",
+        "why": "Incorrect. Massachusetts Schedule VI is part of the state controlled-substance scheme, and §21 labeling applies. Federal noncontrol does not remove the state label elements."
+      },
+      {
+        "text": "Obtain a new prescription signed by the prescriber because any omission on a dispensing label invalidates the original order.",
+        "why": "Incorrect. The stated prescription itself is valid; the defect is on the pharmacy-generated DISPENSING LABEL. It is corrected by the pharmacy, without obtaining a new prescriber order."
+      },
+      {
+        "text": "Correct the container label to include the filling pharmacist's initials, while retaining all other mandatory information, before dispensing.",
+        "why": "Correct. M.G.L. c.94C §21 requires the filling pharmacist's initials on the affixed label in addition to date, pharmacy identifiers, Rx serial, patient/prescriber/drug, directions, cautions, and quantity for tablets or capsules. Final electronic validation alone does not replace the specified label."
+      }
+    ],
+    "correct": [
+      "D"
+    ],
+    "citation": "M.G.L. c.94C §21 (current as amended effective January 1, 2026), first paragraph; 247 CMR 9.04 dispensing and labeling responsibility",
+    "url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXV/Chapter94C/Section21",
+    "verified": "2026-11-17",
+    "note": "For Massachusetts Schedule VI as well as federally controlled prescriptions, distinguish an otherwise valid order from a defective final container label. Pharmacist initials remain an express label element."
+  },
+  {
+    "id": "E30-195",
+    "set": 39,
+    "area": 4,
+    "kind": "multi",
+    "topicKey": "pharmacy-operations",
+    "topic": "Shared pharmacy services: jointly accountable pharmacies, notice, audit trail and annual review",
+    "stem": "Two Massachusetts-licensed retail pharmacies begin a central-fill/shared-processing arrangement in 2026. The originating pharmacy receives the prescription; its partner performs remote processing and physical filling. Both have authorized personnel, an appropriate written agreement and a secure common information system. The corporate compliance officer proposes the following operating procedures under revised Board Policy 2021-02. Which procedures are required or correct? SELECT ALL THAT APPLY.",
+    "choices": [
+      {
+        "text": "The retail pharmacy informs patients that another pharmacy may process or fill their prescriptions and provides a workable patient opt-out mechanism.",
+        "why": "Correct. Massachusetts Board Policy 2021-02, General Requirements III(k)–(l), expressly requires retail patient notification and a mechanism to opt out of the shared-service model."
+      },
+      {
+        "text": "Only the originating pharmacy is responsible for errors, because the central pharmacy's professional responsibility ends when it ships the product.",
+        "why": "Incorrect. Section III(i) makes ALL participating pharmacies jointly responsible for properly processed and filled prescriptions; division of tasks does not erase either participant's accountability."
+      },
+      {
+        "text": "The pharmacies maintain a transaction audit trail that can identify the date/time and personnel involved at EACH step, and review documented joint procedures at least annually.",
+        "why": "Correct. Policy III(h) mandates a traceable step-by-step date/time/personnel audit trail, while III(n)–(o) requires jointly maintained policies and documented review at least annually."
+      },
+      {
+        "text": "After signing the original agreement, the two pharmacies may skip documented personnel training and a continuity plan because the central site has a pharmacist-in-charge.",
+        "why": "Incorrect. Policy III(m) and III(p) require documented participant training and a continuity-of-care plan if a shared-services participant cannot operate; a PIC does not eliminate these requirements."
+      }
+    ],
+    "correct": [
+      "A",
+      "C"
+    ],
+    "citation": "Massachusetts Board Policy 2021-02, Shared Pharmacy Service Models, revised February 6, 2025, §§III(h)–(p), IV",
+    "url": "https://www.mass.gov/doc/2021-02-shared-pharmacy-service-models-including-central-fill-remote-processing-and-telepharmacy-pdf/download",
+    "verified": "2026-11-17",
+    "note": "Central fill/remote processing is NOT outsourcing accountability. All participating pharmacies share liability, retain traceable audit logs, notify retail patients/opt out, and jointly review procedures annually."
+  },
+  {
+    "id": "E30-196",
+    "set": 40,
+    "area": 1,
+    "kind": "single",
+    "topicKey": "technician-scope",
+    "topic": "Technician licensure: drug-related felony eligibility versus other Board discretion",
+    "stem": "A 25-year-old applicant for an initial Massachusetts pharmacy technician license has completed a Board-approved training path, passed the applicable assessment and has no problem with age or education. The disclosed court record establishes that the applicant previously ADMITTED TO SUFFICIENT FACTS WARRANTING A FINDING OF GUILTY to a DRUG-RELATED FELONY; the criminal case was continued without a formal guilty verdict. The applicant argues that the absence of a conviction makes this record irrelevant. What is the MOST accurate assessment of the stated eligibility condition?",
+    "choices": [
+      {
+        "text": "The applicant satisfies 247 CMR 8.02(3)(d) because a drug-related offense matters only after a formally entered guilty verdict.",
+        "why": "Incorrect. The text expressly covers both conviction of a drug-related felony AND an admission to sufficient facts warranting such a finding. Absence of a formal judgment does not automatically satisfy that condition."
+      },
+      {
+        "text": "The applicant is barred from every type of Massachusetts professional license forever, without any need to read the relevant profession's rule.",
+        "why": "Incorrect. The question concerns the specific pharmacy technician eligibility condition in 247 CMR 8.02, not an automatic permanent prohibition from every health profession."
+      },
+      {
+        "text": "The applicant does not meet the express pharmacy technician application condition under 247 CMR 8.02(3)(d); the Board must evaluate the disclosed record under the applicable legal standards rather than treating it as irrelevant.",
+        "why": "Correct. The technician application rule expressly requires that an applicant not have been convicted of a drug-related felony OR admitted to sufficient facts to warrant such findings. The problem asks about satisfying that stated condition, not about speculative later relief or a blanket rule for unrelated arrests."
+      },
+      {
+        "text": "The applicant may conceal the admission and file a clean application because Board suitability review covers only paid work history.",
+        "why": "Incorrect. An applicant must not provide false information on licensure materials. Concealment does not cure an express eligibility issue and can introduce independent professional-conduct concerns."
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "citation": "247 CMR 8.02(3)(a)–(e), Pharmacy Technicians: application eligibility including drug-related felony conviction OR admission to sufficient facts; 247 CMR 10.03(1)(p) false information",
+    "url": "https://www.mass.gov/doc/247-cmr-8-pharmacy-interns-and-technicians/download",
+    "verified": "2026-11-17",
+    "note": "For technician APPLICATIONS, the rule explicitly names admissions to sufficient facts for a drug-related felony; do not misapply it as an automatic bar for any arrest or any misdemeanor."
+  },
+  {
+    "id": "E30-197",
+    "set": 40,
+    "area": 2,
+    "kind": "multi",
+    "topicKey": "institutional-pharmacy-practice",
+    "topic": "Hospital inpatient and outpatient classification versus private-physician office patients",
+    "stem": "A Massachusetts hospital maintains a properly registered hospital pharmacy but no separately licensed open-to-public retail drug-store pharmacy. Its pharmacist receives four otherwise valid medication requests. Each is for a routine drug in a quantity allowed for the patient class; there is no emergency-department, discharge, sole-community-hospital nursing-facility or other special exception. Under 105 CMR 722.020 and 722.090(A), which requests fall within the ordinary hospital-pharmacy patient categories? SELECT ALL THAT APPLY.",
+    "choices": [
+      {
+        "text": "A medication order for a patient formally admitted for overnight care in the hospital.",
+        "why": "Correct. A formally admitted hospital inpatient is expressly within 105 CMR 722.090(A), and 722.020 defines the inpatient class."
+      },
+      {
+        "text": "An ordinary prescription for a person who visits a physician's PRIVATE office located inside the hospital building but is not registered as a hospital clinic outpatient.",
+        "why": "Incorrect. Under the definition in 105 CMR 722.020, an individual seen in a private physician office is NOT deemed a hospital outpatient merely because that office is physically inside the hospital."
+      },
+      {
+        "text": "A prescription for a patient formally registered in the hospital's outpatient department and currently receiving treatment at the hospital's specialty clinic.",
+        "why": "Correct. Hospital outpatient status in 105 CMR 722.020 requires formal registration and current services at a hospital clinic. Section 722.090(A) permits hospital pharmacy prescriptions for hospital outpatients."
+      },
+      {
+        "text": "A walk-in community resident with a prescription from an independent outside practice who has no hospital patient or employee relationship.",
+        "why": "Incorrect. A general community walk-in who fits none of 722.090(A)'s groups does not become a hospital patient because the facility has an in-house pharmacy; ordinary retail dispensing requires a distinct lawful route."
+      }
+    ],
+    "correct": [
+      "A",
+      "C"
+    ],
+    "citation": "105 CMR 722.020 definitions Hospital Inpatient and Hospital Outpatient; 105 CMR 722.090(A), Hospital Pharmacies; separate emergency/discharge 722.090(B) not invoked",
+    "url": "https://www.mass.gov/doc/105-cmr-722-dispensing-procedures-for-clinic-and-hospital-pharmacies/download",
+    "verified": "2026-11-17",
+    "note": "Hospital outpatient means currently treated AND formally registered at a hospital clinic, not merely anyone seen in a private office in the building. Ordinary hospital pharmacy serves qualifying inpatient/outpatient/employee classes."
+  },
+  {
+    "id": "E30-198",
+    "set": 40,
+    "area": 2,
+    "kind": "single",
+    "topicKey": "cdtm-patient-practice",
+    "topic": "Hospital CDTM agreement: medical executive committee or designee approval",
+    "stem": "A licensed Massachusetts hospital pharmacist and an authorized supervising physician draft a written collaborative drug therapy management (CDTM) agreement to adjust inpatient anticoagulant therapy under approved protocols. The pharmacist has satisfied all professional CDTM eligibility requirements and the proposed agreement includes required protocol/supervision safeguards. The physician and pharmacist have both signed, but the HOSPITAL MEDICAL STAFF EXECUTIVE COMMITTEE (or its designee) has not approved the hospital program. Which assessment is BEST?",
+    "choices": [
+      {
+        "text": "The physician's signature alone is sufficient for hospital CDTM because medical staff executive committee approval is a rule only for community pharmacies.",
+        "why": "Incorrect. Hospital CDTM is a specifically listed practice setting requiring approval by the medical staff executive committee or designee in addition to otherwise compliant supervising-physician arrangements."
+      },
+      {
+        "text": "The hospital may proceed if a community pharmacy somewhere in the health system has a Board-recognized CDTM agreement.",
+        "why": "Incorrect. A separate community site's protocol does not substitute for the hospital-specific setting approval required by Massachusetts CDTM rules."
+      },
+      {
+        "text": "The pharmacist must instead apply the community CDTM rule requiring an adult community-patient referral to cure the missing hospital committee approval.",
+        "why": "Incorrect. Community-specific patient eligibility/referral mechanics are not a replacement for the institutional practice-setting approval mechanism. The institutional agreement must meet its own rules."
+      },
+      {
+        "text": "Obtain approval by the hospital medical staff executive committee or authorized designee before operating under the hospital CDTM agreement, along with all other applicable requirements.",
+        "why": "Correct. 247 CMR 16.03(4)(a) (and parallel physician regulation) makes licensed hospital CDTM subject to approval by the medical staff executive committee or designee. The signatures and professional qualifications do not replace institutional approval."
+      }
+    ],
+    "correct": [
+      "D"
+    ],
+    "citation": "247 CMR 16.03(4)(a), CDTM practice-setting requirements (hospital medical staff executive committee or designee approval); 243 CMR 2.12(4)(a) parallel medical-board requirements",
+    "url": "https://www.mass.gov/doc/247-cmr-16-collaborative-drug-therapy-management/download",
+    "verified": "2026-11-17",
+    "note": "Hospital CDTM approval is distinct from a retail/community patient-referral/consent question: the licensed hospital's medical staff executive committee or designee must approve the hospital setting."
+  },
+  {
+    "id": "E30-199",
+    "set": 40,
+    "area": 3,
+    "kind": "multi",
+    "topicKey": "rx-amendments",
+    "topic": "New Schedule II prescription corrections: missing identifier versus forbidden name/signature change",
+    "stem": "A Massachusetts pharmacist receives four SEPARATE new Schedule II prescriptions, each otherwise valid and clinically appropriate. In each case the pharmacist has verified the underlying information, has documented the proposed change with the date and pharmacist identity, and no federal law imposes a stricter special rule. The prescriber is not available for consultation. Under Massachusetts Board/DCP Joint Policy 2018-01, which actions may be taken AS STATED without contacting the prescriber? SELECT ALL THAT APPLY.",
+    "choices": [
+      {
+        "text": "ADD a patient's previously omitted street address to a correctly identified patient's new Schedule II prescription, after confirming the address.",
+        "why": "Correct. Joint Policy 2018-01 §III(A)(i)(c)(i) expressly permits adding a missing patient address without consultation; CHANGING an existing patient address is different."
+      },
+      {
+        "text": "CHANGE the named patient to a different individual after the family explains that the prescriber selected the wrong chart.",
+        "why": "Incorrect. Section II(A) says the patient's name cannot be changed to a DIFFERENT patient on prescriptions in Schedules II–VI; a new prescription is required, even if the explanation is credible."
+      },
+      {
+        "text": "ADD the correctly verified omitted prescriber's DEA registration number without calling the prescriber, with the change properly documented.",
+        "why": "Correct. Section III(A)(i)(d) expressly allows addition of the prescriber's DEA number without consultation; the professional must still verify the number and legality of the prescription."
+      },
+      {
+        "text": "ADD a missing prescriber signature based only on an office printout or a telephone assurance by a technician.",
+        "why": "Incorrect. Under Joint Policy 2018-01 §II(D), a prescriber's signature may NEVER be changed or added through the permitted-correction policy; a new valid prescription is required."
+      }
+    ],
+    "correct": [
+      "A",
+      "C"
+    ],
+    "citation": "Joint Board/Drug Control Program Policy 2018-01, Permitted Prescription Changes and Additions, §§II(A),(D), III(A)(i)(c)–(d), IV, revised through August 1, 2019; 21 CFR 1306.05",
+    "url": "https://www.mass.gov/doc/joint-policy-2018-01-permitted-prescription-changes-and-additions/download",
+    "verified": "2026-11-17",
+    "note": "New Schedule II: a MISSING patient address or verified DEA number can be added without prescriber call, with documentation; changing patient identity or adding an omitted prescriber signature is prohibited."
+  },
+  {
+    "id": "E30-200",
+    "set": 40,
+    "area": 4,
+    "kind": "single",
+    "topicKey": "nonresident-pharmacy-licensing",
+    "topic": "Out-of-state conventional Schedule VI delivery and Massachusetts nonresident license",
+    "stem": "A licensed Rhode Island community pharmacy, with no Massachusetts physical premises, intends to ship only ordinary noncompounded lisinopril and amlodipine prescriptions to Massachusetts residential addresses. Its home-state pharmacy license is active, it holds any necessary Rhode Island registrations, and it does NOT compound sterile or complex nonsterile medicines. Management claims no Massachusetts registration is needed because these are not DEA-scheduled products. What is the required Massachusetts licensing approach BEFORE dispensing/shipping to those Massachusetts patients?",
+    "choices": [
+      {
+        "text": "No Massachusetts pharmacy license, because federal nonscheduled prescriptions can never be Massachusetts controlled substances.",
+        "why": "Incorrect. Massachusetts defines ordinary prescription drugs such as these as state Schedule VI controlled substances; MA nonresident pharmacy licensing applies regardless of their absence from federal DEA Schedules II–V."
+      },
+      {
+        "text": "Obtain the Massachusetts nonresident Drug Store Pharmacy license required by 247 CMR 6.02(4); specialized sterile/complex nonsterile compounding endorsements are not needed for the stated conventional drugs.",
+        "why": "Correct. 247 CMR 6.02(4) prohibits an out-of-state pharmacy from dispensing or shipping ANY Massachusetts controlled substance into the Commonwealth without a nonresident Drug Store Pharmacy license. State Schedule VI is included. Specialty compounding licenses are conditional on actual compounding type."
+      },
+      {
+        "text": "Obtain a Massachusetts sterile compounding pharmacy license but not a nonresident Drug Store Pharmacy license, because a shipping service counts as sterile preparation.",
+        "why": "Incorrect. The pharmacy is shipping conventional manufactured oral tablets; transporting the product does not itself constitute sterile compounding or replace the required nonresident Drug Store Pharmacy license."
+      },
+      {
+        "text": "Only register the Rhode Island pharmacy technician staff with the Massachusetts Board, then ship without licensing the pharmacy premises.",
+        "why": "Incorrect. Individual technician credentials do not license the out-of-state pharmacy facility to dispense/ship Massachusetts controlled substances."
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "citation": "247 CMR 6.02(4)–(6), License Requirements; 105 CMR 700.002 definition and Massachusetts Schedule VI; 2025 Massachusetts nonresident pharmacy registration requirements",
+    "url": "https://www.mass.gov/doc/247-cmr-6-licensure-of-pharmacies/download",
+    "verified": "2026-11-17",
+    "note": "Ordinary federal-noncontrolled prescription drugs are Massachusetts Schedule VI. Shipping them from another state requires a MA NONRESIDENT Drug Store Pharmacy license; specialty licenses depend on compounding."
+  },
+  {
+    "id": "E30-201",
+    "set": 41,
+    "area": 1,
+    "kind": "single",
+    "topicKey": "board-discipline",
+    "topic": "Falsification of CE records during a pharmacy licensure audit",
+    "stem": "A Massachusetts pharmacist receives a legitimate Board request to provide continuing-education records supporting the pharmacist's recent license renewal. The pharmacist discovers a documented CE deficiency and deliberately edits a completion certificate to show credits never earned, then submits the altered certificate to the Board. No patient has yet been harmed and the pharmacist later completes additional authentic education. Under 247 CMR 10.03, which statement is MOST accurate?",
+    "choices": [
+      {
+        "text": "The deliberate fabrication is an independent potential disciplinary ground for deceit/fraud and false licensure-related information; later education and lack of proven patient injury do not make it permissible.",
+        "why": "Correct. 247 CMR 10.03(1)(l) covers conduct capable of deceiving or defrauding, and §10.03(1)(p)/(o) covers false renewal information/fraudulent procurement; the Board need not first establish patient harm from a particular dispensing error."
+      },
+      {
+        "text": "The Board may act only if a patient can demonstrate financial damages caused by the forged certificate.",
+        "why": "Incorrect. Board disciplinary grounds cover deceit and fraudulent license-renewal representations independent of a civil damages claim or actual patient injury."
+      },
+      {
+        "text": "A certificate is automatically accurate if the pharmacist later earns an equal number of unrelated CE credits.",
+        "why": "Incorrect. Subsequent education does not retroactively make a prior false attestation or fabricated dated certificate truthful."
+      },
+      {
+        "text": "The Board must accept the certificate because it has no authority to request or review renewal/CE documentation.",
+        "why": "Incorrect. Massachusetts CE rules require supporting records, and the Board has statutory/regulatory authority to inspect documentation and take action on dishonest license-renewal submissions."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "citation": "247 CMR 10.03(1)(l),(o),(p), Grounds for Discipline; 247 CMR 4.00 continuing education documentation; M.G.L. c.112 §61",
+    "url": "https://www.mass.gov/doc/247-cmr-10-disciplinary-proceedings/download",
+    "verified": "2026-11-17",
+    "note": "CE insufficiency and knowingly submitting FAKE CE proof are different violations. A fabricated Board submission itself creates a disciplinary basis without a separate injured patient."
+  },
+  {
+    "id": "E30-202",
+    "set": 41,
+    "area": 2,
+    "kind": "single",
+    "topicKey": "drug-integrity",
+    "topic": "FDA 2026 DSCSA small-dispenser relief does not waive suspect-product quarantine",
+    "stem": "On NOVEMBER 17, 2026, a Massachusetts pharmacy owned by a company with only 14 full-time licensed pharmacists/qualified pharmacy technicians receives a prescription-drug carton with signs of tampering and an unexpectedly altered product identifier. The pharmacist has a credible reason to believe the carton is a SUSPECT PRODUCT. Management cites FDA's August 6, 2026 small-dispenser exemption notice, extending certain electronic tracing requirements through November 27, 2027, and asks that the product be dispensed immediately. What is the best response?",
+    "choices": [
+      {
+        "text": "Dispense the carton, since FDA's DSCSA notice waives every requirement in section 582 for any pharmacy with 25 or fewer full-time pharmacy professionals.",
+        "why": "Incorrect. FDA's August 2026 notice identifies limited specific exemptions from §582(g)(1) and certain §582(d)(4) identifier checks; it explicitly does NOT waive other section 582 duties, including the initial quarantine/investigation obligation for a suspect product."
+      },
+      {
+        "text": "Hold the carton only after FDA individually denies the pharmacy's exemption application; all smaller pharmacies must file a waiver request first.",
+        "why": "Incorrect. FDA's published class exemption does not require individual submission; suspected-product response is a separate statutory duty and is not delayed until FDA answers a waiver application."
+      },
+      {
+        "text": "Quarantine the suspect product, investigate as required, follow applicable notification and disposition duties if it proves illegitimate, and do not treat the electronic-tracing exemption as permission to dispense it.",
+        "why": "Correct. FD&C Act §582(d)(4)(A)(i) requires quarantining and investigating suspect product. FDA's Aug. 6, 2026 notice expressly states that its relief is limited to named requirements and does not apply to other §582 obligations. The 2024 relief still applies through Nov. 27, 2026, with the announced successor interval thereafter."
+      },
+      {
+        "text": "Ship the carton back to the wholesaler without recording the suspect-product investigation because returns are exempt from all DSCSA verification duties.",
+        "why": "Incorrect. Merely returning a suspicious package without following the statutory suspect-product verification and disposition process is not justified by the exemption. A return may occur only through the lawful response process."
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "citation": "FD&C Act §582(d)(4)(A)(i) (21 U.S.C. §360eee-1(d)(4)); FDA August 6, 2026 'DSCSA Exemptions from Certain Requirements ... Until November 27, 2027' (pp.1–3); FDA 2024 small-dispenser exemption remains applicable to Nov. 27, 2026",
+    "url": "https://www.fda.gov/media/194424/download",
+    "verified": "2026-11-17",
+    "note": "FDA small-dispenser relief is narrow. 2024 relief lasts until Nov. 27, 2026; announced 2026 extension addresses certain identifier and electronic-tracing requirements through Nov. 27, 2027, not suspect-product quarantine."
+  },
+  {
+    "id": "E30-203",
+    "set": 41,
+    "area": 2,
+    "kind": "multi",
+    "topicKey": "privacy-part2",
+    "topic": "2026 Part 2 disclosures: TPO downstream use versus distinct SUD counseling-note consent",
+    "stem": "A federally assisted Massachusetts addiction treatment program is subject to 42 CFR Part 2. The patient signed one valid consent authorizing future treatment, payment and health care operations (TPO) disclosures of ordinary Part 2 records to a HIPAA-covered receiving hospital. Separately, the program's clinician keeps analytical SUD COUNSELING NOTES apart from the ordinary medical record, and the patient has NOT consented to disclosure of those separate notes. A prosecutor also asks for Part 2 records to investigate the patient; no Part 2 qualifying court order or specific judicial-use consent exists. Under the Part 2 rule whose compliance deadline was February 16, 2026, which statements are correct? SELECT ALL THAT APPLY.",
+    "choices": [
+      {
+        "text": "The receiving HIPAA-covered hospital may generally redisclose ordinary Part 2 records obtained under the valid TPO consent as HIPAA permits, subject to Part 2's distinct limits on using records against the patient.",
+        "why": "Correct. Under the 2024 final Part 2 rule, compliant by Feb. 16, 2026, TPO consent can cover future TPO disclosure, and HIPAA-covered recipients may further use/redisclose within HIPAA allowances; this does not remove the proceeding-against-patient safeguard."
+      },
+      {
+        "text": "The ordinary TPO consent automatically authorizes release of the clinician's separately kept SUD counseling notes for all future treatment and insurance activities.",
+        "why": "Incorrect. HHS's final rule expressly protects separately maintained SUD counseling notes and requires specific, separate patient consent; a broad ordinary TPO consent is not enough."
+      },
+      {
+        "text": "The prosecutor may demand identifying Part 2 treatment records for a case against this patient merely because HIPAA ordinarily permits some law-enforcement disclosures.",
+        "why": "Incorrect. Part 2 maintains a special protection against using such records in legal proceedings against a patient without appropriate consent or a qualifying court order and required legal process."
+      },
+      {
+        "text": "The patient can file a Part 2 privacy complaint with HHS OCR, and the program must respect the rule's privacy notice and individual-rights requirements.",
+        "why": "Correct. HHS's updated Part 2 guidance explicitly adds a right to complain to OCR beginning Feb. 16, 2026, together with notice and privacy protections. Such rights do not depend on the patient proving a separate HIPAA violation."
+      }
+    ],
+    "correct": [
+      "A",
+      "D"
+    ],
+    "citation": "42 CFR Part 2 (2024 Final Rule compliance February 16, 2026), especially separate SUD counseling-note consent and HIPAA-recipient TPO redisclosure; HHS Fact Sheet updated January 30, 2026",
+    "url": "https://www.hhs.gov/hipaa/for-professionals/regulatory-initiatives/fact-sheet-42-cfr-part-2-final-rule/index.html",
+    "verified": "2026-11-17",
+    "note": "Single TPO consent does NOT cover separately maintained SUD counseling notes, or let investigators bypass special Part 2 proceeding protections. HIPAA-covered TPO recipients can generally redisclose as HIPAA permits."
+  },
+  {
+    "id": "E30-204",
+    "set": 41,
+    "area": 3,
+    "kind": "single",
+    "topicKey": "otc-pseudoephedrine",
+    "topic": "CMEA in-person pseudoephedrine sale: photo identification, required buyer logbook signature",
+    "stem": "A DEA-self-certified Massachusetts pharmacy with trained personnel proposes an ordinary in-person OTC sale of a MULTI-DOSE pseudoephedrine package containing much more than 60 mg of pseudoephedrine base. The buyer is over 18, presents acceptable government-issued photo identification, and is under both federal quantity limits. The seller properly enters product and quantity data in an electronic CMEA logbook, but the buyer refuses to SIGN or electronically attest to the required purchaser entry. No state-specific exception applies. What should the pharmacist direct?",
+    "choices": [
+      {
+        "text": "Complete the transaction because satisfying the gram limits replaces the buyer's signature requirement.",
+        "why": "Incorrect. Federal weight limits and identity/logbook requirements are separate. The absence of an over-limit purchase does not eliminate the purchaser-signature obligation."
+      },
+      {
+        "text": "Have the technician sign as the purchaser, since the store has already authenticated the buyer's photo ID.",
+        "why": "Incorrect. A seller may enter factual log data subject to verification, but cannot substitute the employee's signature for the purchaser's required signature or attestation."
+      },
+      {
+        "text": "Apply the single-package 60-mg logbook exception to any product sold in one box, regardless of pseudoephedrine content.",
+        "why": "Incorrect. 21 CFR 1314.30(a)'s narrow exception applies to a single SALES PACKAGE containing no more than 60 milligrams of pseudoephedrine, not every single box. The question explicitly excludes that threshold."
+      },
+      {
+        "text": "Do not complete the sale until the purchaser supplies the required signature/attestation and the other 21 CFR 1314.30 conditions are met.",
+        "why": "Correct. Under 21 CFR 1314.30(b), the purchaser generally must present acceptable photo ID and sign the written/electronic logbook. The 60-mg single-package exception does not apply to the stated multi-dose package."
+      }
+    ],
+    "correct": [
+      "D"
+    ],
+    "citation": "21 CFR 1314.30(a)–(d), Combat Methamphetamine Epidemic Act (CMEA): purchaser identification, signed logbook and 60-mg single-package exception; 21 CFR 1314.40 retailer certification",
+    "url": "https://www.ecfr.gov/current/title-21/chapter-II/part-1314/section-1314.30",
+    "verified": "2026-11-17",
+    "note": "CMEA sale compliance is not only 3.6-g/9-g limits: for ordinary OTC pseudoephedrine the buyer needs acceptable ID and a SIGNED logbook; a single package is not automatically the ≤60-mg exception."
+  },
+  {
+    "id": "E30-205",
+    "set": 41,
+    "area": 4,
+    "kind": "multi",
+    "topicKey": "federal-compounding-models",
+    "topic": "503B outsourcing: FDA CGMP, mandatory Massachusetts registration, inspections and adverse reports",
+    "stem": "A corporation operates a facility that compounds and distributes sterile drugs without having prescriptions for each identified patient. It elects FDA outsourcing-facility status under FD&C Act §503B and wants to ship these compounded preparations into Massachusetts. It is not a Massachusetts-licensed retail pharmacy and does not claim any temporary exception. The chief executive proposes the following compliance interpretations. Which are legally supported? SELECT ALL THAT APPLY.",
+    "choices": [
+      {
+        "text": "FDA §503B registration alone automatically authorizes shipment into Massachusetts without any Massachusetts outsourcing facility registration.",
+        "why": "Incorrect. FDA §503B registration is a federal pathway; 247 CMR 21.04 separately requires a Massachusetts NONRESIDENT outsourcing facility registration when the facility is outside the Commonwealth."
+      },
+      {
+        "text": "Properly registered §503B outsourcing facilities remain subject to FDA CGMP standards and applicable FDA adverse-event/product reporting requirements.",
+        "why": "Correct. 503B does NOT exempt compounded drugs from CGMP; FDA expressly states outsourcing facilities must report adverse events and required product information, alongside federal registration and inspections."
+      },
+      {
+        "text": "A corporation can treat any FDA-registered facility as FDA-approved, so the compounded products require no independent quality review.",
+        "why": "Incorrect. FDA makes clear §503B registration is not FDA product approval or a determination of CGMP compliance. Each facility's quality/compliance requires appropriate review."
+      },
+      {
+        "text": "An out-of-state §503B facility supplying Massachusetts must satisfy the state's separate nonresident outsourcing registration pathway, including proof of valid current FDA outsourcing registration.",
+        "why": "Correct. 247 CMR 21.04 and 21.05 require specific state registration and continuing current FDA status for nonresident outsourcing facilities; federal enrollment does not displace state oversight."
+      }
+    ],
+    "correct": [
+      "B",
+      "D"
+    ],
+    "citation": "FD&C Act §503B (21 U.S.C. §353b); 247 CMR 21.04 and 21.05 (Massachusetts nonresident outsourcing facility registration); FDA Information for Outsourcing Facilities, CGMP/adverse events",
+    "url": "https://www.mass.gov/doc/247-cmr-21-registration-of-outsourcing-facilities/download",
+    "verified": "2026-11-17",
+    "note": "503B facility registration with FDA does not constitute product approval or substitute for 247 CMR 21 nonresident registration. CGMP and FDA adverse-event reporting still apply."
   }
 ];
