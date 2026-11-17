@@ -7359,5 +7359,890 @@ window.MPJE_CH30_QUESTIONS = [
     "verified": "2026-11-17",
     "note": "18 CFU ISO5 triggers action (>1 CFU) and significant loss (>15 CFU); reporting, recall and subsequent risk-based re-entry requirements.",
     "revision": 2
+  },
+  {
+    "id": "E30-216",
+    "set": 44,
+    "area": 1,
+    "kind": "multi",
+    "topic": "Civil pharmacy negligence: limited prior-authorization notice duty versus Board discipline",
+    "topicKey": "board-discipline",
+    "stem": "A Massachusetts pharmacy repeatedly receives a valid antiseizure prescription, but the patient's insurer requires prior authorization (PA). Staff know that the patient risks an interruption of essential treatment. They tell the patient only that there is an 'insurance problem' and do not inform the prescriber that a PA is required. Based on the Massachusetts Supreme Judicial Court's pharmacy-negligence decisions, which statements are correct? SELECT ALL THAT APPLY.",
+    "choices": [
+      {
+        "text": "The pharmacy must guarantee approval of the insurance authorization and keep contacting the prescriber until the prescriber confirms receiving every message.",
+        "why": "Incorrect. Correa expressly rejected an open-ended duty to ensure that the physician received and acted on a PA request; the duty is to take reasonable notification steps, not to guarantee insurer coverage or prescriber response."
+      },
+      {
+        "text": "A pharmacy may owe a limited duty to take reasonable steps to notify BOTH the patient and prescriber that prior authorization is needed.",
+        "why": "Correct. In Correa v. Schoeck, 479 Mass. 686 (2018), the SJC recognized a limited duty to take reasonable steps to notify the patient and prescribing clinician of a PA barrier at each attempted fill; no universal duty to obtain the insurer's approval was imposed."
+      },
+      {
+        "text": "Once an insurer rejects a claim, Massachusetts law categorically eliminates any pharmacy duty to communicate the reason to a patient or prescriber.",
+        "why": "Incorrect. The specific PA communication duty recognized in Correa is a counterexample. A payment rejection is not an automatic blanket exemption from reasonable patient/prescriber notice, particularly where a serious treatment gap is known."
+      },
+      {
+        "text": "A civil negligence duty does not require a prior formal Board disciplinary order; proving civil liability still requires the applicable elements, including breach, causation, and injury.",
+        "why": "Correct. Civil negligence and professional license discipline are separate processes. The SJC's limited duty analysis does not depend on a Board conviction, but proving duty alone does not establish compensable negligence without breach and injury caused by it."
+      }
+    ],
+    "correct": [
+      "B",
+      "D"
+    ],
+    "citation": "Correa v. Schoeck, 479 Mass. 686, 694–702 (2018); Cottam v. CVS Pharmacy, 436 Mass. 316, 319–326 (2002); distinguish 247 CMR 10.03 Board discipline",
+    "url": "https://law.justia.com/cases/massachusetts/supreme-court/volumes/479/479mass686.html",
+    "verified": "2026-11-17",
+    "revision": 1,
+    "note": "Novelty vs E30-096/101/161/201: asks about a specific MA Supreme Judicial Court civil duty in insurance PA communication, not automatic Board sanction; original exam-style case, not recalled content."
+  },
+  {
+    "id": "E30-217",
+    "set": 44,
+    "area": 2,
+    "kind": "single",
+    "topic": "Limited-English-proficiency counseling: interpreter access and HIPAA",
+    "topicKey": "counseling-dur",
+    "stem": "A Massachusetts pharmacy is covered by Section 1557 because it receives qualifying HHS financial assistance. A patient who has limited English proficiency accepts counseling for a new medicine but cannot understand the pharmacist's English explanation. The pharmacy has immediate access to a qualified remote interpreter. What should it do?",
+    "choices": [
+      {
+        "text": "Provide qualified interpretation at no charge, counsel in a language the patient understands, and protect confidentiality throughout.",
+        "why": "Correct. 45 CFR 92.201 requires meaningful, timely, accurate, no-cost language assistance in covered health programs. An appropriate qualified interpreter can facilitate counseling while protecting confidentiality; HIPAA generally permits provider use of interpreters for treatment or health care operations."
+      },
+      {
+        "text": "Ask the patient's 12-year-old child to interpret as the default because a family member is always the preferred source of medical interpretation.",
+        "why": "Incorrect. Section 1557's language-access protections generally prohibit reliance on accompanying minors for interpreting except narrowly defined exigent circumstances; convenience and assumed fluency do not establish qualified medical interpretation."
+      },
+      {
+        "text": "Require the patient to pay for the remote interpreter before any counseling because the drug itself is covered by insurance.",
+        "why": "Incorrect. Section 1557's required language assistance must be free of charge to the individual with limited English proficiency. Drug insurance coverage does not transfer this accessibility cost to the patient."
+      },
+      {
+        "text": "Have any bilingual cashier translate clinical directions without checking competence or confidentiality, because fluent conversation automatically qualifies that employee as a medical interpreter.",
+        "why": "Incorrect. Qualified interpretation requires accuracy, impartiality, relevant terminology and privacy safeguards. Being conversationally bilingual is not a categorical substitute for qualified healthcare interpretation."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "citation": "45 CFR 92.201(a)–(c) (meaningful access; qualified language assistance); 45 CFR 164.506(c) (HIPAA TPO); HHS OCR Section 1557 language-access guidance",
+    "url": "https://www.hhs.gov/sites/default/files/ocr-dcl-section-1557-language-access.pdf",
+    "verified": "2026-11-17",
+    "revision": 1,
+    "note": "Tests LEP access and interpreter privacy, distinct from E30-003/092/137 delegation of counseling and alternative contact."
+  },
+  {
+    "id": "E30-218",
+    "set": 44,
+    "area": 2,
+    "kind": "single",
+    "topic": "Controlled substance office stock disguised as patient prescription",
+    "topicKey": "controlled-prescriptions",
+    "stem": "A DEA-registered physician sends a Schedule II oxycodone 'prescription' to a retail pharmacy listing the clinic as the patient and requesting 80 tablets for a shared cabinet. The physician intends to dispense doses later to whichever patients need them. No individual patient is named. What is the pharmacist's best response?",
+    "choices": [
+      {
+        "text": "Fill the order as a normal outpatient prescription because the physician has a DEA registration and will document each future patient later.",
+        "why": "Incorrect. A practitioner's valid DEA registration does not turn general office inventory into a patient-specific prescription. 21 CFR 1306.04(b) explicitly prohibits using an individual-practitioner prescription to obtain stock for future general dispensing."
+      },
+      {
+        "text": "Enter the doctor's own name as the patient and dispense, provided the doctor initials the pharmacy's stock log.",
+        "why": "Incorrect. Relabeling the clinic's planned office stock as a personal prescription would not create a legitimate patient-specific order. Documented intent still remains supply for general office dispensing."
+      },
+      {
+        "text": "Dispense it if the practice promises to provide patient names at month's end, because retrospective patient assignment satisfies 21 CFR 1306.05.",
+        "why": "Incorrect. A prescription must be legitimate at issuance and bear required patient information; a month-end accounting cannot retroactively convert a general stock replenishment into lawful patient-specific prescribing."
+      },
+      {
+        "text": "Do not fill it as a patient prescription. The clinic must acquire general stock through a lawful registrant ordering process.",
+        "why": "Correct. 21 CFR 1306.04(b) prohibits an individual practitioner issuing a controlled prescription to supply general dispensing stock. If the practitioner may lawfully acquire stock, that requires appropriate registrant purchasing or transfer processes rather than a disguised retail prescription."
+      }
+    ],
+    "correct": [
+      "D"
+    ],
+    "citation": "21 CFR 1306.04(a)–(b) (legitimate medical purpose; prohibition on Rx for office stock); 21 CFR 1306.05(a) (patient information); 21 CFR Part 1305 for qualifying Schedule II registrant orders",
+    "url": "https://www.ecfr.gov/current/title-21/chapter-II/part-1306/section-1306.04",
+    "verified": "2026-11-17",
+    "revision": 1,
+    "note": "Differs from E30-024 pharmacy-to-pharmacy five-percent distribution and E30-178 patient-specific red flags; physician is buying general office stock rather than treating a named patient."
+  },
+  {
+    "id": "E30-219",
+    "set": 44,
+    "area": 3,
+    "kind": "single",
+    "topic": "Poison Prevention Packaging Act: product exceptions versus patient waiver",
+    "topicKey": "label-packaging",
+    "stem": "A pharmacy dispenses (X) sublingual nitroglycerin tablets, (Y) a cyclic oral contraceptive in the manufacturer's mnemonic dispenser, and (Z) ordinary oral antibiotic tablets. The patient and prescribers have requested no conventional-container waiver. Which description follows the federal PPPA prescription-drug packaging provisions?",
+    "choices": [
+      {
+        "text": "All three products universally require child-resistant packaging because every drug taken by mouth is included with no exceptions.",
+        "why": "Incorrect. 16 CFR 1700.14(a)(10) expressly excepts specified products, including sublingual nitroglycerin and qualifying cyclic hormonal contraceptives in manufacturer mnemonic dispensers."
+      },
+      {
+        "text": "X and the qualifying Y are listed exemptions; Z ordinarily needs compliant special packaging unless a separate valid exception or consumer/prescriber request applies.",
+        "why": "Correct. Section 1700.14(a)(10)(i) exempts sublingual nitroglycerin; (iv) exempts certain cyclically administered contraceptives in manufacturers' mnemonic packages. An otherwise covered ordinary oral antibiotic remains subject to special-packaging requirements absent a valid exception."
+      },
+      {
+        "text": "Every package of any hormonal contraceptive is exempt, including loose tablets moved into an ordinary pharmacy vial regardless of the container.",
+        "why": "Incorrect. The cited cyclic contraceptive exception is tied to a qualifying manufacturer's mnemonic dispenser and specified hormone activity; it does not convert all repackaged contraceptive tablets into a blanket exemption."
+      },
+      {
+        "text": "A pharmacist may choose non-child-resistant packaging for Z based solely on convenience without an applicable statutory exemption or any patient/prescriber request.",
+        "why": "Incorrect. The pharmacist cannot unilaterally replace PPPA-compliant packaging simply for convenience. A qualifying request or specific product-based exception is needed under the PPPA."
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "citation": "16 CFR 1700.14(a)(10)(i),(iv) (special-packaging exemptions); 16 CFR 1701.1 and PPPA consumer/prescriber conventional-packaging requests; CPSC Healthcare Professional Guide (2023)",
+    "url": "https://www.ecfr.gov/current/title-16/chapter-II/subchapter-E/part-1700/section-1700.14",
+    "verified": "2026-11-17",
+    "revision": 1,
+    "note": "Unlike E30-029, tests expressly exempt product/package types rather than carrying forward a patient-specific child-resistant waiver."
+  },
+  {
+    "id": "E30-220",
+    "set": 44,
+    "area": 4,
+    "kind": "multi",
+    "topic": "DEA pharmacy closure/ownership transfer: registration and controlled-stock records",
+    "topicKey": "controlled-inventory",
+    "stem": "A Massachusetts DEA-registered pharmacy is being acquired by a different legal owner, which will operate under its own appropriate DEA authority. The outgoing registrant will discontinue its controlled-substance business by transferring remaining stock, including Schedule II medications, to the buyer. No DEA Special Agent in Charge waiver of advance notice applies. Which steps meet 21 CFR 1301.52? SELECT ALL THAT APPLY.",
+    "choices": [
+      {
+        "text": "Send the required transfer information to the DEA Special Agent in Charge at least 14 days before the proposed controlled-stock business transfer, absent an individual waiver.",
+        "why": "Correct. Under 21 CFR 1301.52(d), a registrant discontinuing controlled business by transferring stock to another person generally submits prescribed information to the local Special Agent in Charge at least 14 days in advance unless this period is waived."
+      },
+      {
+        "text": "Skip the transfer-date inventory because the seller's annual accounting statement already lists the acquisition price of all narcotics.",
+        "why": "Incorrect. A financial asset valuation does not replace the mandatory complete controlled-substance inventory required at the transfer, nor does it satisfy the required registrant records."
+      },
+      {
+        "text": "Take a complete inventory on the transfer date serving as the seller's final and buyer's initial inventory, preserve copies for both parties, and use DEA Form 222 or authorized electronic ordering for Schedule II transfers.",
+        "why": "Correct. Section 1301.52(d)(1)-(2) uses the on-transfer inventory for both registrants and directs Schedule I–II transfers to Part 1305 order forms, in addition to transferring the required controlled-substance records."
+      },
+      {
+        "text": "Continue indefinitely using the seller's DEA registration at the new entity solely because the pharmacy name and Manager of Record did not change.",
+        "why": "Incorrect. Under §1301.52(a)-(b), DEA registration does not automatically transfer to a different legal registrant. DEA authority must independently support the acquiring registrant's operations; name or MOR continuity is not a substitute."
+      }
+    ],
+    "correct": [
+      "A",
+      "C"
+    ],
+    "citation": "21 CFR 1301.52(a)–(b),(d)(1)–(2); 21 CFR 1304.11 (inventory); 21 CFR Part 1305 (Schedule II orders); 247 CMR 6.11 (separate MA pharmacy ownership process)",
+    "url": "https://www.ecfr.gov/current/title-21/chapter-II/part-1301/section-1301.52",
+    "verified": "2026-11-17",
+    "revision": 1,
+    "note": "Novel DEA final/initial inventory and 14-day business-transfer reporting compared with E30-065 MA facility licensing and E30-180 reverse distributor destruction."
+  },
+  {
+    "id": "E30-221",
+    "set": 45,
+    "area": 1,
+    "kind": "single",
+    "topic": "Technician immunization authorization: biennial continuing training",
+    "topicKey": "technician-scope",
+    "stem": "A Massachusetts licensed, nationally certified pharmacy technician completed the full initial vaccine-administration training and on-the-job skills assessment in 2023. The technician has current CPR certification and remains otherwise qualified, but completed NO immunization-related CE or updated training in the last three years. The pharmacy plans to assign vaccines tomorrow. What requirement must be addressed first under revised Board Policy 2023-02?",
+    "choices": [
+      {
+        "text": "Repeat an entire new 1,500-hour pharmacy technician trainee experience because immunization authorization always expires after two years.",
+        "why": "Incorrect. Policy 2023-02 establishes a biennial immunization education/update requirement, not an automatic reset of the technician licensure/training-employment pathway after two years."
+      },
+      {
+        "text": "No additional training is necessary while national certification and CPR remain active, because vaccine training is permanently valid once completed.",
+        "why": "Incorrect. National technician certification and CPR are separate prerequisites. The policy expressly adds periodic immunization-specific education or updated training regardless of those other credentials."
+      },
+      {
+        "text": "Complete at least two hours of immunization-related continuing education or updated training during the required two-year cycle as a vaccinator.",
+        "why": "Correct. Revised Policy 2023-02, §III(D)(5), requires at least two hours of immunization-related continuing education or updated training every two years. The prior initial six-hour program and two on-the-job hours do not substitute for maintaining this ongoing requirement."
+      },
+      {
+        "text": "A supervising pharmacist may waive the biennial education entirely by reviewing the technician's last five administered vaccines.",
+        "why": "Incorrect. Supervising-pharmacist clinical oversight does not create an exception to the Board's specified two-hours-every-two-years requirement. Reviewing past injections alone is not the stated education or updated training."
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "citation": "Massachusetts Board Policy 2023-02, revised September 4, 2025, §III(D)(1)–(5): initial qualifications and two-hour immunization CE/updated training every two years",
+    "url": "https://www.mass.gov/doc/2023-02-vaccine-administration-pdf/download",
+    "verified": "2026-11-17",
+    "revision": 1,
+    "note": "Unlike E30-062/191, tests continued eligibility after initial training rather than 500 post-license work hours or vaccine selection."
+  },
+  {
+    "id": "E30-222",
+    "set": 45,
+    "area": 2,
+    "kind": "multi",
+    "topic": "Community CDTM: adding a different diagnosis to an individual referral",
+    "topicKey": "cdtm-patient-practice",
+    "stem": "A community pharmacist's current CDTM agreement includes protocols for hypertension and diabetes. One adult patient has signed informed consent, but the supervising physician's written patient-specific referral identifies HYPERTENSION only and no diabetes comorbidity. The patient asks the pharmacist to start diabetes drug therapy under the existing agreement. Which statements follow 247 CMR 16.03–16.04? SELECT ALL THAT APPLY.",
+    "choices": [
+      {
+        "text": "The supervising physician should include the patient's diabetes diagnosis in a valid written referral or subsequent referral before CDTM management of that added condition.",
+        "why": "Correct. Under 247 CMR 16.03(5)(c)(2), the supervising physician must specify each primary and secondary diagnosis in the written patient referral or a subsequent referral. Community-CDTM prescribing for comorbidities additionally must be authorized in the patient referral."
+      },
+      {
+        "text": "The pharmacist may start any diabetes drug listed in the general CDTM protocol solely because that disease appears in the agreement, even though it is absent from this patient's referral.",
+        "why": "Incorrect. The community pathway requires the physician's individual referral to specify the patient's primary and secondary diagnoses; a broad agreement listing diabetes does not automatically make the patient referred for that condition."
+      },
+      {
+        "text": "A new individual referral automatically permits the community pharmacist to initiate a Schedule III controlled medication whenever the physician agrees orally.",
+        "why": "Incorrect. The patient-specific referral cannot extend community CDTM prescribing beyond the authorized Schedule VI scope under 247 CMR 16.03(5), even when a physician is aware of the new condition."
+      },
+      {
+        "text": "The physician must obtain and record written informed consent for this collaboration, provide the patient a copy, and maintain the original consent while supplying the pharmacist a copy as required.",
+        "why": "Correct. Sections 16.03(5)(c)-(d) and 16.04(1) require patient-specific written informed consent and defined distribution/record custody. The physician retains the original and transmits a copy to the pharmacist within 24 hours."
+      }
+    ],
+    "correct": [
+      "A",
+      "D"
+    ],
+    "citation": "247 CMR 16.03(5)(c)(1)–(4),(d),(e)(1)(b)(ix),(e)(3)–(4); 247 CMR 16.04(1) (patient-specific referral/consent and community CDTM prescriptive limits)",
+    "url": "https://www.mass.gov/doc/247-cmr-16-collaborative-drug-therapy-management/download",
+    "verified": "2026-11-17",
+    "revision": 1,
+    "note": "Distinct from E30-036 diabetes dose modification already under a diabetes-specific referral; tests a new diagnosis absent from the individual referral."
+  },
+  {
+    "id": "E30-223",
+    "set": 45,
+    "area": 2,
+    "kind": "single",
+    "topic": "PDMA practitioner sample distribution versus retail-pharmacy resale",
+    "topicKey": "drug-integrity",
+    "stem": "A manufacturer proposes sending sealed 'Drug Sample — Not for Resale' packages by courier to a hospital pharmacy at the signed WRITTEN request of a physician licensed to prescribe the drug. The manufacturer verifies the physician's authority before shipment; a hospital recipient signs the required receipt, and the samples will be provided only under lawful practitioner sample procedures. Which assessment is most accurate?",
+    "choices": [
+      {
+        "text": "This hospital-practitioner sample route can be lawful, but the samples may not then become ordinary retail saleable stock or be used for pharmacy repackaging/compounding resale.",
+        "why": "Correct. Federal PDMA rules recognize the licensed-practitioner request and hospital-pharmacy recipient with documented receipt. Massachusetts 247 CMR 9.01(6) separately prohibits pharmacies accepting/purchasing samples for compounding, repacking, or reselling them."
+      },
+      {
+        "text": "The manufacturer must refuse because all shipment of drug samples to any pharmacy is forbidden, even when a physician has submitted the specific request allowed by federal law.",
+        "why": "Incorrect. 21 CFR 203.30–203.31 expressly permit qualifying manufacturer or authorized-distributor shipments to a hospital or other healthcare-entity pharmacy at a licensed practitioner's written request when verification, delivery receipt and other rules are met."
+      },
+      {
+        "text": "A hospital recipient can sell the samples to outpatients at full retail price as soon as the receipt is signed because the receipt converts the inventory to commercial product.",
+        "why": "Incorrect. The signed receipt provides required traceability and confirmation of sample delivery; it does not authorize selling products marked as drug samples not for resale."
+      },
+      {
+        "text": "Only a verbal promise by the physician is needed, and the supplier need not verify prescribing licensure or obtain a documented delivery receipt.",
+        "why": "Incorrect. 21 CFR 203.30(a) imposes an advance signed written request, verification of the requester's prescriptive authority, and a written recipient receipt returned to the manufacturer or distributor, among other requirements."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "citation": "21 CFR 203.30(a)(1)–(4),(b)–(c), 203.31(a) (PDMA drug sample requests and receipts); 247 CMR 9.01(6) (sample resale/compounding/repackaging restriction)",
+    "url": "https://www.ecfr.gov/current/title-21/chapter-I/subchapter-C/part-203/subpart-D/section-203.30",
+    "verified": "2026-11-17",
+    "revision": 1,
+    "note": "Unlike E30-132, which tests illegal pharmacy resale of samples, tests the authorized clinician-request sample supply chain and recipient records."
+  },
+  {
+    "id": "E30-224",
+    "set": 45,
+    "area": 3,
+    "kind": "single",
+    "topic": "Unfilled electronic CII transfer: direct licensed-pharmacist communication and electronic annotations",
+    "topicKey": "refills-transfers",
+    "stem": "A patient requests transfer of an UNFILLED electronic Schedule II prescription from Massachusetts retail Pharmacy A to another registered Massachusetts retail Pharmacy B. Both systems can transfer the original EPCS without altering any content. Pharmacy A instead proposes to print a PDF, email it to B's technician, and delete the old electronic record. Which procedure complies with Massachusetts Policy 2023-10 and 21 CFR 1306.08?",
+    "choices": [
+      {
+        "text": "A may send the printed PDF to a technician at B because the transfer remains electronically documented in an email attachment.",
+        "why": "Incorrect. Federal 21 CFR 1306.08(f)(1) requires an EPCS initial-fill transfer to stay in electronic prescription form; a PDF, email document or fax intermediary is not lawful conversion of that electronic prescription."
+      },
+      {
+        "text": "The certified technician at A can conduct the entire Schedule II transfer without pharmacist involvement when the pharmacies share a cloud platform.",
+        "why": "Incorrect. Section 1306.08(f)(3) requires communication directly between TWO licensed pharmacists for the controlled initial-fill transfer. Massachusetts technician authority for Schedule VI transfers does not extend to Schedule II EPCS."
+      },
+      {
+        "text": "A may delete the transmitting pharmacy's EPCS record after sending it once because DEA requires the receiving pharmacy alone to retain proof of the transfer.",
+        "why": "Incorrect. 21 CFR 1306.08(f)(4)-(h) requires specified annotations at both transferring and receiving pharmacies and retention of electronic transfer records by both for two years."
+      },
+      {
+        "text": "Transfer the intact electronic prescription directly between pharmacists and preserve the required transfer records at both sites.",
+        "why": "Correct. Massachusetts Policy 2023-10 adopts 21 CFR 1306.08(e)-(h) for unfilled Schedule II–V EPCS. The electronic prescription stays intact, both pharmacists communicate directly, required dates/DEA IDs/names are annotated and retained at both pharmacies."
+      }
+    ],
+    "correct": [
+      "D"
+    ],
+    "citation": "MA Board Policy 2023-10 I–II (Unfilled Prescriptions); 21 CFR 1306.08(e)–(h) (initial-fill EPCS transfer, documentation, retention); 247 CMR 9.14",
+    "url": "https://www.mass.gov/doc/2023-10-unfilled-prescriptions-pdf/download",
+    "verified": "2026-11-17",
+    "revision": 1,
+    "note": "Compared with E30-007 generic permission to transfer unfilled Rx, tests conversion prohibition, licensed-pharmacist actor, annotations and bilateral records."
+  },
+  {
+    "id": "E30-225",
+    "set": 45,
+    "area": 4,
+    "kind": "multi",
+    "topic": "After 2026 viable-air action result: repeat EM and normal BUD restoration",
+    "topicKey": "sterile-hazardous-compounding",
+    "stem": "A Massachusetts sterile-compounding pharmacy had an above-action-level VIABLE AIR result in its ISO 7 buffer room. It notified the Board and performed an RCA, appropriate remediation, CAPA and risk assessment; no nonviable particle excursion or additional Board restriction exists. The pharmacy now wants to return to ordinary beyond-use dates. Under Board Policy 2026-03, which actions are correct? SELECT ALL THAT APPLY.",
+    "choices": [
+      {
+        "text": "Immediately restore ordinary Category 2 BUDs after completing a deep clean, without microbiology results, because the original excursion was viable rather than nonviable.",
+        "why": "Incorrect. Under §IV(B)(2), restoration of standard BUDs depends on repeat EM falling below action levels; deep cleaning alone, particularly a sample collected immediately after cleaning, is not accepted proof of sustained control."
+      },
+      {
+        "text": "Perform repeat environmental monitoring based on the affected ISO-classified area and action-level type; re-sample ALL sampling locations in the affected ISO area at the same time.",
+        "why": "Correct. Policy 2026-03 §IV(B)(1) permits repeat EM focused on the affected classified area/type as supported by the monitoring plan, but requires all sampling locations within that affected area to be re-sampled simultaneously."
+      },
+      {
+        "text": "If proper remediation has occurred and repeat EM is below the policy's action levels, the pharmacy may resume its standard BUDs or compounding, as otherwise permitted.",
+        "why": "Correct. Policy §IV(B)(2) expressly allows restoration of standard BUDs or resumption of compounding when repeat EM is below action levels, subject to compliance with otherwise applicable sterile standards."
+      },
+      {
+        "text": "If repeat EM still exceeds the action level, it is sufficient to record a numerical improvement and ignore the Board's response and remediation requirements.",
+        "why": "Incorrect. Section IV(B)(3) sends repeated action-level results back to §III response duties. A smaller but still above-threshold CFU reading is not clearance and cannot automatically support normal BUDs."
+      }
+    ],
+    "correct": [
+      "B",
+      "C"
+    ],
+    "citation": "MA Board Policy 2026-03 §IV(A)–(C), especially IV(B)(1)–(3), Environmental Monitoring action level response (adopted September 3, 2026); USP <797> applicable EM standards",
+    "url": "https://www.mass.gov/doc/2026-03-action-level-environmental-monitoring-results/download",
+    "verified": "2026-11-17",
+    "revision": 1,
+    "note": "This asks how to establish successful remediation and RESTORE normal BUDs, rather than E30-160 initial ISO7 excursion treatment or E30-215 ISO5 18CFU initial recall. Board policy directly verified; subscribed USP full text not represented as accessed."
+  },
+  {
+    "id": "E30-226",
+    "set": 46,
+    "area": 1,
+    "kind": "single",
+    "topic": "Pharmacist continuing education audit: proof and retention",
+    "topicKey": "licensure-ce",
+    "stem": "A Massachusetts pharmacist earned three hours of qualifying non-ACPE professional education 18 months ago. Those credits do NOT appear in NABP CPE Monitor, and the Board requests proof during a random CE audit. The pharmacist has only a calendar entry showing the seminar title. Which action best addresses 247 CMR 4.06 and Board Policy 2021-04?",
+    "choices": [
+      {
+        "text": "Tell the Board that CPE Monitor is the only acceptable record and therefore the missing non-ACPE credit cannot be checked.",
+        "why": "Incorrect. Board Policy 2021-04 recognizes certain non-ACPE credits but requires the pharmacist to retain sufficient completion documentation when the education does not appear in CPE Monitor; the Board may request those records."
+      },
+      {
+        "text": "Provide the Board the required provider, participant, program, completion-date and credit-hour evidence retained from the CE activity.",
+        "why": "Correct. 247 CMR 4.06(1)-(2) requires documentation or statements of credit containing the specified identifying details, maintained at least two years from completion and submitted on Board request/random audit. Policy 2021-04 further describes evidence expected for non-ACPE activity."
+      },
+      {
+        "text": "Submit the personal calendar entry alone because a pharmacist's own note is automatically equivalent to a statement of completed contact hours.",
+        "why": "Incorrect. An unauthenticated calendar entry showing only a seminar title does not demonstrate successful completion or identify all required provider, participant, activity, date and credit details."
+      },
+      {
+        "text": "Refuse the audit request until the next license renewal because the Board may verify CE only at the end of a biennial renewal period.",
+        "why": "Incorrect. Section 4.06(2) expressly permits random audits and Board requests for documentation independent of the moment of renewal."
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "citation": "247 CMR 4.06(1)–(2) (CE completion records retained at least two years and provided on audit); Board Policy 2021-04 §I (most recent two full calendar years; non-ACPE certificate details)",
+    "url": "https://www.mass.gov/doc/247-cmr-4-personal-registration-renewal-continuing-education-requirement/download",
+    "verified": "2026-11-17",
+    "revision": 1,
+    "note": "Tests authentic CE records on random audit, not E30-201 deliberate fabrication or E30-146 compounding specialty hour quota."
+  },
+  {
+    "id": "E30-227",
+    "set": 46,
+    "area": 2,
+    "kind": "multi",
+    "topic": "42 CFR Part 2 intermediary: patient request for disclosure recipient list",
+    "topicKey": "privacy-part2",
+    "stem": "A federally assisted Part 2 treatment program received a patient's valid written consent using a GENERAL designation for disclosures through a named intermediary. The patient now sends that intermediary a WRITTEN request for a list of recipients of identifying records disclosed under that designation in the preceding three years. Which statements accurately describe 42 CFR 2.24? SELECT ALL THAT APPLY.",
+    "choices": [
+      {
+        "text": "The intermediary may refuse to identify recipient organizations because the patient previously consented to disclosures through a general designation.",
+        "why": "Incorrect. The list requirement specifically protects patients who used general-designation consents; prior consent does not waive their ability to learn who received information under that designation."
+      },
+      {
+        "text": "The intermediary must respond to the patient's qualifying written request within 30 days of receipt.",
+        "why": "Correct. Under 42 CFR 2.24(b)(1), an intermediary named on the general-designation consent must respond in 30 or fewer days after receiving the qualifying written request."
+      },
+      {
+        "text": "This intermediary list automatically establishes an unrestricted, immediately effective right to a full accounting of every HIPAA treatment disclosure through any technology, regardless of applicable HHS compliance-date limits.",
+        "why": "Incorrect. The narrow §2.24 intermediary list is not the broader §2.25 electronic-health-record accounting right. HHS has stated that the §2.25 accounting compliance date depends on the separate HIPAA accounting rule update; the two rights should not be conflated."
+      },
+      {
+        "text": "For disclosures within the permitted three-year lookback, the list must identify the entities receiving information, disclosure date, and a brief description of the patient-identifying information disclosed.",
+        "why": "Correct. Section 2.24(a) limits the written request to the previous three years and §2.24(b)(2) specifies recipient entity name(s), date and a brief description of identifying information."
+      }
+    ],
+    "correct": [
+      "B",
+      "D"
+    ],
+    "citation": "42 CFR 2.24(a)–(b) (specific intermediary's 30-day response and 3-year request); contrast 42 CFR 2.25 and HHS 2024 Part 2 final-rule fact sheet (accounting compliance-date caveat)",
+    "url": "https://www.ecfr.gov/current/title-42/chapter-I/subchapter-A/part-2/section-2.24",
+    "verified": "2026-11-17",
+    "revision": 1,
+    "note": "Distinct from E30-028 consent/SUD notes and E30-203 notice/fundraising; narrower intermediary-rights rule avoids treating the deferred general accounting implementation as effective."
+  },
+  {
+    "id": "E30-228",
+    "set": 46,
+    "area": 2,
+    "kind": "single",
+    "topic": "Lenalidomide REMS: expired pharmacy confirmation number",
+    "topicKey": "rems",
+    "stem": "A Lenalidomide REMS-certified pharmacy has a valid new lenalidomide prescription from a certified prescriber for an appropriately enrolled patient. All risk-category and pregnancy-test obligations have been met. The pharmacy obtained the required REMS CONFIRMATION number 26 hours ago but has not yet handed over or shipped the drug. The confirmation was not renewed. What must it do?",
+    "choices": [
+      {
+        "text": "Do not dispense; cancel the expired confirmation number and obtain a new valid REMS confirmation before dispensing, with required counseling.",
+        "why": "Correct. The active Lenalidomide REMS pharmacy procedures state that a confirmation number is valid for only 24 hours. When it has expired, the pharmacy must cancel the old number and obtain a new one before dispensing while complying with the remaining REMS safeguards."
+      },
+      {
+        "text": "Dispense immediately because once a confirmation number is issued it remains valid until the prescriber writes the next prescription.",
+        "why": "Incorrect. The Lenalidomide REMS Pharmacy Guide limits a pharmacy confirmation number's validity to 24 hours. A confirmation obtained 26 hours earlier is no longer sufficient for dispensing."
+      },
+      {
+        "text": "Convert the order into an ordinary Schedule VI prescription with automatic refills because enrollment in the REMS makes subsequent confirmation optional.",
+        "why": "Incorrect. A REMS is a distribution/safe-use restriction, not a controlled-schedule exception. Lenalidomide REMS independently requires confirmation before each dispensing and does not allow ordinary automatic refills."
+      },
+      {
+        "text": "Send the medication without the Medication Guide if the prescriber countersigns the expired number, because pharmacist certification alone satisfies the REMS.",
+        "why": "Incorrect. A prescriber countersignature cannot extend the 24-hour program confirmation; pharmacist certification also does not cancel the Medication Guide and patient-counseling requirements."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "citation": "FDA-approved Lenalidomide REMS Pharmacy Guide, steps 3–4: valid 24-hour pharmacy confirmation, cancellation/reissue when expired, Medication Guide; 247 CMR 9.01(21) (comply with product REMS)",
+    "url": "https://www.lenalidomiderems.com/pharmacist-resources/index.html",
+    "verified": "2026-11-17",
+    "revision": 1,
+    "note": "Specific current program source: https://www.lenalidomiderems.com/media/wp-content/uploads/LEN_Pharmacy_Guide.pdf. Distinct from E30-063 isotretinoin windows and E30-183 esketamine REMS site administration."
+  },
+  {
+    "id": "E30-229",
+    "set": 46,
+    "area": 3,
+    "kind": "single",
+    "topic": "Massachusetts generic interchange: special container label and manufacturer",
+    "topicKey": "label-packaging",
+    "stem": "A Massachusetts Drug Store Pharmacy receives a brand-name tablet prescription without 'no substitution' and lawfully dispenses a LOWER-COST interchangeable generic manufactured by Company Z. The pharmacist accurately applies all routine label elements. Which additional interchange labeling follows 247 CMR 9.05(3)?",
+    "choices": [
+      {
+        "text": "The label needs only the originally prescribed brand name; the identity of the actual lower-cost generic manufacturer is confidential commercial information.",
+        "why": "Incorrect. Section 9.05(3)(a) specifically requires the label to identify the actual generic product and its manufacturer in an interchange statement; showing only the prescribed brand would not communicate what was dispensed."
+      },
+      {
+        "text": "The pharmacy may label the generic as if it were the brand when both are therapeutically equivalent, with no interchange statement if the price is lower.",
+        "why": "Incorrect. Therapeutic interchangeability authorizes selection under applicable circumstances but does not waive the separate container labeling obligation in §9.05(3)."
+      },
+      {
+        "text": "Label the product 'Interchange' or 'IC' with the actual generic name and Company Z on the container label; the originally prescribed brand may also be shown.",
+        "why": "Correct. Section 9.05(3)(a),(c)-(d) requires the 'Interchange' generic name/manufacturer presentation for a less expensive dispensed generic and permits recognized abbreviations, e.g. 'IC', plus an optional 'for [prescribed brand]' notation."
+      },
+      {
+        "text": "The pharmacy must print the manufacturer's complete legal corporate name in full and is never permitted to abbreviate 'interchange' or the manufacturer's name.",
+        "why": "Incorrect. Section 9.05(3)(d) expressly allows commonly understood abbreviations, including 'IC' and recognized abbreviations for manufacturer names."
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "citation": "247 CMR 9.05(3)(a)–(e), generic/brand interchange container label and abbreviations; M.G.L. c.112 §12D (interchange authority)",
+    "url": "https://www.mass.gov/doc/247-cmr-9-professional-practice-standards/download",
+    "verified": "2026-11-17",
+    "revision": 1,
+    "note": "Not E30-194 missing pharmacist initials or E30-019 whether interchange is required; tests exact label identifying actual substituted product and manufacturer."
+  },
+  {
+    "id": "E30-230",
+    "set": 46,
+    "area": 4,
+    "kind": "multi",
+    "topic": "Hospital nursing-unit controlled-stock accountability and witnessed waste",
+    "topicKey": "pharmacy-operations",
+    "stem": "A Massachusetts hospital moves bulk Schedule II–V controlled drugs from its pharmacy to an authorized nursing-unit medication cart. Its procedures are being evaluated against the Massachusetts DPH 'General accountability guidelines for controlled substances in hospitals and clinics with pharmacies.' Which measures comply? SELECT ALL THAT APPLY.",
+    "choices": [
+      {
+        "text": "Use a double-locked, permanently affixed cabinet or medication cart for nursing-unit Schedule II–V stock, with hard-copy or electronic perpetual inventory.",
+        "why": "Correct. Massachusetts DPH's nursing-unit accountability guidance states that Schedule II–V controlled drugs must be in a double-locked, permanently affixed unit/cart with perpetual inventory records."
+      },
+      {
+        "text": "Permit any unlicensed visitor to access the cart if the nurse on duty says the visitor is trustworthy and the medication orders are patient-specific.",
+        "why": "Incorrect. The DPH guidance restricts controlled-substance access to licensed, authorized staff; familiarity or visitor trust does not replace controlled inventory security."
+      },
+      {
+        "text": "Have unused Schedule II–V portions wasted under the facility's controlled procedures by two licensed staff with co-signed documentation, unless more restrictive hospital policy applies.",
+        "why": "Correct. The state DPH accountability guidance specifies two licensed staff and co-signature for disposal of unused Schedule II–V portions, subject to stricter facility policy."
+      },
+      {
+        "text": "Skip documented nursing/pharmacy management accountability reviews once the cart has a software audit log, because electronic data eliminates ongoing diversion monitoring.",
+        "why": "Incorrect. DPH calls for a documented quality-assurance review of controlled substances administered on nursing units not less than once weekly; an access log does not replace the management review."
+      }
+    ],
+    "correct": [
+      "A",
+      "C"
+    ],
+    "citation": "Massachusetts DPH General Accountability Guidelines for Controlled Substances in Hospitals and Clinics with Pharmacies, Nursing Units—General and Schedule II–V; 105 CMR 700.005 (security and accountability); 247 CMR 9.12 (separate institutional ADD)",
+    "url": "https://www.mass.gov/info-details/general-accountability-guidelines-for-controlled-substances-in-hospitals-and-clinics-with-pharmacies",
+    "verified": "2026-11-17",
+    "revision": 1,
+    "note": "Explicitly tests documented nursing-unit stock security and waste, not E30-155 patient-specific order authorization for a hospital automated dispensing device. DPH guidance is identified as guidance rather than represented as independently enacted regulation."
+  },
+  {
+    "id": "E30-231",
+    "set": 47,
+    "area": 1,
+    "kind": "single",
+    "topic": "Graduating pharmacist: initial-calendar-year CE exemption versus following year's requirements",
+    "topicKey": "licensure-ce",
+    "stem": "A pharmacist graduates from an approved PharmD program in May 2026 and obtains an active Massachusetts pharmacist license that August. They are not participating in vaccination, compounding, or CDTM activities requiring additional specialty CE. For the 2026 and 2027 calendar years, which statement correctly applies 247 CMR 4.03?",
+    "choices": [
+      {
+        "text": "They must complete 20 CE contact hours by December 31, 2026 because the exemption applies only to students who have not received a license.",
+        "why": "Incorrect. Section 4.03(8) expressly exempts a registrant from continuing education in the calendar year the registrant graduated from an approved pharmacy school; obtaining licensure that same year does not remove the exemption."
+      },
+      {
+        "text": "Their first required CE calendar year is 2028, because every new pharmacist receives a two-year grace period after the first Massachusetts license.",
+        "why": "Incorrect. The regulatory exception is tied to the specific calendar year of graduation. It is not a two-year rolling extension of the annual CE requirement into 2027."
+      },
+      {
+        "text": "The pharmacist is CE-exempt for graduation year 2026; normal yearly requirements resume in 2027 without carryover.",
+        "why": "Correct. 247 CMR 4.03(8) exempts the pharmacist from CE in the 2026 graduation calendar year. Section 4.03(4)-(5) imposes yearly CE requirements afterward and disallows carrying prior-year contact hours into the next calendar year. Other practice-specific CE would be analyzed separately if relevant."
+      },
+      {
+        "text": "The pharmacist may complete 40 contact hours in 2026 and carry them forward to satisfy both 2026 and 2027 continuing education obligations.",
+        "why": "Incorrect. Section 4.03(5) expressly disallows carrying contact hours between calendar years. Extra activity during an exempt graduation year does not prepay a later calendar year's requirements."
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "citation": "247 CMR 4.03(4),(5),(8) (annual CE, no carryover and graduation-year exception); Massachusetts Board Policy 2021-04 general compliance (revised Sep. 4, 2025)",
+    "url": "https://www.mass.gov/doc/247-cmr-4-personal-registration-renewal-continuing-education-requirement/download",
+    "verified": "2026-11-17",
+    "revision": 1,
+    "note": "Novel graduate-year CE exception under §4.03(8). Replaced an almost duplicate PGY1-resident intern case already tested in E30-076. Differs from E30-226 proof and retention of CE credits."
+  },
+  {
+    "id": "E30-232",
+    "set": 47,
+    "area": 2,
+    "kind": "multi",
+    "topic": "MIIS pre-vaccination lookup: influenza versus zoster and COVID-19",
+    "topicKey": "immunization",
+    "stem": "A Massachusetts pharmacy offers routine adult influenza, recombinant zoster, and COVID-19 immunizations under otherwise valid standing orders. The pharmacist has current access to the Massachusetts Immunization Information System (MIIS), and the patients have no separate exemption. Under Board Policy 2023-02 revised 2025, which statements are correct? SELECT ALL THAT APPLY.",
+    "choices": [
+      {
+        "text": "The same policy mandates MIIS review before each COVID-19 dose and gives no other way to verify prior vaccine formulation or dates.",
+        "why": "Incorrect. Section IV(F) RECOMMENDS checking earlier COVID-19 vaccine formulation and dates and recognizes MIIS, pharmacy/EHR records or the vaccination card; that is not the identical mandatory pre-lookup rule used for zoster."
+      },
+      {
+        "text": "Because influenza is excepted from pre-administration MIIS review, any influenza vaccine given at this pharmacy may be omitted entirely from MIIS reporting.",
+        "why": "Incorrect. Section IV(G) requires pharmacy personnel to report administered vaccination information to MIIS, and 105 CMR 222.100 generally imposes a 72-hour reporting duty. A lookup exception is not a reporting waiver."
+      },
+      {
+        "text": "The policy excludes INFLUENZA vaccination from its general mandatory pre-administration MIIS lookup requirement.",
+        "why": "Correct. Policy 2023-02 §IV(E) requires reviewing MIIS before vaccines OTHER THAN influenza or COVID-19. The exemption is to that particular pre-administration lookup, not to the separate vaccine-record reporting requirements."
+      },
+      {
+        "text": "For a routine recombinant ZOSTER vaccine, the pharmacy must check MIIS before administration to make sure the requested vaccination was not already administered by another provider.",
+        "why": "Correct. The zoster vaccine is not one of the influenza/COVID-19 exceptions listed in §IV(E); the pharmacy must review MIIS in advance under the Board's vaccination policy."
+      }
+    ],
+    "correct": [
+      "C",
+      "D"
+    ],
+    "citation": "Board Policy 2023-02 §§IV(E)–(G), revised September 4, 2025; 105 CMR 222.100(A) (MIIS immunization reporting)",
+    "url": "https://www.mass.gov/doc/2023-02-vaccine-administration-pdf/download",
+    "verified": "2026-11-17",
+    "revision": 1,
+    "note": "Does not repeat E30-037 patient's MIIS data-sharing objection or E30-093 federal VIS/record fields; focuses on influenza/COVID-19 exception vs zoster mandatory precheck."
+  },
+  {
+    "id": "E30-233",
+    "set": 47,
+    "area": 2,
+    "kind": "single",
+    "topic": "2026 Part 2 unsecured SUD-record breach notification under HIPAA-equivalent rule",
+    "topicKey": "hipaa-breach",
+    "stem": "A federally assisted substance-use-disorder treatment program subject to 42 CFR Part 2 discovers and confirms a BREACH of unsecured Part 2 patient records affecting 120 individuals. No low-probability-of-compromise finding or other exception applies. Under the Part 2 breach rule in force during November 2026, which notification plan is most accurate?",
+    "choices": [
+      {
+        "text": "Because fewer than 500 individuals are affected, Part 2 requires neither patient notices nor reporting to HHS.",
+        "why": "Incorrect. The HIPAA-equivalent breach rules apply to Part 2 records. The 500-person threshold changes some Secretary/media notification timing, but does not eliminate the obligation to notify affected patients of an actual breach."
+      },
+      {
+        "text": "Give the notice only to the facility's qualified service organization because any Part 2 breach notice to patients would itself violate Part 2 confidentiality rules.",
+        "why": "Incorrect. Part 2's confidentiality protections do not prohibit the specific notifications required by §2.16(b). An appropriately handled qualified service organization does not replace individual breach notices."
+      },
+      {
+        "text": "Report to the Massachusetts Board of Pharmacy within seven business days and omit HHS notification, because Part 2 programs are not HIPAA covered entities.",
+        "why": "Incorrect. Part 2 independently establishes breach notification obligations even for programs not otherwise HIPAA covered; a Board pharmacy-reporting clock does not replace Part 2's HHS/individual notifications."
+      },
+      {
+        "text": "Notify patients without unreasonable delay, within 60 days, and report the under-500 breach to HHS within 60 days after year-end.",
+        "why": "Correct. 42 CFR 2.16(b) applies HIPAA Breach Notification Rule requirements. 45 CFR 164.404 requires individual notification without unreasonable delay and within 60 calendar days, while §164.408(c) permits the annual HHS report for breaches affecting fewer than 500 people within 60 days after the end of the calendar year."
+      }
+    ],
+    "correct": [
+      "D"
+    ],
+    "citation": "42 CFR 2.16(b) (Part 2 unsecured-record breach adopts HIPAA Breach Rule); 45 CFR 164.404(b) (individual notices), 164.408(c) (under-500 Secretary annual report); HHS OCR Part 2 breach guidance (compliance February 16, 2026)",
+    "url": "https://www.hhs.gov/hipaa/part-2/index.html",
+    "verified": "2026-11-17",
+    "revision": 1,
+    "note": "E30-033 tests exactly-500 HIPAA breach media boundary; E30-073 tests encryption/compromise risk. This scenario tests Part 2 applicability to a 120-patient unsecured SUD record breach after February 2026."
+  },
+  {
+    "id": "E30-234",
+    "set": 47,
+    "area": 3,
+    "kind": "single",
+    "topic": "Automatic-refill program: patient enrollment consent and opt-out",
+    "topicKey": "refills-transfers",
+    "stem": "A Massachusetts retail pharmacy wants to activate automatic monthly refills for a patient's valid Schedule VI maintenance prescription. The patient has authorized refills on file but has NEVER agreed to enroll in auto-refill. The patient later says they do not want automated fills. Which workflow follows 247 CMR 9.19(13)?",
+    "choices": [
+      {
+        "text": "Obtain and record the patient's or agent's consent BEFORE enrollment and give the patient a way to discontinue participation; authorized refills alone do not waive either requirement.",
+        "why": "Correct. Section 9.19(13) requires prior recorded patient/agent consent and a mechanism to end participation in an automatic refill program. Refill validity and amount remain independently governed by prescription laws."
+      },
+      {
+        "text": "Enroll the patient automatically because having refills remaining on the original prescription is legally the same as consenting to a pharmacy's automatic refill program.",
+        "why": "Incorrect. Prescription refill authorization from the prescriber and patient agreement to participate in pharmacy AUTOMATION are separate matters. §9.19(13) expressly requires obtaining and recording patient/agent consent before enrollment."
+      },
+      {
+        "text": "A pharmacy may refuse to process any future ordinary refill unless the patient agrees to join its automatic refill system permanently.",
+        "why": "Incorrect. Section 9.19(13) recognizes a patient's ability to stop the program. Participating in auto-refill is not an additional legal prerequisite to otherwise authorized ordinary refills."
+      },
+      {
+        "text": "Once enrolled, the pharmacy may continue automatically dispensing after the prescription expires because the original enrollment consent replaces future prescriptions.",
+        "why": "Incorrect. Auto-refill consent cannot extend the legal issuance/refill validity of the underlying Schedule VI prescription under 247 CMR 9.04(12)."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "citation": "247 CMR 9.19(13) (patient/agent recorded consent before auto-refill enrollment; discontinuation method); 247 CMR 9.04(12) (separate Schedule VI prescription validity)",
+    "url": "https://www.mass.gov/doc/247-cmr-9-professional-practice-standards/download",
+    "verified": "2026-11-17",
+    "revision": 1,
+    "note": "Under-tested patient-choice automatic-refill practice, distinct from E30-084 transferring remaining refills and E30-089 unclaimed return-to-stock."
+  },
+  {
+    "id": "E30-235",
+    "set": 47,
+    "area": 4,
+    "kind": "multi",
+    "topic": "Workplace prescription collection and direct handoff: lawful pharmacy-agent workflow",
+    "topicKey": "medication-delivery-shipping",
+    "stem": "A Massachusetts community pharmacy offers to collect prescriptions at a nearby factory for employees and eligible family members, then deliver completed prescriptions to the factory. It uses its own identified, authorized agents and satisfies other dispensing and counseling requirements. Under 247 CMR 9.04(9), which steps are lawful or required? SELECT ALL THAT APPLY.",
+    "choices": [
+      {
+        "text": "Limit the service to employees or others regularly affiliated with the location and eligible immediate family members who live at the same address as those employees or affiliates.",
+        "why": "Correct. Section 9.04(9)(a) allows this particular workplace/group-affiliation collection pathway only for persons regularly employed/affiliated or their immediate family members residing at the same address."
+      },
+      {
+        "text": "Have a pharmacist, pharmacy employee or authorized pharmacy agent personally collect prescriptions and dispense the medications DIRECTLY to each patient or the patient's agent.",
+        "why": "Correct. Sections 9.04(9)(b)-(c) require in-person collection by an authorized pharmacy representative and direct handoff of filled medications to the patient or agent. A generic employer mailroom drop does not satisfy this narrow program."
+      },
+      {
+        "text": "Leave prescriptions not immediately collected in a locked workplace drawer overnight so that the employer can distribute them later, rather than returning them to the pharmacy.",
+        "why": "Incorrect. Section 9.04(9)(c)-(d) requires direct dispensing to the patient or agent and the return of medication not directly dispensed; medications may not be left or stored at the workplace."
+      },
+      {
+        "text": "Assume the employer is solely responsible for the pharmacy's delivery agent, so the pharmacy and pharmacist have no legal accountability for that agent's conduct.",
+        "why": "Incorrect. Section 9.04(9)(e) expressly holds the pharmacy and pharmacist responsible for conduct of the pharmacy employee or authorized agent acting on their behalf."
+      }
+    ],
+    "correct": [
+      "A",
+      "B"
+    ],
+    "citation": "247 CMR 9.04(9)(a)–(e) (collection at industrial plants/workplaces, eligible recipients, direct handoff and undistributed return)",
+    "url": "https://www.mass.gov/doc/247-cmr-9-professional-practice-standards/download",
+    "verified": "2026-11-17",
+    "revision": 1,
+    "note": "Distinct from E30-110 failed mail delivery with temperature excursion and E30-138 inpatient bedside-delivery consent. Tests workplace direct custody and pharmacy-agent accountability."
+  },
+  {
+    "id": "E30-236",
+    "set": 48,
+    "area": 1,
+    "kind": "single",
+    "topic": "New staff licensure verification: pharmacy responsibility at commencement of employment",
+    "topicKey": "workforce-supervision",
+    "stem": "A Massachusetts community pharmacy hires a pharmacist and a pharmacy technician TRAINEE. HR checked both licenses eight months ago when the applicants were interviewed. On their first scheduled workday, the pharmacist's Massachusetts registration is active but the trainee license has expired. The MOR wants the trainee to prepare prescriptions while a renewal application is pending. What does 247 CMR 9.19(18) require?",
+    "choices": [
+      {
+        "text": "Permit the trainee to begin preparing prescriptions because an HR check made during the interview is valid for the entire first year of employment.",
+        "why": "Incorrect. 247 CMR 9.19(18) makes verification of CURRENT licensure at the commencement of employment a pharmacy obligation. A historic screening months earlier does not excuse checking the worker's status on arrival."
+      },
+      {
+        "text": "Verify both workers' current Massachusetts licenses when employment commences and do not assign licensed pharmacy-technician trainee tasks to the worker whose personal license has expired.",
+        "why": "Correct. The pharmacy must verify licensure status upon commencement for pharmacists, interns, technicians and technician trainees under §9.19(18). An expired trainee license cannot be treated as active during application processing; restrict duties until a valid credential is confirmed."
+      },
+      {
+        "text": "Only the pharmacist's registration needs verification; a technician trainee may work without Board licensure for the first 1,500 hours.",
+        "why": "Incorrect. The same current-license verification duty expressly includes technician trainees. A technician's training-hour eligibility limits do not create permission to work before obtaining or renewing the requisite trainee license."
+      },
+      {
+        "text": "Allow the trainee to count controlled drugs so long as barcode scanning occurs and the pharmacist performs final validation; supervision substitutes for an active trainee credential.",
+        "why": "Incorrect. Computer checks and pharmacist supervision do not cure an expired individual credential or create authority to handle prohibited controlled-substance inventory."
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "citation": "247 CMR 9.19(18) (current licensure verification at commencement for pharmacist, intern, technician and trainee); 247 CMR 8.03 (pharmacy technician trainee licensure and scope); 247 CMR 9.04(1) (pharmacist final validation)",
+    "url": "https://www.mass.gov/doc/247-cmr-9-professional-practice-standards/download",
+    "verified": "2026-11-17",
+    "revision": 1,
+    "note": "Different from E30-121 (national certification lapse but continued valid Massachusetts technician license) and E30-156 (expired pharmacist's individual practice); new decision is the EMPLOYING pharmacy's commencement-date verification of every credentialed class."
+  },
+  {
+    "id": "E30-237",
+    "set": 48,
+    "area": 2,
+    "kind": "multi",
+    "topic": "Schedule VI prescription continuity supply after expired prescription or zero authorized refills",
+    "topicKey": "controlled-prescriptions",
+    "stem": "A Massachusetts patient taking a stable Schedule VI maintenance medication has an expired prescription with no remaining refills. The pharmacist has tried but cannot obtain prescriber authorization in a timely manner and has assessed that continuing therapy is appropriate. Another patient asks for the same emergency authority for Schedule IV alprazolam. No other refill, emergency or waiver provision applies. Under 247 CMR 9.04(12), which statements are correct? SELECT ALL THAT APPLY.",
+    "choices": [
+      {
+        "text": "The Schedule VI pharmacist may automatically supply a 90-day quantity on any expired prescription solely because the patient previously used the medicine for years.",
+        "why": "Incorrect. The narrowly defined 14-day or smallest-available-unit-of-use limit controls; historical adherence does not confer unlimited extension of a stale prescription."
+      },
+      {
+        "text": "For the Schedule VI patient, a pharmacist may exercise professional judgment to dispense a continuity quantity not exceeding 14 days OR the smallest available unit-of-use packaging in the stated circumstance.",
+        "why": "Correct. Current 247 CMR 9.04(12) expressly authorizes pharmacist-judgment dispensing of up to 14 days or the smallest available unit-of-use package when a Schedule VI prescription is expired or lacks refills and prescriber authorization cannot be obtained promptly."
+      },
+      {
+        "text": "Even though the normal one-year Schedule VI refill period has expired, the narrow continuity pathway may still apply if all its conditions are met; it is not an ordinary authorized refill.",
+        "why": "Correct. Subsection 9.04(12) explicitly addresses expired/no-refill Schedule VI cases and grants a separate narrow dispensing pathway when timely prescriber authorization cannot be obtained. The pharmacist must still use professional judgment."
+      },
+      {
+        "text": "The same §9.04(12) authority automatically permits a pharmacist to extend any expired Schedule IV benzodiazepine prescription for 14 days.",
+        "why": "Incorrect. Section 9.04(12) is written specifically for Massachusetts Schedule VI. A federally controlled Schedule IV refill is subject to its separate federal and state rules and cannot be extended merely by importing this Schedule VI exception."
+      }
+    ],
+    "correct": [
+      "B",
+      "C"
+    ],
+    "citation": "247 CMR 9.04(12) (MA Schedule VI one-year validity and narrow 14-day/smallest-unit-of-use emergency continuity supply); compare 247 CMR 9.04(13) and 21 CFR 1306.22 for federal CIII–V",
+    "url": "https://www.mass.gov/doc/247-cmr-9-professional-practice-standards/download",
+    "verified": "2026-11-17",
+    "revision": 1,
+    "note": "New short-quantity continuity decision not previously tested in the 215 originals; current 2024 regulation says 14 days, NOT the 30 days in an older inspection-template excerpt."
+  },
+  {
+    "id": "E30-238",
+    "set": 48,
+    "area": 2,
+    "kind": "single",
+    "topic": "Veterinarian federal Schedule III prescriptive authorization vs Schedule VI-only registration",
+    "topicKey": "prescriber-authority",
+    "stem": "A properly licensed Massachusetts veterinarian examines a dog after surgery and issues an otherwise complete patient-specific prescription for federally Schedule III buprenorphine for appropriate veterinary pain management. The veterinarian holds a Massachusetts Controlled Substance Registration (MCSR) covering Schedule VI ONLY and has NO DEA registration. The pharmacy has independently verified these facts. What should it do?",
+    "choices": [
+      {
+        "text": "Dispense the Schedule III prescription because veterinarians are exempt from federal DEA registration whenever the medication is for an animal.",
+        "why": "Incorrect. Veterinarian status does not grant blanket exemption from federal controlled-substance registration for Schedule II–V prescribing. Massachusetts DPH specifically distinguishes DEA registration for Schedules II–V from Schedule VI-only MCSR authority."
+      },
+      {
+        "text": "Change the patient to the dog's owner and fill under the owner's human medical history because veterinarians may use a patient's relative to avoid controlled-registration limitations.",
+        "why": "Incorrect. The patient is an animal being treated within a legitimate veterinarian-client-patient relationship. Rewriting the patient does not create DEA prescribing authority and can make the prescription fictitious."
+      },
+      {
+        "text": "Do not dispense; Schedule III veterinary prescribing needs both appropriate DEA and Massachusetts controlled-substance authority for this animal patient.",
+        "why": "Correct. M.G.L. c.94C §§7,18 and 105 CMR 700.004 require appropriate registrations/schedule authorization; DEA registration is needed for federally scheduled III drugs. The same veterinarian could prescribe lawful Schedule VI-only products under the narrower Massachusetts MCSR if other conditions are met."
+      },
+      {
+        "text": "Apply the federal Schedule III five-refill allowance instead of verifying the prescriber's DEA number; remaining refills cure missing initial prescriptive authority.",
+        "why": "Incorrect. Refill rules do not make an order valid when the practitioner lacks required authority for the federal controlled schedule at issuance."
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "citation": "M.G.L. c.94C §§7,18(a); 105 CMR 700.004(C)–(D) (MCSR schedule authorizations); DEA 21 CFR 1306.03–1306.05; Massachusetts DPH Veterinary Prescriptions Best Practice Recommendations (January 9, 2025)",
+    "url": "https://www.mass.gov/info-details/learn-about-massachusetts-controlled-substances-registration-mcsr-for-practitioners",
+    "verified": "2026-11-17",
+    "revision": 1,
+    "note": "Contrast E30-208, where veterinarian has lawful VI MCSR to prescribe ordinary amoxicillin without a DEA number. This one tests missing federally scheduled III authority after a genuine animal exam."
+  },
+  {
+    "id": "E30-239",
+    "set": 48,
+    "area": 3,
+    "kind": "single",
+    "topic": "MassPAT additional drug gabapentin: positive identification and hardship exception",
+    "topicKey": "masspat",
+    "stem": "A Massachusetts pharmacy dispenses prescribed gabapentin, a Massachusetts Schedule VI drug designated for PMP reporting, to an authorized patient representative at the counter. The representative has no government-issued ID. The pharmacist has credible facts showing that refusal today would cause serious hardship for the patient and can document the reason. What does 247 CMR 9.04(14) allow?",
+    "choices": [
+      {
+        "text": "Ignore the ID requirement solely because gabapentin is federally nonscheduled; Massachusetts Schedule VI products cannot be designated additional drugs.",
+        "why": "Incorrect. DPH designated gabapentin an additional PMP-reportable drug under 105 CMR 700.012(A)(1). Section 9.04(14) expressly extends positive identification to such additional drugs even though they are Massachusetts Schedule VI."
+      },
+      {
+        "text": "Document the serious hardship and get the agent's printed name, address and signature on the reverse of the prescription or pharmacy log before dispensing this additional drug.",
+        "why": "Correct. Section 9.04(14)(b)-(c) generally requires customer positive identification for PMP additional drugs. The specific alternative permits dispensing where denial would cause serious hardship, provided the justification is documented and the ultimate user or agent writes the specified information and signs."
+      },
+      {
+        "text": "Require an ID without exception; 247 CMR 9.04(14) allows hardship alternatives for Schedule II–V drugs but explicitly excludes PMP additional drugs.",
+        "why": "Incorrect. Section 9.04(14)(c) expressly covers both federal Schedule II–V products AND additional drugs in its documented serious-hardship alternative."
+      },
+      {
+        "text": "Automatically treat a photo of a neighbor's driver's license as the representative's positive identification and omit all pharmacy documentation because the drug is not DEA controlled.",
+        "why": "Incorrect. Customer identification concerns the actual ultimate user or agent presenting the prescription. Someone else's ID does not satisfy the rule, and a hardship-based dispensing requires the specific signed log and documented reason."
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "citation": "247 CMR 9.04(14)(a)–(d) (positive identification for Schedules II–V and 'additional drugs', documented serious-hardship alternative); 105 CMR 700.012(A)(1) (gabapentin additional-drug reporting)",
+    "url": "https://www.mass.gov/doc/247-cmr-9-professional-practice-standards/download",
+    "verified": "2026-11-17",
+    "revision": 1,
+    "note": "Different from E30-005 Schedule II hardship-only case and E30-039 MassPAT reporting without physical pickup ID; integrates the additional-drug patient identity rule."
+  },
+  {
+    "id": "E30-240",
+    "set": 48,
+    "area": 4,
+    "kind": "multi",
+    "topic": "Ransomware downtime: pharmacy continuity procedures, patient profiles and DUR records",
+    "topicKey": "pharmacy-operations",
+    "stem": "A Massachusetts retail pharmacy discovers ransomware and disables its compromised pharmacy computer system to protect patient records. The pharmacist can still obtain reliable lawful prescriptions, consult independent medication-history sources and perform a documented prospective DUR when safe, but new dispensing transactions cannot yet be entered into the normal electronic patient profiles. Under 247 CMR 9.19(22), 9.16 and 9.17, which operational responses are correct? SELECT ALL THAT APPLY.",
+    "choices": [
+      {
+        "text": "Follow a readily accessible written computer-downtime procedure that describes how prescriptions can be processed during downtime and how all medications dispensed will be entered into patient profiles when the system returns.",
+        "why": "Correct. Section 9.19(22)(a)-(b) requires a downtime policy that includes a lawful filling process and later incorporation into the computerized pharmacy patient record. A breach does not eliminate the documentation/reconciliation obligation."
+      },
+      {
+        "text": "Suspend all prospective DUR for the outage because the computer system normally generates interaction alerts; any technician may then dispense without pharmacist review.",
+        "why": "Incorrect. Section 9.19(22)(d) requires an appropriate DUR process during downtime, and §9.17 keeps pharmacist prospective DUR obligations in force. A computerized alert is a tool, not a substitute for pharmacist judgment."
+      },
+      {
+        "text": "Erase all original electronic prescription records after recovery and generate replacement records with new fictitious dispensing times so the breach will not appear in inspection logs.",
+        "why": "Incorrect. Falsifying or deleting records to conceal the incident violates pharmacy recordkeeping duties and undermines lawful traceability. Downtime procedures call for accurate reconciliation, not fabrication or erasure."
+      },
+      {
+        "text": "Protect confidentiality and use reliable alternative procedures for reviewing relevant patient history and documenting any clinical interventions; reconcile dispensing and DUR records when the system is restored.",
+        "why": "Correct. Sections 9.16–9.17 require confidential, retrievable patient records and appropriate prospective review. The downtime plan must preserve continuity and ensure eventual patient-profile entry, without pretending records are currently accessible if they are not."
+      }
+    ],
+    "correct": [
+      "A",
+      "D"
+    ],
+    "citation": "247 CMR 9.19(22)(a)–(d) (mandatory pharmacy computer downtime plan), 9.16(1),(7) (record retention/confidential profile), 9.17(1)–(2) (prospective DUR); HIPAA Security Rule 45 CFR 164.308–312 separately governs covered electronic PHI",
+    "url": "https://www.mass.gov/doc/247-cmr-9-professional-practice-standards/download",
+    "verified": "2026-11-17",
+    "revision": 1,
+    "note": "Ransomware is the scenario; exact binding action tested is the Board's computer downtime continuity, profile reconciliation and DUR SOP, not a speculative cyber breach report deadline. Distinct from E30-085 controlled record segregation."
   }
 ];
