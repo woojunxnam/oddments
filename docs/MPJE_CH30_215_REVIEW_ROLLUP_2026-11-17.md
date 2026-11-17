@@ -7,16 +7,20 @@
 | Non-overlapping class | Questions |
 |---|---:|
 | Earlier separate AI source/key match | **45** |
-| Targeted AI source-supported four-choice rechecks | **105** |
+| Targeted AI source-supported four-choice rechecks | **167** |
 | PEP pharmacist protocol primary-source HOLD | **1** |
 | Statute / DPH guidance reconciliation HOLD | **1** |
 | Additional overlapping reporting deadline HOLD | **1** |
-| Existing AI author-reviewed, additional source recheck pending | **62** |
+| Existing AI author-reviewed, additional source recheck pending | **0** |
 | **Total existing** | **215** |
 
-**150/215** now have extra legal-recheck evidence (45 earlier blind-source matches + 105 targeted four-choice source reviews); **3 HOLD**, **62 additional source passes pending**. No item has been marked final 120-question mock-approved. All keys remain from current main unless a separately reviewed revision explicitly changes them.
+**212/215** now have extra legal-recheck evidence (45 earlier blind-source matches + 167 targeted four-choice source reviews); **3 HOLD**, **0 additional source passes pending**. Ten USP FAQ-backed cases have explicit primary-compendial text access limitations; none is finally mock-approved. No item has been marked final 120-question mock-approved. All keys remain from current main unless a separately reviewed revision explicitly changes them.
 
-## Latest Batch E: 28 cases, 112 options
+## Latest Batches F–H: 62 cases, 248 options
+
+[Full 62-item audit summary](MPJE_CH30_REMAINING62_SOURCE_AUDIT_2026-11-17.md), [Batch F (21 / 84)](MPJE_CH30_REMAINING_SOURCE_BATCH_F_2026-11-17.json), [Batch G (21 / 84)](MPJE_CH30_REMAINING_SOURCE_BATCH_G_2026-11-17.json), [Batch H (20 / 80)](MPJE_CH30_REMAINING_SOURCE_BATCH_H_2026-11-17.json). **62 source-supported A–D rechecks, no newly proven incorrect key, zero new holds.** Ten USP FAQ-based items carry caveats because subscribed USP–NF chapter text was not directly accessed. No original question data altered.
+
+## Previous Batch E: 28 cases, 112 options
 
 [Batch E summary](MPJE_CH30_PERSONNEL_LICENSURE_BOARD_BATCH_E_2026-11-17.md) / [112-option legal evidence](MPJE_CH30_PERSONNEL_LICENSURE_BOARD_BATCH_E_2026-11-17.json). **27 source-supported, 1 HOLD (E30-116)** on overlapping reporting periods under 247 CMR 10.03 and 20.03. This remains an evidence-only audit with original key and practice history intact.
 
@@ -41,10 +45,11 @@
 - [Drug schedules/scope/USP BUD 23 rechecks](MPJE_CH30_SCHEDULE_SCOPE_BUD_BATCH_C_2026-11-17.md)
 - [Controlled substances / Rx 24 rechecks](MPJE_CH30_CONTROLLED_RX_BATCH_D_2026-11-17.md)
 - [Personnel/licensure/Board oversight 28 rechecks](MPJE_CH30_PERSONNEL_LICENSURE_BOARD_BATCH_E_2026-11-17.md)
+- [Remaining 62 questions source audit](MPJE_CH30_REMAINING62_SOURCE_AUDIT_2026-11-17.md)
 - [Current per-ID exact rollup](MPJE_CH30_215_REVIEW_ROLLUP_2026-11-17.json)
 
 ## Remaining road map
 
-Audit the **62** remaining original questions by law and each A–D choice, resolve 3 holds, then create 25 newly verified E30-216–240 and assemble two 120-question non-overlapping 150-minute forward-only mocks. Separately review the NABP new blueprint if the actual exam is on/after March 1, 2027. Avoid old-test answer exposure bias by distinguishing seen vs unseen questions in readiness reporting.
+The additional source recheck for all **62** previously pending questions is complete. Resolve 3 holds and verify ten FAQ-limited USP cases against the operative compendial text, then create 25 newly verified E30-216–240 and assemble two 120-question non-overlapping 150-minute forward-only mocks. Separately review the NABP new blueprint if the actual exam is on/after March 1, 2027. Avoid old-test answer exposure bias by distinguishing seen vs unseen questions in readiness reporting.
 
 **No question objects, existing answers, revisions, attempts, bookmarks, mock UI or exam records changed in this evidence-only batch.**
