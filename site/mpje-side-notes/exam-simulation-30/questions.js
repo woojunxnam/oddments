@@ -6142,5 +6142,177 @@ window.MPJE_CH30_QUESTIONS = [
     "url": "https://www.deadiversion.usdoj.gov/faq/disp-destr-faq.html",
     "verified": "2026-11-17",
     "note": "Form 106 reports theft/significant loss, Form 41 documents controlled-substance destruction (reverse distributor when that entity destroys), and Form 222/CSOS orders Schedule II stock. A registrant's transfer to a reverse distributor requires its own records."
+  },
+  {
+    "id": "E30-181",
+    "set": 37,
+    "area": 1,
+    "kind": "single",
+    "topicKey": "intern-education",
+    "topic": "Board credit for another state's supervised pharmacy internship documented only by an employer's log",
+    "stem": "A Massachusetts pharmacist-licensure candidate earned 600 supervised intern hours at a licensed pharmacy in another state, before moving to Massachusetts. The candidate presents a signed employer time sheet, but NO affidavit or certificate from the state where the experience was acquired confirming that those hours were approved in that jurisdiction. All other intern-licensure and school requirements are satisfied. What does 247 CMR 8.01(11) allow the Massachusetts Board to do?",
+    "choices": [
+      {
+        "text": "Automatically accept the 600 hours because a signed time sheet is the exact proof required for all out-of-state internship credit.",
+        "why": "Incorrect. Section 8.01(11) expressly contemplates an AFFIDAVIT or certificate of approval from the JURISDICTION where the experience was acquired, indicating that the experience was duly approved there. A supervisor's time sheet alone is not the specified jurisdictional approval."
+      },
+      {
+        "text": "Reject the hours permanently because Massachusetts can never approve internship experience acquired outside the Commonwealth.",
+        "why": "Incorrect. Section 8.01(11) expressly provides a route for the Board to GRANT credit for otherwise qualified out-of-state experience when appropriate approval proof from the jurisdiction is supplied. It is not categorically disallowed."
+      },
+      {
+        "text": "Consider granting credit once the candidate produces an affidavit or certificate of approval issued by the jurisdiction where the hours were earned; credit is not automatic on an employer log alone.",
+        "why": "Correct. Under 247 CMR 8.01(11), the Board MAY grant credit for out-of-state pharmacy internship experience when documentation issued by the other jurisdiction indicates those hours were duly approved there. The intern should obtain that official proof and request Board acceptance."
+      },
+      {
+        "text": "Accept the hours only if the candidate first completes another 600 hours in Massachusetts, because the Board must match each out-of-state hour one-to-one.",
+        "why": "Incorrect. Section 8.01(11) imposes no universal 1:1 Massachusetts match. The issue is the Board's discretionary credit and the other state's official internship approval; overall licensure hour requirements are evaluated separately."
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "citation": "247 CMR 8.01(1),(9),(11), corrected Apr. 25, 2025 (out-of-state internship credit and jurisdiction-issued approval proof)",
+    "url": "https://www.mass.gov/doc/247-cmr-8-pharmacy-interns-and-technicians/download",
+    "verified": "2026-11-17",
+    "note": "Out-of-state supervised pharmacy internship experience may receive Massachusetts Board credit, but present the OTHER jurisdiction's affidavit/certificate indicating duly approved hours; employer hours alone do not guarantee credit."
+  },
+  {
+    "id": "E30-182",
+    "set": 37,
+    "area": 2,
+    "kind": "multi",
+    "topicKey": "naloxone-dispensing",
+    "topic": "OTC naloxone versus prescription-labeled naloxone under statewide standing order for a third party",
+    "stem": "An adult in Massachusetts wants naloxone to help a neighbor at risk of opioid overdose. A grocery store has FDA-labeled OTC naloxone nasal spray on its shelf. A nearby pharmacy has both the same OTC-labeled product and a DIFFERENT naloxone presentation labeled 'Rx only.' The pharmacy participates in the current Massachusetts statewide naloxone standing order. Which statements are correct? SELECT ALL THAT APPLY.",
+    "choices": [
+      {
+        "text": "The adult may purchase the OTC-labeled naloxone directly without an individual prescription; Massachusetts Drug Control Program prescribing/controlled-substance rules do not apply to activities involving that OTC product.",
+        "why": "Correct. The Massachusetts DPH Drug Control Program's October 10, 2024 advisory distinguishes OTC naloxone products from prescription naloxone. An FDA-approved OTC-labeled product may be bought at ordinary retail without an individual or standing-order prescription; no MCSR is required for OTC-product activities."
+      },
+      {
+        "text": "Because naloxone is a single active ingredient, all its formulations require identical pharmacy-only controlled-prescription processing even when FDA approves one presentation for OTC sale.",
+        "why": "Incorrect. FDA labeling makes OTC and Rx-only products legally distinct under Massachusetts' 2024 DPH advisory. A product labeled OTC does not automatically inherit prescription-only obligations of a separate Rx-labeled presentation."
+      },
+      {
+        "text": "A Massachusetts pharmacy may dispense Rx-labeled naloxone for use by another person under the statewide standing order, without a separate patient-specific prescription for the neighbor, while applying the prescription-pathway rules.",
+        "why": "Correct. M.G.L. c.94C §19B and Board Policy 2024-01 allow an individual to obtain prescription naloxone for a person at risk, and the statewide standing order serves as the required authorizing prescription. Product-specific counseling, labeling and related prescription reporting rules still apply."
+      },
+      {
+        "text": "The existence of a retail OTC naloxone alternative automatically cancels Massachusetts' statewide standing order for Rx-labeled naloxone and makes prescription insurance billing unlawful.",
+        "why": "Incorrect. The DPH and Board expressly maintain the standing-order pathway for Rx-labeled naloxone despite some OTC products. Eligible pharmacy prescriptions under the standing order can be processed through insurance subject to plan terms."
+      }
+    ],
+    "correct": [
+      "A",
+      "C"
+    ],
+    "citation": "M.G.L. c.94C §§19B–19C; MA DPH Advisory 'DCP Regulations and Over-The-Counter Naloxone' (Oct. 10, 2024); Board Policy 2024-01 revised Feb. 6, 2025; 2026 statewide naloxone standing order",
+    "url": "https://www.mass.gov/news/dcp-regulations-and-over-the-counter-naloxone",
+    "verified": "2026-11-17",
+    "note": "OTC-labeled naloxone can be purchased without a prescription, whereas Rx-labeled naloxone may still be dispensed under the Massachusetts statewide standing order, including for someone seeking to help a third party."
+  },
+  {
+    "id": "E30-183",
+    "set": 37,
+    "area": 2,
+    "kind": "single",
+    "topicKey": "rems",
+    "topic": "Current SPRAVATO REMS: pharmacy-to-certified-setting distribution versus patient take-home nasal spray",
+    "stem": "A Massachusetts community pharmacy is certified under the current SPRAVATO REMS. It receives an otherwise legitimate esketamine (SPRAVATO) prescription for an adult patient whose outpatient psychiatric clinic is ALSO REMS-certified. The patient requests that the pharmacy mail the sealed product to the patient's home for unsupervised self-administration, avoiding travel. The prescribing clinic instead offers to supervise administration on site. What is the legally appropriate REMS decision?",
+    "choices": [
+      {
+        "text": "Mail the product directly to the patient's home if the pharmacist provides a Medication Guide and a telephone number for questions.",
+        "why": "Incorrect. The current SPRAVATO REMS requires certified pharmacies to dispense it ONLY to certified healthcare settings. Direct patient home dispensing cannot be substituted by counseling or an enclosed Medication Guide."
+      },
+      {
+        "text": "Dispense or ship to the REMS-certified healthcare setting for observed self-administration and required professional monitoring; do not dispense for unsupervised home use.",
+        "why": "Correct. Current SPRAVATO labeling and REMS require the product to be dispensed and administered only in certified healthcare settings, with patients self-administering under direct observation and monitoring by providers for at least two hours. The pharmacy must verify the destination's certification."
+      },
+      {
+        "text": "Dispense to any licensed clinic, even if it is not REMS-certified, because the prescriber's own DEA registration satisfies the REMS certification.",
+        "why": "Incorrect. DEA registration for Schedule III esketamine and healthcare-setting SPRAVATO REMS certification are separate conditions. A pharmacy participating in the REMS may dispense only to a certified healthcare setting."
+      },
+      {
+        "text": "Give the patient one nasal device for unsupervised use and reserve two devices for the clinic because only the first dose needs onsite observation.",
+        "why": "Incorrect. The REMS does not create a routine first-dose-only supervised requirement. Treatment sessions must occur in certified settings with observation/monitoring, so distributing a patient take-home device violates the stated program safeguards."
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "citation": "FDA SPRAVATO (esketamine) current prescribing information §5.5 (REMS), certified pharmacy/healthcare setting and two-hour monitoring; 21 CFR 208 and current FDA REMS database",
+    "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=d81a6a79-a74a-44b7-822c-0dfa3036eaed",
+    "verified": "2026-11-17",
+    "note": "SPRAVATO is Schedule III but also subject to a product-specific REMS: certified pharmacies supply ONLY certified healthcare settings, where the patient self-administers under direct observation and at least two hours' monitoring."
+  },
+  {
+    "id": "E30-184",
+    "set": 37,
+    "area": 3,
+    "kind": "single",
+    "topicKey": "masspat",
+    "topic": "MassPAT prescriber lookup: inpatient administered benzodiazepine order versus discharge prescription",
+    "stem": "A Massachusetts hospital prescriber orders lorazepam (a Schedule IV benzodiazepine) to be administered by nurses to an admitted inpatient during hospitalization. On discharge, the prescriber issues a separate outpatient lorazepam prescription that may be filled at a community pharmacy. The hospital's pharmacy later dispenses the outpatient prescription to the departing patient. Assume no special emergency exception and all other requirements are met. Which interpretation of MassPAT obligations is correct?",
+    "choices": [
+      {
+        "text": "MassPAT lookup is exempt for BOTH orders because the patient was admitted when the drug was first considered, and hospital outpatient prescriptions are not reportable.",
+        "why": "Incorrect. Massachusetts DPH PMP FAQ expressly states the inpatient-medication-order exception applies only to doses administered in the healthcare setting, NOT discharge outpatient prescriptions. A covered outpatient pharmacy dispensing can also trigger dispensing-report requirements."
+      },
+      {
+        "text": "The physician must query MassPAT before every inpatient-administered lorazepam dose, but no query is needed before writing the outpatient discharge prescription.",
+        "why": "Incorrect. This reverses the relevant distinction in the DPH FAQ: inpatient medication orders administered in the facility qualify for the exemption, whereas an outpatient prescription at discharge requires query before issuance."
+      },
+      {
+        "text": "The pharmacist alone must query MassPAT before issuing the physician's discharge prescription; the physician has no MassPAT query duty when ordering benzodiazepines.",
+        "why": "Incorrect. M.G.L. c.94C §24A imposes the specified QUERY responsibility on the PRESCRIBER before writing certain controlled prescriptions, including benzodiazepines, subject to exceptions. Separately, the dispensing pharmacy has its OWN reporting duties under 105 CMR 700.012."
+      },
+      {
+        "text": "The inpatient-administered medication order qualifies for the inpatient MassPAT query exception; the discharge outpatient benzodiazepine prescription requires the prescriber to query MassPAT, and the pharmacy reports the covered outpatient dispensing.",
+        "why": "Correct. The DPH MassPAT FAQ states discharge prescriptions that may be filled by a retail or hospital outpatient pharmacy are NOT covered by the inpatient administration exemption. Under c.94C §24A and 105 CMR 700.012, prescriber query and pharmacy submission are separate obligations."
+      }
+    ],
+    "correct": [
+      "D"
+    ],
+    "citation": "M.G.L. c.94C §24A (prescriber query of PMP for benzodiazepines/narcotics); 105 CMR 700.012(A),(G) (dispenser reporting); MA DPH 'Prescription Monitoring Program frequently asked questions' question 'Opioid Rx’s to an inpatient at discharge'",
+    "url": "https://www.mass.gov/info-details/prescription-monitoring-program-frequently-asked-questions",
+    "verified": "2026-11-17",
+    "note": "MassPAT's inpatient query exemption applies to medication orders administered in the facility, not an outpatient benzodiazepine prescription at discharge. Prescriber query and pharmacy daily dispensing reporting are different duties."
+  },
+  {
+    "id": "E30-185",
+    "set": 37,
+    "area": 4,
+    "kind": "multi",
+    "topicKey": "sterile-hazardous-compounding",
+    "topic": "USP <800> chemotherapy spill in patient-care area: trained response, readily available spill kit and hazardous waste",
+    "stem": "During transport in a Massachusetts hospital oncology unit, a small container of a hazardous antineoplastic drug breaks, causing a visible spill. No one is injured yet, but trained hazardous-drug spill responders and an appropriately supplied spill kit are available. The hospital follows applicable USP <800> and hazardous-waste rules. Which steps are appropriate? SELECT ALL THAT APPLY.",
+    "choices": [
+      {
+        "text": "Keep visitors and unprotected personnel away while trained designated workers promptly contain and clean the spill with appropriate hazardous-drug protective equipment and supplies.",
+        "why": "Correct. USP <800> §16 requires hazardous drug spills to be contained and cleaned immediately by trained personnel using suitable protective equipment and spill-management supplies. An unprotected bystander should not be assigned the exposure."
+      },
+      {
+        "text": "Allow nearby nurses to continue preparing and administering drugs directly through the contaminated area until routine housekeeping is available at the end of the shift.",
+        "why": "Incorrect. USP <800> calls for prompt spill control; continuing routine work in the exposed area risks spreading contamination. Restrict traffic and initiate trained response rather than waiting until a normal end-of-shift cleaning cycle."
+      },
+      {
+        "text": "Place contaminated absorbents and protective equipment into the appropriate hazardous-drug waste stream, and document and evaluate any personnel exposure as required by facility procedures.",
+        "why": "Correct. Spill cleanup is not ordinary trash disposal: contaminated materials must be disposed of in accordance with applicable hazardous-drug/waste policies. The pharmacy and facility must maintain spill documentation and evaluate possible employee exposure."
+      },
+      {
+        "text": "Flush contaminated materials into the nearest sink because a drug dissolved in water is no longer a hazardous substance and requires no spill records.",
+        "why": "Incorrect. Dilution does not erase a drug's hazardous status. USP <800> and hazardous-waste requirements do not authorize routine sink disposal of hazardous-drug spill waste; the response and any exposure require appropriate procedures."
+      }
+    ],
+    "correct": [
+      "A",
+      "C"
+    ],
+    "citation": "Current USP <800> §16 (Spill Control) and §15 (Deactivating, Decontaminating, Cleaning and Disinfecting); USP <800> FAQs Jan. 21, 2026; 247 CMR 9.01(3), applicable federal/state hazardous waste requirements",
+    "url": "https://www.usp.org/compounding/general-chapter-hazardous-drugs-handling-healthcare",
+    "verified": "2026-11-17",
+    "note": "Hazardous-drug spills need prompt trained containment, appropriate PPE and readily available kits. Isolate the area, handle contamination as hazardous waste, and document/evaluate any exposed personnel; routine housekeeping or drains are not substitutes."
   }
 ];
