@@ -209,8 +209,8 @@ Once the bank actually contains **215** vetted questions (assuming no intervenin
 
 | Sets | Planned IDs | Status now | After authoring record |
 | --- | --- | --- | --- |
-| 36–38 | E30-176–190 | AUTHORED / AUTHOR-AUDITED (this PR); merge + public release verification pending | Source audit: [Sets 36–38](MPJE_CH30_SETS36-38_EDITORIAL_AUDIT_2026-11-17.md); confirm merged SHA, Python Inventory, Pages run and published browser checks |
-| 39–41 | E30-191–205 | ROADMAP ONLY | PR, merge SHA, Inventory check, Pages run, browser pass/fail |
+| 36–38 | E30-176–190 | MERGED: PR #259 (19a7d0f); public verification remains a separate gate | Source audit: [Sets 36–38](MPJE_CH30_SETS36-38_EDITORIAL_AUDIT_2026-11-17.md); confirm merged SHA, Python Inventory, Pages run and published browser checks |
+| 39–41 | E30-191–205 | AUTHORED / SOURCE-REVIEWED in PR; merge/public release to be confirmed | Source audit: [Sets 39–41](MPJE_CH30_SETS39-41_EDITORIAL_AUDIT_2026-11-17.md); verify merged SHA, inventory, Pages and public quiz |
 | 42–43 | E30-206–215 | ROADMAP ONLY | PR, merge SHA, Inventory check, Pages run, browser pass/fail |
 | Post-40 | All 215 | NOT STARTED | independent legal/coverage/realism re-evaluation report |
 
