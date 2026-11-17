@@ -49,6 +49,10 @@ New sets preserve existing **Area 1×1 + Area 2×2 + Area 3×1 + Area 4×1** and
 | E30-239 / 48 | SBA | B | MassPAT additional drug gabapentin: positive identification and hardship exception | E30-005, E30-039, E30-082, E30-212 | [Authority](https://www.mass.gov/doc/247-cmr-9-professional-practice-standards/download) |
 | E30-240 / 48 | SATA | A, D | Ransomware downtime: pharmacy continuity procedures, patient profiles and DUR records | E30-085, E30-090, E30-140, E30-165, E30-185 | [Authority](https://www.mass.gov/doc/247-cmr-9-professional-practice-standards/download) |
 
+### Answer-cue quality repair
+
+A first-pass length audit detected an unacceptable pattern: **all 15 new SBA correct options were the longest** of their A–D choices. Eleven correct choices were then tightened to preserve exactly the same legal action but remove unnecessary qualification in the answer text. Post-edit: **4/15 correct longest, 1/15 correct shortest, 10/15 intermediate**; keys and option-specific explanations did not change. Answer-letter distribution remains balanced (A4/B4/C4/D3). This is a measurable editing improvement, not evidence of NABP psychometric validity.
+
 ## Corrections after first draft / independent nearest-neighbor screening
 
 - **E30-231:** Initial PharmD residency-intern draft repeated E30-076 (PGY1 resident licensure). Replaced with a genuinely distinct **pharmacist graduation-calendar-year CE exemption under 247 CMR 4.03(8)** and no later-year carryover.
