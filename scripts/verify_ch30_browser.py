@@ -6,7 +6,7 @@ import re
 from pathlib import Path
 from urllib.parse import urljoin
 
-from playwright.sync_api import sync_playwright
+from playwright.sync_api import sync_playwright, TimeoutError as PlaywrightTimeoutError
 
 
 def verify_latest_set(browser, target: str) -> None:
@@ -179,7 +179,7 @@ def verify(base_url: str) -> None:
             try:
                 page.locator("#question-grid .ch30-question").first.wait_for(timeout=20000)
                 break
-            except TimeoutError:
+            except PlaywrightTimeoutError:
                 if attempt == 2:
                     reason = page.locator("#set-desc").inner_text() if page.locator("#set-desc").count() else "<missing>"
                     raise AssertionError(
