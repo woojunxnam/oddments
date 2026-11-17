@@ -5454,5 +5454,521 @@ window.MPJE_CH30_QUESTIONS = [
     "url": "https://www.mass.gov/doc/2026-03-action-level-environmental-monitoring-results/download",
     "verified": "2026-11-16",
     "note": "New Board Policy 2026-03: ISO 7 viable-air results over 10 CFU/m³ are action levels; report within one business day. During qualifying ISO 7 buffer remediation, BUDs are capped at 24 hours room temperature or four days refrigerated; non-viable particle failures require suspension/recertification."
+  },
+  {
+    "id": "E30-161",
+    "set": 33,
+    "area": 1,
+    "kind": "single",
+    "topic": "Individual license discipline: knowingly permitting unlicensed final validation",
+    "topicKey": "board-discipline",
+    "stem": "A Massachusetts-licensed supervising pharmacist knows that an employee has no pharmacist or intern license. To reduce the queue, the pharmacist knowingly lets that employee perform independent final clinical and dispensing validation of prescriptions. The pharmacy has no applicable waiver. No patient has yet been harmed. Which statement BEST describes the pharmacist's Board exposure?",
+    "choices": [
+      {
+        "text": "The pharmacist's license cannot be disciplined unless the Board documents a specific patient's physical injury.",
+        "why": "Incorrect. 247 CMR 10.03(1)(m) makes KNOWINGLY permitting, aiding or abetting unlicensed pharmacy activities a disciplinary ground; the provision does not require patient injury. The pharmacist must stop unlicensed validation immediately."
+      },
+      {
+        "text": "The pharmacy owner alone is accountable because an individual pharmacist cannot be disciplined for an employee's unlawful work.",
+        "why": "Incorrect. Section 10.03(1)(m) addresses the licensee who knowingly enables unlicensed work. The individual supervisor's responsibility is not removed by the owner's hiring or staffing decisions."
+      },
+      {
+        "text": "The pharmacist may face discipline for knowingly permitting unlicensed activity, even before a patient is harmed; independent final validation must return to a licensed pharmacist.",
+        "why": "Correct. Under 247 CMR 10.03(1)(m) and 247 CMR 9.04(1), the pharmacist must not knowingly allow an unlicensed person to perform tasks requiring professional pharmacy licensure. Actual harm is not a prerequisite to this ground, and any incident must be addressed under applicable patient-safety policies."
+      },
+      {
+        "text": "The employee may validate dispensing independently if a pharmacist later signs a weekly supervisory log.",
+        "why": "Incorrect. A retrospective log does not authorize a nonpharmacist to perform independent final dispensing validation. 247 CMR 9.04(1) requires pharmacist final validation; deliberate circumvention can separately support Board discipline."
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "citation": "247 CMR 10.03(1)(m), (k) (grounds for individual discipline; effective Jan. 9, 2025); 247 CMR 9.04(1) (pharmacist final validation; effective Dec. 6, 2024)",
+    "url": "https://www.mass.gov/doc/247-cmr-10-disciplinary-proceedings/download",
+    "verified": "2026-11-16",
+    "note": "Knowingly assigning licensed-professional pharmacy work to an unlicensed worker may support individual Board discipline even without actual patient injury; final dispensing validation remains a pharmacist duty."
+  },
+  {
+    "id": "E30-162",
+    "set": 33,
+    "area": 2,
+    "kind": "single",
+    "topic": "Community pharmacy CDTM patient-age limitation despite parent consent",
+    "topicKey": "cdtm-patient-practice",
+    "stem": "A properly qualified Massachusetts community pharmacist holds an active CDTM agreement for asthma, including individual physician referral, physician-approved protocol, the required MCSR and detailed patient consent documentation. An otherwise eligible patient is 17 years old and a parent signs the written consent. The pharmacist plans to initiate a Schedule VI inhaler under that CDTM agreement. What is the best legal assessment?",
+    "choices": [
+      {
+        "text": "The prescribing is permitted because a parent's written consent removes any CDTM minimum age.",
+        "why": "Incorrect. 247 CMR 16.03(5)(a) specifically limits the community-pharmacy CDTM setting to patients age 18 or OLDER. Parent consent does not convert a 17-year-old into an eligible adult under the rule."
+      },
+      {
+        "text": "The community pharmacist cannot use the CDTM prescribing authority for this 17-year-old; an authorized practitioner must arrange another lawful path to treatment.",
+        "why": "Correct. Even with properly documented referral and consent, §16.03(5)(a)'s adult-patient requirement remains. The pharmacist should refer the minor to an authorized treating practitioner and must not treat the collaboration as overriding that patient-eligibility limit."
+      },
+      {
+        "text": "The prescription may be issued because CDTM prohibits only Schedule II–V medicines and therefore any Schedule VI patient is eligible.",
+        "why": "Incorrect. Section 16.03(5)(e) restricts controlled-drug scheduling, but §16.03(5)(a) imposes a SEPARATE adult-only community CDTM rule. Compliance with one requirement does not waive the other."
+      },
+      {
+        "text": "The pharmacist may instead prescribe Schedule IV for the minor if the physician modifies the written referral.",
+        "why": "Incorrect. Community-pharmacy CDTM authority cannot include Schedules II–V under §16.03(5)(e)3 and cannot be used for a 17-year-old under subsection (5)(a). Physician referral wording cannot override either restriction."
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "citation": "247 CMR 16.03(5)(a),(c)–(e); 247 CMR 16.04(1)–(2) (community CDTM patient eligibility and limited prescribing, effective Dec. 15, 2017)",
+    "url": "https://www.mass.gov/doc/247-cmr-16-collaborative-drug-therapy-management/download",
+    "verified": "2026-11-16",
+    "note": "Massachusetts community-pharmacy CDTM is limited to patients age 18 or older, requires patient-specific written referral and consent, and cannot authorize Schedule II–V prescribing."
+  },
+  {
+    "id": "E30-163",
+    "set": 33,
+    "area": 2,
+    "kind": "multi",
+    "topic": "DSCSA authorized trading partners and six-year product tracing record responsibility",
+    "topicKey": "drug-integrity",
+    "stem": "A Massachusetts community pharmacy purchases covered finished human prescription medicines from wholesalers and contracts with an outside records vendor. The pharmacy is NOT subject to a relevant DSCSA waiver, exemption, or enforcement-discretion relief. Under FD&C Act §582(d), which actions or conclusions are correct? SELECT ALL THAT APPLY.",
+    "choices": [
+      {
+        "text": "The pharmacy may purchase covered product from any low-price distributor if it records the distributor's address, even if the distributor is not an authorized trading partner.",
+        "why": "Incorrect. Under 21 U.S.C. §360eee-1(d)(3), a dispenser's trading partners must be AUTHORIZED. Keeping an address or favorable invoice does not replace verification of authorized trading-partner status."
+      },
+      {
+        "text": "The pharmacy must conduct covered transactions with authorized trading partners and maintain applicable tracing records for at least six years after the transaction.",
+        "why": "Correct. Section 582(d)(1)(A)(iii) requires retention of transaction information and statements (and applicable history) for not less than SIX years, and §582(d)(3) restricts dispenser trading partners to authorized entities. These duties are separate from investigating suspect products."
+      },
+      {
+        "text": "A written agreement may allow a third party to maintain the tracing records, but the pharmacy remains responsible for its statutory recordkeeping obligations.",
+        "why": "Correct. Section 582(d)(1)(B) expressly allows a written third-party records arrangement, while requiring the dispenser to keep the agreement and remaining liable for compliance. The pharmacist should ensure records are accessible when required."
+      },
+      {
+        "text": "Once the third-party vendor accepts the records, all DSCSA duties transfer legally from the pharmacy to that vendor, so a pharmacy may discard its own agreement.",
+        "why": "Incorrect. Section 582(d)(1)(B) expressly provides that a third-party retention agreement does NOT relieve the dispenser of the statutory duty and requires maintaining a copy of that agreement."
+      }
+    ],
+    "correct": [
+      "B",
+      "C"
+    ],
+    "citation": "FD&C Act §582(d)(1)(A)(iii), (d)(1)(B), (d)(3) (21 U.S.C. §360eee-1); FDA Drug Supply Chain Security Act product tracing and authorized trading partner guidance",
+    "url": "https://uscode.house.gov/us/usc/119-120/t21/s360eee-1/",
+    "verified": "2026-11-16",
+    "note": "Under DSCSA, dispensers use authorized trading partners and retain required tracing data for six years. A written vendor retention agreement is allowed but does not transfer legal responsibility."
+  },
+  {
+    "id": "E30-164",
+    "set": 33,
+    "area": 3,
+    "kind": "single",
+    "topic": "Insomnia medicines: Quviviq and Belsomra versus Rozerem controlled schedules",
+    "topicKey": "drug-schedule-identification",
+    "stem": "A Massachusetts pharmacist reviews three otherwise valid prescriptions: Quviviq (daridorexant), Belsomra (suvorexant), and Rozerem (ramelteon). Which federal and corresponding Massachusetts scheduling description is correct as of November 2026?",
+    "choices": [
+      {
+        "text": "Quviviq is Schedule III, Belsomra is Schedule IV, and Rozerem is Schedule VI.",
+        "why": "Incorrect. Daridorexant is specifically listed in federal Schedule IV under 21 CFR 1308.14(c)(17), not III. Belsomra is IV and ramelteon is not federally scheduled, making the first classification wrong."
+      },
+      {
+        "text": "All three are Schedule IV because each treats insomnia and requires a prescription.",
+        "why": "Incorrect. Clinical indication and prescription status do not control DEA scheduling. Ramelteon is not federally scheduled (its current FDA label states DEA Schedule: None) and is Massachusetts Schedule VI as a prescription-only drug."
+      },
+      {
+        "text": "Quviviq and Rozerem are Schedule VI and Belsomra is Schedule IV.",
+        "why": "Incorrect. Rozerem is a Massachusetts Schedule VI prescription medicine, but daridorexant/Quviviq is federally controlled Schedule IV, and Massachusetts adopts the corresponding Schedule IV."
+      },
+      {
+        "text": "Quviviq and Belsomra are Schedule IV federally and in Massachusetts; Rozerem is federally unscheduled and Massachusetts Schedule VI.",
+        "why": "Correct. Daridorexant (21 CFR 1308.14(c)(17)) and suvorexant (§1308.14(c)(54)) are Schedule IV; ramelteon is not federally controlled according to its FDA/DailyMed product labeling and is a Massachusetts prescription-only Schedule VI drug under 105 CMR 700.002(F)."
+      }
+    ],
+    "correct": [
+      "D"
+    ],
+    "citation": "21 CFR 1308.14(c)(17),(54); 105 CMR 700.002(D),(F); current FDA DailyMed Rozerem labeling (DEA Schedule: None, Apr. 15, 2026)",
+    "url": "https://www.ecfr.gov/current/title-21/chapter-II/part-1308/section-1308.14",
+    "verified": "2026-11-16",
+    "note": "Quviviq/daridorexant and Belsomra/suvorexant are C-IV, while Rozerem/ramelteon is federally unscheduled but a Massachusetts Schedule VI prescription medicine."
+  },
+  {
+    "id": "E30-165",
+    "set": 33,
+    "area": 4,
+    "kind": "multi",
+    "topic": "USP <800> antineoplastic automation and pneumatic-tube transport restrictions",
+    "topicKey": "sterile-hazardous-compounding",
+    "stem": "A Massachusetts hospital pharmacy handles final dosage forms of NIOSH Table 1 antineoplastic hazardous drugs (HDs), a separate non-antineoplastic hazardous tablet, and liquid HD solutions. It is evaluating automated pill counters and pneumatic-tube carriers using the January 2026 USP <800> technical FAQs. Which decisions are consistent with those standards? SELECT ALL THAT APPLY.",
+    "choices": [
+      {
+        "text": "Keep the NIOSH Table 1 antineoplastic tablets out of automated counting or packaging machinery because breakage and powder contamination can expose workers.",
+        "why": "Correct. USP <800> Section 12 and FAQ #85 prohibit placing Table 1 antineoplastic tablets and capsules into automated counting or packaging machines. Manual or otherwise compliant handling avoids machinery contamination."
+      },
+      {
+        "text": "A liquid hazardous drug may be sent by pneumatic tube as long as the bottle has a child-resistant closure.",
+        "why": "Incorrect. USP <800> and FAQ #80 specifically prohibit liquid hazardous drugs in pneumatic tubes due to breakage and contamination risks. A child-resistant cap is not an exception."
+      },
+      {
+        "text": "For a hazardous tablet that is NOT a Table 1 antineoplastic, facility-specific assessment of risk and SOPs may support an automated counting process when safe and otherwise permitted.",
+        "why": "Correct. FAQ #85 expressly distinguishes non-Table 1 antineoplastic HD tablets, which MAY be eligible for an assessed alternative using automated systems. The facility must evaluate product, exposure and contamination risks and establish controls."
+      },
+      {
+        "text": "Every hazardous-drug dosage form is categorically prohibited from any mechanical transport, including conveyors or carts, regardless of product-specific risk assessment.",
+        "why": "Incorrect. FAQ #80 restricts pneumatic tubes for liquid HDs and Table 1 antineoplastic HDs, while #86 permits risk-based handling of eligible final dosage forms on conveyors. The absolute ban on ALL mechanical transport is unsupported."
+      }
+    ],
+    "correct": [
+      "A",
+      "C"
+    ],
+    "citation": "Current USP <800> §12 (final dosage form dispensing and transport); USP <800> FAQs updated Jan. 21, 2026, Q80, 85–86 (technical support, not official interpretation); 247 CMR 9.01(3)",
+    "url": "https://pages.usp.org/rs/711-SXF-172/images/USP_HQS_800_FAQs_January2026.pdf?version=0",
+    "verified": "2026-11-16",
+    "note": "Do not use automated counting for NIOSH Table 1 antineoplastic tablets or pneumatic tubes for liquid HDs. Evaluate other HD dosage forms individually under USP <800> and facility SOPs."
+  },
+  {
+    "id": "E30-166",
+    "set": 34,
+    "area": 1,
+    "kind": "single",
+    "topic": "Foreign pharmacy graduate: one-year FPGEE authorization before Massachusetts internship",
+    "topicKey": "intern-education",
+    "stem": "A graduate of a foreign pharmacy school not approved by the Massachusetts Board is seeking to start an internship in a Massachusetts community pharmacy. NABP authorized the graduate to sit for the FPGEE 14 months ago. The graduate holds no newer authorization and otherwise has all paperwork ready. Which action is required under 247 CMR 8.01(7) before the internship begins?",
+    "choices": [
+      {
+        "text": "Obtain NABP authorization to sit for the FPGEE issued within the preceding year and furnish a copy to the Board with its other required documentation.",
+        "why": "Correct. For a graduate of a non-approved pharmacy college or school, §8.01(7) expressly requires FPGEE test authorization issued WITHIN THE PRECEDING YEAR before starting a Massachusetts pharmacy internship, with a copy submitted to the Board. The 14-month-old authorization is insufficient."
+      },
+      {
+        "text": "Begin the internship immediately because any FPGEE authorization, regardless of issue date, remains acceptable if the candidate has not yet taken the examination.",
+        "why": "Incorrect. Section 8.01(7) contains a specific one-year recency condition on the authorization. No general indefinite-validity substitute is provided."
+      },
+      {
+        "text": "Complete 500 hours before submitting an FPGEE authorization, because the document is necessary only when the graduate applies for the pharmacist MPJE.",
+        "why": "Incorrect. The regulation requires the authorization BEFORE COMMENCEMENT of the Massachusetts internship, rather than only after hours accrue or at MPJE scheduling."
+      },
+      {
+        "text": "Use a licensed pharmacy technician credential in place of the FPGEE authorization to receive pharmacy intern credit.",
+        "why": "Incorrect. Pharmacy technician licensure and an applicant's foreign-graduate pharmacist-intern eligibility are separate pathways. A technician credential cannot waive §8.01(7)'s NABP authorization requirement."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "citation": "247 CMR 8.01(7) (Graduates of Non-approved Colleges/Schools of Pharmacy; effective Jan. 9, 2025), plus other applicable pharmacy intern licensing prerequisites",
+    "url": "https://www.mass.gov/doc/247-cmr-8-pharmacy-interns-and-technicians/download",
+    "verified": "2026-11-16",
+    "note": "A Massachusetts foreign-school graduate from a non-approved program must have NABP FPGEE eligibility authorization issued within the preceding year before starting an internship."
+  },
+  {
+    "id": "E30-167",
+    "set": 34,
+    "area": 2,
+    "kind": "single",
+    "topic": "Outpatient methadone analgesia versus methadone maintenance for opioid use disorder",
+    "topicKey": "opioid-oud",
+    "stem": "A Massachusetts community pharmacist receives two authentic methadone Schedule II prescriptions from a DEA-registered non-OTP physician. Prescription X is for severe persistent pain treated in the physician's usual professional practice; prescription Y explicitly orders a daily outpatient supply for OUD maintenance instead of referral to an opioid treatment program. Assume X otherwise satisfies state and federal prescribing limits and is clinically appropriate. Which statement BEST addresses the prescriber's federal authority?",
+    "choices": [
+      {
+        "text": "Neither prescription may be filled because all methadone prescribing requires certification as a federal opioid treatment program.",
+        "why": "Incorrect. Methadone is Schedule II and may be legitimately prescribed for pain by an appropriately registered practitioner in the usual course of practice. The special OTP restriction concerns its use for ongoing OUD maintenance or detoxification, not every analgesic prescription."
+      },
+      {
+        "text": "Both may be filled because the individual DEA registration permits a non-OTP physician to use methadone for any outpatient purpose.",
+        "why": "Incorrect. A conventional DEA practitioner registration does not authorize a routine non-OTP take-home methadone prescription for OUD maintenance. The limited three-day emergency rule concerns direct dispensing, not ordinary outpatient maintenance prescriptions."
+      },
+      {
+        "text": "X can fall within ordinary legitimate pain prescribing, whereas Y is not a lawful routine non-OTP outpatient prescription for methadone OUD maintenance.",
+        "why": "Correct. Methadone is available for severe persistent pain by otherwise qualified DEA-registered prescribers under 21 CFR 1306.04(a). Under 21 CFR 1306.07(a) and the DEA's Aug. 2026 methadone guidance, ongoing methadone OUD maintenance is provided through a certified opioid treatment program; §1306.07(b)'s limited emergency dispensing exception does not convert Y into a routine prescription."
+      },
+      {
+        "text": "Y is valid as a refillable Schedule II prescription if the patient has previously received methadone at a hospital, but X must be rejected.",
+        "why": "Incorrect. Previous inpatient administration does not authorize outpatient methadone maintenance by a non-OTP prescriber, and Schedule II prescriptions generally cannot be refilled. Legitimate pain treatment is not automatically prohibited."
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "citation": "21 CFR 1306.04(a), 1306.07(a)–(c), 1306.12(a); DEA Methadone Drug Fact Sheet updated Aug. 2026; applicable M.G.L. c.94C",
+    "url": "https://www.deadiversion.usdoj.gov/drug_chem_info/methadone/methadone.pdf",
+    "verified": "2026-11-16",
+    "note": "Methadone can be legitimately prescribed for pain, but ongoing methadone treatment of OUD normally requires a certified opioid treatment program; the emergency three-day rule authorizes limited dispensing, not an outpatient maintenance prescription."
+  },
+  {
+    "id": "E30-168",
+    "set": 34,
+    "area": 2,
+    "kind": "multi",
+    "topic": "Community pharmacy nonsterile compounding service: permissible refusal versus routine business preference",
+    "topicKey": "pharmacist-compounding-duty",
+    "stem": "A Massachusetts community pharmacy receives several prescriptions for SIMPLE or MODERATE nonsterile compounded preparations customary to community needs. The pharmacists have appropriate training and facilities. Management does not want to compound because a nearby chain offers cheaper commercially manufactured products. There is no extenuating circumstance or Board waiver. Which interpretations of 247 CMR 9.01(15) are correct? SELECT ALL THAT APPLY.",
+    "choices": [
+      {
+        "text": "The pharmacy may decline any simple or moderate customary nonsterile compounded prescription solely to improve its margin, without documenting an exception.",
+        "why": "Incorrect. 247 CMR 9.01(15) prohibits refusing simple or moderate customary nonsterile preparations except for extenuating circumstances or a waiver of Board regulation. A routine business preference alone is not the stated legal exception."
+      },
+      {
+        "text": "The professional-practice rule generally forbids refusing those customary simple or moderate nonsterile preparations when neither an extenuating circumstance nor Board waiver exists.",
+        "why": "Correct. Section 9.01(15) creates a specific duty for licensees, in contrast to a general assumption that compounding is always discretionary. Staff should assess patient safety and comply with the applicable USP <795> standards."
+      },
+      {
+        "text": "The pharmacy must accept any hazardous sterile Category 3 compound under the same provision even when personnel and facilities are not competent to prepare it.",
+        "why": "Incorrect. Section 9.01(15) is specifically about SIMPLE or MODERATE NONSTERILE compounded preparations customary to the community; it does not mandate complex sterile or hazardous compounding without competent facilities and current USP compliance."
+      },
+      {
+        "text": "A genuine extenuating circumstance or Board regulatory waiver can provide an exception to that particular nonsterile compounding non-refusal rule.",
+        "why": "Correct. Section 9.01(15) expressly permits refusal under extenuating circumstances or Board waiver. The licensee should document the applicable basis and still protect patient continuity and safety."
+      }
+    ],
+    "correct": [
+      "B",
+      "D"
+    ],
+    "citation": "247 CMR 9.01(4),(15) (professional practice standard, effective Dec. 6, 2024); USP <795> current compendial nonsterile standards",
+    "url": "https://www.mass.gov/doc/247-cmr-9-professional-practice-standards/download",
+    "verified": "2026-11-16",
+    "note": "Massachusetts licensees generally must not refuse simple/moderate nonsterile compounding customary to the community without extenuating circumstances or a Board waiver; this is not a mandate to prepare every sterile or hazardous product."
+  },
+  {
+    "id": "E30-169",
+    "set": 34,
+    "area": 3,
+    "kind": "single",
+    "topic": "Muscle relaxants: Soma carisoprodol controlled versus Flexeril and Lioresal",
+    "topicKey": "drug-schedule-identification",
+    "stem": "Three otherwise valid outpatient prescriptions reach a Massachusetts pharmacy: Soma (carisoprodol), Flexeril (cyclobenzaprine), and Lioresal (baclofen). All are conventional prescription products. Which federal and corresponding Massachusetts schedule classification is correct?",
+    "choices": [
+      {
+        "text": "Soma is Schedule II, Flexeril Schedule IV, and Lioresal Schedule VI because a muscle relaxant's abuse potential tracks its sedative strength.",
+        "why": "Incorrect. Carisoprodol was placed in Schedule IV effective Jan. 11, 2012, not Schedule II. Cyclobenzaprine is not federally scheduled and is not Schedule IV. Clinical sedation is not the controlling schedule list."
+      },
+      {
+        "text": "Soma is federally and Massachusetts Schedule IV; Flexeril and Lioresal are federally unscheduled but Massachusetts Schedule VI prescription drugs.",
+        "why": "Correct. 21 CFR 1308.14(c)(7) expressly controls carisoprodol in Schedule IV; FDA-approved prescription cyclobenzaprine and baclofen are not in federal Schedules I–V and are treated as Massachusetts Schedule VI under 105 CMR 700.002(F). Specific ingredient status controls, not drug-class labels."
+      },
+      {
+        "text": "Soma and Flexeril are Schedule IV, while Lioresal is Schedule III because it can be used for neurologic disease.",
+        "why": "Incorrect. Cyclobenzaprine is not a federal controlled substance and baclofen is not Schedule III; the indications do not set a drug schedule."
+      },
+      {
+        "text": "All three are Schedule VI because none is a DEA-controlled opioid, stimulant, or benzodiazepine.",
+        "why": "Incorrect. Schedule IV includes non-benzodiazepine depressants such as carisoprodol. A muscle relaxant can be controlled despite not belonging to the named example classes."
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "citation": "21 CFR 1308.14(c)(7) (carisoprodol); DEA final rule 76 FR 77330, effective Jan. 11, 2012; 105 CMR 700.002(D),(F); FDA prescription-only status for cyclobenzaprine and baclofen",
+    "url": "https://www.deadiversion.usdoj.gov/drug_chem_info/carisoprodol/carisoprodol.html",
+    "verified": "2026-11-16",
+    "note": "Carisoprodol/Soma is federal and Massachusetts Schedule IV; cyclobenzaprine/Flexeril and baclofen/Lioresal are federally unscheduled but Massachusetts Schedule VI prescription medicines."
+  },
+  {
+    "id": "E30-170",
+    "set": 34,
+    "area": 4,
+    "kind": "multi",
+    "topic": "Massachusetts multi-drug single-dose packs: sixty-day cap, Schedule exclusions, same-patient repackaging",
+    "topicKey": "compliance-packaging",
+    "stem": "A Massachusetts pharmacy offers multi-drug-single-dose solid oral compliance packaging for patients receiving stable daily medicines. It has appropriate staff training, compatible medication packaging, labeling and controlled-substance accounting policies. Which actions comply with 247 CMR 9.08? SELECT ALL THAT APPLY.",
+    "choices": [
+      {
+        "text": "Package a 30-day supply of daily Schedule IV and Schedule VI tablets together in compliant multi-drug-single-dose cells when the medications are compatible and all other rules are met.",
+        "why": "Correct. Section 9.08(3) prohibits Schedule II and III medicines and PRN orders in multi-drug-single-dose packs, but does not categorically bar appropriate Schedule IV and VI daily medication together; the pharmacy must meet all packaging, compatibility and labeling requirements."
+      },
+      {
+        "text": "Include a Schedule II stimulant in the same multi-drug-single-dose cells if the patient has authorized monthly refills and the packet is tamper-evident.",
+        "why": "Incorrect. Section 9.08(3)(b) categorically prohibits Schedule II and III drugs in multi-drug-single-dose packs; Schedule II also is generally not refillable. Tamper-evidence does not create an exception."
+      },
+      {
+        "text": "Supply a 90-day supply in multi-drug-single-dose packages if the medicines' commercial expiration dates are at least one year away.",
+        "why": "Incorrect. Section 9.08(3)(a) caps these packages at 60 days, and the packaging BUD is independently limited by §9.08(5)(d) to the earliest manufacturer's expiration or 60 days. A manufacturer's long expiry does not remove these caps."
+      },
+      {
+        "text": "When a pharmacy previously dispensed a multi-drug pack to a patient and one drug is discontinued, it may accept that pack, remove the discontinued medicine and relabel/re-dispense the remaining medicines to that SAME patient while recording the pharmacist's changes.",
+        "why": "Correct. Section 9.08(4)(a) permits limited return and repackaging for the original patient after a therapy change, with updated labeling and documented pharmacy accountability. Removed medicines must not return to stock or be dispensed to a different patient."
+      }
+    ],
+    "correct": [
+      "A",
+      "D"
+    ],
+    "citation": "247 CMR 9.08(1), (3)(a)–(c), (4)(a)–(c), (5)(d) (Compliance Packaging, effective Dec. 6, 2024)",
+    "url": "https://www.mass.gov/doc/247-cmr-9-professional-practice-standards/download",
+    "verified": "2026-11-16",
+    "note": "Massachusetts multi-drug-single-dose packaging excludes Schedules II–III and PRN medications, is limited to 60 days, and allows carefully documented same-patient repackaging after therapy changes."
+  },
+  {
+    "id": "E30-171",
+    "set": 35,
+    "area": 1,
+    "kind": "single",
+    "topic": "Board subpoena noncompliance as independent professional disciplinary ground",
+    "topicKey": "board-discipline",
+    "stem": "During a Massachusetts Board of Registration in Pharmacy investigation, a pharmacist is lawfully requested to produce specified pharmacy records and appear in response to a valid Board subpoena. The pharmacist refuses without cause because no final disciplinary order has yet been entered. Which assessment is correct?",
+    "choices": [
+      {
+        "text": "The pharmacist need cooperate only if the Board has first imposed formal discipline after a full merits hearing.",
+        "why": "Incorrect. 247 CMR 10.03(1)(q) expressly addresses failure without cause to cooperate with the Board's request or subpoena; the duty can arise DURING investigation and is not conditional on a prior final sanction."
+      },
+      {
+        "text": "No disciplinary exposure exists if the pharmacy owner, rather than the pharmacist, controls the physical record storage.",
+        "why": "Incorrect. The legal duty attaches to a licensee's cooperation and legally available records/information. Employment ownership alone is not a categorical basis to refuse lawful Board investigatory requests without cause."
+      },
+      {
+        "text": "Refusing to appear or furnish legally entitled records is permissible until the pharmacist has received a criminal court subpoena.",
+        "why": "Incorrect. The pharmacy Board has its own regulatory investigation and subpoena authority. Section 10.03(1)(q) does not require a separate criminal case or court-issued criminal subpoena."
+      },
+      {
+        "text": "Without cause, failure to cooperate with Board requests or a valid subpoena may itself support discipline, even before the Board adjudicates the underlying allegation.",
+        "why": "Correct. Section 10.03(1)(q) identifies failure to cooperate, appear, respond to subpoena, or furnish information to which the Board is legally entitled as independent grounds for action. The pharmacist should arrange lawful and confidential production rather than ignore the investigative demand."
+      }
+    ],
+    "correct": [
+      "D"
+    ],
+    "citation": "247 CMR 10.03(1)(q) (grounds for discipline, effective Jan. 9, 2025); 247 CMR 9.24(1)–(3) (Board pharmacy inspections and records)",
+    "url": "https://www.mass.gov/doc/247-cmr-10-disciplinary-proceedings/download",
+    "verified": "2026-11-16",
+    "note": "Failure without cause to cooperate with a lawful Massachusetts Board request or subpoena can independently support discipline; a final underlying order is not required first."
+  },
+  {
+    "id": "E30-172",
+    "set": 35,
+    "area": 2,
+    "kind": "single",
+    "topic": "FDA Medication Guides: inpatient professional administration and home self-administration distinction",
+    "topicKey": "medication-guides",
+    "stem": "A Massachusetts hospital uses a medication whose FDA-approved labeling requires a Medication Guide. One adult patient receives doses administered by nurses during inpatient admission; a different patient is discharged home with a prescription that the patient will self-administer. No special Medication Guide REMS/ETASU term applies, neither patient has requested a guide during inpatient care, and no practitioner withholding instruction exists. Which is the best description of FDA's CURRENT guidance?",
+    "choices": [
+      {
+        "text": "Every nurse-administered inpatient dose must legally be accompanied by a new physical Medication Guide, without exception or FDA enforcement discretion.",
+        "why": "Incorrect. FDA's published Medication Guide distribution guidance provides enforcement discretion for medication dispensed to a healthcare professional for inpatient administration absent a more specific requirement; automatic guide distribution at every such dose is not the agency's stated policy."
+      },
+      {
+        "text": "FDA generally exercises enforcement discretion for routine healthcare-professional administration in an inpatient setting, but a Medication Guide is ordinarily provided when dispensed directly for outpatient self-administration at home.",
+        "why": "Correct. FDA Medication Guides distribution guidance and 21 CFR 208.24(e) distinguish inpatient professional administration from direct patient/agent outpatient dispensing. The inpatient practice reflects a nonbinding FDA enforcement-discretion policy, not an amendment of all Part 208 legal language. REMS-specific distribution terms and patient requests must still be honored."
+      },
+      {
+        "text": "Once the patient has been hospitalized, no Medication Guide is required for any subsequently dispensed take-home supply because the first dose occurred in a hospital.",
+        "why": "Incorrect. The status of the particular dispensing matters. A take-home outpatient prescription intended for self-administration generally requires a Medication Guide even if earlier doses were administered by hospital staff."
+      },
+      {
+        "text": "Hospital inpatient distribution discretion automatically eliminates all drug-specific REMS requirements to review or provide Medication Guides.",
+        "why": "Incorrect. FDA's guidance expressly preserves Medication Guide distribution required by a product-specific REMS with elements to assure safe use. A general enforcement-discretion policy does not void those conditions."
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "citation": "21 CFR 208.24(e), 208.26(b); FDA Guidance 'Medication Guides—Distribution Requirements and Inclusion in REMS' (nonbinding enforcement discretion), and FDA Medication Guides Distribution for Health Care Professionals (Mar. 2020)",
+    "url": "https://www.fda.gov/drugs/drug-safety-and-availability/questions-and-answers-guidance-industry-medication-guides-distribution-requirements-and-inclusion",
+    "verified": "2026-11-16",
+    "note": "FDA generally exercises Medication Guide distribution discretion for inpatient professional administration, but outpatient take-home dispensing ordinarily requires the Guide; drug-specific REMS terms and patient requests remain important."
+  },
+  {
+    "id": "E30-173",
+    "set": 35,
+    "area": 2,
+    "kind": "multi",
+    "topic": "Pharmacy referral kickbacks and pharmacy-branded blank prescription forms",
+    "topicKey": "professional-ethics-referrals",
+    "stem": "A Massachusetts community pharmacist is negotiating with a nursing-home admissions coordinator who offers to steer residents' prescriptions to the pharmacy for a monthly referral payment. The pharmacist also considers supplying medical offices with blank prescription forms printed with the pharmacy's contact details. Under 247 CMR 9.01, which statements are correct? SELECT ALL THAT APPLY.",
+    "choices": [
+      {
+        "text": "The pharmacist may not pay the facility employee for referral or generation of pharmacy business, even if residents retain freedom to choose another pharmacy.",
+        "why": "Correct. 247 CMR 9.01(11) forbids remuneration or things of value to or from specified healthcare facility owners or employees IN RETURN FOR referral or pharmacy-related business. A theoretical choice to opt out does not legalize the referral payment."
+      },
+      {
+        "text": "The payment is permitted if it is described in the contract as a consulting fee for generating new prescriptions, regardless of the actual referral purpose.",
+        "why": "Incorrect. The regulation covers direct or indirect payment in exchange for referral/business; relabeling the same quid pro quo as a consulting fee does not change its purpose. Legitimate independent services would require their own analysis rather than this stated referral bargain."
+      },
+      {
+        "text": "The pharmacist may freely distribute blank prescription forms bearing that pharmacy's name because the forms are not signed prescriptions yet.",
+        "why": "Incorrect. Section 9.01(14) expressly forbids a pharmacy licensee from giving practitioners blank prescription forms that refer to a pharmacist or pharmacy. Unsigned status is not an exception."
+      },
+      {
+        "text": "The pharmacist should not give practitioners blank prescription forms that refer to the pharmacy, regardless of whether a particular patient has yet been selected.",
+        "why": "Correct. The independent prohibition in §9.01(14) applies to the act of supplying such preprinted blank forms; it is separate from the ban on referral remuneration."
+      }
+    ],
+    "correct": [
+      "A",
+      "D"
+    ],
+    "citation": "247 CMR 9.01(11),(14) (referral remuneration and blank pharmacy-identified prescription forms; effective Dec. 6, 2024)",
+    "url": "https://www.mass.gov/doc/247-cmr-9-professional-practice-standards/download",
+    "verified": "2026-11-16",
+    "note": "Massachusetts forbids referral kickbacks to healthcare facility employees and providing practitioners with pharmacy-identified blank prescription forms, even without a completed patient prescription."
+  },
+  {
+    "id": "E30-174",
+    "set": 35,
+    "area": 3,
+    "kind": "single",
+    "topic": "Narcolepsy medicine scheduling: Sunosi and Provigil versus Wakix",
+    "topicKey": "drug-schedule-identification",
+    "stem": "A Massachusetts pharmacist receives otherwise valid prescriptions for Sunosi (solriamfetol), Provigil (modafinil) and Wakix (pitolisant). Which description correctly matches federal DEA and corresponding Massachusetts schedules in November 2026?",
+    "choices": [
+      {
+        "text": "All three drugs are Schedule IV because all treat excessive daytime sleepiness associated with narcolepsy.",
+        "why": "Incorrect. Solriamfetol and modafinil are Schedule IV, but pitolisant is not a federally controlled substance and is a Massachusetts Schedule VI prescription drug. Indication does not make scheduling uniform."
+      },
+      {
+        "text": "Sunosi Schedule II, Provigil Schedule IV and Wakix Schedule VI.",
+        "why": "Incorrect. Solriamfetol is federally Schedule IV under 21 CFR 1308.14(f), not Schedule II. The other two classifications do not salvage this option."
+      },
+      {
+        "text": "Sunosi and Provigil are Schedule IV federally and in Massachusetts; Wakix is federally unscheduled and Massachusetts Schedule VI.",
+        "why": "Correct. 21 CFR 1308.14(f)(13) controls solriamfetol and §1308.14(f)(7) modafinil in Schedule IV. FDA's 2026 Wakix labeling lists pitolisant as an unscheduled prescription product; Massachusetts Schedule VI covers prescription drugs outside federal/MA Schedules I–V."
+      },
+      {
+        "text": "Wakix is Schedule III and both Sunosi and Provigil are federal Schedule V because treatment of narcolepsy is less restrictive than treating ADHD.",
+        "why": "Incorrect. The applicable federal Schedule IV listings expressly include solriamfetol and modafinil, and pitolisant is unscheduled. Comparing indications cannot override the DEA list."
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "citation": "21 CFR 1308.14(f)(7),(13) (modafinil, solriamfetol); 105 CMR 700.002(D),(F); FDA Wakix/pitolisant labeling updated Feb. 2026 (DEA Schedule: None)",
+    "url": "https://www.ecfr.gov/current/title-21/chapter-II/part-1308/section-1308.14",
+    "verified": "2026-11-16",
+    "note": "Solriamfetol/Sunosi and modafinil/Provigil are federal/MA Schedule IV; pitolisant/Wakix is federally unscheduled and Massachusetts Schedule VI."
+  },
+  {
+    "id": "E30-175",
+    "set": 35,
+    "area": 4,
+    "kind": "multi",
+    "topic": "USP <800> and <797> placement: Category 1 hazardous CSP in a C-SCA versus Category 2",
+    "topicKey": "sterile-hazardous-compounding",
+    "stem": "A Massachusetts sterile compounding pharmacy has an appropriately designed negative-pressure containment segregated compounding area (C-SCA) with a suitable ISO Class 5 containment primary engineering control and qualified personnel. It plans to compound non-antineoplastic and antineoplastic hazardous sterile preparations under the current USP <797> Category system. Which statements are supported by USP <800> and its January 2026 technical FAQ? SELECT ALL THAT APPLY.",
+    "choices": [
+      {
+        "text": "Any Category 2 or 3 hazardous CSP may be compounded routinely in the C-SCA whenever the ISO 5 containment hood is certified.",
+        "why": "Incorrect. USP <800> FAQ #5 explains that the earlier low/medium risk wording now maps to Category 1 only in a C-SCA; ISO 5 performance alone does not make the segregated area eligible for Categories 2 or 3."
+      },
+      {
+        "text": "Category 1 hazardous CSPs, including sterile-to-sterile and nonsterile-to-sterile preparations, may be compounded in a compliant C-SCA when all applicable containment and USP <797> requirements are met.",
+        "why": "Correct. USP <800> FAQ #5 explicitly recognizes Category 1 HD CSPs of both described component types in a C-SCA. The pharmacy must satisfy the negative-pressure containment, ISO 5 C-PEC and applicable Category 1 BUD/quality limits."
+      },
+      {
+        "text": "For Category 2 hazardous CSPs, the pharmacy must use an appropriately classified compliant cleanroom suite rather than treating the C-SCA as universally sufficient.",
+        "why": "Correct. Under the current USP <797> Category classification and USP <800> FAQ #5, Category 2 HD CSPs do not qualify for the C-SCA-only pathway. A compliant sterile hazardous cleanroom suite is necessary for those Category 2 operations."
+      },
+      {
+        "text": "The old 'low-risk/medium-risk' terminology remains the current USP <797> primary classification, so the Category 1/2/3 distinction must be ignored.",
+        "why": "Incorrect. USP <797> replaced older risk-level labels with Categories 1, 2 and 3. USP's 2026 FAQ #5 explicitly explains how to apply the current categories to the legacy wording in <800>."
+      }
+    ],
+    "correct": [
+      "B",
+      "C"
+    ],
+    "citation": "Current USP <797> Category 1–3 framework (official Nov. 1, 2023); USP <800> §5 and Jan. 21, 2026 FAQs Q5 (compendial applicability and Category 1 HD CSPs in C-SCA, informational technical support); 247 CMR 9.01(3)",
+    "url": "https://pages.usp.org/rs/711-SXF-172/images/USP_HQS_800_FAQs_January2026.pdf?version=0",
+    "verified": "2026-11-16",
+    "note": "A compliant C-SCA can be used for Category 1 hazardous CSPs (including nonsterile-to-sterile), not routine Category 2/3 hazardous CSPs. Apply the current <797> categories."
   }
 ];
