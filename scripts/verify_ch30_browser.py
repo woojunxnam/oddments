@@ -6,7 +6,7 @@ import re
 from pathlib import Path
 from urllib.parse import urljoin
 
-from playwright.sync_api import sync_playwright
+from playwright.sync_api import sync_playwright, TimeoutError as PlaywrightTimeoutError
 
 
 def verify_latest_set(browser, target: str) -> None:
@@ -171,8 +171,22 @@ def verify(base_url: str) -> None:
         page = context.new_page()
         errors = []
         page.on("pageerror", lambda exc: errors.append(str(exc)))
-        page.goto(target, wait_until="domcontentloaded", timeout=60000)
-        page.locator("#question-grid .ch30-question").first.wait_for(timeout=30000)
+        # GitHub Pages can intermittently serve incomplete resources after a fresh
+        # deployment. Retry the initial navigation only; a persistently broken
+        # question renderer must still FAIL with useful diagnostics.
+        for attempt in range(3):
+            response = page.goto(target, wait_until="domcontentloaded", timeout=60000)
+            try:
+                page.locator("#question-grid .ch30-question").first.wait_for(timeout=20000)
+                break
+            except PlaywrightTimeoutError:
+                if attempt == 2:
+                    reason = page.locator("#set-desc").inner_text() if page.locator("#set-desc").count() else "<missing>"
+                    raise AssertionError(
+                        f"Chapter30 root not rendered after 3 tries; HTTP={response.status if response else 'none'} "
+                        f"body={reason[:300]!r}; JS errors={errors!r}"
+                    )
+                print(f"RETRY: Chapter30 initial render {attempt + 1}/3 failed; reload and revalidate")
 
         fixed = page.locator('#question-grid [data-question-id="E30-001"]')
         assert fixed.count() == 1
