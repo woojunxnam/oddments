@@ -98,3 +98,7 @@ These are **review priorities, not legal-error verdicts**. Each flagged item req
 
 This report is a completed author-driven **population coverage + selected realism + risk screening**, not a completed full legal-audit certification. The 215-item main merge is PR #261 (`400218a73acb5e2eb62981b616ec9ec9a81c350a`); [its GitHub Pages release workflow](https://github.com/woojunxnam/oddments/actions/runs/44118130626) separately tracks deployment and live browser checks. No site files changed in this review PR.
 NaN
+
+## November 17, 2026 — Follow-up full-bank source recheck
+
+The AI-author source/rationale recheck covered **all 215 canonical question objects and all 860 A–D choice explanations**; see [the source-based checkpoint report](MPJE_CH30_215_LEGAL_REAUDIT_CHECKPOINT_2026-11-17.md) and [the 215-row source/answer ledger](MPJE_CH30_215_LEGAL_REAUDIT_LEDGER_2026-11-17.json). Five explicit source citation/effective-date corrections include E30-198's hospital CDTM typo (247 CMR 16.03(1), not (4)(a)), while prior substantive revision IDs and user history remain intact. Only 45 separate AI blind-source key re-solves matched; 53 were limited by source access and 117 had no separate blind-tool result. **This is author source review, not a legal expert's independent 215-item signoff**; future material amendments require re-verification. The user has set a target of 240 questions / two 120-item readiness exams after quality correction.
