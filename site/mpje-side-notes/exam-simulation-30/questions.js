@@ -5554,7 +5554,7 @@ window.MPJE_CH30_QUESTIONS = [
       "C"
     ],
     "citation": "FD&C Act §582(d)(1)(A)(iii), (d)(1)(B), (d)(3) (21 U.S.C. §360eee-1); FDA Drug Supply Chain Security Act product tracing and authorized trading partner guidance",
-    "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title21-section360eee-1&num=0&edition=prelim",
+    "url": "https://uscode.house.gov/us/usc/119-120/t21/s360eee-1/",
     "verified": "2026-11-16",
     "note": "Under DSCSA, dispensers use authorized trading partners and retain required tracing data for six years. A written vendor retention agreement is allowed but does not transfer legal responsibility."
   },
