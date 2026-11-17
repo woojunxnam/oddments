@@ -5970,5 +5970,521 @@ window.MPJE_CH30_QUESTIONS = [
     "url": "https://pages.usp.org/rs/711-SXF-172/images/USP_HQS_800_FAQs_January2026.pdf?version=0",
     "verified": "2026-11-16",
     "note": "A compliant C-SCA can be used for Category 1 hazardous CSPs (including nonsterile-to-sterile), not routine Category 2/3 hazardous CSPs. Apply the current <797> categories."
+  },
+  {
+    "id": "E30-176",
+    "set": 36,
+    "area": 1,
+    "kind": "single",
+    "topicKey": "technician-scope",
+    "topic": "New telephone Schedule VI prescription: certified technician reception versus ordinary technician and trainee",
+    "stem": "At a Massachusetts community pharmacy, a prescriber's authorized agent calls in a NEW, otherwise valid Schedule VI amlodipine prescription. A certified pharmacy technician with a current Massachusetts technician license, a noncertified licensed technician and a licensed trainee are present. The on-duty pharmacist approves appropriate delegation and will personally perform DUR and final dispensing validation. Who MAY receive and record this new oral information as described?",
+    "choices": [
+      {
+        "text": "The certified technician may receive the new or omitted prescription information with the on-duty pharmacist's approval, but may not independently resolve therapy changes or validate final dispensing.",
+        "why": "Correct. 247 CMR 8.04(4)(c) authorizes a licensed certified technician, identifying themself as such and with pharmacist approval, to receive NEW or omitted prescription information unless other law prohibits it. The delegated intake does not permit therapy clarification, counseling, DUR or final validation under §8.04(4)(e) and 247 CMR 9.04(1)."
+      },
+      {
+        "text": "The trainee may take the new prescription by telephone if the supervising pharmacist signs it after the call.",
+        "why": "Incorrect. 247 CMR 8.03(4)(c) expressly prohibits a technician trainee from taking prescriptions over the telephone. Later pharmacist validation does not transform prohibited telephone reception into a lawful trainee task."
+      },
+      {
+        "text": "The noncertified licensed technician may independently accept any NEW oral Schedule VI order because ordinary refill-authorizations and new-prescription intake have identical scope.",
+        "why": "Incorrect. 247 CMR 8.02 allows ordinary licensed technicians to request and receive refill authorization for an unchanged Schedule VI prescription subject to restrictions; §8.04(4)(c) grants the additional specified NEW-information reception to certified technicians. New orders and unchanged refills are not the same activity."
+      },
+      {
+        "text": "No technician may record new Schedule VI oral information, because federal DEA Schedule II oral-emergency restrictions apply to every Massachusetts Schedule VI medicine.",
+        "why": "Incorrect. Conventional amlodipine is Massachusetts Schedule VI and is not federal Schedule II. The certified-technician delegation provision applies to new information for otherwise lawful orders; federal emergency Schedule II prescription limitations are not a universal ban on Schedule VI technician intake."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "citation": "247 CMR 8.02(6), 8.03(4)(c), 8.04(4)(c),(e); 247 CMR 9.04(1); 105 CMR 721.030 (Massachusetts oral prescription format)",
+    "url": "https://www.mass.gov/doc/247-cmr-8-pharmacy-interns-and-technicians/download",
+    "verified": "2026-11-17",
+    "note": "A licensed certified technician may, with pharmacist approval, take new or omitted lawful prescription information; an ordinary technician's narrower unchanged refill role and a trainee's explicit telephone ban are different. Final clinical validation remains pharmacist-only."
+  },
+  {
+    "id": "E30-177",
+    "set": 36,
+    "area": 2,
+    "kind": "single",
+    "topicKey": "prescriber-authority",
+    "topic": "New nurse practitioner with valid individual MCSR and DEA but no required supervised prescribing guidelines",
+    "stem": "A Massachusetts-licensed certified nurse practitioner has only nine months of qualifying prescriptive-practice experience. The NP has an active individual Massachusetts Controlled Substances Registration and DEA registration for Schedule III. An otherwise authentic Schedule III prescription is sent for a patient within the NP's usual specialty. When the pharmacist calls about an unrelated discrepancy, the NP volunteers that no mutually agreed written prescriptive-practice guidelines or qualified healthcare professional supervision have ever been established. No special exception applies. What is the best dispensing decision?",
+    "choices": [
+      {
+        "text": "Dispense because possession of both individual registration numbers automatically establishes independent prescriptive practice.",
+        "why": "Incorrect. MCSR and DEA registrations are necessary for the applicable controlled schedules, but 244 CMR 4.06 also requires supervised prescriptive practice with mutually agreed guidelines during the initial qualifying period for a CNP. The prescriber has explicitly disclosed the missing legal practice condition."
+      },
+      {
+        "text": "Treat the supervising physician's DEA number as a substitute for the NP's registered prescriber identity, without resolving the missing guidelines.",
+        "why": "Incorrect. Borrowing another practitioner's DEA identifier is not a remedy for a missing required supervised-prescribing arrangement. The pharmacist should not alter the prescriber identity or overlook a known scope deficiency."
+      },
+      {
+        "text": "Dispense because a pharmacist is never required to inquire about NP supervision, even after receiving an explicit statement that required prescribing guidelines do not exist.",
+        "why": "Incorrect. Pharmacists generally are not required to independently investigate a qualifying NP's independent-practice status merely because a supervisor name is absent, but this pharmacist has affirmative information that the still-supervised NP lacks the required practice arrangement. Ordinary lawful-authority and corresponding-responsibility checks still apply."
+      },
+      {
+        "text": "Do not dispense under the disclosed circumstances until authorized prescriptive practice is established or an appropriately authorized practitioner issues a valid prescription.",
+        "why": "Correct. Under 244 CMR 4.06, a CNP below the supervised experience threshold must practice with the required mutually agreed prescriptive guidelines and qualified healthcare professional supervision. Knowing those conditions are absent is materially different from merely not seeing a supervisor's name on a valid independent NP prescription; valid DEA/MCSR numbers alone cannot supply professional scope."
+      }
+    ],
+    "correct": [
+      "D"
+    ],
+    "citation": "244 CMR 4.06(1)–(3) (nurse practitioner supervised prescriptive-practice guidelines/transition); M.G.L. c.112 §80E; 105 CMR 700.004; 21 CFR 1306.04(a); MA DPH Circular DCP 21-10-111",
+    "url": "https://www.mass.gov/regulations/244-CMR-406-prescriptive-authority",
+    "verified": "2026-11-17",
+    "note": "Separate individual DEA/MCSR registration from state-law prescriber authorization. A newly prescribing NP who still needs guidelines/supervision cannot cure their known absence by presenting valid controlled-drug registration numbers."
+  },
+  {
+    "id": "E30-178",
+    "set": 36,
+    "area": 2,
+    "kind": "multi",
+    "topicKey": "controlled-prescriptions",
+    "topic": "Controlled-prescription red flags despite authentic registration and an established patient relationship",
+    "stem": "A Massachusetts pharmacist reviews four separate Schedule II–IV controlled prescriptions issued by credentialed prescribers for existing patients. Each signature and DEA number is authentic. The pharmacist has information about whether the order is clinically and legally legitimate, and will document relevant investigation. Under 247 CMR 9.15 and DEA's corresponding responsibility, which actions or conclusions are defensible? SELECT ALL THAT APPLY.",
+    "choices": [
+      {
+        "text": "Fill a Schedule II prescription without further review whenever its DEA number is active, because registration conclusively proves legitimate medical purpose.",
+        "why": "Incorrect. 247 CMR 9.15(2) and 21 CFR 1306.04(a) impose the pharmacist's own corresponding responsibility. Registration and signature authenticity do not automatically establish legitimate purpose or safe dispensing when clinical red flags exist."
+      },
+      {
+        "text": "Investigate an unexpectedly early opioid refill with conflicting medical history, consult the prescriber as needed and withhold dispensing if the legitimate purpose cannot be established.",
+        "why": "Correct. A genuine early refill plus inconsistent history warrants professional judgment, clarification and documentation. The pharmacist must determine legitimacy and lawfulness before filling, but no automatic refusal rule is inferred solely from the early timing."
+      },
+      {
+        "text": "Automatically reject every cash-paid opioid prescription, even when the prescriber verifies the legitimate purpose, the patient relationship is established and no unresolved concern remains.",
+        "why": "Incorrect. Cash payment may be a red flag when viewed in context but neither 247 CMR 9.15 nor DEA corresponding-responsibility rules make all cash purchases unlawful. Assess actual concerns rather than impose an invented categorical ban."
+      },
+      {
+        "text": "After resolving a plausible red flag with credible clinical documentation and appropriate verification, dispense an otherwise lawful prescription if professional judgment supports legitimate purpose and safety.",
+        "why": "Correct. The law requires a genuine decision based on legitimate purpose, valid relationship, authenticity and legal compliance; it does not require permanent denial of a resolved red flag. The pharmacist should document the reasoning and perform clinical DUR."
+      }
+    ],
+    "correct": [
+      "B",
+      "D"
+    ],
+    "citation": "247 CMR 9.15(2)(a)–(d), 9.17 (prospective DUR); 21 CFR 1306.04(a); Massachusetts Board advisory 'Controlled Substance Prescriptions' (revised 2025), discussion of red flags and independent pharmacy judgment",
+    "url": "https://www.mass.gov/doc/controlled-substance-prescriptions-pdf/download",
+    "verified": "2026-11-17",
+    "note": "A genuine patient relationship, verified DEA number and authentic signature do not eliminate the pharmacist's duty to investigate credible controlled-drug red flags. A resolved red flag is not necessarily grounds for automatic refusal."
+  },
+  {
+    "id": "E30-179",
+    "set": 36,
+    "area": 3,
+    "kind": "single",
+    "topicKey": "cii-partial-fills",
+    "topic": "Patient-requested Schedule II remainder at originating pharmacy within 30 days versus expired stock-shortage clock",
+    "stem": "On November 3, 2026, an authorized in-state prescriber issues a valid electronic Schedule II prescription for 60 tablets. On November 4, the patient asks the pharmacy to dispense only 20 tablets even though all 60 are in stock; the pharmacist properly documents the patient-requested partial fill. On November 22, the patient asks for the remaining 40 tablets at the SAME pharmacy, and the prescription remains otherwise valid. No stock shortage, LTCF status or hospice exception applies. What may the pharmacist do under current Massachusetts law?",
+    "choices": [
+      {
+        "text": "Dispense the remaining 40 tablets if federal conditions and documentation are satisfied, because a patient-requested partial fill may be completed by the original pharmacy within 30 days of the prescription issue date.",
+        "why": "Correct. M.G.L. c.94C §18(d¾) and 105 CMR 721.055(B) permit patient-requested remainders only at the original pharmacy and no later than 30 days from issue, with documentation under subsection (C). November 22 is inside 30 days of November 3. This is NOT a partial fill caused by insufficient stock."
+      },
+      {
+        "text": "Treat the balance as void immediately after the first smaller dispense because the 2016 DPH circular still controls despite the later amendment.",
+        "why": "Incorrect. The older 2016 DPH circular's remainder-void wording was superseded; 2018 statutory amendments and current 105 CMR 721.055(B) expressly permit the remaining balance to be dispensed upon patient request at the original pharmacy within the issue-date limit."
+      },
+      {
+        "text": "Refuse the balance because the 72-hour completion limit for a Schedule II stock shortage governs every type of partial fill.",
+        "why": "Incorrect. The 72-hour federal shortage pathway addresses dispensing LESS than the full quantity because the pharmacy cannot supply it. Here full stock was available and the patient affirmatively requested less; 105 CMR 721.055's separate remainder rule governs."
+      },
+      {
+        "text": "Direct the patient to any other licensed pharmacy to obtain the remaining 40 tablets under the first pharmacy's partial-fill record.",
+        "why": "Incorrect. Section 721.055(B)(1) and c.94C §18(d¾) specify that ONLY the pharmacy which originally dispensed the smaller quantity may dispense the remaining portion under this patient-requested pathway."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "citation": "M.G.L. c.94C §18(d¾) (amended by Acts 2018 c.208); 105 CMR 721.055(A)–(C) (effective Sept. 27, 2024); 21 CFR 1306.13; DPH Circular DCP 18-10-104 superseding 2016 Circular DCP 16-12-665",
+    "url": "https://www.mass.gov/doc/105-cmr-721-standards-for-prescription-format-and-security-in-massachusetts/download",
+    "verified": "2026-11-17",
+    "note": "A Schedule II patient-requested partial fill differs from a pharmacy stock-shortage partial. The original pharmacy may dispense the patient-requested remainder within 30 days after issue, subject to federal rules and required documentation."
+  },
+  {
+    "id": "E30-180",
+    "set": 36,
+    "area": 4,
+    "kind": "multi",
+    "topicKey": "controlled-inventory",
+    "topic": "Expired pharmacy controlled stock: reverse distributor transfer, DEA Form 41 destruction and distinct Forms 106/222",
+    "stem": "A Massachusetts DEA-registered retail pharmacy identifies expired Schedule II and Schedule III stock that remains in its own inventory; there is NO theft, loss or damage. It plans to transfer the expired stock to an appropriately registered reverse distributor for lawful destruction and to replenish usable Schedule II stock from a wholesaler. Which federal controlled-substance procedures are correct? SELECT ALL THAT APPLY.",
+    "choices": [
+      {
+        "text": "Document the lawful transfer of expired controlled stock to the registered reverse distributor; the reverse distributor performing destruction completes its required DEA Form 41 record.",
+        "why": "Correct. Under 21 CFR 1317.05 and 1304.21, a practitioner registrant may transfer lawfully held expired controlled inventory to a reverse distributor at its registered location, with shipment and transfer records. The reverse distributor documents destruction on DEA Form 41, rather than treating a pharmacy's transfer invoice as the reverse distributor's destruction record."
+      },
+      {
+        "text": "The retail pharmacy must report the ordinary expired stock on DEA Form 106 within one business day, even though no theft or significant loss occurred.",
+        "why": "Incorrect. DEA Form 106 is for theft or significant loss under 21 CFR 1301.76(b), not an ordinary accountable inventory of expired medication awaiting lawful reverse distribution. The pharmacy still keeps complete inventory/transfer records."
+      },
+      {
+        "text": "Use a compliant paper DEA Form 222 or an authorized electronic CSOS order to acquire replacement Schedule II stock, independently of any destruction documentation.",
+        "why": "Correct. DEA Form 222 or the corresponding CSOS process is an ordering/transfer authorization for Schedule I or II acquisitions under 21 CFR Part 1305; it is separate from records for sending expired stock to a reverse distributor."
+      },
+      {
+        "text": "DEA Form 41 replaces all Schedule II ordering forms and automatically authorizes the pharmacy to acquire the exact quantity it discarded.",
+        "why": "Incorrect. Form 41 documents destruction, not permission to order new Schedule II products. Schedule II ordering still uses the authorized Part 1305 mechanism, and inventory disposal does not generate an automatic replacement allotment."
+      }
+    ],
+    "correct": [
+      "A",
+      "C"
+    ],
+    "citation": "21 CFR 1317.05(a)(2), 1317.10, 1304.21(d)–(e), 1305.03–1305.13, 1301.76(b); DEA Disposal Q&A (Forms 41/106/222 and reverse distributor responsibilities)",
+    "url": "https://www.deadiversion.usdoj.gov/faq/disp-destr-faq.html",
+    "verified": "2026-11-17",
+    "note": "Form 106 reports theft/significant loss, Form 41 documents controlled-substance destruction (reverse distributor when that entity destroys), and Form 222/CSOS orders Schedule II stock. A registrant's transfer to a reverse distributor requires its own records."
+  },
+  {
+    "id": "E30-181",
+    "set": 37,
+    "area": 1,
+    "kind": "single",
+    "topicKey": "intern-education",
+    "topic": "Board credit for another state's supervised pharmacy internship documented only by an employer's log",
+    "stem": "A Massachusetts pharmacist-licensure candidate earned 600 supervised intern hours at a licensed pharmacy in another state, before moving to Massachusetts. The candidate presents a signed employer time sheet, but NO affidavit or certificate from the state where the experience was acquired confirming that those hours were approved in that jurisdiction. All other intern-licensure and school requirements are satisfied. What does 247 CMR 8.01(11) allow the Massachusetts Board to do?",
+    "choices": [
+      {
+        "text": "Automatically accept the 600 hours because a signed time sheet is the exact proof required for all out-of-state internship credit.",
+        "why": "Incorrect. Section 8.01(11) expressly contemplates an AFFIDAVIT or certificate of approval from the JURISDICTION where the experience was acquired, indicating that the experience was duly approved there. A supervisor's time sheet alone is not the specified jurisdictional approval."
+      },
+      {
+        "text": "Reject the hours permanently because Massachusetts can never approve internship experience acquired outside the Commonwealth.",
+        "why": "Incorrect. Section 8.01(11) expressly provides a route for the Board to GRANT credit for otherwise qualified out-of-state experience when appropriate approval proof from the jurisdiction is supplied. It is not categorically disallowed."
+      },
+      {
+        "text": "Consider granting credit once the candidate produces an affidavit or certificate of approval issued by the jurisdiction where the hours were earned; credit is not automatic on an employer log alone.",
+        "why": "Correct. Under 247 CMR 8.01(11), the Board MAY grant credit for out-of-state pharmacy internship experience when documentation issued by the other jurisdiction indicates those hours were duly approved there. The intern should obtain that official proof and request Board acceptance."
+      },
+      {
+        "text": "Accept the hours only if the candidate first completes another 600 hours in Massachusetts, because the Board must match each out-of-state hour one-to-one.",
+        "why": "Incorrect. Section 8.01(11) imposes no universal 1:1 Massachusetts match. The issue is the Board's discretionary credit and the other state's official internship approval; overall licensure hour requirements are evaluated separately."
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "citation": "247 CMR 8.01(1),(9),(11), corrected Apr. 25, 2025 (out-of-state internship credit and jurisdiction-issued approval proof)",
+    "url": "https://www.mass.gov/doc/247-cmr-8-pharmacy-interns-and-technicians/download",
+    "verified": "2026-11-17",
+    "note": "Out-of-state supervised pharmacy internship experience may receive Massachusetts Board credit, but present the OTHER jurisdiction's affidavit/certificate indicating duly approved hours; employer hours alone do not guarantee credit."
+  },
+  {
+    "id": "E30-182",
+    "set": 37,
+    "area": 2,
+    "kind": "multi",
+    "topicKey": "naloxone-dispensing",
+    "topic": "OTC naloxone versus prescription-labeled naloxone under statewide standing order for a third party",
+    "stem": "An adult in Massachusetts wants naloxone to help a neighbor at risk of opioid overdose. A grocery store has FDA-labeled OTC naloxone nasal spray on its shelf. A nearby pharmacy has both the same OTC-labeled product and a DIFFERENT naloxone presentation labeled 'Rx only.' The pharmacy participates in the current Massachusetts statewide naloxone standing order. Which statements are correct? SELECT ALL THAT APPLY.",
+    "choices": [
+      {
+        "text": "The adult may purchase the OTC-labeled naloxone directly without an individual prescription; Massachusetts Drug Control Program prescribing/controlled-substance rules do not apply to activities involving that OTC product.",
+        "why": "Correct. The Massachusetts DPH Drug Control Program's October 10, 2024 advisory distinguishes OTC naloxone products from prescription naloxone. An FDA-approved OTC-labeled product may be bought at ordinary retail without an individual or standing-order prescription; no MCSR is required for OTC-product activities."
+      },
+      {
+        "text": "Because naloxone is a single active ingredient, all its formulations require identical pharmacy-only controlled-prescription processing even when FDA approves one presentation for OTC sale.",
+        "why": "Incorrect. FDA labeling makes OTC and Rx-only products legally distinct under Massachusetts' 2024 DPH advisory. A product labeled OTC does not automatically inherit prescription-only obligations of a separate Rx-labeled presentation."
+      },
+      {
+        "text": "A Massachusetts pharmacy may dispense Rx-labeled naloxone for use by another person under the statewide standing order, without a separate patient-specific prescription for the neighbor, while applying the prescription-pathway rules.",
+        "why": "Correct. M.G.L. c.94C §19B and Board Policy 2024-01 allow an individual to obtain prescription naloxone for a person at risk, and the statewide standing order serves as the required authorizing prescription. Product-specific counseling, labeling and related prescription reporting rules still apply."
+      },
+      {
+        "text": "The existence of a retail OTC naloxone alternative automatically cancels Massachusetts' statewide standing order for Rx-labeled naloxone and makes prescription insurance billing unlawful.",
+        "why": "Incorrect. The DPH and Board expressly maintain the standing-order pathway for Rx-labeled naloxone despite some OTC products. Eligible pharmacy prescriptions under the standing order can be processed through insurance subject to plan terms."
+      }
+    ],
+    "correct": [
+      "A",
+      "C"
+    ],
+    "citation": "M.G.L. c.94C §§19B–19C; MA DPH Advisory 'DCP Regulations and Over-The-Counter Naloxone' (Oct. 10, 2024); Board Policy 2024-01 revised Feb. 6, 2025; 2026 statewide naloxone standing order",
+    "url": "https://www.mass.gov/news/dcp-regulations-and-over-the-counter-naloxone",
+    "verified": "2026-11-17",
+    "note": "OTC-labeled naloxone can be purchased without a prescription, whereas Rx-labeled naloxone may still be dispensed under the Massachusetts statewide standing order, including for someone seeking to help a third party."
+  },
+  {
+    "id": "E30-183",
+    "set": 37,
+    "area": 2,
+    "kind": "single",
+    "topicKey": "rems",
+    "topic": "Current SPRAVATO REMS: pharmacy-to-certified-setting distribution versus patient take-home nasal spray",
+    "stem": "A Massachusetts community pharmacy is certified under the current SPRAVATO REMS. It receives an otherwise legitimate esketamine (SPRAVATO) prescription for an adult patient whose outpatient psychiatric clinic is ALSO REMS-certified. The patient requests that the pharmacy mail the sealed product to the patient's home for unsupervised self-administration, avoiding travel. The prescribing clinic instead offers to supervise administration on site. What is the legally appropriate REMS decision?",
+    "choices": [
+      {
+        "text": "Mail the product directly to the patient's home if the pharmacist provides a Medication Guide and a telephone number for questions.",
+        "why": "Incorrect. The current SPRAVATO REMS requires certified pharmacies to dispense it ONLY to certified healthcare settings. Direct patient home dispensing cannot be substituted by counseling or an enclosed Medication Guide."
+      },
+      {
+        "text": "Dispense or ship to the REMS-certified healthcare setting for observed self-administration and required professional monitoring; do not dispense for unsupervised home use.",
+        "why": "Correct. Current SPRAVATO labeling and REMS require the product to be dispensed and administered only in certified healthcare settings, with patients self-administering under direct observation and monitoring by providers for at least two hours. The pharmacy must verify the destination's certification."
+      },
+      {
+        "text": "Dispense to any licensed clinic, even if it is not REMS-certified, because the prescriber's own DEA registration satisfies the REMS certification.",
+        "why": "Incorrect. DEA registration for Schedule III esketamine and healthcare-setting SPRAVATO REMS certification are separate conditions. A pharmacy participating in the REMS may dispense only to a certified healthcare setting."
+      },
+      {
+        "text": "Give the patient one nasal device for unsupervised use and reserve two devices for the clinic because only the first dose needs onsite observation.",
+        "why": "Incorrect. The REMS does not create a routine first-dose-only supervised requirement. Treatment sessions must occur in certified settings with observation/monitoring, so distributing a patient take-home device violates the stated program safeguards."
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "citation": "FDA SPRAVATO (esketamine) current prescribing information §5.5 (REMS), certified pharmacy/healthcare setting and two-hour monitoring; 21 CFR 208 and current FDA REMS database",
+    "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=d81a6a79-a74a-44b7-822c-0dfa3036eaed",
+    "verified": "2026-11-17",
+    "note": "SPRAVATO is Schedule III but also subject to a product-specific REMS: certified pharmacies supply ONLY certified healthcare settings, where the patient self-administers under direct observation and at least two hours' monitoring."
+  },
+  {
+    "id": "E30-184",
+    "set": 37,
+    "area": 3,
+    "kind": "single",
+    "topicKey": "masspat",
+    "topic": "MassPAT prescriber lookup: inpatient administered benzodiazepine order versus discharge prescription",
+    "stem": "A Massachusetts hospital prescriber orders lorazepam (a Schedule IV benzodiazepine) to be administered by nurses to an admitted inpatient during hospitalization. On discharge, the prescriber issues a separate outpatient lorazepam prescription that may be filled at a community pharmacy. The hospital's pharmacy later dispenses the outpatient prescription to the departing patient. Assume no special emergency exception and all other requirements are met. Which interpretation of MassPAT obligations is correct?",
+    "choices": [
+      {
+        "text": "MassPAT lookup is exempt for BOTH orders because the patient was admitted when the drug was first considered, and hospital outpatient prescriptions are not reportable.",
+        "why": "Incorrect. Massachusetts DPH PMP FAQ expressly states the inpatient-medication-order exception applies only to doses administered in the healthcare setting, NOT discharge outpatient prescriptions. A covered outpatient pharmacy dispensing can also trigger dispensing-report requirements."
+      },
+      {
+        "text": "The physician must query MassPAT before every inpatient-administered lorazepam dose, but no query is needed before writing the outpatient discharge prescription.",
+        "why": "Incorrect. This reverses the relevant distinction in the DPH FAQ: inpatient medication orders administered in the facility qualify for the exemption, whereas an outpatient prescription at discharge requires query before issuance."
+      },
+      {
+        "text": "The pharmacist alone must query MassPAT before issuing the physician's discharge prescription; the physician has no MassPAT query duty when ordering benzodiazepines.",
+        "why": "Incorrect. M.G.L. c.94C §24A imposes the specified QUERY responsibility on the PRESCRIBER before writing certain controlled prescriptions, including benzodiazepines, subject to exceptions. Separately, the dispensing pharmacy has its OWN reporting duties under 105 CMR 700.012."
+      },
+      {
+        "text": "The inpatient-administered medication order qualifies for the inpatient MassPAT query exception; the discharge outpatient benzodiazepine prescription requires the prescriber to query MassPAT, and the pharmacy reports the covered outpatient dispensing.",
+        "why": "Correct. The DPH MassPAT FAQ states discharge prescriptions that may be filled by a retail or hospital outpatient pharmacy are NOT covered by the inpatient administration exemption. Under c.94C §24A and 105 CMR 700.012, prescriber query and pharmacy submission are separate obligations."
+      }
+    ],
+    "correct": [
+      "D"
+    ],
+    "citation": "M.G.L. c.94C §24A (prescriber query of PMP for benzodiazepines/narcotics); 105 CMR 700.012(A),(G) (dispenser reporting); MA DPH 'Prescription Monitoring Program frequently asked questions' question 'Opioid Rx’s to an inpatient at discharge'",
+    "url": "https://www.mass.gov/info-details/prescription-monitoring-program-frequently-asked-questions",
+    "verified": "2026-11-17",
+    "note": "MassPAT's inpatient query exemption applies to medication orders administered in the facility, not an outpatient benzodiazepine prescription at discharge. Prescriber query and pharmacy daily dispensing reporting are different duties."
+  },
+  {
+    "id": "E30-185",
+    "set": 37,
+    "area": 4,
+    "kind": "multi",
+    "topicKey": "sterile-hazardous-compounding",
+    "topic": "USP <800> chemotherapy spill in patient-care area: trained response, readily available spill kit and hazardous waste",
+    "stem": "During transport in a Massachusetts hospital oncology unit, a small container of a hazardous antineoplastic drug breaks, causing a visible spill. No one is injured yet, but trained hazardous-drug spill responders and an appropriately supplied spill kit are available. The hospital follows applicable USP <800> and hazardous-waste rules. Which steps are appropriate? SELECT ALL THAT APPLY.",
+    "choices": [
+      {
+        "text": "Keep visitors and unprotected personnel away while trained designated workers promptly contain and clean the spill with appropriate hazardous-drug protective equipment and supplies.",
+        "why": "Correct. USP <800> §16 requires hazardous drug spills to be contained and cleaned immediately by trained personnel using suitable protective equipment and spill-management supplies. An unprotected bystander should not be assigned the exposure."
+      },
+      {
+        "text": "Allow nearby nurses to continue preparing and administering drugs directly through the contaminated area until routine housekeeping is available at the end of the shift.",
+        "why": "Incorrect. USP <800> calls for prompt spill control; continuing routine work in the exposed area risks spreading contamination. Restrict traffic and initiate trained response rather than waiting until a normal end-of-shift cleaning cycle."
+      },
+      {
+        "text": "Place contaminated absorbents and protective equipment into the appropriate hazardous-drug waste stream, and document and evaluate any personnel exposure as required by facility procedures.",
+        "why": "Correct. Spill cleanup is not ordinary trash disposal: contaminated materials must be disposed of in accordance with applicable hazardous-drug/waste policies. The pharmacy and facility must maintain spill documentation and evaluate possible employee exposure."
+      },
+      {
+        "text": "Flush contaminated materials into the nearest sink because a drug dissolved in water is no longer a hazardous substance and requires no spill records.",
+        "why": "Incorrect. Dilution does not erase a drug's hazardous status. USP <800> and hazardous-waste requirements do not authorize routine sink disposal of hazardous-drug spill waste; the response and any exposure require appropriate procedures."
+      }
+    ],
+    "correct": [
+      "A",
+      "C"
+    ],
+    "citation": "Current USP <800> §16 (Spill Control) and §15 (Deactivating, Decontaminating, Cleaning and Disinfecting); USP <800> FAQs Jan. 21, 2026; 247 CMR 9.01(3), applicable federal/state hazardous waste requirements",
+    "url": "https://www.usp.org/compounding/general-chapter-hazardous-drugs-handling-healthcare",
+    "verified": "2026-11-17",
+    "note": "Hazardous-drug spills need prompt trained containment, appropriate PPE and readily available kits. Isolate the area, handle contamination as hazardous waste, and document/evaluate any exposed personnel; routine housekeeping or drains are not substitutes."
+  },
+  {
+    "id": "E30-186",
+    "set": 38,
+    "area": 1,
+    "kind": "single",
+    "topicKey": "workforce-supervision",
+    "topic": "Category 2 sterile-compounding technician: overdue ongoing aseptic competency despite passing initial test",
+    "stem": "A Massachusetts sterile compounding pharmacy qualified a licensed technician for Category 2 CSPs eight months ago. The technician initially passed the required garbing and aseptic manipulation assessments, but has completed neither the scheduled repeat garbing nor media-fill-based aseptic manipulation competency during the intervening eight months. The technician wants to resume preparation tomorrow under a pharmacist's direct observation, and the pharmacist offers to perform final validation afterward. What should the designated supervisor require first?",
+    "choices": [
+      {
+        "text": "Allow the technician to compound because initial media-fill qualification is permanent as long as a pharmacist signs every final CSP label.",
+        "why": "Incorrect. Current USP <797> §§2.2–2.3 require ongoing garbing and aseptic-manipulation competency at least EVERY SIX MONTHS for Category 1 and 2 personnel who compound. Pharmacist final validation does not replace those personnel qualification prerequisites."
+      },
+      {
+        "text": "Require successful overdue ongoing garbing and aseptic-manipulation competency evaluations before returning the technician to Category 2 compounding; retain the pharmacist's independent final validation.",
+        "why": "Correct. The technician's last successful ongoing assessments were eight months ago, exceeding the Category 2 six-month interval. USP <797> requires those activities at the specified intervals, including media-fill assessment followed by glove sampling and associated testing. Massachusetts pharmacists remain responsible for final validation under 247 CMR 9.04(1)."
+      },
+      {
+        "text": "Ask only for a renewed national technician certification because certification alone resets USP <797> competency intervals.",
+        "why": "Incorrect. Professional certification is not the same as facility-specific cleanroom garbing and aseptic compounding qualification. USP <797> personnel competency recurs regardless of national technician certification status."
+      },
+      {
+        "text": "Permit Category 2 compounding under observation until one year has elapsed because Category 2 personnel follow the annual oversight-only competency interval.",
+        "why": "Incorrect. The every-12-month interval applies to some personnel who have DIRECT OVERSIGHT but do not compound; Category 1/2 active compounding personnel must satisfy the SIX-month competency intervals. Being observed does not make the compounding technician an oversight-only person."
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "citation": "Current USP <797> §§2.2–2.3/Table 1 and associated aseptic manipulation competency requirements (official Nov. 1, 2023); USP official FAQs updated Dec. 11, 2023; 247 CMR 9.01(3), 9.04(1)",
+    "url": "https://pages.usp.org/rs/711-SXF-172/images/USP_HQS_797_FAQs_December2023_V6__002.pdf?version=0",
+    "verified": "2026-11-17",
+    "note": "Category 1/2 personnel who actively compound sterile preparations require recurring garbing and aseptic-manipulation competency at least every six months. Oversight-only yearly assessments and the pharmacist's final check do not extend that interval."
+  },
+  {
+    "id": "E30-187",
+    "set": 38,
+    "area": 2,
+    "kind": "single",
+    "topicKey": "bulk-compounding-eligibility",
+    "topic": "FDA 503A bulk drug eligibility: nomination alone without monograph, approved-product component or actual 503A list",
+    "stem": "A Massachusetts state-licensed 503A compounding pharmacy has a patient-specific prescription requesting a nonsterile medicine compounded from bulk Substance X. FDA confirms that X has NO applicable USP/NF monograph, is NOT a component of an FDA-approved drug, and is NOT on FDA's established 503A bulks list. A supplier notes only that someone NOMINATED X for future FDA review; the supplier provides a valid certificate of analysis and is FDA-registered. Assume no temporary enforcement-discretion statement applicable to X is being invoked. Which conclusion is correct about qualifying for the FD&C Act §503A bulk-ingredient exemptions?",
+    "choices": [
+      {
+        "text": "A nomination automatically places X on the 503A bulks list until FDA expressly rejects the nomination.",
+        "why": "Incorrect. FDA distinguishes substances nominated for evaluation from substances actually included on the established 503A bulks list. A nomination alone does not satisfy 21 U.S.C. §353a(b)(1)(A)'s statutory ingredient eligibility requirement."
+      },
+      {
+        "text": "The supplier's certificate of analysis and FDA establishment registration independently make X eligible even though none of the three listed substantive ingredient pathways applies.",
+        "why": "Incorrect. Valid COA and supplier registration are additional necessary conditions for qualifying 503A bulk substances, not substitutes for an applicable USP/NF monograph, FDA-approved product component status, or inclusion on the established 503A list."
+      },
+      {
+        "text": "The individual patient prescription makes all bulk ingredients eligible, regardless of their legal monograph, FDA approval or bulks-list status.",
+        "why": "Incorrect. A patient-specific prescription is a separate prerequisite for the 503A exemption pathway and does not override §503A's limits on which BULK DRUG SUBSTANCES may be used."
+      },
+      {
+        "text": "Do not treat the proposed compound as satisfying the statutory 503A bulk-substance exemption on the stated evidence; select a lawfully eligible ingredient or pursue another authorized route.",
+        "why": "Correct. FDA's 503A bulks explanation and FD&C Act §503A(b)(1)(A) require one of three substantive eligibility bases: a compliant applicable compendial monograph, FDA-approved-drug component, or actual inclusion on the established 503A bulks list, with COA and manufacturer registration additionally required. No route is satisfied for X. A separate FDA enforcement-discretion policy, if any, requires its own current specific analysis."
+      }
+    ],
+    "correct": [
+      "D"
+    ],
+    "citation": "FD&C Act §503A(b)(1)(A) (21 U.S.C. §353a(b)(1)(A)); FDA 'Bulk Drug Substances Used in Compounding Under Section 503A' (updated 2026); FDA 503A bulks list regulations and category-status distinctions",
+    "url": "https://www.fda.gov/drugs/human-drug-compounding/bulk-drug-substances-used-compounding-under-section-503a-fdc-act",
+    "verified": "2026-11-17",
+    "note": "A 503A pharmacy's valid patient Rx and supplier COA do not by themselves make a bulk API eligible. Check USP/NF monograph, FDA-approved-product component, or the actual FDA 503A bulks list; mere nomination is not list inclusion."
+  },
+  {
+    "id": "E30-188",
+    "set": 38,
+    "area": 2,
+    "kind": "multi",
+    "topicKey": "interchange-product-equivalence",
+    "topic": "Massachusetts nonemergency drug interchange: same active ingredient but strength and dosage form must match",
+    "stem": "A Massachusetts pharmacist receives an otherwise valid prescription for a brand-name extended-release oral tablet (Drug A, 100 mg). The patient has not requested the brand, and the prescriber has not indicated 'no substitution.' Products available include (X) a cheaper FDA Orange Book A-rated generic extended-release TABLET 100 mg of Drug A, (Y) the same drug as an FDA-approved immediate-release tablet 100 mg, and (Z) the same extended-release drug as a 50-mg tablet. Assume all other prescription and safety requirements are satisfied. Under 105 CMR 720 and Massachusetts pharmacy interchange rules, which statements are accurate? SELECT ALL THAT APPLY.",
+    "choices": [
+      {
+        "text": "Product X can qualify for ordinary interchange because the same drug, strength and dosage form has a therapeutically equivalent A-rated generic and the prescriber did not prohibit substitution.",
+        "why": "Correct. 105 CMR 720.050 and 720.200 base interchange on products therapeutically equivalent to the prescribed drug in the same active ingredient, dosage form and strength (or separately specifically listed). The stated Orange Book A rating supports the appropriate same-strength ER tablet substitution."
+      },
+      {
+        "text": "Product Y is automatically interchangeable because its milligram strength is the same, even though its release mechanism and dosage form differ.",
+        "why": "Incorrect. Identical strength alone is insufficient: immediate-release and extended-release forms are not treated as automatically equivalent. Under 105 CMR 720.020, pharmaceutical equivalence includes dosage form/route and in practice an appropriate Orange Book equivalence designation; a prescriber-authorized change may be needed."
+      },
+      {
+        "text": "Product Z is automatically equivalent if the pharmacy gives two 50-mg tablets instead of one 100-mg tablet, because arithmetic equality replaces the legal same-strength requirement.",
+        "why": "Incorrect. Different tablet strength and tablet count are not the identical 100-mg dosage-unit product contemplated by an ordinary legally interchangeable equivalent. The pharmacist may clarify a distinct therapeutic substitution with the practitioner, but cannot infer automatic equivalence from arithmetic."
+      },
+      {
+        "text": "If the pharmacist needs a product with a different dosage form or strength, the pharmacist should obtain an appropriate lawful prescriber clarification or authorization rather than silently treat it as mandatory generic interchange.",
+        "why": "Correct. The Massachusetts List of Interchangeable Drug Products operates on equivalent active ingredients, forms and strengths. A clinically plausible change in formulation or dosage may require prescriber consultation and documentation rather than substitution under the ordinary interchange mandate."
+      }
+    ],
+    "correct": [
+      "A",
+      "D"
+    ],
+    "citation": "105 CMR 720.020 (pharmaceutical/interchangeable equivalence), 720.050 and 720.200 Appendix A (Massachusetts List and Orange Book A-rated equivalent comparison); M.G.L. c.112 §12D; 247 CMR 9.05",
+    "url": "https://www.mass.gov/regulations/105-CMR-72000-list-of-interchangeable-drug-products",
+    "verified": "2026-11-17",
+    "note": "Massachusetts nonemergency generic interchange depends on recognized therapeutic equivalence of the actual dosage form and strength, not merely the same chemical name or equal total milligrams from a different formulation."
+  },
+  {
+    "id": "E30-189",
+    "set": 38,
+    "area": 3,
+    "kind": "single",
+    "topicKey": "drug-schedule-identification",
+    "topic": "Butalbital products and 2026 DEA NDC-specific exemption revocation versus generic class scheduling",
+    "stem": "On November 17, 2026, a Massachusetts pharmacist compares two commercially marketed butalbital combination products: Product A has an ACTIVE NDC that the pharmacist has just verified REMAINS on DEA's current Table of Exempted Prescription Products; Product B has a different NDC that is NOT on the exemption table, contains a nonexempt butalbital combination, and carries the manufacturer's federal CIII classification. Both require prescriptions. DEA's October 9, 2026 notice revoked exemptions for certain INACTIVE NDCs effective November 9. Which conclusion is best supported?",
+    "choices": [
+      {
+        "text": "DEA's November 9, 2026 determination revoked every butalbital combination exemption, including currently active listed NDCs.",
+        "why": "Incorrect. DEA's October 9 final determination explicitly limited revocation to specified inactive or discontinued NDCs and said active exempted NDC products are NOT impacted. The pharmacist cannot generalize the limited revocation to all butalbital products."
+      },
+      {
+        "text": "Because butalbital itself is Schedule III, every product containing it must be federally Schedule III even when DEA currently lists that precise NDC as an exempt prescription product.",
+        "why": "Incorrect. Section 1308.32 establishes exemptions for qualifying specific nonnarcotic prescription products; active, approved NDC listings matter. Butalbital's underlying Schedule III ingredient status does not eliminate a product's expressly retained exemption."
+      },
+      {
+        "text": "Classify by the exact verified product/NDC: Product A remains federally exempt and, as a prescription drug not otherwise in Massachusetts Schedules I–V, is Massachusetts Schedule VI; Product B is federally CIII and correspondingly Massachusetts Schedule III.",
+        "why": "Correct. DEA's final determination effective Nov. 9, 2026 states active listed exemptions are unaffected, while unlisted nonexempt combinations retain federal Schedule III under 21 CFR 1308.13(c)(3). Massachusetts 105 CMR 700.002(C),(F) adopts corresponding federal controlled schedules and categorizes other prescription drugs in Schedule VI. The pharmacy should verify the precise NDC and current DEA exemption status rather than assume the entire butalbital class has one schedule."
+      },
+      {
+        "text": "The pharmacy may determine Product B is exempt solely because it has the same broad combination-drug ingredients as Product A; the NDC and exemption listing are irrelevant.",
+        "why": "Incorrect. Under 21 CFR 1308.31–1308.32 DEA exemptions are specific to approved marketed formulations/products. A combination with superficially similar ingredients does not automatically inherit a different NDC's exemption, especially after the 2026 inactive-product removals."
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "citation": "21 CFR 1308.13(c)(3) and 1308.31–1308.32; DEA Final Determination 'Removal of Exemption Status for Inactive Butalbital Products' (91 FR 64618, Oct. 9, 2026; effective Nov. 9, 2026); 105 CMR 700.002(C),(F); DEA current Table of Exempted Prescription Products by NDC",
+    "url": "https://www.govinfo.gov/content/pkg/FR-2026-10-09/html/2026-20757.htm",
+    "verified": "2026-11-17",
+    "note": "Butalbital is normally federal Schedule III, but only specific qualifying currently exempt prescription NDCs avoid federal control and become Massachusetts Schedule VI; the November 2026 DEA revocation targeted INACTIVE NDCs and did not revoke active exemptions."
+  },
+  {
+    "id": "E30-190",
+    "set": 38,
+    "area": 4,
+    "kind": "multi",
+    "topicKey": "sterile-hazardous-compounding",
+    "topic": "USP <797> Category 2 nonhazardous sterile IV bag: ISO-classified suite versus SCA and tested BUD limits",
+    "stem": "A Massachusetts hospital pharmacy aseptically compounds a NONHAZARDOUS Category 2 IV preparation from only sterile manufactured components. It has a qualified ISO Class 5 laminar airflow PEC in a properly maintained ISO Class 7 positive-pressure buffer room with an ISO Class 8 anteroom, and suitable personnel/monitoring. No sterility test is performed, stability data support at least 10 days under refrigeration, and no component imposes a shorter BUD. Under the currently official USP <797>, which statements are correct? SELECT ALL THAT APPLY.",
+    "choices": [
+      {
+        "text": "The stated ISO 5 PEC in an appropriate classified buffer/anteroom cleanroom suite can support Category 2 compounding when other <797> requirements are satisfied.",
+        "why": "Correct. The normal Category 2 nonhazardous aseptic-compounding configuration is an ISO 5 PEC in a properly classified cleanroom suite (e.g., ISO 7 buffer and ISO 8 anteroom). Facility and personnel/EM requirements still apply."
+      },
+      {
+        "text": "Moving the ISO 5 hood to a nonclassified segregated compounding area automatically retains all Category 2 BUDs because ISO 5 primary airflow alone determines category eligibility.",
+        "why": "Incorrect. Category 2 preparation requires the appropriate classified cleanroom environment; an unclassified SCA generally supports only Category 1 and its shorter BUD limits under USP <797>. ISO 5 primary control by itself does not make an SCA an ISO-classified Category 2 suite."
+      },
+      {
+        "text": "For an aseptically prepared Category 2 CSP containing only sterile starting components and no sterility test, a BUD of up to four days at controlled room temperature or ten days refrigerated may be assigned when supported by stability and all other conditions.",
+        "why": "Correct. USP <797> §14.3/Table 12 gives these maximum BUDs for this particular sterile-starting-component, aseptic, untested Category 2 formulation. Shorter stability limits would supersede them; not all Category 2 formulations share these values."
+      },
+      {
+        "text": "Because the product is Category 2, it always requires completed sterility testing before any BUD can be assigned, even for a short BUD.",
+        "why": "Incorrect. USP <797> includes explicit Category 2 maximum BUDs WITHOUT sterility testing for specified sterile-component cases. Longer assigned BUDs or other category formulations may have separate testing requirements, but sterility testing is not universally mandatory for every Category 2 CSP."
+      }
+    ],
+    "correct": [
+      "A",
+      "C"
+    ],
+    "citation": "Official USP <797> §§4.1 and 14.3/Table 12 (revision official Nov. 1, 2023); USP <797> official FAQs updated Dec. 11, 2023, Q181 and room-classification guidance; 247 CMR 9.01(3)",
+    "url": "https://pages.usp.org/rs/711-SXF-172/images/USP_HQS_797_FAQs_December2023_V6__002.pdf?version=0",
+    "verified": "2026-11-17",
+    "note": "Category 2 nonhazardous sterile CSPs require a properly classified cleanroom suite and ISO 5 PEC. From sterile components without sterility testing, maxima are four days at room temperature or ten days refrigerated when stability supports them."
   }
 ];
