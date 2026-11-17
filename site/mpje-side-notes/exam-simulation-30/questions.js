@@ -7896,35 +7896,35 @@ window.MPJE_CH30_QUESTIONS = [
     "set": 47,
     "area": 1,
     "kind": "single",
-    "topic": "PharmD graduate residency before pharmacist licensure: continuing pharmacy intern status",
-    "topicKey": "intern-education",
-    "stem": "A 2026 PharmD graduate from an approved pharmacy school has accepted a Massachusetts hospital residency. Their Massachusetts pharmacy INTERN license is active, but the Board has not issued a pharmacist license. The resident will work under the direct supervision of a registered pharmacist preceptor. What is permissible under 247 CMR 8.01?",
+    "topic": "Graduating pharmacist: initial-calendar-year CE exemption versus following year's requirements",
+    "topicKey": "licensure-ce",
+    "stem": "A pharmacist graduates from an approved PharmD program in May 2026 and obtains an active Massachusetts pharmacist license that August. They are not participating in vaccination, compounding, or CDTM activities requiring additional specialty CE. For the 2026 and 2027 calendar years, which statement correctly applies 247 CMR 4.03?",
     "choices": [
       {
-        "text": "The graduate is automatically a Massachusetts pharmacist as soon as the PharmD diploma is awarded and may independently perform final dispensing validation.",
-        "why": "Incorrect. A degree or residency acceptance is not a Board-issued pharmacist license. 247 CMR 9.04(1) reserves final dispensing validation to the licensed pharmacist, regardless of graduation status."
+        "text": "They must complete 20 CE contact hours by December 31, 2026 because the exemption applies only to students who have not received a license.",
+        "why": "Incorrect. Section 4.03(8) expressly exempts a registrant from continuing education in the calendar year the registrant graduated from an approved pharmacy school; obtaining licensure that same year does not remove the exemption."
       },
       {
-        "text": "The graduate must cease all pharmacy-intern duties on graduation day even with an active intern license and a supervising preceptor.",
-        "why": "Incorrect. Section 8.01(10) expressly permits a graduate of an approved school to continue acting in the capacity of pharmacy intern until becoming licensed as a pharmacist."
+        "text": "Their first required CE calendar year is 2028, because every new pharmacist receives a two-year grace period after the first Massachusetts license.",
+        "why": "Incorrect. The regulatory exception is tied to the specific calendar year of graduation. It is not a two-year rolling extension of the annual CE requirement into 2027."
       },
       {
-        "text": "The graduate may continue to practice in the pharmacy-INTERN capacity with an active Massachusetts intern license and appropriate pharmacist supervision during the residency, until pharmacist licensure is obtained.",
-        "why": "Correct. 247 CMR 8.01(8) allows approved-school PharmD residents to hold a Massachusetts pharmacy intern license with pharmacist supervision, and subsection (10) preserves the intern role for graduates before pharmacist licensure."
+        "text": "No CE is required for calendar year 2026 under the graduation-year exception, but normal applicable annual CE requirements resume in 2027; credits cannot be carried forward across calendar years.",
+        "why": "Correct. 247 CMR 4.03(8) exempts the pharmacist from CE in the 2026 graduation calendar year. Section 4.03(4)-(5) imposes yearly CE requirements afterward and disallows carrying prior-year contact hours into the next calendar year. Other practice-specific CE would be analyzed separately if relevant."
       },
       {
-        "text": "The hospital may replace the intern license with an out-of-state pharmacist license because any United States state license automatically permits independent Massachusetts residency dispensing.",
-        "why": "Incorrect. The specific Massachusetts license or authorized intern status remains necessary. A pharmacist license in another state does not independently grant Massachusetts pharmacist authority."
+        "text": "The pharmacist may complete 40 contact hours in 2026 and carry them forward to satisfy both 2026 and 2027 continuing education obligations.",
+        "why": "Incorrect. Section 4.03(5) expressly disallows carrying contact hours between calendar years. Extra activity during an exempt graduation year does not prepay a later calendar year's requirements."
       }
     ],
     "correct": [
       "C"
     ],
-    "citation": "247 CMR 8.01(3),(8)(a)–(b),(10) (PharmD graduate resident and intern continuation); 247 CMR 9.04(1) (pharmacist final dispensing process validation)",
-    "url": "https://www.mass.gov/doc/247-cmr-8-pharmacy-interns-and-technicians/download",
+    "citation": "247 CMR 4.03(4),(5),(8) (annual CE, no carryover and graduation-year exception); Massachusetts Board Policy 2021-04 general compliance (revised Sep. 4, 2025)",
+    "url": "https://www.mass.gov/doc/247-cmr-4-personal-registration-renewal-continuing-education-requirement/download",
     "verified": "2026-11-17",
     "revision": 1,
-    "note": "Differentiates post-graduation supervised hospital resident status from E30-166 foreign graduate FPGEE authorization and E30-181 acceptance of out-of-state hours."
+    "note": "Novel graduate-year CE exception under §4.03(8). Replaced an almost duplicate PGY1-resident intern case already tested in E30-076. Differs from E30-226 proof and retention of CE credits."
   },
   {
     "id": "E30-232",
@@ -8073,35 +8073,35 @@ window.MPJE_CH30_QUESTIONS = [
     "set": 48,
     "area": 1,
     "kind": "single",
-    "topic": "National certified technician credential lapses while Massachusetts technician license remains valid",
-    "topicKey": "technician-scope",
-    "stem": "A Massachusetts pharmacy technician has a CURRENT state pharmacy technician license, but their nationally recognized pharmacy technician certification expired last week. The MOR wants to count the employee as a certified technician in a 1:4 filling team and assign new telephone Schedule VI prescription intake. No renewal of national certification has occurred. What is correct?",
+    "topic": "New staff licensure verification: pharmacy responsibility at commencement of employment",
+    "topicKey": "workforce-supervision",
+    "stem": "A Massachusetts community pharmacy hires a pharmacist and a pharmacy technician TRAINEE. HR checked both licenses eight months ago when the applicants were interviewed. On their first scheduled workday, the pharmacist's Massachusetts registration is active but the trainee license has expired. The MOR wants the trainee to prepare prescriptions while a renewal application is pending. What does 247 CMR 9.19(18) require?",
     "choices": [
       {
-        "text": "The Massachusetts technician license also expires automatically the instant national certification lapses; the individual can perform no ordinary licensed technician duties.",
-        "why": "Incorrect. Under 247 CMR 8.04(3), loss of national certification changes the person's CERTIFIED status and permitted role, not necessarily the separate validity of their current Massachusetts technician license."
+        "text": "Permit the trainee to begin preparing prescriptions because an HR check made during the interview is valid for the entire first year of employment.",
+        "why": "Incorrect. 247 CMR 9.19(18) makes verification of CURRENT licensure at the commencement of employment a pharmacy obligation. A historic screening months earlier does not excuse checking the worker's status on arrival."
       },
       {
-        "text": "The individual may continue within ordinary licensed pharmacy technician duties, must use the 'Pharmacy Technician' title, and counts as a regular (noncertified) technician for supervisory ratios; the certified-only telephone new-prescription authority no longer applies.",
-        "why": "Correct. 247 CMR 8.04(3)(a)-(c) provides all three consequences when certification lapses: reduced scope to §8.02, ordinary technician title, and ordinary-technician counting in §8.06 ratios. New information intake under §8.04(4)(c) requires current certified status."
+        "text": "Verify both workers' current Massachusetts licenses when employment commences and do not assign licensed pharmacy-technician trainee tasks to the worker whose personal license has expired.",
+        "why": "Correct. The pharmacy must verify licensure status upon commencement for pharmacists, interns, technicians and technician trainees under §9.19(18). An expired trainee license cannot be treated as active during application processing; restrict duties until a valid credential is confirmed."
       },
       {
-        "text": "The employee can remain counted as certified for 90 days after certification expiration if the supervising pharmacist signs the personnel roster.",
-        "why": "Incorrect. Section 8.04(3) contains no automatic 90-day national-certification grace period allowing certified scope or staffing-ratio credit; a manager's signature cannot invent a regulatory extension."
+        "text": "Only the pharmacist's registration needs verification; a technician trainee may work without Board licensure for the first 1,500 hours.",
+        "why": "Incorrect. The same current-license verification duty expressly includes technician trainees. A technician's training-hour eligibility limits do not create permission to work before obtaining or renewing the requisite trainee license."
       },
       {
-        "text": "A currently state-licensed technician whose national certification lapses may still perform final pharmacist dispensing validation if barcode and machine checks are available.",
-        "why": "Incorrect. Final dispensing-process validation remains a pharmacist function under 247 CMR 9.04(1). Neither ordinary nor certified technician status permits taking over the final clinical validation responsibility."
+        "text": "Allow the trainee to count controlled drugs so long as barcode scanning occurs and the pharmacist performs final validation; supervision substitutes for an active trainee credential.",
+        "why": "Incorrect. Computer checks and pharmacist supervision do not cure an expired individual credential or create authority to handle prohibited controlled-substance inventory."
       }
     ],
     "correct": [
       "B"
     ],
-    "citation": "247 CMR 8.04(3)(a)–(c) (certification lapse: duties/title/ratios); 247 CMR 8.04(4)(c) and 8.02(6) (new Rx phone reception vs regular scope); 247 CMR 9.04(1)",
-    "url": "https://www.mass.gov/doc/247-cmr-8-pharmacy-interns-and-technicians/download",
+    "citation": "247 CMR 9.19(18) (current licensure verification at commencement for pharmacist, intern, technician and trainee); 247 CMR 8.03 (pharmacy technician trainee licensure and scope); 247 CMR 9.04(1) (pharmacist final validation)",
+    "url": "https://www.mass.gov/doc/247-cmr-9-professional-practice-standards/download",
     "verified": "2026-11-17",
     "revision": 1,
-    "note": "Different from E30-062/191 technician vaccine 500h qualification and E30-026 staffing-qualified 1:4 compositions; specifically tests national certification expiry and role downgrade."
+    "note": "Different from E30-121 (national certification lapse but continued valid Massachusetts technician license) and E30-156 (expired pharmacist's individual practice); new decision is the EMPLOYING pharmacy's commencement-date verification of every credentialed class."
   },
   {
     "id": "E30-237",
