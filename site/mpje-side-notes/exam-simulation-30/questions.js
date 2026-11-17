@@ -7406,7 +7406,7 @@ window.MPJE_CH30_QUESTIONS = [
     "stem": "A Massachusetts pharmacy is covered by Section 1557 because it receives qualifying HHS financial assistance. A patient who has limited English proficiency accepts counseling for a new medicine but cannot understand the pharmacist's English explanation. The pharmacy has immediate access to a qualified remote interpreter. What should it do?",
     "choices": [
       {
-        "text": "Arrange accurate, timely qualified language assistance without charging the patient, and counsel through the interpreter while protecting privacy; HIPAA ordinarily permits necessary treatment-related disclosure without separate authorization.",
+        "text": "Provide qualified interpretation at no charge, counsel in a language the patient understands, and protect confidentiality throughout.",
         "why": "Correct. 45 CFR 92.201 requires meaningful, timely, accurate, no-cost language assistance in covered health programs. An appropriate qualified interpreter can facilitate counseling while protecting confidentiality; HIPAA generally permits provider use of interpreters for treatment or health care operations."
       },
       {
@@ -7453,7 +7453,7 @@ window.MPJE_CH30_QUESTIONS = [
         "why": "Incorrect. A prescription must be legitimate at issuance and bear required patient information; a month-end accounting cannot retroactively convert a general stock replenishment into lawful patient-specific prescribing."
       },
       {
-        "text": "Do not fill it as a prescription; distinguish acquisition of practitioner office inventory through lawful controlled-substance ordering/distribution from an order for a particular patient's treatment.",
+        "text": "Do not fill it as a patient prescription. The clinic must acquire general stock through a lawful registrant ordering process.",
         "why": "Correct. 21 CFR 1306.04(b) prohibits an individual practitioner issuing a controlled prescription to supply general dispensing stock. If the practitioner may lawfully acquire stock, that requires appropriate registrant purchasing or transfer processes rather than a disguised retail prescription."
       }
     ],
@@ -7555,7 +7555,7 @@ window.MPJE_CH30_QUESTIONS = [
         "why": "Incorrect. National technician certification and CPR are separate prerequisites. The policy expressly adds periodic immunization-specific education or updated training regardless of those other credentials."
       },
       {
-        "text": "Complete at least two hours of immunization-related continuing education or updated training within the required two-year cycle before returning to the vaccinator role.",
+        "text": "Complete at least two hours of immunization-related continuing education or updated training during the required two-year cycle as a vaccinator.",
         "why": "Correct. Revised Policy 2023-02, §III(D)(5), requires at least two hours of immunization-related continuing education or updated training every two years. The prior initial six-hour program and two on-the-job hours do not substitute for maintaining this ongoing requirement."
       },
       {
@@ -7665,7 +7665,7 @@ window.MPJE_CH30_QUESTIONS = [
         "why": "Incorrect. 21 CFR 1306.08(f)(4)-(h) requires specified annotations at both transferring and receiving pharmacies and retention of electronic transfer records by both for two years."
       },
       {
-        "text": "Use the authorized one-time electronic EPCS transmission directly between licensed pharmacists, preserve the full prescription unchanged, and record the transferring/receiving pharmacy and pharmacist details at both sites.",
+        "text": "Transfer the intact electronic prescription directly between pharmacists and preserve the required transfer records at both sites.",
         "why": "Correct. Massachusetts Policy 2023-10 adopts 21 CFR 1306.08(e)-(h) for unfilled Schedule II–V EPCS. The electronic prescription stays intact, both pharmacists communicate directly, required dates/DEA IDs/names are annotated and retained at both pharmacies."
       }
     ],
@@ -7728,7 +7728,7 @@ window.MPJE_CH30_QUESTIONS = [
         "why": "Incorrect. Board Policy 2021-04 recognizes certain non-ACPE credits but requires the pharmacist to retain sufficient completion documentation when the education does not appear in CPE Monitor; the Board may request those records."
       },
       {
-        "text": "Provide retained evidence of successful completion showing the approved provider, participant, program title/number, completion date, and hours; maintain such records for the required period and provide them on audit.",
+        "text": "Provide the Board the required provider, participant, program, completion-date and credit-hour evidence retained from the CE activity.",
         "why": "Correct. 247 CMR 4.06(1)-(2) requires documentation or statements of credit containing the specified identifying details, maintained at least two years from completion and submitted on Board request/random audit. Policy 2021-04 further describes evidence expected for non-ACPE activity."
       },
       {
@@ -7795,7 +7795,7 @@ window.MPJE_CH30_QUESTIONS = [
     "stem": "A Lenalidomide REMS-certified pharmacy has a valid new lenalidomide prescription from a certified prescriber for an appropriately enrolled patient. All risk-category and pregnancy-test obligations have been met. The pharmacy obtained the required REMS CONFIRMATION number 26 hours ago but has not yet handed over or shipped the drug. The confirmation was not renewed. What must it do?",
     "choices": [
       {
-        "text": "Do not dispense until the expired confirmation has been canceled and a new valid REMS confirmation is obtained; continue the required counseling and Medication Guide steps.",
+        "text": "Do not dispense; cancel the expired confirmation number and obtain a new valid REMS confirmation before dispensing, with required counseling.",
         "why": "Correct. The active Lenalidomide REMS pharmacy procedures state that a confirmation number is valid for only 24 hours. When it has expired, the pharmacy must cancel the old number and obtain a new one before dispensing while complying with the remaining REMS safeguards."
       },
       {
@@ -7838,7 +7838,7 @@ window.MPJE_CH30_QUESTIONS = [
         "why": "Incorrect. Therapeutic interchangeability authorizes selection under applicable circumstances but does not waive the separate container labeling obligation in §9.05(3)."
       },
       {
-        "text": "Use 'Interchange' (or the commonly understood abbreviation 'IC') with the generic drug name and Company Z as manufacturer; the prescribed brand may additionally be identified in the permitted form.",
+        "text": "Label the product 'Interchange' or 'IC' with the actual generic name and Company Z on the container label; the originally prescribed brand may also be shown.",
         "why": "Correct. Section 9.05(3)(a),(c)-(d) requires the 'Interchange' generic name/manufacturer presentation for a less expensive dispensed generic and permits recognized abbreviations, e.g. 'IC', plus an optional 'for [prescribed brand]' notation."
       },
       {
@@ -7909,7 +7909,7 @@ window.MPJE_CH30_QUESTIONS = [
         "why": "Incorrect. The regulatory exception is tied to the specific calendar year of graduation. It is not a two-year rolling extension of the annual CE requirement into 2027."
       },
       {
-        "text": "No CE is required for calendar year 2026 under the graduation-year exception, but normal applicable annual CE requirements resume in 2027; credits cannot be carried forward across calendar years.",
+        "text": "The pharmacist is CE-exempt for graduation year 2026; normal yearly requirements resume in 2027 without carryover.",
         "why": "Correct. 247 CMR 4.03(8) exempts the pharmacist from CE in the 2026 graduation calendar year. Section 4.03(4)-(5) imposes yearly CE requirements afterward and disallows carrying prior-year contact hours into the next calendar year. Other practice-specific CE would be analyzed separately if relevant."
       },
       {
@@ -7984,7 +7984,7 @@ window.MPJE_CH30_QUESTIONS = [
         "why": "Incorrect. Part 2 independently establishes breach notification obligations even for programs not otherwise HIPAA covered; a Board pharmacy-reporting clock does not replace Part 2's HHS/individual notifications."
       },
       {
-        "text": "Notify the affected patients without unreasonable delay (no later than 60 calendar days after discovery) and report this under-500 breach to HHS within 60 days after the end of the calendar year.",
+        "text": "Notify patients without unreasonable delay, within 60 days, and report the under-500 breach to HHS within 60 days after year-end.",
         "why": "Correct. 42 CFR 2.16(b) applies HIPAA Breach Notification Rule requirements. 45 CFR 164.404 requires individual notification without unreasonable delay and within 60 calendar days, while §164.408(c) permits the annual HHS report for breaches affecting fewer than 500 people within 60 days after the end of the calendar year."
       }
     ],
@@ -8157,7 +8157,7 @@ window.MPJE_CH30_QUESTIONS = [
         "why": "Incorrect. The patient is an animal being treated within a legitimate veterinarian-client-patient relationship. Rewriting the patient does not create DEA prescribing authority and can make the prescription fictitious."
       },
       {
-        "text": "Do not dispense this Schedule III prescription on the stated registrations; the veterinarian must have appropriate DEA and Massachusetts controlled-schedule prescribing authority, although Schedule VI veterinary prescriptions follow a separate MCSR-only route.",
+        "text": "Do not dispense; Schedule III veterinary prescribing needs both appropriate DEA and Massachusetts controlled-substance authority for this animal patient.",
         "why": "Correct. M.G.L. c.94C §§7,18 and 105 CMR 700.004 require appropriate registrations/schedule authorization; DEA registration is needed for federally scheduled III drugs. The same veterinarian could prescribe lawful Schedule VI-only products under the narrower Massachusetts MCSR if other conditions are met."
       },
       {
@@ -8188,7 +8188,7 @@ window.MPJE_CH30_QUESTIONS = [
         "why": "Incorrect. DPH designated gabapentin an additional PMP-reportable drug under 105 CMR 700.012(A)(1). Section 9.04(14) expressly extends positive identification to such additional drugs even though they are Massachusetts Schedule VI."
       },
       {
-        "text": "Dispense under the narrow serious-hardship exception after documenting the reason and having the agent print a name and address and sign the reverse of the prescription or the pharmacy's paper/electronic log, provided all other dispensing rules are satisfied.",
+        "text": "Document the serious hardship and get the agent's printed name, address and signature on the reverse of the prescription or pharmacy log before dispensing this additional drug.",
         "why": "Correct. Section 9.04(14)(b)-(c) generally requires customer positive identification for PMP additional drugs. The specific alternative permits dispensing where denial would cause serious hardship, provided the justification is documented and the ultimate user or agent writes the specified information and signs."
       },
       {
