@@ -5282,5 +5282,177 @@ window.MPJE_CH30_QUESTIONS = [
     "url": "https://www.mass.gov/policy-statement/automated-dispensing-device-use",
     "verified": "2026-11-16",
     "note": "Institutional ADDs require a licensed healthcare facility, patient-specific orders and pharmacy-defined accountability controls; they are not outpatient APS devices."
+  },
+  {
+    "id": "E30-156",
+    "set": 32,
+    "area": 1,
+    "kind": "single",
+    "topic": "Expired pharmacist registration: no practice during lapse and renewal conditions after 60 days",
+    "topicKey": "licensure-ce",
+    "stem": "A Massachusetts pharmacist's personal registration expired on December 31 of an even-numbered year. The pharmacist did not renew, has not been suspended or revoked, and now applies 65 days after expiration. A pharmacy proposes that the pharmacist immediately resume final prescription validation while the late-renewal application is reviewed. Which statement BEST reflects 247 CMR 4.02?",
+    "choices": [
+      {
+        "text": "The pharmacist may work during the first 90 days after expiration because late fees automatically preserve practice authority.",
+        "why": "Incorrect. Section 4.02(3) treats ANY pharmacy practice after the personal registration expires as unlicensed practice. The regulation creates no general 90-day right to practice while a late renewal is pending; fees do not restore an expired license automatically."
+      },
+      {
+        "text": "The pharmacist cannot resume practice until the registration is renewed; for a lapse exceeding 60 days, the Board may impose renewal conditions, including additional CE.",
+        "why": "Correct. Under 247 CMR 4.02(1),(3) registration expires December 31 of even-numbered years, and practice after expiration is unlicensed. Subsection (4) permits an applicant lapsed more than 60 days, without suspension or revocation, to seek renewal subject to conditions the Board may impose, including additional CE. The pharmacist must verify active renewal before validating prescriptions."
+      },
+      {
+        "text": "The Board must require a new NAPLEX and MPJE after every 60-day lapse, even when the registration has not been revoked.",
+        "why": "Incorrect. Section 4.02(4) gives the Board discretion to impose conditions such as further continuing education after a lapse exceeding 60 days; it does not automatically require both exams at that threshold. A separate more-than-two-year lapse provision in §4.02(5) requires MPJE, not the proposed universal rule."
+      },
+      {
+        "text": "The pharmacist may resume upon paying the regular renewal fee because the Board's authority to add conditions applies only to pharmacy facility licenses.",
+        "why": "Incorrect. Section 4.02 specifically governs PERSONAL pharmacist registrations; payment alone is not permission to practice with an expired registration, and subsection (4) expressly covers delayed individual renewal conditions."
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "citation": "247 CMR 4.02(1)–(5), Personal Registration Expiration and Renewal (MA Register 1330, Jan. 13, 2017)",
+    "url": "https://www.mass.gov/doc/247-cmr-4-personal-registration-renewal-continuing-education-requirement/download",
+    "verified": "2026-11-16",
+    "note": "Massachusetts pharmacist registrations expire December 31 of even years. There is no grace period to practice after expiration; after more than 60 days the Board may require additional renewal conditions, while more than two years triggers the separate MPJE rule."
+  },
+  {
+    "id": "E30-157",
+    "set": 32,
+    "area": 2,
+    "kind": "multi",
+    "topic": "HIPAA family disclosures: express objection, absent patient and incapacitated patient",
+    "topicKey": "hipaa-family-disclosures",
+    "stem": "A HIPAA-covered Massachusetts pharmacy is considering disclosure of ordinary outpatient medication information to family or caregivers. No 42 CFR Part 2 record, controlled-drug pickup identification requirement, or stricter special confidentiality rule applies. In case X, a capable patient is present and expressly objects to sharing with a friend. In case Y, an absent patient's friend asks to collect a specific filled prescription on the patient's behalf. In case Z, an incapacitated patient cannot be asked and a caregiver needs medication instructions relevant to ongoing care. Which interpretations of 45 CFR 164.510(b) are correct? SELECT ALL THAT APPLY.",
+    "choices": [
+      {
+        "text": "In case X, the pharmacy may reveal the medication information to the friend over the capable patient's express objection merely because the friend says they help with care.",
+        "why": "Incorrect. Section 164.510(b)(2) allows sharing with someone involved in care when the present, capable patient agrees, has an opportunity to object without objecting, or the professional reasonably infers no objection. An actual express objection to this disclosure defeats the claimed permission absent a different legal basis."
+      },
+      {
+        "text": "In case Y, the pharmacy may use professional judgment and common practice to allow the friend to pick up the specified prescription without a prefiled written authorization naming the friend.",
+        "why": "Correct. Under §164.510(b)(3), when the patient is absent the pharmacist may make a reasonable best-interest inference permitting a person to collect filled prescriptions. HHS expressly identifies friends picking up a named patient's prescription as an allowed common-practice example. Any separate state or controlled-product requirements still apply, and HIPAA does not require automatic release."
+      },
+      {
+        "text": "In case Z, the pharmacy may use professional judgment to share only information directly relevant to the caregiver's involvement when disclosure is in the incapacitated patient's best interest.",
+        "why": "Correct. Section 164.510(b)(3) permits a best-interest disclosure when incapacity makes it impracticable to obtain agreement or objection, but limits the protected information to what is directly relevant to that person's involvement in care or payment. The pharmacist should tailor the instructions and avoid unrelated profile history."
+      },
+      {
+        "text": "Because HIPAA recognizes family involvement, a spouse automatically has access to the patient's entire prescription history even when the patient objected and much of the history is unrelated.",
+        "why": "Incorrect. Section 164.510(b)(1) limits discretionary family disclosure to information directly relevant to the person's involvement; a spouse is not automatically entitled to the entire profile, and an expressed objection matters. Formal patient access under another HIPAA provision is a different issue."
+      }
+    ],
+    "correct": [
+      "B",
+      "C"
+    ],
+    "citation": "45 CFR 164.510(b)(1)–(3) (disclosures relevant to care, opportunity to object, best-interest professional judgment); HHS OCR FAQ, family and pharmacy prescription pickups",
+    "url": "https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-C/part-164/subpart-E/section-164.510",
+    "verified": "2026-11-16",
+    "note": "Under ordinary HIPAA rules, a friend may collect a named patient's filled prescription based on reasonable professional judgment when the patient is absent. A capable patient's objection controls; incapacitated-patient disclosures must be in the patient's best interest and directly relevant."
+  },
+  {
+    "id": "E30-158",
+    "set": 32,
+    "area": 2,
+    "kind": "single",
+    "topic": "FDA Class I recall risk determination before formal FDA classification",
+    "topicKey": "drug-integrity",
+    "stem": "A Massachusetts pharmacy receives a credible manufacturer's voluntary recall notice for a particular lot of injectable medicine. The notice describes a defect creating a REASONABLE PROBABILITY of serious adverse health consequences or death, although no injury has yet been confirmed. FDA has not assigned or published a recall class. Which response and interpretation is best supported by 21 CFR 7.3(m) and FDA recall guidance?",
+    "choices": [
+      {
+        "text": "It must be Class III because no actual patient injury has been confirmed, and the pharmacy should await FDA's final classification before addressing affected stock.",
+        "why": "Incorrect. Class III is for exposure NOT likely to cause adverse health consequences. Class determination is based on expected risk, not whether actual injury has already occurred; FDA explains that companies can initiate recalls before FDA classifies them. The pharmacy should promptly identify and segregate the affected product rather than keep distributing it."
+      },
+      {
+        "text": "It cannot be a valid recall because only FDA may initiate one; a manufacturer warning before FDA classification has no practical relevance.",
+        "why": "Incorrect. Recalls commonly begin on a firm's own initiative. FDA may classify them after receiving necessary information, so an unclassified manufacturer's recall notice still calls for a timely pharmacy response."
+      },
+      {
+        "text": "The described hazard meets the Class I risk DEFINITION; a manufacturer may start a recall before FDA classifies it, so the pharmacy should segregate the affected lot and follow appropriate recall procedures.",
+        "why": "Correct. 21 CFR 7.3(m)(1) defines Class I by a reasonable probability of serious health consequences or death. FDA's Enforcement Report guidance explains that voluntary recalls are often initiated BEFORE formal classification. The pharmacist should treat the credible notice as a patient/product integrity concern and prevent dispensing affected stock while handling the recall; this does not claim that FDA has already assigned Class I."
+      },
+      {
+        "text": "Any voluntary medicine recall is Class II regardless of its severity, and the pharmacy must continue filling until FDA posts the event.",
+        "why": "Incorrect. Voluntary describes how the recall is initiated, not its hazard classification. Class II is defined by temporary/reversible harm or a remote chance of serious harm; it does not fit the described reasonable probability of severe harm. There is no general requirement to keep dispensing pending FDA's database posting."
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "citation": "21 CFR 7.3(m)(1)–(3), 7.40–7.42; FDA Enforcement Report Information and Definitions (FDA classification may follow company-initiated voluntary recall); 247 CMR 9.01 product integrity duties",
+    "url": "https://www.fda.gov/safety/enforcement-reports/enforcement-report-information-and-definitions",
+    "verified": "2026-11-16",
+    "note": "Recall Class I describes a reasonable probability of severe injury or death, not proof of an actual injury. Voluntary recalls may begin before FDA assigns a class; segregate affected inventory and follow recall instructions rather than awaiting posting."
+  },
+  {
+    "id": "E30-159",
+    "set": 32,
+    "area": 3,
+    "kind": "single",
+    "topic": "Antiseizure medication schedules: perampanel Fycompa, clobazam Onfi, brivaracetam Briviact",
+    "topicKey": "drug-schedule-identification",
+    "stem": "A Massachusetts pharmacist reviews three otherwise lawful outpatient prescriptions: Fycompa (perampanel), Onfi (clobazam), and Briviact (brivaracetam). Which combination correctly identifies their current FEDERAL and corresponding MASSACHUSETTS schedules as of November 2026?",
+    "choices": [
+      {
+        "text": "Fycompa Schedule IV, Onfi Schedule III, Briviact Schedule V.",
+        "why": "Incorrect. Perampanel is specifically Schedule III under 21 CFR 1308.13(c)(11), not IV; clobazam is Schedule IV under §1308.14(c)(12), not III. Brivaracetam is V."
+      },
+      {
+        "text": "Fycompa Schedule III, Onfi Schedule IV, Briviact Schedule IV.",
+        "why": "Incorrect. Perampanel and clobazam are correctly III and IV, but brivaracetam is explicitly listed as Schedule V at 21 CFR 1308.15(e)(1). All antiseizure agents do not share a controlled schedule."
+      },
+      {
+        "text": "Fycompa Schedule II, Onfi Schedule IV, Briviact Schedule V.",
+        "why": "Incorrect. Clobazam and brivaracetam are IV and V, but perampanel's specific federal listing in §1308.13(c)(11) makes it Schedule III, not II. The name or indication cannot override the schedule."
+      },
+      {
+        "text": "Fycompa Schedule III, Onfi Schedule IV, Briviact Schedule V.",
+        "why": "Correct. 21 CFR 1308.13(c)(11) lists perampanel as Schedule III, §1308.14(c)(12) lists clobazam as IV, and §1308.15(e)(1) lists brivaracetam as V. Massachusetts 105 CMR 700.002(C)–(E) adopts the corresponding federal schedules; the pharmacist applies each drug's specific refill/record rules."
+      }
+    ],
+    "correct": [
+      "D"
+    ],
+    "citation": "21 CFR 1308.13(c)(11) (perampanel), 1308.14(c)(12) (clobazam), 1308.15(e)(1) (brivaracetam); 105 CMR 700.002(C)–(E)",
+    "url": "https://www.ecfr.gov/current/title-21/chapter-II/part-1308/section-1308.13",
+    "verified": "2026-11-16",
+    "note": "Fycompa/perampanel is Schedule III, Onfi/clobazam is IV, and Briviact/brivaracetam is V under federal and Massachusetts law. Distinguish individual antiseizure drugs by their actual listings."
+  },
+  {
+    "id": "E30-160",
+    "set": 32,
+    "area": 4,
+    "kind": "multi",
+    "topic": "September 2026 Board policy: viable ISO 7 buffer environmental action-level reporting and limited CSP BUD",
+    "topicKey": "sterile-hazardous-compounding",
+    "stem": "A Massachusetts sterile compounding pharmacy receives a microbiology report showing 11 CFU per cubic meter from VIABLE AIR sampling in its ISO Class 7 BUFFER room. There is no ISO 5 or non-viable particle action-level finding, and the Board has not directed a more restrictive plan. The pharmacy begins immediate assessment, develops and implements a remediation plan, completes a documented risk and product-risk assessment, and schedules repeat monitoring. Under Board Policy 2026-03 (adopted September 3, 2026), which conclusions are correct? SELECT ALL THAT APPLY.",
+    "choices": [
+      {
+        "text": "The result exceeds the ISO 7 viable-air action level, and the MOR, designated PIC or pharmacist designee must report the result to the Board within one business day of receiving the microbiology report.",
+        "why": "Correct. Policy 2026-03 establishes an ISO 7 viable-air action level of MORE THAN 10 CFU/m³; 11 exceeds it. Section II requires notification using the Board reporting form within ONE BUSINESS DAY of receipt of the microbiology report by the MOR, designated PIC or pharmacist designee. This is a Board policy requirement, not a federal DEA reporting deadline."
+      },
+      {
+        "text": "Because the remediation plan has begun, the pharmacy can immediately assign the usual unrestricted Category 2 BUDs to all CSPs prepared in the affected ISO 7 buffer room.",
+        "why": "Incorrect. During remediation of a VIABLE ISO 7 buffer-room action level, Policy 2026-03 §V caps applicable CSP BUDs at 24 hours room temperature or four days refrigerated, unless the Board directs otherwise. Restoration of usual BUDs depends on proper remediation confirmed by repeat sampling below action levels."
+      },
+      {
+        "text": "The same limited-BUD permission applies to a NON-VIABLE particle action level, so a pharmacy never needs to stop compounding for particle-count findings.",
+        "why": "Incorrect. Section III(D) differentiates non-viable particle action levels: absent other Board direction, compounding must be suspended until full remediation and recertification of all classified areas. The reduced-BUD pathway in §V applies to VIABLE action levels under specified safeguards."
+      },
+      {
+        "text": "After the required initial assessment and remedial steps, the pharmacy may consider compounding during remediation in the affected ISO 7 buffer room only with the capped 24-hour room-temperature or four-day refrigerated BUD, subject to the policy's risk controls.",
+        "why": "Correct. Section V requires initiated remediation, repeat EM scheduling, documented risk assessment and mitigation before considering continuation in ISO 7 buffer rooms with those reduced BUDs. This is conditional permission, not an automatic duty to compound; the pharmacy should preserve patient continuity with a safe plan."
+      }
+    ],
+    "correct": [
+      "A",
+      "D"
+    ],
+    "citation": "Massachusetts Board Policy 2026-03, §§I–II, III(A),(D)–(F), IV(B), V (adopted Sept. 3, 2026; supersedes Policy 2023-09); USP <797> official Nov. 1, 2023; 247 CMR 9.01(3)",
+    "url": "https://www.mass.gov/doc/2026-03-action-level-environmental-monitoring-results/download",
+    "verified": "2026-11-16",
+    "note": "New Board Policy 2026-03: ISO 7 viable-air results over 10 CFU/m³ are action levels; report within one business day. During qualifying ISO 7 buffer remediation, BUDs are capped at 24 hours room temperature or four days refrigerated; non-viable particle failures require suspension/recertification."
   }
 ];
