@@ -5970,5 +5970,177 @@ window.MPJE_CH30_QUESTIONS = [
     "url": "https://pages.usp.org/rs/711-SXF-172/images/USP_HQS_800_FAQs_January2026.pdf?version=0",
     "verified": "2026-11-16",
     "note": "A compliant C-SCA can be used for Category 1 hazardous CSPs (including nonsterile-to-sterile), not routine Category 2/3 hazardous CSPs. Apply the current <797> categories."
+  },
+  {
+    "id": "E30-176",
+    "set": 36,
+    "area": 1,
+    "kind": "single",
+    "topicKey": "technician-scope",
+    "topic": "New telephone Schedule VI prescription: certified technician reception versus ordinary technician and trainee",
+    "stem": "At a Massachusetts community pharmacy, a prescriber's authorized agent calls in a NEW, otherwise valid Schedule VI amlodipine prescription. A certified pharmacy technician with a current Massachusetts technician license, a noncertified licensed technician and a licensed trainee are present. The on-duty pharmacist approves appropriate delegation and will personally perform DUR and final dispensing validation. Who MAY receive and record this new oral information as described?",
+    "choices": [
+      {
+        "text": "The certified technician may receive the new or omitted prescription information with the on-duty pharmacist's approval, but may not independently resolve therapy changes or validate final dispensing.",
+        "why": "Correct. 247 CMR 8.04(4)(c) authorizes a licensed certified technician, identifying themself as such and with pharmacist approval, to receive NEW or omitted prescription information unless other law prohibits it. The delegated intake does not permit therapy clarification, counseling, DUR or final validation under §8.04(4)(e) and 247 CMR 9.04(1)."
+      },
+      {
+        "text": "The trainee may take the new prescription by telephone if the supervising pharmacist signs it after the call.",
+        "why": "Incorrect. 247 CMR 8.03(4)(c) expressly prohibits a technician trainee from taking prescriptions over the telephone. Later pharmacist validation does not transform prohibited telephone reception into a lawful trainee task."
+      },
+      {
+        "text": "The noncertified licensed technician may independently accept any NEW oral Schedule VI order because ordinary refill-authorizations and new-prescription intake have identical scope.",
+        "why": "Incorrect. 247 CMR 8.02 allows ordinary licensed technicians to request and receive refill authorization for an unchanged Schedule VI prescription subject to restrictions; §8.04(4)(c) grants the additional specified NEW-information reception to certified technicians. New orders and unchanged refills are not the same activity."
+      },
+      {
+        "text": "No technician may record new Schedule VI oral information, because federal DEA Schedule II oral-emergency restrictions apply to every Massachusetts Schedule VI medicine.",
+        "why": "Incorrect. Conventional amlodipine is Massachusetts Schedule VI and is not federal Schedule II. The certified-technician delegation provision applies to new information for otherwise lawful orders; federal emergency Schedule II prescription limitations are not a universal ban on Schedule VI technician intake."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "citation": "247 CMR 8.02(6), 8.03(4)(c), 8.04(4)(c),(e); 247 CMR 9.04(1); 105 CMR 721.030 (Massachusetts oral prescription format)",
+    "url": "https://www.mass.gov/doc/247-cmr-8-pharmacy-interns-and-technicians/download",
+    "verified": "2026-11-17",
+    "note": "A licensed certified technician may, with pharmacist approval, take new or omitted lawful prescription information; an ordinary technician's narrower unchanged refill role and a trainee's explicit telephone ban are different. Final clinical validation remains pharmacist-only."
+  },
+  {
+    "id": "E30-177",
+    "set": 36,
+    "area": 2,
+    "kind": "single",
+    "topicKey": "prescriber-authority",
+    "topic": "New nurse practitioner with valid individual MCSR and DEA but no required supervised prescribing guidelines",
+    "stem": "A Massachusetts-licensed certified nurse practitioner has only nine months of qualifying prescriptive-practice experience. The NP has an active individual Massachusetts Controlled Substances Registration and DEA registration for Schedule III. An otherwise authentic Schedule III prescription is sent for a patient within the NP's usual specialty. When the pharmacist calls about an unrelated discrepancy, the NP volunteers that no mutually agreed written prescriptive-practice guidelines or qualified healthcare professional supervision have ever been established. No special exception applies. What is the best dispensing decision?",
+    "choices": [
+      {
+        "text": "Dispense because possession of both individual registration numbers automatically establishes independent prescriptive practice.",
+        "why": "Incorrect. MCSR and DEA registrations are necessary for the applicable controlled schedules, but 244 CMR 4.06 also requires supervised prescriptive practice with mutually agreed guidelines during the initial qualifying period for a CNP. The prescriber has explicitly disclosed the missing legal practice condition."
+      },
+      {
+        "text": "Treat the supervising physician's DEA number as a substitute for the NP's registered prescriber identity, without resolving the missing guidelines.",
+        "why": "Incorrect. Borrowing another practitioner's DEA identifier is not a remedy for a missing required supervised-prescribing arrangement. The pharmacist should not alter the prescriber identity or overlook a known scope deficiency."
+      },
+      {
+        "text": "Dispense because a pharmacist is never required to inquire about NP supervision, even after receiving an explicit statement that required prescribing guidelines do not exist.",
+        "why": "Incorrect. Pharmacists generally are not required to independently investigate a qualifying NP's independent-practice status merely because a supervisor name is absent, but this pharmacist has affirmative information that the still-supervised NP lacks the required practice arrangement. Ordinary lawful-authority and corresponding-responsibility checks still apply."
+      },
+      {
+        "text": "Do not dispense under the disclosed circumstances until authorized prescriptive practice is established or an appropriately authorized practitioner issues a valid prescription.",
+        "why": "Correct. Under 244 CMR 4.06, a CNP below the supervised experience threshold must practice with the required mutually agreed prescriptive guidelines and qualified healthcare professional supervision. Knowing those conditions are absent is materially different from merely not seeing a supervisor's name on a valid independent NP prescription; valid DEA/MCSR numbers alone cannot supply professional scope."
+      }
+    ],
+    "correct": [
+      "D"
+    ],
+    "citation": "244 CMR 4.06(1)–(3) (nurse practitioner supervised prescriptive-practice guidelines/transition); M.G.L. c.112 §80E; 105 CMR 700.004; 21 CFR 1306.04(a); MA DPH Circular DCP 21-10-111",
+    "url": "https://www.mass.gov/regulations/244-CMR-406-prescriptive-authority",
+    "verified": "2026-11-17",
+    "note": "Separate individual DEA/MCSR registration from state-law prescriber authorization. A newly prescribing NP who still needs guidelines/supervision cannot cure their known absence by presenting valid controlled-drug registration numbers."
+  },
+  {
+    "id": "E30-178",
+    "set": 36,
+    "area": 2,
+    "kind": "multi",
+    "topicKey": "controlled-prescriptions",
+    "topic": "Controlled-prescription red flags despite authentic registration and an established patient relationship",
+    "stem": "A Massachusetts pharmacist reviews four separate Schedule II–IV controlled prescriptions issued by credentialed prescribers for existing patients. Each signature and DEA number is authentic. The pharmacist has information about whether the order is clinically and legally legitimate, and will document relevant investigation. Under 247 CMR 9.15 and DEA's corresponding responsibility, which actions or conclusions are defensible? SELECT ALL THAT APPLY.",
+    "choices": [
+      {
+        "text": "Fill a Schedule II prescription without further review whenever its DEA number is active, because registration conclusively proves legitimate medical purpose.",
+        "why": "Incorrect. 247 CMR 9.15(2) and 21 CFR 1306.04(a) impose the pharmacist's own corresponding responsibility. Registration and signature authenticity do not automatically establish legitimate purpose or safe dispensing when clinical red flags exist."
+      },
+      {
+        "text": "Investigate an unexpectedly early opioid refill with conflicting medical history, consult the prescriber as needed and withhold dispensing if the legitimate purpose cannot be established.",
+        "why": "Correct. A genuine early refill plus inconsistent history warrants professional judgment, clarification and documentation. The pharmacist must determine legitimacy and lawfulness before filling, but no automatic refusal rule is inferred solely from the early timing."
+      },
+      {
+        "text": "Automatically reject every cash-paid opioid prescription, even when the prescriber verifies the legitimate purpose, the patient relationship is established and no unresolved concern remains.",
+        "why": "Incorrect. Cash payment may be a red flag when viewed in context but neither 247 CMR 9.15 nor DEA corresponding-responsibility rules make all cash purchases unlawful. Assess actual concerns rather than impose an invented categorical ban."
+      },
+      {
+        "text": "After resolving a plausible red flag with credible clinical documentation and appropriate verification, dispense an otherwise lawful prescription if professional judgment supports legitimate purpose and safety.",
+        "why": "Correct. The law requires a genuine decision based on legitimate purpose, valid relationship, authenticity and legal compliance; it does not require permanent denial of a resolved red flag. The pharmacist should document the reasoning and perform clinical DUR."
+      }
+    ],
+    "correct": [
+      "B",
+      "D"
+    ],
+    "citation": "247 CMR 9.15(2)(a)–(d), 9.17 (prospective DUR); 21 CFR 1306.04(a); Massachusetts Board advisory 'Controlled Substance Prescriptions' (revised 2025), discussion of red flags and independent pharmacy judgment",
+    "url": "https://www.mass.gov/doc/controlled-substance-prescriptions-pdf/download",
+    "verified": "2026-11-17",
+    "note": "A genuine patient relationship, verified DEA number and authentic signature do not eliminate the pharmacist's duty to investigate credible controlled-drug red flags. A resolved red flag is not necessarily grounds for automatic refusal."
+  },
+  {
+    "id": "E30-179",
+    "set": 36,
+    "area": 3,
+    "kind": "single",
+    "topicKey": "cii-partial-fills",
+    "topic": "Patient-requested Schedule II remainder at originating pharmacy within 30 days versus expired stock-shortage clock",
+    "stem": "On November 3, 2026, an authorized in-state prescriber issues a valid electronic Schedule II prescription for 60 tablets. On November 4, the patient asks the pharmacy to dispense only 20 tablets even though all 60 are in stock; the pharmacist properly documents the patient-requested partial fill. On November 22, the patient asks for the remaining 40 tablets at the SAME pharmacy, and the prescription remains otherwise valid. No stock shortage, LTCF status or hospice exception applies. What may the pharmacist do under current Massachusetts law?",
+    "choices": [
+      {
+        "text": "Dispense the remaining 40 tablets if federal conditions and documentation are satisfied, because a patient-requested partial fill may be completed by the original pharmacy within 30 days of the prescription issue date.",
+        "why": "Correct. M.G.L. c.94C §18(d¾) and 105 CMR 721.055(B) permit patient-requested remainders only at the original pharmacy and no later than 30 days from issue, with documentation under subsection (C). November 22 is inside 30 days of November 3. This is NOT a partial fill caused by insufficient stock."
+      },
+      {
+        "text": "Treat the balance as void immediately after the first smaller dispense because the 2016 DPH circular still controls despite the later amendment.",
+        "why": "Incorrect. The older 2016 DPH circular's remainder-void wording was superseded; 2018 statutory amendments and current 105 CMR 721.055(B) expressly permit the remaining balance to be dispensed upon patient request at the original pharmacy within the issue-date limit."
+      },
+      {
+        "text": "Refuse the balance because the 72-hour completion limit for a Schedule II stock shortage governs every type of partial fill.",
+        "why": "Incorrect. The 72-hour federal shortage pathway addresses dispensing LESS than the full quantity because the pharmacy cannot supply it. Here full stock was available and the patient affirmatively requested less; 105 CMR 721.055's separate remainder rule governs."
+      },
+      {
+        "text": "Direct the patient to any other licensed pharmacy to obtain the remaining 40 tablets under the first pharmacy's partial-fill record.",
+        "why": "Incorrect. Section 721.055(B)(1) and c.94C §18(d¾) specify that ONLY the pharmacy which originally dispensed the smaller quantity may dispense the remaining portion under this patient-requested pathway."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "citation": "M.G.L. c.94C §18(d¾) (amended by Acts 2018 c.208); 105 CMR 721.055(A)–(C) (effective Sept. 27, 2024); 21 CFR 1306.13; DPH Circular DCP 18-10-104 superseding 2016 Circular DCP 16-12-665",
+    "url": "https://www.mass.gov/doc/105-cmr-721-standards-for-prescription-format-and-security-in-massachusetts/download",
+    "verified": "2026-11-17",
+    "note": "A Schedule II patient-requested partial fill differs from a pharmacy stock-shortage partial. The original pharmacy may dispense the patient-requested remainder within 30 days after issue, subject to federal rules and required documentation."
+  },
+  {
+    "id": "E30-180",
+    "set": 36,
+    "area": 4,
+    "kind": "multi",
+    "topicKey": "controlled-inventory",
+    "topic": "Expired pharmacy controlled stock: reverse distributor transfer, DEA Form 41 destruction and distinct Forms 106/222",
+    "stem": "A Massachusetts DEA-registered retail pharmacy identifies expired Schedule II and Schedule III stock that remains in its own inventory; there is NO theft, loss or damage. It plans to transfer the expired stock to an appropriately registered reverse distributor for lawful destruction and to replenish usable Schedule II stock from a wholesaler. Which federal controlled-substance procedures are correct? SELECT ALL THAT APPLY.",
+    "choices": [
+      {
+        "text": "Document the lawful transfer of expired controlled stock to the registered reverse distributor; the reverse distributor performing destruction completes its required DEA Form 41 record.",
+        "why": "Correct. Under 21 CFR 1317.05 and 1304.21, a practitioner registrant may transfer lawfully held expired controlled inventory to a reverse distributor at its registered location, with shipment and transfer records. The reverse distributor documents destruction on DEA Form 41, rather than treating a pharmacy's transfer invoice as the reverse distributor's destruction record."
+      },
+      {
+        "text": "The retail pharmacy must report the ordinary expired stock on DEA Form 106 within one business day, even though no theft or significant loss occurred.",
+        "why": "Incorrect. DEA Form 106 is for theft or significant loss under 21 CFR 1301.76(b), not an ordinary accountable inventory of expired medication awaiting lawful reverse distribution. The pharmacy still keeps complete inventory/transfer records."
+      },
+      {
+        "text": "Use a compliant paper DEA Form 222 or an authorized electronic CSOS order to acquire replacement Schedule II stock, independently of any destruction documentation.",
+        "why": "Correct. DEA Form 222 or the corresponding CSOS process is an ordering/transfer authorization for Schedule I or II acquisitions under 21 CFR Part 1305; it is separate from records for sending expired stock to a reverse distributor."
+      },
+      {
+        "text": "DEA Form 41 replaces all Schedule II ordering forms and automatically authorizes the pharmacy to acquire the exact quantity it discarded.",
+        "why": "Incorrect. Form 41 documents destruction, not permission to order new Schedule II products. Schedule II ordering still uses the authorized Part 1305 mechanism, and inventory disposal does not generate an automatic replacement allotment."
+      }
+    ],
+    "correct": [
+      "A",
+      "C"
+    ],
+    "citation": "21 CFR 1317.05(a)(2), 1317.10, 1304.21(d)–(e), 1305.03–1305.13, 1301.76(b); DEA Disposal Q&A (Forms 41/106/222 and reverse distributor responsibilities)",
+    "url": "https://www.deadiversion.usdoj.gov/faq/disp-destr-faq.html",
+    "verified": "2026-11-17",
+    "note": "Form 106 reports theft/significant loss, Form 41 documents controlled-substance destruction (reverse distributor when that entity destroys), and Form 222/CSOS orders Schedule II stock. A registrant's transfer to a reverse distributor requires its own records."
   }
 ];
