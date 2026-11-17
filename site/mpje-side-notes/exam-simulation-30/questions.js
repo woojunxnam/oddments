@@ -3354,7 +3354,7 @@ window.MPJE_CH30_QUESTIONS = [
       "C",
       "D"
     ],
-    "citation": "21 CFR 1308.12(c), 1308.13(e), 1308.15(c); 105 CMR 700.002(B),(C),(E),(F); MA DPH MassPAT pharmacy reporting and data submission",
+    "citation": "21 CFR 1308.12(b)(1)(i), 1308.13(e), 1308.15(c)(1); 105 CMR 700.002(B),(C),(E),(F); MA DPH MassPAT pharmacy reporting and data submission",
     "url": "https://www.mass.gov/regulations/105-CMR-70000-implementation-of-mgl-c94c",
     "verified": "2026-11-16",
     "note": "Classify the actual product and formulation, not just the ingredient: single-ingredient codeine II; qualifying codeine/APAP III; qualifying low-dose codeine cough product V; gabapentin is MA VI but still PMP-reportable."
@@ -4385,7 +4385,7 @@ window.MPJE_CH30_QUESTIONS = [
     "correct": [
       "D"
     ],
-    "citation": "21 CFR 1308.12(c) hydrocodone; 21 CFR 1308.13(e)(2) buprenorphine; 21 CFR 1308.14(b)(3) tramadol; 105 CMR 700.002(B)–(D); DEA 2014 hydrocodone combination rescheduling",
+    "citation": "21 CFR 1308.12(b)(1)(vi) hydrocodone; 21 CFR 1308.13(e)(2) buprenorphine; 21 CFR 1308.14(b)(3) tramadol; 105 CMR 700.002(B)–(D); DEA 2014 hydrocodone combination rescheduling",
     "url": "https://www.deadiversion.usdoj.gov/schedules/schedules.html",
     "verified": "2026-11-16",
     "note": "Hydrocodone combinations (Vicodin) are Schedule II, buprenorphine/naloxone (Suboxone) III, and tramadol (Ultram) IV federally and in Massachusetts."
@@ -4557,7 +4557,7 @@ window.MPJE_CH30_QUESTIONS = [
     "correct": [
       "B"
     ],
-    "citation": "21 CFR 1308.11(e)(1) (GHB); 21 CFR 1308.13(c)(6) (FDA-approved GHB-containing drug products); 105 CMR 700.002(A),(C); DEA Nov. 2026 GHB fact sheet",
+    "citation": "21 CFR 1308.11(e)(6) (GHB); 21 CFR 1308.13(c)(6) (FDA-approved GHB-containing drug products); 105 CMR 700.002(A),(C); DEA Nov. 2026 GHB fact sheet",
     "url": "https://www.ecfr.gov/current/title-21/chapter-II/part-1308/section-1308.13",
     "verified": "2026-11-16",
     "note": "FDA-approved sodium oxybate products such as Xyrem are federally and Massachusetts Schedule III, but unapproved GHB is Schedule I; the product's FDA-approved status is decisive."
@@ -4901,7 +4901,7 @@ window.MPJE_CH30_QUESTIONS = [
     "correct": [
       "A"
     ],
-    "citation": "21 CFR 1308.13(g), 1308.14(c)(49),(f)(9); 105 CMR 700.002(C)–(D)",
+    "citation": "21 CFR 1308.13(f)(84) (testosterone), 1308.14(c)(49) (phenobarbital), 1308.14(f)(10) (phentermine; shifted on Nov. 12, 2026); 105 CMR 700.002(C)–(D)",
     "url": "https://www.ecfr.gov/current/title-21/chapter-II/part-1308",
     "verified": "2026-11-16",
     "note": "Testosterone is Schedule III; phentermine and phenobarbital are Schedule IV in the federal and corresponding Massachusetts systems."
@@ -5933,7 +5933,7 @@ window.MPJE_CH30_QUESTIONS = [
     "correct": [
       "C"
     ],
-    "citation": "21 CFR 1308.14(f)(7),(13) (modafinil, solriamfetol); 105 CMR 700.002(D),(F); FDA Wakix/pitolisant labeling updated Feb. 2026 (DEA Schedule: None)",
+    "citation": "21 CFR 1308.14(f)(7),(14) (modafinil, solriamfetol; renumbered Nov. 12, 2026); 105 CMR 700.002(D),(F); FDA Wakix/pitolisant labeling updated Feb. 2026 (DEA Schedule: None)",
     "url": "https://www.ecfr.gov/current/title-21/chapter-II/part-1308/section-1308.14",
     "verified": "2026-11-16",
     "note": "Solriamfetol/Sunosi and modafinil/Provigil are federal/MA Schedule IV; pitolisant/Wakix is federally unscheduled and Massachusetts Schedule VI."
@@ -6036,7 +6036,7 @@ window.MPJE_CH30_QUESTIONS = [
     "correct": [
       "D"
     ],
-    "citation": "244 CMR 4.06(1)–(3) (nurse practitioner supervised prescriptive-practice guidelines/transition); M.G.L. c.112 §80E; 105 CMR 700.004; 21 CFR 1306.04(a); MA DPH Circular DCP 21-10-111",
+    "citation": "244 CMR 4.07(2)(c) (NP supervised prescriptive-practice guidelines/transition); M.G.L. c.112 §80E; 105 CMR 700.004; 21 CFR 1306.04(a); MA DPH Circular DCP 21-10-111",
     "url": "https://www.mass.gov/regulations/244-CMR-406-prescriptive-authority",
     "verified": "2026-11-17",
     "note": "Separate individual DEA/MCSR registration from state-law prescriber authorization. A newly prescribing NP who still needs guidelines/supervision cannot cure their known absence by presenting valid controlled-drug registration numbers."
