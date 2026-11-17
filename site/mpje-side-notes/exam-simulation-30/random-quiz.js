@@ -127,12 +127,21 @@
         ids: saved.ids, answers: saved.answers,
         checked: saved.checked && typeof saved.checked === 'object' ? saved.checked : {},
         mode: saved.mode === 'unseen' ? 'unseen' : 'all', // Legacy mixes were uniform.
-        submitted: !!saved.submitted
+        submitted: !!saved.submitted,
+        revisions: saved.revisions && typeof saved.revisions === 'object' ? saved.revisions : {}
       };
     }
   } catch (_) { /* Local storage optional. */ }
-  if (!state) state = {ids: drawDifferent(null, 'unseen'), answers: {}, checked: {}, submitted: false, mode: 'unseen'};
+  if (!state) state = {ids: drawDifferent(null, 'unseen'), answers: {}, checked: {}, submitted: false, mode: 'unseen', revisions: {}};
   if (state.submitted) state.ids.forEach(id => { state.checked[id] = true; });
+  state.ids.forEach(id => {
+    const current = Number(byId.get(id)?.revision) || 1;
+    if (current <= (Number(state.revisions[id]) || 1)) return;
+    delete state.answers[id];
+    delete state.checked[id];
+    state.submitted = false;
+    state.revisions[id] = current;
+  });
   modePicker.value = state.mode;
   function save() { try { localStorage.setItem(storageKey, JSON.stringify(state)); } catch (_) {} }
   function questions() { return state.ids.map(id => byId.get(id)); }
@@ -199,7 +208,7 @@
       message.textContent = 'No other unique ten-question combination is available yet.';
       return;
     }
-    state = {ids, answers: {}, checked: {}, submitted: false, mode};
+    state = {ids, answers: {}, checked: {}, submitted: false, mode, revisions: {}};
     save();
     render();
     $('random-practice').scrollIntoView({block: 'start', behavior: 'auto'});
