@@ -4766,5 +4766,521 @@ window.MPJE_CH30_QUESTIONS = [
     "url": "https://pages.usp.org/rs/711-SXF-172/images/USP_HQS_800_FAQs_January2026.pdf?version=0",
     "verified": "2026-11-16",
     "note": "AOR may be considered for intact final HD forms without additional manipulation; crushing Table 1 antineoplastics and compounding from hazardous APIs require full USP <800> containment. Assess each drug and dosage form."
+  },
+  {
+    "id": "E30-141",
+    "set": 29,
+    "area": 1,
+    "kind": "multi",
+    "topic": "MOR: serious dispensing injury vs pharmacy-compounded serious adverse event",
+    "topicKey": "board-reporting",
+    "stem": "A resident Massachusetts pharmacy learns that an improper dispensing caused serious injury to a patient. Separately, a patient experiences a serious adverse drug event linked to a preparation compounded by that pharmacy. Under 247 CMR 20.02, which statements are correct? SELECT ALL THAT APPLY.",
+    "choices": [
+      {
+        "text": "The Manager of Record must report the serious-injury improper dispensing to the Board within seven business days of discovering the injury.",
+        "why": "Correct. Section 20.02(1) imposes this specific seven-BUSINESS-day duty on the MOR for improper dispensing resulting in serious injury or death. The pharmacy's separate CQI responsibilities remain in force."
+      },
+      {
+        "text": "The pharmacy can postpone reports of both incidents until renewal if it promptly documents them in the CQI log.",
+        "why": "Incorrect. CQI documentation does not replace the separately required §20.02(1)–(2) reports. The statute uses an event-specific reporting clock, not a license-renewal deadline."
+      },
+      {
+        "text": "The MOR must report the compounded-product serious adverse drug event to the Board, FDA MedWatch and Betsy Lehman Center.",
+        "why": "Correct. Section 20.02(2) lists all three recipients, with reporting due within seven business days of any employee's awareness. This is distinct from ordinary medication errors that do not qualify as the specified compounded/manufactured event."
+      },
+      {
+        "text": "Once the pharmacy completes CQI documentation, it may destroy the serious-event reports after two years.",
+        "why": "Incorrect. Section 20.02(4) requires the records for reportable events to remain readily retrievable for at least FIVE years from the date the report is filed. The general QRE minimum under 247 CMR 15.04 cannot shorten it."
+      }
+    ],
+    "correct": [
+      "A",
+      "C"
+    ],
+    "citation": "247 CMR 20.02(1)–(5) (effective Dec. 6, 2024); 247 CMR 15.03–15.04",
+    "url": "https://www.mass.gov/doc/247-cmr-20-reporting/download",
+    "verified": "2026-11-16",
+    "note": "Serious-injury improper dispensing and pharmacy-compounded-drug serious adverse events have seven-business-day MOR reports; the latter goes to three agencies. Retain §20.02 records five years."
+  },
+  {
+    "id": "E30-142",
+    "set": 29,
+    "area": 2,
+    "kind": "single",
+    "topic": "Expanded optometrist authority: ocular oral anti-infective versus opioid, systemic and injection limits",
+    "topicKey": "prescriber-authority",
+    "stem": "A Massachusetts optometrist holds the special glaucoma/ocular certification required by M.G.L. c.112 §66C and the proper state prescriptive registration. Assume every candidate prescription is authentic and all other legal conditions are met. Which proposed prescription is within this optometrist's professional scope?",
+    "choices": [
+      {
+        "text": "Oxycodone for severe ocular postoperative pain, because the pain arises from eye treatment.",
+        "why": "Incorrect. M.G.L. c.112 §66C(a)(D) expressly excludes opioid substances and drug products from the qualified optometrist's authority, even in an ocular setting."
+      },
+      {
+        "text": "An appropriate oral anti-infective for an ocular infection being managed by the optometrist.",
+        "why": "Correct. Section 66C(a)(ii) authorizes necessary eye-related medicines INCLUDING oral anti-infective drugs for properly certified optometrists. The patient and condition must remain within lawful optometric practice."
+      },
+      {
+        "text": "Lisinopril for unrelated systemic hypertension that the optometrist discovered during an eye visit.",
+        "why": "Incorrect. Section 66C(a)(A) forbids therapeutic agents for treatment of systemic diseases. Discovering hypertension during an eye examination does not confer general medical prescriptive authority."
+      },
+      {
+        "text": "An agent administered by routine subcutaneous injection to treat an ocular disorder.",
+        "why": "Incorrect. Section 66C(a)(C) excludes specified injection routes including subcutaneous, intramuscular, intravenous and intraocular routes. Certification does not eliminate those restrictions."
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "citation": "M.G.L. c.112 §66C(a)(i)–(ii),(a)(A)–(D), effective Jan. 1, 2021; M.G.L. c.94C §7(h)",
+    "url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXVI/Chapter112/Section66C",
+    "verified": "2026-11-16",
+    "note": "A specially certified optometrist may use appropriate eye-related oral anti-infectives but cannot prescribe opioids, systemic disease treatment or the barred injections."
+  },
+  {
+    "id": "E30-143",
+    "set": 29,
+    "area": 2,
+    "kind": "single",
+    "topic": "Patient refusal of counseling and Massachusetts statutory documentation presumption",
+    "topicKey": "counseling-dur",
+    "stem": "A Massachusetts pharmacist offers counseling for a new outpatient prescription. The patient clearly declines, and the pharmacist completes the necessary prospective drug review. A staff member asks whether the patient's refusal needs a record. Which interpretation follows M.G.L. c.94C §21A?",
+    "choices": [
+      {
+        "text": "The pharmacist must force a counseling session despite the patient's refusal because new prescriptions never permit refusal.",
+        "why": "Incorrect. Section 21A explicitly permits the person presenting the prescription to decline the offer; the pharmacist need not provide counseling after refusal, although the offer and DUR duties remain."
+      },
+      {
+        "text": "No attempt to document refusal is appropriate, because the statute presumes refusal whenever the record is silent.",
+        "why": "Incorrect. Section 21A requires reasonable efforts to maintain relevant patient data, including failure to accept counseling. Missing a refusal record leads to a presumption of counseling provided, not declined."
+      },
+      {
+        "text": "The pharmacy should reasonably record the refusal; without a recorded refusal, §21A presumes that counseling was provided.",
+        "why": "Correct. Section 21A directs reasonable efforts to document any failure to accept the offer and provides the specified presumption. A truthful refusal record matters even though the patient may lawfully decline."
+      },
+      {
+        "text": "The staff member may record that counseling took place because offering counseling is legally the same as delivering a counseling session.",
+        "why": "Incorrect. An offer and the actual service are not identical. The pharmacist should not record counseling as performed when the patient declined; documenting the refusal is the proper course."
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "citation": "M.G.L. c.94C §21A (counseling refusal and record presumption); 247 CMR 9.18",
+    "url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXV/Chapter94C/Section21A",
+    "verified": "2026-11-16",
+    "note": "Patients can decline counseling; record the refusal when possible. An absent refusal record creates the statutory presumption that counseling was actually provided."
+  },
+  {
+    "id": "E30-144",
+    "set": 29,
+    "area": 3,
+    "kind": "single",
+    "topic": "Specific schedules: testosterone cypionate, phentermine, phenobarbital",
+    "topicKey": "drug-schedule-identification",
+    "stem": "Which federal and corresponding Massachusetts schedules correctly classify ordinary prescription testosterone cypionate injection, phentermine capsules and phenobarbital tablets in November 2026?",
+    "choices": [
+      {
+        "text": "Testosterone III, phentermine IV, phenobarbital IV.",
+        "why": "Correct. Testosterone is a listed Schedule III anabolic steroid at 21 CFR 1308.13(g). Phentermine and phenobarbital are expressly Schedule IV under §1308.14(f)(9) and (c)(49). Massachusetts uses corresponding Schedules III–IV."
+      },
+      {
+        "text": "Testosterone VI, phentermine II, phenobarbital III.",
+        "why": "Incorrect. Being FDA-approved hormone therapy does not exempt testosterone from Schedule III, and neither phentermine nor phenobarbital has the stated II/III classification."
+      },
+      {
+        "text": "Testosterone III, phentermine III, phenobarbital II.",
+        "why": "Incorrect. Only the testosterone classification is correct; phentermine is Schedule IV and phenobarbital is Schedule IV regardless of their indications."
+      },
+      {
+        "text": "All three are Schedule IV because each is a prescription-only medicine.",
+        "why": "Incorrect. Prescription-only status does not make every drug Schedule IV. Testosterone remains Schedule III as an anabolic steroid."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "citation": "21 CFR 1308.13(g), 1308.14(c)(49),(f)(9); 105 CMR 700.002(C)–(D)",
+    "url": "https://www.ecfr.gov/current/title-21/chapter-II/part-1308",
+    "verified": "2026-11-16",
+    "note": "Testosterone is Schedule III; phentermine and phenobarbital are Schedule IV in the federal and corresponding Massachusetts systems."
+  },
+  {
+    "id": "E30-145",
+    "set": 29,
+    "area": 4,
+    "kind": "multi",
+    "topic": "On-site refrigerated storage: dorm unit, logs, foods and integrity assessment",
+    "topicKey": "medication-delivery-shipping",
+    "stem": "A Massachusetts pharmacy is considering a dorm-style refrigerator with an interior freezer compartment for medicines. Management proposes storing lunches in the same refrigerator and keeping temperature excursion logs only six months. Which statements comply with 247 CMR 9.22? SELECT ALL THAT APPLY.",
+    "choices": [
+      {
+        "text": "The proposed dorm-style refrigerator is prohibited because its freezer compartment is within the refrigerator space.",
+        "why": "Correct. Section 9.22(2) explicitly bans this design. The pharmacy must use appropriate combination or standalone equipment with compliant freezer design."
+      },
+      {
+        "text": "Food is permitted if it stays on a shelf separate from the medication stock.",
+        "why": "Incorrect. Section 9.22(5) prohibits food or beverages in a refrigerator/freezer used to store medications, without a shelf-based exception."
+      },
+      {
+        "text": "Temperature logs must identify excursions and the pharmacy response, and must be retained for at least one year.",
+        "why": "Correct. Section 9.22(4) requires out-of-range readings and response actions to be documented with a one-year minimum. The pharmacy's policy must include integrity assessment under §9.22(1)."
+      },
+      {
+        "text": "An intact commercial package eliminates the need to assess drug integrity after an out-of-range temperature.",
+        "why": "Incorrect. Section 9.22(1) requires an excursion response protocol including integrity assessment. An intact seal is not proof of stability under the actual temperature conditions."
+      }
+    ],
+    "correct": [
+      "A",
+      "C"
+    ],
+    "citation": "247 CMR 9.22(1)–(5), effective Dec. 6, 2024",
+    "url": "https://www.mass.gov/doc/247-cmr-9-professional-practice-standards/download",
+    "verified": "2026-11-16",
+    "note": "No dorm-style refrigerators or food. Document temperature excursions and actions, assess drug integrity, and retain logs at least one year."
+  },
+  {
+    "id": "E30-146",
+    "set": 30,
+    "area": 1,
+    "kind": "single",
+    "topic": "Annual specialty CE for temporary sterile and complex nonsterile compounding verification",
+    "topicKey": "licensure-ce",
+    "stem": "During 2026, a Massachusetts pharmacist verifies several compounded sterile preparations and several complex nonsterile preparations during brief coverage shifts. Other approved annual CE totals 20 hours, including required law and live hours, but none concerns compounding. No Board waiver applies. What additional specialty CE compliance is necessary?",
+    "choices": [
+      {
+        "text": "None, because temporary compounding coverage does not require subject-specific CE.",
+        "why": "Incorrect. Under 247 CMR 4.03(4)(c)–(d) and Board Policy 2021-04, even limited involvement in verifying sterile or complex nonsterile preparations triggers the corresponding annual specialty education."
+      },
+      {
+        "text": "Five hours in sterile compounding only; complex nonsterile education is unnecessary when a pharmacist also does sterile work.",
+        "why": "Incorrect. The applicable five sterile and three complex nonsterile annual requirements are independent; sterile responsibility does not extinguish complex nonsterile responsibility."
+      },
+      {
+        "text": "Exactly eight specialty hours in addition to the annual 20, because compounding education is legally excluded from general CE credit.",
+        "why": "Incorrect. Board Policy 2021-04 §VII allows appropriate specialty compounding education to count toward the annual 20-hour general requirement. The issue is required content, not necessarily eight hours above 20."
+      },
+      {
+        "text": "Five sterile-compounding and three complex-nonsterile-compounding CE hours in the calendar year; qualifying specialty credit may count within the general annual 20.",
+        "why": "Correct. Section 4.03(4)(c)–(d) specifies five annual sterile and three annual complex nonsterile hours for relevant work. The Board's revised CE policy applies to temporary verification and allows qualified specialty hours toward general CE."
+      }
+    ],
+    "correct": [
+      "D"
+    ],
+    "citation": "247 CMR 4.03(4)(c)–(d); Massachusetts Board Policy 2021-04 §§V–VII, revised Sept. 4, 2025",
+    "url": "https://www.mass.gov/doc/2021-04-continuing-education-ce-requirements-pdf/download",
+    "verified": "2026-11-16",
+    "note": "Sterile verification triggers five annual subject hours and complex nonsterile verification three. Eligible specialty CE may count toward annual general CE."
+  },
+  {
+    "id": "E30-147",
+    "set": 30,
+    "area": 2,
+    "kind": "multi",
+    "topic": "CQI quality-related error: 24-hour documentation versus separate serious-event Board reports",
+    "topicKey": "quality-safety",
+    "stem": "A Massachusetts community pharmacist discovers a Quality-Related Event: a patient received the wrong prescription drug, but there is no known serious injury. The pharmacy has a CQI program. Which measures are required under 247 CMR 15? SELECT ALL THAT APPLY.",
+    "choices": [
+      {
+        "text": "The pharmacist must promptly address patient notification, corrective directions and measures to minimize potential harm.",
+        "why": "Correct. Under 247 CMR 15.03(1), staff alert the pharmacist/MOR immediately; the pharmacist addresses the patient and any professionally indicated prescriber/healthcare-team contact and corrective steps without waiting for injury."
+      },
+      {
+        "text": "Initial event documentation may be delayed until the next monthly CQI meeting because no serious injury has occurred.",
+        "why": "Incorrect. Section 15.03(2)(a) requires the informed or discovering pharmacist to complete initial documentation within 24 hours. The separate serious-injury reporting threshold under 20.02 is not a CQI exemption."
+      },
+      {
+        "text": "Maintain QRE records for at least two years and provide pharmacy personnel with CQI education at least annually.",
+        "why": "Correct. Section 15.04(2) mandates two-year QRE records; §15.02(1)(f) requires at least annual CQI education. More serious events may carry additional and longer reporting requirements."
+      },
+      {
+        "text": "A wrong-drug dispensing is excluded from CQI unless the patient is hospitalized or dies.",
+        "why": "Incorrect. A qualifying dispensing QRE triggers §15 event handling and documentation independent of whether it produced serious harm."
+      }
+    ],
+    "correct": [
+      "A",
+      "C"
+    ],
+    "citation": "247 CMR 15.02(1)(f), 15.03(1)–(3), 15.04(1)–(4); 247 CMR 20.02 (separate serious-event reporting)",
+    "url": "https://www.mass.gov/doc/247-cmr-15-continuous-quality-improvement-program/download",
+    "verified": "2026-11-16",
+    "note": "A QRE needs immediate clinical response, documentation within 24 hours and at least two-year records, even with no serious injury."
+  },
+  {
+    "id": "E30-148",
+    "set": 30,
+    "area": 2,
+    "kind": "single",
+    "topic": "Hospital pharmacy and on-premises hospital-owned skilled nursing residents",
+    "topicKey": "institutional-pharmacy-practice",
+    "stem": "A Massachusetts hospital pharmacy wants to provide medication orders for residents of a skilled nursing facility on its premises and solely owned by the hospital. The hospital DOES NOT meet the federal criteria for a 'sole community hospital' in 42 CFR 412.92. Under 105 CMR 722.090(A), which conclusion is correct?",
+    "choices": [
+      {
+        "text": "Ownership and location alone do not establish the specific hospital-patient exception; the owning hospital must also satisfy the referenced federal sole-community-hospital criteria.",
+        "why": "Correct. Section 722.090(A) requires the nursing facility to be solely owned by a qualifying sole community hospital and located on its premises. Without the separate federal-status condition, that special pathway is not established. The pharmacy should evaluate any other independently lawful arrangement."
+      },
+      {
+        "text": "All nursing-facility residents automatically count as hospital inpatients if their facility shares an address with a hospital.",
+        "why": "Incorrect. Section 722.090(A) has more conditions than location, and it expressly ties its nursing-facility exception to a sole community hospital."
+      },
+      {
+        "text": "Hospital ownership alone is enough even if the facility is off-site and the hospital lacks the federal designation.",
+        "why": "Incorrect. Both on-premises status and the referenced owning-hospital qualification are conditions. Ownership does not waive either of them."
+      },
+      {
+        "text": "The law never permits a hospital pharmacy to serve any nursing-facility resident under any circumstances.",
+        "why": "Incorrect. Qualifying solely hospital-owned on-premises facilities at a sole community hospital CAN fall within §722.090(A); the scenario fails a particular condition, not a universal prohibition."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "citation": "105 CMR 722.090(A) (hospital-based SNF/LTCF exception); 42 CFR 412.92 sole community hospital",
+    "url": "https://www.mass.gov/doc/105-cmr-722-dispensing-procedures-for-clinic-and-hospital-pharmacies/download",
+    "verified": "2026-11-16",
+    "note": "Hospital ownership and an on-premises SNF are not enough: 105 CMR 722.090(A) also requires the hospital's sole-community-hospital status for this exception."
+  },
+  {
+    "id": "E30-149",
+    "set": 30,
+    "area": 3,
+    "kind": "single",
+    "topic": "DEA multiple Schedule II prescriptions versus Massachusetts 30-day original validity",
+    "topicKey": "controlled-quantity",
+    "stem": "A Massachusetts practitioner issues three separate authentic electronic prescriptions for methylphenidate on November 1, 2026, each for 30 days. The second and third give earliest-fill dates December 15 and January 15, and diversion risk and legitimate-purpose conditions are satisfied. No new prescription is issued afterward. What follows from 21 CFR 1306.12(b) and M.G.L. c.94C §23(a)?",
+    "choices": [
+      {
+        "text": "The delayed prescriptions remain valid because DEA permits separate prescriptions totaling up to 90 days, overriding all state issue-date expiration rules.",
+        "why": "Incorrect. DEA §1306.12(b) conditions multiple issuance on applicable STATE law. Massachusetts Schedule II paper/electronic prescriptions expire 30 days after issue; a later earliest-fill date cannot extend that period."
+      },
+      {
+        "text": "Issuing multiple Schedule II prescriptions is always an illegal refill; therefore none of the prescriptions, including the first, can be dispensed.",
+        "why": "Incorrect. Federal law can permit separately issued Schedule II prescriptions; they are not all automatically refills. But each must independently remain valid under Massachusetts law at dispensing."
+      },
+      {
+        "text": "The federal multiple-prescription option is conditional on state law, and both delayed originals would already be invalid under the Massachusetts 30-day validity limit.",
+        "why": "Correct. Federal 21 CFR 1306.12(b)(1)(iv) requires state-law permission. M.G.L. c.94C §23(a) invalidates Schedule II prescriptions 30 days after issuance, counting under 247 CMR 9.04(10). The proposed dates occur well beyond that window."
+      },
+      {
+        "text": "The pharmacist may merge all three authorizations into one 90-day dispensing from the first prescription to avoid the delayed-date problem.",
+        "why": "Incorrect. A permission for selected nonopioid Schedules II–III 90-day SINGLE fills does not let the pharmacist rewrite the prescriber's three separately issued, future-dated prescriptions into one 90-day order."
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "citation": "21 CFR 1306.12(b)(1)(i)–(v); M.G.L. c.94C §23(a),(d); 247 CMR 9.04(10)",
+    "url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXV/Chapter94C/Section23",
+    "verified": "2026-11-16",
+    "note": "DEA's up-to-90-day separate CII prescriptions are subject to state law. Massachusetts CII prescriptions expire 30 days after original issue, regardless of later earliest-fill wording."
+  },
+  {
+    "id": "E30-150",
+    "set": 30,
+    "area": 4,
+    "kind": "multi",
+    "topic": "Emergency medication kits: reconciliation and Board-approved facility types",
+    "topicKey": "controlled-inventory",
+    "stem": "A Massachusetts pharmacy supplies emergency medication kits and proposes delivering them to any facility on request, without formal kit procedures or reconciliation against medication orders. Which statements accurately describe 247 CMR 9.09? SELECT ALL THAT APPLY.",
+    "choices": [
+      {
+        "text": "The pharmacy must have procedures for kit security, maintenance and use.",
+        "why": "Correct. Section 9.09(1) expressly requires pharmacy policies and procedures for proper dispensing through emergency kits, including security, maintenance and use."
+      },
+      {
+        "text": "Any assisted living or commercial facility is eligible if its administrator agrees to accept the kit.",
+        "why": "Incorrect. Under §9.09(3), pharmacies may provide kits ONLY to types of facilities approved by the Massachusetts Board, not to any willing recipient."
+      },
+      {
+        "text": "Once medications are removed, the pharmacy has no responsibility to reconcile dispensing with valid prescriptions or orders.",
+        "why": "Incorrect. Section 9.09(2) expressly obliges the pharmacy to reconcile medication dispensed through the kits with prescriptions or medication orders."
+      },
+      {
+        "text": "The pharmacy must reconcile kit use with orders and may provide kits only to Board-approved facility types.",
+        "why": "Correct. These two independent requirements appear in 247 CMR 9.09(2) and (3). The pharmacist should verify both records and destination authorization."
+      }
+    ],
+    "correct": [
+      "A",
+      "D"
+    ],
+    "citation": "247 CMR 9.09(1)–(3), effective Dec. 6, 2024",
+    "url": "https://www.mass.gov/doc/247-cmr-9-professional-practice-standards/download",
+    "verified": "2026-11-16",
+    "note": "Emergency kits require secure documented procedures, reconciliation of use with prescriptions/orders and Board-approved facility types."
+  },
+  {
+    "id": "E30-151",
+    "set": 31,
+    "area": 1,
+    "kind": "single",
+    "topic": "Pharmacist license available on site, badge first name and pharmacist title, NABP e-profile",
+    "topicKey": "licensure-ce",
+    "stem": "A Massachusetts pharmacist keeps a current Board-issued license readily available at the pharmacy but not wall-posted. The pharmacist's badge states only 'Staff Member' without a first name, and the pharmacist has no NABP e-profile number. What does 247 CMR 9.01(18)–(20) require?",
+    "choices": [
+      {
+        "text": "Post the license on the wall; the generic badge and lack of e-profile are permissible.",
+        "why": "Incorrect. The license may be carried, wall-posted OR readily available. However, the pharmacist must have the required identifying badge and maintain an NABP e-profile number."
+      },
+      {
+        "text": "Keeping the license readily available is acceptable, but the badge must show at least the pharmacist's first name and recognized pharmacist title, and an NABP e-profile is required.",
+        "why": "Correct. Section 9.01(18) permits three license-availability options; (19) requires first name plus 'Pharmacist,' 'Registered Pharmacist' or 'R.Ph.' on the badge; (20) requires the pharmacist to maintain an NABP e-profile number."
+      },
+      {
+        "text": "The pharmacy manager's NABP e-profile satisfies the requirement for every pharmacist and staff can use generic role badges.",
+        "why": "Incorrect. The requirement in §9.01(20) applies to each pharmacist personally. Section 9.01(19) does not allow pharmacists to conceal their title behind a nonspecific badge."
+      },
+      {
+        "text": "All license, badge and e-profile requirements apply only at biennial renewal and can be deferred in daily practice.",
+        "why": "Incorrect. Sections 9.01(18)–(20) are ongoing professional practice obligations, not renewal-only administrative tasks."
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "citation": "247 CMR 9.01(18)–(20), effective Dec. 6, 2024",
+    "url": "https://www.mass.gov/doc/247-cmr-9-professional-practice-standards/download",
+    "verified": "2026-11-16",
+    "note": "A current license may be carried, posted or readily available, but a pharmacist must wear a first-name/pharmacist-title badge and keep an NABP e-profile."
+  },
+  {
+    "id": "E30-152",
+    "set": 31,
+    "area": 2,
+    "kind": "single",
+    "topic": "Licensed certified professional midwife versus APRN nurse-midwife Schedule VI limitations",
+    "topicKey": "prescriber-authority",
+    "stem": "A Massachusetts pharmacist evaluates medication orders issued by a licensed certified PROFESSIONAL midwife (not an APRN certified nurse-midwife). The professional midwife holds the required Massachusetts Controlled Substances Registration and is practicing within the officially recognized midwifery scope. Which interpretation of M.G.L. c.112 §295 is correct?",
+    "choices": [
+      {
+        "text": "The midwife may order and administer covered Schedule VI medicines such as oxytocin and vitamin K in authorized practice, but cannot use Schedule II–V drugs under this license.",
+        "why": "Correct. Section 295(a) lists authorized medicines such as oxytocin and vitamin K; §295(b)(i) prohibits controlled drugs other than Massachusetts Schedule VI for licensed certified professional midwives. The LCPM license must not be confused with an APRN certified nurse-midwife credential."
+      },
+      {
+        "text": "The license gives exactly the same Schedule II–V prescribing privileges as an APRN certified nurse-midwife, because both titles contain 'midwife'.",
+        "why": "Incorrect. Licensed certified professional midwives and APRN nurse-midwives have separate legal scopes. Section 295(b) prohibits the former from Schedule II–V use under this authority."
+      },
+      {
+        "text": "Even approved Schedule VI medicines are prohibited to LCPMs because Massachusetts calls them 'controlled substances'.",
+        "why": "Incorrect. Section 295(a) specifically permits named agents within approved practice and §295(b) explicitly excepts Schedule VI medicines from its exclusion."
+      },
+      {
+        "text": "A clinic may authorize a Schedule IV analgesic simply by including it in its midwifery policy, bypassing §295's schedule restriction.",
+        "why": "Incorrect. Internal policies cannot expand statutory authority. Section 295(b) excludes Schedule II–V drugs for this practitioner class regardless of a clinic's preference."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "citation": "M.G.L. c.112 §295(a)–(b), effective Nov. 21, 2024; 274 CMR 3.07, effective Sept. 11, 2026; M.G.L. c.94C §7(j)",
+    "url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXVI/Chapter112/Section295",
+    "verified": "2026-11-16",
+    "note": "Licensed certified professional midwives may use authorized Schedule VI agents but not Schedule II–V under their separate scope. Do not confuse them with APRN certified nurse-midwives."
+  },
+  {
+    "id": "E30-153",
+    "set": 31,
+    "area": 2,
+    "kind": "multi",
+    "topic": "Massachusetts emergency interchange despite no-substitution: listed product and written buyer acceptance",
+    "topicKey": "generic-interchange-emergency",
+    "stem": "A Massachusetts community pharmacy receives an authentic brand prescription marked 'no substitution.' The brand is unavailable during an actual medical emergency, but a less expensive drug on the Massachusetts List of Interchangeable Drugs is available. No additional restriction applies. Under 247 CMR 9.05(1), which actions are permissible or required? SELECT ALL THAT APPLY.",
+    "choices": [
+      {
+        "text": "The pharmacist may dispense the eligible less expensive interchangeable medicine in the qualifying emergency even though the brand order says 'no substitution'.",
+        "why": "Correct. Section 9.05(1)(a) permits this limited emergency exception if the prescribed brand is unavailable and the alternative is on the state interchange list. It is not routine discretionary substitution."
+      },
+      {
+        "text": "The pharmacist may replace the drug with any other medicine treating the same disease, whether or not it is legally interchangeable.",
+        "why": "Incorrect. The exception is for a qualifying, listed interchangeable drug, not simply a medication with a related therapeutic indication."
+      },
+      {
+        "text": "Document the date, hour and nature of the medical emergency and obtain the purchaser's written acceptance of the deviation.",
+        "why": "Correct. Section 9.05(1)(b) demands BOTH a documented emergency and purchaser written acceptance. The pharmacy must retain an identifiable prescription for Board review."
+      },
+      {
+        "text": "Documenting the emergency is sufficient; the patient or purchaser may not be asked to accept the change in writing.",
+        "why": "Incorrect. Purchaser written acceptance is expressly required by §9.05(1)(b) in addition to documenting the medical emergency."
+      }
+    ],
+    "correct": [
+      "A",
+      "C"
+    ],
+    "citation": "247 CMR 9.05(1)(a)–(b), effective Dec. 6, 2024",
+    "url": "https://www.mass.gov/doc/247-cmr-9-professional-practice-standards/download",
+    "verified": "2026-11-16",
+    "note": "In a real emergency, a listed less expensive interchangeable product may replace an unavailable 'no substitution' brand, but the emergency and written buyer acceptance must be documented."
+  },
+  {
+    "id": "E30-154",
+    "set": 31,
+    "area": 3,
+    "kind": "single",
+    "topic": "Epidiolex federal CBD decontrol versus nabilone Cesamet Schedule II in Massachusetts",
+    "topicKey": "drug-schedule-identification",
+    "stem": "A Massachusetts pharmacy classifies (X) FDA-approved Epidiolex cannabidiol oral solution with no more than 0.1% THC and (Y) FDA-approved Cesamet nabilone capsules. Which statement accurately describes the CURRENT federal and corresponding Massachusetts schedules in November 2026?",
+    "choices": [
+      {
+        "text": "Epidiolex is still federal Schedule V and Cesamet is not federally controlled because its ingredient is synthetic.",
+        "why": "Incorrect. FDA-approved qualifying CBD products such as Epidiolex were removed from federal Schedule V in 2020, while nabilone remains expressly Schedule II in 21 CFR 1308.12(f)(1)."
+      },
+      {
+        "text": "Both are Schedule I because any cannabis-related medicine must be federally prohibited even after FDA approval.",
+        "why": "Incorrect. The two specific approved products have different current statuses; neither is properly characterized as Schedule I in this case."
+      },
+      {
+        "text": "Epidiolex is federally unscheduled but Massachusetts Schedule VI as a prescription medicine; Cesamet/nabilone is Schedule II in both federal and Massachusetts systems.",
+        "why": "Correct. DEA's 2020 federal rule eliminated Schedule V control of qualifying FDA-approved CBD formulations, while Massachusetts includes other nonscheduled prescription drugs in Schedule VI. Nabilone remains Schedule II under §1308.12(f)(1), adopted correspondingly by Massachusetts."
+      },
+      {
+        "text": "Epidiolex is Massachusetts Schedule III because it treats epilepsy, while Cesamet is Schedule IV because it treats chemotherapy nausea.",
+        "why": "Incorrect. Therapeutic indications do not replace formal scheduling. The correct distinction is qualifying CBD product federal decontrol/state VI versus nabilone federal and state II."
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "citation": "85 FR 51639 (Aug. 21, 2020), removal of FDA-approved CBD Schedule V listing; 21 CFR 1308.12(f)(1) nabilone; 105 CMR 700.002(B),(F); DEA Drugs of Abuse Guide 2024",
+    "url": "https://www.dea.gov/sites/default/files/2024-12/2024-Drugs-of-Abuse-508.pdf",
+    "verified": "2026-11-16",
+    "note": "Epidiolex is now federally unscheduled and Massachusetts Schedule VI; Cesamet (nabilone) remains Schedule II. The old federal Epidiolex V classification is superseded."
+  },
+  {
+    "id": "E30-155",
+    "set": 31,
+    "area": 4,
+    "kind": "multi",
+    "topic": "Hospital controlled automated dispensing device versus retail patient pickup machine",
+    "topicKey": "automation-systems",
+    "stem": "A licensed Massachusetts pharmacy proposes controlled-substance use of an automated dispensing device (ADD) inside a licensed hospital, with hospital nursing staff obtaining medicines near the point of care. A community pharmacy also has a separate patient-pickup automated pharmacy system (APS). Which statements follow 247 CMR 9.12 and Board ADD requirements? SELECT ALL THAT APPLY.",
+    "choices": [
+      {
+        "text": "The ADD must be in a licensed healthcare facility and dispensing must be pursuant to a valid patient-specific prescription or medication order.",
+        "why": "Correct. Section 9.12(1)–(2) imposes both conditions. A healthcare-facility ADD is not an unrestricted medication supply solely because it uses secure cabinets."
+      },
+      {
+        "text": "An institutional ADD is identical to an outpatient APS, so the APS rule allowing Schedule IV–VI patient pickup substitutes for ADD authorization.",
+        "why": "Incorrect. Sections 9.10 and 9.12 govern different systems and purposes. The community APS rule does not replace healthcare facility ADD requirements."
+      },
+      {
+        "text": "The pharmacy's ADD procedures must address location, maintenance, security, controlled-substance accountability, quality assurance, stocking/returns and confidentiality.",
+        "why": "Correct. Section 9.12(4)(a)–(g) expressly enumerates these requirements, irrespective of whether the manufacturer also provides device instructions."
+      },
+      {
+        "text": "A complete electronic access log allows ADD dispensing without a valid patient-specific order.",
+        "why": "Incorrect. Section 9.12(2) still requires a valid prescription or order; electronic audit trails cannot independently create prescribing authority."
+      }
+    ],
+    "correct": [
+      "A",
+      "C"
+    ],
+    "citation": "247 CMR 9.12(1)–(4) and 9.10 (distinguish ADD versus APS), effective Dec. 6, 2024; Board Policy 2019-02, revised Jan. 9, 2025",
+    "url": "https://www.mass.gov/policy-statement/automated-dispensing-device-use",
+    "verified": "2026-11-16",
+    "note": "Institutional ADDs require a licensed healthcare facility, patient-specific orders and pharmacy-defined accountability controls; they are not outpatient APS devices."
   }
 ];
