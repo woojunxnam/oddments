@@ -1,42 +1,42 @@
-# Massachusetts MPJE Chapter 30 — Consolidated Legal Source-Review Status
+# Massachusetts MPJE Chapter 30 — Consolidated Legal Review Status
 
-**Updated:** November 17, 2026 ET. **215 unchanged original question IDs, 43 fixed sets.** This status tracker combines the baseline author AI audit, earlier limited AI blind verification and 3 newer source recheck batches. AI source verification is **not** an external pharmacist/attorney adjudication or psychometrically validated MPJE exam benchmark.
+**Updated November 17, 2026 (ET).** **215 active questions, 43 sets**, all previously checked at AI author-review level. These numbers measure legal-evidence reviews, **not actual exam prediction or professional human certification**.
 
-## Current status (one category per ID)
+## Evidence status
 
-| Source-review status | Questions |
+| Non-overlapping class | Questions |
 |---|---:|
-| Prior separate AI blind key matched | **45** |
-| New AI primary-source option-level rechecks | **55** |
-| Original specialized source **HOLD** | **1** |
-| Prior AI-author review only, additional independent AI source reading pending | **114** |
+| Earlier separate AI source/key match | **45** |
+| Targeted AI source-supported four-choice rechecks | **78** |
+| PEP pharmacist protocol primary-source HOLD | **1** |
+| Statute / DPH guidance reconciliation HOLD | **1** |
+| Existing AI author-reviewed, additional source recheck pending | **90** |
 | **Total existing** | **215** |
 
-**100 of 215** have either the prior separate AI blind match (45) or a targeted source-recheck (55). This does **not** mean 100 have passed external human legal validation. All 215 still have author AI source reviews, and **no question is finally eligible for a 120×2 mock** before the remaining legal/source, duplicate and exam-mode gates are complete.
+**123/215** now have extra legal-recheck evidence (45 previously matched blind-source + 78 new four-option source-based review); **2 HOLD**, **90 additional source passes pending**. No item has been marked final 120-question mock-approved. All keys remain from current main unless a separately reviewed revision explicitly changes them.
 
-## This newest batch: 23 IDs, 92 choices
+## Latest Batch D: 24 cases, 96 options
 
-[Batch C — all four choices with original keys and governing sources](MPJE_CH30_SCHEDULE_SCOPE_BUD_BATCH_C_2026-11-17.md)
+[Batch D summary](MPJE_CH30_CONTROLLED_RX_BATCH_D_2026-11-17.md) / [exact evidence JSON](MPJE_CH30_CONTROLLED_RX_BATCH_D_2026-11-17.json)
 
-- **13 drug-schedule classification questions** were re-solved against **live 21 CFR 1308.11–.15** with product/formulation distinction.
-- **8 prescriber-scope/authority cases** were checked against MA PA, APRN, dentist, podiatrist, optometrist, institutional and veterinarian requirements.
-- **2 USP <795> BUD cases** E30-013 and E30-130 verified against Massachusetts Board Pharmacy's nonsterile compounding official **inspection checklist items 42.1–42.4**. The checklist gives 14 days refrigerated nonpreserved aqueous, 35 days preserved aqueous, 90 days nonaqueous oral liquid, 180 days other nonaqueous under usual assumptions. **E30-130 is no longer held for lack of numeric-source evidence; however, direct access to the latest paid USP-NF full text remains unavailable**, so do not misdescribe it as a full USP primary chapter review.
-- **Six citation-only repairs** on E30-099, 129, 134, 144, 174, 177; no stem, choices, correct-answer keys, question revisions, notes, bookmarks or scoring records changed. Latest Nov 12 2026 DEA insertion of oveporexton shifted §1308.14(f) paragraph numbers for phentermine/solriamfetol.
+23 source-backed cases (controlled-stock transfer/ordering, disposal, pseudoephedrine, CIII–V partials, out-of-state controlled Rxs, methadone/buprenorphine, EPCS, refill validity, LTCF partials, bedside delivery, cold storage, MassPAT, CSOS). One temporary-system-failure oral CIV item **E30-058** moved to statute-versus-agency interpretation hold, not assumed incorrect or rewritten.
 
-## One remaining original-source hold
+### Holds requiring resolution before mock exam
 
-**E30-088** (minor pharmacist-prescribed oral HIV PEP): retrieve the **September 2026 Massachusetts statewide pharmacist PEP guideline** itself and confirm minor eligibility, weight threshold, baseline HIV testing, consent authority, 28-day regimen, max supply and no-refill rule. General CDC guidance does not authenticate all MA-specific prescribing conditions. This case is not MOCK APPROVED.
+1. **E30-088** — Retrieve the exact September 2026 MA pharmacist PEP guideline to verify adolescent eligibility, bodyweight, lab testing, supply and refills. [DPH guidance entry](https://www.mass.gov/lists/guidelines-for-pharmacists-to-prescribe-oral-prep-pep-sti-treatment-and-doxypep).
+2. **E30-058** — Compare [M.G.L. c94C §20(c)](https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXV/Chapter94C/Section20) ordinary 2-day / commissioner-exception seven-day written Rx requirement with [105 CMR 721.070(B)](https://www.mass.gov/doc/105-cmr-721-standards-for-prescription-format-and-security-in-massachusetts/download) and [DPH DCP19-12-108 manual](https://www.mass.gov/circular-letter/circular-dcp-19-12-108-electronic-prescribing-and-dispensing-manual) that operationally specify seven **business** days for oral Rx under an ePrescribing exception. Exact categorical power-failure exception and day computation need authoritative interpretation; do not silently choose a conflicting time.
 
-## Source-review trail
+## Source document trail
 
-1. [Original 215-item author AI audit](MPJE_CH30_215_LEGAL_REAUDIT_CHECKPOINT_2026-11-17.md)
-2. [High-risk 24-item A–D review (22 supported + 2 original holds)](MPJE_CH30_HIGH_RISK24_SOURCE_RECHECK_2026-11-17.md)
-3. [Previous limited-source 10-item A–D review](MPJE_CH30_LIMITED_SOURCE_BATCH_B_2026-11-17.md)
-4. [Current 23-item schedule/scope/BUD A–D review](MPJE_CH30_SCHEDULE_SCOPE_BUD_BATCH_C_2026-11-17.md)
-5. [Current 215-ID machine-readable exact status](MPJE_CH30_215_REVIEW_ROLLUP_2026-11-17.json)
+- [215-case base author AI audit](MPJE_CH30_215_LEGAL_REAUDIT_CHECKPOINT_2026-11-17.md)
+- [High-risk 24 source rechecks](MPJE_CH30_HIGH_RISK24_SOURCE_RECHECK_2026-11-17.md)
+- [Limited-source 10 rechecks](MPJE_CH30_LIMITED_SOURCE_BATCH_B_2026-11-17.md)
+- [Drug schedules/scope/USP BUD 23 rechecks](MPJE_CH30_SCHEDULE_SCOPE_BUD_BATCH_C_2026-11-17.md)
+- [Controlled substances / Rx 24 rechecks](MPJE_CH30_CONTROLLED_RX_BATCH_D_2026-11-17.md)
+- [Current per-ID exact rollup](MPJE_CH30_215_REVIEW_ROLLUP_2026-11-17.json)
 
-## Next work
+## Remaining road map
 
-The **114 remaining** without an additional matched/source re-solve should be grouped by law and scrutinized A–D with official text, separately tracking any exact statute citation corrections. Resolve E30-088 only from the authoritative MA guideline, not assumption. After 215 are source-ready, create 25 unique E30-216–240 and implement two disjoint 120-question, 150-minute forward-only mocks. On/after March 1, 2027, retag to updated NABP blueprint and disclose pre-exposure contamination in score analysis.
+Audit the **90** remaining original questions by law and each A–D choice, resolve 2 holds, then create 25 newly verified E30-216–240 and assemble two 120-question non-overlapping 150-minute forward-only mocks. Separately review the NABP new blueprint if the actual exam is on/after March 1, 2027. Avoid old-test answer exposure bias by distinguishing seen vs unseen questions in readiness reporting.
 
-**Do not claim two mock exams or 240 final legally approved items yet.**
+**No question objects, existing answers, revisions, attempts, bookmarks, mock UI or exam records changed in this evidence-only batch.**
