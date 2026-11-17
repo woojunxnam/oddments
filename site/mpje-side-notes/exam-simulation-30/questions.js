@@ -1547,9 +1547,10 @@ window.MPJE_CH30_QUESTIONS = [
     "correct": [
       "A"
     ],
-    "citation": "247 CMR 4.02(3)-(5); Massachusetts Board of Registration in Pharmacy, Pharmacist Licensing: License Reactivation",
-    "url": "https://www.mass.gov/pharmacist-licensing",
-    "verified": "2026-11-14"
+    "citation": "247 CMR 4.02(3)-(5), pharmacy practice not authorized after license expiration; Massachusetts Board Policy 2020-01 (adopted Feb. 6, 2020, revised May 14, 2021) reactivation after expiration more than one renewal cycle; Board approval of petition first, MPJE pass before license reactivation",
+    "url": "https://www.mass.gov/doc/2020-01-pharmacist-license-reactivation-after-expiration-beyond-one-renewal-cycle-pdf/download",
+    "verified": "2026-11-17",
+    "note": "For licenses expired MORE THAN TWO YEARS, Board Policy 2020-01 first requires a written reactivation petition (CE, résumé, state license verification, fees); AFTER Board approval, MPJE must be passed before the Board reactivates. NAPLEX is not universally required if the pharmacist practiced elsewhere; Board may impose it for another factual setting."
   },
   {
     "id": "E30-047",
@@ -2118,9 +2119,10 @@ window.MPJE_CH30_QUESTIONS = [
     "correct": [
       "A"
     ],
-    "citation": "FDA iPLEDGE REMS, current FDA isotretinoin prescribing information (DailyMed), §5.2: certified pharmacy/authorization, seven-day window, 30-day supply, Medication Guide, no refills",
-    "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=9f1c8971-c6dc-4708-848b-5cee50b6c32a",
-    "verified": "2026-11-15"
+    "citation": "FDA iPLEDGE REMS revised requirements IMPLEMENTED Nov. 15, 2026; FDA iPLEDGE REMS official update and Q&A, first-course pregnancy tests in medical setting, seven-day window, 30-day dispensing and no refills; FDA current isotretinoin label §5.2",
+    "url": "https://www.fda.gov/drugs/postmarket-drug-safety-information-patients-and-providers/ipledge-risk-evaluation-and-mitigation-strategy-rems",
+    "verified": "2026-11-17",
+    "note": "The FDA implemented changes on Nov. 15, 2026. PRETREATMENT pregnancy tests still require a medical setting; selected MONTHLY tests during/after treatment may be at home if prescriber permits; missed 7-day window no longer imposes old extra waiting period. The patient in this question is a FIRST-treatment patient within the 7-day window; 30-day maximum and no refill remain correct."
   },
   {
     "id": "E30-064",
@@ -3695,10 +3697,10 @@ window.MPJE_CH30_QUESTIONS = [
     "correct": [
       "A"
     ],
-    "citation": "M.G.L. c.94C §22(c) (amended Nov. 5, 2025); 105 CMR 721.020(D)(7) (eff. Sept. 27, 2024); Massachusetts DPH Circular DCP 16-12-665; distinguish current 105 CMR 721.055(B) (remainder)",
-    "url": "https://www.mass.gov/circular-letter/schedule-ii-opioids-prescription-form-requirements-and-patient-requests-for-partial-fill",
-    "verified": "2026-11-16",
-    "note": "A Schedule II opioid prescription needs its patient-request partial-fill notation even if the patient wants all tablets. The pharmacist can document it after prescriber/agent confirmation; do not rely on superseded 2016 'remainder void' guidance."
+    "citation": "M.G.L. c.94C §22(c) (partial-fill opioid notice); 105 CMR 721.020(D)(7) and 721.055 (effective Sept. 27, 2024); Massachusetts DPH Circular DCP 18-10-104 (Nov. 1, 2018) expressly superseding outdated DCP 16-12-665, pp.1–2",
+    "url": "https://www.mass.gov/doc/circular-letter-dcp-18-10-104-patient-requests-for-partial-fill-of-schedule-ii-prescriptions-0/download",
+    "verified": "2026-11-17",
+    "note": "DCP 18-10-104 explicitly instructs: if an opioid Schedule II prescription lacks the required patient-request partial-fill notice, the pharmacist MUST contact the prescriber or authorized agent to confirm and then document it. The earlier 2016 remainder-void circular was superseded; a lawful patient-requested balance may be supplied at the ORIGINAL pharmacy within 30 days."
   },
   {
     "id": "E30-110",
