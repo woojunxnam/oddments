@@ -8067,5 +8067,182 @@ window.MPJE_CH30_QUESTIONS = [
     "verified": "2026-11-17",
     "revision": 1,
     "note": "Distinct from E30-110 failed mail delivery with temperature excursion and E30-138 inpatient bedside-delivery consent. Tests workplace direct custody and pharmacy-agent accountability."
+  },
+  {
+    "id": "E30-236",
+    "set": 48,
+    "area": 1,
+    "kind": "single",
+    "topic": "National certified technician credential lapses while Massachusetts technician license remains valid",
+    "topicKey": "technician-scope",
+    "stem": "A Massachusetts pharmacy technician has a CURRENT state pharmacy technician license, but their nationally recognized pharmacy technician certification expired last week. The MOR wants to count the employee as a certified technician in a 1:4 filling team and assign new telephone Schedule VI prescription intake. No renewal of national certification has occurred. What is correct?",
+    "choices": [
+      {
+        "text": "The Massachusetts technician license also expires automatically the instant national certification lapses; the individual can perform no ordinary licensed technician duties.",
+        "why": "Incorrect. Under 247 CMR 8.04(3), loss of national certification changes the person's CERTIFIED status and permitted role, not necessarily the separate validity of their current Massachusetts technician license."
+      },
+      {
+        "text": "The individual may continue within ordinary licensed pharmacy technician duties, must use the 'Pharmacy Technician' title, and counts as a regular (noncertified) technician for supervisory ratios; the certified-only telephone new-prescription authority no longer applies.",
+        "why": "Correct. 247 CMR 8.04(3)(a)-(c) provides all three consequences when certification lapses: reduced scope to §8.02, ordinary technician title, and ordinary-technician counting in §8.06 ratios. New information intake under §8.04(4)(c) requires current certified status."
+      },
+      {
+        "text": "The employee can remain counted as certified for 90 days after certification expiration if the supervising pharmacist signs the personnel roster.",
+        "why": "Incorrect. Section 8.04(3) contains no automatic 90-day national-certification grace period allowing certified scope or staffing-ratio credit; a manager's signature cannot invent a regulatory extension."
+      },
+      {
+        "text": "A currently state-licensed technician whose national certification lapses may still perform final pharmacist dispensing validation if barcode and machine checks are available.",
+        "why": "Incorrect. Final dispensing-process validation remains a pharmacist function under 247 CMR 9.04(1). Neither ordinary nor certified technician status permits taking over the final clinical validation responsibility."
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "citation": "247 CMR 8.04(3)(a)–(c) (certification lapse: duties/title/ratios); 247 CMR 8.04(4)(c) and 8.02(6) (new Rx phone reception vs regular scope); 247 CMR 9.04(1)",
+    "url": "https://www.mass.gov/doc/247-cmr-8-pharmacy-interns-and-technicians/download",
+    "verified": "2026-11-17",
+    "revision": 1,
+    "note": "Different from E30-062/191 technician vaccine 500h qualification and E30-026 staffing-qualified 1:4 compositions; specifically tests national certification expiry and role downgrade."
+  },
+  {
+    "id": "E30-237",
+    "set": 48,
+    "area": 2,
+    "kind": "multi",
+    "topic": "Schedule VI prescription continuity supply after expired prescription or zero authorized refills",
+    "topicKey": "controlled-prescriptions",
+    "stem": "A Massachusetts patient taking a stable Schedule VI maintenance medication has an expired prescription with no remaining refills. The pharmacist has tried but cannot obtain prescriber authorization in a timely manner and has assessed that continuing therapy is appropriate. Another patient asks for the same emergency authority for Schedule IV alprazolam. No other refill, emergency or waiver provision applies. Under 247 CMR 9.04(12), which statements are correct? SELECT ALL THAT APPLY.",
+    "choices": [
+      {
+        "text": "For the Schedule VI patient, a pharmacist may exercise professional judgment to dispense a continuity quantity not exceeding 14 days OR the smallest available unit-of-use packaging in the stated circumstance.",
+        "why": "Correct. Current 247 CMR 9.04(12) expressly authorizes pharmacist-judgment dispensing of up to 14 days or the smallest available unit-of-use package when a Schedule VI prescription is expired or lacks refills and prescriber authorization cannot be obtained promptly."
+      },
+      {
+        "text": "The Schedule VI pharmacist may automatically supply a 90-day quantity on any expired prescription solely because the patient previously used the medicine for years.",
+        "why": "Incorrect. The narrowly defined 14-day or smallest-available-unit-of-use limit controls; historical adherence does not confer unlimited extension of a stale prescription."
+      },
+      {
+        "text": "Even though the normal one-year Schedule VI refill period has expired, the narrow continuity pathway may still apply if all its conditions are met; it is not an ordinary authorized refill.",
+        "why": "Correct. Subsection 9.04(12) explicitly addresses expired/no-refill Schedule VI cases and grants a separate narrow dispensing pathway when timely prescriber authorization cannot be obtained. The pharmacist must still use professional judgment."
+      },
+      {
+        "text": "The same §9.04(12) authority automatically permits a pharmacist to extend any expired Schedule IV benzodiazepine prescription for 14 days.",
+        "why": "Incorrect. Section 9.04(12) is written specifically for Massachusetts Schedule VI. A federally controlled Schedule IV refill is subject to its separate federal and state rules and cannot be extended merely by importing this Schedule VI exception."
+      }
+    ],
+    "correct": [
+      "A",
+      "C"
+    ],
+    "citation": "247 CMR 9.04(12) (MA Schedule VI one-year validity and narrow 14-day/smallest-unit-of-use emergency continuity supply); compare 247 CMR 9.04(13) and 21 CFR 1306.22 for federal CIII–V",
+    "url": "https://www.mass.gov/doc/247-cmr-9-professional-practice-standards/download",
+    "verified": "2026-11-17",
+    "revision": 1,
+    "note": "New short-quantity continuity decision not previously tested in the 215 originals; current 2024 regulation says 14 days, NOT the 30 days in an older inspection-template excerpt."
+  },
+  {
+    "id": "E30-238",
+    "set": 48,
+    "area": 2,
+    "kind": "single",
+    "topic": "Veterinarian federal Schedule III prescriptive authorization vs Schedule VI-only registration",
+    "topicKey": "prescriber-authority",
+    "stem": "A properly licensed Massachusetts veterinarian examines a dog after surgery and issues an otherwise complete patient-specific prescription for federally Schedule III buprenorphine for appropriate veterinary pain management. The veterinarian holds a Massachusetts Controlled Substance Registration (MCSR) covering Schedule VI ONLY and has NO DEA registration. The pharmacy has independently verified these facts. What should it do?",
+    "choices": [
+      {
+        "text": "Dispense the Schedule III prescription because veterinarians are exempt from federal DEA registration whenever the medication is for an animal.",
+        "why": "Incorrect. Veterinarian status does not grant blanket exemption from federal controlled-substance registration for Schedule II–V prescribing. Massachusetts DPH specifically distinguishes DEA registration for Schedules II–V from Schedule VI-only MCSR authority."
+      },
+      {
+        "text": "Do not dispense this Schedule III prescription on the stated registrations; the veterinarian must have appropriate DEA and Massachusetts controlled-schedule prescribing authority, although Schedule VI veterinary prescriptions follow a separate MCSR-only route.",
+        "why": "Correct. M.G.L. c.94C §§7,18 and 105 CMR 700.004 require appropriate registrations/schedule authorization; DEA registration is needed for federally scheduled III drugs. The same veterinarian could prescribe lawful Schedule VI-only products under the narrower Massachusetts MCSR if other conditions are met."
+      },
+      {
+        "text": "Change the patient to the dog's owner and fill under the owner's human medical history because veterinarians may use a patient's relative to avoid controlled-registration limitations.",
+        "why": "Incorrect. The patient is an animal being treated within a legitimate veterinarian-client-patient relationship. Rewriting the patient does not create DEA prescribing authority and can make the prescription fictitious."
+      },
+      {
+        "text": "Apply the federal Schedule III five-refill allowance instead of verifying the prescriber's DEA number; remaining refills cure missing initial prescriptive authority.",
+        "why": "Incorrect. Refill rules do not make an order valid when the practitioner lacks required authority for the federal controlled schedule at issuance."
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "citation": "M.G.L. c.94C §§7,18(a); 105 CMR 700.004(C)–(D) (MCSR schedule authorizations); DEA 21 CFR 1306.03–1306.05; Massachusetts DPH Veterinary Prescriptions Best Practice Recommendations (January 9, 2025)",
+    "url": "https://www.mass.gov/info-details/learn-about-massachusetts-controlled-substances-registration-mcsr-for-practitioners",
+    "verified": "2026-11-17",
+    "revision": 1,
+    "note": "Contrast E30-208, where veterinarian has lawful VI MCSR to prescribe ordinary amoxicillin without a DEA number. This one tests missing federally scheduled III authority after a genuine animal exam."
+  },
+  {
+    "id": "E30-239",
+    "set": 48,
+    "area": 3,
+    "kind": "single",
+    "topic": "MassPAT additional drug gabapentin: positive identification and hardship exception",
+    "topicKey": "masspat",
+    "stem": "A Massachusetts pharmacy dispenses prescribed gabapentin, a Massachusetts Schedule VI drug designated for PMP reporting, to an authorized patient representative at the counter. The representative has no government-issued ID. The pharmacist has credible facts showing that refusal today would cause serious hardship for the patient and can document the reason. What does 247 CMR 9.04(14) allow?",
+    "choices": [
+      {
+        "text": "Ignore the ID requirement solely because gabapentin is federally nonscheduled; Massachusetts Schedule VI products cannot be designated additional drugs.",
+        "why": "Incorrect. DPH designated gabapentin an additional PMP-reportable drug under 105 CMR 700.012(A)(1). Section 9.04(14) expressly extends positive identification to such additional drugs even though they are Massachusetts Schedule VI."
+      },
+      {
+        "text": "Require an ID without exception; 247 CMR 9.04(14) allows hardship alternatives for Schedule II–V drugs but explicitly excludes PMP additional drugs.",
+        "why": "Incorrect. Section 9.04(14)(c) expressly covers both federal Schedule II–V products AND additional drugs in its documented serious-hardship alternative."
+      },
+      {
+        "text": "Dispense under the narrow serious-hardship exception after documenting the reason and having the agent print a name and address and sign the reverse of the prescription or the pharmacy's paper/electronic log, provided all other dispensing rules are satisfied.",
+        "why": "Correct. Section 9.04(14)(b)-(c) generally requires customer positive identification for PMP additional drugs. The specific alternative permits dispensing where denial would cause serious hardship, provided the justification is documented and the ultimate user or agent writes the specified information and signs."
+      },
+      {
+        "text": "Automatically treat a photo of a neighbor's driver's license as the representative's positive identification and omit all pharmacy documentation because the drug is not DEA controlled.",
+        "why": "Incorrect. Customer identification concerns the actual ultimate user or agent presenting the prescription. Someone else's ID does not satisfy the rule, and a hardship-based dispensing requires the specific signed log and documented reason."
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "citation": "247 CMR 9.04(14)(a)–(d) (positive identification for Schedules II–V and 'additional drugs', documented serious-hardship alternative); 105 CMR 700.012(A)(1) (gabapentin additional-drug reporting)",
+    "url": "https://www.mass.gov/doc/247-cmr-9-professional-practice-standards/download",
+    "verified": "2026-11-17",
+    "revision": 1,
+    "note": "Different from E30-005 Schedule II hardship-only case and E30-039 MassPAT reporting without physical pickup ID; integrates the additional-drug patient identity rule."
+  },
+  {
+    "id": "E30-240",
+    "set": 48,
+    "area": 4,
+    "kind": "multi",
+    "topic": "Ransomware downtime: pharmacy continuity procedures, patient profiles and DUR records",
+    "topicKey": "pharmacy-operations",
+    "stem": "A Massachusetts retail pharmacy discovers ransomware and disables its compromised pharmacy computer system to protect patient records. The pharmacist can still obtain reliable lawful prescriptions, consult independent medication-history sources and perform a documented prospective DUR when safe, but new dispensing transactions cannot yet be entered into the normal electronic patient profiles. Under 247 CMR 9.19(22), 9.16 and 9.17, which operational responses are correct? SELECT ALL THAT APPLY.",
+    "choices": [
+      {
+        "text": "Follow a readily accessible written computer-downtime procedure that describes how prescriptions can be processed during downtime and how all medications dispensed will be entered into patient profiles when the system returns.",
+        "why": "Correct. Section 9.19(22)(a)-(b) requires a downtime policy that includes a lawful filling process and later incorporation into the computerized pharmacy patient record. A breach does not eliminate the documentation/reconciliation obligation."
+      },
+      {
+        "text": "Suspend all prospective DUR for the outage because the computer system normally generates interaction alerts; any technician may then dispense without pharmacist review.",
+        "why": "Incorrect. Section 9.19(22)(d) requires an appropriate DUR process during downtime, and §9.17 keeps pharmacist prospective DUR obligations in force. A computerized alert is a tool, not a substitute for pharmacist judgment."
+      },
+      {
+        "text": "Protect confidentiality and use reliable alternative procedures for reviewing relevant patient history and documenting any clinical interventions; reconcile dispensing and DUR records when the system is restored.",
+        "why": "Correct. Sections 9.16–9.17 require confidential, retrievable patient records and appropriate prospective review. The downtime plan must preserve continuity and ensure eventual patient-profile entry, without pretending records are currently accessible if they are not."
+      },
+      {
+        "text": "Erase all original electronic prescription records after recovery and generate replacement records with new fictitious dispensing times so the breach will not appear in inspection logs.",
+        "why": "Incorrect. Falsifying or deleting records to conceal the incident violates pharmacy recordkeeping duties and undermines lawful traceability. Downtime procedures call for accurate reconciliation, not fabrication or erasure."
+      }
+    ],
+    "correct": [
+      "A",
+      "C"
+    ],
+    "citation": "247 CMR 9.19(22)(a)–(d) (mandatory pharmacy computer downtime plan), 9.16(1),(7) (record retention/confidential profile), 9.17(1)–(2) (prospective DUR); HIPAA Security Rule 45 CFR 164.308–312 separately governs covered electronic PHI",
+    "url": "https://www.mass.gov/doc/247-cmr-9-professional-practice-standards/download",
+    "verified": "2026-11-17",
+    "revision": 1,
+    "note": "Ransomware is the scenario; exact binding action tested is the Board's computer downtime continuity, profile reconciliation and DUR SOP, not a speculative cyber breach report deadline. Distinct from E30-085 controlled record segregation."
   }
 ];
