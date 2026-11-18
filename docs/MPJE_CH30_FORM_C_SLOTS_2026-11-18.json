@@ -1754,21 +1754,27 @@
       ],
       "novelty_mode": "transfer_check",
       "source_pack": "public_health",
-      "source_verification_status": "CONDITIONAL_FULL_PROTOCOL_REQUIRED",
+      "source_verification_status": "PATHWAY_ONLY_SOURCE_RESCOPE_COMPLETED_PENDING_INDEPENDENT_REVIEW",
       "format_candidate": "SBA",
       "cognitive_level": "integrated",
       "production_batch": "B1",
       "pilot": false,
-      "authoring_status": "drafted",
+      "authoring_status": "drafted_corrected_pending_review",
       "candidate_question_id": "E30-296",
       "specific_source_gate": null,
       "secondary_competencies": [],
       "source_evidence": [
         {
-          "official_url": "https://www.mass.gov/lists/guidelines-for-pharmacists-to-prescribe-oral-prep-pep-sti-treatment-and-doxypep",
-          "citation_as_drafted": "M.G.L. c.94C §19F; DCP 26-08-125 (Aug. 25, 2026), HIV Prevention; MA DPH Pharmacist PEP Guidelines 9-2026",
+          "official_url": "https://www.mass.gov/doc/pharmacist-prescribing-of-certain-medications/download",
+          "citation_as_drafted": "MA DPH DCP 26-08-125, HIV Prevention",
           "author_check_date": "2026-11-18",
-          "review_required": "independent exact-provision check plus all four choice rationales"
+          "review_required": "independent A–D check; full statewide protocol is not claimed checked"
+        },
+        {
+          "official_url": "https://www.cdc.gov/hivnexus/hcp/pep/index.html",
+          "citation_as_drafted": "CDC PEP guidance, updated October 7 2026",
+          "author_check_date": "2026-11-18",
+          "review_required": "no regimen or testing claimed"
         }
       ],
       "independent_review": {
@@ -1776,7 +1782,19 @@
         "reviewed_at": null
       },
       "legal_approval": "NOT_APPROVED",
-      "draft_path": "docs/form-c/b1-draft-area2-2026-11-18.json"
+      "draft_path": "docs/form-c/b1-draft-area2-2026-11-18.json",
+      "review_flags": [
+        {
+          "date": "2026-11-18",
+          "type": "HOLD_SCOPECHECK_RESOLVED_BY_NARROWING",
+          "explanation": "Scope limited to PEP vs PrEP after 36h exposure and prompt evaluation/referral; doesn't require the full current MA PEP DOCX regimen or testing protocol. Full clinical prescribing details remain unverified and are not tested.",
+          "official_sources": [
+            "https://www.mass.gov/doc/pharmacist-prescribing-of-certain-medications/download",
+            "https://www.cdc.gov/hivnexus/hcp/pep/index.html",
+            "https://www.mass.gov/lists/guidelines-for-pharmacists-to-prescribe-oral-prep-pep-sti-treatment-and-doxypep"
+          ]
+        }
+      ]
     },
     {
       "slot_id": "C057",
@@ -3740,7 +3758,6 @@
     },
     "review_blockers": [
       "C044",
-      "C056",
       "C099",
       "C100",
       "C104"
@@ -3754,6 +3771,7 @@
     "structural_report": "docs/form-c/b1-author-structural-audit-2026-11-18.json",
     "corrected_cases": [
       "C048",
+      "C056",
       "C079"
     ],
     "additional_editorial_watch": [
