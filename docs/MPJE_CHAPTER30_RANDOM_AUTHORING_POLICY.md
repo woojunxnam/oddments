@@ -3,6 +3,21 @@
 Owner preference recorded: November 13, 2026. Applies to new questions for
 `site/mpje-side-notes/exam-simulation-30/` unless explicitly changed.
 
+## Current full-length Form C work — November 18, 2026
+
+For the owner's new final 120-question Form C, follow the
+[Form C production plan](MPJE_CH30_FORM_C_PLAN_2026-11-18.md),
+[120-slot decision matrix](MPJE_CH30_FORM_C_SLOTS_2026-11-18.json) and
+[source packs](MPJE_CH30_FORM_C_SOURCE_PACKS_2026-11-18.json).
+This separate full-length form uses 26/40/29/25 primary Areas and does not
+inherit a repeating five-item 1/2/1/1 Area or 3 SBA/2 SATA template. All 120
+slots are planning assignments; no C question is authored or source-approved
+at this checkpoint. Start with the eight-item pilot contained within B1.
+Keep C outside ordinary practice before its first completed attempt and
+preserve A/B's existing content, manifests and learning history during integration.
+Unanswered Chapter 30 cards must not display answer-bearing topic titles;
+topic explanations belong in post-check or completed-exam review.
+
 ## Required priority-coverage reference
 
 Before selecting topics for the next five-question set, read
