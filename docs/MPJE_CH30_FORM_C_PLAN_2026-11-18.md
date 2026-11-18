@@ -3,7 +3,7 @@
 **Plan date:** November 18, 2026 (America/New_York).  
 **Owner request:** remove question-topic hints and prepare an efficient, independently reviewed final 120-question form before writing it.  
 **Baseline:** `78b1c1ba163bf9cd43d0a6e8296c54f7c25c78f0`; 240 original questions, 48 learning sets, disjoint Forms A/B of 120 each.  
-**Status (2026-11-18 pilot checkpoint):** **8/120 drafts authored; 0/120 independently blind-solved or legally approved; 0 published**. The eight stems and 32 option rationales are in a review-only GitHub branch, NOT in the live exam. A slot is a research assignment, not a verified legal conclusion or a finished question.
+**Status (November 18, 2026 Batch 1 checkpoint):** **30/120 author drafts (8 pilot + 22 additional); 0/120 independently blind-solved, legally approved or released.** All items remain in an unmerged Draft PR branch, not in the live exam. A slot is a research assignment, not a verified legal conclusion or a finished question.
 
 ## 1. Scope and controlling decisions
 
@@ -163,3 +163,24 @@ Completed first-pass checks: exact counts (8 items, 32 answer options); referenc
 **Do not count this as eight legally verified/accepted items.** Exact legal claims were checked against currently accessible official material where available; an independent solver must receive only stems and options, determine answers without seeing the author's keys, and document reasons with source passages. A separate legal reviewer must adjudicate disagreements and confirm effective-date/exception scope. C099's USP `<797>` regulatory source-check is conditional: USP's official FAQ and an official state inspection addendum support the proposition, but the current USP normative chapter itself was not directly authenticated, so do not mark C099 accepted unless source verification or re-scoping resolves this.
 
 Next operational gate: blinded solution review of the 8 pilots; source and option adjudication; then `frozen` or `HOLD` for each; after the pilot passes, complete B1's remaining 22. Do not expose pilot keys via normal practice, mark '8 passed', or merge unaccepted items into public `main`.
+
+## 10. November 18 Batch 1 production checkpoint — 30 drafts, no approval
+
+The full B1 composition is **Area 1: 7; Area 2: 10; Area 3: 7; Area 4: 6**. The original pilot has 8 drafts and 32 option rationales; the remaining four area-specific source files add 22 new drafts and 88 option rationales. **Total: 30 new author drafts / 120 A–D option-level rationales; 24 SBA and 6 SATA.** The 22 newly authored drafts reside in:
+
+- `docs/form-c/b1-draft-area1-2026-11-18.json` (5)
+- `docs/form-c/b1-draft-area2-2026-11-18.json` (8)
+- `docs/form-c/b1-draft-area3-2026-11-18.json` (5)
+- `docs/form-c/b1-draft-area4-2026-11-18.json` (4)
+
+No-key worksheets for separate independent solving are `docs/form-c/pilot-blind-review-worksheet-2026-11-18.md` and `docs/form-c/b1-remaining-22-blind-review-2026-11-18.md`. The structural report is `docs/form-c/b1-author-structural-audit-2026-11-18.json`.
+
+Mechanical checks passed: 30 distinct reserved IDs do not collide with the old 240; correct/incorrect explanation markers match keys for all 120 options; 0 of 24 SBA have the key as the uniquely longest choice; answer-letter counts A=6/B=5/C=6/D=7; no high-overlap lexical reuse flagged against the original 240 stems. Three of the eight pilot SBA have a uniquely shortest key and should be editorially balanced; structural checks do not establish true semantic novelty.
+
+**Five specifically held source/scope checks:** C044 minor-consent pharmacy-record access (HIPAA vs the actual reach of M.G.L. c.112 §12F), C056 full 2026 Massachusetts pharmacist-PEP clinical protocol, C099 USP <797> media-fill/fingertip failure, C100 USP <797> single-dose vial post-entry use, and C104 USP <800> HD cleaning sequence. C099/C100/C104 require the current controlling USP normative chapter or a defensible re-scoping to directly accessible authority; published FAQs and other regulator summaries are not claimed equivalent to the full subscription USP text. Further legal issues may be discovered by independent review of the other 25 candidates. None of the 30 has passed a truly independent blind legal solve.
+
+**Current counts:** 30 drafted, 0 blind-solved, 0 formally legally approved, 0 frozen, 0 released. The Draft PR is intentionally not merged; public GitHub repository visibility does not make drafts cryptographically concealed.
+
+A meaningful version-trap candidate is C108: the **March 20, 2026** DEA amendment to **21 CFR 1305.05(c) and (e)** changed who may grant/revoke a paper Form 222 power of attorney. The then-online DEA FAQ may still describe an outdated signer rule. The binding current regulation controls. Confirm the effective date and citation again at final acceptance. Official change: https://www.govinfo.gov/content/pkg/FR-2026-03-20/pdf/2026-05482.pdf .
+
+**Next gate:** request a no-key independent solve of all 30 items, verify each of the 120 choices against pinpoint law, adjudicate all candidate ambiguities including five named holds, and then accept, rewrite, or replace individual items. Do not release C until all 120 are legally approved and the separate C loader has been tested without changing A/B sessions. Only after Batch 1 item-level acceptance should B2 proceed to final draft production.
