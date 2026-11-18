@@ -56,7 +56,9 @@
       updateBookmarks(q.id);
     });
     header.append(bookmark);
-    card.append(header, el('div', 'exam-topic', q.topic), el('h3', 'exam-stem', q.stem));
+    card.append(header);
+    if (checked) card.append(el('div', 'exam-topic', q.topic));
+    card.append(el('h3', 'exam-stem', q.stem));
     const choiceGroup = el('fieldset', 'exam-choices');
     choiceGroup.append(el('legend', 'sr-only', 'Answer choices for ' + q.id));
     const inputs = [];
