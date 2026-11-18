@@ -13,8 +13,8 @@
     "4": 6
   },
   "question_types": {
-    "SBA": 21,
-    "SATA": 9
+    "SBA": 22,
+    "SATA": 8
   },
   "choice_count": 120,
   "candidate_id_collisions": [],
@@ -22,26 +22,13 @@
     "A": 6,
     "C": 5,
     "D": 5,
-    "B": 5
+    "B": 6
   },
   "uniquely_longest_correct": [],
   "uniquely_shortest_correct": [],
   "key_rationale_mismatch": [],
   "novelty_lexical_warning_threshold": 0.24,
   "novelty_lexical_watch": [
-    {
-      "slot": "C023",
-      "nearest": [
-        {
-          "id": "E30-116",
-          "score": 0.25
-        },
-        {
-          "id": "E30-007",
-          "score": 0.135
-        }
-      ]
-    },
     {
       "slot": "C045",
       "nearest": [
@@ -83,6 +70,7 @@
     }
   ],
   "editorial_legal_gate_slots": [
+    "C023",
     "C057",
     "C072",
     "C096",
@@ -972,5 +960,14 @@
     }
   ],
   "scope_note": "Mechanical lexical similarity is not legal decision equivalence. Some cases may require replacement even if low lexical overlap. User waived independent blind solve; source and four-option law checks remain necessary.",
-  "test_result": "PASS_STRUCTURE_ONLY"
+  "test_result": "PASS_STRUCTURE_ONLY",
+  "material_rewrites": [
+    {
+      "slot": "C023",
+      "date": "2026-11-18",
+      "reason": "Old E30-116 already tests dual 14-calendar/7-business-day reporting rules. Rewritten to a concrete May 2026 dates-and-deadline computation.",
+      "effective_source": "247 CMR 20.03(3)–(4), 10.03(1)(z)",
+      "source_status": "AUTHOR_RECHECK_REQUIRED"
+    }
+  ]
 }
