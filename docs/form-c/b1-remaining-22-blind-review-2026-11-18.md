@@ -1,12 +1,10 @@
-# Form C B1 remaining 22 — no-key independent review
+# Form C B1 (22 further items) — no-key independent legal review
 
-**REVIEW COPY (Nov 18, 2026)** — All answer keys, source citations and explanations intentionally omitted. Independent reviewer must not consult author source files or previous key until their own provisional answers are documented.
+*Current corrected draft as of 2026-11-18. No author answers, legal rationale, citation or source key is provided. Reviewer must solve first without opening the keyed draft, and cite exact controlling law for every option.*
 
-For each original item: choose a key, find exact current MA/federal/USP authority, explain why all four choices are right or wrong, identify ambiguous facts and provide PASS / REWRITE / HOLD. If source inaccessible mark HOLD.
+## C005 (E30-245)
 
-## C005 · E30-245
-
-*SELECT ALL THAT APPLY*
+**Select all that apply.**
 
 A Massachusetts pharmacist has assessed a patient's history, selected an indicated routine vaccine under a valid standing order, and personally counseled the patient. A licensed pharmacy technician who meets the Board's vaccine-administration training, experience or certification, CPR, and supervision requirements is available. A licensed pharmacy technician TRAINEE is also working. Which actions are permitted as described? SELECT ALL THAT APPLY.
 
@@ -18,21 +16,21 @@ A Massachusetts pharmacist has assessed a patient's history, selected an indicat
 
 **D.** The qualified technician administers a standing-order emergency medication for a vaccine reaction while the supervising pharmacist manages the patient.
 
-**Independent key:** ____
+**Your answer:** ________
 
-**Exact official authority, version/effective date:** ____
+**Current official source / exact section / effective date:** ________
 
-**Why each rejected choice is legally incorrect / alternate defensible key:** ____
+**Reasons for choosing or rejecting each option:** ________
 
-**Editorial novelty and realistic workflow:** ____
+**Alternative defensible answer / missing facts / novelty:** ________
 
-**Disposition:** PASS / REWRITE / HOLD
+**PASS / REWRITE / HOLD:** ________
 
 ---
 
-## C010 · E30-250
+## C010 (E30-250)
 
-*SINGLE BEST ANSWER*
+**Single best answer.**
 
 A Massachusetts pharmacist has a FOUR-person prescription-filling team: two licensed certified technicians, one licensed noncertified technician, and one licensed technician trainee. An additional licensed certified technician is excluded from the supervisory ratio as a designated dedicated trainer who only oversees that trainee. Mid-shift, the trainer begins independently filling prescriptions for other patients while continuing to train. No vaccination exception or waiver applies. What must change?
 
@@ -44,21 +42,21 @@ A Massachusetts pharmacist has a FOUR-person prescription-filling team: two lice
 
 **D.** Keep the trainer excluded because advance schedule designation cannot be changed until the next day.
 
-**Independent key:** ____
+**Your answer:** ________
 
-**Exact official authority, version/effective date:** ____
+**Current official source / exact section / effective date:** ________
 
-**Why each rejected choice is legally incorrect / alternate defensible key:** ____
+**Reasons for choosing or rejecting each option:** ________
 
-**Editorial novelty and realistic workflow:** ____
+**Alternative defensible answer / missing facts / novelty:** ________
 
-**Disposition:** PASS / REWRITE / HOLD
+**PASS / REWRITE / HOLD:** ________
 
 ---
 
-## C014 · E30-254
+## C014 (E30-254)
 
-*SINGLE BEST ANSWER*
+**Single best answer.**
 
 An otherwise qualified Massachusetts pharmacist plans to sign a two-year CDTM agreement on November 20, 2026. The pharmacist's employer provides liability coverage, but the certificate lists only routine dispensing activities and says nothing about drug therapy management. The coverage is $2 million per occurrence and remains active. Which change is necessary before the pharmacist qualifies under 247 CMR 16.02?
 
@@ -70,21 +68,21 @@ An otherwise qualified Massachusetts pharmacist plans to sign a two-year CDTM ag
 
 **D.** Proceed without liability coverage if the collaborating physician's malpractice coverage remains current.
 
-**Independent key:** ____
+**Your answer:** ________
 
-**Exact official authority, version/effective date:** ____
+**Current official source / exact section / effective date:** ________
 
-**Why each rejected choice is legally incorrect / alternate defensible key:** ____
+**Reasons for choosing or rejecting each option:** ________
 
-**Editorial novelty and realistic workflow:** ____
+**Alternative defensible answer / missing facts / novelty:** ________
 
-**Disposition:** PASS / REWRITE / HOLD
+**PASS / REWRITE / HOLD:** ________
 
 ---
 
-## C018 · E30-258
+## C018 (E30-258)
 
-*SINGLE BEST ANSWER*
+**Single best answer.**
 
 A Massachusetts pharmacist graduated from an approved pharmacy school in May 2025, obtained a Massachusetts license later in 2025, and is preparing CE records for the calendar years 2025 and 2026. The pharmacist worked in routine retail dispensing, with no sterile or complex compounding. Assume no Board-granted exception. Which interpretation follows 247 CMR 4.03?
 
@@ -96,21 +94,21 @@ A Massachusetts pharmacist graduated from an approved pharmacy school in May 202
 
 **D.** The graduation-year exemption covers 2025; the normal annual CE minimum applies in calendar year 2026, without carryover.
 
-**Independent key:** ____
+**Your answer:** ________
 
-**Exact official authority, version/effective date:** ____
+**Current official source / exact section / effective date:** ________
 
-**Why each rejected choice is legally incorrect / alternate defensible key:** ____
+**Reasons for choosing or rejecting each option:** ________
 
-**Editorial novelty and realistic workflow:** ____
+**Alternative defensible answer / missing facts / novelty:** ________
 
-**Disposition:** PASS / REWRITE / HOLD
+**PASS / REWRITE / HOLD:** ________
 
 ---
 
-## C022 · E30-262
+## C022 (E30-262)
 
-*SINGLE BEST ANSWER*
+**Single best answer.**
 
 A Massachusetts pharmacist has a current unrestricted registration, has applied to a voluntary monitoring program for a possible substance-use problem, and is waiting for admission. The Board has NOT issued an order limiting practice. A second pharmacist has a CURRENT registration but is bound by a Board order prohibiting controlled-substance handling; that pharmacist has also applied to monitoring and assumes the order is automatically suspended. Which statement BEST reflects 247 CMR 10.03?
 
@@ -122,21 +120,21 @@ A Massachusetts pharmacist has a current unrestricted registration, has applied 
 
 **D.** The second pharmacist may disregard the written Board order until the program notifies the Board of its admission decision.
 
-**Independent key:** ____
+**Your answer:** ________
 
-**Exact official authority, version/effective date:** ____
+**Current official source / exact section / effective date:** ________
 
-**Why each rejected choice is legally incorrect / alternate defensible key:** ____
+**Reasons for choosing or rejecting each option:** ________
 
-**Editorial novelty and realistic workflow:** ____
+**Alternative defensible answer / missing facts / novelty:** ________
 
-**Disposition:** PASS / REWRITE / HOLD
+**PASS / REWRITE / HOLD:** ________
 
 ---
 
-## C030 · E30-270
+## C030 (E30-270)
 
-*SINGLE BEST ANSWER*
+**Single best answer.**
 
 A licensed Massachusetts nurse practitioner issues an otherwise valid Schedule IV prescription. The electronic record contains the NP's name, credentials, MCSR and DEA number but omits a supervising practitioner's name. The pharmacist verifies through reliable licensure and prescribing-authority information that the NP has completed the required supervised practice and has amended the MCSR for INDEPENDENT prescriptive practice. What is the appropriate conclusion about the missing supervisor's name?
 
@@ -148,21 +146,21 @@ A licensed Massachusetts nurse practitioner issues an otherwise valid Schedule I
 
 **D.** A verified independent NP prescription need not list a supervising clinician's name; other controlled-Rx requirements still apply.
 
-**Independent key:** ____
+**Your answer:** ________
 
-**Exact official authority, version/effective date:** ____
+**Current official source / exact section / effective date:** ________
 
-**Why each rejected choice is legally incorrect / alternate defensible key:** ____
+**Reasons for choosing or rejecting each option:** ________
 
-**Editorial novelty and realistic workflow:** ____
+**Alternative defensible answer / missing facts / novelty:** ________
 
-**Disposition:** PASS / REWRITE / HOLD
+**PASS / REWRITE / HOLD:** ________
 
 ---
 
-## C034 · E30-274
+## C034 (E30-274)
 
-*SINGLE BEST ANSWER*
+**Single best answer.**
 
 A Massachusetts-licensed practitioner with the required state and federal controlled-substance prescribing authority conducts a real-time two-way AUDIO-VIDEO telemedicine visit with an adult patient located in Massachusetts in November 2026. The patient has never had an in-person examination with the practitioner. The practitioner proposes a new Schedule IV prescription for a legitimate medical purpose through a compliant EPCS system. Assume the remaining federal telemedicine safeguards and all Massachusetts conditions are met. Which statement is correct?
 
@@ -174,21 +172,21 @@ A Massachusetts-licensed practitioner with the required state and federal contro
 
 **D.** The temporary pathway allows any unregistered healthcare worker to sign Schedule IV prescriptions during an audiovisual visit.
 
-**Independent key:** ____
+**Your answer:** ________
 
-**Exact official authority, version/effective date:** ____
+**Current official source / exact section / effective date:** ________
 
-**Why each rejected choice is legally incorrect / alternate defensible key:** ____
+**Reasons for choosing or rejecting each option:** ________
 
-**Editorial novelty and realistic workflow:** ____
+**Alternative defensible answer / missing facts / novelty:** ________
 
-**Disposition:** PASS / REWRITE / HOLD
+**PASS / REWRITE / HOLD:** ________
 
 ---
 
-## C039 · E30-279
+## C039 (E30-279)
 
-*SELECT ALL THAT APPLY*
+**Select all that apply.**
 
 A Massachusetts pharmacy ships a patient's NEW outpatient prescription to the patient's home at the patient's election. The pharmacist performed a prospective DUR, but the package contains only a drug-information sheet and a phone number for customer billing. The required offer to counsel was not made in person or by phone before shipment. Which changes would help comply with M.G.L. c.94C §21A? SELECT ALL THAT APPLY.
 
@@ -200,21 +198,21 @@ A Massachusetts pharmacy ships a patient's NEW outpatient prescription to the pa
 
 **D.** Document any patient refusal of the offer when appropriately received, rather than recording the shipment itself as completed counseling.
 
-**Independent key:** ____
+**Your answer:** ________
 
-**Exact official authority, version/effective date:** ____
+**Current official source / exact section / effective date:** ________
 
-**Why each rejected choice is legally incorrect / alternate defensible key:** ____
+**Reasons for choosing or rejecting each option:** ________
 
-**Editorial novelty and realistic workflow:** ____
+**Alternative defensible answer / missing facts / novelty:** ________
 
-**Disposition:** PASS / REWRITE / HOLD
+**PASS / REWRITE / HOLD:** ________
 
 ---
 
-## C044 · E30-284
+## C044 (E30-284)
 
-*SINGLE BEST ANSWER*
+**Single best answer.**
 
 A 16-year-old lawfully consents in Massachusetts to treatment for an eligible confidential medical service under M.G.L. c.112 §12F. The dispensing pharmacy is subject to HIPAA. A parent who is not authorized by the minor requests the entire pharmacy record for that episode, saying, 'I am the parent, so HIPAA always makes me the personal representative.' No court order, emergency, or other exception is stated. What is the BEST initial response?
 
@@ -226,21 +224,21 @@ A 16-year-old lawfully consents in Massachusetts to treatment for an eligible co
 
 **D.** Release the record immediately because HIPAA treats parents as the personal representative of every child for every service.
 
-**Independent key:** ____
+**Your answer:** ________
 
-**Exact official authority, version/effective date:** ____
+**Current official source / exact section / effective date:** ________
 
-**Why each rejected choice is legally incorrect / alternate defensible key:** ____
+**Reasons for choosing or rejecting each option:** ________
 
-**Editorial novelty and realistic workflow:** ____
+**Alternative defensible answer / missing facts / novelty:** ________
 
-**Disposition:** PASS / REWRITE / HOLD
+**PASS / REWRITE / HOLD:** ________
 
 ---
 
-## C048 · E30-288
+## C048 (E30-288)
 
-*SINGLE BEST ANSWER*
+**Single best answer.**
 
 A Massachusetts pharmacist practices in a community pharmacy under a current collaborative drug therapy management (CDTM) agreement. A supervising physician has referred an adult patient for DIABETES medication management, obtained the patient's written consent, and approved a protocol allowing drug-related laboratory monitoring under physician supervision or direct consultation. The patient now asks the pharmacist to order an unrelated diagnostic test to investigate unexplained abdominal pain. No other prescribing or diagnostic authority is established. What is most appropriate?
 
@@ -252,21 +250,21 @@ A Massachusetts pharmacist practices in a community pharmacy under a current col
 
 **D.** Continue approved diabetes-drug monitoring under physician oversight; refer the unrelated diagnostic workup to a clinician.
 
-**Independent key:** ____
+**Your answer:** ________
 
-**Exact official authority, version/effective date:** ____
+**Current official source / exact section / effective date:** ________
 
-**Why each rejected choice is legally incorrect / alternate defensible key:** ____
+**Reasons for choosing or rejecting each option:** ________
 
-**Editorial novelty and realistic workflow:** ____
+**Alternative defensible answer / missing facts / novelty:** ________
 
-**Disposition:** PASS / REWRITE / HOLD
+**PASS / REWRITE / HOLD:** ________
 
 ---
 
-## C052 · E30-292
+## C052 (E30-292)
 
-*SINGLE BEST ANSWER*
+**Single best answer.**
 
 A Massachusetts community pharmacy has a valid standing order for routine vaccines. A properly qualified pharmacist and intern have current CPR and immunization credentials. Two siblings, one aged 4 years 11 months and one aged exactly 5 years, arrive with their guardian. The indicated routine vaccine is otherwise appropriate for both ages under manufacturer or DPH guidance. What follows Massachusetts Board Policy 2023-02 as revised September 4, 2025?
 
@@ -278,47 +276,47 @@ A Massachusetts community pharmacy has a valid standing order for routine vaccin
 
 **D.** Neither child can receive a vaccine at a pharmacy because Board rules start vaccination authority at age seven.
 
-**Independent key:** ____
+**Your answer:** ________
 
-**Exact official authority, version/effective date:** ____
+**Current official source / exact section / effective date:** ________
 
-**Why each rejected choice is legally incorrect / alternate defensible key:** ____
+**Reasons for choosing or rejecting each option:** ________
 
-**Editorial novelty and realistic workflow:** ____
+**Alternative defensible answer / missing facts / novelty:** ________
 
-**Disposition:** PASS / REWRITE / HOLD
+**PASS / REWRITE / HOLD:** ________
 
 ---
 
-## C056 · E30-296
+## C056 (E30-296)
 
-*SINGLE BEST ANSWER*
+**Single best answer.**
 
-A licensed Massachusetts pharmacist has the required NPI and appropriate 2026 HIV-prevention prescribing training. A person reports a possible HIV exposure 36 hours ago and asks for 'ordinary daily PrEP' to cover that single past exposure. No clinical assessment or required testing has been completed. Which initial clinical-legal approach is appropriate under the August–September 2026 statewide prescribing pathway?
+In November 2026, a Massachusetts pharmacist meets the applicable training and licensure prerequisites for the state's HIV-prevention prescribing authority. A patient reports a possible HIV exposure 36 hours ago and asks for ordinary daily PrEP to cover that single past exposure. The pharmacist has not yet determined eligibility for any medication. Which initial approach is most appropriate?
 
 **A.** Treat the visit as routine future-exposure PrEP with no urgency because the exposure occurred more than one day ago.
 
-**B.** Assess urgent PEP under the 2026 statewide protocol, including required assessment, testing, and referral as indicated.
+**B.** Promptly assess or refer for PEP under the Massachusetts pathway; routine PrEP is not treatment for a recent exposure.
 
 **C.** Prescribe any HIV medication the patient requests because obtaining an NPI alone authorizes unlimited pharmacist diagnosis and prescribing.
 
 **D.** Wait until 72 hours have passed to determine whether HIV infection is established, then treat with a one-time PrEP dose.
 
-**Independent key:** ____
+**Your answer:** ________
 
-**Exact official authority, version/effective date:** ____
+**Current official source / exact section / effective date:** ________
 
-**Why each rejected choice is legally incorrect / alternate defensible key:** ____
+**Reasons for choosing or rejecting each option:** ________
 
-**Editorial novelty and realistic workflow:** ____
+**Alternative defensible answer / missing facts / novelty:** ________
 
-**Disposition:** PASS / REWRITE / HOLD
+**PASS / REWRITE / HOLD:** ________
 
 ---
 
-## C060 · E30-300
+## C060 (E30-300)
 
-*SINGLE BEST ANSWER*
+**Single best answer.**
 
 A Massachusetts pharmacy performs final validation on a prescription and detects the wrong tablet strength BEFORE the medication leaves the prescription area. The error is corrected and the patient receives the correct product. A week later, another wrong-strength prescription is actually dispensed and received by a patient, and the pharmacist learns of it at 2:00 p.m. Wednesday. Which statement best distinguishes the quality events?
 
@@ -330,21 +328,21 @@ A Massachusetts pharmacy performs final validation on a prescription and detects
 
 **D.** Both events are automatically reportable QREs to the Board within 24 hours, even though the first never reached a patient.
 
-**Independent key:** ____
+**Your answer:** ________
 
-**Exact official authority, version/effective date:** ____
+**Current official source / exact section / effective date:** ________
 
-**Why each rejected choice is legally incorrect / alternate defensible key:** ____
+**Reasons for choosing or rejecting each option:** ________
 
-**Editorial novelty and realistic workflow:** ____
+**Alternative defensible answer / missing facts / novelty:** ________
 
-**Disposition:** PASS / REWRITE / HOLD
+**PASS / REWRITE / HOLD:** ________
 
 ---
 
-## C071 · E30-311
+## C071 (E30-311)
 
-*SINGLE BEST ANSWER*
+**Single best answer.**
 
 A Massachusetts patient enrolled in an automatic-refill program six months ago with properly recorded consent. The prescription has three refills remaining. Today the pharmacy receives a confirmed prescriber message: 'Stop the old dose; a new prescription is being issued.' The automated system queues another fill of the old dose overnight. What is the best response?
 
@@ -356,21 +354,21 @@ A Massachusetts patient enrolled in an automatic-refill program six months ago w
 
 **D.** Dispense one last old-dose refill as an emergency supply automatically, then ask about the change after the patient has received it.
 
-**Independent key:** ____
+**Your answer:** ________
 
-**Exact official authority, version/effective date:** ____
+**Current official source / exact section / effective date:** ________
 
-**Why each rejected choice is legally incorrect / alternate defensible key:** ____
+**Reasons for choosing or rejecting each option:** ________
 
-**Editorial novelty and realistic workflow:** ____
+**Alternative defensible answer / missing facts / novelty:** ________
 
-**Disposition:** PASS / REWRITE / HOLD
+**PASS / REWRITE / HOLD:** ________
 
 ---
 
-## C075 · E30-315
+## C075 (E30-315)
 
-*SINGLE BEST ANSWER*
+**Single best answer.**
 
 A Massachusetts patient has an electronic Schedule II prescription for 40 tablets. Pharmacy X already dispensed a lawful PATIENT-REQUESTED partial fill of 10 tablets and documented it. Five days later, the patient asks Pharmacy Y to transfer 'the remaining 30 tablets' under the same original EPCS, instead of completing it at Pharmacy X. The original prescription remains otherwise within its valid window. What is the most legally supported action?
 
@@ -382,21 +380,21 @@ A Massachusetts patient has an electronic Schedule II prescription for 40 tablet
 
 **D.** This is not an initial EPCS transfer; determine whether Pharmacy Y needs a separately valid new prescription.
 
-**Independent key:** ____
+**Your answer:** ________
 
-**Exact official authority, version/effective date:** ____
+**Current official source / exact section / effective date:** ________
 
-**Why each rejected choice is legally incorrect / alternate defensible key:** ____
+**Reasons for choosing or rejecting each option:** ________
 
-**Editorial novelty and realistic workflow:** ____
+**Alternative defensible answer / missing facts / novelty:** ________
 
-**Disposition:** PASS / REWRITE / HOLD
+**PASS / REWRITE / HOLD:** ________
 
 ---
 
-## C079 · E30-319
+## C079 (E30-319)
 
-*SELECT ALL THAT APPLY*
+**Select all that apply.**
 
 A Massachusetts veterinarian issues a valid outpatient MASSACHUSETTS SCHEDULE VI controlled-substance prescription for a cat's medication. The pharmacy plans a container label that meets other applicable federal and state dispensing rules. Under M.G.L. c.94C §21 and applicable FDA veterinary prescription-drug labeling rules, which conclusions are correct? SELECT ALL THAT APPLY.
 
@@ -408,21 +406,21 @@ A Massachusetts veterinarian issues a valid outpatient MASSACHUSETTS SCHEDULE VI
 
 **D.** The pharmacy must label the cat's owner as if the owner personally ingested the drug, including directions that say 'take one tablet by mouth' for the owner.
 
-**Independent key:** ____
+**Your answer:** ________
 
-**Exact official authority, version/effective date:** ____
+**Current official source / exact section / effective date:** ________
 
-**Why each rejected choice is legally incorrect / alternate defensible key:** ____
+**Reasons for choosing or rejecting each option:** ________
 
-**Editorial novelty and realistic workflow:** ____
+**Alternative defensible answer / missing facts / novelty:** ________
 
-**Disposition:** PASS / REWRITE / HOLD
+**PASS / REWRITE / HOLD:** ________
 
 ---
 
-## C084 · E30-324
+## C084 (E30-324)
 
-*SINGLE BEST ANSWER*
+**Single best answer.**
 
 A Massachusetts pharmacy discovers TWO mistakes in accepted MassPAT records. Record X represents a real dispensed Schedule IV prescription, but the patient's ZIP code was transmitted incorrectly; the original prescription number, date filled, refill number and quantity were correct. Record Y is a phantom transaction that the pharmacy NEVER dispensed and should not appear in MassPAT. Assume the pharmacy is correcting these through ASAP 4.2A file submission rather than the MassPAT portal. What is the appropriate DSP01 status for X and Y?
 
@@ -434,21 +432,21 @@ A Massachusetts pharmacy discovers TWO mistakes in accepted MassPAT records. Rec
 
 **D.** X = 02 Void and Y = 01 Revise, because every typo requires deletion and every phantom transaction requires editing.
 
-**Independent key:** ____
+**Your answer:** ________
 
-**Exact official authority, version/effective date:** ____
+**Current official source / exact section / effective date:** ________
 
-**Why each rejected choice is legally incorrect / alternate defensible key:** ____
+**Reasons for choosing or rejecting each option:** ________
 
-**Editorial novelty and realistic workflow:** ____
+**Alternative defensible answer / missing facts / novelty:** ________
 
-**Disposition:** PASS / REWRITE / HOLD
+**PASS / REWRITE / HOLD:** ________
 
 ---
 
-## C088 · E30-328
+## C088 (E30-328)
 
-*SINGLE BEST ANSWER*
+**Single best answer.**
 
 A Massachusetts physician at an outpatient clinic submits an otherwise authentic electronic Schedule II prescription for an IDENTIFIED patient who has been examined, with legitimate medical purpose and complete patient-specific directions. The clinic requests delivery to the clinic so the patient can receive the prescribed medication there. A second message asks the pharmacy to send an additional unlabeled bottle of the same drug for 'future patients as needed.' No wholesale/order-form process has been initiated. Which distinction is best?
 
@@ -460,21 +458,21 @@ A Massachusetts physician at an outpatient clinic submits an otherwise authentic
 
 **D.** Dispense both orders as prescriptions if the clinic signs a receipt, since delivery to a physician erases patient-identification requirements.
 
-**Independent key:** ____
+**Your answer:** ________
 
-**Exact official authority, version/effective date:** ____
+**Current official source / exact section / effective date:** ________
 
-**Why each rejected choice is legally incorrect / alternate defensible key:** ____
+**Reasons for choosing or rejecting each option:** ________
 
-**Editorial novelty and realistic workflow:** ____
+**Alternative defensible answer / missing facts / novelty:** ________
 
-**Disposition:** PASS / REWRITE / HOLD
+**PASS / REWRITE / HOLD:** ________
 
 ---
 
-## C100 · E30-340
+## C100 (E30-340)
 
-*SELECT ALL THAT APPLY*
+**Select all that apply.**
 
 A Massachusetts Category 2 sterile compounding pharmacy uses a commercially manufactured SINGLE-DOSE vial as a component for future CSPs. At 8:00 a.m. a qualified compounder first punctures its intact septum inside a certified ISO Class 5 PEC. The vial is then stored OUTSIDE the ISO Class 5 PEC, at the manufacturer's specified refrigerated temperature; the closure remains intact and all other component requirements are satisfied. At 4:00 p.m. the same day the pharmacy plans another compounding use. Which conclusions are supported by USP's official <797> FAQ? SELECT ALL THAT APPLY.
 
@@ -486,21 +484,21 @@ A Massachusetts Category 2 sterile compounding pharmacy uses a commercially manu
 
 **D.** An opened single-dose glass ampule may be saved for twelve hours by refrigerating the open neck, because ampules follow the same resealable-vial rule.
 
-**Independent key:** ____
+**Your answer:** ________
 
-**Exact official authority, version/effective date:** ____
+**Current official source / exact section / effective date:** ________
 
-**Why each rejected choice is legally incorrect / alternate defensible key:** ____
+**Reasons for choosing or rejecting each option:** ________
 
-**Editorial novelty and realistic workflow:** ____
+**Alternative defensible answer / missing facts / novelty:** ________
 
-**Disposition:** PASS / REWRITE / HOLD
+**PASS / REWRITE / HOLD:** ________
 
 ---
 
-## C104 · E30-344
+## C104 (E30-344)
 
-*SELECT ALL THAT APPLY*
+**Select all that apply.**
 
 A Massachusetts sterile-compounding pharmacy prepares hazardous drugs in a suitable containment PEC. The staff propose a cleaning procedure that applies 70% isopropyl alcohol as the ONLY step because it disinfects work surfaces. Which statements reflect the distinct hazardous-drug controls described by USP <800> and OSHA's guidance? SELECT ALL THAT APPLY.
 
@@ -512,21 +510,21 @@ A Massachusetts sterile-compounding pharmacy prepares hazardous drugs in a suita
 
 **D.** The facility should assess its drug, materials and manufacturer instructions to choose appropriate residue-control steps rather than relying on one disinfectant alone.
 
-**Independent key:** ____
+**Your answer:** ________
 
-**Exact official authority, version/effective date:** ____
+**Current official source / exact section / effective date:** ________
 
-**Why each rejected choice is legally incorrect / alternate defensible key:** ____
+**Reasons for choosing or rejecting each option:** ________
 
-**Editorial novelty and realistic workflow:** ____
+**Alternative defensible answer / missing facts / novelty:** ________
 
-**Disposition:** PASS / REWRITE / HOLD
+**PASS / REWRITE / HOLD:** ________
 
 ---
 
-## C108 · E30-348
+## C108 (E30-348)
 
-*SINGLE BEST ANSWER*
+**Single best answer.**
 
 A corporate Massachusetts pharmacy has a current DEA registration and an employee with an otherwise valid power of attorney (POA) to execute paper DEA Form 222 orders. An administrative employee who signed the pharmacy's last DEA registration application, but is NOT a corporate officer, now wants to revoke that POA in November 2026. The corporate vice president is an authorized officer and two witnesses are available. What is required under the March 20, 2026 revision to 21 CFR 1305.05?
 
@@ -538,21 +536,21 @@ A corporate Massachusetts pharmacy has a current DEA registration and an employe
 
 **D.** A corporate officer, not the last registration application signer, must execute revocation with two witnesses and written notice.
 
-**Independent key:** ____
+**Your answer:** ________
 
-**Exact official authority, version/effective date:** ____
+**Current official source / exact section / effective date:** ________
 
-**Why each rejected choice is legally incorrect / alternate defensible key:** ____
+**Reasons for choosing or rejecting each option:** ________
 
-**Editorial novelty and realistic workflow:** ____
+**Alternative defensible answer / missing facts / novelty:** ________
 
-**Disposition:** PASS / REWRITE / HOLD
+**PASS / REWRITE / HOLD:** ________
 
 ---
 
-## C112 · E30-352
+## C112 (E30-352)
 
-*SINGLE BEST ANSWER*
+**Single best answer.**
 
 A Massachusetts pharmacy sends a refrigerated prescription medication by courier to a patient's home. The insulated shipping container looks undamaged at delivery, but the temperature logger shows that the medication was exposed to a temperature outside its labeled storage range for an extended period. The manufacturer has not yet supplied stability data for that excursion. The patient requests that the courier leave the medication immediately. What is the BEST next step?
 
@@ -564,15 +562,15 @@ A Massachusetts pharmacy sends a refrigerated prescription medication by courier
 
 **D.** Reset the package temperature indicator and leave the medication as long as the patient's name is correct on the label.
 
-**Independent key:** ____
+**Your answer:** ________
 
-**Exact official authority, version/effective date:** ____
+**Current official source / exact section / effective date:** ________
 
-**Why each rejected choice is legally incorrect / alternate defensible key:** ____
+**Reasons for choosing or rejecting each option:** ________
 
-**Editorial novelty and realistic workflow:** ____
+**Alternative defensible answer / missing facts / novelty:** ________
 
-**Disposition:** PASS / REWRITE / HOLD
+**PASS / REWRITE / HOLD:** ________
 
 ---
 
