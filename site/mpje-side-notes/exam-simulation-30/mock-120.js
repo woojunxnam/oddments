@@ -245,7 +245,10 @@
     s.index += 1;
     save();
     if (s.index === 120) finish(s, 'submitted');
-    else render();
+    else {
+      render();
+      $('mock-running-title').scrollIntoView({block: 'start', behavior: 'auto'});
+    }
   }
   function reviewQuestion(s, index) {
     const id = idsFor(s.form)[index], q = byId.get(id);
