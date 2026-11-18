@@ -203,8 +203,8 @@
     const head = el('div', 'exam-question-head');
     head.append(el('span', 'exam-number', 'QUESTION ' + (s.index + 1) + ' / 120'),
       el('span', 'exam-kind', q.kind === 'multi' ? 'SELECT ALL THAT APPLY' : 'SINGLE BEST ANSWER'));
-    card.append(head, el('p', 'exam-topic', 'Area ' + q.area + ' · ' + q.topic),
-      el('h3', 'exam-stem', q.stem));
+    // Topic labels can contain the rule being tested; reveal them only in review.
+    card.append(head, el('h3', 'exam-stem', q.stem));
     const fieldset = el('fieldset', 'exam-choices');
     fieldset.append(el('legend', 'sr-only', 'Choose answer to question ' + (s.index + 1)));
     const selected = Array.isArray(s.draft[q.id]) ? s.draft[q.id] : [];
