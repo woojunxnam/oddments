@@ -1,10 +1,8 @@
-# Form C Pilot — 8-question no-key independent review
+# Form C Pilot: eight-item independent no-key worksheet
 
-**REVIEW COPY (Nov 18, 2026)** — All answer keys, source citations and explanations intentionally omitted. Independent reviewer must not consult author source files or previous key until their own provisional answers are documented.
+**Draft version as of 2026-11-18.** Every choice is presented without the author's key, explanations or legal citation. Reviewer must answer and cite exact controlling authorities independently.
 
-For each original item: choose a key, find exact current MA/federal/USP authority, explain why all four choices are right or wrong, identify ambiguous facts and provide PASS / REWRITE / HOLD. If source inaccessible mark HOLD.
-
-## C002 · E30-242
+## C002 / E30-242
 
 *SINGLE BEST ANSWER*
 
@@ -18,19 +16,17 @@ A Massachusetts pharmacy intern is counseling a patient about a new inhaler. The
 
 **D.** Have the certified technician finish the drug-use discussion while the second pharmacist records the intern's earlier work.
 
-**Independent key:** ____
+**Independent answer:** ______
 
-**Exact official authority, version/effective date:** ____
+**Official law / date / section:** ______
 
-**Why each rejected choice is legally incorrect / alternate defensible key:** ____
+**All four options explained & alternate defensible key:** ______
 
-**Editorial novelty and realistic workflow:** ____
-
-**Disposition:** PASS / REWRITE / HOLD
+**PASS / REWRITE / HOLD:** ______
 
 ---
 
-## C009 · E30-249
+## C009 / E30-249
 
 *SINGLE BEST ANSWER*
 
@@ -44,19 +40,17 @@ A Massachusetts pharmacy is providing vaccination services. One pharmacist would
 
 **D.** One certified technician, two pharmacy interns, and three noncertified technicians.
 
-**Independent key:** ____
+**Independent answer:** ______
 
-**Exact official authority, version/effective date:** ____
+**Official law / date / section:** ______
 
-**Why each rejected choice is legally incorrect / alternate defensible key:** ____
+**All four options explained & alternate defensible key:** ______
 
-**Editorial novelty and realistic workflow:** ____
-
-**Disposition:** PASS / REWRITE / HOLD
+**PASS / REWRITE / HOLD:** ______
 
 ---
 
-## C035 · E30-275
+## C035 / E30-275
 
 *SINGLE BEST ANSWER*
 
@@ -70,19 +64,17 @@ A Massachusetts clinic issues a new Schedule IV prescription using electronic pr
 
 **D.** The prescriber signs it in the EPCS application; the office then prints and faxes a copy as the electronic transmission without a verified failover.
 
-**Independent key:** ____
+**Independent answer:** ______
 
-**Exact official authority, version/effective date:** ____
+**Official law / date / section:** ______
 
-**Why each rejected choice is legally incorrect / alternate defensible key:** ____
+**All four options explained & alternate defensible key:** ______
 
-**Editorial novelty and realistic workflow:** ____
-
-**Disposition:** PASS / REWRITE / HOLD
+**PASS / REWRITE / HOLD:** ______
 
 ---
 
-## C041 · E30-281
+## C041 / E30-281
 
 *SELECT ALL THAT APPLY*
 
@@ -96,19 +88,17 @@ At a Massachusetts community pharmacy, a properly trained technician offers phar
 
 **D.** The later refusal should be recorded accurately, and the completed-counseling entry should not be used to describe this encounter.
 
-**Independent key:** ____
+**Independent answer:** ______
 
-**Exact official authority, version/effective date:** ____
+**Official law / date / section:** ______
 
-**Why each rejected choice is legally incorrect / alternate defensible key:** ____
+**All four options explained & alternate defensible key:** ______
 
-**Editorial novelty and realistic workflow:** ____
-
-**Disposition:** PASS / REWRITE / HOLD
+**PASS / REWRITE / HOLD:** ______
 
 ---
 
-## C067 · E30-307
+## C067 / E30-307
 
 *SINGLE BEST ANSWER*
 
@@ -122,19 +112,17 @@ A Massachusetts pharmacist receives an authorized emergency ORAL Schedule II pre
 
 **D.** Use the emergency follow-up documentation to restart the remaining-quantity window when the paper prescription reaches the pharmacy.
 
-**Independent key:** ____
+**Independent answer:** ______
 
-**Exact official authority, version/effective date:** ____
+**Official law / date / section:** ______
 
-**Why each rejected choice is legally incorrect / alternate defensible key:** ____
+**All four options explained & alternate defensible key:** ______
 
-**Editorial novelty and realistic workflow:** ____
-
-**Disposition:** PASS / REWRITE / HOLD
+**PASS / REWRITE / HOLD:** ______
 
 ---
 
-## C082 · E30-322
+## C082 / E30-322
 
 *SINGLE BEST ANSWER*
 
@@ -144,23 +132,21 @@ A Massachusetts pharmacy receives a lawful transfer of the remaining refills of 
 
 **B.** Use conventional packaging for all later prescriptions written for this patient, even without a general patient request.
 
-**C.** Honor the prescriber's conventional-packaging instruction on this refill of the same transferred prescription.
+**C.** Honor the prescriber's documented conventional-packaging instruction on this refill of the same transferred prescription.
 
 **D.** Ask the patient to issue a new waiver because a prescriber's packaging direction has no effect beyond the first dispensing.
 
-**Independent key:** ____
+**Independent answer:** ______
 
-**Exact official authority, version/effective date:** ____
+**Official law / date / section:** ______
 
-**Why each rejected choice is legally incorrect / alternate defensible key:** ____
+**All four options explained & alternate defensible key:** ______
 
-**Editorial novelty and realistic workflow:** ____
-
-**Disposition:** PASS / REWRITE / HOLD
+**PASS / REWRITE / HOLD:** ______
 
 ---
 
-## C099 · E30-339
+## C099 / E30-339
 
 *SINGLE BEST ANSWER*
 
@@ -174,19 +160,17 @@ At a Massachusetts Category 2 sterile-compounding pharmacy, a technician passes 
 
 **D.** Record an overall competency failure, investigate the cause, and document corrective actions and appropriate reassessment.
 
-**Independent key:** ____
+**Independent answer:** ______
 
-**Exact official authority, version/effective date:** ____
+**Official law / date / section:** ______
 
-**Why each rejected choice is legally incorrect / alternate defensible key:** ____
+**All four options explained & alternate defensible key:** ______
 
-**Editorial novelty and realistic workflow:** ____
-
-**Disposition:** PASS / REWRITE / HOLD
+**PASS / REWRITE / HOLD:** ______
 
 ---
 
-## C118 · E30-358
+## C118 / E30-358
 
 *SINGLE BEST ANSWER*
 
@@ -200,15 +184,13 @@ A Massachusetts pharmacy receives a prescription for **Brand R**, a hypothetical
 
 **D.** Generic Q or Generic S, because either same-strength extended-release product qualifies without regard to its FDA code.
 
-**Independent key:** ____
+**Independent answer:** ______
 
-**Exact official authority, version/effective date:** ____
+**Official law / date / section:** ______
 
-**Why each rejected choice is legally incorrect / alternate defensible key:** ____
+**All four options explained & alternate defensible key:** ______
 
-**Editorial novelty and realistic workflow:** ____
-
-**Disposition:** PASS / REWRITE / HOLD
+**PASS / REWRITE / HOLD:** ______
 
 ---
 
