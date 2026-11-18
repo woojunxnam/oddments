@@ -238,7 +238,10 @@
     const s = activeSession();
     if (!s || checkExpiry()) return;
     const id = idsFor(s.form)[s.index], selected = (s.draft[id] || []).filter(letter => LETTERS.includes(letter));
-    if (!selected.length && !window.confirm('No answer selected. Submit this question as incorrect and continue? You cannot return.')) return;
+    if (!selected.length) {
+      $('mock-running-note').textContent = 'Select an answer before continuing. The MPJE does not allow skipping.';
+      return;
+    }
     if (checkExpiry()) return;
     s.submitted[id] = [...new Set(selected)].sort();
     delete s.draft[id];
@@ -302,8 +305,8 @@
     $('mock-result-note').textContent =
       (s.finishReason === 'time-expired' ? 'The 150-minute timer expired. ' :
        s.finishReason === 'early' ? 'You ended this attempt early. ' : 'All 120 questions were reached. ') +
-      summary.submittedCount + '/120 submitted · ' + summary.skipped + ' intentionally skipped · ' +
-      summary.unanswered + ' never submitted. Every unsubmitted answer counts as incorrect. ' +
+      summary.submittedCount + '/120 submitted · ' +
+      summary.unanswered + ' unanswered when the exam ended. Every unsubmitted answer counts as incorrect. ' +
       'NABP does not calculate an MPJE pass/fail result from this raw percentage.';
     const areaList = el('div', 'mock-area-list');
     for (const area of [1, 2, 3, 4]) {
