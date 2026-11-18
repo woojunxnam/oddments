@@ -3,7 +3,7 @@
 **Plan date:** November 18, 2026 (America/New_York).  
 **Owner request:** remove question-topic hints and prepare an efficient, independently reviewed final 120-question form before writing it.  
 **Baseline:** `78b1c1ba163bf9cd43d0a6e8296c54f7c25c78f0`; 240 original questions, 48 learning sets, disjoint Forms A/B of 120 each.  
-**Status:** planning complete; **0/120 Form C questions authored or legally approved**. A slot is a research assignment, not a verified legal conclusion or a finished question.
+**Status (2026-11-18 pilot checkpoint):** **8/120 drafts authored; 0/120 independently blind-solved or legally approved; 0 published**. The eight stems and 32 option rationales are in a review-only GitHub branch, NOT in the live exam. A slot is a research assignment, not a verified legal conclusion or a finished question.
 
 ## 1. Scope and controlling decisions
 
@@ -153,3 +153,13 @@ Score all 120 educational items and label the result raw practice performance. D
 **Next production action:** verify source packs needed for the eight B1 pilot slots, then author and independently review those eight. Finish B1's remaining 22 only after that checkpoint. Continue B2–B4 using the accepted method.
 
 Update the matrix and this checkpoint as work advances. Report exact counts of planned, source-ready, drafted, reviewed, held and released items. A plan containing 120 rows must never be reported as 120 completed questions.
+
+## 9. November 18 eight-item pilot checkpoint (draft, not release)
+
+The first eight planned slots C002, C009, C035, C041, C067, C082, C099, and C118 now have candidate English stems, four answer choices, proposed keys and individual rationales in `docs/form-c/pilot-draft-eight-2026-11-18.json` on the review branch. The pilot is **not integrated into the quiz** and the public first-attempt Form C remains disabled.
+
+Completed first-pass checks: exact counts (8 items, 32 answer options); reference to at least three existing comparator IDs through the original slot matrix; lexical similarity screening against all 240 A/B stems (no high-overlap flagged, not a substitute for semantic review); each proposed key agrees with its option rationale; the SBA key is not uniquely the longest option for any of the seven single-answer items. One SATA item has its two-answer key.
+
+**Do not count this as eight legally verified/accepted items.** Exact legal claims were checked against currently accessible official material where available; an independent solver must receive only stems and options, determine answers without seeing the author's keys, and document reasons with source passages. A separate legal reviewer must adjudicate disagreements and confirm effective-date/exception scope. C099's USP `<797>` regulatory source-check is conditional: USP's official FAQ and an official state inspection addendum support the proposition, but the current USP normative chapter itself was not directly authenticated, so do not mark C099 accepted unless source verification or re-scoping resolves this.
+
+Next operational gate: blinded solution review of the 8 pilots; source and option adjudication; then `frozen` or `HOLD` for each; after the pilot passes, complete B1's remaining 22. Do not expose pilot keys via normal practice, mark '8 passed', or merge unaccepted items into public `main`.
