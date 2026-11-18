@@ -13,24 +13,24 @@
       "stem": "A Massachusetts patient enrolled in an automatic-refill program six months ago with properly recorded consent. The prescription has three refills remaining. Today the pharmacy receives a confirmed prescriber message: 'Stop the old dose; a new prescription is being issued.' The automated system queues another fill of the old dose overnight. What is the best response?",
       "choices": [
         {
+          "text": "Transfer the old prescription to another pharmacy so the automatic refill may proceed without changing the original enrollment record.",
+          "why": "Incorrect. Transfer does not resolve a discontinued dose; continuity of care needs lawful prescriber direction."
+        },
+        {
           "text": "Release the queued refill because recorded enrollment consent authorizes every remaining refill regardless of later clinical information.",
           "why": "Incorrect. Consent to an automatic-refill program does not supersede a later discontinuation of that therapy or a pharmacist's DUR obligation."
         },
         {
-          "text": "Hold the queued old-dose fill, reconcile the active prescription and prescriber instruction, and address the new therapy before supplying more medication.",
+          "text": "Hold the old-dose refill and reconcile the prescriber's stop instruction before any automated dispensing.",
           "why": "Correct. The later stop order is a material therapy change; enrollment consent cannot replace current prescribing authority or DUR."
         },
         {
           "text": "Dispense one last old-dose refill as an emergency supply automatically, then ask about the change after the patient has received it.",
           "why": "Incorrect. Neither remaining refills nor an automatic program alone establish authority for a superseded dose."
-        },
-        {
-          "text": "Transfer the old prescription to another pharmacy so the automatic refill may proceed without changing the original enrollment record.",
-          "why": "Incorrect. Transfer does not resolve a discontinued dose; continuity of care needs lawful prescriber direction."
         }
       ],
       "correct": [
-        "B"
+        "C"
       ],
       "citation": "247 CMR 9.19(13) (automatic-refill consent/discontinuation); 247 CMR 9.17(1)–(2) (prospective DUR); 21 CFR 1306.22 where applicable",
       "url": "https://www.mass.gov/doc/247-cmr-9-professional-practice-standards/download",
@@ -45,24 +45,24 @@
       "stem": "A Massachusetts patient has an electronic Schedule II prescription for 40 tablets. Pharmacy X already dispensed a lawful PATIENT-REQUESTED partial fill of 10 tablets and documented it. Five days later, the patient asks Pharmacy Y to transfer 'the remaining 30 tablets' under the same original EPCS, instead of completing it at Pharmacy X. The original prescription remains otherwise within its valid window. What is the most legally supported action?",
       "choices": [
         {
-          "text": "Transfer the balance as an initial-dispensing EPCS because Pharmacy Y has not yet dispensed any quantity.",
-          "why": "Incorrect. The federal initial-dispensing transfer permission does not turn an already partially dispensed original prescription into an unfilled initial prescription."
-        },
-        {
-          "text": "Do not treat the remaining quantity as an unfilled initial prescription available for one-time EPCS transfer; consult for a lawful new prescription if the patient needs Pharmacy Y.",
-          "why": "Correct. 21 CFR 1306.08(e) covers a transfer for initial dispensing; 1306.13(b) completion is by the dispensing pharmacy under its original prescription."
-        },
-        {
           "text": "Transfer the balance by fax because the order is only a remaining quantity, not a new electronic Schedule II prescription.",
           "why": "Incorrect. An EPCS initial transfer cannot be converted to facsimile and the already-dispensed balance is outside that transfer pathway."
         },
         {
           "text": "Send the partially filled prescription to Pharmacy Y by phone, and have Y count the five-day interval from its first new fill.",
           "why": "Incorrect. The requested process is not a permitted initial transfer, and the partial-fill clock is not reset by a new pharmacy."
+        },
+        {
+          "text": "Transfer the balance as an initial-dispensing EPCS because Pharmacy Y has not yet dispensed any quantity.",
+          "why": "Incorrect. The federal initial-dispensing transfer permission does not turn an already partially dispensed original prescription into an unfilled initial prescription."
+        },
+        {
+          "text": "This is not an initial EPCS transfer; determine whether Pharmacy Y needs a separately valid new prescription.",
+          "why": "Correct. 21 CFR 1306.08(e) covers a transfer for initial dispensing; 1306.13(b) completion is by the dispensing pharmacy under its original prescription."
         }
       ],
       "correct": [
-        "B"
+        "D"
       ],
       "citation": "21 CFR 1306.08(e)–(g); 21 CFR 1306.13(b)(2); 105 CMR 721.055",
       "url": "https://www.ecfr.gov/current/title-21/chapter-II/part-1306/section-1306.08",
@@ -77,12 +77,12 @@
       "stem": "A Massachusetts veterinarian issues a valid outpatient prescription for a cat's prescription medication. The pharmacy plans a container label that meets other applicable federal and state dispensing rules. Under M.G.L. c.94C §21 and applicable FDA veterinary prescription-drug labeling rules, which conclusions are correct? SELECT ALL THAT APPLY.",
       "choices": [
         {
-          "text": "The Massachusetts §21 container-label rule excepts veterinary prescriptions from its usual requirement to display a human patient's name.",
-          "why": "Correct. The statute expressly says the patient's name need not appear for a veterinary prescription."
-        },
-        {
           "text": "An animal prescription may omit every label element, including directions, because the intended patient is not human.",
           "why": "Incorrect. The veterinary exception to one name element does not cancel medication, dispenser, prescribing veterinarian and directions/warnings requirements."
+        },
+        {
+          "text": "The Massachusetts §21 container-label rule excepts veterinary prescriptions from its usual requirement to display a human patient's name.",
+          "why": "Correct. The statute expressly says the patient's name need not appear for a veterinary prescription."
         },
         {
           "text": "A lawful veterinary prescription label still needs appropriate dispensing information and directions or necessary cautionary statements under applicable requirements.",
@@ -94,7 +94,7 @@
         }
       ],
       "correct": [
-        "A",
+        "B",
         "C"
       ],
       "citation": "M.G.L. c.94C §21 (veterinary patient-name exception); 21 CFR 201.105(b); FDA Regulation of Animal Drugs",
@@ -110,10 +110,6 @@
       "stem": "A Massachusetts pharmacy discovers TWO mistakes in accepted MassPAT records. Record X represents a real dispensed Schedule IV prescription, but the patient's ZIP code was transmitted incorrectly; the original prescription number, date filled, refill number and quantity were correct. Record Y is a phantom transaction that the pharmacy NEVER dispensed and should not appear in MassPAT. Assume the pharmacy is correcting these through ASAP 4.2A file submission rather than the MassPAT portal. What is the appropriate DSP01 status for X and Y?",
       "choices": [
         {
-          "text": "X = 02 Void and Y = 01 Revise, because every typo requires deletion and every phantom transaction requires editing.",
-          "why": "Incorrect. The guide distinguishes correction of unchanged-key data from removal of a transaction that did not happen."
-        },
-        {
           "text": "X = 01 Revise and Y = 02 Void, using the required original matching fields and full correction procedures.",
           "why": "Correct. DSP01 01 revises data in an actual accepted record; DSP01 02 removes an erroneous record that should not exist."
         },
@@ -124,10 +120,14 @@
         {
           "text": "X = 02 Void and Y = no action, because a PMP record cannot be removed once accepted.",
           "why": "Incorrect. A phantom record must be corrected, and valid data-element corrections can use the revision pathway."
+        },
+        {
+          "text": "X = 02 Void and Y = 01 Revise, because every typo requires deletion and every phantom transaction requires editing.",
+          "why": "Incorrect. The guide distinguishes correction of unchanged-key data from removal of a transaction that did not happen."
         }
       ],
       "correct": [
-        "B"
+        "A"
       ],
       "citation": "Massachusetts PMP Data Submission Guide for Dispensers v5.2 (May 2023), §5.3.4 and Appendix F, DSP01",
       "url": "https://www.mass.gov/doc/pmp-data-submission-dispenser-guide-version-52-pdf/download",
@@ -142,24 +142,24 @@
       "stem": "A Massachusetts physician at an outpatient clinic submits an otherwise authentic electronic Schedule II prescription for an IDENTIFIED patient who has been examined, with legitimate medical purpose and complete patient-specific directions. The clinic requests delivery to the clinic so the patient can receive the prescribed medication there. A second message asks the pharmacy to send an additional unlabeled bottle of the same drug for 'future patients as needed.' No wholesale/order-form process has been initiated. Which distinction is best?",
       "choices": [
         {
+          "text": "Reject any patient-specific Schedule II prescription whose medication will be delivered to a healthcare facility, regardless of federal and state delivery rules.",
+          "why": "Incorrect. Receiving location alone does not render an otherwise lawful patient prescription invalid; other delivery conditions still apply."
+        },
+        {
           "text": "The patient-specific prescription and the unlabeled clinic-stock request are identical because they share the same delivery location.",
           "why": "Incorrect. 21 CFR 1306.04 distinguishes prescriptions for an identified ultimate user from prescriptions for general office stock; delivery address alone is not the distinction."
         },
         {
-          "text": "Evaluate the patient-specific prescription under all applicable dispensing, delivery and verification rules; the extra general-use stock request cannot be dispensed as a patient prescription.",
+          "text": "Evaluate the patient-specific prescription separately; clinic stock requires a lawful nonprescription acquisition route.",
           "why": "Correct. A true prescription must be for a legitimate patient-specific medical purpose; general clinic stock uses a different authorized acquisition pathway."
         },
         {
           "text": "Dispense both orders as prescriptions if the clinic signs a receipt, since delivery to a physician erases patient-identification requirements.",
           "why": "Incorrect. A clinic receipt does not replace the controlled substance prescription and ordering requirements for office stock."
-        },
-        {
-          "text": "Reject any patient-specific Schedule II prescription whose medication will be delivered to a healthcare facility, regardless of federal and state delivery rules.",
-          "why": "Incorrect. Receiving location alone does not render an otherwise lawful patient prescription invalid; other delivery conditions still apply."
         }
       ],
       "correct": [
-        "B"
+        "C"
       ],
       "citation": "21 CFR 1306.04(a)–(b), 1306.05; 21 CFR Part 1305 for qualifying Schedule II registrant orders; MA 247 CMR 9.02",
       "url": "https://www.ecfr.gov/current/title-21/chapter-II/part-1306/section-1306.04",
@@ -168,5 +168,6 @@
       "legal_status": "SELF_SOURCE_CHECKED_NOT_INDEPENDENTLY_APPROVED",
       "notes": "Assume all other delivery laws must be checked; site alone isn't dispositive."
     }
-  ]
+  ],
+  "qa_note": "Option positions redistributed, correct-only-length cues corrected; every key matched its Correct/Incorrect explanation after reordering. This is structural checking, not independent legal approval."
 }
