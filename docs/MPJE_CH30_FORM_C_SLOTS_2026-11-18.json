@@ -356,7 +356,7 @@
       ],
       "novelty_mode": "transfer_check",
       "source_pack": "personnel",
-      "source_verification_status": "AUTHOR_PROVISION_CHECK_REVIEW_PENDING",
+      "source_verification_status": "SEMANTIC_OVERLAP_REQUIRES_EDITORIAL_REVIEW",
       "format_candidate": "either",
       "cognitive_level": "application",
       "production_batch": "B1",
@@ -378,7 +378,17 @@
         "reviewed_at": null
       },
       "legal_approval": "NOT_APPROVED",
-      "draft_path": "docs/form-c/b1-draft-area1-2026-11-18.json"
+      "draft_path": "docs/form-c/b1-draft-area1-2026-11-18.json",
+      "review_flags": [
+        {
+          "date": "2026-11-18",
+          "type": "SEMANTIC_OVERLAP_REQUIRES_EDITORIAL_REVIEW",
+          "explanation": "E30-091 already rejects excluding a dedicated trainer once independently filling; C010 asks similar legal decision despite different narrative. Should redesign or explicitly justify a new legal transfer decision.",
+          "official_sources": [
+            "https://www.mass.gov/doc/2026-02-ratios-supervision-and-dedicated-training-personnel/download"
+          ]
+        }
+      ]
     },
     {
       "slot_id": "C011",
@@ -1374,7 +1384,7 @@
       ],
       "novelty_mode": "coverage_extension",
       "source_pack": "patient_practice",
-      "source_verification_status": "CONDITIONAL_SCOPE_REVIEW_REQUIRED",
+      "source_verification_status": "HIPAA_PARENTAL_ACCESS_SCOPE_NARROWED_HOLD",
       "format_candidate": "SBA",
       "cognitive_level": "integrated",
       "production_batch": "B1",
@@ -1396,7 +1406,18 @@
         "reviewed_at": null
       },
       "legal_approval": "NOT_APPROVED",
-      "draft_path": "docs/form-c/b1-draft-area2-2026-11-18.json"
+      "draft_path": "docs/form-c/b1-draft-area2-2026-11-18.json",
+      "review_flags": [
+        {
+          "date": "2026-11-18",
+          "type": "HIPAA_PARENTAL_ACCESS_SCOPE_NARROWED_HOLD",
+          "explanation": "Distinguish HIPAA 45 CFR 164.502(g)(3) exception when minor self-consents, from M.G.L. c112 §12F confidentiality text naming physician or dentist; no blanket pharmacy non-disclosure inference.",
+          "official_sources": [
+            "https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-C/part-164/subpart-E/section-164.502",
+            "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXVI/Chapter112/Section12F"
+          ]
+        }
+      ]
     },
     {
       "slot_id": "C045",
@@ -1490,12 +1511,12 @@
       ],
       "novelty_mode": "coverage_extension",
       "source_pack": "patient_practice",
-      "source_verification_status": "AUTHOR_PROVISION_CHECK_REVIEW_PENDING",
+      "source_verification_status": "MATERIAL_SCOPE_ERROR_REWRITTEN_PENDING_INDEPENDENT_REVIEW",
       "format_candidate": "either",
       "cognitive_level": "recognition",
       "production_batch": "B1",
       "pilot": false,
-      "authoring_status": "drafted",
+      "authoring_status": "drafted_corrected_pending_review",
       "candidate_question_id": "E30-288",
       "specific_source_gate": null,
       "secondary_competencies": [],
@@ -1512,7 +1533,18 @@
         "reviewed_at": null
       },
       "legal_approval": "NOT_APPROVED",
-      "draft_path": "docs/form-c/b1-draft-area2-2026-11-18.json"
+      "draft_path": "docs/form-c/b1-draft-area2-2026-11-18.json",
+      "review_flags": [
+        {
+          "date": "2026-11-18",
+          "type": "MATERIAL_SCOPE_ERROR_REWRITTEN_PENDING_INDEPENDENT_REVIEW",
+          "explanation": "Original community-warfarin case did not establish a permitted community CDTM disease. Rewritten to referred adult with diabetes, physician approved diabetes medication management protocol and nondiagnostic monitoring.",
+          "official_sources": [
+            "https://www.mass.gov/doc/247-cmr-16-collaborative-drug-therapy-management/download",
+            "https://www.mass.gov/doc/243-cmr-2-licensing-and-the-practice-of-medicine-0/download"
+          ]
+        }
+      ]
     },
     {
       "slot_id": "C049",
@@ -2397,12 +2429,12 @@
       ],
       "novelty_mode": "coverage_extension",
       "source_pack": "dispensing_records",
-      "source_verification_status": "AUTHOR_PROVISION_CHECK_REVIEW_PENDING",
+      "source_verification_status": "VETERINARY_CONTROLLED_SCHEDULE_SCOPE_REWRITTEN_PENDING_INDEPENDENT_REVIEW",
       "format_candidate": "SBA",
       "cognitive_level": "recognition",
       "production_batch": "B1",
       "pilot": false,
-      "authoring_status": "drafted",
+      "authoring_status": "drafted_corrected_pending_review",
       "candidate_question_id": "E30-319",
       "specific_source_gate": null,
       "secondary_competencies": [],
@@ -2419,7 +2451,18 @@
         "reviewed_at": null
       },
       "legal_approval": "NOT_APPROVED",
-      "draft_path": "docs/form-c/b1-draft-area3-2026-11-18.json"
+      "draft_path": "docs/form-c/b1-draft-area3-2026-11-18.json",
+      "review_flags": [
+        {
+          "date": "2026-11-18",
+          "type": "VETERINARY_CONTROLLED_SCHEDULE_SCOPE_REWRITTEN_PENDING_INDEPENDENT_REVIEW",
+          "explanation": "Changed generic veterinary medication to a Massachusetts Schedule VI controlled prescription because M.G.L. c94C §21 label exception covers controlled prescriptions; still distinguish FDA animal label rules.",
+          "official_sources": [
+            "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXV/Chapter94c/Section21",
+            "https://www.ecfr.gov/current/title-21/chapter-I/subchapter-C/part-201/section-201.105"
+          ]
+        }
+      ]
     },
     {
       "slot_id": "C080",
@@ -3145,7 +3188,7 @@
       ],
       "novelty_mode": "coverage_extension",
       "source_pack": "compounding_usp",
-      "source_verification_status": "CONDITIONAL_USP_NORMATIVE_PRIMARY_PENDING",
+      "source_verification_status": "USP800_HISTORICAL_NORMATIVE_LOCATED_2026_VERSION_HOLD",
       "format_candidate": "SATA",
       "cognitive_level": "recognition",
       "production_batch": "B1",
@@ -3167,7 +3210,19 @@
         "reviewed_at": null
       },
       "legal_approval": "NOT_APPROVED",
-      "draft_path": "docs/form-c/b1-draft-area4-2026-11-18.json"
+      "draft_path": "docs/form-c/b1-draft-area4-2026-11-18.json",
+      "review_flags": [
+        {
+          "date": "2026-11-18",
+          "type": "USP800_HISTORICAL_NORMATIVE_LOCATED_2026_VERSION_HOLD",
+          "explanation": "USP's own official 2019 chapter <800> revision bulletin §15 and Table 5 was directly located and read; USP Jan 2026 FAQ says current compendially applicable text available in USP–NF/Compounding Compendium and FAQs are non-normative. Check current version before final key signoff.",
+          "official_sources": [
+            "https://www.uspnf.com/sites/default/files/usp_pdf/EN/USPNF/revisions/gc-800-rb-notice-20190531.pdf",
+            "https://pages.usp.org/rs/711-SXF-172/images/USP_HQS_800_FAQs_January2026.pdf?version=0",
+            "https://www.osha.gov/hazardous-drugs/controlling-occex"
+          ]
+        }
+      ]
     },
     {
       "slot_id": "C105",
@@ -3261,7 +3316,7 @@
       ],
       "novelty_mode": "coverage_extension",
       "source_pack": "inventory_security",
-      "source_verification_status": "AUTHOR_PROVISION_CHECK_REVIEW_PENDING",
+      "source_verification_status": "MARCH_2026_DEA_AMENDMENT_PRIMARY_CHECKED_REVIEW_PENDING",
       "format_candidate": "either",
       "cognitive_level": "integrated",
       "production_batch": "B1",
@@ -3283,7 +3338,17 @@
         "reviewed_at": null
       },
       "legal_approval": "NOT_APPROVED",
-      "draft_path": "docs/form-c/b1-draft-area4-2026-11-18.json"
+      "draft_path": "docs/form-c/b1-draft-area4-2026-11-18.json",
+      "review_flags": [
+        {
+          "date": "2026-11-18",
+          "type": "MARCH_2026_DEA_AMENDMENT_PRIMARY_CHECKED_REVIEW_PENDING",
+          "explanation": "March 20 2026 amendment §1305.05(e) limits revoker to registrant/partner/officer and requires two witnesses. Be careful with outdated 2026 Oct published passage quoted pre-amendment text; binding revised section controls.",
+          "official_sources": [
+            "https://public-inspection.federalregister.gov/2026-05482.pdf"
+          ]
+        }
+      ]
     },
     {
       "slot_id": "C109",
@@ -3686,6 +3751,14 @@
       "docs/form-c/b1-draft-area3-2026-11-18.json",
       "docs/form-c/b1-draft-area4-2026-11-18.json"
     ],
-    "structural_report": "docs/form-c/b1-author-structural-audit-2026-11-18.json"
-  }
+    "structural_report": "docs/form-c/b1-author-structural-audit-2026-11-18.json",
+    "corrected_cases": [
+      "C048",
+      "C079"
+    ],
+    "additional_editorial_watch": [
+      "C010"
+    ]
+  },
+  "last_author_reconciliation": "2026-11-18"
 }
