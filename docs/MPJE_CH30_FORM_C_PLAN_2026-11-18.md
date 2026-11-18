@@ -1,9 +1,9 @@
 # Massachusetts MPJE — Form C production plan
 
 **Plan date:** November 18, 2026 (America/New_York).  
-**Owner request:** remove question-topic hints and prepare an efficient, independently reviewed final 120-question form before writing it.  
+**Owner instruction updated Nov. 18:** proceed efficiently with author-side official-source/option review, without requiring a separate independent blind solver. Author review is not independent certification.  
 **Baseline:** `78b1c1ba163bf9cd43d0a6e8296c54f7c25c78f0`; 240 original questions, 48 learning sets, disjoint Forms A/B of 120 each.  
-**Status (November 18, 2026 Batch 1 checkpoint):** **30/120 author drafts (8 pilot + 22 additional); 0/120 independently blind-solved, legally approved or released.** All items remain in an unmerged Draft PR branch, not in the live exam. A slot is a research assignment, not a verified legal conclusion or a finished question.
+**Status (Nov. 18, 2026 B2 checkpoint):** **60/120 drafted (B1+B2); 0/120 finally legally approved or released**. The owner waived a separate independent blind solver as an authoring prerequisite. All items remain in an unmerged Draft PR, not the live exam. A slot is a research assignment, not a verified legal conclusion or a finished question.
 
 ## 1. Scope and controlling decisions
 
@@ -71,13 +71,13 @@ Select two pilot slots per Area from B1. Favor the major gaps: role-specific wor
 
 The initial pilot is **C002, C009, C035, C041, C067, C082, C099 and C118**: supervision during a workflow change, qualifying staffing composition, electronic-prescriber identity, offer/refusal documentation, emergency-origin partial dispensing, transferred packaging waiver, aseptic-competency evidence and FDA TE-table interpretation. Each is a candidate pending source verification; replace a blocked pilot within the same Area before authoring.
 
-An author creates the stem, four choices and rationales. A separate reviewer receives the stem/choices and source packet **without the intended answer key**. Resolve disagreement from primary sources. Review specificity, reading burden, plausible distractors, ambiguity and whether the nearest existing items already answer the same decision.
+The author creates the stem, four choices and rationales, then performs a deliberate source-first re-read of every option and a consistency/ambiguity check. A separate blind solver can be helpful but is **optional at the owner's request**; an author self-check cannot be called independent review. Review answer-bearing wording, plausible distractors, length, novelty and effective dates.
 
 After the pilot's style and verification method work, finish B1's remaining 22; then B2, B3 and B4. Do not produce 120 unreviewed drafts and postpone all corrections to the end.
 
 ### Stage C — 30-item rolling acceptance
 
-Each batch has one structured item ledger. Review all four options, not just the intended correct answer. Keep authors and independent solvers separate for their own items. Reuse source work already checked in the same legal version; re-open a source when facts, scope, dates or conflicts require it.
+Each batch has one structured item ledger. Review all four options, not just the intended correct answer. Independent solving is optional. Record the author's second-pass source checks transparently and preserve HOLD status for unresolved legal questions. Reuse source work already checked in the same legal version; re-open a source when facts, scope, dates or conflicts require it.
 
 Replace a legally ambiguous or cosmetic-duplicate candidate within its Area instead of forcing a rare exception into the bank. Preserve the abandoned candidate and reason in the ledger. Do not carry an unresolved answer-key issue into the next release merely to meet the item count.
 
@@ -85,7 +85,7 @@ Replace a legally ambiguous or cosmetic-duplicate candidate within its Area inst
 
 Check the complete form for coverage, semantic duplication, presentation cues, repeated answer patterns, excessive reading burden and sequence leakage. Use automated checks for counts, IDs, required fields, exact duplicates, lengths and patterns; use human-style legal/editorial reasoning for defensibility and practical relevance. An automatic similarity score is a screening tool, not a novelty verdict.
 
-All new items need source/choice approval once and independent solution review once. Re-review changed or disputed claims, rather than restarting a full legal review after every formatting edit. A legal or key change reopens the affected item; typography alone does not reopen all source packs.
+All new items need official-source and A–D choice review once; external blind solution review is optional. Re-review changed or disputed claims, rather than restarting a full legal review after every formatting edit. A legal or key change reopens the affected item; typography alone does not reopen all source packs.
 
 ## 5. Item acceptance contract
 
@@ -95,7 +95,7 @@ Each accepted item must have:
 2. A legally decisive difference from at least three nearby existing items, or an explicitly justified transfer check of a core rule in unfamiliar conditions.
 3. Current Massachusetts/federal authority, effective-date handling and all necessary scenario conditions.
 4. Four A–D options with a uniquely defensible SBA key or an exact defensible SATA key; every option has a separately verified rationale.
-5. A blind-solver result and documented resolution of any alternative defensible answer.
+5. Recorded author-side source verification of all four options and resolution of any alternative defensible answer; an optional blind-solver result may add evidence.
 6. No answer-bearing topic title before submission; no correct-only precision, padded correct answer or disposable extreme-word distractor.
 7. Beginner-friendly post-exam explanations identifying the decisive fact and explaining what fact change could change the answer.
 8. Original wording. Public topic reports and public publisher samples may inform design; protected exam recollections and private exam keys do not supply content.
@@ -108,7 +108,7 @@ Longer is not inherently harder or better. Use brief prescriptions, profiles, st
 
 The previous audit did not directly authenticate the entire subscription USP–NF text for ten older USP questions. Do not silently inherit a claim of complete primary-text verification. For C, verify the needed normative provision, or narrow the item to a proposition fully supported by the available controlling MA material/official source. If neither is possible, mark the candidate `HOLD` and replace it. Policy-versus-regulation conflicts must be resolved or avoided through an explicit, defensible scope; an anecdote or another AI's confidence is not a resolution.
 
-Statuses: `planned` → `source_ready` → `drafted` → `blind_solved` → `legal_checked` → `editorial_pass` → `frozen`. `HOLD` is an exception status with a reason and replacement owner. The state machine is a workflow plan; none of these slots is `source_ready` today.
+Statuses: `planned` → `source_ready` → `drafted` → `author_checked` → `legal_checked` → `editorial_pass` → `frozen`. Independent `blind_solved` is optional, not a required state. `HOLD` is an exception status with a reason and replacement owner. The state machine is a workflow plan; none of these slots is `source_ready` today.
 
 ## 6. Technical integration: protect A/B and keep C unfamiliar
 
@@ -137,20 +137,20 @@ A/B distractor rewrites are a separate content-version release. Combining them w
 |---|---|
 | Plan | 120 distinct slot IDs; 26/40/29/25; four 30-item batches; existing IDs and source-pack references valid |
 | Legal | 120 approved keys; 480 option rationales mapped to sources; no unresolved material legal HOLD; dates/exceptions checked |
-| Independent solve | Every item solved without its intended key by someone other than its author; disagreements resolved |
+| Author legal review | All options supported by official current sources, exceptions/effective dates checked; unresolved disputes remain HOLD. Optional independent review is not required. |
 | Editorial | Every item's novelty/transfer rationale reviewed; lengths and answer patterns inspected; no answer-bearing title during testing |
 | Integration | Old A/B sessions load; C isolated; per-form integrity and one-way timing/reload/scoring/reveal work |
 | Release | Required CI passes; merged source matches public assets; actual mobile/desktop exam flow verified |
 
 Do not add generic tests that merely repeat the implementation. Use the repository's existing browser checks where applicable; extend them only for the concrete C risks above. Keep the UI-only topic-title fix separate from the question-bank/signature change.
 
-Score all 120 educational items and label the result raw practice performance. Do not manufacture an official scaled score, adaptive algorithm, passing probability or 20 pretend unscored items. The proposed 85% overall / roughly 80% per Area thresholds are unvalidated study goals, not a NABP passing rule. First-attempt reasoning, uncertainty, recurring legal misconceptions and an independent unfamiliar check matter alongside percentage.
+Score all 120 educational items and label the result raw practice performance. Do not manufacture an official scaled score, adaptive algorithm, passing probability or 20 pretend unscored items. The proposed 85% overall / roughly 80% per Area thresholds are unvalidated study goals, not a NABP passing rule. First-attempt reasoning, uncertainty, recurring legal misconceptions and exposure to unfamiliar scenarios matter alongside percentage.
 
 ## 8. Handoff and current checkpoint
 
 **This turn:** remove title hints; publish the plan, 120-slot matrix and source-pack leads. No stems/keys are drafted in the plan and no placeholder C exam is enabled.
 
-**Next production action:** verify source packs needed for the eight B1 pilot slots, then author and independently review those eight. Finish B1's remaining 22 only after that checkpoint. Continue B2–B4 using the accepted method.
+**Production update:** B1's 30 and B2's 30 items have now been drafted, with author source checking and mechanical QA; a separate reviewer is optional. Finish item-level legal gates before publication, while progressing to B3 by the approved author-check process.
 
 Update the matrix and this checkpoint as work advances. Report exact counts of planned, source-ready, drafted, reviewed, held and released items. A plan containing 120 rows must never be reported as 120 completed questions.
 
@@ -160,9 +160,9 @@ The first eight planned slots C002, C009, C035, C041, C067, C082, C099, and C118
 
 Completed first-pass checks: exact counts (8 items, 32 answer options); reference to at least three existing comparator IDs through the original slot matrix; lexical similarity screening against all 240 A/B stems (no high-overlap flagged, not a substitute for semantic review); each proposed key agrees with its option rationale; the SBA key is not uniquely the longest option for any of the seven single-answer items. One SATA item has its two-answer key.
 
-**Do not count this as eight legally verified/accepted items.** Exact legal claims were checked against currently accessible official material where available; an independent solver must receive only stems and options, determine answers without seeing the author's keys, and document reasons with source passages. A separate legal reviewer must adjudicate disagreements and confirm effective-date/exception scope. C099's USP `<797>` regulatory source-check is conditional: USP's official FAQ and an official state inspection addendum support the proposition, but the current USP normative chapter itself was not directly authenticated, so do not mark C099 accepted unless source verification or re-scoping resolves this.
+**Do not count this as eight legally verified/accepted items.** Exact legal claims were checked against currently accessible official material where available; the author must compare every proposed key and each alternative with controlling law, record pinpoint authority and resolve any ambiguity. A separate reviewer is optional and no unperformed independent review may be claimed. C099's USP `<797>` regulatory source-check is conditional: USP's official FAQ and an official state inspection addendum support the proposition, but the current USP normative chapter itself was not directly authenticated, so do not mark C099 accepted unless source verification or re-scoping resolves this.
 
-Next operational gate: blinded solution review of the 8 pilots; source and option adjudication; then `frozen` or `HOLD` for each; after the pilot passes, complete B1's remaining 22. Do not expose pilot keys via normal practice, mark '8 passed', or merge unaccepted items into public `main`.
+Next operational gate: official-source review of all options, resolution of HOLDs and semantic duplicates; final item freeze or rejection only after legal acceptance. Do not expose pilot keys via normal practice, mark '8 passed', or merge unaccepted items into public `main`.
 
 ## 10. November 18 Batch 1 production checkpoint — 30 drafts, no approval
 
@@ -177,14 +177,31 @@ No-key worksheets for separate independent solving are `docs/form-c/pilot-blind-
 
 Mechanical checks passed: 30 distinct reserved IDs do not collide with the old 240; correct/incorrect explanation markers match keys for all 120 options; 0 of 24 SBA have the key as the uniquely longest choice; answer-letter counts A=6/B=5/C=6/D=7; no high-overlap lexical reuse flagged against the original 240 stems. After the latest wording correction, **no SBA correct option is uniquely longest or uniquely shortest** (0/24 each); structural checks do not establish true semantic novelty.
 
-**Four unresolved source/scope holds:** C044 minor-consent pharmacy-record access (HIPAA vs the actual reach of M.G.L. c.112 §12F), C099 USP <797> media-fill/fingertip failure, C100 USP <797> single-dose vial post-entry use, and C104 USP <800> HD cleaning sequence. C056 was narrowed from a full-protocol HIV PEP clinical judgment to the official PEP-vs-PrEP pathway with recent exposure and urgency; this no longer presumes unseen details of the statewide prescribing protocol. C099/C100/C104 require the current controlling USP normative chapter or a defensible re-scoping to directly accessible authority; published FAQs and other regulator summaries are not claimed equivalent to the full subscription USP text. Further legal issues may be discovered by independent review of the other 25 candidates. None of the 30 has passed a truly independent blind legal solve.
+**Four unresolved source/scope holds:** C044 minor-consent pharmacy-record access (HIPAA vs the actual reach of M.G.L. c.112 §12F), C099 USP <797> media-fill/fingertip failure, C100 USP <797> single-dose vial post-entry use, and C104 USP <800> HD cleaning sequence. C056 was narrowed from a full-protocol HIV PEP clinical judgment to the official PEP-vs-PrEP pathway with recent exposure and urgency; this no longer presumes unseen details of the statewide prescribing protocol. C099/C100/C104 require the current controlling USP normative chapter or a defensible re-scoping to directly accessible authority; published FAQs and other regulator summaries are not claimed equivalent to the full subscription USP text. Further legal issues may be discovered in further author source review of the other 25 candidates. Independent blind legal solving is optional and has not been performed.
 
-**Current counts:** 30 drafted (including three repaired or narrowed cases C048, C056, C079), 0 independently blind-solved, 0 formally legally approved, 0 frozen, 0 released; four source/scope holds remain. C010 also needs semantic duplication review against E30-091. The Draft PR is intentionally not merged; public GitHub repository visibility does not make drafts cryptographically concealed.
+**B1 historical counts:** 30 drafted (three repaired/narrowed cases C048, C056, C079), 0 finally legally approved, 0 frozen, 0 released; four source/scope holds remain. C010 also needs semantic duplication review against E30-091. The Draft PR is intentionally not merged; public GitHub repository visibility does not make drafts cryptographically concealed.
 
 A meaningful version-trap candidate is C108: the **March 20, 2026** DEA amendment to **21 CFR 1305.05(c) and (e)** changed who may grant/revoke a paper Form 222 power of attorney. The then-online DEA FAQ may still describe an outdated signer rule. The binding current regulation controls. Confirm the effective date and citation again at final acceptance. Official change: https://www.govinfo.gov/content/pkg/FR-2026-03-20/pdf/2026-05482.pdf .
 
-**Next gate:** request a no-key independent solve of all 30 items, verify each of the 120 choices against pinpoint law, adjudicate all candidate ambiguities including five named holds, and then accept, rewrite, or replace individual items. Do not release C until all 120 are legally approved and the separate C loader has been tested without changing A/B sessions. Only after Batch 1 item-level acceptance should B2 proceed to final draft production.
+**Updated next gate:** independently review *only if elected*; author must still verify every choice against official pinpoint law, resolve the four B1 holds and any new B2 holds, then accept, rewrite or replace. B2 drafting proceeded at owner request. Do not release C until all 120 are legally source-checked and the separate C engine is tested without changing A/B sessions.
 
 ## 11. Author-side legal reconciliation and corrected candidate facts
 
 The [November 18 legal-source reconciliation](form-c/b1-legal-source-reconciliation-2026-11-18.md) documents 2026 primary-law passages, corrections to C048 community CDTM and C079 veterinary Schedule VI label scope, and C056 PEP-vs-PrEP scope reduction. C044 was narrowed to the HIPAA parental-representative exception rather than an unjustified blanket §12F pharmacy record bar. USP <800> original 2019 §15 and Table 5 are publicly accessible, but 2026 compendially applicable original remains unauthenticated. C108's March 2026 DEA POA amendment was confirmed against the published rule. The current [30-item review ledger](form-c/b1-review-gates-2026-11-18.json) retains four source/scope holds and a C010 semantic duplicate watch. These are **authorial checks and not independent item accreditation**.
+
+## 12. Nov 18 Batch 2 checkpoint — author-first, no mandatory blind reviewer
+
+The user chose faster drafting with direct author review over a separate blind-solver gate. Current source/legal uncertainty still blocks **release of individual questions**, not drafting the next independent area-balanced batch. A subsequent reviewer is welcome but is not required for the drafting process.
+
+**B2 author drafts: 30 / 30** (Area1=7, Area2=10, Area3=7, Area4=6). This brings **Form C to 60 / 120 author drafts**. B2 contains 21 SBA and 9 SATA with 120 A–D option rationales. Existing A/B remain 240 unchanged questions and disjoint fixed forms. B2 source files:
+
+- `docs/form-c/b2-draft-area1-2026-11-18.json` (7)
+- `docs/form-c/b2-draft-area2-2026-11-18.json` (10)
+- `docs/form-c/b2-draft-area3-2026-11-18.json` (7)
+- `docs/form-c/b2-draft-area4-2026-11-18.json` (6)
+
+The [mechanical QA report](form-c/b2-author-structural-audit-2026-11-18.json) confirms 30 unique noncolliding candidate IDs and A–D rationale alignment. 21 SBA keys are distributed A=6/B=5/C=5/D=5; neither uniquely longest nor uniquely shortest correct options appear. This is **only structural QA**, not final confirmation that all legal distractors are accurate. Semantic similarity to old items and B1 was checked; C023, C045, C057, C068 and C105 need a closer meaning/coverage decision.
+
+**Specific B2 source or interpretation holds:** C072 (actual dispensing vs claims reversal under EPCS initial-transfer rules), C096 (current USP <795> authoritative normative wording for shorter supported BUD), C101 (current USP <797> authoritative rules for nonsterile-source CSP sterilization). Older B1 holds C044, C099, C100 and C104 remain. These items are not accepted. C057 also has potential duplication with old E30-193. Source ledgers retain exact law leads and caveats; a source URL in an author draft is **not** proof of full legal approval.
+
+**Current status:** 60 drafted, 0 finally legally approved, 0 frozen, 0 included in the public exam. No separate independent blind solution was performed or claimed. The release gate still requires verified official legal provisions, no material ambiguous keys, all four options accounted for, and A/B regression and C manifest checks before deployment.
