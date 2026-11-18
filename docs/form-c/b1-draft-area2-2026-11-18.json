@@ -150,7 +150,7 @@
       "choices": [
         {
           "text": "Do not assume automatic parental access; verify legal authority, record scope and confidentiality before release.",
-          "why": "Correct. A lawful minor self-consent route triggers a personal-representative exception; state privacy law and the requested record must be assessed."
+          "why": "Correct. Where a minor is permitted under law to consent to the specific service and has done so, HIPAA generally does not make the parent that minor's personal representative for the associated treatment information, subject to other applicable law and exceptions. M.G.L. c.112 §12F permits specified minor self-consent but its express records-confidentiality sentence refers to the minor and physician or dentist; do not automatically extend that sentence as a categorical pharmacy-record nondisclosure rule. Verify the requested records and applicable disclosure rules before acting."
         },
         {
           "text": "Delete the minor's record because a pharmacy cannot retain the confidential-care dispensing history without parental permission.",
@@ -168,12 +168,12 @@
       "correct": [
         "A"
       ],
-      "citation": "45 CFR 164.502(g)(3)(i)–(ii); M.G.L. c.112 §12F (minor self-consent and covered clinical records); 247 CMR 9.01(16)",
-      "url": "https://www.law.cornell.edu/cfr/text/45/164.502",
+      "citation": "45 CFR 164.502(g)(3)(i)–(ii) (HIPAA minor as personal representative exception); M.G.L. c.112 §12F (MA minor self-consent; physician/dentist record clause is limited)",
+      "url": "https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-C/part-164/subpart-E/section-164.502",
       "source_accessed_date": "2026-11-18",
       "draft_status": "AUTHOR_DRAFT_NEEDS_INDEPENDENT_BLIND_SOLVE",
-      "legal_status": "CONDITIONAL_SCOPE_REVIEW_REQUIRED",
-      "notes": "CONDITIONAL legal scope: §12F literal physician/dentist confidentiality clause does not automatically apply wholesale to independent pharmacy records; question only rejects automatic parent access and requires case-specific verification.",
+      "legal_status": "CONDITIONAL_SCOPE_RECHECK_AFTER_NARROWING",
+      "notes": "RESCOPED 2026-11-18: The target is solely the parent's false assertion of automatic HIPAA representative status when a minor lawfully consented to the specific care. The confidentiality clause of M.G.L. c.112 §12F explicitly covers physician/dentist records; pharmacy records still require HIPAA/state-law-specific analysis. Keep HOLD until independent opinion confirms the stem's service scope and options.",
       "id": "E30-284",
       "area": 2,
       "primary_competency": "2.5",
@@ -186,16 +186,26 @@
       "source_pack": "patient_practice",
       "topic": "counseling privacy",
       "edit_version": 1,
-      "id_is_reserved_candidate_only": true
+      "id_is_reserved_candidate_only": true,
+      "correction_history": [
+        {
+          "date": "2026-11-18",
+          "reason": "Prevent overgeneralization of §12F physician/dentist confidentiality to all pharmacy records.",
+          "sources": [
+            "https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-C/part-164/subpart-E/section-164.502",
+            "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXVI/Chapter112/Section12F"
+          ]
+        }
+      ]
     },
     {
       "slot_id": "C048",
       "kind": "single",
-      "stem": "A Massachusetts pharmacist is authorized under a current community-pharmacy CDTM agreement for a referred adult patient's warfarin management. The signed protocol authorizes laboratory tests that are DIRECTLY related to monitoring anticoagulant therapy and specifies physician consultation. The patient now asks the pharmacist to order an unrelated diagnostic test for unexplained abdominal pain. No separate prescribing authority is established. What is most appropriate?",
+      "stem": "A Massachusetts pharmacist practices in a community pharmacy under a current collaborative drug therapy management (CDTM) agreement. A supervising physician has referred an adult patient for DIABETES medication management, obtained the patient's written consent, and approved a protocol allowing drug-related laboratory monitoring under physician supervision or direct consultation. The patient now asks the pharmacist to order an unrelated diagnostic test to investigate unexplained abdominal pain. No other prescribing or diagnostic authority is established. What is most appropriate?",
       "choices": [
         {
-          "text": "Discontinue the patient's anticoagulant immediately because a new symptom automatically terminates any CDTM agreement.",
-          "why": "Incorrect. New symptoms require appropriate clinical response, but are not automatic termination of an otherwise valid agreement."
+          "text": "Discontinue all diabetes medications immediately because a new symptom automatically terminates any CDTM agreement.",
+          "why": "Incorrect. A new symptom needs clinical assessment but does not automatically terminate an otherwise valid CDTM agreement or justify stopping all diabetes therapy."
         },
         {
           "text": "Order the diagnostic test as long as it is billed to the patient's insurer under the pharmacist's NPI, without involving the supervising clinician.",
@@ -206,19 +216,19 @@
           "why": "Incorrect. CDTM permission is confined to physician-supervised therapy management and does not confer unrestricted diagnostic-test authority."
         },
         {
-          "text": "Use the CDTM protocol for anticoagulation monitoring; refer unrelated diagnostic questions to an appropriate clinician.",
-          "why": "Correct. The agreement and practice-scope rules limit pharmacist testing to approved drug-therapy monitoring, excluding a diagnostic component."
+          "text": "Continue approved diabetes-drug monitoring; refer the unrelated diagnostic workup to an appropriate clinician.",
+          "why": "Correct. Under 243 CMR 2.12(1), laboratory tests may be ordered only when directly related to drug therapy and conducted under the required physician supervision or consultation and approved protocol, without a diagnostic component. Diabetes is a specifically permitted community-pharmacy CDTM disease under 247 CMR 16.03(5)(e)1.b.iii."
         }
       ],
       "correct": [
         "D"
       ],
-      "citation": "247 CMR 16.01, 16.03(5), 16.04; 243 CMR 2.12(1) definition of CDTM",
+      "citation": "247 CMR 16.03(5)(c)–(e) (community CDTM referral/consent, eligible diabetes therapy); 243 CMR 2.12(1) (protocol-linked nondiagnostic monitoring); 247 CMR 16.04(2)",
       "url": "https://www.mass.gov/doc/247-cmr-16-collaborative-drug-therapy-management/download",
       "source_accessed_date": "2026-11-18",
       "draft_status": "AUTHOR_DRAFT_NEEDS_INDEPENDENT_BLIND_SOLVE",
-      "legal_status": "SELF_SOURCE_CHECKED_NOT_INDEPENDENTLY_APPROVED",
-      "notes": "Only protocol-related non-diagnostic drug therapy monitoring is within the established authority.",
+      "legal_status": "MATERIAL_SCOPE_ERROR_CORRECTED_REQUIRES_FRESH_REVIEW",
+      "notes": "LEGAL CORRECTION 2026-11-18: Earlier draft incorrectly presumed independent community-pharmacy CDTM warfarin management, not listed among the community prescribed disease states. Replaced with expressly eligible diabetes therapy plus specified referral, consent and physician-supervised nondiagnostic laboratory monitoring. Independence of final solve remains pending.",
       "id": "E30-288",
       "area": 2,
       "primary_competency": "2.1",
@@ -231,7 +241,19 @@
       "source_pack": "patient_practice",
       "topic": "patient cdtm",
       "edit_version": 1,
-      "id_is_reserved_candidate_only": true
+      "id_is_reserved_candidate_only": true,
+      "correction_history": [
+        {
+          "date": "2026-11-18",
+          "reason": "Community CDTM drug-therapy disease list did not establish warfarin as an authorized stand-alone condition.",
+          "old_stem_scenario": "Warfarin/anticoagulation in a community pharmacy",
+          "new_stem_scenario": "Referred diabetes medication management with protocol-limited lab monitoring",
+          "sources": [
+            "https://www.mass.gov/doc/247-cmr-16-collaborative-drug-therapy-management/download",
+            "https://www.mass.gov/doc/243-cmr-2-licensing-and-the-practice-of-medicine-0/download"
+          ]
+        }
+      ]
     },
     {
       "slot_id": "C052",
@@ -370,5 +392,6 @@
       "id_is_reserved_candidate_only": true
     }
   ],
-  "qa_note": "Option positions redistributed, correct-only-length cues corrected; every key matched its Correct/Incorrect explanation after reordering. This is structural checking, not independent legal approval."
+  "qa_note": "Option positions redistributed, correct-only-length cues corrected; every key matched its Correct/Incorrect explanation after reordering. This is structural checking, not independent legal approval.",
+  "last_author_source_review": "2026-11-18"
 }
