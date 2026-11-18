@@ -321,7 +321,7 @@
     }
     $('mock-area-results').replaceChildren(areaList);
     const exposure = el('div', 'mock-exposure-grid');
-    for (const [key, label] of [['unseen', 'First-time unseen before start'], ['seen', 'Previously practiced before start']]) {
+    for (const [key, label] of [['unseen', 'Not previously checked in this browser'], ['seen', 'Previously checked in this browser']]) {
       const g = summary[key], box = el('div');
       box.append(el('strong', '', g.correct + '/' + g.submitted),
         el('span', '', label + ' · ' + g.total + ' assigned · ' +
