@@ -3,7 +3,7 @@
 **Plan date:** November 18, 2026 (America/New_York).  
 **Owner instruction updated Nov. 18:** proceed efficiently with author-side official-source/option review, without requiring a separate independent blind solver. Author review is not independent certification.  
 **Baseline:** `78b1c1ba163bf9cd43d0a6e8296c54f7c25c78f0`; 240 original questions, 48 learning sets, disjoint Forms A/B of 120 each.  
-**Status (Nov. 18, 2026 B2 checkpoint):** **60/120 drafted (B1+B2); 0/120 finally legally approved or released**. The owner waived a separate independent blind solver as an authoring prerequisite. All items remain in an unmerged Draft PR, not the live exam. A slot is a research assignment, not a verified legal conclusion or a finished question.
+**Status (Nov. 18, 2026 B3 checkpoint):** **90/120 drafted (B1+B2+B3); 0/120 finally legally approved or released**. The owner waived a separate independent blind solver as an authoring prerequisite. All items remain in an unmerged Draft PR, not the live exam. A slot is a research assignment, not a verified legal conclusion or a finished question.
 
 ## 1. Scope and controlling decisions
 
@@ -204,7 +204,7 @@ The [mechanical QA report](form-c/b2-author-structural-audit-2026-11-18.json) co
 
 **Specific B2 source or interpretation holds:** C023 (the revised report-deadline calculation), C072 (actual dispensing vs claims reversal under EPCS initial-transfer rules), C096 (current USP <795> authoritative normative wording for shorter supported BUD), C101 (current USP <797> authoritative rules for nonsterile-source CSP sterilization). Older B1 holds C044, C099, C100 and C104 remain. These items are not accepted. C057 also has potential duplication with old E30-193. Source ledgers retain exact law leads and caveats; a source URL in an author draft is **not** proof of full legal approval.
 
-**Current status:** 60 drafted, 0 finally legally approved, 0 frozen, 0 included in the public exam. No separate independent blind solution was performed or claimed. The release gate still requires verified official legal provisions, no material ambiguous keys, all four options accounted for, and A/B regression and C manifest checks before deployment.
+**Historical B2 checkpoint:** 60 drafted at that stage; 0 finally legally approved, 0 frozen, 0 included in the public exam. No separate independent blind solution was performed or claimed. The release gate still requires verified official legal provisions, no material ambiguous keys, all four options accounted for, and A/B regression and C manifest checks before deployment.
 
 **B2 quality improvement:** The first version of C023 substantially duplicated E30-116's arrest/foreign-discipline reporting rule. Instead of merely changing a name, C023 now requires calculating a real May 2026 incident/report timeline under both 247 CMR 20.03 and 10.03(1)(z), where the general 14-calendar-day report can be timely while the separate 7-business-day final-action report is late. This remains subject to item-level final source and date-math confirmation, and is not counted legally approved. All 22 SBA have no uniquely longest/shortest keyed option.
 
