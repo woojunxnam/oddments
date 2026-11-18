@@ -1,5 +1,8 @@
 # Massachusetts MPJE — Part D Gap-First 120-Question Research Roadmap
 
+> **Wave 1 작성 현황 — 2026-11-18**: 연구 계획을 실행해 **D001–D020 20문항 초안, 선택지 80개 해설, 공식 1차 출처 검토, 구조 QA**를 저장함. **Part D 20/120 작성, 0/120 법령 최종 frozen 승인, 0 배포.** 가장 중요한 반복 위험이었던 `D016`은 개인반입/재판매 문제에서 **상업용 FDA import entry notice + bond**로 대체. [W1 검토 보고서](part-d/w1-source-and-novelty-review-2026-11-18.md) · [W1 QA](part-d/w1-author-qa-2026-11-18.json) · [W1 선택지별 법령 근거](part-d/w1-per-option-source-gates-2026-11-18.json). 아래 기존 '0문항' 설명은 로드맵 작성 당시의 역사적 기준임. 시험 기능에는 추가되지 않았음.
+
+
 **작성일:** 2026-11-18 · **자료:** `main`의 기존 A/B 240문항 + Draft PR #281의 Form C 120문항 초안, 공식 NABP 2027 outline 및 Massachusetts/DEA/FDA 자료.  
 **상태:** **로드맵만 작성. Part D 실제 문제 0/120, 법령별 최종 정답 승인 0/120, 배포 0/120.**  
 **사용자 지시:** A/B/C와 같은 스타일·동일 결론을 반복하지 않고, **새로운 법률 판단과 미검증·취약 규정을 최대한 많이** 시험한다.
@@ -131,3 +134,13 @@ If a targeted weak topic is not legally active in Massachusetts or not meaningfu
 - [105 CMR 700 — proposal status page](https://www.mass.gov/info-details/105-cmr-700-implementation-of-mgl-c-94c-the-controlled-substances-act)
 
 **Repository action:** Planning documents only. No new executable questions, no merge or GitHub Pages publication. Separate PR deliberately keeps Form C #281 draft and live A/B untouched.
+
+
+## Wave 1 (D001–D020) 체크포인트 — 2026-11-18
+
+- 신규 FDA/DSCSA/EUA/Importation/NIOSH·OSHA 문항 20개를 GitHub Draft PR에 저장: `docs/part-d/w1-draft-items-001-010-2026-11-18.json`, `w1-draft-items-011-020-2026-11-18.json`.
+- 14 SBA + 6 SATA; 정답 A/B/C/D = 4/3/4/3; 지문 300자 미만 14개; 정답이 유일하게 최장 또는 최단인 SBA 0개; 80개 정답·오답 해설 marker 구조 확인; 잘못된 절대표현 shortcut 0개 (구조 QA 기준).
+- 특히 E30-108의 일반 adulteration/misbranding, E30-030의 suspect/illegitimate 일반 신고, E30-075의 small dispenser 인원조건, E30-187의 API 성분 적격성 내용과 같은 결정은 반복하지 않도록 설계를 교체했다.
+- FDA 2027-06-29 예정 COVID-drug EUA termination은 미래 시행 예정일로만 취급하고, 2026-11-18 현재 즉시 종료로 해석하지 않았다. Part D exam date별 재검증 필수.
+- `AUTHOR_SOURCE_CHECK`는 저자 1차 공식자료 검증이지 최종 출제·법령 승인이나 독립적 자문을 의미하지 않는다. 여전히 Part D 문항은 공개 모의시험에 노출되지 않으며 A/B/C 파일은 보존되어 있다.
+- **다음:** Wave 2 D021–D040의 Massachusetts 2026 Policy 2026-03 compounding EM, 2025 automated nonsterile device memo, prescription evidence, formulation schedule을 먼저 출처로 확인한 뒤 새 문항 작성. D 전체 완성 후 법률과 보안/저장/채점 시뮬레이션 검사를 거쳐 별도 배포한다.
