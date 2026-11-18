@@ -51,6 +51,10 @@ def verify(base_url: str) -> None:
             assert page.locator("#mock-running .exam-explanations").count() == 0
             q_a = page.evaluate("""() => window.MPJE_CH30_MOCK_FORMS.forms.A.map(id =>
               window.MPJE_CH30_QUESTIONS.find(q=>q.id===id))""")
+            # Official 2026 MPJE bulletin prohibits skipping unanswered questions.
+            page.locator("#mock-next").click()
+            assert page.locator("#mock-position").inner_text() == "Question 1 of 120"
+            assert "does not allow skipping" in page.locator("#mock-running-note").inner_text()
             # First response is kept as draft through reload. No progress answer is recorded yet.
             first = q_a[0]
             for answer in first["correct"]:
