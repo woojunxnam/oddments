@@ -38,8 +38,8 @@
       "B4": 30
     },
     "cognitive_candidates": {
-      "application": 71,
-      "integrated": 23,
+      "application": 72,
+      "integrated": 22,
       "recognition": 26
     },
     "novelty_modes": {
@@ -338,8 +338,8 @@
       "primary_area": 1,
       "official_competency": "1.1",
       "cluster": "delegation",
-      "decision_tested": "Allocate permitted pickup and counseling workflow during a sole pharmacist's authorized break.",
-      "legally_decisive_variation": "Previously completed pharmacist review versus a newly arising clinical question, and pharmacist on-premises status versus actual availability.",
+      "decision_tested": "Determine whether an unvalidated new prescription may be released during a sole-pharmacist break.",
+      "legally_decisive_variation": "Previously checked and DUR-completed new prescription may follow conditioned pickup workflow; an entirely unchecked new prescription cannot.",
       "nearest_existing_ids": [
         "E30-016",
         "E30-003",
@@ -705,18 +705,18 @@
       "primary_area": 1,
       "official_competency": "1.2",
       "cluster": "licensure_ce",
-      "decision_tested": "Recognize which licensing event permits a transferring pharmacist to begin Massachusetts pharmacist practice.",
-      "legally_decisive_variation": "NABP approval, exam completion, an employment offer and actual Board-issued authority are distinct stages.",
+      "decision_tested": "Identify the Board's discretionary review of CE renewal requirements in documented extenuating circumstances.",
+      "legally_decisive_variation": "A pharmacist's detailed signed illness statement must be considered by the Board; employer or NABP cannot independently grant an exception.",
       "nearest_existing_ids": [
-        "E30-206",
-        "E30-046",
-        "E30-156"
+        "E30-011",
+        "E30-071",
+        "E30-226"
       ],
       "novelty_mode": "transfer_check",
       "source_pack": "licensure_board",
       "source_verification_status": "AUTHOR_SOURCE_LEADS_RECORDED_FINAL_OPTION_SIGNOFF_PENDING",
       "format_candidate": "SBA",
-      "cognitive_level": "recognition",
+      "cognitive_level": "application",
       "production_batch": "B4",
       "pilot": false,
       "authoring_status": "drafted",
@@ -725,11 +725,10 @@
       "secondary_competencies": [],
       "source_evidence": [
         {
-          "citation_as_drafted": "247 CMR 3.02(1)(b), 3.02(2); 247 CMR 9.19(18)",
-          "official_url": "https://www.mass.gov/doc/247-cmr-3-pharmacist-licensure-requirements/download",
+          "citation_as_drafted": "247 CMR 4.03(6)",
+          "official_url": "https://www.mass.gov/doc/247-cmr-4-personal-registration-renewal-continuing-education-requirement/download",
           "source_review_date": "2026-11-18",
-          "evidence_kind": "official_primary_or_agency_guidance_lead",
-          "verification_level": "AUTHOR_SOURCE_LOCATED_EXACT_A_TO_D_LEGAL_SIGNOFF_PENDING"
+          "verification_level": "AUTHOR_LOCATED_A_TO_D_RELEASE_SIGNOFF_PENDING"
         }
       ],
       "independent_review": {
@@ -2408,18 +2407,18 @@
       "primary_area": 2,
       "official_competency": "2.4",
       "cluster": "safety_returns_cqi",
-      "decision_tested": "Evaluate a possible institutional return or reuse pathway without importing ordinary patient-return assumptions.",
-      "legally_decisive_variation": "Continuous institutional control, sealed unit-dose integrity and documented custody are contrasted with patient possession; a verified operative Massachusetts exception is a prerequisite.",
+      "decision_tested": "Distinguish patient-received Quality Related Events from near misses corrected before any patient receives the wrong medicine.",
+      "legally_decisive_variation": "The incorrect medication was never delivered to any patient; 247 CMR 15.01 requires patient receipt for its QRE definition, but near-miss analysis may still inform CQI.",
       "nearest_existing_ids": [
-        "E30-023",
-        "E30-127",
-        "E30-170"
+        "E30-009",
+        "E30-067",
+        "E30-147"
       ],
       "novelty_mode": "coverage_extension",
       "source_pack": "patient_practice",
       "source_verification_status": "AUTHOR_SOURCE_LEADS_RECORDED_FINAL_OPTION_SIGNOFF_PENDING",
       "format_candidate": "SBA",
-      "cognitive_level": "integrated",
+      "cognitive_level": "recognition",
       "production_batch": "B4",
       "pilot": false,
       "authoring_status": "drafted",
@@ -2428,11 +2427,10 @@
       "secondary_competencies": [],
       "source_evidence": [
         {
-          "citation_as_drafted": "247 CMR 9.01(5),(7)",
-          "official_url": "https://www.mass.gov/doc/247-cmr-9-professional-practice-standards/download",
+          "citation_as_drafted": "247 CMR 15.01, 15.02(1)",
+          "official_url": "https://www.mass.gov/doc/247-cmr-15-continuous-quality-improvement-program/download",
           "source_review_date": "2026-11-18",
-          "evidence_kind": "official_primary_or_agency_guidance_lead",
-          "verification_level": "AUTHOR_SOURCE_LOCATED_EXACT_A_TO_D_LEGAL_SIGNOFF_PENDING"
+          "verification_level": "AUTHOR_LOCATED_A_TO_D_RELEASE_SIGNOFF_PENDING"
         }
       ],
       "independent_review": {
@@ -5129,6 +5127,13 @@
     "structural_report": "docs/form-c/b4-author-structural-audit-2026-11-18.json",
     "review_gate_ledger": "docs/form-c/b4-review-gates-2026-11-18.json",
     "source_review_report": "docs/form-c/b4-source-review-2026-11-18.md",
-    "status": "30_NEW_ORIGINAL_DRAFTS_STRUCTURE_QA_PASS_LEGAL_FREEZE_PENDING"
+    "status": "30_NEW_ORIGINAL_DRAFTS_STRUCTURE_QA_PASS_LEGAL_FREEZE_PENDING",
+    "significant_replacements": [
+      "C017 duplicate E30-206 → CE exception review",
+      "C059 duplicate E30-023/127 → near-miss QRE",
+      "C008 mirror E30-016 → unchecked new Rx",
+      "C078 directions correction → gabapentin schedules and MassPAT",
+      "C091 pseudoephedrine → direct DEA brand/generic schedules"
+    ]
   }
 }
