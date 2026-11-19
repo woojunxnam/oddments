@@ -1,5 +1,8 @@
 # Massachusetts MPJE — Part D Gap-First 120-Question Research Roadmap
 
+> **최신 현황 — 2026-11-18 Wave 2 종료:** Part D **40/120 신규 초안 작성**, W2 D021–D040 **20문항·80개 해설, 공식 출처 1차 검토 및 360문항+W1 중복 검사 완료**. **최종 법령 frozen 승인 0/120, 공개 배포 0.** [W2 상세 보고서](part-d/w2-source-and-novelty-review-2026-11-18.md) · [W2 QA](part-d/w2-author-qa-2026-11-18.json) · [선택지별 법령 검토 대장](part-d/w2-per-option-source-gates-2026-11-18.json). 아래 초기 설계 당시의 0/120 및 W1의 20/120 표기는 당시 시점의 기록으로만 해석한다.
+
+
 > **Wave 1 작성 현황 — 2026-11-18**: 연구 계획을 실행해 **D001–D020 20문항 초안, 선택지 80개 해설, 공식 1차 출처 검토, 구조 QA**를 저장함. **Part D 20/120 작성, 0/120 법령 최종 frozen 승인, 0 배포.** 가장 중요한 반복 위험이었던 `D016`은 개인반입/재판매 문제에서 **상업용 FDA import entry notice + bond**로 대체. [W1 검토 보고서](part-d/w1-source-and-novelty-review-2026-11-18.md) · [W1 QA](part-d/w1-author-qa-2026-11-18.json) · [W1 선택지별 법령 근거](part-d/w1-per-option-source-gates-2026-11-18.json). 아래 기존 '0문항' 설명은 로드맵 작성 당시의 역사적 기준임. 시험 기능에는 추가되지 않았음.
 
 
@@ -144,3 +147,13 @@ If a targeted weak topic is not legally active in Massachusetts or not meaningfu
 - FDA 2027-06-29 예정 COVID-drug EUA termination은 미래 시행 예정일로만 취급하고, 2026-11-18 현재 즉시 종료로 해석하지 않았다. Part D exam date별 재검증 필수.
 - `AUTHOR_SOURCE_CHECK`는 저자 1차 공식자료 검증이지 최종 출제·법령 승인이나 독립적 자문을 의미하지 않는다. 여전히 Part D 문항은 공개 모의시험에 노출되지 않으며 A/B/C 파일은 보존되어 있다.
 - **다음:** Wave 2 D021–D040의 Massachusetts 2026 Policy 2026-03 compounding EM, 2025 automated nonsterile device memo, prescription evidence, formulation schedule을 먼저 출처로 확인한 뒤 새 문항 작성. D 전체 완성 후 법률과 보안/저장/채점 시뮬레이션 검사를 거쳐 별도 배포한다.
+
+
+## Wave 2 (D021–D040) checkpoint — 2026-11-18
+
+- Official source-backed **20 original English questions** added in `docs/part-d/w2-draft-items-021-030-2026-11-18.json` and `w2-draft-items-031-040-2026-11-18.json`.
+- Domain 1 **12**, Domain 2 **8**; **13 SBA + 7 SATA**; 13 brief stems (<300 chars); 80 choice explanations; zero single-answer unique-longest or unique-shortest hints and zero wrong-choice absolute cue flags.
+- Existing A/B 240, Form C draft 120, W1 20 compared. Full `w2-semantic-nearest-audit-2026-11-18.json` screens exact stems and lexical nearest. **3 substantive duplicate topic changes**: D022=60-day repeat EM + microbiologist (not E30-160 reporting time); D024=pass-through cleaner-space threshold (not nonviable suspension); D033=NDC not federal required vs dosage form required (not E30-199 DEA-number correction).
+- Actual regulatory focus: MA Policy 2026-03 environmental monitoring; Board USP <800> community advisory; 2025 Board automated nonsterile memo; 21 CFR 1306/1311; 2026 federal temporary O-DSMT Schedule I; actual products AUVELITY, LIBRAX, VIVITROL/BRIXADI and current state/federal treatment. Full current subscription USP chapter original not separately authenticated, so no claim of entire current USP signoff.
+- **Form D is still not playable** and no result history/scoring code is changed. W2 final law signoff pending; C form source approval pending separately.
+- **Next** D041–D060 focuses on Orange/Purple Book evidence, product labeling/repackaging, drug return scenarios, medication administration adverse reporting and DEA POA/ordering.
