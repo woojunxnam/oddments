@@ -17,3 +17,11 @@
 .quiz-answer-sources a{display:inline-block}
 .quiz-qualifier{font-size:.78rem;color:#50647a;margin:12px 0 0;line-height:1.5}
 @media(max-width:540px){.quiz-answer-grid{grid-template-columns:1fr}.quiz-answer-grid>div:first-child{grid-column:auto}.quiz-answer-title{font-size:1rem}}
+
+/* Keep Start new quiz and Next questions adjacent, even when the controls wrap. */
+.quiz-studyopts{align-items:center}
+.quiz-studyopts label{flex-wrap:wrap}
+.quiz-studyopts select{max-width:100%}
+.quiz-actions{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.quiz-scope-info{margin:4px 0 12px;line-height:1.5}
+@media(max-width:560px){.quiz-studyopts{align-items:stretch}.quiz-actions{width:100%}.quiz-actions>.btn{flex:1 1 auto}}
