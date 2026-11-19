@@ -37,6 +37,26 @@ function quizAnswerHTML(d,yes){
     +'<p class="quiz-qualifier">These are common uses and exam memory points, not exhaustive FDA indications or a substitute for checking the exact formulation, NDC, current labeling and state law.</p>';
 }
 
+
+function quizChoiceReviewHTML(options,reverse,correctId){
+  const counterpart=reverse?'Brand':'Generic';
+  return '<h4>All answer choices · '+counterpart+' names and schedules</h4>'
+    +'<div class="quiz-choice-review-grid">'
+    +options.map((d,i)=>{
+      const law=scheduleGuide(d);
+      const shown=reverse?d.generic:d.brand;
+      const paired=reverse?d.brand:d.generic;
+      return '<div class="quiz-choice-review-item'+(d.id===correctId?' is-answer':'')+'">'
+        +'<span class="quiz-choice-review-letter">'+String.fromCharCode(65+i)+'</span>'
+        +'<div class="quiz-choice-review-copy">'
+        +'<div class="quiz-choice-review-name">'+esc(shown)+'</div>'
+        +'<div class="quiz-choice-review-pair"><strong>'+counterpart+':</strong> '+esc(paired)+'</div>'
+        +'<div class="quiz-choice-review-sched"><span><strong>Federal:</strong> '+esc(law.federal)+'</span><span><strong>Massachusetts:</strong> '+esc(law.state)+'</span></div>'
+        +'</div></div>';
+    }).join('')
+    +'</div>';
+}
+
 let quizPool=[],quizBatch=[],quizCursor=0,current=null;
 const QUIZ_SET_SIZE=10;
 function shuffleQuiz(items){
@@ -84,6 +104,7 @@ function renderQuiz(){
   current=quizBatch[quizIndex]||null;
   const total=quizBatch.length;
   $('quizNext').disabled=true;
+  $('quizChoiceReview').innerHTML='';
   $('quizProgress').textContent=current?'Question '+(quizIndex+1)+' of '+total+' · '+quizScore+' correct':'';
   if(!current){
     $('quizPrompt').textContent=total?'Quiz complete — '+quizScore+' / '+total+' correct':'No matching drugs available for this filter.';
@@ -92,29 +113,41 @@ function renderQuiz(){
     return;
   }
   const reverse=$('quizDirection').value==='brand';
-  const correct=reverse?current.generic:current.brand;
+  const shownName=d=>reverse?d.generic:d.brand;
+  const correct=shownName(current);
+  // Preserve the actual drug/formulation record for every option. A matching
+  // name alone is insufficient when one ingredient has multiple products.
   const related=quizPool.filter(d=>d.id!==current.id&&sched(d.schedule)===sched(current.schedule));
-  let distractors=[...new Set(related.map(d=>reverse?d.generic:d.brand).filter(Boolean))].filter(v=>v!==correct);
-  if(distractors.length<3){
-    const more=DATA.filter(d=>d.id!==current.id).map(d=>reverse?d.generic:d.brand).filter(Boolean);
-    distractors=[...new Set([...distractors,...more])].filter(v=>v!==correct);
+  const other=DATA.filter(d=>d.id!==current.id&&sched(d.schedule)!==sched(current.schedule));
+  shuffleQuiz(related);
+  shuffleQuiz(other);
+  const options=[current];
+  const seen=new Set([correct]);
+  for(const d of [...related,...other]){
+    // Another brand of the same ingredient (or another generic display for
+    // the same brand) must never be a plausible second correct answer.
+    if(reverse?d.brand===current.brand:d.generic===current.generic)continue;
+    const name=shownName(d);
+    if(!name||seen.has(name))continue;
+    seen.add(name);
+    options.push(d);
+    if(options.length===4)break;
   }
-  shuffleQuiz(distractors);
-  const options=[correct,...distractors.slice(0,3)];
   shuffleQuiz(options);
   $('quizPrompt').textContent=reverse?'Which generic matches '+current.brand+'?':'Which brand matches '+current.generic+'?';
-  $('quizChoices').innerHTML=options.map((v,i)=>'<button class="choice" data-choice="'+i+'">'+String.fromCharCode(65+i)+'. '+esc(v)+'</button>').join('');
+  $('quizChoices').innerHTML=options.map((d,i)=>'<button class="choice" data-choice="'+i+'">'+String.fromCharCode(65+i)+'. '+esc(shownName(d))+'</button>').join('');
   $('quizFeedback').textContent='Select one answer.';
   document.querySelectorAll('[data-choice]').forEach((b,i)=>b.addEventListener('click',()=>{
     if(quizAnswered)return;
     quizAnswered=true;
-    const yes=options[i]===correct;
+    const yes=options[i].id===current.id;
     if(yes)quizScore++;
     document.querySelectorAll('[data-choice]').forEach((x,j)=>{
       x.disabled=true;
-      if(options[j]===correct)x.classList.add('correct');
+      if(options[j].id===current.id)x.classList.add('correct');
       else if(j===i)x.classList.add('wrong');
     });
+    $('quizChoiceReview').innerHTML=quizChoiceReviewHTML(options,reverse,current.id);
     $('quizFeedback').innerHTML=quizAnswerHTML(current,yes);
     $('quizNext').disabled=false;
     $('quizProgress').textContent='Question '+(quizIndex+1)+' of '+total+' · '+quizScore+' correct';
