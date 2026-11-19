@@ -25,3 +25,18 @@
 .quiz-actions{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
 .quiz-scope-info{margin:4px 0 12px;line-height:1.5}
 @media(max-width:560px){.quiz-studyopts{align-items:stretch}.quiz-actions{width:100%}.quiz-actions>.btn{flex:1 1 auto}}
+
+/* All four displayed quiz answers get source-record-linked counterpart and schedule notes. */
+.quiz-choice-review:empty{display:none}
+.quiz-choice-review{margin:0 0 14px}
+.quiz-choice-review h4{font-size:.96rem;margin:3px 0 9px}
+.quiz-choice-review-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+.quiz-choice-review-item{display:flex;gap:10px;align-items:flex-start;min-width:0;border:1px solid #d6e3ee;background:#f9fcff;border-radius:10px;padding:11px}
+.quiz-choice-review-item.is-answer{border-color:#8abbac;background:#f5fbf8}
+.quiz-choice-review-letter{flex:0 0 auto;width:27px;height:27px;display:grid;place-items:center;background:#e9f0f8;color:#24425f;border-radius:7px;font-weight:800}
+.quiz-choice-review-copy{min-width:0;overflow-wrap:anywhere}
+.quiz-choice-review-name{font-size:.9rem;font-weight:700}
+.quiz-choice-review-pair{font-size:.89rem;margin-top:2px}
+.quiz-choice-review-sched{color:#4d627a;font-size:.79rem;margin-top:6px;line-height:1.5}
+.quiz-choice-review-sched span{display:block}
+@media(max-width:800px){.quiz-choice-review-grid{grid-template-columns:1fr}}
