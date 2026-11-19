@@ -1,5 +1,8 @@
 # Massachusetts MPJE — Part D Gap-First 120-Question Research Roadmap
 
+> **최신 Wave 3 종료 (2026-11-18)** — **Part D 60/120 영어 초안 작성**, 이번 **D041–D060 20문항은 공식 법령의 저자 검토·A–D 80개 선택지 확인 후 `AUTHOR_LEGAL_ACCEPTED` 처리**. W1/W2 이전 40개는 아직 저자 최종 법령 승인이 아닌 1차 출처 검토 단계. **Public exam 법령 frozen 승인 0/120, GitHub Pages 배포 0**. A/B/C 360문항 실지문과 W1/W2 40문항 대비 중복 지문 0개이나 의미적 중복 자체의 독립 보증은 아님. [W3 전체 법령·신규성 보고서](part-d/w3-source-and-legal-approval-review-2026-11-18.md) · [20문항 법령 승인대장](part-d/w3-author-legal-approval-2026-11-18.json) · [QA](part-d/w3-author-qa-2026-11-18.json).
+
+
 > **최신 현황 — 2026-11-18 Wave 2 종료:** Part D **40/120 신규 초안 작성**, W2 D021–D040 **20문항·80개 해설, 공식 출처 1차 검토 및 360문항+W1 중복 검사 완료**. **최종 법령 frozen 승인 0/120, 공개 배포 0.** [W2 상세 보고서](part-d/w2-source-and-novelty-review-2026-11-18.md) · [W2 QA](part-d/w2-author-qa-2026-11-18.json) · [선택지별 법령 검토 대장](part-d/w2-per-option-source-gates-2026-11-18.json). 아래 초기 설계 당시의 0/120 및 W1의 20/120 표기는 당시 시점의 기록으로만 해석한다.
 
 
@@ -157,3 +160,13 @@ If a targeted weak topic is not legally active in Massachusetts or not meaningfu
 - Actual regulatory focus: MA Policy 2026-03 environmental monitoring; Board USP <800> community advisory; 2025 Board automated nonsterile memo; 21 CFR 1306/1311; 2026 federal temporary O-DSMT Schedule I; actual products AUVELITY, LIBRAX, VIVITROL/BRIXADI and current state/federal treatment. Full current subscription USP chapter original not separately authenticated, so no claim of entire current USP signoff.
 - **Form D is still not playable** and no result history/scoring code is changed. W2 final law signoff pending; C form source approval pending separately.
 - **Next** D041–D060 focuses on Orange/Purple Book evidence, product labeling/repackaging, drug return scenarios, medication administration adverse reporting and DEA POA/ordering.
+
+
+## Wave 3 D041–D060 completion and author legal approval — 2026-11-18
+
+- D041–D060 **20 new English questions** + **80 A–D specific explanations**, official sources checked and `AUTHOR_LEGAL_ACCEPTED` by this author (not independent state Board/legal-professional certification). **Cumulative Part D: 60/120 drafted, 20/120 author legally accepted, 0/120 editorial frozen/published**.
+- D2: 16 items, D3: 4; 12 SBA / 8 SATA; 13 brief stems <300 characters; single answer keys A/B/C/D = 2/4/2/4; no uniquely longest/shortest correct, no wrong absolute-word cue or key/rationale alignment error.
+- [W3 detailed legal review](part-d/w3-source-and-legal-approval-review-2026-11-18.md), [choice-level ledger](part-d/w3-author-legal-approval-2026-11-18.json), [QA](part-d/w3-author-qa-2026-11-18.json), [full source-bank actual-stem scan](part-d/w3-complete-question-bank-screen-2026-11-18.json) and two draft JSON files under `docs/part-d/`.
+- Replaced overlapping decisions (Unithroid multiple AB codes, NDA authorized-generic reporting, Purple Book package details, LTCF PPI exception, MassHealth nursing facility unit-dose returns, reverse distributor 30-day destruction, electronically executed DEA POA). The actual current federal DEA 2026-03-20 POA amendment replaces outdated applicant-signer guidance; incorrectly linked Federal Register PDF was repaired.
+- **Important exception**: 2020 FDA 6-month/25% unit-dose repackaging dating is nonbinding enforcement-discretion guidance limited to qualified commercial repackagers. It is not a state pharmacy or compounding BUD. DPH 2026 non-vaccine injection advice distinguishes immediate prescriber communication from circumstance-specific Board reporting.
+- Next D061–D080: DEA Form 222/CSOS, controlled inventory records, theft/loss reports, reverse distribution/disposal, inspection. **No Part D public test yet.**
