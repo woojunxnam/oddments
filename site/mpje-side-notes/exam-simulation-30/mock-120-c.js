@@ -448,7 +448,7 @@
   });
   // A saved active session cannot be silently replaced by a new form.
   if (!state.activeForm) {
-    for (const form of ['A', 'B']) {
+    for (const form of ['C']) {
       if (state.current[form]?.status === 'active') { state.activeForm = form; state.visibleForm = form; break; }
     }
   }
