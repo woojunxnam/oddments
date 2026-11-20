@@ -188,7 +188,7 @@
       new Date(s.completedAt).toLocaleDateString();
   }
   function updateDashboard() {
-    for (const form of ['C'] {
+    for (const form of ['C']) {
       const s = state.current[form], button = $('mock-open-' + form.toLowerCase());
       $('mock-status-' + form.toLowerCase()).textContent = statusText(form);
       button.textContent = !s ? 'Start Exam ' + form :
