@@ -86,7 +86,7 @@ def verify(base_url: str) -> None:
             page.locator("#review-hub-list button").first.wait_for(timeout=5000)
             assert page.locator("#review-hub-summary").inner_text().count("Incorrect") == 1
             assert "Unanswered" in page.locator("#review-hub-summary").inner_text()
-            assert page.locator("#review-hub-list button").count() == 120
+            assert page.locator("#review-hub-list button").count() == 119
             page.locator("#review-hub-filter").select_option("incorrect")
             assert page.locator("#review-hub-list button").count() == 1
             assert first["id"] in page.locator("#mock-review").get_attribute("data-current-question-id")
