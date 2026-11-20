@@ -1,10 +1,11 @@
-name: Chapter 30 two-full-length-mock QA
+name: Chapter 30 full-length and mixed-mock QA
 on:
   pull_request:
     paths:
       - 'site/mpje-side-notes/exam-simulation-30/**'
       - 'scripts/verify_ch30_mock120_browser.py'
       - 'scripts/verify_ch30_form_c_browser.py'
+      - 'scripts/verify_ch30_mixes_browser.py'
       - '.github/workflows/ch30-mock120-qa.yml'
   workflow_dispatch:
 permissions:
@@ -28,10 +29,15 @@ jobs:
         run: |
           node --check site/mpje-side-notes/exam-simulation-30/mock-120.js
           node --check site/mpje-side-notes/exam-simulation-30/mock-120-c.js
-      - name: Exercise A/B and C in real desktop/mobile browsers
+          node --check site/mpje-side-notes/exam-simulation-30/mock-120-mixes.js
+          node --check site/mpje-side-notes/exam-simulation-30/mock-review-tools.js
+          node --check site/mpje-side-notes/exam-simulation-30/form-d-questions.js
+          node --check site/mpje-side-notes/exam-simulation-30/mixed-forms.js
+      - name: Exercise A/B, C, mixed exams and answer review in desktop/mobile browsers
         run: |
           python -m http.server 8173 --bind 127.0.0.1 --directory site > /tmp/ch30-mock-server.log 2>&1 &
           SERVER_PID=$!
           trap 'kill $SERVER_PID 2>/dev/null || true' EXIT
           python scripts/verify_ch30_mock120_browser.py --base-url http://127.0.0.1:8173/
           python scripts/verify_ch30_form_c_browser.py --base-url http://127.0.0.1:8173/
+          python scripts/verify_ch30_mixes_browser.py --base-url http://127.0.0.1:8173/
