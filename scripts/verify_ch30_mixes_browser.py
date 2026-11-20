@@ -73,6 +73,13 @@ def verify(base_url: str) -> None:
             page.locator(f'#mock-question input[value="{wrong}"]').check()
             page.locator("#mock-next").click()
             assert page.locator("#mock-position").inner_text() == "Question 2 of 120"
+            second = page.evaluate("""() => {
+              const id=window.MPJE_CH30_MIXED_MOCK_FORMS.forms.CD1[1];
+              return [...window.MPJE_CH30_FORM_C_QUESTIONS,...window.MPJE_CH30_FORM_D_QUESTIONS].find(x=>x.id===id);
+            }""")
+            for answer in second["correct"]:
+                page.locator(f'#mock-question input[value="{answer}"]').check()
+            page.locator("#mock-next").click()
             page.locator("#mock-finish-early").click()
             assert page.locator("#mock-completed").is_visible()
             assert page.locator("#mock-review-picker option").count() == 120
