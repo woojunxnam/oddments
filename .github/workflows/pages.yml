@@ -162,6 +162,29 @@ jobs:
         env:
           PAGE_URL: ${{ steps.deployment.outputs.page_url }}
         run: python scripts/verify_ch30_mock120_browser.py --base-url "$PAGE_URL"
+      - name: Verify the published Form C assets and isolated exam behavior
+        env:
+          PAGE_URL: ${{ steps.deployment.outputs.page_url }}
+        run: |
+          python - <<'PY'
+          import hashlib, os, time, urllib.request
+          from pathlib import Path
+          base=os.environ['PAGE_URL'].rstrip('/')+'/mpje-side-notes/exam-simulation-30/'
+          paths=['mock-120-c.html','mock-120-c.js','form-c-questions.js','form-c-manifest.js']
+          for attempt in range(12):
+              try:
+                  for path in paths:
+                      request=urllib.request.Request(base+path+'?release='+os.environ['GITHUB_SHA'],headers={'Cache-Control':'no-cache'})
+                      with urllib.request.urlopen(request,timeout=30) as response: actual=response.read()
+                      expected=(Path('site/mpje-side-notes/exam-simulation-30')/path).read_bytes()
+                      assert hashlib.sha256(actual).digest()==hashlib.sha256(expected).digest(),path
+                  print('Published Form C assets match merged main exactly.')
+                  break
+              except Exception:
+                  if attempt==11:raise
+                  time.sleep(5)
+          PY
+          python scripts/verify_ch30_form_c_browser.py --base-url "$PAGE_URL"
       - name: Retain published draft33 verification screenshots
         if: always()
         uses: actions/upload-artifact@v4
