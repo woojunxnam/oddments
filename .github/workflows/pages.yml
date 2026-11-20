@@ -48,6 +48,9 @@ jobs:
         uses: actions/upload-pages-artifact@v4
         with:
           path: /tmp/mpje-public-site
+      # GitHub's artifact listing may lag a successful upload in the same run.
+      - name: Allow uploaded Pages artifact to become visible
+        run: sleep 20
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
