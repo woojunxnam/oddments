@@ -1,0 +1,197 @@
+{
+  "audit_id": "AUDIT-CLAUDE-FRESH-B3S3-V2-REALISM-INITIAL-2026-08-20",
+  "auditor": "CLAUDE",
+  "auditor_instance": "CLAUDE-FRESH-B3S3-V2",
+  "audit_date": "2026-08-20",
+  "audit_scope": "REAUDIT",
+  "review_type": "REALISM_REVIEW",
+  "independent": true,
+  "audit_status": "FULLY_ADJUDICATED",
+  "style_profile": {
+    "profile_id": "MPJE-MA-PRE2027",
+    "content_version": 1,
+    "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+  },
+  "question_ids": [
+    "MA-Q-0001",
+    "MA-Q-0002",
+    "MA-Q-0003",
+    "MA-Q-0005",
+    "MA-Q-0006",
+    "MA-Q-0007",
+    "MA-Q-0008",
+    "MA-Q-0010"
+  ],
+  "question_hashes": {
+    "MA-Q-0001": "4656688a021b2cb975686d7295598359bc7ca5debb044639b82f10ac459c4de9",
+    "MA-Q-0002": "933b4efd220b1a3fe901d63cf0e7364c4f7fd8084757b9a61dd1f671ecee2cf6",
+    "MA-Q-0003": "9a9c8c30ccd1da0239186c1dfe4ce970bac5714528fbff54b5f95a5d10afd65a",
+    "MA-Q-0005": "0074e68b608e446b6212f3ad419a1d398eeeef01b89750dc5e14bce170bf8b3e",
+    "MA-Q-0006": "56401ebdedcc1562754c5655076b4fbbb5b2ec3490eac7d2c7af447c53a0fe4d",
+    "MA-Q-0007": "a94a74d61eabfaba93b4900735290529407fedd78bf069681d57b90edaab31ac",
+    "MA-Q-0008": "fd553c6a661b1887fef5d856b28ceb586aeb6af9977447999720ad68b73babc0",
+    "MA-Q-0010": "324956b5e9b7bc133655564587544f3d2deb4ec0bd0bc44e4b2119460a1a8b63"
+  },
+  "results": [
+    {
+      "Question_ID": "MA-Q-0001",
+      "Verdict": "MAJOR_REWRITE",
+      "Severity": "High",
+      "Realism_Verdict": "FAIL",
+      "Reviewed_Date": "2026-08-20",
+      "Criteria": {
+        "jurisprudence_reasoning": true,
+        "practice_plausibility": true,
+        "authentic_distractors": true,
+        "wording_not_guessable": true,
+        "reasoning_not_trivia": true,
+        "natural_rule_combination": true,
+        "appropriate_drug_context": true,
+        "distinct_from_bank": false,
+        "not_schedule_flashcard": true,
+        "public_style_without_copying": true
+      },
+      "Notes": "Scope note. This is the FIRST independent audit of legacy content, not a reaudit: these eight records have carried verification_status AUDIT_PENDING and an empty audits array since 2026-08-13 and have never held a current-hash independent audit. The frozen contract labels the scope LEGACY_SALVAGE_FIRST_AUDIT, which is not a value the audit schema accepts. INITIAL_BATCH requires at least 30 results and TARGETED_INITIAL_BATCH is restricted by scripts/validate_audits.py to a closed governance whitelist that does not contain BATCH3-S3, so REAUDIT is the only schema-valid and validator-valid small-batch scope available to this auditor. I did not modify the schema or the validator to widen it; the controller should add a BATCH3-S3 entry to TARGETED_INITIAL_BATCH_AUTHORIZATIONS (authorizing issue 91, represented candidate SHA 7e74148e33f191f1be04b30001eb8b840706c611) if the record is to carry its true scope label. Full-bank comparison method. I compared this item against the entire canonical bank as it stands at the represented candidate, 360 question records extracted from the freeze commit 1072516feccb8fcf42622a897da7c2f0a5bc5956, not a sample and not the existing duplicate report. Three passes were run over all 360 records: a lexical nearest-neighbour sweep on normalised stem text using both Jaccard token overlap and sequence ratio; a structural sweep grouping every record by rule_ids, family_id, topic and subtopic; and a discrimination sweep in which I read the stem, every option, the key and the core reasoning of every bank record that shares a dependency rule with any item in this tranche, covering the 21 records touching refill limits, the 10 touching Schedule II partial filling, the 5 touching the Massachusetts Schedule II/III quantity framework, the 20 touching MassPAT reporting and the 4 touching pseudoephedrine. Note on the freeze gates: the package records duplicate_detector_findings 0 and max_stem_similarity_vs_bank 0.561, and my lexical pass agrees with those numbers. The duplications found below are invisible to a lexical detector because they are discrimination-level rather than wording-level: the same keyed proposition, tested with the same competing distractor, wearing a different drug name. Closest comparisons: MA-Q-0026, MA-Q-0050, MA-Q-0035, MA-Q-0038, MA-Q-0046. The failure is MA-Q-0026 and it is a near-clone rather than a family resemblance. MA-Q-0026 reads 'a Xanax prescription issued five months ago has already been refilled five times. The patient asks for another refill', and its key is 'Require renewed prescriber authorization because the federal five-refill limit has been reached.' MA-Q-0001 reads 'A Massachusetts pregabalin prescription was issued five months ago and has already been refilled five times', and its key is 'Require new prescriber authorization because the five-refill maximum has been reached.' The two numeric facts are identical, the keyed sentence is identical but for one word, and both items carry the same competing distractor that the prescription may still be dispensed because it is under six months old. MA-Q-0026 even carries 'Use Massachusetts Schedule V rules instead of the federal Schedule IV rule' as its own distractor, so the bank already surfaces the Schedule V overlay in the very item this one duplicates. Separately, MA-Q-0050 already keys 'Massachusetts Schedule V refill limits apply' for Lomotil. A candidate who has met MA-Q-0026 answers MA-Q-0001 by pattern match without ever reaching the point the item is supposed to test, which is that the five-refill ceiling for Schedule V comes from 247 CMR 9.04(13) rather than from 21 CFR 1306.22. The other nine criteria were judged independently and pass. jurisprudence_reasoning passes because a candidate who reasons rather than pattern-matches must identify the state source of the limit. practice_plausibility passes; this is an everyday profile check. authentic_distractors passes on balance: option B, reclassifying the drug as Schedule VI, self-eliminates, but A and D both encode real errors a candidate makes, namely importing the Schedule VI one-year window and checking only the clock. wording_not_guessable passes; the options are of comparable length and register and the key carries no hedging tell. reasoning_not_trivia passes because the item needs a classification step, a state-overlay step and a count. natural_rule_combination passes. appropriate_drug_context passes; pregabalin is the natural Schedule V vehicle. not_schedule_flashcard passes because the schedule is a step rather than the answer. public_style_without_copying passes. Repair direction: the discrimination is worth keeping but needs a fact pattern that MA-Q-0026 cannot answer, for example one where the six-month clock and the refill count point in opposite directions, or one where the candidate must notice that the federal section they reached for does not cover the schedule in front of them."
+    },
+    {
+      "Question_ID": "MA-Q-0002",
+      "Verdict": "MAJOR_REWRITE",
+      "Severity": "High",
+      "Realism_Verdict": "FAIL",
+      "Reviewed_Date": "2026-08-20",
+      "Criteria": {
+        "jurisprudence_reasoning": true,
+        "practice_plausibility": true,
+        "authentic_distractors": true,
+        "wording_not_guessable": true,
+        "reasoning_not_trivia": false,
+        "natural_rule_combination": true,
+        "appropriate_drug_context": true,
+        "distinct_from_bank": false,
+        "not_schedule_flashcard": false,
+        "public_style_without_copying": true
+      },
+      "Notes": "Full-bank comparison method. I compared this item against the entire canonical bank as it stands at the represented candidate, 360 question records extracted from the freeze commit 1072516feccb8fcf42622a897da7c2f0a5bc5956, not a sample and not the existing duplicate report. Three passes were run over all 360 records: a lexical nearest-neighbour sweep on normalised stem text using both Jaccard token overlap and sequence ratio; a structural sweep grouping every record by rule_ids, family_id, topic and subtopic; and a discrimination sweep in which I read the stem, every option, the key and the core reasoning of every bank record that shares a dependency rule with any item in this tranche, covering the 21 records touching refill limits, the 10 touching Schedule II partial filling, the 5 touching the Massachusetts Schedule II/III quantity framework, the 20 touching MassPAT reporting and the 4 touching pseudoephedrine. Note on the freeze gates: the package records duplicate_detector_findings 0 and max_stem_similarity_vs_bank 0.561, and my lexical pass agrees with those numbers. The duplications found below are invisible to a lexical detector because they are discrimination-level rather than wording-level: the same keyed proposition, tested with the same competing distractor, wearing a different drug name. Closest comparisons: MA-Q-0198, MA-Q-0050, MA-Q-0182, MA-Q-0201, MA-Q-0037. Three criteria fail. distinct_from_bank fails against MA-Q-0198, which is also a SATA on MA-PMP-REPORTING and asks 'Which dispensing transactions are generally included in the Schedule II-V/gabapentin reporting requirement?' Its key is gabapentin, oxycodone, alprazolam and pregabalin. The entire keyed set of MA-Q-0002, gabapentin and pregabalin, is a proper subset of that key, tested in the same item type on the same rule. MA-Q-0050 additionally keys 'Covered Schedule V dispensing is reportable to MassPAT.' Nothing in MA-Q-0002 discriminates a candidate that MA-Q-0198 does not already discriminate, apart from the pseudoephedrine distractor. reasoning_not_trivia fails because the item resolves to recalling which drug names sit on the MassPAT list. The stem says so out loud, asking which dispensings belong in the stream 'on the basis of the listed drug', and the clinical indications attached to the options, postherpetic neuralgia and neuropathic pain, are inert: swap them for any other indication and the key does not move. There is no rule interaction, no timing, no setting and no judgement. not_schedule_flashcard fails for the same reason in its reporting form; a reportability lookup is the direct analogue of a schedule lookup, and the criterion is aimed at exactly this shape of item. The remaining criteria pass on their own terms. jurisprudence_reasoning passes narrowly, because option C does require the candidate to see that an over-the-counter CMEA sale is not a prescription dispensing. practice_plausibility passes. authentic_distractors passes on balance: option C is a genuine trap for candidates who conflate the pseudoephedrine logbook with the PMP, although option D, 'None of the listed transactions', is dead weight that no informed candidate weighs. wording_not_guessable passes. natural_rule_combination and appropriate_drug_context pass. public_style_without_copying passes. Repair direction: make the reporting status a step rather than the answer, for example by putting the candidate in a workflow where a dispensing must be classified and then something follows from the classification, and remove the overlap with the MA-Q-0198 key."
+    },
+    {
+      "Question_ID": "MA-Q-0003",
+      "Verdict": "MAJOR_REWRITE",
+      "Severity": "Medium",
+      "Realism_Verdict": "FAIL",
+      "Reviewed_Date": "2026-08-20",
+      "Criteria": {
+        "jurisprudence_reasoning": true,
+        "practice_plausibility": true,
+        "authentic_distractors": false,
+        "wording_not_guessable": true,
+        "reasoning_not_trivia": true,
+        "natural_rule_combination": true,
+        "appropriate_drug_context": true,
+        "distinct_from_bank": false,
+        "not_schedule_flashcard": true,
+        "public_style_without_copying": true
+      },
+      "Notes": "Full-bank comparison method. I compared this item against the entire canonical bank as it stands at the represented candidate, 360 question records extracted from the freeze commit 1072516feccb8fcf42622a897da7c2f0a5bc5956, not a sample and not the existing duplicate report. Three passes were run over all 360 records: a lexical nearest-neighbour sweep on normalised stem text using both Jaccard token overlap and sequence ratio; a structural sweep grouping every record by rule_ids, family_id, topic and subtopic; and a discrimination sweep in which I read the stem, every option, the key and the core reasoning of every bank record that shares a dependency rule with any item in this tranche, covering the 21 records touching refill limits, the 10 touching Schedule II partial filling, the 5 touching the Massachusetts Schedule II/III quantity framework, the 20 touching MassPAT reporting and the 4 touching pseudoephedrine. Note on the freeze gates: the package records duplicate_detector_findings 0 and max_stem_similarity_vs_bank 0.561, and my lexical pass agrees with those numbers. The duplications found below are invisible to a lexical detector because they are discrimination-level rather than wording-level: the same keyed proposition, tested with the same competing distractor, wearing a different drug name. Closest comparisons: MA-Q-0014, MA-Q-0021, MA-Q-0094, MA-Q-0190, MA-Q-0189. Two criteria fail. distinct_from_bank fails because the same-pharmacy proposition is already keyed once and used as a distractor twice. MA-Q-0014 keys 'Dispense the documented remainder at the same pharmacy before the 30-day issue-date deadline' and carries 'Send the balance to any pharmacy selected by the patient' as an unkeyed option. MA-Q-0021 carries 'Allow the patient to collect the balance from a different pharmacy' as an unkeyed option. MA-Q-0003 simply moves the camera to the second pharmacy's counter and asks the same question; it supplies no element that MA-Q-0014 does not already carry, and it is strictly weaker than MA-Q-0014 because it drops the deadline element. The reframing is a genuine practice perspective, which is why the severity is Medium rather than High, but perspective alone is not a new discrimination. authentic_distractors fails because two of the three wrong options self-eliminate. Option C, that the remainder 'automatically becomes a new prescription' on day 31, and option D, that the pharmacist may 'Convert methylphenidate to Schedule III', are not errors a candidate at this level entertains; option D in particular asserts a power no pharmacist has. Only option A competes, so the item is effectively a two-way choice dressed as a four-way one. The other criteria pass. jurisprudence_reasoning passes; the candidate must separate a partial-fill remainder from a transferable refill. practice_plausibility passes and is the item's strongest feature, because a patient presenting at a second pharmacy is a real counter event. wording_not_guessable passes. reasoning_not_trivia passes; the answer is a rule application, not a number. natural_rule_combination, appropriate_drug_context, not_schedule_flashcard and public_style_without_copying pass. Repair direction: keep the second-pharmacy framing, which is the good idea here, but give it a discrimination MA-Q-0014 lacks, and replace options C and D with errors a competent candidate could actually make."
+    },
+    {
+      "Question_ID": "MA-Q-0005",
+      "Verdict": "MAJOR_REWRITE",
+      "Severity": "Medium",
+      "Realism_Verdict": "FAIL",
+      "Reviewed_Date": "2026-08-20",
+      "Criteria": {
+        "jurisprudence_reasoning": false,
+        "practice_plausibility": true,
+        "authentic_distractors": true,
+        "wording_not_guessable": true,
+        "reasoning_not_trivia": false,
+        "natural_rule_combination": true,
+        "appropriate_drug_context": true,
+        "distinct_from_bank": true,
+        "not_schedule_flashcard": false,
+        "public_style_without_copying": true
+      },
+      "Notes": "Full-bank comparison method. I compared this item against the entire canonical bank as it stands at the represented candidate, 360 question records extracted from the freeze commit 1072516feccb8fcf42622a897da7c2f0a5bc5956, not a sample and not the existing duplicate report. Three passes were run over all 360 records: a lexical nearest-neighbour sweep on normalised stem text using both Jaccard token overlap and sequence ratio; a structural sweep grouping every record by rule_ids, family_id, topic and subtopic; and a discrimination sweep in which I read the stem, every option, the key and the core reasoning of every bank record that shares a dependency rule with any item in this tranche, covering the 21 records touching refill limits, the 10 touching Schedule II partial filling, the 5 touching the Massachusetts Schedule II/III quantity framework, the 20 touching MassPAT reporting and the 4 touching pseudoephedrine. Note on the freeze gates: the package records duplicate_detector_findings 0 and max_stem_similarity_vs_bank 0.561, and my lexical pass agrees with those numbers. The duplications found below are invisible to a lexical detector because they are discrimination-level rather than wording-level: the same keyed proposition, tested with the same competing distractor, wearing a different drug name. Closest comparisons: MA-Q-0107, MA-Q-0108, MA-Q-0009, MA-Q-0340. distinct_from_bank passes and I record that finding positively: MA-Q-0107 turns on the narrow 60 milligram single-package exception to the purchaser-identification and logbook requirement, MA-Q-0108 turns on store-level DEA self-certification, and neither compares the daily ceiling with the 30-day ceiling. No other record in the 360 does. The item nevertheless fails on three linked criteria that describe one defect. reasoning_not_trivia fails because the item reduces to holding two DEA numbers, 3.6 and 9, and comparing 4.0 with each. The stem removes even the arithmetic by stating that the customer has no purchases in the preceding 30 days, so the 30-day leg needs no running total, no date handling and no aggregation across transactions. jurisprudence_reasoning fails for the same reason: nothing is reasoned about the law, a threshold is recalled. not_schedule_flashcard fails in the quantity-limit form of that criterion; a bare recall of two published federal numbers is the same shape of item as a schedule lookup and is what the criterion exists to catch. The remaining criteria genuinely pass and I did not fail them to reinforce the verdict. authentic_distractors passes and is the item's real strength: A inverts the two limits, C over-includes by asserting both are breached, and D under-includes, so all three encode distinct, live confusions for a candidate who has not memorised the figures. wording_not_guessable passes; the four options are parallel in length and register and the key carries no tell. practice_plausibility passes; this is a real counter transaction. natural_rule_combination passes trivially, since a single rule is applied without strain. appropriate_drug_context and public_style_without_copying pass. Repair direction: force the 30-day ceiling to do work, for example by giving the purchaser a real 30-day history that must be aggregated across transactions, or by making the candidate notice that a shipped portion engages the separate 7.5 gram limit, so that the item tests handling of two interacting ceilings rather than recall of two numbers."
+    },
+    {
+      "Question_ID": "MA-Q-0006",
+      "Verdict": "MAJOR_REWRITE",
+      "Severity": "High",
+      "Realism_Verdict": "FAIL",
+      "Reviewed_Date": "2026-08-20",
+      "Criteria": {
+        "jurisprudence_reasoning": true,
+        "practice_plausibility": true,
+        "authentic_distractors": false,
+        "wording_not_guessable": false,
+        "reasoning_not_trivia": true,
+        "natural_rule_combination": true,
+        "appropriate_drug_context": true,
+        "distinct_from_bank": false,
+        "not_schedule_flashcard": true,
+        "public_style_without_copying": true
+      },
+      "Notes": "Full-bank comparison method. I compared this item against the entire canonical bank as it stands at the represented candidate, 360 question records extracted from the freeze commit 1072516feccb8fcf42622a897da7c2f0a5bc5956, not a sample and not the existing duplicate report. Three passes were run over all 360 records: a lexical nearest-neighbour sweep on normalised stem text using both Jaccard token overlap and sequence ratio; a structural sweep grouping every record by rule_ids, family_id, topic and subtopic; and a discrimination sweep in which I read the stem, every option, the key and the core reasoning of every bank record that shares a dependency rule with any item in this tranche, covering the 21 records touching refill limits, the 10 touching Schedule II partial filling, the 5 touching the Massachusetts Schedule II/III quantity framework, the 20 touching MassPAT reporting and the 4 touching pseudoephedrine. Note on the freeze gates: the package records duplicate_detector_findings 0 and max_stem_similarity_vs_bank 0.561, and my lexical pass agrees with those numbers. The duplications found below are invisible to a lexical detector because they are discrimination-level rather than wording-level: the same keyed proposition, tested with the same competing distractor, wearing a different drug name. Closest comparisons: MA-Q-0024, MA-Q-0197, MA-Q-0041, MA-Q-0043, MA-Q-0169. Three criteria fail. distinct_from_bank fails against two records. MA-Q-0024 is an SBA on the same rule with the same drug and the same indication, 'generic buprenorphine sublingual tablets for opioid use disorder with a 90-day quantity', keyed to 'The OUD pathway may permit one fill of up to 90 days.' MA-Q-0197 is a SATA on the same rule that keys 'Buprenorphine for opioid use disorder' as a qualifying 90-day category and names Policy 2024-05 in its stem. MA-Q-0006 keys the same pathway for the same drug class and adds only the observation that the naloxone component does not decontrol the product, which is a classification fact rather than a new discrimination. authentic_distractors fails because none of the three wrong options competes. Option A says the naloxone component 'makes the entire product noncontrolled', option B says 'Any opioid-related product is Schedule II and may not have refills', and option D says the product 'becomes Schedule VI after its first dispensing'. Each is a categorical impossibility rather than a plausible error, and a candidate who knows nothing about the 90-day pathway can still eliminate all three. wording_not_guessable fails as a direct consequence and is the more serious of the two: the key is the only option written in measured, conditional language, 'remains Schedule III and may qualify', while the three wrong options are absolutist. The key is pickable from register alone, without reading the stem. The remaining criteria pass. jurisprudence_reasoning passes because the intended path, classify then match the indication to the statutory carve-out, is genuine legal reasoning. practice_plausibility passes. reasoning_not_trivia passes on the intended path. natural_rule_combination passes; schedule and quantity framework belong together. appropriate_drug_context passes. not_schedule_flashcard passes because the schedule is a step. public_style_without_copying passes. Repair direction: rewrite all three distractors as errors a prepared candidate might defend, for example a 30-day answer that ignores the OUD carve-out or a 90-day answer that over-generalises the carve-out to any Schedule III opioid, and give the item a discrimination that MA-Q-0024 and MA-Q-0197 do not already hold."
+    },
+    {
+      "Question_ID": "MA-Q-0007",
+      "Verdict": "MAJOR_REWRITE",
+      "Severity": "High",
+      "Realism_Verdict": "FAIL",
+      "Reviewed_Date": "2026-08-20",
+      "Criteria": {
+        "jurisprudence_reasoning": false,
+        "practice_plausibility": true,
+        "authentic_distractors": false,
+        "wording_not_guessable": false,
+        "reasoning_not_trivia": false,
+        "natural_rule_combination": true,
+        "appropriate_drug_context": true,
+        "distinct_from_bank": true,
+        "not_schedule_flashcard": true,
+        "public_style_without_copying": true
+      },
+      "Notes": "Full-bank comparison method. I compared this item against the entire canonical bank as it stands at the represented candidate, 360 question records extracted from the freeze commit 1072516feccb8fcf42622a897da7c2f0a5bc5956, not a sample and not the existing duplicate report. Three passes were run over all 360 records: a lexical nearest-neighbour sweep on normalised stem text using both Jaccard token overlap and sequence ratio; a structural sweep grouping every record by rule_ids, family_id, topic and subtopic; and a discrimination sweep in which I read the stem, every option, the key and the core reasoning of every bank record that shares a dependency rule with any item in this tranche, covering the 21 records touching refill limits, the 10 touching Schedule II partial filling, the 5 touching the Massachusetts Schedule II/III quantity framework, the 20 touching MassPAT reporting and the 4 touching pseudoephedrine. Note on the freeze gates: the package records duplicate_detector_findings 0 and max_stem_similarity_vs_bank 0.561, and my lexical pass agrees with those numbers. The duplications found below are invisible to a lexical detector because they are discrimination-level rather than wording-level: the same keyed proposition, tested with the same competing distractor, wearing a different drug name. Closest comparisons: MA-Q-0014, MA-Q-0021, MA-Q-0003, MA-Q-0094. distinct_from_bank passes and I record it positively: this is the only record in the 360 that engages the 5-day initial-dispensing window in M.G.L. c. 94C, s. 18(d3/4), and the only ordered-response item on the patient-requested pathway, so on coverage grounds it is the most defensible item in the tranche. It fails anyway, on four criteria, because of how the options are written. wording_not_guessable fails and is decisive. Every option carries its own position marker in plain English: B opens 'Before the initial dispensing', D contains 'the initial partial dispensing', A contains 'later asks', and C says 'completes the remainder no later than 30 days'. A candidate with no knowledge of Massachusetts law, or of pharmacy, orders these B, D, A, C from the words alone. The 5-day and 30-day figures, which are the only legal content in the item, are decorative: replace them with any other numbers and the correct order is unchanged. The canonical explanation states the design choice openly, 'This ordered item uses explicit temporal predicates rather than a debatable best-practice workflow', which is precisely the defect. reasoning_not_trivia fails because what is measured is reading comprehension. jurisprudence_reasoning fails because no legal proposition is applied to reach the answer. authentic_distractors fails in the form the criterion takes for an ordered item: the alternative orderings must be plausible, and here none is, because each option self-locates. The remaining criteria pass. practice_plausibility passes; the workflow is real. natural_rule_combination passes. appropriate_drug_context passes, the item being properly drug-agnostic. not_schedule_flashcard and public_style_without_copying pass. Repair direction: strip the self-locating language from the options so that the sequence must be recovered from the statute, for instance by stating each event neutrally with its own date and requiring the candidate to order them against the 5-day and 30-day requirements, which would make the legal content load-bearing. The underlying coverage is worth preserving; only the option drafting needs to change."
+    },
+    {
+      "Question_ID": "MA-Q-0008",
+      "Verdict": "DELETE",
+      "Severity": "High",
+      "Realism_Verdict": "FAIL",
+      "Reviewed_Date": "2026-08-20",
+      "Criteria": {
+        "jurisprudence_reasoning": true,
+        "practice_plausibility": true,
+        "authentic_distractors": false,
+        "wording_not_guessable": true,
+        "reasoning_not_trivia": false,
+        "natural_rule_combination": true,
+        "appropriate_drug_context": false,
+        "distinct_from_bank": false,
+        "not_schedule_flashcard": true,
+        "public_style_without_copying": true
+      },
+      "Notes": "Full-bank comparison method. I compared this item against the entire canonical bank as it stands at the represented candidate, 360 question records extracted from the freeze commit 1072516feccb8fcf42622a897da7c2f0a5bc5956, not a sample and not the existing duplicate report. Three passes were run over all 360 records: a lexical nearest-neighbour sweep on normalised stem text using both Jaccard token overlap and sequence ratio; a structural sweep grouping every record by rule_ids, family_id, topic and subtopic; and a discrimination sweep in which I read the stem, every option, the key and the core reasoning of every bank record that shares a dependency rule with any item in this tranche, covering the 21 records touching refill limits, the 10 touching Schedule II partial filling, the 5 touching the Massachusetts Schedule II/III quantity framework, the 20 touching MassPAT reporting and the 4 touching pseudoephedrine. Note on the freeze gates: the package records duplicate_detector_findings 0 and max_stem_similarity_vs_bank 0.561, and my lexical pass agrees with those numbers. The duplications found below are invisible to a lexical detector because they are discrimination-level rather than wording-level: the same keyed proposition, tested with the same competing distractor, wearing a different drug name. Closest comparisons: MA-Q-0029, MA-Q-0033, MA-Q-0039, MA-Q-0046, MA-Q-0042. Four criteria fail and the verdict is DELETE rather than rewrite. distinct_from_bank fails against three separate records that key the identical proposition. MA-Q-0029: 'A Valium prescription with unused refills was issued seven months ago', keyed to 'The prescription is no longer refillable six months after issue', with 'Use the date of the last refill to start a new six-month period' as its trap. MA-Q-0033: a Restoril prescription issued January 10 presented July 11 with one authorised refill remaining, keyed to declining because the prescription is more than six months past issue, with 'Measure six months from the most recent refill date' as its trap. MA-Q-0039: a Quviviq prescription showing two refills but issued six months and two days ago, keyed to the six-month issue-date limit, with 'Start a new six-month window from the last dispensing' as its trap. MA-Q-0008 is the fourth instance of one proposition with one trap. reasoning_not_trivia fails: at difficulty 3 the item resolves to the single remembered fact that the clock starts at issue. authentic_distractors fails because option C, that naloxone 'extends the prescription to one year', and option D, that the refill 'converts into a Schedule VI authorization', are not errors anyone makes; only option B competes. appropriate_drug_context fails because the drug does no work: any Schedule III would produce the same item, and buprenorphine-naloxone appears only to seed the naloxone distractor, which is itself one of the non-competing options. The remaining criteria pass. jurisprudence_reasoning passes on the narrow point that the candidate must locate the clock's start. practice_plausibility, wording_not_guessable, natural_rule_combination, not_schedule_flashcard and public_style_without_copying pass. Reason for DELETE rather than MAJOR_REWRITE: the bank already carries three well-formed items on this exact discrimination, so there is no coverage to preserve. Any rewrite that stayed on the six-month issue-date clock would be a fifth instance, and any rewrite that left it would be a different item with a different family. Retiring this record is the honest disposition; if the owners prefer to keep an OUD-flavoured refill item, it should be built around a discrimination the bank lacks rather than around this one."
+    },
+    {
+      "Question_ID": "MA-Q-0010",
+      "Verdict": "MAJOR_REWRITE",
+      "Severity": "High",
+      "Realism_Verdict": "FAIL",
+      "Reviewed_Date": "2026-08-20",
+      "Criteria": {
+        "jurisprudence_reasoning": true,
+        "practice_plausibility": false,
+        "authentic_distractors": false,
+        "wording_not_guessable": false,
+        "reasoning_not_trivia": false,
+        "natural_rule_combination": true,
+        "appropriate_drug_context": true,
+        "distinct_from_bank": false,
+        "not_schedule_flashcard": true,
+        "public_style_without_copying": false
+      },
+      "Notes": "Full-bank comparison method. I compared this item against the entire canonical bank as it stands at the represented candidate, 360 question records extracted from the freeze commit 1072516feccb8fcf42622a897da7c2f0a5bc5956, not a sample and not the existing duplicate report. Three passes were run over all 360 records: a lexical nearest-neighbour sweep on normalised stem text using both Jaccard token overlap and sequence ratio; a structural sweep grouping every record by rule_ids, family_id, topic and subtopic; and a discrimination sweep in which I read the stem, every option, the key and the core reasoning of every bank record that shares a dependency rule with any item in this tranche, covering the 21 records touching refill limits, the 10 touching Schedule II partial filling, the 5 touching the Massachusetts Schedule II/III quantity framework, the 20 touching MassPAT reporting and the 4 touching pseudoephedrine. Note on the freeze gates: the package records duplicate_detector_findings 0 and max_stem_similarity_vs_bank 0.561, and my lexical pass agrees with those numbers. The duplications found below are invisible to a lexical detector because they are discrimination-level rather than wording-level: the same keyed proposition, tested with the same competing distractor, wearing a different drug name. Closest comparisons: MA-Q-0001 in this same tranche, MA-Q-0050, MA-Q-0026, MA-Q-0044. Six criteria fail; this is the weakest item in the tranche. practice_plausibility fails because the item is not a practice scenario at all: there is no patient, no prescription, no product and no decision. It asks a candidate to explain why an analysis should not stop, which is study advice about how to read a regulation rather than the application of law to facts. authentic_distractors fails because all three wrong options are facially impossible: federal law 'automatically converts every Schedule V drug to Schedule IV at dispensing', the federal regulation 'prohibits Massachusetts from regulating Schedule V prescriptions', and 'Schedule V prescriptions are noncontrolled and have no refill restrictions'. None is a live confusion. wording_not_guessable fails as the direct consequence: the three wrong options are absolutist misstatements and the key is the only measured statement of a rule, so it is selectable from register without engaging the stem. reasoning_not_trivia fails because the item reduces to a single remembered phrase, that Massachusetts also limits Schedule V to five refills within six months. distinct_from_bank fails because that phrase is already the key of MA-Q-0001 in this same tranche, is already keyed as 'Massachusetts Schedule V refill limits apply' in MA-Q-0050, and already appears as an unkeyed option in MA-Q-0026. public_style_without_copying fails because quoting a CFR section number in the stem and asking a meta-question about the candidate's own analysis is not the register of the public examination; real items put the rule behind a scenario rather than in front of it. Two criteria pass. jurisprudence_reasoning passes on subject matter, since the federal-state interaction is a genuine jurisprudential point and is worth testing. natural_rule_combination, appropriate_drug_context and not_schedule_flashcard pass. Repair direction: the underlying idea, that a pharmacist who stops at the federal text will miss a stricter state rule, is sound and examinable, but it must be delivered through a dispensing decision in which acting on the federal rule alone produces the wrong outcome, with distractors that a prepared candidate could defend. As drafted it also needs to be reconciled with MA-Q-0001, since the bank should not carry two items whose key is the same sentence."
+    }
+  ]
+}
