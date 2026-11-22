@@ -65,7 +65,22 @@ The earlier **D072** (theft reporting) and **D078** (inspection corrective actio
 - The checked 26 questions each have a separate conclusion for **all four** A–D options with linked source. No human pharmacist/attorney external validation occurred.
 - **Do not classify the 25 AI-supported questions as externally certified.** The absence of a full current USP subscription text or open cross-form pending rules still blocks final *whole-bank* legal release.
 
-## 5. Cumulative progress after Batch 2
+## 5. Exam-manifest regression caused by prior E30-190 explanation edit — corrected on this branch
+
+**Cause confirmed from GitHub Actions [Chapter 30 full-length/mixed-mock QA run 45047045656](https://github.com/woojunxnam/oddments/actions/runs/45047045656)**: the 2026-11-22 E30-190 **explanation-only** correction changed the A/B bank's serialized-content fingerprint. The original fixed A/B and A/B/C/D mixed manifests were still pinned to the former fingerprint, so the browser refused to start a timed exam. The original source-bank mismatch error was real; it was **not** a random test flake.
+
+**Exact recomputed FNV-1a checks (in-memory actual source arrays and existing browser function):**
+
+| Manifest | Old fingerprint, before rationale correction | Verified current fingerprint | Changed asset |
+| --- | --- | --- | --- |
+| A/B 240 | `ad1683c7` | `db186c6a` | `site/mpje-side-notes/exam-simulation-30/mock-forms.js` |
+| All A/B/C/D 480 mixed | `77edd81d` | `48ec9bb4` | `site/mpje-side-notes/exam-simulation-30/mixed-forms.js` |
+
+To protect **existing saved exam sessions** from being hidden by the change, each manifest allows **only its proven rationale-only legacy fingerprint** in `compatibleBankSignatures`. The matching `stale()` check in both `mock-120.js` and `mock-120-mixes.js` accepts that one old fingerprint; arbitrary unrelated fingerprints still fail. This is narrowly safe because reversing only the single E30-190 "Table 13" to "Table 12" rationale edit exactly regenerates **both** old signatures; **no answer keys, stems, option texts, IDs or form order changed**. New attempts are written under the new fingerprint. No browser localStorage keys or saved records were modified.
+
+**Local reproducible in-tool integrity tests:** current 240 and 480 arrays hash to published new signatures; old hash accepted as compatible, arbitrary hash rejected; original question counts remain A/B 240, C 120, D 120. These are **data and logic checks**; **browser/CI pass or public deployment must be separately observed before claiming recovery**. No Form D stem/key change was made as part of this repair.
+
+## 6. Cumulative progress after Batch 2
 
 Prior [Batch 1 legal report](MPJE_A_D_1920_OPTION_LEGAL_REVIEW_GATE_2026-11-22.md) reviewed **30** questions/120 options. The current new Batch 2 adds **26** questions/104 options, without double-counting D072 or D078.
 
