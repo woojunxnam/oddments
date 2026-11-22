@@ -109,4 +109,19 @@ The C, D and combined manifests were regenerated. Old signatures are accepted on
 
 The structural and browser validation record is maintained in [Batch 3 verification](MPJE_A_D_BATCH3_VERIFICATION_2026-11-22.json). Verification of a working exam application is separate from verification of the legal answer key. The second AI content pass found no new blocking issue in the exact revised question objects; it is not counted as additional reviewed IDs.
 
+### Completed release verification
+
+[PR #295](https://github.com/woojunxnam/oddments/pull/295) was merged into `main` as `7536a8f8aa321ce9ace53a8b22ba31beed18c238`. The Chapter 30 browser suite passed before merging. The Pages deployment and its actual-public-site tests subsequently completed successfully on November 22, 2026.
+
+| Check | Result | Evidence |
+| --- | --- | --- |
+| Current manifests, 480 questions / 1,920 choices, and four admitted historical bank fingerprints | PASS | [Structural verification](MPJE_A_D_BATCH3_VERIFICATION_2026-11-22.json) |
+| A/B, C, D and mixed exams on mobile and desktop; historical-version regression | PASS | [Pre-merge browser record](MPJE_A_D_BATCH3_BROWSER_QA_2026-11-22.json), [workflow run](https://github.com/woojunxnam/oddments/actions/runs/45065975508) |
+| Direct HTTPS comparison of 16 publicly served exam files with the merged source | PASS; all files match byte for byte | [Public asset hashes](MPJE_A_D_BATCH3_PUBLIC_ASSETS_2026-11-22.json) |
+| Actual public A/B, C, D and mixed exam behavior; old-score/history preservation and exports | PASS | [Public browser record](MPJE_A_D_BATCH3_PUBLIC_BROWSER_QA_2026-11-22.json), [deployment and verification run](https://github.com/woojunxnam/oddments/actions/runs/45067425381) |
+
+The public historical regression passed all eight recorded groups with no browser JavaScript errors, including original raw scores, original in-progress stems, exclusions, retakes, saved-attempt review, JSON/CSV exports, and rejection of unknown revisions. Tests used isolated browser contexts and synthetic saved attempts; existing users' browser records were not read or edited. Local Chromium could not start under the executor's socket policy; the successful browser evidence comes from GitHub Actions and the actual public site. No completion claim is made for unrelated repository workflows.
+
+Published exams: [A/B](https://woojunxnam.github.io/oddments/mpje-side-notes/exam-simulation-30/mock-120.html), [Form C](https://woojunxnam.github.io/oddments/mpje-side-notes/exam-simulation-30/mock-120-c.html), [Form D](https://woojunxnam.github.io/oddments/mpje-side-notes/exam-simulation-30/mock-120-d.html), and [mixed forms](https://woojunxnam.github.io/oddments/mpje-side-notes/exam-simulation-30/mock-120-mixes.html).
+
 **Remaining legal work:** 392 questions / 1,568 choices. A practical next cluster is D033–D056, covering federal product references, patient materials, returns and supply-chain distinctions, followed by the remaining unreviewed Form D items and A/B/C prescription-authority/validity cases. The full A–D gate is not approved and E/F/G readiness certification is not implied.
