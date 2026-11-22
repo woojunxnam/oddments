@@ -98,7 +98,7 @@ An item may test the same legal section *only if a materially distinct decision*
 ## 6. Readiness interpretation
 
 - E/F scores = learning and remediation signals; repeated perfect scores on seen items are not a calibrated pass predictor.
-- G first-attempt score = less contaminated new-item practice signal, **not** an official NABP pass prediction. An internal study target such as 85%+ with no severely weak high-yield area can guide additional revision, but must never be called the official passing threshold.
+- G first-attempt score = a less contaminated new-item study signal, **not** an official NABP pass prediction. The stricter internal criteria and fail-closed stop rules are defined in Section 7 (90%+ first attempt, at least 80% per applicable domain, and no uncorrected high-severity legal errors). These are **not** NABP passing thresholds.
 - If the actual exam is soon, prefer targeted E/F drills and one carefully validated G rather than rushing to fill all 360 draft slots; legal quality outranks count.
 - 2022–2026 candidate anecdotes about CDTM, staff scope, drug names, partial fills, compounding and delivery can guide focus but are not official item-frequency data or secure exam text. Example: https://www.reddit.com/r/MPJE/comments/1vjf1uo/advice_for_the_ma_mpje/ .
 
@@ -121,7 +121,9 @@ The extreme SBA option-length distribution in **both directions** is a potential
 
 ### 7.2 Gate G0 — audit and classify the current 480 before E authoring
 
-Create a versioned 480-row baseline ledger, one item per ID, with fields: form, ID, question revision, exam-era blueprint mapping, specific tested legal decision, actor, setting, jurisdiction, Schedule/formulation, trigger, numerical/time condition, critical exception, exact statutory/regulatory source URL/section, source effective date, last source check, related/duplicated IDs, original answer exposure, and legal release status.
+**Initial artifact (STRUCTURAL ONLY; G0 NOT COMPLETE):** [2026-11-22 480-ID source/topic inventory](MPJE_E_F_G_BASELINE_480_STRUCTURAL_2026-11-22.json). It records existing IDs, topics, option-counts, author citations and old review status, but **does not** resolve legal decisions, assign valid official subdomains, or approve any keys.
+
+Complete a versioned 480-row semantic/legal baseline ledger, one item per ID, with fields: form, ID, question revision, exam-era blueprint mapping, specific tested legal decision, actor, setting, jurisdiction, Schedule/formulation, trigger, numerical/time condition, critical exception, exact statutory/regulatory source URL/section, source effective date, last source check, related/duplicated IDs, original answer exposure, and legal release status.
 
 Use four dispositions: **APPROVED / NEEDS_EDIT / HOLD / RETIRED**. Label AI author review, separate AI key-blind source verification, and qualified independent human legal review **differently**; never suggest a human review happened if it did not. Existing date-of-verification metadata and a citation alone **do not** certify each option.
 
