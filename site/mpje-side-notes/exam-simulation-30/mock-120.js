@@ -80,7 +80,8 @@
   // Only the known, verified rationale-only E30-190 edit may reuse earlier scored attempts.
   function stale(s) {
     return !!s && s.bankSignature !== manifest.bankSignature &&
-      !(Array.isArray(manifest.compatibleBankSignatures) &&
+      !(manifest.bankSignature === 'db186c6a' &&
+        Array.isArray(manifest.compatibleBankSignatures) &&
         manifest.compatibleBankSignatures.includes(s.bankSignature));
   }
   function formatSeconds(n) {
