@@ -69,7 +69,7 @@ The unchanged bank still contains **C: 120 questions (88 SBA / 32 SATA)** and **
 
 ## Remaining non-negotiable signoff items
 
-1. Current source text **each of 480 C/D answer choice rationales** independently, not merely the selected correct answer or topic citation, then freeze revisions.
+1. Current source text **all 960 C/D answer-choice rationales (240 questions × 4 choices)** independently, not merely the selected correct answer or topic citation, then freeze revisions.
 2. Resolve direct-access USP <795>/<797> normative evidence limits and D090 MOR individual-notice text conflict without inventing interpretation.
 3. Recheck effective dates and product-specific DEA exemptions/FDA label status at actual examination.
 4. Inspect the *public* D page and distinguish **technically deployed** from **legally fully approved**.
