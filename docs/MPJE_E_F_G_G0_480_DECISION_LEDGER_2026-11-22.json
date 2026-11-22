@@ -2,7 +2,7 @@
   "schema_version": 2,
   "generated_at": "2026-11-22",
   "status": "G0_PROVISIONAL_480_QUESTION_DECISION_CLASSIFICATION__NOT_FINAL_LEGAL_APPROVAL",
-  "disclaimer": "Keyed conclusions are copied from existing bank and are NOT independent legal validation; labels are provisional. 2027 domains and 2026 subdomains intentionally left blank for G1 verification. Lexical similarity is triage, never proof of substantive duplication.",
+  "disclaimer": "Keyed conclusions are copied from existing bank and are NOT independent legal validation; labels are provisional. 2027 domains and 2026 subdomains intentionally left blank for G1 verification. Lexical similarity is triage, never proof of substantive duplication. Similarity scores (>=0.30) only nominate pairs for reading; the nearest earlier item search is within its provisional family. They do not establish a legal duplicate.",
   "source_bank": [
     "site/mpje-side-notes/exam-simulation-30/questions.js",
     "site/mpje-side-notes/exam-simulation-30/form-c-questions.js",
@@ -21,7 +21,8 @@
     "with_recorded_author_check_date": 480,
     "usp_source_recheck_flags": 53,
     "numeric_timing_recheck_flags": 53,
-    "lexical_candidate_pairs_above_0_57": 0
+    "lexical_candidate_pairs_above_0_30": 23,
+    "manual_classification_corrections_applied": 8
   },
   "family_counts": {
     "RX_VALIDITY_EPCS": {
@@ -35,12 +36,6 @@
       "AB": 18,
       "C": 9,
       "D": 0
-    },
-    "USP_HAZARDOUS": {
-      "total": 25,
-      "AB": 15,
-      "C": 2,
-      "D": 8
     },
     "DRUG_SCHEDULE_ID": {
       "total": 23,
@@ -66,10 +61,22 @@
       "C": 10,
       "D": 0
     },
+    "USP_HAZARDOUS": {
+      "total": 17,
+      "AB": 7,
+      "C": 2,
+      "D": 8
+    },
     "LABEL_PACKAGING": {
       "total": 17,
       "AB": 9,
       "C": 4,
+      "D": 4
+    },
+    "USP_STERILE": {
+      "total": 17,
+      "AB": 8,
+      "C": 5,
       "D": 4
     },
     "PRESCRIBER_AUTHORITY": {
@@ -174,12 +181,6 @@
       "C": 1,
       "D": 4
     },
-    "USP_STERILE": {
-      "total": 9,
-      "AB": 0,
-      "C": 5,
-      "D": 4
-    },
     "DEA_DISPOSAL": {
       "total": 9,
       "AB": 0,
@@ -253,7 +254,169 @@
       "D": 1
     }
   },
-  "lexical_review_candidates": [],
+  "lexical_review_candidates": [
+    {
+      "id": "E30-130",
+      "neighbor_id": "E30-013",
+      "tfidf_cosine": 0.553,
+      "family": "USP_NONSTERILE",
+      "verdict": "TRIAGE_ONLY_NO_DUPLICATION_DETERMINATION"
+    },
+    {
+      "id": "E30-094",
+      "neighbor_id": "E30-044",
+      "tfidf_cosine": 0.529,
+      "family": "OTC_PSEUDOEPHEDRINE",
+      "verdict": "TRIAGE_ONLY_NO_DUPLICATION_DETERMINATION"
+    },
+    {
+      "id": "D030",
+      "neighbor_id": "D029",
+      "tfidf_cosine": 0.425,
+      "family": "USP_NONSTERILE",
+      "verdict": "TRIAGE_ONLY_NO_DUPLICATION_DETERMINATION"
+    },
+    {
+      "id": "D102",
+      "neighbor_id": "E30-233",
+      "tfidf_cosine": 0.418,
+      "family": "HIPAA_BREACH",
+      "verdict": "TRIAGE_ONLY_NO_DUPLICATION_DETERMINATION"
+    },
+    {
+      "id": "E30-127",
+      "neighbor_id": "E30-023",
+      "tfidf_cosine": 0.399,
+      "family": "RETURN_CQI",
+      "verdict": "TRIAGE_ONLY_NO_DUPLICATION_DETERMINATION"
+    },
+    {
+      "id": "D095",
+      "neighbor_id": "E30-115",
+      "tfidf_cosine": 0.384,
+      "family": "MOR_LICENSURE",
+      "verdict": "TRIAGE_ONLY_NO_DUPLICATION_DETERMINATION"
+    },
+    {
+      "id": "E30-091",
+      "neighbor_id": "E30-026",
+      "tfidf_cosine": 0.38,
+      "family": "TECH_SCOPE",
+      "verdict": "TRIAGE_ONLY_NO_DUPLICATION_DETERMINATION"
+    },
+    {
+      "id": "D072",
+      "neighbor_id": "E30-018",
+      "tfidf_cosine": 0.378,
+      "family": "DEA_INVENTORY_LOSS",
+      "verdict": "TRIAGE_ONLY_NO_DUPLICATION_DETERMINATION"
+    },
+    {
+      "id": "D101",
+      "neighbor_id": "E30-233",
+      "tfidf_cosine": 0.376,
+      "family": "HIPAA_BREACH",
+      "verdict": "TRIAGE_ONLY_NO_DUPLICATION_DETERMINATION"
+    },
+    {
+      "id": "E30-358",
+      "neighbor_id": "E30-188",
+      "tfidf_cosine": 0.366,
+      "family": "INTERCHANGE",
+      "verdict": "TRIAGE_ONLY_NO_DUPLICATION_DETERMINATION"
+    },
+    {
+      "id": "E30-250",
+      "neighbor_id": "E30-091",
+      "tfidf_cosine": 0.356,
+      "family": "TECH_SCOPE",
+      "verdict": "TRIAGE_ONLY_NO_DUPLICATION_DETERMINATION"
+    },
+    {
+      "id": "D073",
+      "neighbor_id": "E30-349",
+      "tfidf_cosine": 0.354,
+      "family": "DEA_DISPOSAL",
+      "verdict": "TRIAGE_ONLY_NO_DUPLICATION_DETERMINATION"
+    },
+    {
+      "id": "E30-322",
+      "neighbor_id": "E30-029",
+      "tfidf_cosine": 0.348,
+      "family": "LABEL_PACKAGING",
+      "verdict": "TRIAGE_ONLY_NO_DUPLICATION_DETERMINATION"
+    },
+    {
+      "id": "E30-293",
+      "neighbor_id": "E30-037",
+      "tfidf_cosine": 0.338,
+      "family": "IMMUNIZATION",
+      "verdict": "TRIAGE_ONLY_NO_DUPLICATION_DETERMINATION"
+    },
+    {
+      "id": "E30-313",
+      "neighbor_id": "E30-034",
+      "tfidf_cosine": 0.335,
+      "family": "RX_TRANSFER_REFILL",
+      "verdict": "TRIAGE_ONLY_NO_DUPLICATION_DETERMINATION"
+    },
+    {
+      "id": "D024",
+      "neighbor_id": "D021",
+      "tfidf_cosine": 0.332,
+      "family": "USP_STERILE",
+      "verdict": "TRIAGE_ONLY_NO_DUPLICATION_DETERMINATION"
+    },
+    {
+      "id": "D041",
+      "neighbor_id": "E30-358",
+      "tfidf_cosine": 0.325,
+      "family": "INTERCHANGE",
+      "verdict": "TRIAGE_ONLY_NO_DUPLICATION_DETERMINATION"
+    },
+    {
+      "id": "E30-331",
+      "neighbor_id": "E30-129",
+      "tfidf_cosine": 0.319,
+      "family": "DRUG_SCHEDULE_ID",
+      "verdict": "TRIAGE_ONLY_NO_DUPLICATION_DETERMINATION"
+    },
+    {
+      "id": "E30-238",
+      "neighbor_id": "E30-208",
+      "tfidf_cosine": 0.318,
+      "family": "PRESCRIBER_AUTHORITY",
+      "verdict": "TRIAGE_ONLY_NO_DUPLICATION_DETERMINATION"
+    },
+    {
+      "id": "E30-333",
+      "neighbor_id": "E30-094",
+      "tfidf_cosine": 0.314,
+      "family": "OTC_PSEUDOEPHEDRINE",
+      "verdict": "TRIAGE_ONLY_NO_DUPLICATION_DETERMINATION"
+    },
+    {
+      "id": "E30-248",
+      "neighbor_id": "E30-016",
+      "tfidf_cosine": 0.307,
+      "family": "TECH_SCOPE",
+      "verdict": "TRIAGE_ONLY_NO_DUPLICATION_DETERMINATION"
+    },
+    {
+      "id": "E30-298",
+      "neighbor_id": "E30-023",
+      "tfidf_cosine": 0.303,
+      "family": "RETURN_CQI",
+      "verdict": "TRIAGE_ONLY_NO_DUPLICATION_DETERMINATION"
+    },
+    {
+      "id": "E30-267",
+      "neighbor_id": "E30-117",
+      "tfidf_cosine": 0.301,
+      "family": "PRESCRIBER_AUTHORITY",
+      "verdict": "TRIAGE_ONLY_NO_DUPLICATION_DETERMINATION"
+    }
+  ],
   "items": [
     {
       "question_id": "E30-001",
@@ -1517,7 +1680,7 @@
       "original_source_path": "site/mpje-side-notes/exam-simulation-30/questions.js",
       "source_area_value": 4,
       "source_area_semantics": "LEGACY_2026_AREA",
-      "provisional_decision_family": "USP_HAZARDOUS",
+      "provisional_decision_family": "USP_STERILE",
       "existing_topic": "USP <797> immediate-use CSP: 3 products versus 4 containers",
       "existing_topic_key": "sterile-hazardous-compounding",
       "tested_legal_question_as_written": "tal patient-care area. They use TWO vials of the same sterile drug, ONE vial of Sterile Water for Injection, and ONE bag of sterile normal saline: four physical containers, but three different sterile products. Aseptic technique, compatibility, preparation-specific conditions, and all other USP <797> immediate-use requirements are satisfied. A different clinician, not witnessed by the preparer, will begin administration at 12:05 p.m. The CSP bears the required immediate-use label. Which conclusion is MOST accurate?",
@@ -3746,7 +3909,8 @@
       "existing_legal_hold": null,
       "G0_legal_status": "PRIOR_AI_SOURCE_AUDIT_NOT_INDEPENDENT_FINAL_SIGNOFF",
       "risk_review_flags": [
-        "DATE_SENSITIVE_SOURCE_VERSION_CHECK"
+        "DATE_SENSITIVE_SOURCE_VERSION_CHECK",
+        "SIMILARITY_REQUIRES_HUMAN_SUBSTANTIVE_DUPLICATION_CHECK"
       ],
       "official_2026_subdomain": null,
       "official_2027_subdomain": null,
@@ -3858,7 +4022,9 @@
       "existing_review_status": null,
       "existing_legal_hold": null,
       "G0_legal_status": "PRIOR_AI_SOURCE_AUDIT_NOT_INDEPENDENT_FINAL_SIGNOFF",
-      "risk_review_flags": [],
+      "risk_review_flags": [
+        "SIMILARITY_REQUIRES_HUMAN_SUBSTANTIVE_DUPLICATION_CHECK"
+      ],
       "official_2026_subdomain": null,
       "official_2027_subdomain": null,
       "microdecision_semantic_signoff": "PROVISIONAL_LABEL__SOURCE_REVIEW_REQUIRED",
@@ -4063,7 +4229,7 @@
       "original_source_path": "site/mpje-side-notes/exam-simulation-30/questions.js",
       "source_area_value": 4,
       "source_area_semantics": "LEGACY_2026_AREA",
-      "provisional_decision_family": "USP_HAZARDOUS",
+      "provisional_decision_family": "USP_STERILE",
       "existing_topic": "USP <797> Category 1: ISO 5 PEC in an SCA, garbing and short refrigerated BUD",
       "existing_topic_key": "sterile-hazardous-compounding",
       "tested_legal_question_as_written": "usetts pharmacy prepares a NONHAZARDOUS Category 1 compounded sterile preparation (CSP) from sterile ingredients in an ISO Class 5 primary engineering control inside an otherwise suitable UNCLASSIFIED segregated compounding area (SCA). Personnel meet applicable USP <797> aseptic training, garbing and environmental requirements; manufacturer stability supports at least 48 hours refrigerated, with no additional shorter limiting factor. Which BUD/facility decision is permitted under the currently applicable USP <797>?",
@@ -4848,7 +5014,7 @@
       "original_source_path": "site/mpje-side-notes/exam-simulation-30/questions.js",
       "source_area_value": 4,
       "source_area_semantics": "LEGACY_2026_AREA",
-      "provisional_decision_family": "USP_HAZARDOUS",
+      "provisional_decision_family": "USP_STERILE",
       "existing_topic": "USP <797> initial garbing versus media-fill competency: distinct assessments and numbers",
       "existing_topic_key": "sterile-hazardous-compounding",
       "tested_legal_question_as_written": "A Massachusetts sterile compounding pharmacy trains a new employee for Category 2 compounded sterile preparations (CSPs). The trainee has no previous sterile-compounding qualification. The facility follows the currently official USP <797> requirements and the USP FAQ explanations of §§2.2–2.3. Which procedures are correct BEFORE the employee begins compounding CSPs? SELECT ALL THAT APPLY.",
@@ -5048,7 +5214,7 @@
       "original_source_path": "site/mpje-side-notes/exam-simulation-30/questions.js",
       "source_area_value": 4,
       "source_area_semantics": "LEGACY_2026_AREA",
-      "provisional_decision_family": "USP_HAZARDOUS",
+      "provisional_decision_family": "USP_STERILE",
       "existing_topic": "USP <797> Category 3 extended BUD: additional sterility testing and ongoing facility requirements",
       "existing_topic_key": "sterile-hazardous-compounding",
       "tested_legal_question_as_written": "A Massachusetts sterile compounding pharmacy wants to assign a beyond-use date longer than the Category 2 BUD limit to one nonhazardous compounded sterile preparation. It has a compliant cleanroom suite and trained staff but has not implemented Category 3 additional qualifications or sterility testing. Manufacturer component expiration does not limit the proposed date. Which approach is consistent with the currently official USP <797> standard?",
@@ -5147,7 +5313,8 @@
       "existing_legal_hold": null,
       "G0_legal_status": "PRIOR_AI_SOURCE_AUDIT_NOT_INDEPENDENT_FINAL_SIGNOFF",
       "risk_review_flags": [
-        "VERIFY_CURRENT_NORMATIVE_USP_SOURCE_IF_APPLICABLE"
+        "VERIFY_CURRENT_NORMATIVE_USP_SOURCE_IF_APPLICABLE",
+        "SIMILARITY_REQUIRES_HUMAN_SUBSTANTIVE_DUPLICATION_CHECK"
       ],
       "official_2026_subdomain": null,
       "official_2027_subdomain": null,
@@ -5264,7 +5431,8 @@
       "existing_legal_hold": null,
       "G0_legal_status": "PRIOR_AI_SOURCE_AUDIT_NOT_INDEPENDENT_FINAL_SIGNOFF",
       "risk_review_flags": [
-        "VERIFY_CURRENT_NORMATIVE_USP_SOURCE_IF_APPLICABLE"
+        "VERIFY_CURRENT_NORMATIVE_USP_SOURCE_IF_APPLICABLE",
+        "SIMILARITY_REQUIRES_HUMAN_SUBSTANTIVE_DUPLICATION_CHECK"
       ],
       "official_2026_subdomain": null,
       "official_2027_subdomain": null,
@@ -6402,7 +6570,7 @@
       "original_source_path": "site/mpje-side-notes/exam-simulation-30/questions.js",
       "source_area_value": 4,
       "source_area_semantics": "LEGACY_2026_AREA",
-      "provisional_decision_family": "USP_HAZARDOUS",
+      "provisional_decision_family": "USP_STERILE",
       "existing_topic": "September 2026 Board policy: viable ISO 7 buffer environmental action-level reporting and limited CSP BUD",
       "existing_topic_key": "sterile-hazardous-compounding",
       "tested_legal_question_as_written": "eives a microbiology report showing 11 CFU per cubic meter from VIABLE AIR sampling in its ISO Class 7 BUFFER room. There is no ISO 5 or non-viable particle action-level finding, and the Board has not directed a more restrictive plan. The pharmacy begins immediate assessment, develops and implements a remediation plan, completes a documented risk and product-risk assessment, and schedules repeat monitoring. Under Board Policy 2026-03 (adopted September 3, 2026), which conclusions are correct? SELECT ALL THAT APPLY.",
@@ -7615,7 +7783,7 @@
       "original_source_path": "site/mpje-side-notes/exam-simulation-30/questions.js",
       "source_area_value": 4,
       "source_area_semantics": "LEGACY_2026_AREA",
-      "provisional_decision_family": "USP_HAZARDOUS",
+      "provisional_decision_family": "USP_STERILE",
       "existing_topic": "USP <797> Category 2 nonhazardous sterile IV bag: ISO-classified suite versus SCA and tested BUD limits",
       "existing_topic_key": "sterile-hazardous-compounding",
       "tested_legal_question_as_written": "rmacy aseptically compounds a NONHAZARDOUS Category 2 IV preparation from only sterile manufactured components. It has a qualified ISO Class 5 laminar airflow PEC in a properly maintained ISO Class 7 positive-pressure buffer room with an ISO Class 8 anteroom, and suitable personnel/monitoring. No sterility test is performed, stability data support at least 10 days under refrigeration, and no component imposes a shorter BUD. Under the currently official USP <797>, which statements are correct? SELECT ALL THAT APPLY.",
@@ -8617,7 +8785,7 @@
       "original_source_path": "site/mpje-side-notes/exam-simulation-30/questions.js",
       "source_area_value": 4,
       "source_area_semantics": "LEGACY_2026_AREA",
-      "provisional_decision_family": "USP_HAZARDOUS",
+      "provisional_decision_family": "USP_STERILE",
       "existing_topic": "ISO5 viable air 18 CFU: 2026 Board recall and reporting",
       "existing_topic_key": "sterile-hazardous-compounding",
       "tested_legal_question_as_written": "A Massachusetts sterile-compounding pharmacy receives a FINAL viable-air report showing 18 CFU recovered at its ISO Class 5 primary engineering control. Some CSPs prepared there have already been dispensed and are WITHIN their assigned BUDs; another separate ISO 5 PEC has acceptable results. No remediation has been completed. What is the best response under Board Policy 2026-03?",
@@ -9007,7 +9175,7 @@
       "original_source_path": "site/mpje-side-notes/exam-simulation-30/questions.js",
       "source_area_value": 4,
       "source_area_semantics": "LEGACY_2026_AREA",
-      "provisional_decision_family": "USP_HAZARDOUS",
+      "provisional_decision_family": "USP_STERILE",
       "existing_topic": "After 2026 viable-air action result: repeat EM and normal BUD restoration",
       "existing_topic_key": "sterile-hazardous-compounding",
       "tested_legal_question_as_written": "A Massachusetts sterile-compounding pharmacy had an above-action-level VIABLE AIR result in its ISO 7 buffer room. It notified the Board and performed an RCA, appropriate remediation, CAPA and risk assessment; no nonviable particle excursion or additional Board restriction exists. The pharmacy now wants to return to ordinary beyond-use dates. Under Board Policy 2026-03, which actions are correct? SELECT ALL THAT APPLY.",
@@ -9542,7 +9710,8 @@
       "existing_legal_hold": null,
       "G0_legal_status": "PRIOR_AI_SOURCE_AUDIT_NOT_INDEPENDENT_FINAL_SIGNOFF",
       "risk_review_flags": [
-        "DATE_SENSITIVE_SOURCE_VERSION_CHECK"
+        "DATE_SENSITIVE_SOURCE_VERSION_CHECK",
+        "SIMILARITY_REQUIRES_HUMAN_SUBSTANTIVE_DUPLICATION_CHECK"
       ],
       "official_2026_subdomain": null,
       "official_2027_subdomain": null,
@@ -9941,7 +10110,9 @@
       "existing_review_status": "AUTHOR_DRAFT_PENDING_FINAL_OPTION_APPROVAL",
       "existing_legal_hold": null,
       "G0_legal_status": "AUTHOR_REVIEW_PENDING_FINAL_OPTION_SIGNOFF",
-      "risk_review_flags": [],
+      "risk_review_flags": [
+        "SIMILARITY_REQUIRES_HUMAN_SUBSTANTIVE_DUPLICATION_CHECK"
+      ],
       "official_2026_subdomain": null,
       "official_2027_subdomain": null,
       "microdecision_semantic_signoff": "PROVISIONAL_LABEL__SOURCE_REVIEW_REQUIRED",
@@ -10017,7 +10188,8 @@
       "existing_legal_hold": null,
       "G0_legal_status": "AUTHOR_REVIEW_PENDING_FINAL_OPTION_SIGNOFF",
       "risk_review_flags": [
-        "DATE_SENSITIVE_SOURCE_VERSION_CHECK"
+        "DATE_SENSITIVE_SOURCE_VERSION_CHECK",
+        "SIMILARITY_REQUIRES_HUMAN_SUBSTANTIVE_DUPLICATION_CHECK"
       ],
       "official_2026_subdomain": null,
       "official_2027_subdomain": null,
@@ -10676,7 +10848,9 @@
       "existing_review_status": "AUTHOR_DRAFT_PENDING_FINAL_OPTION_APPROVAL",
       "existing_legal_hold": null,
       "G0_legal_status": "AUTHOR_REVIEW_PENDING_FINAL_OPTION_SIGNOFF",
-      "risk_review_flags": [],
+      "risk_review_flags": [
+        "SIMILARITY_REQUIRES_HUMAN_SUBSTANTIVE_DUPLICATION_CHECK"
+      ],
       "official_2026_subdomain": null,
       "official_2027_subdomain": null,
       "microdecision_semantic_signoff": "PROVISIONAL_LABEL__SOURCE_REVIEW_REQUIRED",
@@ -11701,7 +11875,8 @@
       "existing_legal_hold": null,
       "G0_legal_status": "AUTHOR_REVIEW_PENDING_FINAL_OPTION_SIGNOFF",
       "risk_review_flags": [
-        "DATE_SENSITIVE_SOURCE_VERSION_CHECK"
+        "DATE_SENSITIVE_SOURCE_VERSION_CHECK",
+        "SIMILARITY_REQUIRES_HUMAN_SUBSTANTIVE_DUPLICATION_CHECK"
       ],
       "official_2026_subdomain": null,
       "official_2027_subdomain": null,
@@ -11900,7 +12075,9 @@
       "existing_review_status": "AUTHOR_DRAFT_PENDING_FINAL_OPTION_APPROVAL",
       "existing_legal_hold": null,
       "G0_legal_status": "AUTHOR_REVIEW_PENDING_FINAL_OPTION_SIGNOFF",
-      "risk_review_flags": [],
+      "risk_review_flags": [
+        "SIMILARITY_REQUIRES_HUMAN_SUBSTANTIVE_DUPLICATION_CHECK"
+      ],
       "official_2026_subdomain": null,
       "official_2027_subdomain": null,
       "microdecision_semantic_signoff": "PROVISIONAL_LABEL__SOURCE_REVIEW_REQUIRED",
@@ -12492,7 +12669,8 @@
       "existing_legal_hold": "FED_STATE_TRANSFER_CHAIN_INTERPRETATION_CHECK",
       "G0_legal_status": "EXPLICIT_CAVEAT_HOLD_UNRESOLVED",
       "risk_review_flags": [
-        "EXISTING_C_OR_D_LEGAL_HOLD_FIELD"
+        "EXISTING_C_OR_D_LEGAL_HOLD_FIELD",
+        "SIMILARITY_REQUIRES_HUMAN_SUBSTANTIVE_DUPLICATION_CHECK"
       ],
       "official_2026_subdomain": null,
       "official_2027_subdomain": null,
@@ -12841,7 +13019,9 @@
       "existing_review_status": "AUTHOR_DRAFT_PENDING_FINAL_OPTION_APPROVAL",
       "existing_legal_hold": null,
       "G0_legal_status": "AUTHOR_REVIEW_PENDING_FINAL_OPTION_SIGNOFF",
-      "risk_review_flags": [],
+      "risk_review_flags": [
+        "SIMILARITY_REQUIRES_HUMAN_SUBSTANTIVE_DUPLICATION_CHECK"
+      ],
       "official_2026_subdomain": null,
       "official_2027_subdomain": null,
       "microdecision_semantic_signoff": "PROVISIONAL_LABEL__SOURCE_REVIEW_REQUIRED",
@@ -13180,7 +13360,9 @@
       "existing_review_status": "AUTHOR_DRAFT_PENDING_FINAL_OPTION_APPROVAL",
       "existing_legal_hold": null,
       "G0_legal_status": "AUTHOR_REVIEW_PENDING_FINAL_OPTION_SIGNOFF",
-      "risk_review_flags": [],
+      "risk_review_flags": [
+        "SIMILARITY_REQUIRES_HUMAN_SUBSTANTIVE_DUPLICATION_CHECK"
+      ],
       "official_2026_subdomain": null,
       "official_2027_subdomain": null,
       "microdecision_semantic_signoff": "PROVISIONAL_LABEL__SOURCE_REVIEW_REQUIRED",
@@ -13256,7 +13438,9 @@
       "existing_review_status": "AUTHOR_DRAFT_PENDING_FINAL_OPTION_APPROVAL",
       "existing_legal_hold": null,
       "G0_legal_status": "AUTHOR_REVIEW_PENDING_FINAL_OPTION_SIGNOFF",
-      "risk_review_flags": [],
+      "risk_review_flags": [
+        "SIMILARITY_REQUIRES_HUMAN_SUBSTANTIVE_DUPLICATION_CHECK"
+      ],
       "official_2026_subdomain": null,
       "official_2027_subdomain": null,
       "microdecision_semantic_signoff": "PROVISIONAL_LABEL__SOURCE_REVIEW_REQUIRED",
@@ -14238,7 +14422,9 @@
       "existing_review_status": "AUTHOR_DRAFT_PENDING_FINAL_OPTION_APPROVAL",
       "existing_legal_hold": null,
       "G0_legal_status": "AUTHOR_REVIEW_PENDING_FINAL_OPTION_SIGNOFF",
-      "risk_review_flags": [],
+      "risk_review_flags": [
+        "SIMILARITY_REQUIRES_HUMAN_SUBSTANTIVE_DUPLICATION_CHECK"
+      ],
       "official_2026_subdomain": null,
       "official_2027_subdomain": null,
       "microdecision_semantic_signoff": "PROVISIONAL_LABEL__SOURCE_REVIEW_REQUIRED",
@@ -15197,7 +15383,8 @@
       "existing_legal_hold": null,
       "G0_legal_status": "AUTHOR_SOURCE_CHECK_NO_FINAL_OPTION_SIGNOFF",
       "risk_review_flags": [
-        "DATE_SENSITIVE_SOURCE_VERSION_CHECK"
+        "DATE_SENSITIVE_SOURCE_VERSION_CHECK",
+        "SIMILARITY_REQUIRES_HUMAN_SUBSTANTIVE_DUPLICATION_CHECK"
       ],
       "official_2026_subdomain": null,
       "official_2027_subdomain": null,
@@ -15427,7 +15614,8 @@
       "existing_legal_hold": null,
       "G0_legal_status": "AUTHOR_SOURCE_CHECK_NO_FINAL_OPTION_SIGNOFF",
       "risk_review_flags": [
-        "DATE_SENSITIVE_SOURCE_VERSION_CHECK"
+        "DATE_SENSITIVE_SOURCE_VERSION_CHECK",
+        "SIMILARITY_REQUIRES_HUMAN_SUBSTANTIVE_DUPLICATION_CHECK"
       ],
       "official_2026_subdomain": null,
       "official_2027_subdomain": null,
@@ -15848,7 +16036,9 @@
       "existing_review_status": "AUTHOR_LEGAL_ACCEPTED_NOT_EXTERNAL_CERTIFICATION",
       "existing_legal_hold": null,
       "G0_legal_status": "AUTHOR_SOURCE_CHECK_NO_FINAL_OPTION_SIGNOFF",
-      "risk_review_flags": [],
+      "risk_review_flags": [
+        "SIMILARITY_REQUIRES_HUMAN_SUBSTANTIVE_DUPLICATION_CHECK"
+      ],
       "official_2026_subdomain": null,
       "official_2027_subdomain": null,
       "microdecision_semantic_signoff": "PROVISIONAL_LABEL__SOURCE_REVIEW_REQUIRED",
@@ -17026,7 +17216,8 @@
       "G0_legal_status": "AUTHOR_SOURCE_CHECK_NO_FINAL_OPTION_SIGNOFF",
       "risk_review_flags": [
         "DATE_SENSITIVE_SOURCE_VERSION_CHECK",
-        "NUMERIC_TIMING_CHOICE_RECHECK"
+        "NUMERIC_TIMING_CHOICE_RECHECK",
+        "SIMILARITY_REQUIRES_HUMAN_SUBSTANTIVE_DUPLICATION_CHECK"
       ],
       "official_2026_subdomain": null,
       "official_2027_subdomain": null,
@@ -17065,7 +17256,9 @@
       "existing_review_status": "AUTHOR_PRIMARY_SOURCE_CHECKED_NO_EXTERNAL_CERTIFICATION",
       "existing_legal_hold": null,
       "G0_legal_status": "AUTHOR_SOURCE_CHECK_NO_FINAL_OPTION_SIGNOFF",
-      "risk_review_flags": [],
+      "risk_review_flags": [
+        "SIMILARITY_REQUIRES_HUMAN_SUBSTANTIVE_DUPLICATION_CHECK"
+      ],
       "official_2026_subdomain": null,
       "official_2027_subdomain": null,
       "microdecision_semantic_signoff": "PROVISIONAL_LABEL__SOURCE_REVIEW_REQUIRED",
@@ -17890,7 +18083,9 @@
       "existing_review_status": "AUTHOR_SOURCE_RULE_RECHECKED_2026_11_20_PENDING_FINAL_LAW_ACCEPTANCE",
       "existing_legal_hold": null,
       "G0_legal_status": "AUTHOR_SOURCE_CHECK_NO_FINAL_OPTION_SIGNOFF",
-      "risk_review_flags": [],
+      "risk_review_flags": [
+        "SIMILARITY_REQUIRES_HUMAN_SUBSTANTIVE_DUPLICATION_CHECK"
+      ],
       "official_2026_subdomain": null,
       "official_2027_subdomain": null,
       "microdecision_semantic_signoff": "PROVISIONAL_LABEL__SOURCE_REVIEW_REQUIRED",
@@ -18111,7 +18306,8 @@
       "existing_legal_hold": null,
       "G0_legal_status": "AUTHOR_SOURCE_CHECK_NO_FINAL_OPTION_SIGNOFF",
       "risk_review_flags": [
-        "NUMERIC_TIMING_CHOICE_RECHECK"
+        "NUMERIC_TIMING_CHOICE_RECHECK",
+        "SIMILARITY_REQUIRES_HUMAN_SUBSTANTIVE_DUPLICATION_CHECK"
       ],
       "official_2026_subdomain": null,
       "official_2027_subdomain": null,
@@ -18148,7 +18344,8 @@
       "existing_legal_hold": null,
       "G0_legal_status": "AUTHOR_SOURCE_CHECK_NO_FINAL_OPTION_SIGNOFF",
       "risk_review_flags": [
-        "NUMERIC_TIMING_CHOICE_RECHECK"
+        "NUMERIC_TIMING_CHOICE_RECHECK",
+        "SIMILARITY_REQUIRES_HUMAN_SUBSTANTIVE_DUPLICATION_CHECK"
       ],
       "official_2026_subdomain": null,
       "official_2027_subdomain": null,
