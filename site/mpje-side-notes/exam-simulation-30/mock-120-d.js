@@ -35,7 +35,7 @@
     if (fingerprint(JSON.stringify(questions)) !== manifest.bankSignature) {
       return 'Form D question content differs from its fixed-form manifest. Do not score a changed bank.';
     }
-    const c = manifest.forms && manifest.forms.C;
+    const c = manifest.forms && manifest.forms.D;
     if (!Array.isArray(c) || c.length !== 120 || new Set(c).size !== 120 ||
         c.some(id => !byId.has(id)) || new Set(c).size !== byId.size) {
       return 'Form D must contain exactly 120 unique known question IDs.';
