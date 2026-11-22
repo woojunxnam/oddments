@@ -7,16 +7,16 @@
 
 ## 1. Deliverables and exact counters
 
-- Machine-readable [480-row G0 legal-decision ledger](docs/MPJE_E_F_G_G0_480_DECISION_LEDGER_2026-11-22.json) — one row per ID containing question/source path, original scenario, questioned action, as-authored keyed legal conclusion, topic, authority citations, existing legal review status, separate risk/hold flags, and similarity nearest neighbor.
+- Browsable [480-row G0 review CSV](MPJE_E_F_G_G0_480_REVIEW_INDEX_2026-11-22.csv), alongside the machine-readable [480-row G0 legal-decision ledger](docs/MPJE_E_F_G_G0_480_DECISION_LEDGER_2026-11-22.json) — one row per ID containing question/source path, original scenario, questioned action, as-authored keyed legal conclusion, topic, authority citations, existing legal review status, separate risk/hold flags, and similarity nearest neighbor.
 - Previous [480-row structural baseline](MPJE_E_F_G_BASELINE_480_STRUCTURAL_2026-11-22.json) remains intact.
 - **IDs: 480 unique / 480 scanned** — A/B 240, C 120, D 120.
 - **38 provisional decision families** rather than relying solely on the four broad old exam Areas.
 - **10 items with an explicit prior C/D legalHold field**: 9 from C, 1 from D. This is **not** the number of proven erroneous keys or the complete set of unresolved concerns.
 - **53 heuristic normative-USP/source-recheck flags** (broad screening for USP-bearing questions; not 53 legal errors).
 - **53 heuristic numerical time/deadline flags** (regex-generated; not an exhaustive census of numbers).
-- **23 lexical similarity candidates** at a conservative triage threshold (TF-IDF cosine >=0.30 within provisional family; **none determined duplicates just by this score**).
+- **23 lexical similarity candidates** at TF-IDF cosine >=0.30 within a provisional family. Independent of those scores, a separate **AI editorial first pass** found 3 repeated core legal decisions, 3 partial overlaps, and 17 materially distinct applications. This is not legal key verification or an external human review.
 - All 480 carry a prior author's dated `verified` string; this is **not** independent source confirmation.
-- Original A/B/C/D have 4 choices and 4 as-authored explanations per question according to a structural read, but those explanations require legal accuracy assessment.
+- Original A/B/C/D have 4 choices and 4 as-authored explanations per question according to a structural read, but those explanations require legal accuracy assessment. **Additional reproducible cross-file integrity check passed**: 480 source objects matched 480 ledger rows, distinct IDs 480, complete authored keys, source URLs/citations/hold fields matched, and no byte-identical normalized stems were found. This checks data consistency, not truth of law.
 
 ## 2. Why this review changes E/F/G authoring
 
@@ -90,29 +90,37 @@ The following summarizes the **previous source reconciliation** and the as-autho
 
 Additional high-risk **historical scope** flags: **E30-058** (ordinary oral order/failover clock conflict), **E30-116** (differing Board reporting triggers) and **E30-190** (USP 797 Category 2 table reference). Earlier author revisions narrowed these questions; source caveats are not erased by revisions.
 
-## 4. Candidate legal-decision overlap: 23 cases for human/semantic comparison
+## 4. Substantive comparison of 23 high-similarity pairs — AI editorial first pass
 
-These are the highest lexical candidates; a similarity score **cannot distinguish** important same-law-different-exception coverage from a pointless reworded duplicate.
+Original scenarios and keyed conclusions were read side-by-side for **all 23** flagged pairs. The editorial review concluded **3 likely repeated core legal decisions, 3 partial overlaps, and 17 materially distinct exceptions/actors/workflows**. These are editorial assessments, **not a qualified independent human review or confirmation that either key is legally correct**. Any future removal or score exclusion requires a separate version-controlled decision.
 
-| Pair to compare | Family | Similarity only |
-| --- | --- | ---: |
-| E30-130 / E30-013 | USP_NONSTERILE | 0.553 |
-| E30-094 / E30-044 | OTC_PSEUDOEPHEDRINE | 0.529 |
-| D030 / D029 | USP_NONSTERILE | 0.425 |
-| D102 / E30-233 | HIPAA_BREACH | 0.418 |
-| E30-127 / E30-023 | RETURN_CQI | 0.399 |
-| D095 / E30-115 | MOR_LICENSURE | 0.384 |
-| E30-091 / E30-026 | TECH_SCOPE | 0.380 |
-| D072 / E30-018 | DEA_INVENTORY_LOSS | 0.378 |
-| D101 / E30-233 | HIPAA_BREACH | 0.376 |
-| E30-358 / E30-188 | INTERCHANGE | 0.366 |
-| E30-250 / E30-091 | TECH_SCOPE | 0.356 |
-| D073 / E30-349 | DEA_DISPOSAL | 0.354 |
-| E30-322 / E30-029 | LABEL_PACKAGING | 0.348 |
-| E30-293 / E30-037 | IMMUNIZATION | 0.338 |
-| E30-313 / E30-034 | RX_TRANSFER_REFILL | 0.335 |
+| Existing pair | Editorial disposition | Why |
+| --- | --- | --- |
+| E30-013 / E30-130 | PARTIAL OVERLAP | Repeats the nonpreserved aqueous 14-day BUD but adds preserved aqueous 35-day categorization and other contrasts. |
+| E30-044 / E30-094 | DISTINCT MATERIAL EXCEPTION | Mobile vendor special 30-day limit vs ordinary in-person retailer daily/rolling limit. |
+| D029 / D030 | DISTINCT MATERIAL EXCEPTION | Device approval/manufacturer validation vs ingredient-specific FDA API/IND compatibility. |
+| E30-233 / D102 | DISTINCT MATERIAL EXCEPTION | Part 2 under-500 breach vs HIPAA 500+ HHS notice: different record regime and reporting clock. |
+| E30-023 / E30-127 | CORE LEGAL DECISION REPEATED | Both ask 247 CMR 9.01 return of improperly dispensed medication versus properly dispensed unwanted drug; second adds suspected contamination already encompassed in the same mandatory-return rule. |
+| E30-115 / D095 | CORE LEGAL DECISION REPEATED | Separate MA nonresident complex nonsterile license already explicitly tested within earlier E30-115 licensure-combination SATA. |
+| E30-026 / E30-091 | DISTINCT MATERIAL EXCEPTION | Training-personnel exclusion and trainee counting differ from baseline 1:4 technician ratio choice. |
+| E30-018 / D072 | PARTIAL OVERLAP | Repeats initial DEA and MA theft-report clocks but distinctly tests the DEA Form 106 45-day completion clock. |
+| E30-233 / D101 | PARTIAL OVERLAP | Same under-500 HHS reporting clock but differs by HIPAA-covered pharmacy versus Part 2 records and application. |
+| E30-188 / E30-358 | DISTINCT MATERIAL EXCEPTION | AB1 match and dosage-form interchange contrasted with multi-code AB distinctions rather than the same simple interchange. |
+| E30-091 / E30-250 | DISTINCT MATERIAL EXCEPTION | Trainer begins independently filling; formerly excludable trainer now counts and changes staffing conclusion. |
+| E30-349 / D073 | DISTINCT MATERIAL EXCEPTION | Patient direct deposit versus staff counting/handling adds legally material actor and custody rule. |
+| E30-029 / E30-322 | DISTINCT MATERIAL EXCEPTION | Prescriber-directed conventional packaging on transferred Rx versus patient-specific request for a separate prescription. |
+| E30-037 / E30-293 | DISTINCT MATERIAL EXCEPTION | MIIS objection combined with VIS/pre-administration lookup vs timing and processing of MIIS objection reporting. |
+| E30-034 / E30-313 | DISTINCT MATERIAL EXCEPTION | Outside transfer after shared database moves with one-time outside federal allowance; contrasted with ordinary shared-database exception. |
+| D021 / D024 | DISTINCT MATERIAL EXCEPTION | Pass-through cleaner-side classification rather than mere numerical ISO environmental action table. |
+| E30-358 / D041 | DISTINCT MATERIAL EXCEPTION | Multiple Orange Book AB codes on one RLD and multi-code matching rather than simple AB1-vs-AB2 equivalence. |
+| E30-129 / E30-331 | CORE LEGAL DECISION REPEATED | Suboxone buprenorphine/naloxone Schedule III is already expressly a correct identification in E30-129's three-drug classification. |
+| E30-208 / E30-238 | DISTINCT MATERIAL EXCEPTION | Schedule III veterinarian with only Schedule VI MCSR/no DEA, contrasted with valid SVI veterinary non-DEA prescription. |
+| E30-094 / E30-333 | DISTINCT MATERIAL EXCEPTION | Retailer self-certification and training vs quantity and mobile vendor purchase limits. |
+| E30-016 / E30-248 | DISTINCT MATERIAL EXCEPTION | Unchecked new Rx during pharmacist break must be held; earlier case is prechecked and releasable with follow-up. |
+| E30-023 / E30-298 | DISTINCT MATERIAL EXCEPTION | Undispensed return-to-stock vs already-dispensed contaminated return, not just acceptance of dispensed error. |
+| E30-117 / E30-267 | DISTINCT MATERIAL EXCEPTION | Hospital DEA registration/suffix permitted in hospital practice but cannot authorize unrelated private-office practice. |
 
-Each must be manually read to decide **SAME DECISION / DISTINCT EXCEPTION / DISTINCT ACTOR / DISTINCT WORKFLOW / UNDETERMINED**; a different name or stem does not qualify as novelty. This is a triage queue for E/F/G authoring, **not** grounds to delete existing student-history-linked questions.
+**Priority novelty fixes for Form E/F/G:** **E30-023 / E30-127**, **E30-115 / D095**, **E30-129 / E30-331**. Do not create another question merely replicating these same underlying legal conclusions. Do **not** silently delete or edit the current A–D questions, keys, or users' old attempts.
 
 ## 5. Readiness source-audit status, by population
 
@@ -127,7 +135,7 @@ Each must be manually read to decide **SAME DECISION / DISTINCT EXCEPTION / DIST
 ## 6. Exact decision to make before the next new E batch
 
 1. **Adjudicate the 10 explicit C/D hold/caveat items**, and the historical E30-058/E30-116/E30-190 issues, against directly effective primary sources. Where full normative USP text is needed but not accessed: **HOLD/replace the specific assertion**, not silently approve.
-2. **Review 23 lexical candidate pairs** for genuine duplication in legal conclusions, and record evidence for material exception/actor changes. Repeated *topics* can be necessary; repeated *decisions* without new reasoning are not.
+2. **Resolve the 3 core-decision repetitions and 3 partial-overlap candidates** from the AI editorial comparison at a separately approved novelty gate before generating E/F items. Repeated *topics* can be necessary; repeated *decisions* without new reasoning are not.
 3. **For each 480 question, validate the provisional decision-family tag** using full stem and keyed conclusion, then record explicit `official_2026_subdomain` / `official_2027_subdomain` based on the actual new/old NABP source only in **G1**. Do not auto-relabel the D numbers.
 4. For final legal source approval, independently verify each relevant choice against actual statutes, regulations, Board policy/DPH guidance and applicable current USP; verify dates, exceptions, patient and practitioner scope. Legacy author `verified` strings are not a substitute.
 5. When deciding E/F quotas, use **uncovered legal decision tuples** (actor + context + trigger + rule + exception + action), not just the category totals in this report. Hold Form G until E/F actual learning is complete.
