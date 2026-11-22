@@ -1,8 +1,8 @@
 # Massachusetts MPJE — Form E / F / G Authoring Blueprint (360 new questions)
 
-**Updated:** 2026-11-22. **Status:** readiness-first QA/acceptance design; G0 coverage audit and G1 law mapping remain pending; no E/F/G items authored in this change.  
+**Updated:** 2026-11-22. **Status:** FINAL pre-authoring realism design reviewed against NABP 2026/2027 official samples and MA candidate accounts; G0 480-item decision inventory complete, G1 2027 subdomain crosswalk still requires per-question work; rapid A–D legal source review 192/480, 288 pending. No E/F/G items have yet been authored/published.  
 **Existing preserved bank:** A/B 240, C 120, D 120. **Proposed** E/F/G 120 each → 840 total unique question IDs if the full plan is completed.
-**User priorities:** Maximize Massachusetts MPJE learning and new decision-making practice. Four A–D options and existing stem/choice-length conventions remain acceptable. Do not spend effort normalizing answer length or expanding to A–E; prioritize precise law and nuanced applicability.
+**User priorities:** Maximize Massachusetts MPJE learning and new decision-making practice. Preserve all existing A–D four-choice questions and study history. For *new* E/F/G use official-example-inspired five-choice A–E as the ordinary default (four choices possible where appropriate); do not invent a filler distractor only to reach five. Prioritize accurate law, authentic legal decision making, credible distractors and absence of answer-position/length clues over cosmetic length normalization.
 
 ## 1. Blueprint and exam-date versioning
 
@@ -13,7 +13,7 @@
 
 ## 2. Three intentionally different forms
 
-Every form is **120 original questions / 150 minutes / one-way navigation / four choices A–D / SBA and SATA / answer explanations only after submission**. Practice mode may provide immediate feedback only outside timed mocks. No publication until all 120 IDs and source gates for the form are ready.
+Every form is **120 original questions / 150 minutes / forward-only navigation / single-best-answer (SBA) and select-all-that-apply (SATA) / answer explanations only after submission**. New E/F/G renderers must support **at least five A–E options** per item, with occasional well-justified four-option items if needed; old A–D engine remains unmodified. Vary SATA key cardinalities (usually two to four correct among five) with no form-wide fixed-answer-count signal. Practice mode may provide immediate feedback only outside timed mocks. No publication until all 120 IDs and source gates for the form are ready.
 
 ### Form E — Essential Law Mastery (120)
 
@@ -76,7 +76,7 @@ Massachusetts Board's published MPJE review reference sheet: https://www.mass.go
 For every *new* E/F/G question require:
 1. Stable `E001…E120`, `F001…F120`, `G001…G120` question IDs; `micro_skill_id`, `legal_decision`, `actor`, `jurisdiction`, `trigger`, `critical_exception`, `correct`, `choices[{text,why}]`, `source_urls[]`, `verified_at`, `law_status`, `revision`, and authentic `area_2026`/`domain_2027` tags.
 2. Current operative primary source in 247 CMR, MGL c.94C/c.112, 105 CMR 700–722, MA Board policies, DPH circulars, 21 CFR, FDA, DEA, HHS, and applicable USP where the precise claim requires it.
-3. Verify **each of the four** choices (not merely the correct letter): role, schedule, exact form/NDC, 24h/7 day/14 day type, effective date, exception, state/federal difference.
+3. Verify **every authored answer choice (normally all five A–E)**, not merely the keyed ones: role, schedule, exact form/NDC, 24h/7 day/14 day type, effective date, exception, state/federal difference.
 4. **Four decisions:** `SOURCE_PASS`, `SOURCE_HOLD`, `NEEDS_EDIT`, `REJECT`. Do not count a mere provided citation as law approval; don't promote holds to verified to satisfy quotas.
 5. Record full exact section/URL and as-of date in a per-option ledger. Preserve known legal conflicts (eg MOR personal 10 day vs 14 calendar day) with separate actors and explicit scope; refer to legal reviewer or authoritative Board clarification if necessary.
 6. For C/D original bank: refer to `docs/MPJE_FORM_C_D_LAW_VERIFICATION_RELEASE_GATE_2026-11-22.md`. Its unresolved holds cannot become E/F/G source assertions without independent verification.
@@ -89,7 +89,7 @@ An item may test the same legal section *only if a materially distinct decision*
 
 ## 5. Execution and release
 
-- Author **E in six batches × 20**. For each batch: gather official law → write questions in clear English → A–D rationale law gate → novelty screen → record source dates → submit source ledger and only release verified batch.
+- Author **E in six batches × 20**. For each batch: gather official law → write questions in clear English → validate all A–E option rationales → novelty and answer-cue screening → record source dates → submit source ledger and only release verified batch. Do not hold E drafting for the entire legacy A–D audit; map each new question to the applicable 2027 subdomain as part of its own approval.
 - Repeat **F six batches × 20**, after using E's skill coverage to correct gaps. Select USP questions only when normatively sourced.
 - **G six batches × 20** after E/F coverage mapping; keep withheld from the public site until user chooses the first attempt. Version fixed ID manifest and signing hash.
 - Each released form: complete 120 IDs, exact scoring/SATA, 150-minute timer, stop/backtracking protections, retake/history, review filters/CSV, mobile/desktop Playwright, old A/B/C/D history preserved, no invalid links, CI success and actual GitHub Pages URL verified.
@@ -121,11 +121,11 @@ The extreme SBA option-length distribution in **both directions** is a potential
 
 ### 7.2 Gate G0 — audit and classify the current 480 before E authoring
 
-**G0 legal source gate checkpoint (2026-11-22, still open):** [Batch 3 hold resolution/FDA/OSHA/compounding review](MPJE_A_D_OPTION_LEGAL_REVIEW_BATCH3_2026-11-22.md) and the current [A/B](MPJE_G0_LEGAL_CHOICES_AB_2026-11-22.json), [C](MPJE_G0_LEGAL_CHOICES_C_2026-11-22.json), [D](MPJE_G0_LEGAL_CHOICES_D_2026-11-22.json) option ledgers show **88/480 questions and 352/1,920 choices reviewed: 69 scoped corroborations, 19 with caveats, 0 current question-level HOLDS in the reviewed subset; 392 questions / 1,568 choices PENDING.** D067 and newly discovered D016 stem conditions were corrected with revision-aware preservation of old attempts; those old versions are excluded from readiness evidence. E30-058 and E30-342 scoring-level HOLDS were resolved with explicit remaining limitations. All IDs, choice texts and keys are preserved. **This is not final whole-bank signoff, independent human certification or an E/F/G release-gate pass.**
+**G0 Batch 3 historical legal source checkpoint (2026-11-22; now superseded by the rapid 192-item report):** [Batch 3 hold resolution/FDA/OSHA/compounding review](MPJE_A_D_OPTION_LEGAL_REVIEW_BATCH3_2026-11-22.md) and the current [A/B](MPJE_G0_LEGAL_CHOICES_AB_2026-11-22.json), [C](MPJE_G0_LEGAL_CHOICES_C_2026-11-22.json), [D](MPJE_G0_LEGAL_CHOICES_D_2026-11-22.json) option ledgers show **88/480 questions and 352/1,920 choices reviewed: 69 scoped corroborations, 19 with caveats, 0 current question-level HOLDS in the reviewed subset; 392 questions / 1,568 choices PENDING.** D067 and newly discovered D016 stem conditions were corrected with revision-aware preservation of old attempts; those old versions are excluded from readiness evidence. E30-058 and E30-342 scoring-level HOLDS were resolved with explicit remaining limitations. All IDs, choice texts and keys are preserved. **This is not final whole-bank signoff, independent human certification or an E/F/G release-gate pass.**
 
 
 
-**G0 classification deliverables (2026-11-22):** [480-item structural baseline](MPJE_E_F_G_BASELINE_480_STRUCTURAL_2026-11-22.json), [480-row provisional tested-decision ledger](MPJE_E_F_G_G0_480_DECISION_LEDGER_2026-11-22.json), [480-row human-readable review CSV](MPJE_E_F_G_G0_480_REVIEW_INDEX_2026-11-22.csv), and [G0 audit report with explicit C/D holds and editorial overlap assessment](MPJE_E_F_G_G0_480_DECISION_AUDIT_2026-11-22.md). **All 480 IDs are provisionally classified into 38 decision families with keyed claims and source-evidence status; 10 legacy C/D legalHold flags are tracked. An AI editorial review of 23 similar pairs marked 3 repeated core decisions, 3 partial overlaps and 17 materially distinct cases. Current source-to-ledger QA passed (480 IDs, keyed claims, sources and holds match). This is classification/triage, NOT full legal approval, official subdomain mapping, independently validated novelty, or G0 final signoff.**
+**Latest rapid legal-source status (2026-11-22):** [Pre-Form E rapid gate](MPJE_A_D_FAST_FORM_E_GATE_2026-11-22.md): **192/480 source-reviewed / 288 pending**, with **Form D 120/120 reviewed and 20 source/scope caveats**. This status supersedes the Batch 3 numerical checkpoint above. These are AI source comparisons with explicit caveats; they are not a qualified external legal signoff. The completion of the *minimum* E drafting gate does not imply full A–D law approval.\n\n**G0 classification deliverables (2026-11-22):** [480-item structural baseline](MPJE_E_F_G_BASELINE_480_STRUCTURAL_2026-11-22.json), [480-row provisional tested-decision ledger](MPJE_E_F_G_G0_480_DECISION_LEDGER_2026-11-22.json), [480-row human-readable review CSV](MPJE_E_F_G_G0_480_REVIEW_INDEX_2026-11-22.csv), and [G0 audit report with explicit C/D holds and editorial overlap assessment](MPJE_E_F_G_G0_480_DECISION_AUDIT_2026-11-22.md). **All 480 IDs are provisionally classified into 38 decision families with keyed claims and source-evidence status; 10 legacy C/D legalHold flags are tracked. An AI editorial review of 23 similar pairs marked 3 repeated core decisions, 3 partial overlaps and 17 materially distinct cases. Current source-to-ledger QA passed (480 IDs, keyed claims, sources and holds match). This is classification/triage, NOT full legal approval, official subdomain mapping, independently validated novelty, or G0 final signoff.**
 
 Complete a versioned 480-row semantic/legal baseline ledger, one item per ID, with fields: form, ID, question revision, exam-era blueprint mapping, specific tested legal decision, actor, setting, jurisdiction, Schedule/formulation, trigger, numerical/time condition, critical exception, exact statutory/regulatory source URL/section, source effective date, last source check, related/duplicated IDs, original answer exposure, and legal release status.
 
@@ -147,7 +147,7 @@ For each **high-priority decision family** require (across A–G) a direct recog
 
 Sentinel families: brand/generic and formulation-specific federal-vs-MA Schedule recognition; prescriber authorization/MCSR/DEA and out-of-state Rx; Rx validity, emergency CII, EPCS, CII partial fills, CIII–V refills/transfers; MassPAT; CDTM and pharmacist prescribing protocols; technician/intern/pharmacist duties and vaccines; counseling/labels/packaging/PPPA; USP 795/797/800 and NIOSH, HD refrigeration and environmental competency; institutional/hospital/LTCF controlled drugs; delivery/cold chain; DEA orders/POA, inventory, theft/loss, disposal; inspection/MOR/discipline/impairment; HIPAA/42 CFR Part 2; FDA adulteration/misbranding, DSCSA, REMS, recalls, Orange/Purple Book, returns; pharmacy licensure/automation/central-fill/cybersecurity; malpractice/duty to report. These are **coverage risk families**, not statistical claims about actual item frequency.
 
-### 7.4 Revise E and F slots AFTER G1; do not fill quotas by rewording
+### 7.4 Revise E and F slots with incremental G1 subdomain mapping; do not fill quotas by rewording
 
 **E (120):** law-recognition and dispensing-authority transfer. Include realistic short common-drug identification **without telling the examinee the Schedule when classification is tested**, formulation/MA Schedule VI differentiation, legitimate practitioner credentials and authority, pharmacist vs nonpharmacist scope, and exact controlled-Rx exceptions. Use the original category counts as *provisional*, not as a justification to produce redundant items.
 
@@ -155,7 +155,7 @@ Sentinel families: brand/generic and formulation-specific federal-vs-MA Schedule
 
 For **each 20-question batch** keep a source-and-novelty acceptance record:
 1. Every candidate has a specific new decision/exception, closest earlier IDs, material delta, and why it is not a disguised duplicate; otherwise **REPLACE**.
-2. **All four A–D options** have separately checked legal rationales, exact current operative primary citations, proper jurisdiction and dates; author and reviewer must check whether an intended distractor is also legally acceptable.
+2. **All five A–E choices by default** have separately checked legal rationales, exact current operative primary citations, proper jurisdiction and dates; author and key-blind reviewer must check whether an intended distractor is also legally acceptable. The legacy A–D engines retain their original four alternatives.
 3. An answer-key-blind adversarial reviewer solves the scenario based only on law and stem, then compares with the author's key; review the **one-fact counterfactual flip** that would alter the legal conclusion. AI second-pass review is not falsely labeled as external independent certification.
 4. Check clue-based answering (unrealistic absolutes, length/structure, grammatical cues), implausible distractors and excessive scenario length, **without prioritizing cosmetic equal-length editing**.
 5. Resolve source conflicts/effective dates; if current normative USP text cannot be authenticated, **HOLD or replace** the USP-specific numeric assertion. A Board checklist or USP FAQ supports only the narrow text it actually establishes.
@@ -163,7 +163,7 @@ For **each 20-question batch** keep a source-and-novelty acceptance record:
 
 ### 7.5 Form G is a HOLDOUT, not a reward for finishing E/F
 
-G is **120 entirely fresh, separately reviewed, non-reworded items**, authored only after verified G1 coverage and E/F remediation. Preserve multi-setting, prescription/records-based, drug recognition, exceptions and state-federal comparisons with varied stem length and SBA/SATA. Four A–D choices are acceptable for site compatibility; the real exam is adaptive and some NABP public samples use five options. Do not pretend the model reproduces NABP item statistics.
+G is **120 entirely fresh, separately reviewed, non-reworded items**, authored only after verified G1 coverage and E/F remediation. Preserve multi-setting, prescription/records-based, drug recognition, exceptions and state-federal comparisons with varied stem length and SBA/SATA. Use the new variable-choice E/F/G engine, normally **A–E**, based on NABP's official MPJE sample and 2027 Content Outline (both show A–E); isolated A–D variants are permissible. The official exam is adaptive, but this bank is a fixed-length nonadaptive educational approximation. Do not claim actual item statistics or score comparability.
 
 **For exams through 2027-02-28:** 120-item editorial legacy Area allocation **26/40/29/25**. **On/after 2027-03-01:** authentic new Domain allocation **36/36/24/24**. Do not begin G without confirming the exam-era blueprint. These proportions are approximations to the official 100-scored-item domain weights, not a prediction of the real 120-item distribution.
 
@@ -175,7 +175,7 @@ Hold G off the publicly linked study pages and refrain from showing its source, 
 
 - All 480 legacy IDs accounted for and high-risk unresolved legal assumptions excluded from readiness-counted materials.
 - **100% documented disposition for each applicable official exam-era subdomain** and MA Board authority family; **0 unaccounted high-priority decision gaps** (not a claim to have sampled every possible statutory detail).
-- E/F/G: **120 accepted unique IDs each**, all four options checked against official sources, **0 disputed keys, 0 outstanding source holds, 0 quota-filler legal duplicates**.
+- E/F/G: **120 accepted unique IDs each**, every authored answer option source-checked, **0 disputed keys, 0 outstanding source holds, 0 quota-filler legal duplicates**, no systematic length/letter/cardinality answer clues.
 - Legally material source updates rechecked at the examination date; aim to recheck high-risk effective-date-sensitive rules within **14 days before the actual exam** and after changes. Date rule is a study QA target, not a Massachusetts statutory deadline.
 - Full release checks: schema, counts, distinct IDs, one-way navigation, score/SATA, timer, answer withholding, history isolation, review export, mobile/desktop browser, successful CI and **actual working published URL**. GitHub merge alone does not prove deployment. Qualified human legal review, if not performed, is disclosed as absent.
 
@@ -198,3 +198,63 @@ Before calling E/F/G complete, link dated artifacts in this roadmap: **(1)** aud
 ## 8. Explicitly out of scope for this roadmap update
 
 No questions authored or published here; no revisions to A/B/C/D keys, text, scores or exam state; no claim that the open C/D source-gate audit is fully complete; no automatic merging of unresolved legal facts.
+
+
+## 9. Final live-format realism audit — 2026-11-22 (supersedes older four-choice convention for **new** forms)
+
+### 9.1 Official reference facts and dates
+
+1. [NABP official MPJE sample items](https://nabp.pharmacy/wp-content/uploads/2020/07/MPJE-Sample-Questions-1.pdf) show both **A–E SBA and A–E SATA**, alongside short, straightforward stems; the 2027 [MPJE Content Outline, page 3](https://nabp.pharmacy/wp-content/uploads/MPJE-Content-Outline.pdf) also illustrates A–E items. The samples **do not establish** that every real question has five options or that every stem is short. Preserve established A–D four-option practice exams, build flexible five-option support only for E/F/G.
+2. [NABP current format](https://read.nxtbook.com/nabp/bulletin/naplex_mpje_bulletin/what_is_the_mpje.html): **120 items / 150 minutes / CAT / 100 scored plus 20 unscored pretest**, 5 attempts per jurisdiction, **no backward navigation**, no scheduled breaks, and no way to identify pretest items. Our mocks are **nonadaptive and score all 120 for educational feedback**; do not claim to replicate the unknown 100 scored questions or convert raw percentage to official scaled score.
+3. [NABP 2024 MPJE item fact sheet](https://nabp.pharmacy/wp-content/uploads/2024/02/MPJE-Fact-Sheet.pdf): exam has SBA, SATA and historically K-type, but **K-type was being phased out**. Do not spend most authoring effort on rare K-type until NABP publishes newer evidence.
+4. [NABP exam-era change](https://nabp.pharmacy/news/blog/mpje-content-outline/): exams **through 2027-02-28** use Area 1–4 at **22/33/24/21%**; exams **from 2027-03-01** use new Domain 1–4 at **30/30/20/20%**. The 2027 PDF weights apply to **100 scored items**. An editorial 120-question approximate G distribution is **36/36/24/24**, not a claim about the precise real 120 items. Use the [NABP official crosswalk](https://nabp.pharmacy/wp-content/uploads/2026/07/MPJE-Domain-Crosswalk.pdf): old Area 4 controlled inventory moves to new Domain 3; old Area 4 compounding moves to new Domain 1; old Area 4 pharmacy licensure stays Domain 4; drug selection moves to Domain 2. **Never relabel old area numerals as new domain IDs.**
+5. [NABP UMPJE participating jurisdictions](https://nabp.pharmacy/programs/examinations/mpje/uniform-mpje/participating-states/) do **not** list Massachusetts as of this check, and [MA Board's pharmacist licensing page](https://www.mass.gov/how-to/apply-for-a-pharmacist-license) still specifies **MPJE**. Verify before the actual exam in case adoption changes.
+
+### 9.2 Direct measurement of live 480-question source files
+
+Read these complete live repository files: `site/mpje-side-notes/exam-simulation-30/questions.js` (240), `form-c-questions.js` (120), `form-d-questions.js` (120). This is a **structural/editorial audit, not independent legal certification of all 480 items**.
+
+| Metric | Form A | Form B | Form C | Form D | All forms |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| Total items | 120 | 120 | 120 | 120 | **480** |
+| SBA | 72 | 72 | 88 | 92 | **324** |
+| SATA | 48 | 48 | 32 | 28 | **156** |
+| Available answer choices per item | 4 | 4 | 4 | 4 | **all 480 are A–D** |
+| Mean stem length (words) | 69.0 | 58.3 | 61.7 | 37.3 | — |
+| SBA correct answer is uniquely the longest **by characters** | 57/72 | 52/72 | 0/88 | 16/92 | **125/324** |
+| SATA items with 2 correct answers | 27 | 48 | 31 | 21 | **127/156** |
+| SATA items with 3 correct answers | 21 | 0 | 1 | 7 | **29/156** |
+| SATA items with 4 correct answers | 0 | 0 | 0 | 0 | **0/156** |
+
+The A/B answer-length clue is **109/144 = 75.7% of SBA** by character count. This does not establish exploitation by any learner, but it is a serious design artifact. B's **48/48** SATAs with exactly two correct answers may teach answer-count guessing. The focus is **not** mechanically equalizing all strings; it is eliminating correlations between correctness and superficial cues while retaining nuanced valid choices. Our pre-existing source-bank length and area distributions are not evidence that the bank reproduces actual NABP difficulty.
+
+### 9.3 2022–2026 Massachusetts candidate experience: corroboration, not blueprint
+
+Independent public candidate self-reports remain **unverified and non-representative**. They vary by CAT form; preserve them only as weak signals for subject mix and cognitive load, never as extracted actual secure question content.
+
+- [Nov. 21 2025 Massachusetts firsthand report](https://www.reddit.com/r/NAPLEX_Prep/comments/1p2xhc4/took_ma_mpje_yesterday/): reports many SATA, hazardous compounding/training, technician duties, prescription vials and validity, deliveries, CDTM, and drug schedule identification.
+- [June 2026 Massachusetts discussion](https://www.reddit.com/r/MPJE/comments/1uchh3o/ma_mpje/): emphasizes CDTM/CPA, schedule/brand-generic, pseudoephedrine, technician/intern, and prescriber scope.
+- [August 2026 Massachusetts retake report](https://www.reddit.com/r/NAPLEX_Prep/comments/1vthrm3/ma_mpje_second_time_is_harder/): describes a different test pattern across attempts with heavier SATA; does not establish a fixed official frequency.
+- [November 2026 Massachusetts preparation discussion](https://www.reddit.com/r/MPJE/comments/1xmfq5h/2026_ma_mpje_advice/): notes the need to distinguish what a legally worded stem is asking and compare current CMR against study books with outdated details.
+- [2026 Texas candidate report](https://www.reddit.com/r/NAPLEX_Prep/comments/1vbgitk/tx_mpje_the_aftermath/) mentions A–E/A–F SATA and no K-type, but Texas is **not** direct Massachusetts exam evidence.
+
+### 9.4 Final item-writing contract
+
+**E — Mastery:** 120 new items primarily testing common, reusable law (prescriber authority; Schedule/formulation and MassPAT; valid Rx; controlled fill/refill/partial/transfer; technician/intern/CDTM/vaccination; counseling/labeling). Target **about 20–30% brief direct-recall** questions, **45–55% routine legal decisions**, and the remainder materially distinct exceptions; editorial ranges only, not official difficulty weights. Revise the provisional 25/25/30/25/15 micro-skill allocations when mapped G1 gaps demand it; **no novelty-by-rewording**.
+
+**F — Application:** 120 new items emphasizing **operational and overlapping duties**, with realistic records and sufficient facts, controlled inventory/DEA/USP/institutional settings, delivery/cold chain, clinical counseling, Board regulatory and drug integrity decisions. Include straightforward cases as well as complex ones; do not overload the form with rare numerical trivia or make every item long. Where precise USP text cannot be authenticated, **HOLD or replace**, not approve from a loosely related FAQ.
+
+**G — Unseen:** 120 independent first-use, legally source-cleared items across all current exam-era NABP domains, **no pre-disclosed topic heading**, varied short/medium/complex cases, technically forward-only 150 minutes and post-exam rationale. **A–E default**; mix SBA and SATA without a published exact composition or correct-answer cardinality pattern. G is intentionally nonadaptive and its result is *not* an official MPJE scaled score. Hold it from publication until first attempt is intended.
+
+**Distractor acceptance gate for every E/F/G item:**
+- A wrong option must be **plausible under a nearby law or circumstance**, but legally wrong under an explicit fact in this stem; no obviously absurd action as easy elimination.
+- Any option genuinely defensible under another current law or exemption triggers **REWRITE/HOLD**. The reviewer must justify the correct and each wrong choice against exact operative law and legal fact, including exceptions and dates.
+- Check answer-letter distribution, unusual wording, correct-choice length signal and SATA cardinality; no planted or unintentional answer-count patterns, and no identical "always/never/automatically" distractor convention.
+- Identify one changed fact that flips the intended answer, and prove the needed scenario facts are present. Avoid titles such as "CONTROLLED RX TEST" that disclose the domain during a blind mock.
+- Vary case length deliberately. The 2027 public samples show short questions, while recent MA anecdotes include wordy questions; neither provides an official length distribution.
+- G publication and learner readiness remain blocked when any new item has unresolved legal HOLD or has been pre-exposed. Historical A–D data and scores must never be destroyed or silently rescored.
+
+### 9.5 Decision
+
+**E authoring: GO.** G0 480-ID inventory is complete; G1 can be mapped incrementally against new E items without waiting for 288 still-pending legacy choice audits. Finish subdomain evidence before each 20-question batch approval. **F authoring: GO after E coverage reconciliation. G creation and final release: conditional on completed coverage crosswalk, official exam-date blueprint, E/F completion, question-by-question legal gate and blind-holdout protection.** This is a complete editorial *design*, not a claim that E/F/G items have been produced, tested or deployed.
+
