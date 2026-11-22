@@ -94,7 +94,8 @@
   // Preserve saved attempts only across the verified E30-190 explanation-only correction.
   function stale(s) {
     return !!s && s.bankSignature !== manifest.bankSignature &&
-      !(Array.isArray(manifest.compatibleBankSignatures) &&
+      !(manifest.bankSignature === '48ec9bb4' &&
+        Array.isArray(manifest.compatibleBankSignatures) &&
         manifest.compatibleBankSignatures.includes(s.bankSignature));
   }
   function formatSeconds(n) {
