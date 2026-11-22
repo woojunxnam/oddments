@@ -426,7 +426,7 @@
     document.body.append(a); a.click(); a.remove();
     setTimeout(() => URL.revokeObjectURL(url), 1000);
   }
-  $('mock-open-d').addEventListener('click', () => openForm('C'));
+  $('mock-open-d').addEventListener('click', () => openForm('D'));
   $('mock-next').addEventListener('click', nextQuestion);
   $('mock-finish-early').addEventListener('click', () => {
     const s = activeSession();
