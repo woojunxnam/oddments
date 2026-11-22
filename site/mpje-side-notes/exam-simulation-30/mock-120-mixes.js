@@ -91,7 +91,13 @@
     const s = state.current[state.activeForm];
     return s && s.status === 'active' ? s : null;
   }
-  function stale(s) { return s && s.bankSignature !== manifest.bankSignature; }
+  // Preserve saved attempts only across the verified E30-190 explanation-only correction.
+  function stale(s) {
+    return !!s && s.bankSignature !== manifest.bankSignature &&
+      !(manifest.bankSignature === '48ec9bb4' &&
+        Array.isArray(manifest.compatibleBankSignatures) &&
+        manifest.compatibleBankSignatures.includes(s.bankSignature));
+  }
   function formatSeconds(n) {
     n = Math.max(0, Math.ceil(n));
     return Math.floor(n / 3600) + ':' + String(Math.floor(n % 3600 / 60)).padStart(2, '0') +
