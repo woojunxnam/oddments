@@ -10,6 +10,9 @@ on:
       - 'scripts/representative_quality.py'
       - 'scripts/build_refresh.py'
       - 'scripts/verify_ch30_browser.py'
+      - 'scripts/verify_ch30_form_d_browser.py'
+      - 'scripts/verify_ch30_mixes_browser.py'
+      - 'scripts/verify_ch30_revision_history_browser.py'
       - 'notes/refresh/**'
       - '.github/workflows/pages.yml'
   workflow_dispatch:
@@ -188,6 +191,70 @@ jobs:
                   time.sleep(5)
           PY
           python scripts/verify_ch30_form_c_browser.py --base-url "$PAGE_URL"
+      - name: Verify published Form D, mixed exams and revision archives match this release
+        env:
+          PAGE_URL: ${{ steps.deployment.outputs.page_url }}
+        shell: python
+        run: |
+          import hashlib, json, os, time, urllib.request
+          from pathlib import Path
+          base = os.environ['PAGE_URL'].rstrip('/') + '/mpje-side-notes/exam-simulation-30/'
+          paths = ['mock-120-d.html', 'mock-120-d.js', 'form-d-questions.js', 'form-d-manifest.js',
+                   'mock-120-mixes.html', 'mock-120-mixes.js', 'mixed-forms.js',
+                   'bank-revisions.js', 'mock-version-history.js', 'mock-review-tools.js',
+                   'questions.js', 'mock-forms.js']
+          evidence = Path('test-results/ch30-public')
+          evidence.mkdir(parents=True, exist_ok=True)
+          for attempt in range(12):
+              try:
+                  verified = {}
+                  for path in paths:
+                      request = urllib.request.Request(base + path + '?release=' + os.environ['GITHUB_SHA'],
+                                                       headers={'Cache-Control': 'no-cache'})
+                      with urllib.request.urlopen(request, timeout=30) as response:
+                          actual = response.read()
+                      expected = (Path('/tmp/mpje-public-site/mpje-side-notes/exam-simulation-30') / path).read_bytes()
+                      digest = hashlib.sha256(actual).hexdigest()
+                      assert digest == hashlib.sha256(expected).hexdigest(), path
+                      verified[path] = digest
+                  report = {'passed': True, 'release': os.environ['GITHUB_SHA'], 'page_url': os.environ['PAGE_URL'],
+                            'verified_sha256': verified}
+                  (evidence / 'published-assets.json').write_text(json.dumps(report, indent=2) + '\n')
+                  print('Published D/mixed exam files and historical archives match this deployment exactly.')
+                  break
+              except Exception as error:
+                  (evidence / 'published-assets.json').write_text(json.dumps({
+                      'passed': False, 'release': os.environ['GITHUB_SHA'], 'page_url': os.environ['PAGE_URL'],
+                      'attempt': attempt + 1, 'error': str(error)}, indent=2) + '\n')
+                  if attempt == 11:
+                      raise
+                  time.sleep(5)
+      - name: Exercise published Form D exam behavior
+        env:
+          PAGE_URL: ${{ steps.deployment.outputs.page_url }}
+        shell: bash
+        run: |
+          mkdir -p test-results/ch30-public
+          python scripts/verify_ch30_form_d_browser.py --base-url "$PAGE_URL" 2>&1 | tee test-results/ch30-public/form-d.log
+      - name: Exercise published mixed exams and focused review
+        env:
+          PAGE_URL: ${{ steps.deployment.outputs.page_url }}
+        shell: bash
+        run: |
+          python scripts/verify_ch30_mixes_browser.py --base-url "$PAGE_URL" 2>&1 | tee test-results/ch30-public/mixed-exams.log
+      - name: Verify historical exam preservation on the published site
+        env:
+          PAGE_URL: ${{ steps.deployment.outputs.page_url }}
+        shell: bash
+        run: |
+          python scripts/verify_ch30_revision_history_browser.py --base-url "$PAGE_URL" --output test-results/ch30-public/revision-history.json 2>&1 | tee test-results/ch30-public/revision-history.log
+      - name: Retain published Chapter 30 verification evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: published-ch30-exam-evidence
+          path: test-results/ch30-public/
+          retention-days: 14
       - name: Retain published draft33 verification screenshots
         if: always()
         uses: actions/upload-artifact@v4

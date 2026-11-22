@@ -20,6 +20,11 @@
     formC ? window.MPJE_CH30_FORM_C_QUESTIONS || [] : formD ? window.MPJE_CH30_FORM_D_QUESTIONS || [] : window.MPJE_CH30_QUESTIONS || [];
   const byId = new Map(questions.map(q => [q.id, q]));
   if (!manifest || !byId.size) return;
+  const versions = window.MPJE_CH30_VERSION_HISTORY?.create(manifest, byId);
+  const canUse = session => versions ? versions.canUse(session) :
+    session.bankSignature === manifest.bankSignature ||
+    (!mixed && !formC && !formD && manifest.bankSignature === 'db186c6a' &&
+      manifest.compatibleBankSignatures?.includes(session.bankSignature));
   const $ = id => document.getElementById(id);
   const el = (tag, className, content) => {
     const x = document.createElement(tag);
@@ -30,7 +35,7 @@
   const isEqual = (a, b) => Array.isArray(a) && Array.isArray(b) &&
     [...new Set(a)].sort().join(',') === [...new Set(b)].sort().join(',');
   const modeNames = {missed: 'Incorrect + unanswered', incorrect: 'Incorrect only',
-    unanswered: 'Unanswered only', pending: 'Not yet reviewed', all: 'All questions'};
+    unanswered: 'Unanswered only', pending: 'Not yet reviewed', corrections: 'Updated historical items', all: 'All questions'};
   const hub = el('section', 'mock-review-hub');
   hub.setAttribute('aria-label', 'Focused post-exam review');
   hub.innerHTML = '<h4>Focused answer review</h4>' +
@@ -42,6 +47,7 @@
     '<option value="incorrect">Incorrect only</option>' +
     '<option value="unanswered">Unanswered only</option>' +
     '<option value="pending">Not yet reviewed</option>' +
+    '<option value="corrections">Updated historical items</option>' +
     '<option value="all">All questions</option>' +
     '</select></label>' +
     '<label>Find <input id="review-hub-search" type="search" placeholder="Topic, question ID or word" autocomplete="off"></label>' +
@@ -69,8 +75,9 @@
   }
   function getCurrent() {
     const exam = readLocal(examKey);
-    const session = exam?.current?.[exam.visibleForm];
-    if (!session || session.status !== 'completed') return null;
+    const session = exam?.visibleAttemptId ? exam.history?.find(s =>
+      s.attemptId === exam.visibleAttemptId && s.form === exam.visibleForm) : exam?.current?.[exam.visibleForm];
+    if (!session || session.status !== 'completed' || !canUse(session)) return null;
     const ids = manifest.forms?.[session.form];
     if (!Array.isArray(ids) || ids.length !== 120 || !ids.every(id => byId.has(id))) return null;
     return {session, ids};
@@ -89,12 +96,15 @@
   }
   function getRows(data) {
     return data.ids.map((id, index) => {
-      const q = byId.get(id);
+      const q = versions ? versions.question(data.session, id) : byId.get(id);
       const submitted = Object.prototype.hasOwnProperty.call(data.session.submitted || {}, id);
       const yourAnswer = submitted ? data.session.submitted[id] : [];
       const correct = submitted && isEqual(yourAnswer, q.correct);
       return {index, id, q, yourAnswer, correct, unanswered: !submitted,
-        missed: !correct, reviewed: reviewed.has(id)};
+        missed: !correct, reviewed: reviewed.has(id),
+        excluded: versions?.excludedIds(data.session).includes(id) || false,
+        reason: versions?.reason(data.session, id) || '',
+        changed: versions?.changed(data.session, id) || false, currentQuestion: byId.get(id)};
     });
   }
   function filtered() {
@@ -103,8 +113,9 @@
       if (currentMode === 'missed' && !r.missed) return false;
       if (currentMode === 'incorrect' && (!r.missed || r.unanswered)) return false;
       if (currentMode === 'unanswered' && !r.unanswered) return false;
-      if (currentMode === 'pending' && (!r.missed || r.reviewed)) return false;
-      return !text || [r.id, r.q.topic, r.q.stem, String(r.q.area)].join(' ').toLowerCase().includes(text);
+      if (currentMode === 'pending' && (!(r.missed || r.excluded) || r.reviewed)) return false;
+      if (currentMode === 'corrections' && !r.changed) return false;
+      return !text || [r.id, r.q.topic, r.q.stem, String(r.q.area), r.reason, r.changed ? r.currentQuestion.stem : ''].join(' ').toLowerCase().includes(text);
     });
   }
   function jump(index, scroll) {
@@ -143,6 +154,8 @@
     const skipped = missed.filter(r => r.unanswered);
     const done = missed.filter(r => r.reviewed);
     const total = rows.length;
+    const excluded = rows.filter(r => r.excluded);
+    const changed = rows.filter(r => r.changed);
     const summary = $('review-hub-summary');
     summary.replaceChildren();
     for (const [n, label] of [[wrong.length,'Incorrect'], [skipped.length,'Unanswered'],
@@ -152,10 +165,18 @@
       cell.append(el('strong','',String(n)),el('span','',label));
       summary.append(cell);
     }
+    if (changed.length) {
+      const cell = el('div', 'mock-review-counter');
+      cell.append(el('strong', '', String(changed.length)), el('span', '', 'Updated historical items'));
+      summary.append(cell);
+    }
     const visible = filtered();
     $('review-hub-count').textContent = visible.length ?
       visible.length + ' question(s) in ' + modeNames[currentMode] + ' · Select any question below.' :
       'No questions match this view. Choose another filter or search term.';
+    if (excluded.length) $('review-hub-count').textContent +=
+      ' Excluded from readiness evidence: ' + excluded.map(r => r.id).join(', ') +
+      '. Use Updated historical items to review the corrections.';
     const list = $('review-hub-list');
     list.replaceChildren();
     const index = Number(picker.value);
@@ -170,17 +191,20 @@
         el('span','mock-review-topic',r.q.topic),
         el('small','',r.unanswered ? 'Unanswered' :
           r.correct ? 'Correct' : 'Your: '+(r.yourAnswer.join(', ')||'—')+' · Key: '+r.q.correct.join(', ')));
+      if (r.excluded) b.append(el('span', 'mock-reviewed-indicator', 'Historical grade; excluded from readiness'));
+      else if (r.changed) b.append(el('span', 'mock-reviewed-indicator', 'Explanation updated'));
       if (r.reviewed) b.append(el('span','mock-reviewed-indicator','Reviewed'));
       b.addEventListener('click',()=>jump(r.index,true));
       list.append(b);
     });
     const selected = rows[index];
     const mark = $('review-hub-mark');
-    mark.disabled = !selected || !selected.missed;
+    mark.disabled = !selected || !(selected.missed || selected.excluded);
     mark.textContent = selected?.reviewed ? 'Mark as still to review' : 'Mark reviewed';
     $('review-hub-prev').disabled = !visible.length;
     $('review-hub-next').disabled = !visible.length;
-    $('review-hub-export').disabled = !missed.length;
+    $('review-hub-export').disabled = !missed.length && !excluded.length;
+    $('review-hub-export').textContent = excluded.length ? 'Export missed + excluded (CSV)' : 'Export missed (CSV)';
     if (selected) {
       review.setAttribute('data-current-question-id',selected.id);
       // Keep the existing official-source and full explanation renderer intact.
@@ -191,14 +215,18 @@
   function exportMissed() {
     const data = getCurrent();
     if (!data) return;
-    const miss = getRows(data).filter(r=>r.missed);
+    const miss = getRows(data).filter(r=>r.missed || r.excluded);
     if (!miss.length) return;
     const quote = x => '"' + String(x ?? '').replace(/"/g,'""').replace(/\r?\n/g,' ') + '"';
     const lines = [['Form','Question','Question ID','Area','Topic','Your answer','Correct answer',
-      'Status','Reviewed','Citation','Source URL'].map(quote).join(',')];
+      'Status','Reviewed','Citation','Source URL','Original bank signature','Historical grade',
+      'Excluded from readiness','Exclusion reason','Original question','Current corrected question'].map(quote).join(',')];
     miss.forEach(r => lines.push([data.session.form,r.index+1,r.id,r.q.area,r.q.topic,
-      r.yourAnswer.join(' ')||'Unanswered',r.q.correct.join(' '),r.unanswered?'Unanswered':'Incorrect',
-      r.reviewed?'Yes':'No',r.q.citation,r.q.url].map(quote).join(',')));
+      r.yourAnswer.join(' ')||'Unanswered',r.q.correct.join(' '),
+      r.unanswered?'Unanswered':r.correct?'Correct (original key)':'Incorrect',
+      r.reviewed?'Yes':'No',r.currentQuestion.citation,r.currentQuestion.url,data.session.bankSignature,
+      versions?.isHistorical(data.session)?'Yes; original key retained':'No',
+      r.excluded?'Yes':'No',r.reason,r.q.stem,r.excluded?r.currentQuestion.stem:''].map(quote).join(',')));
     const blob = new Blob(['\uFEFF'+lines.join('\r\n')],{type:'text/csv;charset=utf-8'});
     const url = URL.createObjectURL(blob);
     const anchor = document.createElement('a');
@@ -216,7 +244,7 @@
   $('review-hub-next').addEventListener('click',()=>step(1));
   $('review-hub-mark').addEventListener('click',()=>{
     const r=rows[Number(picker.value)];
-    if (!r?.missed) return;
+    if (!r || !(r.missed || r.excluded)) return;
     if (reviewed.has(r.id)) reviewed.delete(r.id); else reviewed.add(r.id);
     saveReviewMarkers();
     draw();

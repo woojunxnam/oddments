@@ -233,19 +233,20 @@ window.MPJE_CH30_FORM_D_QUESTIONS = [
       },
       {
         "text": "The pharmacy must supply the applicable received tracing records, subject to statutory scope.",
-        "why": "Correct. An appropriate official can request the transaction information, statement and history received from the prior owner."
+        "why": "Correct. The pharmacy must provide the applicable tracing records it is legally required to produce. Section 582(k)(1) ended the routine provision and receipt of transaction history on November 27, 2023; do not read this answer as requiring a new transaction-history document for each current transfer. Existing retained records and the enhanced tracing-system requirements remain distinct."
       }
     ],
     "correct": [
       "A",
       "D"
     ],
-    "citation": "21 U.S.C. §360eee-1(d)(1)(B),(D)",
+    "citation": "21 U.S.C. §360eee-1(d)(1)(B),(D), (g)(1)(D)-(E), (k)(1); FDA Enhanced Drug Distribution Security Compliance Policies (Aug.2023), footnote 18",
     "url": "https://uscode.house.gov/us/usc/t21/s360eee-1/",
-    "verified": "2026-11-18",
-    "reviewStatus": "AUTHOR_SOURCE_CHECK_PASS_NEEDS_FINAL_LEGAL_RELEASE_GATE",
+    "verified": "2026-11-22",
+    "reviewStatus": "AI_SOURCE_CORROBORATED_WITH_CAVEAT_2026_11_22",
     "legalHold": null,
-    "revision": 1
+    "revision": 1,
+    "note": "This question asks for applicable records already received, including retained legacy records. It does not impose new transaction-history exchange after the November 27, 2023 statutory sunset. The stated two-business-day dispenser response rule and key A,D are unchanged."
   },
   {
     "id": "D008",
@@ -345,9 +346,9 @@ window.MPJE_CH30_FORM_D_QUESTIONS = [
     "correct": [
       "C"
     ],
-    "citation": "21 U.S.C. §360bbb-3; FDA Gohibic authorized use, April 2026 amendment",
-    "url": "https://www.fda.gov/drugs/emergency-preparedness-drugs/emergency-use-authorizations-drugs-and-non-vaccine-biological-products",
-    "verified": "2026-11-18",
+    "citation": "21 U.S.C. §360bbb-3(d); FDA Gohibic EUA Letter of Authorization (reissued Apr.12,2023), Section II; current FDA EUA listing checked Nov.22,2026",
+    "url": "https://www.fda.gov/media/166823/download?attachment=",
+    "verified": "2026-11-22",
     "reviewStatus": "AUTHOR_SOURCE_CHECK_PASS_NEEDS_FINAL_LEGAL_RELEASE_GATE",
     "legalHold": null,
     "revision": 1
@@ -522,12 +523,13 @@ window.MPJE_CH30_FORM_D_QUESTIONS = [
     "correct": [
       "D"
     ],
-    "citation": "FD&C Act §503A(b)(1)(A)(i), 21 U.S.C. §353a(b)(1)(A)(i); FDA 503A bulk drug substances",
-    "url": "https://www.fda.gov/drugs/human-drug-compounding/bulk-drug-substances-used-compounding-under-section-503a-fdc-act",
-    "verified": "2026-11-18",
-    "reviewStatus": "AUTHOR_SOURCE_CHECK_PASS_NEEDS_FINAL_LEGAL_RELEASE_GATE",
+    "citation": "FD&C Act §503A(b)(1)(A)(i)-(iii), particularly (iii); 21 U.S.C. §353a(b)(1)(A)(iii)",
+    "url": "https://uscode.house.gov/us/usc/t21/s353a/",
+    "verified": "2026-11-22",
+    "reviewStatus": "AI_SOURCE_CORROBORATED_SCOPED_2026_11_22",
     "legalHold": null,
-    "revision": 1
+    "revision": 1,
+    "note": "Source-only correction: the certificate-of-analysis requirement is subsection (b)(1)(A)(iii). Subsection (i) addresses bulk-substance eligibility; subsection (ii) addresses manufacturer registration. Stem, options and key D are unchanged."
   },
   {
     "id": "D016",
@@ -535,7 +537,7 @@ window.MPJE_CH30_FORM_D_QUESTIONS = [
     "area": 1,
     "kind": "single",
     "topic": "FDA import enforcement policy",
-    "stem": "COMMERCIAL IMPORT FILE\nA U.S. pharmacy chain intends to import a medicine made at an FDA-registered foreign plant in compliance with its U.S.-approved NDA. The importer argues that because both conditions are met, no separate import-entry filing is necessary. What federal import procedure still applies?",
+    "stem": "COMMERCIAL IMPORT FILE\nA U.S. pharmacy chain plans a $10,000 formal consumption entry of medicine made at an FDA-registered foreign plant in compliance with its U.S.-approved NDA. No bond exception or waiver applies. The importer argues that because the plant is registered and the drug is approved, no separate import-entry filing is necessary. What federal import procedure still applies?",
     "choices": [
       {
         "text": "The pharmacy license substitutes for import entry.",
@@ -547,7 +549,7 @@ window.MPJE_CH30_FORM_D_QUESTIONS = [
       },
       {
         "text": "Submit an entry notice and bond pending FDA admissibility review.",
-        "why": "Correct. FDA describes notice of entry and entry bond under customs procedures while FDA reviews admissibility of imported regulated goods."
+        "why": "Correct. In this expressly formal entry without an exception, the importer must provide the required entry documentation and bond coverage while FDA assesses admissibility. FDA approval and establishment registration do not replace these import steps; informal-entry exceptions should not be generalized to this case."
       },
       {
         "text": "A personal traveler's import policy governs this corporate shipment.",
@@ -557,12 +559,13 @@ window.MPJE_CH30_FORM_D_QUESTIONS = [
     "correct": [
       "C"
     ],
-    "citation": "21 U.S.C. §381(a); FDA import requirements for FDA-approved human drug products",
-    "url": "https://www.fda.gov/industry/fda-basics-industry/what-must-i-do-import-human-drug-product-has-been-approved-fda-us",
-    "verified": "2026-11-18",
-    "reviewStatus": "AUTHOR_SOURCE_CHECK_PASS_NEEDS_FINAL_LEGAL_RELEASE_GATE",
+    "citation": "21 U.S.C. §381(a)-(b); 19 CFR 142.3(a)-(b), 142.4(a),(c); FDA Common Entry Types (formal vs informal entry)",
+    "url": "https://www.fda.gov/industry/import-basics/common-entry-types",
+    "verified": "2026-11-22",
+    "reviewStatus": "AI_SOURCE_CORROBORATED_SCOPED_2026_11_22",
     "legalHold": null,
-    "revision": 1
+    "revision": 2,
+    "note": "Revision 2 specifies a formal commercial entry without a bond exception or waiver. The prior stem did not state the entry type and could overgeneralize the bond requirement. Revision 1 remains historical and is excluded from readiness evidence; key C is unchanged."
   },
   {
     "id": "D017",
@@ -619,7 +622,7 @@ window.MPJE_CH30_FORM_D_QUESTIONS = [
       },
       {
         "text": "A drug tablet manufactured specifically to be crushed by employees before routine administration.",
-        "why": "Incorrect. OSHA explains that tablets intended for employee crushing before administration are not in final form under this exemption."
+        "why": "Incorrect. OSHA excludes tablets designed for routine employee crushing before administration from the final-form exemption. Do not extend this to every occasional crushing event: OSHA says the final-form exemption can still apply when an ordinarily intact tablet is crushed only to facilitate patient administration. Other state or USP duties remain separate."
       },
       {
         "text": "A concentrated hazardous-drug solution being diluted by a technician for infusion.",
@@ -631,7 +634,7 @@ window.MPJE_CH30_FORM_D_QUESTIONS = [
     ],
     "citation": "29 CFR 1910.1200(b)(6)(vii); OSHA Hospital Pharmacy HCS eTool",
     "url": "https://www.osha.gov/etools/hospitals/pharmacy/hazard-communication-standard",
-    "verified": "2026-11-18",
+    "verified": "2026-11-22",
     "reviewStatus": "AUTHOR_SOURCE_CHECK_PASS_NEEDS_FINAL_LEGAL_RELEASE_GATE",
     "legalHold": null,
     "revision": 1
@@ -753,7 +756,7 @@ window.MPJE_CH30_FORM_D_QUESTIONS = [
     "choices": [
       {
         "text": "Engage a microbiologist after repeat action-level results in the same ISO area within 60 days.",
-        "why": "Correct. The policy mandates a microbiologist for repeat EM action-level results in the same ISO area within 60 days, consecutive or non-consecutive."
+        "why": "Correct. Section III(G) covers repeat results in the same ISO area within 60 days, including nonconsecutive results from different sites. This is an additional trigger: section I already requires a microbiologist to identify any action-level microbial growth and guide remediation."
       },
       {
         "text": "Engage a microbiologist only when repeat samples occur at the exact same site on consecutive dates.",
@@ -773,7 +776,7 @@ window.MPJE_CH30_FORM_D_QUESTIONS = [
     ],
     "citation": "Board Policy 2026-03 §III(G) (repeat action-level EM results within 60 days)",
     "url": "https://www.mass.gov/doc/2026-03-action-level-environmental-monitoring-results/download",
-    "verified": "2026-11-18",
+    "verified": "2026-11-22",
     "reviewStatus": "AUTHOR_OFFICIAL_SOURCE_CHECK_PENDING_RELEASE_FREEZE",
     "legalHold": null,
     "revision": 4
@@ -1005,7 +1008,7 @@ window.MPJE_CH30_FORM_D_QUESTIONS = [
       },
       {
         "text": "Check FDA approval requirements or documented manufacturer validation for the device.",
-        "why": "Correct. The Board memo asks the pharmacy to assess FDA approval status or other manufacturer validation documentation for nonsterile compounding."
+        "why": "Correct. Determine whether FDA approval is required or present, and verify the applicable manufacturer-validation documentation. The state memorandum does not excuse federal approval or clearance if it is legally required."
       },
       {
         "text": "Use the device because a vendor advertises it as 'automated,' without checking validation.",
@@ -1021,7 +1024,7 @@ window.MPJE_CH30_FORM_D_QUESTIONS = [
     ],
     "citation": "MA Board Memorandum 2025-11-06: Automated Non-Sterile Compounding Devices ¶1",
     "url": "https://www.mass.gov/doc/automated-non-sterile-compounding-devices-pdf/download",
-    "verified": "2026-11-18",
+    "verified": "2026-11-22",
     "reviewStatus": "AUTHOR_OFFICIAL_SOURCE_CHECK_PENDING_RELEASE_FREEZE",
     "legalHold": null,
     "revision": 3
@@ -1080,7 +1083,7 @@ window.MPJE_CH30_FORM_D_QUESTIONS = [
       },
       {
         "text": "Resolve whether the machine is cleanable enough to minimize drug cross-contamination.",
-        "why": "Correct. The Board explicitly requires pharmacies to confirm device cleanability to minimize cross-contamination."
+        "why": "Correct. Confirm that the device can be cleaned sufficiently to minimize cross-contamination. Because the stated residue cannot be removed using a validated method, sequential use must wait until the defect is resolved; merely discussing the risk or shortening the BUD is insufficient."
       },
       {
         "text": "Assign a shorter beyond-use date to the second product and skip the cleaning question.",
@@ -1092,7 +1095,7 @@ window.MPJE_CH30_FORM_D_QUESTIONS = [
     ],
     "citation": "Board Memorandum 2025-11-06: Automated Non-Sterile Compounding Devices ¶3; 247 CMR 9.01(3)",
     "url": "https://www.mass.gov/doc/automated-non-sterile-compounding-devices-pdf/download",
-    "verified": "2026-11-18",
+    "verified": "2026-11-22",
     "reviewStatus": "AUTHOR_OFFICIAL_SOURCE_CHECK_PENDING_RELEASE_FREEZE",
     "legalHold": null,
     "revision": 3
@@ -2340,23 +2343,23 @@ window.MPJE_CH30_FORM_D_QUESTIONS = [
     "area": 3,
     "kind": "single",
     "topic": "Federal scheduled-drug counting",
-    "stem": "At the federal biennial inventory, the pharmacy has a partially filled Schedule IV bottle originally containing 1,500 tablets and a partially filled Schedule II bottle originally containing 100 tablets. Which counting rule applies?",
+    "stem": "At the federal biennial inventory, an opened Schedule IV bottle still contains more than 1,000 tablets. An opened Schedule II bottle contains fewer than 100 tablets. Which counting rule is required under 21 CFR 1304.11(e)(6)?",
     "choices": [
       {
         "text": "Estimate the remaining count in both.",
-        "why": "Schedule II quantities require an exact count."
+        "why": "Incorrect. An opened Schedule II container requires an exact count even when fewer than 100 tablets remain. The stated Schedule IV bottle also requires exact counting because it still contains more than 1,000 tablets."
       },
       {
         "text": "Estimate Schedule IV because it is not Schedule II, and count Schedule II exactly.",
-        "why": "A Schedule III–V container holding more than 1,000 tablets or capsules requires an exact count."
+        "why": "Incorrect. Schedule IV status alone does not allow estimation. The stated opened container still contains more than 1,000 tablets, so the exact-count exception applies."
       },
       {
         "text": "Exact-count both the Schedule II and the over-1,000-tablet Schedule IV bottles.",
-        "why": "Schedule II always requires an exact count; the >1,000 tablet Schedule IV container also does."
+        "why": "Correct. The Schedule II bottle requires an exact count regardless of its small quantity. The Schedule IV bottle also requires an exact count because its present contents exceed 1,000 tablets."
       },
       {
         "text": "Count only unopened bottles.",
-        "why": "The inventory must include all controlled substances on hand, including opened containers."
+        "why": "Incorrect. The inventory must account for all controlled stock on hand, including opened containers."
       }
     ],
     "correct": [
@@ -2364,10 +2367,11 @@ window.MPJE_CH30_FORM_D_QUESTIONS = [
     ],
     "citation": "21 CFR 1304.11(e)(6)(i)–(ii)",
     "url": "https://www.ecfr.gov/current/title-21/chapter-II/part-1304/section-1304.11",
-    "verified": "2026-11-20",
-    "reviewStatus": "AUTHOR_PRIMARY_SOURCE_CHECKED_NO_EXTERNAL_CERTIFICATION",
+    "verified": "2026-11-22",
+    "reviewStatus": "AI_SOURCE_CORROBORATED_SCOPED_2026_11_22",
     "legalHold": null,
-    "revision": 1
+    "revision": 2,
+    "note": "Revision 2 states the present Schedule IV contents exceed 1,000 tablets. Revision 1 gave only the original 1,500-tablet package size and did not establish the mandatory counting rule. The old version is excluded from readiness evidence; its historical responses and raw score are retained."
   },
   {
     "id": "D068",

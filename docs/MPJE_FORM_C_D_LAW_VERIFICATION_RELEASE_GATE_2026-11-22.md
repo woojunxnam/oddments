@@ -1,5 +1,7 @@
 # Massachusetts MPJE — Form C/D Legal Source Reconciliation and Standalone D Release Gate
 
+**Subsequent status:** [Batch 3](MPJE_A_D_OPTION_LEGAL_REVIEW_BATCH3_2026-11-22.md) resolves the E30-342 question-level source hold using exact public Board inspection items, while retaining the full-USP-text caveat. Historical findings below describe the earlier gate. Whole-bank review remains incomplete.
+
 **As of:** 2026-11-22 ET. **Scope:** existing 120-item Form C and 120-item Form D from the published `site/mpje-side-notes/exam-simulation-30/` directory. This report distinguishes a *targeted source reconciliation*, a *structural automated check*, and a *complete final item-by-item legal signoff*. A cited item does **not** automatically count as fully accepted. No original option text, answer key, or exam attempt data were altered in this work.
 
 ## Decision

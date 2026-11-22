@@ -1,5 +1,7 @@
 # Massachusetts MPJE A–D — Four-Option Final Legal Review Gate, Batch 1
 
+**Latest checkpoint:** [Batch 3](MPJE_A_D_OPTION_LEGAL_REVIEW_BATCH3_2026-11-22.md): 88/480 questions, 352/1,920 choices reviewed; 392 questions pending. Historical tables below retain their original checkpoint counts.
+
 **Historical Batch 1 checkpoint, preserved unchanged.** Subsequent [Batch 2 DEA/Board law review](MPJE_A_D_OPTION_LEGAL_REVIEW_BATCH2_DEA_BOARD_2026-11-22.md) raises the cumulative source-check totals to **56/480 questions, 224/1,920 answer choices**; **424 questions PENDING**, **3 HOLDS** including newly discovered D067 stem ambiguity. The table below remains the initial Batch 1 record and must not be mistaken for the latest cumulative status.
 
 
