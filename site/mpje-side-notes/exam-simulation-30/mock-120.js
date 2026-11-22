@@ -77,7 +77,12 @@
     const s = state.current[state.activeForm];
     return s && s.status === 'active' ? s : null;
   }
-  function stale(s) { return s && s.bankSignature !== manifest.bankSignature; }
+  // Only the known, verified rationale-only E30-190 edit may reuse earlier scored attempts.
+  function stale(s) {
+    return !!s && s.bankSignature !== manifest.bankSignature &&
+      !(Array.isArray(manifest.compatibleBankSignatures) &&
+        manifest.compatibleBankSignatures.includes(s.bankSignature));
+  }
   function formatSeconds(n) {
     n = Math.max(0, Math.ceil(n));
     return Math.floor(n / 3600) + ':' + String(Math.floor(n % 3600 / 60)).padStart(2, '0') +
