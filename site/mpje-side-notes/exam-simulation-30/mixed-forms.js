@@ -3,8 +3,7 @@ window.MPJE_CH30_MIXED_MOCK_FORMS = {
   "schema": "MPJE_CH30_MIXED_MOCK_FORMS",
   "version": 1,
   "bankSize": 480,
-  "bankSignature": "48ec9bb4",
-  "compatibleBankSignatures": ["77edd81d"],
+  "bankSignature": "96e7e972",
   "created": "2026-11-20",
   "minutes": 150,
   "blueprint": "NABP MPJE pre-2027 Competency Statements",
@@ -12,7 +11,7 @@ window.MPJE_CH30_MIXED_MOCK_FORMS = {
   "source": {
     "ab": "Main branch A/B 240 items",
     "c": "Main branch Form C 120 preview",
-    "d": "PR #283 draft snapshot; 120 items not legally released"
+    "d": "Main branch Form D 120 items; targeted source corrections through Batch 3; whole-form legal review remains incomplete"
   },
   "forms": {
     "CD1": [

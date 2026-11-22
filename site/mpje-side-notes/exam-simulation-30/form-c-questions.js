@@ -3477,7 +3477,7 @@ window.MPJE_CH30_FORM_C_QUESTIONS = [
       },
       {
         "text": "Requalify the changed facility and reassess category and BUD; an ISO 5 PEC in an SCA does not retain Category 2 BUDs automatically.",
-        "why": "Correct. An ISO 5 PEC in an SCA is not the same environment as a classified cleanroom suite for default Category 2 limits; changes require qualification and reassessment."
+        "why": "Correct. MA Board inspection item 32.3 requires recertification after PEC relocation. Items 9.2 and 12.0 limit an SCA to Category 1 CSPs and require a cleanroom suite for Category 2 or 3; item 73.3 supplies the Category 1 BUD framework. Requalifying the moved ISO 5 PEC alone does not authorize Category 2 BUDs in an SCA."
       },
       {
         "text": "Use the maximal Category 2 BUD whenever preparations contain only sterile manufactured ingredients, regardless of room classification.",
@@ -3487,11 +3487,12 @@ window.MPJE_CH30_FORM_C_QUESTIONS = [
     "correct": [
       "C"
     ],
-    "citation": "USP <797> §§4.1, 5, 14; USP <797> official FAQ (Dec. 2023); 247 CMR 9.01(3)",
-    "url": "https://pages.usp.org/rs/711-SXF-172/images/USP_HQS_797_FAQs_December2023_V6__002.pdf?version=0",
-    "verified": "2026-11-18",
-    "legalHold": "CURRENT_USP797_NORMATIVE_CHAPTER_UNAVAILABLE_HOLD",
-    "reviewStatus": "AUTHOR_DRAFT_PENDING_FINAL_OPTION_APPROVAL"
+    "citation": "247 CMR 9.01(3); MA Board Sterile Compounding Inspection Template items 9.2, 12.0, 32.3, 73.3; USP <797> official FAQ 93, 103 (Dec. 11, 2023)",
+    "url": "https://www.mass.gov/doc/sterile-compounding-pharmacy-inspection-template-pdf/download",
+    "verified": "2026-11-22",
+    "legalHold": null,
+    "reviewStatus": "AI_SOURCE_CORROBORATED_WITH_CAVEAT_2026_11_22",
+    "note": "Question-specific source hold resolved using MA Board inspection items 9.2, 12.0, 32.3 and 73.3, corroborated by official USP FAQ 93 and 103. Full subscribed USP <797> normative text was not accessed. The stem, choices and key are unchanged. Recertification alone does not make an SCA eligible for Category 2 CSPs."
   },
   {
     "id": "E30-343",

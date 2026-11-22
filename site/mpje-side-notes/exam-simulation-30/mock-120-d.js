@@ -12,6 +12,10 @@
   const manifest = window.MPJE_CH30_FORM_D_MOCK;
   const progress = null; // Do not touch existing A/B question progress.
   const byId = new Map(questions.map(q => [q.id, q]));
+  const versions = window.MPJE_CH30_VERSION_HISTORY?.create(manifest, byId);
+  const questionFor = (session, id) => versions ? versions.question(session, id) :
+    session?.bankSignature === manifest?.bankSignature ? byId.get(id) : null;
+  const excludedIds = session => versions?.excludedIds(session) || [];
   const $ = id => document.getElementById(id);
   const el = (tag, className, value) => {
     const node = document.createElement(tag);
@@ -76,11 +80,16 @@
     }
   }
   function idsFor(form) { return manifest.forms[form]; }
+  function visibleSession() {
+    return state.visibleAttemptId ? state.history.find(s => s.attemptId === state.visibleAttemptId &&
+      s.form === state.visibleForm) : state.current[state.visibleForm];
+  }
+
   function activeSession() {
     const s = state.current[state.activeForm];
     return s && s.status === 'active' ? s : null;
   }
-  function stale(s) { return s && s.bankSignature !== manifest.bankSignature; }
+  function stale(s) { return !!s && !(versions ? versions.canUse(s) : s.bankSignature === manifest.bankSignature); }
   function formatSeconds(n) {
     n = Math.max(0, Math.ceil(n));
     return Math.floor(n / 3600) + ':' + String(Math.floor(n % 3600 / 60)).padStart(2, '0') +
@@ -107,6 +116,7 @@
       completedAt: null, finishReason: null};
   }
   function statsFor(s) {
+    if (stale(s)) return null;
     const ids = idsFor(s.form);
     const groups = Object.fromEntries([1, 2, 3, 4].map(area =>
       [area, {total: 0, submitted: 0, correct: 0}]));
@@ -115,7 +125,7 @@
     const wrongTopics = {};
     let correct = 0, submittedCount = 0, skipped = 0;
     ids.forEach(id => {
-      const q = byId.get(id);
+      const q = questionFor(s, id);
       const group = groups[q.area], exposure = s.exposureAtStart[id] ? seen : unseen;
       group.total += 1;
       exposure.total += 1;
@@ -131,14 +141,15 @@
     });
     return {correct, total: 120, submittedCount, skipped, unanswered: 120 - submittedCount,
       percentage: Math.round(100 * correct / 120), groups, seen, unseen,
+      excludedQuestionIds: excludedIds(s), readinessEligibleTotal: 120 - excludedIds(s).length,
       wrongTopics: Object.entries(wrongTopics).sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))};
   }
   function syncProgress(s) {
-    if (!progress || typeof progress.record !== 'function') return;
+    if (!progress || typeof progress.record !== 'function' || stale(s)) return;
     const previouslySynced = new Set(s.syncedIds || []);
     // Only questions actually submitted by Next are added to global practice progress.
     idsFor(s.form).forEach(id => {
-      if (!own(s.submitted, id) || previouslySynced.has(id)) return;
+      if (!own(s.submitted, id) || previouslySynced.has(id) || excludedIds(s).includes(id)) return;
       s.syncedIds ||= [];
       s.syncedIds.push(id);
       previouslySynced.add(id);
@@ -147,12 +158,13 @@
     });
   }
   function finish(s, reason) {
-    if (!s || s.status !== 'active') return;
+    if (!s || s.status !== 'active' || stale(s)) return;
     s.status = 'completed';
     s.completedAt = new Date().toISOString();
     s.finishReason = reason;
     state.activeForm = null;
     state.visibleForm = s.form;
+    state.visibleAttemptId = null;
     save();
     syncProgress(s);
     render();
@@ -171,7 +183,7 @@
   function updateTimer() {
     if (checkExpiry()) return;
     const s = activeSession();
-    if (!s) return;
+    if (!s || stale(s)) return;
     const left = remaining(s);
     $('mock-timer').textContent = formatSeconds(left);
     $('mock-timer').setAttribute('aria-label', formatSeconds(left) + ' remaining');
@@ -201,7 +213,7 @@
     $('mock-progress-bar').value = s.index;
     $('mock-position').textContent = 'Question ' + (s.index + 1) + ' of 120';
     $('mock-next').textContent = s.index === 119 ? 'Submit final answer & finish' : 'Submit answer & Next';
-    const q = byId.get(idsFor(s.form)[s.index]);
+    const q = questionFor(s, idsFor(s.form)[s.index]);
     const card = el('article', 'exam-question mock-exam-card');
     const head = el('div', 'exam-question-head');
     head.append(el('span', 'exam-number', 'QUESTION ' + (s.index + 1) + ' / 120'),
@@ -222,7 +234,7 @@
       label.append(input, el('span', 'exam-letter', letter),
         el('span', 'exam-choice-text', choice.text));
       input.addEventListener('change', () => {
-        if (!activeSession() || activeSession().attemptId !== s.attemptId ||
+        if (stale(s) || !activeSession() || activeSession().attemptId !== s.attemptId ||
             remaining(s) <= 0) { checkExpiry(); return; }
         const answers = [...fieldset.querySelectorAll('input:checked')].map(x => x.value).sort();
         s.draft[q.id] = answers;
@@ -234,12 +246,13 @@
     });
     card.append(fieldset);
     $('mock-question').replaceChildren(card);
-    $('mock-running-note').textContent = '';
+    $('mock-running-note').textContent = versions?.isHistorical(s) ?
+      'Resuming the original saved question version. Your answers and timer are preserved; corrected questions will be identified after submission.' : '';
     updateTimer();
   }
   function nextQuestion() {
     const s = activeSession();
-    if (!s || checkExpiry()) return;
+    if (!s || stale(s) || checkExpiry()) return;
     const id = idsFor(s.form)[s.index], selected = (s.draft[id] || []).filter(letter => LETTERS.includes(letter));
     if (!selected.length) {
       $('mock-running-note').textContent = 'Select an answer before continuing. The MPJE does not allow skipping.';
@@ -257,19 +270,27 @@
     }
   }
   function reviewQuestion(s, index) {
-    const id = idsFor(s.form)[index], q = byId.get(id);
+    if (stale(s)) return;
+    const id = idsFor(s.form)[index], q = questionFor(s, id);
     const answer = own(s.submitted, id) ? s.submitted[id] : [];
     const checked = own(s.submitted, id);
+    const excluded = excludedIds(s).includes(id);
+    const changed = versions?.changed(s, id);
+    const learningQuestion = changed ? byId.get(id) : q;
     const card = el('article', 'exam-question mock-review-card');
     const head = el('div', 'exam-question-head');
     head.append(el('span', 'exam-number', 'QUESTION ' + (index + 1) + ' / 120'),
       el('span', 'exam-kind', q.kind === 'multi' ? 'SELECT ALL THAT APPLY' : 'SINGLE BEST ANSWER'));
     card.append(head, el('p', 'exam-topic', '2027 Domain ' + q.area + ' · ' + q.topic),
       el('h3', 'exam-stem', q.stem.replace(/\*\*/g, '')));
+    if (changed) card.append(el('p', 'exam-editor-note mock-version-notice', excluded ?
+      'Historical question — original raw grade retained; excluded from readiness evidence. ' + versions.reason(s, id) :
+      'Source/explanation updated; original score unchanged. The original question and answers are retained above.'));
     card.append(el('p', 'exam-feedback ' + (checked && exact(answer, q.correct) ? 'exam-right' : 'exam-wrong'),
+      (excluded ? 'Original raw grade: ' : '') +
       (checked && exact(answer, q.correct) ? 'Correct' : 'Incorrect or unanswered') +
       ' · Your submitted answer: ' + (answer.length ? answer.join(', ') : 'None') +
-      ' · Key: ' + q.correct.join(', ')));
+      (versions?.isHistorical(s) ? ' · Original key: ' : ' · Key: ') + q.correct.join(', ')));
     const choices = el('div', 'exam-choices');
     q.choices.forEach((choice, i) => {
       const letter = LETTERS[i], line = el('div', 'exam-choice');
@@ -282,14 +303,23 @@
     });
     card.append(choices);
     const details = el('div', 'mock-explanations');
-    details.append(el('h4', '', 'A–D explanations'));
-    q.choices.forEach((choice, i) => details.append(el('p', '', LETTERS[i] + ' — ' + choice.why)));
-    if (q.note) details.append(el('p', 'exam-editor-note', 'Editorial note: ' + q.note));
-    if (q.legalHold) details.append(el('p', 'exam-editor-note', 'Interpretation still needs review: '+q.legalHold));
-    if (q.reviewStatus !== 'AUTHOR_LEGAL_ACCEPTED_NOT_EXTERNAL_CERTIFICATION') details.append(el('p','exam-editor-note','Author draft pending final legal option-by-option verification.'));
-    const source = el('p', 'exam-reference', q.citation + ' · Source noted: ' + (q.verified || 'date not listed') + ' · ');
+    if (excluded) {
+      details.append(el('h4', '', 'Current corrected study version'),
+        el('p', 'mock-current-stem', learningQuestion.stem.replace(/\*\*/g, '')));
+      learningQuestion.choices.forEach((choice, i) => details.append(
+        el('p', 'mock-current-choice', LETTERS[i] + ' — ' + choice.text)));
+      details.append(el('p', '', 'Current key: ' + learningQuestion.correct.join(', ') +
+        '. This corrected study version does not change your original raw grade.'));
+    }
+    details.append(el('h4', '', changed ? 'Current A–D explanations' : 'A–D explanations'));
+    learningQuestion.choices.forEach((choice, i) => details.append(el('p', '', LETTERS[i] + ' — ' + choice.why)));
+    if (learningQuestion.note) details.append(el('p', 'exam-editor-note', 'Editorial note: ' + learningQuestion.note));
+    if (learningQuestion.legalHold) details.append(el('p', 'exam-editor-note',
+      'Legal source/scope review remains pending: ' + learningQuestion.legalHold));
+    const source = el('p', 'exam-reference', learningQuestion.citation + ' · Source noted: ' +
+      (learningQuestion.verified || 'date not listed') + ' · ');
     const link = el('a', '', 'Linked legal source');
-    link.href = q.url; link.rel = 'noopener noreferrer'; link.target = '_blank';
+    link.href = learningQuestion.url; link.rel = 'noopener noreferrer'; link.target = '_blank';
     source.append(link);
     card.append(details, source);
     $('mock-review').replaceChildren(card);
@@ -301,6 +331,9 @@
   }
   function renderResults(s) {
     const summary = statsFor(s);
+    if (!summary) return;
+    $('mock-retake').disabled = !!state.visibleAttemptId;
+    $('mock-latest-attempt').hidden = !state.visibleAttemptId;
     $('mock-results-heading').textContent = 'Mock Exam ' + s.form + ' · Results';
     const start = new Date(s.startedAt).getTime(), end = new Date(s.completedAt).getTime();
     const elapsed = Math.max(0, Math.min(9000, Math.round((end - start) / 1000)));
@@ -313,6 +346,12 @@
       summary.submittedCount + '/120 submitted · ' +
       summary.unanswered + ' unanswered when the exam ended. Every unsubmitted answer counts as incorrect. ' +
       'NABP does not calculate an MPJE pass/fail result from this raw percentage.';
+    if (versions?.isHistorical(s)) {
+      $('mock-result-note').textContent += ' Original raw score preserved from the saved exam version.';
+      if (summary.excludedQuestionIds.length) $('mock-result-note').textContent +=
+        ' Excluded from readiness evidence: ' + summary.excludedQuestionIds.join(', ') +
+        '. Use the corrected study versions in review.';
+    }
     const areaList = el('div', 'mock-area-list');
     for (const area of [1, 2, 3, 4]) {
       const g = summary.groups[area], line = el('div', 'mock-area-line');
@@ -341,7 +380,7 @@
     const picker = $('mock-review-picker');
     picker.replaceChildren();
     idsFor(s.form).forEach((id, i) => {
-      const q = byId.get(id), option = el('option', '', (i + 1) + ' · ' + q.topic +
+      const q = questionFor(s, id), option = el('option', '', (i + 1) + ' · ' + q.topic +
         (own(s.submitted, id) && exact(s.submitted[id], q.correct) ? ' · correct' : ' · review'));
       option.value = String(i);
       picker.append(option);
@@ -350,9 +389,24 @@
     reviewQuestion(s, 0);
     const past = state.history.filter(x => x.form === s.form && x.status === 'completed');
     const rows = past.map(old => {
+      const row = el('p');
       const score = statsFor(old);
-      return el('p', '', new Date(old.completedAt).toLocaleString() +
-        ' · ' + score.correct + '/120 (' + score.percentage + '% raw) · ' + old.finishReason);
+      row.append(el('span', '', new Date(old.completedAt).toLocaleString() + (score ?
+        ' · ' + score.correct + '/120 (' + score.percentage + '% original raw) · ' + old.finishReason :
+        ' · Original question version unavailable; score not recomputed.')));
+      if (score) {
+        if (score.excludedQuestionIds.length) row.append(el('span', '',
+          ' · Excluded from readiness evidence: ' + score.excludedQuestionIds.join(', ') + '. '));
+        const open = el('button', 'mock-secondary', 'Review saved attempt');
+        open.type = 'button';
+        open.addEventListener('click', () => {
+          state.visibleAttemptId = old.attemptId;
+          state.visibleForm = old.form;
+          save(); render();
+        });
+        row.append(open);
+      }
+      return row;
     });
     $('mock-history').replaceChildren(...(rows.length ? rows :
       [el('p', '', 'No older saved attempts for this form.')]));
@@ -362,17 +416,17 @@
     const bankError = validateBank();
     const s = activeSession();
     if (s && !stale(s) && remaining(s) <= 0) { finish(s, 'time-expired'); return; }
-    const visible = state.visibleForm && state.current[state.visibleForm];
+    const visible = visibleSession();
     const isRunning = !!s && !stale(s);
     const isDone = !isRunning && !!visible && visible.status === 'completed' && !stale(visible);
     $('mock-dashboard').hidden = isRunning;
     $('mock-running').hidden = !isRunning;
     $('mock-completed').hidden = !isDone;
-    if (bankError || !storageOK || (s && stale(s))) {
+    if (bankError || !storageOK || (s && stale(s)) || (visible && stale(visible))) {
       $('mock-error').hidden = false;
       $('mock-error').textContent = bankError || (!storageOK ?
         'This browser cannot persist exam answers. Enable site storage to use full-length timed exams.' :
-        'The saved in-progress exam has a different bank revision. Do not submit it against changed answer keys.');
+        'The saved exam has an unrecognized question version. Its answers are preserved; scoring and review are blocked to prevent using changed questions.');
       return;
     }
     $('mock-error').hidden = true;
@@ -389,6 +443,7 @@
     if (active && active.form !== form) return;
     const current = state.current[form];
     if (stale(current)) return;
+    state.visibleAttemptId = null;
     if (current && current.status === 'completed') {
       state.visibleForm = form; save(); render(); return;
     }
@@ -398,24 +453,27 @@
     }
     state.activeForm = form;
     state.visibleForm = form;
+    state.visibleAttemptId = null;
     save(); render();
     $('mock-running-title').scrollIntoView({block: 'start', behavior: 'auto'});
   }
   function retake() {
     const form = state.visibleForm, session = state.current[form];
-    if (!session || session.status !== 'completed' || activeSession()) return;
+    if (!session || session.status !== 'completed' || activeSession() || stale(session) || state.visibleAttemptId) return;
     if (!window.confirm('Retake Exam ' + form + '? Your completed attempt is saved in history. The new 150-minute clock starts immediately.')) return;
     state.history.push(JSON.parse(JSON.stringify(session)));
     state.current[form] = newSession(form);
     state.activeForm = form;
     state.visibleForm = form;
+    state.visibleAttemptId = null;
     save(); render();
   }
   function downloadResult() {
-    const session = state.current[state.visibleForm];
-    if (!session || session.status !== 'completed') return;
+    const session = visibleSession();
+    if (!session || session.status !== 'completed' || stale(session)) return;
     const payload = {schema: 'MA_MPJE_CH30_MOCK120_RESULT', version: 1, exportedAt: new Date().toISOString(),
-      manifestVersion: manifest.version, bankSignature: manifest.bankSignature,
+      manifestVersion: manifest.version, bankSignature: session.bankSignature,
+      revisionReview: versions?.describe(session) || {bankSignature: session.bankSignature, excludedQuestionIds: []},
       session: JSON.parse(JSON.stringify(session)), stats: statsFor(session),
       note: 'Original nonadaptive practice, raw score only; not official NABP scoring.'};
     const blob = new Blob([JSON.stringify(payload, null, 2)], {type: 'application/json'});
@@ -434,11 +492,14 @@
       finish(s, 'early');
     }
   });
+  $('mock-latest-attempt').addEventListener('click', () => {
+    state.visibleAttemptId = null; save(); render();
+  });
   $('mock-retake').addEventListener('click', retake);
   $('mock-download').addEventListener('click', downloadResult);
   $('mock-review-picker').addEventListener('change', () => {
-    const session = state.current[state.visibleForm];
-    if (session && session.status === 'completed') reviewQuestion(session, Number($('mock-review-picker').value));
+    const session = visibleSession();
+    if (session && session.status === 'completed' && !stale(session)) reviewQuestion(session, Number($('mock-review-picker').value));
   });
   window.addEventListener('storage', event => {
     if (event.key !== KEY || !event.newValue) return;

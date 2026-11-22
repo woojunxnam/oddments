@@ -7,6 +7,7 @@ on:
       - 'scripts/verify_ch30_form_c_browser.py'
       - 'scripts/verify_ch30_form_d_browser.py'
       - 'scripts/verify_ch30_mixes_browser.py'
+      - 'scripts/verify_ch30_revision_history_browser.py'
       - '.github/workflows/ch30-mock120-qa.yml'
   workflow_dispatch:
 permissions:
@@ -34,6 +35,8 @@ jobs:
           node --check site/mpje-side-notes/exam-simulation-30/form-d-manifest.js
           node --check site/mpje-side-notes/exam-simulation-30/mock-120-mixes.js
           node --check site/mpje-side-notes/exam-simulation-30/mock-review-tools.js
+          node --check site/mpje-side-notes/exam-simulation-30/mock-version-history.js
+          node --check site/mpje-side-notes/exam-simulation-30/bank-revisions.js
           node --check site/mpje-side-notes/exam-simulation-30/form-d-questions.js
           node --check site/mpje-side-notes/exam-simulation-30/mixed-forms.js
       - name: Exercise A/B, C, mixed exams and answer review in desktop/mobile browsers
@@ -45,3 +48,10 @@ jobs:
           python scripts/verify_ch30_form_c_browser.py --base-url http://127.0.0.1:8173/
           python scripts/verify_ch30_form_d_browser.py --base-url http://127.0.0.1:8173/
           python scripts/verify_ch30_mixes_browser.py --base-url http://127.0.0.1:8173/
+          python scripts/verify_ch30_revision_history_browser.py --base-url http://127.0.0.1:8173/ --output test-results/ch30-revision-history.json
+      - name: Retain revision-history regression result
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ch30-revision-history
+          path: test-results/ch30-revision-history.json

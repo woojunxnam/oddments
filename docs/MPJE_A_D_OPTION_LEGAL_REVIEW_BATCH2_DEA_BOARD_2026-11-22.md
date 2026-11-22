@@ -1,5 +1,7 @@
 # Massachusetts MPJE Form D — Batch 2 Legal-Source Adjudication
 
+**Historical Batch 2 record.** [Batch 3](MPJE_A_D_OPTION_LEGAL_REVIEW_BATCH3_2026-11-22.md) supersedes current cumulative status: 88/480 questions reviewed, 392 pending, 69 scoped + 19 with caveats, 0 current question-level HOLDS in the reviewed subset. D067 revision 2 is corrected; its original version remains excluded from readiness evidence. The historical findings below are preserved.
+
 **As of:** 2026-11-22 ET. **Decision:** Partial **AI source-corroboration**, not full A–D or qualified outside human legal signoff.
 
 ## 1. Reviewed and verified against operative law
