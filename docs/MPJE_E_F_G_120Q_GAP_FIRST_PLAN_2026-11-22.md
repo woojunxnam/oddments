@@ -121,7 +121,7 @@ The extreme SBA option-length distribution in **both directions** is a potential
 
 ### 7.2 Gate G0 — audit and classify the current 480 before E authoring
 
-**Initial artifact (STRUCTURAL ONLY; G0 NOT COMPLETE):** [2026-11-22 480-ID source/topic inventory](MPJE_E_F_G_BASELINE_480_STRUCTURAL_2026-11-22.json). It records existing IDs, topics, option-counts, author citations and old review status, but **does not** resolve legal decisions, assign valid official subdomains, or approve any keys.
+**G0 classification deliverables (2026-11-22):** [480-item structural baseline](MPJE_E_F_G_BASELINE_480_STRUCTURAL_2026-11-22.json), [480-row provisional tested-decision ledger](MPJE_E_F_G_G0_480_DECISION_LEDGER_2026-11-22.json), and [G0 audit report with explicit C/D holds and overlap queue](MPJE_E_F_G_G0_480_DECISION_AUDIT_2026-11-22.md). **All 480 IDs are provisionally classified into 38 decision families with as-authored keyed claims and evidence tier; 10 legacy C/D legalHold flags and 23 lexical-similarity pairs are tracked. This is classification/triage, NOT 480-option legal approval, official subdomain mapping, verified novelty, or G0 final signoff.**
 
 Complete a versioned 480-row semantic/legal baseline ledger, one item per ID, with fields: form, ID, question revision, exam-era blueprint mapping, specific tested legal decision, actor, setting, jurisdiction, Schedule/formulation, trigger, numerical/time condition, critical exception, exact statutory/regulatory source URL/section, source effective date, last source check, related/duplicated IDs, original answer exposure, and legal release status.
 
