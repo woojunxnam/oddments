@@ -17,7 +17,7 @@ def verify(base_url: str) -> None:
             errors = []
             page.on("pageerror", lambda error: errors.append(str(error)))
             page.on("dialog", lambda dialog: dialog.accept())
-            page.goto(target + "mock-120-c.html", wait_until="domcontentloaded", timeout=60000)
+            page.goto(target + "mock-120-d.html", wait_until="domcontentloaded", timeout=60000)
             page.locator("#mock-open-d").wait_for(timeout=30000)
             assert page.locator("#mock-error").is_hidden(), page.locator("#mock-error").inner_text()
             assert page.locator("#mock-open-d").is_enabled()
