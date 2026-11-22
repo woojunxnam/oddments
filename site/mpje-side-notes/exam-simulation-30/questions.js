@@ -6478,7 +6478,7 @@ window.MPJE_CH30_QUESTIONS = [
       },
       {
         "text": "For an aseptically prepared Category 2 CSP containing only sterile starting components and no sterility test, a BUD of up to four days at controlled room temperature or ten days refrigerated may be assigned when supported by stability and all other conditions.",
-        "why": "Correct. USP <797> §14.3/Table 12 gives these maximum BUDs for this particular sterile-starting-component, aseptic, untested Category 2 formulation. Shorter stability limits would supersede them; not all Category 2 formulations share these values."
+        "why": "Correct. USP <797> §14.3/Table 13 gives these maximum BUDs for this particular sterile-starting-component, aseptic, untested Category 2 formulation. Shorter stability limits would supersede them; not all Category 2 formulations share these values."
       },
       {
         "text": "Because the product is Category 2, it always requires completed sterility testing before any BUD can be assigned, even for a short BUD.",
