@@ -8,15 +8,16 @@
 
   const mixed = !!document.querySelector('script[src="mock-120-mixes.js"]');
   const formC = !mixed && !!document.querySelector('script[src="mock-120-c.js"]');
+  const formD = !mixed && !!document.querySelector('script[src="mock-120-d.js"]');
   const examKey = mixed ? 'mpje-side-notes-ch30-mixed-mock120-v1' :
-    formC ? 'mpje-side-notes-ch30-form-c-mock120-v1' : 'mpje-side-notes-ch30-mock120-v1';
+    formC ? 'mpje-side-notes-ch30-form-c-mock120-v1' : formD ? 'mpje-side-notes-ch30-form-d-mock120-v1' : 'mpje-side-notes-ch30-mock120-v1';
   const markerKey = 'mpje-side-notes-ch30-mock-review-markers-v1';
   const manifest = mixed ? window.MPJE_CH30_MIXED_MOCK_FORMS :
-    formC ? window.MPJE_CH30_FORM_C_MOCK : window.MPJE_CH30_MOCK_FORMS;
+    formC ? window.MPJE_CH30_FORM_C_MOCK : formD ? window.MPJE_CH30_FORM_D_MOCK : window.MPJE_CH30_MOCK_FORMS;
   const questions = mixed ?
     [...(window.MPJE_CH30_QUESTIONS || []), ...(window.MPJE_CH30_FORM_C_QUESTIONS || []),
       ...(window.MPJE_CH30_FORM_D_QUESTIONS || [])] :
-    formC ? window.MPJE_CH30_FORM_C_QUESTIONS || [] : window.MPJE_CH30_QUESTIONS || [];
+    formC ? window.MPJE_CH30_FORM_C_QUESTIONS || [] : formD ? window.MPJE_CH30_FORM_D_QUESTIONS || [] : window.MPJE_CH30_QUESTIONS || [];
   const byId = new Map(questions.map(q => [q.id, q]));
   if (!manifest || !byId.size) return;
   const $ = id => document.getElementById(id);
