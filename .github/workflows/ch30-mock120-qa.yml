@@ -6,6 +6,7 @@ on:
       - 'scripts/verify_ch30_mock120_browser.py'
       - 'scripts/verify_ch30_form_c_browser.py'
       - 'scripts/verify_ch30_form_d_browser.py'
+      - 'scripts/verify_ch30_form_e_browser.py'
       - 'scripts/verify_ch30_mixes_browser.py'
       - 'scripts/verify_ch30_revision_history_browser.py'
       - '.github/workflows/ch30-mock120-qa.yml'
@@ -15,7 +16,7 @@ permissions:
 jobs:
   verify-mock-120:
     runs-on: ubuntu-24.04
-    timeout-minutes: 16
+    timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -32,6 +33,10 @@ jobs:
           node --check site/mpje-side-notes/exam-simulation-30/mock-120.js
           node --check site/mpje-side-notes/exam-simulation-30/mock-120-c.js
           node --check site/mpje-side-notes/exam-simulation-30/mock-120-d.js
+          node --check site/mpje-side-notes/exam-simulation-30/mock-120-e.js
+          node --check site/mpje-side-notes/exam-simulation-30/form-e-manifest.js
+          node --check site/mpje-side-notes/exam-simulation-30/mock-review-tools-e.js
+          for file in site/mpje-side-notes/exam-simulation-30/form-e-batch??-questions.js; do node --check "$file"; done
           node --check site/mpje-side-notes/exam-simulation-30/form-d-manifest.js
           node --check site/mpje-side-notes/exam-simulation-30/mock-120-mixes.js
           node --check site/mpje-side-notes/exam-simulation-30/mock-review-tools.js
@@ -55,3 +60,28 @@ jobs:
         with:
           name: ch30-revision-history
           path: test-results/ch30-revision-history.json
+
+  verify-form-e:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install focused browser-test dependencies
+        run: |
+          python -m pip install playwright==1.57.0
+          python -m playwright install --with-deps chromium
+      - name: Validate all Form E scripts
+        run: |
+          node --check site/mpje-side-notes/exam-simulation-30/mock-120-e.js
+          node --check site/mpje-side-notes/exam-simulation-30/mock-review-tools-e.js
+          node --check site/mpje-side-notes/exam-simulation-30/form-e-manifest.js
+          for file in site/mpje-side-notes/exam-simulation-30/form-e-batch??-questions.js; do node --check "$file"; done
+      - name: Verify Form E separately on mobile and desktop
+        run: |
+          python -m http.server 8174 --bind 127.0.0.1 --directory site > /tmp/ch30-e-server.log 2>&1 &
+          SERVER_PID=$!
+          trap 'kill $SERVER_PID 2>/dev/null || true' EXIT
+          python scripts/verify_ch30_form_e_browser.py --base-url http://127.0.0.1:8174/

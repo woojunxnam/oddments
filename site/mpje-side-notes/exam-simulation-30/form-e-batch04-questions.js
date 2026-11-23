@@ -1,0 +1,871 @@
+/* Form E author questions batch 4: original five-choice cases, independent legal signoff pending. */
+window.MPJE_CH30_FORM_E_QUESTIONS = (window.MPJE_CH30_FORM_E_QUESTIONS || []).concat([
+  {
+    "id": "E061",
+    "area": 1,
+    "competency": "1.1",
+    "kind": "multi",
+    "topic": "Active-duty military pharmacist: registration and CE cycle",
+    "stem": "A Massachusetts pharmacist's registration would ordinarily expire December 31, 2026. The pharmacist serves on active military duty from October 15, 2026 through January 10, 2027 and is then released. No separate disciplinary restriction applies. Which statements are accurate under 247 CMR 4.02(8)? SELECT ALL THAT APPLY.",
+    "choices": [
+      {
+        "text": "The registration remains valid until 90 days after the pharmacist's release from active duty.",
+        "why": "Correct. The military-service extension runs for 90 days following release."
+      },
+      {
+        "text": "The registration necessarily becomes invalid at midnight December 31, 2026 regardless of active duty.",
+        "why": "Incorrect. The express active-duty extension displaces that ordinary expiration consequence."
+      },
+      {
+        "text": "The CE requirement does not apply to the biennial cycle ending December 31, 2026 because the pharmacist served after October 1 of that even-numbered year.",
+        "why": "Correct. The statute and 247 CMR 4.02(8) provide this cycle-specific exemption."
+      },
+      {
+        "text": "Release from duty automatically grants a new full two-year pharmacist registration with no renewal step.",
+        "why": "Incorrect. The special validity period is 90 days after release, not an automatic biennial renewal."
+      },
+      {
+        "text": "Every subsequent CE cycle is permanently waived for any pharmacist who once served on active duty.",
+        "why": "Incorrect. This CE relief is limited to the qualifying biennial cycle, not lifetime exemption."
+      }
+    ],
+    "correct": [
+      "A",
+      "C"
+    ],
+    "citation": "247 CMR 4.02(8); M.G.L. c.112 §1B(c)",
+    "url": "https://www.mass.gov/doc/247-cmr-4-personal-registration-renewal-continuing-education-requirement/download",
+    "source_urls": [
+      "https://www.mass.gov/doc/247-cmr-4-personal-registration-renewal-continuing-education-requirement/download"
+    ],
+    "verified": "2026-11-23",
+    "reviewStatus": "AI_AUTHOR_SOURCE_CHECK_NOT_INDEPENDENT_EXPERT",
+    "exam_era": "NABP_MPJE_COMPETENCY_STATEMENTS_THROUGH_2027_02_28",
+    "revision": 1
+  },
+  {
+    "id": "E062",
+    "area": 1,
+    "competency": "1.1",
+    "kind": "single",
+    "topic": "Reinstatement after more than two years of disciplinary suspension",
+    "stem": "A pharmacist's Massachusetts registration was suspended by the Board for 30 months, not simply allowed to lapse. The suspension period has ended, but the pharmacist has not completed reinstatement conditions. Which examination requirement is accurate?",
+    "choices": [
+      {
+        "text": "The MPJE is required; the Board may additionally require NAPLEX and impose other reinstatement conditions.",
+        "why": "Correct. Section 4.02(7) mandates MPJE and makes NAPLEX discretionary for a suspension longer than two years."
+      },
+      {
+        "text": "Paying back registration fees alone restores the privilege to practice.",
+        "why": "Incorrect. Ending the suspension does not bypass reinstatement and examination requirements."
+      },
+      {
+        "text": "NAPLEX is automatically mandatory for every suspension of six months or longer.",
+        "why": "Incorrect. Under this subsection NAPLEX may be required, but is not categorically mandatory."
+      },
+      {
+        "text": "The pharmacist can work while waiting to take MPJE because the suspension period has ended.",
+        "why": "Incorrect. Authorized registration must be restored before pharmacy practice resumes."
+      },
+      {
+        "text": "MPJE is required only when a license has lapsed voluntarily and never after Board suspension.",
+        "why": "Incorrect. Section 4.02(6)–(7) explicitly addresses suspended or revoked registrations."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "citation": "247 CMR 4.02(6)–(7)",
+    "url": "https://www.mass.gov/doc/247-cmr-4-personal-registration-renewal-continuing-education-requirement/download",
+    "source_urls": [
+      "https://www.mass.gov/doc/247-cmr-4-personal-registration-renewal-continuing-education-requirement/download"
+    ],
+    "verified": "2026-11-23",
+    "reviewStatus": "AI_AUTHOR_SOURCE_CHECK_NOT_INDEPENDENT_EXPERT",
+    "exam_era": "NABP_MPJE_COMPETENCY_STATEMENTS_THROUGH_2027_02_28",
+    "revision": 1
+  },
+  {
+    "id": "E063",
+    "area": 1,
+    "competency": "1.1",
+    "kind": "multi",
+    "topic": "Retired pharmacist license: status and discipline",
+    "stem": "A Massachusetts pharmacist petitions to put an unrestricted license into retired status and subsequently receives Board approval. The pharmacist asks whether unpaid volunteer dispensing is permitted and whether a past complaint can still be investigated. Which statements are true? SELECT ALL THAT APPLY.",
+    "choices": [
+      {
+        "text": "The pharmacist may dispense as an unpaid volunteer because the work is not for compensation.",
+        "why": "Incorrect. Section 3.04(3) states that a retired-status licensee may not practice."
+      },
+      {
+        "text": "Retired status is a nondisciplinary license status.",
+        "why": "Correct. The retirement regulation explicitly characterizes retirement as nondisciplinary."
+      },
+      {
+        "text": "A pending disciplinary complaint necessarily vanishes when the license becomes retired.",
+        "why": "Incorrect. The Board retains authority to initiate or continue discipline involving retired licensees."
+      },
+      {
+        "text": "The Board may pursue discipline or change a retired license to a suspended or revoked status when warranted.",
+        "why": "Correct. Section 3.04(4) expressly preserves that authority."
+      },
+      {
+        "text": "A licensee who is already suspended is automatically eligible to demand retired status.",
+        "why": "Incorrect. Eligibility excludes a license that is surrendered, suspended, or revoked."
+      }
+    ],
+    "correct": [
+      "B",
+      "D"
+    ],
+    "citation": "247 CMR 3.04(1)–(4)",
+    "url": "https://www.mass.gov/doc/247-cmr-3-pharmacist-licensure-requirements/download",
+    "source_urls": [
+      "https://www.mass.gov/doc/247-cmr-3-pharmacist-licensure-requirements/download"
+    ],
+    "verified": "2026-11-23",
+    "reviewStatus": "AI_AUTHOR_SOURCE_CHECK_NOT_INDEPENDENT_EXPERT",
+    "exam_era": "NABP_MPJE_COMPETENCY_STATEMENTS_THROUGH_2027_02_28",
+    "revision": 1
+  },
+  {
+    "id": "E064",
+    "area": 1,
+    "competency": "1.1",
+    "kind": "single",
+    "topic": "Massachusetts exam-score pairing after a failed examination",
+    "stem": "An applicant for initial Massachusetts pharmacist licensure passes NAPLEX but fails MPJE. The applicant wants the two examination results considered together without having to repeat NAPLEX. Under 247 CMR 3.01(7), what is the applicable retesting rule?",
+    "choices": [
+      {
+        "text": "The applicant may retake MPJE at any future date without affecting the earlier NAPLEX result.",
+        "why": "Incorrect. Section 3.01(7) contains a one-year condition for pairing the results."
+      },
+      {
+        "text": "Failure of MPJE immediately cancels the earlier NAPLEX pass, requiring both exams to be repeated at the very next available examination date.",
+        "why": "Incorrect. The regulation permits a one-year period to reapply and pass the remaining exam."
+      },
+      {
+        "text": "Reapply for the failed exam within one year of its original test date and pass both within that period, or retake both.",
+        "why": "Correct. This is the express 247 CMR 3.01(7) condition."
+      },
+      {
+        "text": "The one-year period begins when the applicant receives an official pharmacist license.",
+        "why": "Incorrect. No license has issued; the regulation starts the clock at original exam administration."
+      },
+      {
+        "text": "A missed one-year period can always be remedied solely by continuing education credits.",
+        "why": "Incorrect. CE does not replace the examination conditions specified in the rule."
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "citation": "247 CMR 3.01(6)–(7)",
+    "url": "https://www.mass.gov/doc/247-cmr-3-pharmacist-licensure-requirements/download",
+    "source_urls": [
+      "https://www.mass.gov/doc/247-cmr-3-pharmacist-licensure-requirements/download"
+    ],
+    "verified": "2026-11-23",
+    "reviewStatus": "AI_AUTHOR_SOURCE_CHECK_NOT_INDEPENDENT_EXPERT",
+    "exam_era": "NABP_MPJE_COMPETENCY_STATEMENTS_THROUGH_2027_02_28",
+    "revision": 1
+  },
+  {
+    "id": "E065",
+    "area": 1,
+    "competency": "1.1",
+    "kind": "single",
+    "topic": "Pharmacist CE credit for repeated teaching",
+    "stem": "A registered Massachusetts pharmacist is a Board-approved continuing education instructor. The pharmacist teaches the same approved two-hour CE program to three separate groups during calendar year 2026. No other qualifying activity is at issue. How is instructor CE credit treated under 247 CMR 4.07?",
+    "choices": [
+      {
+        "text": "Six hours are automatically awarded because each of the three deliveries counts separately.",
+        "why": "Incorrect. Instructor credit for a program taught is one-time annually."
+      },
+      {
+        "text": "Four contact hours are allowed because the first two presentations count separately as instructor credit, but the third repeat is excluded.",
+        "why": "Incorrect. The regulation does not provide a two-presentation annual allowance."
+      },
+      {
+        "text": "No credit is available to a licensed pharmacist who teaches CE.",
+        "why": "Incorrect. Section 4.07 expressly allows credit for Board-approved pharmacist instructors."
+      },
+      {
+        "text": "Only a repeat performance taught on December 31 earns credit.",
+        "why": "Incorrect. The regulation contains no special December 31 teaching rule."
+      },
+      {
+        "text": "The same program earns instructor CE credit only once per calendar year, despite repeat presentations.",
+        "why": "Correct. This is the one-time-annual instructor rule."
+      }
+    ],
+    "correct": [
+      "E"
+    ],
+    "citation": "247 CMR 4.07",
+    "url": "https://www.mass.gov/doc/247-cmr-4-personal-registration-renewal-continuing-education-requirement/download",
+    "source_urls": [
+      "https://www.mass.gov/doc/247-cmr-4-personal-registration-renewal-continuing-education-requirement/download"
+    ],
+    "verified": "2026-11-23",
+    "reviewStatus": "AI_AUTHOR_SOURCE_CHECK_NOT_INDEPENDENT_EXPERT",
+    "exam_era": "NABP_MPJE_COMPETENCY_STATEMENTS_THROUGH_2027_02_28",
+    "revision": 1
+  },
+  {
+    "id": "E066",
+    "area": 2,
+    "competency": "2.1",
+    "kind": "single",
+    "topic": "Reyvow lasmiditan versus Imitrex sumatriptan schedules",
+    "stem": "A Massachusetts pharmacist receives valid outpatient prescriptions for Reyvow (lasmiditan) tablets and Imitrex (sumatriptan) tablets. Both products are FDA-approved prescription medications, not exempt formulations. Which schedule pair is correct for federal law and the corresponding Massachusetts classification?",
+    "choices": [
+      {
+        "text": "Reyvow is Schedule IV because it treats acute migraine attacks, while Imitrex is Schedule V because its indication is similar.",
+        "why": "Incorrect. Lasmiditan is specifically listed in federal Schedule V; sumatriptan is not federally scheduled."
+      },
+      {
+        "text": "Reyvow Schedule V; Imitrex federally unscheduled and Massachusetts Schedule VI.",
+        "why": "Correct. Lasmiditan is listed under 21 CFR 1308.15(e)(6); the ordinary Rx-only triptan is MA Schedule VI."
+      },
+      {
+        "text": "Both drugs are Schedule V because both treat migraine.",
+        "why": "Incorrect. Therapeutic indication does not determine scheduling."
+      },
+      {
+        "text": "Reyvow is Schedule II; Imitrex is Schedule IV.",
+        "why": "Incorrect. Neither assignment matches the federal scheduling list."
+      },
+      {
+        "text": "Both drugs are federally uncontrolled and Massachusetts Schedule VI.",
+        "why": "Incorrect. Reyvow's active ingredient lasmiditan has an explicit federal Schedule V listing."
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "citation": "21 CFR 1308.15(e)(6); 105 CMR 700.002",
+    "url": "https://www.ecfr.gov/current/title-21/section-1308.15",
+    "source_urls": [
+      "https://www.ecfr.gov/current/title-21/section-1308.15",
+      "https://www.mass.gov/doc/105-cmr-700-implementation-of-mgl-c94c-0/download",
+      "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2020/211280Orig1s001ltr.pdf"
+    ],
+    "verified": "2026-11-23",
+    "reviewStatus": "AI_AUTHOR_SOURCE_CHECK_NOT_INDEPENDENT_EXPERT",
+    "exam_era": "NABP_MPJE_COMPETENCY_STATEMENTS_THROUGH_2027_02_28",
+    "revision": 1
+  },
+  {
+    "id": "E067",
+    "area": 2,
+    "competency": "2.1",
+    "kind": "multi",
+    "topic": "Viberzi eluxadoline and Bentyl dicyclomine schedules",
+    "stem": "A pharmacist compares two prescription-only gastrointestinal agents used in Massachusetts: Viberzi (eluxadoline) and Bentyl (dicyclomine). Assume standard FDA-approved products. Which statements accurately describe scheduling? SELECT ALL THAT APPLY.",
+    "choices": [
+      {
+        "text": "Viberzi contains eluxadoline, listed in federal Schedule IV.",
+        "why": "Correct. Eluxadoline appears in 21 CFR 1308.14(g)(3)."
+      },
+      {
+        "text": "Viberzi is Schedule II because it acts on opioid receptors.",
+        "why": "Incorrect. Federal scheduling places eluxadoline in Schedule IV, not II."
+      },
+      {
+        "text": "Bentyl is federally Schedule IV merely because it is a prescription antispasmodic.",
+        "why": "Incorrect. Prescription-only status alone does not place dicyclomine under the federal CSA."
+      },
+      {
+        "text": "Bentyl is federally unscheduled; as a prescription drug it falls in Massachusetts Schedule VI.",
+        "why": "Correct. It is prescription-only but not federally listed in Schedules II–V."
+      },
+      {
+        "text": "Both products are federally unscheduled because they treat intestinal symptoms.",
+        "why": "Incorrect. Viberzi remains a controlled Schedule IV drug."
+      }
+    ],
+    "correct": [
+      "A",
+      "D"
+    ],
+    "citation": "21 CFR 1308.14(g)(3); 105 CMR 700.002",
+    "url": "https://www.ecfr.gov/current/title-21/section-1308.14",
+    "source_urls": [
+      "https://www.ecfr.gov/current/title-21/section-1308.14",
+      "https://www.mass.gov/doc/105-cmr-700-implementation-of-mgl-c94c-0/download",
+      "https://www.accessdata.fda.gov/drugsatfda_docs/label/2020/206940s007lbl.pdf"
+    ],
+    "verified": "2026-11-23",
+    "reviewStatus": "AI_AUTHOR_SOURCE_CHECK_NOT_INDEPENDENT_EXPERT",
+    "exam_era": "NABP_MPJE_COMPETENCY_STATEMENTS_THROUGH_2027_02_28",
+    "revision": 1
+  },
+  {
+    "id": "E068",
+    "area": 2,
+    "competency": "2.1",
+    "kind": "single",
+    "topic": "Different barbiturate schedules: pentobarbital and phenobarbital",
+    "stem": "A hospital pharmacist identifies federal and Massachusetts schedules for pharmaceutical pentobarbital (Nembutal) and phenobarbital, both in ordinary nonexempt prescription formulations. Which pair is correct?",
+    "choices": [
+      {
+        "text": "Pentobarbital IV; phenobarbital II.",
+        "why": "Incorrect. This reverses the distinct federal barbiturate assignments."
+      },
+      {
+        "text": "Pentobarbital III; phenobarbital III.",
+        "why": "Incorrect. Neither drug is generally placed in Schedule III under the cited entries."
+      },
+      {
+        "text": "Pentobarbital V; phenobarbital VI.",
+        "why": "Incorrect. Both are federally controlled barbiturates."
+      },
+      {
+        "text": "Pentobarbital II; phenobarbital IV.",
+        "why": "Correct. See 21 CFR 1308.12(e)(3) and 1308.14(c)(49)."
+      },
+      {
+        "text": "Pentobarbital I; phenobarbital V.",
+        "why": "Incorrect. Both listed medicines have accepted medical uses and the stated schedule assignments are wrong."
+      }
+    ],
+    "correct": [
+      "D"
+    ],
+    "citation": "21 CFR 1308.12(e)(3); 21 CFR 1308.14(c)(49); 105 CMR 700.002",
+    "url": "https://www.ecfr.gov/current/title-21/section-1308.12",
+    "source_urls": [
+      "https://www.ecfr.gov/current/title-21/section-1308.12",
+      "https://www.ecfr.gov/current/title-21/section-1308.14",
+      "https://www.mass.gov/doc/105-cmr-700-implementation-of-mgl-c94c-0/download"
+    ],
+    "verified": "2026-11-23",
+    "reviewStatus": "AI_AUTHOR_SOURCE_CHECK_NOT_INDEPENDENT_EXPERT",
+    "exam_era": "NABP_MPJE_COMPETENCY_STATEMENTS_THROUGH_2027_02_28",
+    "revision": 1
+  },
+  {
+    "id": "E069",
+    "area": 2,
+    "competency": "2.1",
+    "kind": "single",
+    "topic": "Sonata zaleplon versus Desyrel trazodone schedules",
+    "stem": "Two valid insomnia-related prescriptions arrive at a Massachusetts pharmacy: Sonata (zaleplon) and Desyrel (trazodone). Which description correctly distinguishes their federal controlled status and Massachusetts status?",
+    "choices": [
+      {
+        "text": "Sonata Schedule IV; Desyrel federally unscheduled and Massachusetts Schedule VI.",
+        "why": "Correct. Zaleplon is explicitly in 21 CFR 1308.14(c)(58); trazodone is not a federal controlled substance."
+      },
+      {
+        "text": "Sonata is Schedule II; Desyrel is Schedule IV.",
+        "why": "Incorrect. Neither schedule corresponds to the relevant active ingredients."
+      },
+      {
+        "text": "Sonata is Schedule V; Desyrel is Schedule V.",
+        "why": "Incorrect. Zaleplon is Schedule IV, and trazodone is federally unscheduled."
+      },
+      {
+        "text": "Both medicines are Schedule IV because they can be used to treat sleep symptoms, even though Desyrel is also an antidepressant.",
+        "why": "Incorrect. Clinical use alone does not establish a controlled schedule."
+      },
+      {
+        "text": "Sonata is federally unscheduled while Desyrel is Schedule IV.",
+        "why": "Incorrect. This reverses the real controlled-substance status."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "citation": "21 CFR 1308.14(c)(58); 105 CMR 700.002",
+    "url": "https://www.ecfr.gov/current/title-21/section-1308.14",
+    "source_urls": [
+      "https://www.ecfr.gov/current/title-21/section-1308.14",
+      "https://www.mass.gov/doc/105-cmr-700-implementation-of-mgl-c94c-0/download"
+    ],
+    "verified": "2026-11-23",
+    "reviewStatus": "AI_AUTHOR_SOURCE_CHECK_NOT_INDEPENDENT_EXPERT",
+    "exam_era": "NABP_MPJE_COMPETENCY_STATEMENTS_THROUGH_2027_02_28",
+    "revision": 1
+  },
+  {
+    "id": "E070",
+    "area": 2,
+    "competency": "2.1",
+    "kind": "multi",
+    "topic": "Ztalmy ganaxolone versus Lamictal lamotrigine schedule and brand recognition",
+    "stem": "A pharmacist reviews Ztalmy oral suspension (ganaxolone) for CDKL5 deficiency-related seizures and Lamictal tablets (lamotrigine). Assume standard FDA-approved forms. Select all accurate statements.",
+    "choices": [
+      {
+        "text": "Ztalmy is the brand of ganaxolone.",
+        "why": "Correct. FDA's approved prescribing information identifies this brand/generic pair."
+      },
+      {
+        "text": "Ganaxolone is a federal Schedule III substance.",
+        "why": "Incorrect. It is listed in Schedule V at 21 CFR 1308.15(e)(4)."
+      },
+      {
+        "text": "Ganaxolone is a Schedule V controlled substance federally and correspondingly in Massachusetts.",
+        "why": "Correct. Both federal and MA scheduling recognize this listing."
+      },
+      {
+        "text": "Lamotrigine is Schedule V solely because it treats seizures.",
+        "why": "Incorrect. Lamotrigine is not scheduled federally; indication does not decide scheduling."
+      },
+      {
+        "text": "Lamictal is a brand name of lamotrigine, federally unscheduled and ordinarily Massachusetts Schedule VI.",
+        "why": "Correct. It is an Rx drug without a federal controlled listing."
+      }
+    ],
+    "correct": [
+      "A",
+      "C",
+      "E"
+    ],
+    "citation": "21 CFR 1308.15(e)(4); 105 CMR 700.002; FDA Ztalmy 2025 prescribing information",
+    "url": "https://www.ecfr.gov/current/title-21/section-1308.15",
+    "source_urls": [
+      "https://www.ecfr.gov/current/title-21/section-1308.15",
+      "https://www.mass.gov/doc/105-cmr-700-implementation-of-mgl-c94c-0/download",
+      "https://www.accessdata.fda.gov/drugsatfda_docs/label/2025/215904s011s013lbl.pdf"
+    ],
+    "verified": "2026-11-23",
+    "reviewStatus": "AI_AUTHOR_SOURCE_CHECK_NOT_INDEPENDENT_EXPERT",
+    "exam_era": "NABP_MPJE_COMPETENCY_STATEMENTS_THROUGH_2027_02_28",
+    "revision": 1
+  },
+  {
+    "id": "E071",
+    "area": 2,
+    "competency": "2.3",
+    "kind": "multi",
+    "topic": "2026 pharmacist STI prevention and treatment training: activity-specific",
+    "stem": "A Massachusetts pharmacist has completed an accredited training course about treatment of established gonorrhea but has not been trained in STI prevention after a potential exposure. The pharmacist plans to prescribe both treatment for a diagnosed patient and preventive medication to a different patient under DPH Circular DCP 26-08-125. Which statements are correct? SELECT ALL THAT APPLY.",
+    "choices": [
+      {
+        "text": "Completion of STI-treatment training automatically fulfills every STI-prevention prescribing training requirement.",
+        "why": "Incorrect. The circular calls for STI-prevention or STI-treatment education as applicable to the activity."
+      },
+      {
+        "text": "The pharmacist needs appropriate STI-prevention training before independently prescribing post-exposure STI preventive medication.",
+        "why": "Correct. The circular requires training in prevention when performing prevention prescribing."
+      },
+      {
+        "text": "Pharmacists are barred from prescribing any STI-prevention drug under Massachusetts law.",
+        "why": "Incorrect. The 2026 circular specifically authorizes prevention prescribing within statewide guidance."
+      },
+      {
+        "text": "For each activity, the pharmacist must follow the applicable statewide STI prevention or treatment guidance and hold the appropriate training.",
+        "why": "Correct. Both clinical guidance and activity-specific training are conditions."
+      },
+      {
+        "text": "Any unaccredited lecture about antibiotic pharmacology alone automatically qualifies for STI-prevention prescribing.",
+        "why": "Incorrect. The circular requires ACPE/ICPE or AMA PRA Category 1 credited training appropriate to the activity."
+      }
+    ],
+    "correct": [
+      "B",
+      "D"
+    ],
+    "citation": "DPH Circular DCP 26-08-125 (Aug. 25, 2026), Sexually Transmitted Infection Prevention and Treatment; M.G.L. c.94C §19F",
+    "url": "https://www.mass.gov/doc/pharmacist-prescribing-of-certain-medications/download",
+    "source_urls": [
+      "https://www.mass.gov/doc/pharmacist-prescribing-of-certain-medications/download",
+      "https://www.mass.gov/info-details/mass-general-laws-c94c-ss-19f"
+    ],
+    "verified": "2026-11-23",
+    "reviewStatus": "AI_AUTHOR_SOURCE_CHECK_NOT_INDEPENDENT_EXPERT",
+    "exam_era": "NABP_MPJE_COMPETENCY_STATEMENTS_THROUGH_2027_02_28",
+    "revision": 1
+  },
+  {
+    "id": "E072",
+    "area": 2,
+    "competency": "2.3",
+    "kind": "multi",
+    "topic": "2026 pharmacist administration: lenacapavir, age, route and training",
+    "stem": "A Massachusetts pharmacist who has required injection training and current CPR certification is considering administering FDA-approved lenacapavir for HIV prevention under a valid individual prescription. The proposed patient is age 19; the drug is provided as an eligible single dose. No REMS or other restriction is breached. Which statements are correct under DPH Circular DCP 26-03-124? SELECT ALL THAT APPLY.",
+    "choices": [
+      {
+        "text": "Lenacapavir is named among HIV-prevention medicines eligible for pharmacist or intern administration under the circular.",
+        "why": "Correct. The current eligible-medication list identifies lenacapavir."
+      },
+      {
+        "text": "The pharmacist may administer the dose intravenously whenever a prescriber orders it.",
+        "why": "Incorrect. The circular expressly bars IV administration under this authority."
+      },
+      {
+        "text": "Approved administration must follow manufacturer labeling and use a subcutaneous or intramuscular route as appropriate.",
+        "why": "Correct. The circular limits this activity to SC/IM routes consistent with approved labeling."
+      },
+      {
+        "text": "Patient consent, medication identity, lot and expiration, route/site, administering professional, and outcomes belong in the pharmacy's administration record.",
+        "why": "Correct. The circular enumerates these specific data elements."
+      },
+      {
+        "text": "Administration authority under the circular applies to persons age 18 or older, not an otherwise identical 17-year-old.",
+        "why": "Correct. The circular's age eligibility threshold is 18."
+      }
+    ],
+    "correct": [
+      "A",
+      "C",
+      "D",
+      "E"
+    ],
+    "citation": "DPH Circular DCP 26-03-124 (Mar. 11, 2026), pp.1–4",
+    "url": "https://www.mass.gov/doc/pharmacist-administration-of-medications-pdf/download",
+    "source_urls": [
+      "https://www.mass.gov/doc/pharmacist-administration-of-medications-pdf/download"
+    ],
+    "verified": "2026-11-23",
+    "reviewStatus": "AI_AUTHOR_SOURCE_CHECK_NOT_INDEPENDENT_EXPERT",
+    "exam_era": "NABP_MPJE_COMPETENCY_STATEMENTS_THROUGH_2027_02_28",
+    "revision": 1
+  },
+  {
+    "id": "E073",
+    "area": 3,
+    "competency": "3.1",
+    "kind": "multi",
+    "topic": "Patient profile: required reasonable collection, medication history and exceptions",
+    "stem": "A Massachusetts community pharmacy keeps a database with only each patient's name and drugs billed to insurance. The pharmacist argues that a medication list alone satisfies the patient-profile regulation. Which improvements or interpretations match 247 CMR 9.16(7)–(8)? SELECT ALL THAT APPLY.",
+    "choices": [
+      {
+        "text": "Make reasonable efforts to record each patient's age or date of birth, contact details, and other required identifying information.",
+        "why": "Correct. Section 9.16(7)(a) identifies these demographic elements."
+      },
+      {
+        "text": "Remove all allergy and prior reaction information because it is outside a pharmacist's legally required profile.",
+        "why": "Incorrect. Known allergies and drug reactions belong in the profile history."
+      },
+      {
+        "text": "Keep a comprehensive list of medications and relevant devices dispensed by the pharmacy.",
+        "why": "Correct. The regulation explicitly includes medications and devices."
+      },
+      {
+        "text": "Maintain clinically relevant pharmacist comments concerning the patient's drug therapy.",
+        "why": "Correct. Subsection (7)(d) includes these comments."
+      },
+      {
+        "text": "Recognize that 247 CMR 9.16's listed requirements expressly do not apply to institutional sterile compounding pharmacies.",
+        "why": "Correct. Subsection (8) provides this facility-specific exclusion."
+      }
+    ],
+    "correct": [
+      "A",
+      "C",
+      "D",
+      "E"
+    ],
+    "citation": "247 CMR 9.16(7)–(8)",
+    "url": "https://www.mass.gov/doc/247-cmr-9-professional-practice-standards/download",
+    "source_urls": [
+      "https://www.mass.gov/doc/247-cmr-9-professional-practice-standards/download"
+    ],
+    "verified": "2026-11-23",
+    "reviewStatus": "AI_AUTHOR_SOURCE_CHECK_NOT_INDEPENDENT_EXPERT",
+    "exam_era": "NABP_MPJE_COMPETENCY_STATEMENTS_THROUGH_2027_02_28",
+    "revision": 1
+  },
+  {
+    "id": "E074",
+    "area": 3,
+    "competency": "3.1",
+    "kind": "single",
+    "topic": "Electronic prescription readability and image printout",
+    "stem": "A Massachusetts community pharmacy stores authentic electronic prescriptions and scanned images in a secure system. Its staff can display them on a monitor but cannot produce a readable printed copy of an e-prescription or a printout of an electronically stored image when requested. The pharmacy retains records for more than two years. What is missing?",
+    "choices": [
+      {
+        "text": "Nothing: electronic display always eliminates all print capabilities under Massachusetts law.",
+        "why": "Incorrect. 247 CMR 9.16(5)–(6) expressly requires printable copies."
+      },
+      {
+        "text": "Only a controlled-substance inventory spreadsheet must be printable; electronic prescriptions need not be.",
+        "why": "Incorrect. The printability requirement applies to prescriptions and stored images."
+      },
+      {
+        "text": "Both electronic prescriptions and stored prescription images must be printable.",
+        "why": "Correct. These are two explicit duties in subsections (5) and (6)."
+      },
+      {
+        "text": "The pharmacy should delete the original electronic prescriptions and maintain image screenshots only.",
+        "why": "Incorrect. Deletion would not remedy the electronic record and printability duties."
+      },
+      {
+        "text": "Only older handwritten prescriptions can be reproduced; electronic prescriptions cannot be printed by law.",
+        "why": "Incorrect. Massachusetts requires capacity to print them."
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "citation": "247 CMR 9.16(5)–(6)",
+    "url": "https://www.mass.gov/doc/247-cmr-9-professional-practice-standards/download",
+    "source_urls": [
+      "https://www.mass.gov/doc/247-cmr-9-professional-practice-standards/download"
+    ],
+    "verified": "2026-11-23",
+    "reviewStatus": "AI_AUTHOR_SOURCE_CHECK_NOT_INDEPENDENT_EXPERT",
+    "exam_era": "NABP_MPJE_COMPETENCY_STATEMENTS_THROUGH_2027_02_28",
+    "revision": 1
+  },
+  {
+    "id": "E075",
+    "area": 3,
+    "competency": "3.3",
+    "kind": "multi",
+    "topic": "2026 DEA patient-specific injectable OUD medication delivery to prescriber",
+    "stem": "A DEA-registered pharmacy receives a valid patient-specific prescription for a Schedule III long-acting injectable medication for opioid-use-disorder treatment. The pharmacy and clinicians are otherwise authorized under state law. A practitioner wants the medication delivered to the administering practitioner's registered office, not to a general office-stock shelf. Under 21 CFR 1306.07(f) as operative in November 2026, which statements are correct? SELECT ALL THAT APPLY.",
+    "choices": [
+      {
+        "text": "The pharmacy may deliver qualifying Schedule III–V narcotic drugs intended for injection or implantation to the administering practitioner's DEA-registered location when all conditions are met.",
+        "why": "Correct. Section 1306.07(f)(1)–(3) establishes this patient-specific route."
+      },
+      {
+        "text": "The medication must be administered only to the named patient, no later than 45 days after the practitioner receives it.",
+        "why": "Correct. Subsection (f)(5) provides the patient and 45-day limits."
+      },
+      {
+        "text": "The same patient prescription can be used to build a general stock of narcotics for future unidentified patients.",
+        "why": "Incorrect. Subsection (f)(4) bars general office stock under this route."
+      },
+      {
+        "text": "The pharmacy and applicable practitioners must satisfy the controlled-substance records required for delivery, receipt and administration.",
+        "why": "Correct. Subsection (f)(6) preserves detailed recordkeeping."
+      },
+      {
+        "text": "Any Schedule II oral opioid may be shipped for unspecified office use under this particular injection/implantation rule.",
+        "why": "Incorrect. The provision is limited to qualifying Schedule III–V narcotic injection or implantation products."
+      }
+    ],
+    "correct": [
+      "A",
+      "B",
+      "D"
+    ],
+    "citation": "21 CFR 1306.07(f)(1)–(6), amended in 2026",
+    "url": "https://www.ecfr.gov/current/title-21/section-1306.07",
+    "source_urls": [
+      "https://www.ecfr.gov/current/title-21/section-1306.07"
+    ],
+    "verified": "2026-11-23",
+    "reviewStatus": "AI_AUTHOR_SOURCE_CHECK_NOT_INDEPENDENT_EXPERT",
+    "exam_era": "NABP_MPJE_COMPETENCY_STATEMENTS_THROUGH_2027_02_28",
+    "revision": 1
+  },
+  {
+    "id": "E076",
+    "area": 3,
+    "competency": "3.3",
+    "kind": "single",
+    "topic": "Gabapentin Schedule VI as an additional MassPAT drug: pickup identification",
+    "stem": "An otherwise lawful gabapentin prescription is ready for retail pickup in Massachusetts. Gabapentin remains a Schedule VI medicine rather than a federal Schedule II–V controlled drug. The patient has no valid government-issued identifier and no documented serious-hardship exception applies. How should the pharmacist treat the pickup identification requirement?",
+    "choices": [
+      {
+        "text": "Release it without identification because no Schedule VI drug can ever be a PMP additional drug.",
+        "why": "Incorrect. Massachusetts designates gabapentin as an additional drug despite Schedule VI status."
+      },
+      {
+        "text": "Apply only the ordinary federal Schedule V five-refill rule and release the medication.",
+        "why": "Incorrect. Gabapentin is not federally Schedule V, and this does not waive state identifier rules."
+      },
+      {
+        "text": "Require identification only if the patient is receiving an opioid simultaneously.",
+        "why": "Incorrect. The additional-drug identifier requirement applies to gabapentin itself."
+      },
+      {
+        "text": "Request the prescriber to reschedule gabapentin federally before it may be dispensed.",
+        "why": "Incorrect. The pharmacist cannot reclassify a drug to satisfy identification duties."
+      },
+      {
+        "text": "Treat gabapentin as an additional drug requiring a customer identifier unless a specified lawful exception or waiver applies.",
+        "why": "Correct. 247 CMR 9.04(14) and 105 CMR 700.012(A)(3) reach designated Schedule VI additional drugs."
+      }
+    ],
+    "correct": [
+      "E"
+    ],
+    "citation": "247 CMR 9.04(14)(b)–(d); 105 CMR 700.012(A)(1),(3); DPH Gabapentin circular BHPL-DCP 17-5-101",
+    "url": "https://www.mass.gov/doc/247-cmr-9-professional-practice-standards/download",
+    "source_urls": [
+      "https://www.mass.gov/doc/247-cmr-9-professional-practice-standards/download",
+      "https://www.mass.gov/doc/105-cmr-700-implementation-of-mgl-c94c-0/download",
+      "https://www.mass.gov/doc/requirements-for-gabapentin-data-submission/download"
+    ],
+    "verified": "2026-11-23",
+    "reviewStatus": "AI_AUTHOR_SOURCE_CHECK_NOT_INDEPENDENT_EXPERT",
+    "exam_era": "NABP_MPJE_COMPETENCY_STATEMENTS_THROUGH_2027_02_28",
+    "revision": 1
+  },
+  {
+    "id": "E077",
+    "area": 4,
+    "competency": "4.1",
+    "kind": "multi",
+    "topic": "Board approval before pharmacy remodeling and sterile control replacement",
+    "stem": "A Massachusetts drug store with a licensed sterile-compounding suite plans to change the prescription-area layout and replace a secondary engineering control in the sterile suite. Work is scheduled to begin tomorrow, but the Board has not approved a remodeling application. Which actions are required under 247 CMR 6.15? SELECT ALL THAT APPLY.",
+    "choices": [
+      {
+        "text": "Apply for Board approval before commencing the configuration or square-footage remodeling work.",
+        "why": "Correct. Section 6.15(1) prohibits beginning the covered remodeling before approval."
+      },
+      {
+        "text": "Begin construction immediately as long as the pharmacy performs a self-inspection afterward.",
+        "why": "Incorrect. A later inspection does not replace required advance approval."
+      },
+      {
+        "text": "Obtain Board approval before moving or replacing covered secondary engineering controls in the sterile-compounding pharmacy.",
+        "why": "Correct. Subsection (2) provides a separate advance approval trigger."
+      },
+      {
+        "text": "Submit only a change-of-manager notification because a remodeling project cannot alter pharmacy licensure.",
+        "why": "Incorrect. The actual regulatory pathway concerns remodeling approval, not MOR appointment."
+      },
+      {
+        "text": "Submit applicable plans, including layout drawings and for sterile operations engineering-control classification and recertification plans.",
+        "why": "Correct. Sections 6.15(3)–(4) require the associated application documents."
+      }
+    ],
+    "correct": [
+      "A",
+      "C",
+      "E"
+    ],
+    "citation": "247 CMR 6.15(1)–(4)",
+    "url": "https://www.mass.gov/doc/247-cmr-6-licensure-of-pharmacies/download",
+    "source_urls": [
+      "https://www.mass.gov/doc/247-cmr-6-licensure-of-pharmacies/download"
+    ],
+    "verified": "2026-11-23",
+    "reviewStatus": "AI_AUTHOR_SOURCE_CHECK_NOT_INDEPENDENT_EXPERT",
+    "exam_era": "NABP_MPJE_COMPETENCY_STATEMENTS_THROUGH_2027_02_28",
+    "revision": 1
+  },
+  {
+    "id": "E078",
+    "area": 4,
+    "competency": "4.1",
+    "kind": "single",
+    "topic": "Special provisional pharmacy license: expiration and extension",
+    "stem": "A qualified nonresident pharmacy is granted a Massachusetts provisional nonresident Drug Store Pharmacy license after submitting a complete application and demonstrating substantial compliance with the potential to achieve full compliance. The Board has not converted the provisional license to full status. What happens under 247 CMR 6.17?",
+    "choices": [
+      {
+        "text": "The provisional license becomes permanent automatically after six months.",
+        "why": "Incorrect. Full licensure requires a Board determination of compliance and conversion."
+      },
+      {
+        "text": "The provisional license must be renewed every year as often as needed to cure deficiencies.",
+        "why": "Incorrect. Section 6.17(4) prohibits renewal or extension."
+      },
+      {
+        "text": "The provisional license expires only when the pharmacy voluntarily surrenders it.",
+        "why": "Incorrect. A one-year cap or earlier conversion or other termination also applies."
+      },
+      {
+        "text": "It ends at the earliest applicable event, no later than one year, and cannot be renewed or extended.",
+        "why": "Correct. Sections 6.17(2) and (4) provide the earliest-event and nonrenewability rules."
+      },
+      {
+        "text": "Provisional status permits ignoring all Massachusetts pharmacy law until the ordinary license is issued.",
+        "why": "Incorrect. Substantial compliance and ability to reach full compliance are prerequisites, not blanket exemptions."
+      }
+    ],
+    "correct": [
+      "D"
+    ],
+    "citation": "247 CMR 6.17(1)–(4)",
+    "url": "https://www.mass.gov/doc/247-cmr-6-licensure-of-pharmacies/download",
+    "source_urls": [
+      "https://www.mass.gov/doc/247-cmr-6-licensure-of-pharmacies/download"
+    ],
+    "verified": "2026-11-23",
+    "reviewStatus": "AI_AUTHOR_SOURCE_CHECK_NOT_INDEPENDENT_EXPERT",
+    "exam_era": "NABP_MPJE_COMPETENCY_STATEMENTS_THROUGH_2027_02_28",
+    "revision": 1
+  },
+  {
+    "id": "E079",
+    "area": 4,
+    "competency": "4.3",
+    "kind": "single",
+    "topic": "Controlled stock transfer inventory signature when transferor MOR unavailable",
+    "stem": "During a properly noticed transfer of remaining controlled inventory between Massachusetts-licensed pharmacies, the transferor's Manager of Record is unexpectedly unavailable due to serious illness. The receiving Manager of Record can sign the inventory report. What special alternative does 247 CMR 6.14(2)(b) provide?",
+    "choices": [
+      {
+        "text": "The transfer may proceed with no inventory signatures as long as a technician witnesses it.",
+        "why": "Incorrect. The regulation requires an inventory report and designated professional signatures."
+      },
+      {
+        "text": "An authorized transferor staff pharmacist may sign and notify the Board of the reason.",
+        "why": "Correct. Subsection (2)(b) expressly permits this with the required notice of the reason."
+      },
+      {
+        "text": "The receiving pharmacy's manager must sign for both parties without any explanation.",
+        "why": "Incorrect. The transferor-side staff pharmacist alternative is specified, not double-signing by one MOR."
+      },
+      {
+        "text": "A stockroom supervisor may sign in the MOR's place merely because the transfer is time-sensitive.",
+        "why": "Incorrect. The alternative identified by the rule is a staff pharmacist, not any employee."
+      },
+      {
+        "text": "The transfer inventory is unnecessary if the previous year's DEA inventory was accurate.",
+        "why": "Incorrect. The date-of-transfer inventory and attestation rules remain applicable."
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "citation": "247 CMR 6.14(2)(a)–(d)",
+    "url": "https://www.mass.gov/doc/247-cmr-6-licensure-of-pharmacies/download",
+    "source_urls": [
+      "https://www.mass.gov/doc/247-cmr-6-licensure-of-pharmacies/download"
+    ],
+    "verified": "2026-11-23",
+    "reviewStatus": "AI_AUTHOR_SOURCE_CHECK_NOT_INDEPENDENT_EXPERT",
+    "exam_era": "NABP_MPJE_COMPETENCY_STATEMENTS_THROUGH_2027_02_28",
+    "revision": 1
+  },
+  {
+    "id": "E080",
+    "area": 4,
+    "competency": "4.1",
+    "kind": "single",
+    "topic": "Pharmacy operating-name change notification separate from ownership",
+    "stem": "A Massachusetts-licensed pharmacy keeps the same legal owner, street address, pharmacist Manager of Record and drug inventory, but changes the trade name under which it operates. The owner claims the Board need not be told because no ownership or manager change occurred. Which response is correct?",
+    "choices": [
+      {
+        "text": "No Board notification is needed unless the DEA separately revokes the registration.",
+        "why": "Incorrect. A name change has its own Board notice under 247 CMR 6.12."
+      },
+      {
+        "text": "Only the next biennial license renewal must mention the changed operating name.",
+        "why": "Incorrect. Section 6.12 specifies a 14-day written notice deadline."
+      },
+      {
+        "text": "Report the trade-name change to the Board in writing within 14 days, with supporting documentation.",
+        "why": "Correct. This is the distinct name-change notification requirement in 247 CMR 6.12."
+      },
+      {
+        "text": "Apply for licensure by reciprocity because a change of trade name creates a new pharmacist applicant.",
+        "why": "Incorrect. Pharmacist reciprocity is unrelated to a pharmacy's operating name."
+      },
+      {
+        "text": "Follow the closing-pharmacy 90-day patient-identification process whenever a trade name changes.",
+        "why": "Incorrect. The facts do not describe a pharmacy closure under 247 CMR 6.13."
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "citation": "247 CMR 6.12",
+    "url": "https://www.mass.gov/doc/247-cmr-6-licensure-of-pharmacies/download",
+    "source_urls": [
+      "https://www.mass.gov/doc/247-cmr-6-licensure-of-pharmacies/download"
+    ],
+    "verified": "2026-11-23",
+    "reviewStatus": "AI_AUTHOR_SOURCE_CHECK_NOT_INDEPENDENT_EXPERT",
+    "exam_era": "NABP_MPJE_COMPETENCY_STATEMENTS_THROUGH_2027_02_28",
+    "revision": 1
+  }
+]);
