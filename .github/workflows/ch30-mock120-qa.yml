@@ -6,6 +6,7 @@ on:
       - 'scripts/verify_ch30_mock120_browser.py'
       - 'scripts/verify_ch30_form_c_browser.py'
       - 'scripts/verify_ch30_form_d_browser.py'
+      - 'scripts/verify_ch30_form_e_browser.py'
       - 'scripts/verify_ch30_mixes_browser.py'
       - 'scripts/verify_ch30_revision_history_browser.py'
       - '.github/workflows/ch30-mock120-qa.yml'
@@ -32,6 +33,10 @@ jobs:
           node --check site/mpje-side-notes/exam-simulation-30/mock-120.js
           node --check site/mpje-side-notes/exam-simulation-30/mock-120-c.js
           node --check site/mpje-side-notes/exam-simulation-30/mock-120-d.js
+          node --check site/mpje-side-notes/exam-simulation-30/mock-120-e.js
+          node --check site/mpje-side-notes/exam-simulation-30/form-e-manifest.js
+          node --check site/mpje-side-notes/exam-simulation-30/mock-review-tools-e.js
+          for file in site/mpje-side-notes/exam-simulation-30/form-e-batch??-questions.js; do node --check "$file"; done
           node --check site/mpje-side-notes/exam-simulation-30/form-d-manifest.js
           node --check site/mpje-side-notes/exam-simulation-30/mock-120-mixes.js
           node --check site/mpje-side-notes/exam-simulation-30/mock-review-tools.js
@@ -47,6 +52,7 @@ jobs:
           python scripts/verify_ch30_mock120_browser.py --base-url http://127.0.0.1:8173/
           python scripts/verify_ch30_form_c_browser.py --base-url http://127.0.0.1:8173/
           python scripts/verify_ch30_form_d_browser.py --base-url http://127.0.0.1:8173/
+          python scripts/verify_ch30_form_e_browser.py --base-url http://127.0.0.1:8173/
           python scripts/verify_ch30_mixes_browser.py --base-url http://127.0.0.1:8173/
           python scripts/verify_ch30_revision_history_browser.py --base-url http://127.0.0.1:8173/ --output test-results/ch30-revision-history.json
       - name: Retain revision-history regression result
