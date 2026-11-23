@@ -205,59 +205,58 @@
       "competency": "1.1",
       "official_2027_subdomain": null,
       "kind": "multi",
-      "topic": "Schedule II perpetual inventory: technician data entry versus discrepancy adjustment",
+      "topic": "Specialty compounding MOR must certify staff training before new employee compounds",
       "scenario_tags": [
-        "controlled_inventory",
         "technician_scope",
-        "diversion"
+        "compounding",
+        "MOR",
+        "training"
       ],
-      "actor": "certified pharmacy technician; MOR",
-      "trigger": "At a Massachusetts pharmacy, a licensed certified pharmacy technician receives an invoiced Schedule II shipment and can correctly enter the documented receipt into the perpetual inventory. A later mandatory physical count shows an unexplain",
-      "legal_decision": "Separate permitted CII entry from discrepancy investigation and inventory adjustment authorization.",
-      "critical_exception": "An unexplained discrepancy is not automatically a confirmed reportable theft; investigation is required.",
-      "counterfactual_flip": "If the MOR had completed investigation and made the supported adjustment personally, the specific unauthorized-adjustment defect would not exist.",
-      "stem": "At a Massachusetts pharmacy, a licensed certified pharmacy technician receives an invoiced Schedule II shipment and can correctly enter the documented receipt into the perpetual inventory. A later mandatory physical count shows an unexplained shortage. The Manager of Record (MOR) has not investigated; a technician proposes changing the perpetual balance to match the shelf count and closing the discrepancy. Which steps comply with 247 CMR 9.21(8)? SELECT ALL THAT APPLY.",
+      "actor": "complex nonsterile compounding pharmacy MOR; new technician",
+      "trigger": "A Massachusetts-licensed complex nonsterile compounding pharmacy recruits a technician experienced in ordinary retail prescription filling but with no documented training in the specialty compounding activities the technician will perform. ",
+      "legal_decision": "Require specialty compounding staff training before activities and truthful MOR certification, regardless of manager's own CE.",
+      "critical_exception": "MOR has CE but new compounding staff member lacks activity-specific legally required training.",
+      "counterfactual_flip": "If the staff member completed all appropriate training and qualification before compounding, the specified prerequisite defect would be resolved.",
+      "stem": "A Massachusetts-licensed complex nonsterile compounding pharmacy recruits a technician experienced in ordinary retail prescription filling but with no documented training in the specialty compounding activities the technician will perform. The Manager of Record (MOR) has personally completed the required CE and plans to certify to the Board that all pharmacy staff are appropriately trained, while assigning the untrained technician to compound tomorrow. No applicable exemption or competency completion is assumed. What is required?",
       "choices": [
         {
-          "text": "The certified technician may make permitted entries documenting legitimate Schedule II transactions, subject to required controls.",
-          "why": "Correct. Section 9.21(8)(f) permits a certified pharmacy technician to make entries into the perpetual inventory."
+          "text": "The MOR's personal continuing-education completion automatically substitutes for specialty training of every other staff member.",
+          "why": "Incorrect. Section 20.06(6)(c) requires the MOR to ensure all pharmacy staff obtain appropriate training and education before engaging in compounding."
         },
         {
-          "text": "The technician may independently write off the unexplained shortage as shrinkage to reconcile the system.",
-          "why": "Incorrect. Inventory adjustments stemming from a discrepancy are limited to the MOR or, when absent, an authorized pharmacist designee who reports to the MOR."
+          "text": "The technician may perform specialty compounding without training when a pharmacist signs the batch record afterward.",
+          "why": "Incorrect. Retrospective signature does not replace required pre-task training and qualification."
         },
         {
-          "text": "The MOR must investigate the discrepancy and determine any significant-loss or suspected-theft reporting obligations.",
-          "why": "Correct. Section 9.21(8)(c) assigns discrepancy investigation and applicable reporting to the MOR."
+          "text": "The pharmacy may describe the technician as an intern on scheduling forms to avoid the specialty training standard.",
+          "why": "Incorrect. Renaming staff on paperwork does not create the required competence or credentials."
         },
         {
-          "text": "A cashier may correct the count if the technician countersigns after closing.",
-          "why": "Incorrect. Section 9.21(8)(e) prohibits unlicensed personnel from making any entry or adjustment."
+          "text": "Do not assign the technician to compound until legally required training and competency are completed; the MOR must accurately certify staff training to the Board.",
+          "why": "Correct. 247 CMR 20.06(6)(c) places the duty on the MOR and requires training before pharmacy staff engage in compounding."
         },
         {
-          "text": "An adjustment for the discrepancy must be made only by the MOR or the permitted pharmacist designee in the MOR's absence.",
-          "why": "Correct. This is the specific adjustment rule in 9.21(8)(d)."
+          "text": "The Board's specialty reporting duties arise only if a patient dies or a compounding error is discovered after dispensing.",
+          "why": "Incorrect. Staff-training certification is a standing MOR responsibility independent of a serious adverse event."
         }
       ],
       "correct": [
-        "A",
-        "C",
-        "E"
+        "D"
       ],
-      "citation": "247 CMR 9.21(8)(a)–(f); Board Policy 2026-01 where a loss is confirmed",
+      "citation": "247 CMR 20.06(6)(c); M.G.L. c.112 §39G(b)(iii)",
       "source_urls": [
-        "https://www.mass.gov/doc/247-cmr-9-professional-practice-standards/download",
-        "https://www.mass.gov/doc/2026-01-loss-or-theft-of-controlled-substances-pdf/download"
+        "https://www.mass.gov/doc/247-cmr-20-reporting/download",
+        "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXVI/Chapter112/Section39G"
       ],
       "verified_at": "2026-11-23",
       "law_review_status": "AI_PRIMARY_TEXT_CHECK__HUMAN_EXPERT_NOT_CERTIFIED",
       "reviewer_type": "AI_AUTHOR",
       "closest_existing_ids": [
-        "E30-066",
-        "D067",
-        "E059"
+        "E30-186",
+        "E30-146",
+        "E30-264"
       ],
-      "revision": 1,
+      "revision": 2,
       "publication_status": "DRAFT_NOT_PUBLIC"
     },
     {
@@ -1472,54 +1471,56 @@
       "competency": "3.6",
       "official_2027_subdomain": null,
       "kind": "single",
-      "topic": "Dispensing restricted-control prescription without physical ID under documented severe hardship",
+      "topic": "Massachusetts licensed technician remote processing does not confer final clinical validation",
       "scenario_tags": [
-        "pickup",
-        "ScheduleII",
-        "hardship",
-        "documentation"
+        "remote_processing",
+        "tech_scope",
+        "final_validation",
+        "shared_services"
       ],
-      "actor": "pharmacist; patient's authorized agent",
-      "trigger": "A Massachusetts pharmacist receives an authentic Schedule II prescription and confirms the legitimate medical purpose. The patient's authorized agent comes to pick it up after a sudden house fire destroyed the agent's wallet and all governm",
-      "legal_decision": "Apply serious-hardship statutory exception using pharmacist documentation and agent printed/signed name and address.",
-      "critical_exception": "Agent lacks government identification due disaster, serious hardship documented; no other controlled-drug validity problem.",
-      "counterfactual_flip": "If the agent merely refused identification for convenience and the pharmacist could not establish serious hardship, the exception could not be invoked.",
-      "stem": "A Massachusetts pharmacist receives an authentic Schedule II prescription and confirms the legitimate medical purpose. The patient's authorized agent comes to pick it up after a sudden house fire destroyed the agent's wallet and all government ID. The agent can print a name and address in the pharmacy log and sign it. Based on reliable case details, the pharmacist reasonably believes that withholding the medicine today would cause serious hardship to the patient and documents the basis. May the pharmacist use the narrow pickup-ID exception?",
+      "actor": "MA licensed pharmacy technician; supervising pharmacist",
+      "trigger": "A Massachusetts retail pharmacy uses a properly established shared remote-processing workflow. A Massachusetts-licensed pharmacy technician working from home enters factual prescription data into the secured system. A licensed Massachusetts",
+      "legal_decision": "Allow MA licensed technician non-discretionary remote processing without onsite pharmacist at worker location, but reserve final professional review for MA pharmacist.",
+      "critical_exception": "Offsite licensed technician only entering data, secure authorized shared system and MA pharmacist verification available.",
+      "counterfactual_flip": "If the remote worker were unlicensed and tasked with new prescription processing or clinical final validation, the permitted technician remote-processing pathway would not apply.",
+      "stem": "A Massachusetts retail pharmacy uses a properly established shared remote-processing workflow. A Massachusetts-licensed pharmacy technician working from home enters factual prescription data into the secured system. A licensed Massachusetts pharmacist can review the remote work and is responsible for validation. The owner proposes prohibiting the technician's offsite entry solely because no pharmacist is physically in the technician's home, but alternatively allowing the technician to independently perform DUR and final product validation if the home computer is secure. Which conclusion best follows Board Policy 2021-02?",
       "choices": [
         {
-          "text": "No. Massachusetts law imposes an unconditional in-person photo-ID requirement with no hardship exception for any Schedule II–V dispensing.",
-          "why": "Incorrect. 247 CMR 9.04(14)(c) expressly recognizes an exception for serious hardship and requires written identity/log attestations."
+          "text": "The technician may process authorized non-discretionary prescription data remotely without a pharmacist physically in the home; pharmacist verification and final clinical authority remain required.",
+          "why": "Correct. Board Policy 2021-02 §V(b)(i) expressly permits Massachusetts-licensed technicians to remotely process for a Massachusetts pharmacy without onsite pharmacist supervision, while 247 CMR 9.04(1),(11) preserves pharmacist verification."
         },
         {
-          "text": "Yes, but only after changing the Schedule II drug into Schedule VI in the pharmacy's computerized record.",
-          "why": "Incorrect. State Schedule classification cannot be altered to avoid positive identification rules."
+          "text": "A technician working at home may independently resolve clinical DUR problems and release prescriptions if the pharmacy's electronic audit trail captures their login.",
+          "why": "Incorrect. Technology does not confer pharmacist-level judgment or final dispensing validation on a technician."
         },
         {
-          "text": "Yes, simply by accepting the agent's verbal name; no documentation of hardship or signature is required.",
-          "why": "Incorrect. The hardship rationale and printed name/address with signature must be documented under 9.04(14)(c)."
+          "text": "No person may ever process prescription data outside a licensed physical pharmacy, including licensed pharmacists and technicians acting under a valid shared-service policy.",
+          "why": "Incorrect. The policy permits remote processing subject to professional licensure, verification, secure data and approved workflow."
         },
         {
-          "text": "No, because the customer's agent may never pick up a patient's Schedule II medicine in Massachusetts.",
-          "why": "Incorrect. Sections 9.04(14)(a)–(c) expressly account for ultimate users or their agents."
+          "text": "The technician's private home automatically becomes a licensed full-service Massachusetts pharmacy authorized to dispense physical drug products to patients.",
+          "why": "Incorrect. A remote processing site is not a new licensed dispensing pharmacy or an authorization for technician physical dispensing."
         },
         {
-          "text": "Yes, the pharmacist may use the documented serious-hardship exception if the agent prints name/address and signs the required log, with all other rules met.",
-          "why": "Correct. The explicit §9.04(14)(c) criteria are satisfied by the described serious-hardship finding, pharmacist documentation and agent's printed/signed identity record."
+          "text": "A nonlicensed cashier can perform the same remote processing duties and issue new controlled prescriptions merely because the computer has a password.",
+          "why": "Incorrect. The remote-processing technician exception requires the appropriate pharmacy technician license and does not expand cashier or prescriber authority."
         }
       ],
       "correct": [
-        "E"
+        "A"
       ],
-      "citation": "247 CMR 9.04(14)(a)–(c)",
+      "citation": "Board Policy 2021-02 §V(a)–(b), revised 04/07/2022; 247 CMR 9.04(1),(11)",
       "source_urls": [
+        "https://www.mass.gov/doc/2021-02-shared-pharmacy-service-models-including-central-fill-central-and-remote-processing-and-telepharmacy-0/download",
         "https://www.mass.gov/doc/247-cmr-9-professional-practice-standards/download"
       ],
       "verified_at": "2026-11-23",
       "law_review_status": "AI_PRIMARY_TEXT_CHECK__HUMAN_EXPERT_NOT_CERTIFIED",
       "reviewer_type": "AI_AUTHOR",
       "closest_existing_ids": [
-        "E30-005",
-        "E076"
+        "E031",
+        "E30-195",
+        "E30-176"
       ],
       "revision": 2,
       "publication_status": "DRAFT_NOT_PUBLIC"
@@ -1534,44 +1535,45 @@
       "competency": "4.7",
       "official_2027_subdomain": null,
       "kind": "single",
-      "topic": "Rejected Board inspection plan of correction: seven-day resubmission deadline",
+      "topic": "Unexpected pharmacy closure exceeds 24 hours: continuity and Board notification",
       "scenario_tags": [
-        "inspection",
-        "plan_of_correction",
-        "deadline"
+        "facility",
+        "temporary_closure",
+        "continuity_of_care",
+        "Board_notice"
       ],
-      "actor": "MOR; licensed pharmacy owner",
-      "trigger": "A Massachusetts pharmacy submits its initial inspection plan of correction within the prescribed deadline. The Board rejects it as inadequate because several cited violations have no responsible person or implementation date. The MOR states",
-      "legal_decision": "Submit revised POC within seven days after rejection; include action, owner and dates.",
-      "critical_exception": "Returned unacceptable initial plan, not merely the original report issuance.",
-      "counterfactual_flip": "An initial inspection report with no previously submitted POC triggers the initial 21-day or Board-directed timeframe, not this seven-day revision clock.",
-      "stem": "A Massachusetts pharmacy submits its initial inspection plan of correction within the prescribed deadline. The Board rejects it as inadequate because several cited violations have no responsible person or implementation date. The MOR states that the pharmacy gets another 21 days automatically for revisions. Which action follows 247 CMR 9.25(5)?",
+      "actor": "MOR; community pharmacy owner",
+      "trigger": "A Massachusetts community pharmacy loses electrical power in a storm on Monday morning. Technicians secure all drug stock; the pharmacy cannot safely dispense prescriptions and expects the service interruption to last 36 hours. It is a temp",
+      "legal_decision": "Implement written patient continuity plan and notify Board for unexpected pharmacy operations suspension over 24h.",
+      "critical_exception": "Temporary unplanned closure >24h, not planned permanent surrender under 247 CMR 6.13.",
+      "counterfactual_flip": "If services resumed after only six hours, §9.19(15)'s more-than-24-hour Board-notice threshold would not be crossed, though continuity planning remains required.",
+      "stem": "A Massachusetts community pharmacy loses electrical power in a storm on Monday morning. Technicians secure all drug stock; the pharmacy cannot safely dispense prescriptions and expects the service interruption to last 36 hours. It is a temporary unplanned service suspension, not permanent business closure. Management posts a closed sign but has no plan to provide continuity of prescription therapy and says no Board notice is needed until reopening. What is the correct regulatory response?",
       "choices": [
         {
-          "text": "The pharmacy need not revise its plan because the original plan was submitted within its initial deadline.",
-          "why": "Incorrect. An unacceptable plan returned by the Board must be revised; timeliness of the first submission does not cure its omissions."
+          "text": "Use the permanent business-closure patient letter process exclusively and treat the temporary outage as a completed permanent pharmacy closure.",
+          "why": "Incorrect. This is an unexpected temporary interruption; 247 CMR 9.19(15) imposes its own continuity-of-care and notification requirements."
         },
         {
-          "text": "Submit an acceptable revised plan within seven days after the Board returns the deficient plan.",
-          "why": "Correct. Section 9.25(5) specifies a seven-day revised-plan deadline after return of an unacceptable plan."
+          "text": "No Board notification is necessary because a weather-related outage can never be a regulated pharmacy-operation suspension.",
+          "why": "Incorrect. Section 9.19(15) requires Board notification if pharmacy operations are unexpectedly suspended for more than 24 hours, without a blanket weather exception."
         },
         {
-          "text": "Wait for the next annual self-inspection and present the corrections only then.",
-          "why": "Incorrect. The mandatory revised-plan deadline is independent of annual self-inspection."
+          "text": "Create and execute the required continuity-of-care arrangements and notify the Board of the unexpected suspension exceeding 24 hours.",
+          "why": "Correct. 247 CMR 9.19(15) imposes both a written continuity-of-care plan and Board notification after an unexpected operational suspension lasting more than 24 hours."
         },
         {
-          "text": "Replace every cited violation with a general statement of intent and omit completion dates.",
-          "why": "Incorrect. Section 9.25(2) requires corrective action, expected implementation date, and responsible person(s)."
+          "text": "Leave prescription orders and medications unattended in the unlocked building so patients may self-select their next maintenance doses while service is offline.",
+          "why": "Incorrect. Patient access and pharmacy security remain regulated; a continuity plan cannot authorize uncontrolled self-service."
         },
         {
-          "text": "Have a billing contractor sign the revised plan instead of the MOR because pharmacy technicians caused the original deficiencies.",
-          "why": "Incorrect. Section 9.25(3) requires the MOR and applicable supervising licensee signatures."
+          "text": "Refill and dispense all affected Schedule II prescriptions from an unsecured temporary kiosk without a pharmacist, as long as the patient calls for counseling.",
+          "why": "Incorrect. Emergency continuity does not dispense with pharmacy licensure, controlled-substance security, pharmacist oversight or dispensing requirements."
         }
       ],
       "correct": [
-        "B"
+        "C"
       ],
-      "citation": "247 CMR 9.25(1)–(5)",
+      "citation": "247 CMR 9.19(15) (written continuity of care and Board notice on unexpected >24-hour suspension)",
       "source_urls": [
         "https://www.mass.gov/doc/247-cmr-9-professional-practice-standards/download"
       ],
@@ -1579,10 +1581,11 @@
       "law_review_status": "AI_PRIMARY_TEXT_CHECK__HUMAN_EXPERT_NOT_CERTIFIED",
       "reviewer_type": "AI_AUTHOR",
       "closest_existing_ids": [
-        "D078",
-        "E30-135"
+        "E30-017",
+        "E30-356",
+        "D094"
       ],
-      "revision": 1,
+      "revision": 2,
       "publication_status": "DRAFT_NOT_PUBLIC"
     },
     {
@@ -1595,58 +1598,57 @@
       "competency": "4.3",
       "official_2027_subdomain": null,
       "kind": "multi",
-      "topic": "Medication refrigerator excursion: integrity, logging, food ban and retention",
+      "topic": "Specialty compounding annual report: interstate dispensing volume and license status",
       "scenario_tags": [
-        "cold_chain",
-        "storage",
-        "equipment",
-        "records"
+        "sterile_compounding",
+        "interstate",
+        "annual_reporting",
+        "licensing"
       ],
-      "actor": "pharmacist; facility operations lead",
-      "trigger": "A Massachusetts community pharmacy keeps vaccines and refrigerated prescription drugs in a household dorm-style refrigerator with a freezer compartment opening directly into the refrigerated space. A logged overnight temperature excursion o",
-      "legal_decision": "Use approved fridge, document/assess excursion, retain logs one year, and no food.",
-      "critical_exception": "No product-specific temperature stability determination yet exists; do not automatically release stock.",
-      "counterfactual_flip": "If a compliant refrigerator had maintained temperatures within range and no integrity concern existed, the excursion-response hold would not be triggered.",
-      "stem": "A Massachusetts community pharmacy keeps vaccines and refrigerated prescription drugs in a household dorm-style refrigerator with a freezer compartment opening directly into the refrigerated space. A logged overnight temperature excursion occurs; the pharmacist records the temperature but immediately returns all drug stock to saleable inventory, does not assess integrity, and plans to destroy temperature logs after 30 days. A staff member also stores lunch inside the unit. Which required changes are supported by 247 CMR 9.22? SELECT ALL THAT APPLY.",
+      "actor": "sterile compounding pharmacy compliance officer; MOR",
+      "trigger": "A Massachusetts-licensed sterile compounding pharmacy dispenses CSP prescriptions both to Massachusetts patients and patients in neighboring states. At annual licensing/reporting time, management offers a summary of only the prescriptions d",
+      "legal_decision": "Supply annual specialty compounding Board volume, destination-state and nonresident licensure report across all dispensing states.",
+      "critical_exception": "The pharmacy sends qualifying compounded preparations to MA and out-of-state patients.",
+      "counterfactual_flip": "If the pharmacy dispensed no compounded prescriptions to another state, the out-of-state destination/volume portion could correctly report none, while MA totals and status still need reporting.",
+      "stem": "A Massachusetts-licensed sterile compounding pharmacy dispenses CSP prescriptions both to Massachusetts patients and patients in neighboring states. At annual licensing/reporting time, management offers a summary of only the prescriptions delivered within Massachusetts, excluding out-of-state volumes and the status of licenses held elsewhere. No Board waiver applies. What must the annual specialty report include?",
       "choices": [
         {
-          "text": "Replace the prohibited dorm-style unit with qualifying equipment and follow Board temperature measurement guidance.",
-          "why": "Correct. Section 9.22(2) prohibits a refrigerator with a freezer compartment within the refrigerator space, such as a dorm-style refrigerator."
+          "text": "The total patient billing receipts only, because the Board cannot request prescription volumes or out-of-state jurisdictions for a Massachusetts compounding pharmacy.",
+          "why": "Incorrect. 247 CMR 20.06(1) expressly requires prescription lists/volumes and destination states."
         },
         {
-          "text": "Release every affected product automatically because its printed expiration date has not passed.",
-          "why": "Incorrect. Section 9.22(1) requires a response protocol that assesses medication integrity after out-of-range temperature."
+          "text": "Only the count of CSP prescriptions administered in a hospital inpatient unit, excluding outpatient and interstate prescriptions.",
+          "why": "Incorrect. Section 20.06(1) is not limited to hospital administrations and requires dispensing information within and outside Massachusetts."
         },
         {
-          "text": "Document the temperature excursion and product-integrity assessment and maintain required temperature log records for at least one year.",
-          "why": "Correct. Sections 9.22(1),(4) require excursion response/action documentation and minimum one-year records."
+          "text": "Only the pharmacy's DEA registration number and annual Schedule II purchase volume, because sterile compounding involves controlled substances.",
+          "why": "Incorrect. The 20.06(1) specialty report covers compounded sterile and complex nonsterile prescriptions, regardless of federal schedule."
         },
         {
-          "text": "Allow staff food and beverage in the medication refrigerator if placed on a separate shelf.",
-          "why": "Incorrect. Section 9.22(5) prohibits any food or beverage in the medication refrigerator/freezer."
+          "text": "A copy of the pharmacy's ordinary IRS tax filing instead of any pharmacy-specific prescription figures or destination-state licensure information.",
+          "why": "Incorrect. Tax returns do not supply the required compounding prescription and state-licensing data."
         },
         {
-          "text": "Remove food and beverage from medication storage, and keep potentially affected drugs on hold until their integrity is appropriately assessed.",
-          "why": "Correct. This combines sections 9.22(1),(4),(5): integrity assessment and separation of food from medical stock."
+          "text": "Report applicable compounded prescriptions and volumes dispensed within and outside Massachusetts, destination states, and other states' nonresident license status.",
+          "why": "Correct. The annual/on-request reporting requirements in 247 CMR 20.06(1)(a)–(b) include each of these categories."
         }
       ],
       "correct": [
-        "A",
-        "C",
         "E"
       ],
-      "citation": "247 CMR 9.22(1)–(5)",
+      "citation": "247 CMR 20.06(1)(a)–(b)",
       "source_urls": [
-        "https://www.mass.gov/doc/247-cmr-9-professional-practice-standards/download"
+        "https://www.mass.gov/doc/247-cmr-20-reporting/download"
       ],
       "verified_at": "2026-11-23",
       "law_review_status": "AI_PRIMARY_TEXT_CHECK__HUMAN_EXPERT_NOT_CERTIFIED",
       "reviewer_type": "AI_AUTHOR",
       "closest_existing_ids": [
-        "E30-110",
-        "E030"
+        "D093",
+        "D095",
+        "D094"
       ],
-      "revision": 1,
+      "revision": 2,
       "publication_status": "DRAFT_NOT_PUBLIC"
     },
     {
@@ -1782,56 +1784,57 @@
       "competency": "4.1",
       "official_2027_subdomain": null,
       "kind": "single",
-      "topic": "Quarantined Schedule III product pending reverse distribution remains secured stock",
+      "topic": "Sterile compounding manager change: 30-day specialty filing in addition to usual MOR notice",
       "scenario_tags": [
-        "controlled_storage",
-        "expired_stock",
-        "reverse_distributor"
+        "sterile_compounding",
+        "MOR",
+        "corporate_officer",
+        "30_day_reporting"
       ],
-      "actor": "MOR; pharmacy inventory clerk",
-      "trigger": "A Massachusetts pharmacy has expired Schedule III medication awaiting reverse-distributor pickup. Staff move the quarantined bottles to an unlocked shelf in a general retail backroom, outside the secured prescription area, arguing that expi",
-      "legal_decision": "Maintain same controlled security for expired stock pending reverse distribution.",
-      "critical_exception": "Expiration and quarantine do not remove the controlled scheduling or storage rules.",
-      "counterfactual_flip": "After authorized transfer to a registered reverse distributor with proper records, on-site custody/security duties for the transferred units cease.",
-      "stem": "A Massachusetts pharmacy has expired Schedule III medication awaiting reverse-distributor pickup. Staff move the quarantined bottles to an unlocked shelf in a general retail backroom, outside the secured prescription area, arguing that expired drugs no longer count as controlled inventory. Which action complies with 247 CMR 9.21?",
+      "actor": "sterile compounding MOR; corporate officer",
+      "trigger": "A Massachusetts resident sterile-compounding pharmacy changes its corporate president but retains the same Manager of Record, facility license number, premises and compounding services. Management has updated its corporate minute book and a",
+      "legal_decision": "File separate specialty compounding principal-manager information within 30 days after corporate officer change even when MOR unchanged.",
+      "critical_exception": "Corporate president changes without MOR change, yet §20.06(6)(e) applies independently.",
+      "counterfactual_flip": "If no ownership, corporate-officer, manager or MOR change had occurred, the event-triggered 30-day specialty report would not be required, though annual reporting remains.",
+      "stem": "A Massachusetts resident sterile-compounding pharmacy changes its corporate president but retains the same Manager of Record, facility license number, premises and compounding services. Management has updated its corporate minute book and argues that the unchanged MOR means the Board needs no separate updated management-information report. The change became effective 18 days ago. What additional requirement applies under 247 CMR 20.06?",
       "choices": [
         {
-          "text": "Bring the expired drugs back into the secured prescription area and maintain controlled-substance security and disposition records until lawful transfer.",
-          "why": "Correct. 247 CMR 9.21(1)–(2),(9)–(10) applies security/accountability duties to expired or quarantined drugs and those awaiting reverse distribution."
+          "text": "The MOR must submit the required principal-management and licensee information report within 30 days of the corporate-officer change, in addition to the annual filing.",
+          "why": "Correct. 247 CMR 20.06(6)(e) expressly triggers a 30-day report on a change in corporate officers or management, even without a MOR change."
         },
         {
-          "text": "Leave the bottles on the unlocked shelf if a 'not for dispensing' sign is posted.",
-          "why": "Incorrect. A label does not override the secured prescription area and controlled storage requirements."
+          "text": "No report is due because 247 CMR 20.06(6)(e) applies only if the physical pharmacy changes street address.",
+          "why": "Incorrect. The enumerated triggers include a change in corporate officers, management personnel, ownership or MOR."
         },
         {
-          "text": "Discard the expired Schedule III drugs with ordinary pharmacy trash because no active patient prescription remains.",
-          "why": "Incorrect. Controlled-drug disposal requires approved registrant procedures and accurate records."
+          "text": "The pharmacy must submit a new federal controlled-substance destruction form to report the change in corporate president.",
+          "why": "Incorrect. DEA Form 41 concerns destruction; it is not the reporting channel for corporate-officer changes."
         },
         {
-          "text": "Convert the medications into Schedule VI stock in the inventory system since they have expired.",
-          "why": "Incorrect. A drug's controlled schedule does not change because the expiration date passed."
+          "text": "The pharmacy may defer all updates until a five-year inspection cycle because the existing MOR remains licensed.",
+          "why": "Incorrect. The separate 30-day specialty compounding management report is triggered by the corporate change."
         },
         {
-          "text": "Ask a courier to take the stock directly to an unregistered private storage unit before reverse distribution.",
-          "why": "Incorrect. Unsecured off-site custody by an unauthorized party is not an authorized controlled disposal method."
+          "text": "The new officer must wait until the next physician prescribing renewal before the state pharmacy can disclose updated management information.",
+          "why": "Incorrect. Physician prescribing cycles have no bearing on the 247 CMR 20.06(6)(e) pharmacy reporting duty."
         }
       ],
       "correct": [
         "A"
       ],
-      "citation": "247 CMR 9.21(1)–(2),(9)–(10); 21 CFR 1317.05(a)",
+      "citation": "247 CMR 20.06(6)(a),(e); distinct from 247 CMR 20.05(1) MOR change",
       "source_urls": [
-        "https://www.mass.gov/doc/247-cmr-9-professional-practice-standards/download",
-        "https://www.law.cornell.edu/cfr/text/21/1317.05"
+        "https://www.mass.gov/doc/247-cmr-20-reporting/download"
       ],
       "verified_at": "2026-11-23",
       "law_review_status": "AI_PRIMARY_TEXT_CHECK__HUMAN_EXPERT_NOT_CERTIFIED",
       "reviewer_type": "AI_AUTHOR",
       "closest_existing_ids": [
-        "E059",
-        "F019"
+        "D090",
+        "E30-065",
+        "E30-264"
       ],
-      "revision": 1,
+      "revision": 2,
       "publication_status": "DRAFT_NOT_PUBLIC"
     },
     {
