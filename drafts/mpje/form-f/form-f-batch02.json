@@ -5,7 +5,7 @@
   "batch_date": "2026-11-23",
   "blueprint": "NABP_MPJE_LEGACY_THROUGH_2027_02_28",
   "target": 120,
-  "batch_count": 23,
+  "batch_count": 30,
   "release_state": "INCOMPLETE_DRAFT__NOT_PUBLIC",
   "questions": [
     {
@@ -1497,6 +1497,461 @@
         "D059",
         "D060",
         "D057"
+      ],
+      "revision": 1,
+      "publication_status": "DRAFT_NOT_PUBLIC"
+    },
+    {
+      "id": "F054",
+      "slotId": "F054",
+      "form": "F",
+      "exam_era": "NABP_PRE_MARCH_1_2027",
+      "area": 3,
+      "area_2026": 3,
+      "competency": "3.1",
+      "official_2027_subdomain": null,
+      "kind": "multi",
+      "topic": "DSCSA formerly illegitimate product: termination notice requires FDA consultation",
+      "scenario_tags": [
+        "DSCSA",
+        "FDA",
+        "notification_termination",
+        "trading_partner"
+      ],
+      "actor": "pharmacy compliance officer; manufacturer/FDA contacts",
+      "jurisdiction": "Massachusetts and applicable federal law",
+      "trigger": "A Massachusetts pharmacy previously confirmed a counterfeit shipment as illegitimate and appropriately notified FDA and two immediate trading partners under DSCSA. Subsequent evidence and product testing establish that a specific earlier no",
+      "legal_decision": "Terminate an outdated illegitimate-product notice only after FDA consultation and prompt notice to previously informed immediate trading partners.",
+      "critical_exception": "Original illegitimate-product FDA notice actually sent; new evidence supports termination rather than original decision never made.",
+      "counterfactual_flip": "If there had never been any illegitimate-product notification, this special termination process would not be necessary.",
+      "stem": "A Massachusetts pharmacy previously confirmed a counterfeit shipment as illegitimate and appropriately notified FDA and two immediate trading partners under DSCSA. Subsequent evidence and product testing establish that a specific earlier notice is no longer necessary, but the pharmacy wants to remove it from its online records without consulting FDA or contacting the trading partners. What federal steps are required? SELECT ALL THAT APPLY.",
+      "choices": [
+        {
+          "text": "The pharmacy may quietly delete the original illegitimate-product report from its records because the latest test is negative.",
+          "why": "Incorrect. Section 582(d)(4)(B)(iv) provides a regulated termination process rather than silently removing the earlier notification."
+        },
+        {
+          "text": "Consult with FDA on the determination that the earlier notification is no longer necessary before terminating it.",
+          "why": "Correct. 21 U.S.C. 360eee-1(d)(4)(B)(iv) requires that the dispensing pharmacy determine, in consultation with the Secretary, that termination is appropriate."
+        },
+        {
+          "text": "The original notification must remain indefinitely active regardless of a completed FDA consultation and changed facts.",
+          "why": "Incorrect. The statute specifically provides a termination-notification process in appropriate circumstances."
+        },
+        {
+          "text": "Promptly tell immediate trading partners previously notified about the illegitimate product that the notice has been terminated following the required FDA consultation.",
+          "why": "Correct. Section 582(d)(4)(B)(iv) specifies prompt notice to the same immediate partners after the termination determination."
+        },
+        {
+          "text": "Provide every drug that had been implicated to patients immediately before review because the product's status was later corrected.",
+          "why": "Incorrect. Terminating a notice does not independently waive product authenticity, quality, recall or dispensing safeguards."
+        }
+      ],
+      "correct": [
+        "B",
+        "D"
+      ],
+      "citation": "21 U.S.C. §360eee-1(d)(4)(B)(iv); FDA 'Notify FDA of Illegitimate Products' termination process",
+      "source_urls": [
+        "https://uscode.house.gov/us/usc/119-136/t21/s360eee-1/",
+        "https://www.fda.gov/drugs/drug-supply-chain-security-act-dscsa/notify-fda-illegitimate-products"
+      ],
+      "verified_at": "2026-11-23",
+      "law_review_status": "AI_PRIMARY_TEXT_CHECK__HUMAN_EXPERT_NOT_CERTIFIED",
+      "reviewer_type": "AI_AUTHOR",
+      "closest_existing_ids": [
+        "F014",
+        "E30-030",
+        "D006"
+      ],
+      "revision": 1,
+      "publication_status": "DRAFT_NOT_PUBLIC"
+    },
+    {
+      "id": "F055",
+      "slotId": "F055",
+      "form": "F",
+      "exam_era": "NABP_PRE_MARCH_1_2027",
+      "area": 4,
+      "area_2026": 4,
+      "competency": "4.1",
+      "official_2027_subdomain": null,
+      "kind": "single",
+      "topic": "Massachusetts wholesale druggist licensing is separate for each warehouse location",
+      "scenario_tags": [
+        "wholesale",
+        "facility_license",
+        "multiple_sites",
+        "operations"
+      ],
+      "actor": "wholesale distribution company compliance officer",
+      "jurisdiction": "Massachusetts and applicable federal law",
+      "trigger": "A Massachusetts corporation already holds a wholesale druggist license covering its Springfield prescription-drug distribution center. It opens a second distribution warehouse in a separate town under the same corporate name and tax ID, and",
+      "legal_decision": "Secure separate wholesale distributor license per physical wholesale business location.",
+      "critical_exception": "Second actual distribution premises under same owner rather than a name change at original licensed site.",
+      "counterfactual_flip": "If the company used only the existing single licensed warehouse and no other wholesale operation site, no second-location license would be implicated.",
+      "stem": "A Massachusetts corporation already holds a wholesale druggist license covering its Springfield prescription-drug distribution center. It opens a second distribution warehouse in a separate town under the same corporate name and tax ID, and proposes to use the original wholesale license for both locations. All other appropriate federal and state drug authority is separately established. What does 247 CMR 7.02 require before the new location distributes prescription drugs?",
+      "choices": [
+        {
+          "text": "A single corporate Massachusetts wholesale license always authorizes unlimited additional warehouse locations if ownership is unchanged.",
+          "why": "Incorrect. 247 CMR 7.02(4) expressly requires a license for each location of a wholesale drug business."
+        },
+        {
+          "text": "Use the retail pharmacy's NPI as a substitute for the second warehouse's license whenever it stocks only sealed finished prescription drugs.",
+          "why": "Incorrect. A provider identifier does not substitute for Board wholesale distributor licensure."
+        },
+        {
+          "text": "Obtain a separate Massachusetts wholesale druggist license for the second distribution location.",
+          "why": "Correct. 247 CMR 7.02(1),(4) imposes location-by-location Board licensure before wholesale distribution."
+        },
+        {
+          "text": "Permit wholesale shipping without any location license until the first product recall affects the new warehouse.",
+          "why": "Incorrect. Recall experience is not a licensing prerequisite; licensing must precede wholesale operations."
+        },
+        {
+          "text": "Convert the inventory invoices into retail-patient prescriptions so the second warehouse is automatically covered by the original license.",
+          "why": "Incorrect. Relabeling wholesale stock does not eliminate the separate location license."
+        }
+      ],
+      "correct": [
+        "C"
+      ],
+      "citation": "247 CMR 7.02(1),(4)",
+      "source_urls": [
+        "https://www.mass.gov/doc/247-cmr-7-wholesale-druggists/download"
+      ],
+      "verified_at": "2026-11-23",
+      "law_review_status": "AI_PRIMARY_TEXT_CHECK__HUMAN_EXPERT_NOT_CERTIFIED",
+      "reviewer_type": "AI_AUTHOR",
+      "closest_existing_ids": [
+        "E096",
+        "E30-200",
+        "F036"
+      ],
+      "revision": 1,
+      "publication_status": "DRAFT_NOT_PUBLIC"
+    },
+    {
+      "id": "F056",
+      "slotId": "F056",
+      "form": "F",
+      "exam_era": "NABP_PRE_MARCH_1_2027",
+      "area": 4,
+      "area_2026": 4,
+      "competency": "4.7",
+      "official_2027_subdomain": null,
+      "kind": "single",
+      "topic": "Wholesaler updated warehouse contact information triggers 30-day Board written update",
+      "scenario_tags": [
+        "wholesale",
+        "regulatory_notice",
+        "license_information",
+        "30_days"
+      ],
+      "actor": "wholesale distributor licensee; corporate compliance",
+      "jurisdiction": "Massachusetts and applicable federal law",
+      "trigger": "A Massachusetts-licensed wholesale distributor changes the contact person and telephone number for a warehouse already listed in its initial Board application. No distribution site moves, no ownership is transferred, and no controlled subst",
+      "legal_decision": "Report material wholesale license application information updates in writing within 30 days of the change.",
+      "critical_exception": "Changed existing warehouse contact phone/contact person, no second facility or ownership change.",
+      "counterfactual_flip": "If contact information had remained unchanged from the filed license application, this event-triggered update would not arise.",
+      "stem": "A Massachusetts-licensed wholesale distributor changes the contact person and telephone number for a warehouse already listed in its initial Board application. No distribution site moves, no ownership is transferred, and no controlled substance is lost. Company counsel says information submitted during initial licensure cannot require a change notice unless the license is renewed. What does 247 CMR 7.02 require?",
+      "choices": [
+        {
+          "text": "Notify the Board in writing within 30 days after changes to required licensing information, including the facility contact person and telephone number.",
+          "why": "Correct. Sections 7.02(5)(c) and (6) impose a 30-day written notification of changes to required wholesale license information."
+        },
+        {
+          "text": "Wait for the distributor's five-year licensure renewal and make no interim changes to the Board's facility contacts.",
+          "why": "Incorrect. The express 30-day duty is not suspended until renewal."
+        },
+        {
+          "text": "Report the warehouse contact's new telephone number using DEA Form 106 as a controlled-substance loss.",
+          "why": "Incorrect. Form 106 is for theft or significant loss, not personnel contact changes."
+        },
+        {
+          "text": "Notify only the retail pharmacy supervisor in the nearest town; wholesale licenses are entirely unregulated by the Board.",
+          "why": "Incorrect. Section 7.02 expressly regulates wholesaler license information."
+        },
+        {
+          "text": "Close the wholesale facility permanently because a warehouse contact telephone number can never be updated legally.",
+          "why": "Incorrect. The rule permits changes with a timely written report and does not require closure for a routine contact update."
+        }
+      ],
+      "correct": [
+        "A"
+      ],
+      "citation": "247 CMR 7.02(5)(c),(6)",
+      "source_urls": [
+        "https://www.mass.gov/doc/247-cmr-7-wholesale-druggists/download"
+      ],
+      "verified_at": "2026-11-23",
+      "law_review_status": "AI_PRIMARY_TEXT_CHECK__HUMAN_EXPERT_NOT_CERTIFIED",
+      "reviewer_type": "AI_AUTHOR",
+      "closest_existing_ids": [
+        "F029",
+        "E080",
+        "F055"
+      ],
+      "revision": 1,
+      "publication_status": "DRAFT_NOT_PUBLIC"
+    },
+    {
+      "id": "F057",
+      "slotId": "F057",
+      "form": "F",
+      "exam_era": "NABP_PRE_MARCH_1_2027",
+      "area": 4,
+      "area_2026": 4,
+      "competency": "4.2",
+      "official_2027_subdomain": null,
+      "kind": "multi",
+      "topic": "Wholesaler offsite records electronically unavailable: two working days",
+      "scenario_tags": [
+        "wholesale",
+        "records",
+        "offsite_archive",
+        "inspection",
+        "two_workdays"
+      ],
+      "actor": "wholesale warehouse manager; Board investigator",
+      "jurisdiction": "Massachusetts and applicable federal law",
+      "trigger": "A Massachusetts wholesale druggist retains its wholesale receipt and sale records at a corporate archive outside its licensed warehouse. The records cannot be retrieved electronically or accessed immediately from the inspection site. A Boar",
+      "legal_decision": "Produce centrally kept non-electronically-retrievable wholesale records within 2 working days; retain 2y after disposition.",
+      "critical_exception": "Offsite central records not immediately computer-retrievable; official inspectable request on Tuesday.",
+      "counterfactual_flip": "If the centrally kept wholesale records were immediately electronically retrievable at the inspection site, the special two-day delayed production route would not need to be used.",
+      "stem": "A Massachusetts wholesale druggist retains its wholesale receipt and sale records at a corporate archive outside its licensed warehouse. The records cannot be retrieved electronically or accessed immediately from the inspection site. A Board investigator requests original transaction records on a Tuesday, and the archive manager plans to mail them the following week. No holiday affects the next two working days. Which actions follow 247 CMR 7.04? SELECT ALL THAT APPLY.",
+      "choices": [
+        {
+          "text": "Make centrally stored records that are not immediately electronically retrievable available for inspection within two working days of the authorized request.",
+          "why": "Correct. Section 7.04(6)(c) expressly sets a two-working-day production limit when records are kept centrally away from the inspection site and cannot be electronically retrieved."
+        },
+        {
+          "text": "The distributor may wait until the next annual license renewal, because wholesale transaction files have no inspection deadline.",
+          "why": "Incorrect. Section 7.04(6)(b)–(c) imposes readily inspectable records and an offsite production deadline."
+        },
+        {
+          "text": "Any wholesale drug receipt record more than 30 days old can be destroyed even if the associated drug was only recently distributed.",
+          "why": "Incorrect. Section 7.04(6)(b) requires records to remain available for two years following disposition."
+        },
+        {
+          "text": "A separate warehouse cannot be asked for transaction documents if the parent company's tax headquarters stores them.",
+          "why": "Incorrect. The storage arrangement does not waive the local licensee's duty to make records available for official inspection."
+        },
+        {
+          "text": "Retain wholesale distribution transaction records for at least two years after disposition and produce them as required, regardless of centralized archiving.",
+          "why": "Correct. Sections 7.04(6)(b) and (c) state retention after disposition and availability conditions."
+        }
+      ],
+      "correct": [
+        "A",
+        "E"
+      ],
+      "citation": "247 CMR 7.04(6)(a)–(c)",
+      "source_urls": [
+        "https://www.mass.gov/doc/247-cmr-7-wholesale-druggists/download"
+      ],
+      "verified_at": "2026-11-23",
+      "law_review_status": "AI_PRIMARY_TEXT_CHECK__HUMAN_EXPERT_NOT_CERTIFIED",
+      "reviewer_type": "AI_AUTHOR",
+      "closest_existing_ids": [
+        "E017",
+        "F050",
+        "D077"
+      ],
+      "revision": 1,
+      "publication_status": "DRAFT_NOT_PUBLIC"
+    },
+    {
+      "id": "F058",
+      "slotId": "F058",
+      "form": "F",
+      "exam_era": "NABP_PRE_MARCH_1_2027",
+      "area": 4,
+      "area_2026": 4,
+      "competency": "4.2",
+      "official_2027_subdomain": null,
+      "kind": "multi",
+      "topic": "Wholesale return with opened tamper-evident outer seal: quarantine and disposition",
+      "scenario_tags": [
+        "wholesale",
+        "returned_drug",
+        "broken_seal",
+        "quarantine",
+        "product_integrity"
+      ],
+      "actor": "wholesale receiving pharmacist/QA manager",
+      "jurisdiction": "Massachusetts and applicable federal law",
+      "trigger": "A Massachusetts wholesale druggist receives a return of sealed prescription-drug cartons from a downstream customer. The manufacturer cartons' tamper-evident SECONDARY seal has been broken and re-taped, even though the individual tablets ap",
+      "legal_decision": "Quarantine wholesale returns with broken sealed-secondary cartons and dispose or return appropriately; don't reintroduce to saleable stock.",
+      "critical_exception": "The sealed secondary container was visibly opened; no investigation supports product quality.",
+      "counterfactual_flip": "If the return were in uncompromised original sealed packaging with complete documented storage history and appropriately approved return-to-saleable criteria, the open-seal bar would not arise.",
+      "stem": "A Massachusetts wholesale druggist receives a return of sealed prescription-drug cartons from a downstream customer. The manufacturer cartons' tamper-evident SECONDARY seal has been broken and re-taped, even though the individual tablets appear unused. There is no validated investigation showing the returned product still meets its required identity, potency and integrity standards. The returns team proposes mixing the cartons with saleable stock after an external visual check alone. Which steps are appropriate under 247 CMR 7.04? SELECT ALL THAT APPLY.",
+      "choices": [
+        {
+          "text": "Immediately return the re-taped products to saleable stock because individual tablets are not visibly missing.",
+          "why": "Incorrect. Section 7.04(5)(b) requires opened immediate, sealed outer or sealed secondary containers to be identified and quarantined."
+        },
+        {
+          "text": "Identify the opened sealed-secondary packages and quarantine them separately from saleable prescription-drug inventory.",
+          "why": "Correct. Section 7.04(1)(c),(5)(b) expressly requires separation for opened/used sealed containers."
+        },
+        {
+          "text": "Automatically sell any cartons whose temperature logger shows room temperature, because a temperature record alone restores a broken tamper seal.",
+          "why": "Incorrect. Temperature information does not waive the separate container-integrity and quarantine conditions."
+        },
+        {
+          "text": "Handle the quarantined returns through an authorized return-to-supplier or lawful destruction process rather than release for resale as proposed.",
+          "why": "Correct. Section 7.04(5)(b) directs quarantine and separation until returned to supplier or destroyed under applicable law."
+        },
+        {
+          "text": "Treat a warehouse label reading 'customer returned' as proof that the products were never compromised and no additional controls are required.",
+          "why": "Incorrect. Merely relabeling does not establish product integrity or remove the listed quarantine requirement."
+        }
+      ],
+      "correct": [
+        "B",
+        "D"
+      ],
+      "citation": "247 CMR 7.04(1)(c),(5)(a)–(c)",
+      "source_urls": [
+        "https://www.mass.gov/doc/247-cmr-7-wholesale-druggists/download"
+      ],
+      "verified_at": "2026-11-23",
+      "law_review_status": "AI_PRIMARY_TEXT_CHECK__HUMAN_EXPERT_NOT_CERTIFIED",
+      "reviewer_type": "AI_AUTHOR",
+      "closest_existing_ids": [
+        "E30-089",
+        "E30-202",
+        "F015"
+      ],
+      "revision": 1,
+      "publication_status": "DRAFT_NOT_PUBLIC"
+    },
+    {
+      "id": "F059",
+      "slotId": "F059",
+      "form": "F",
+      "exam_era": "NABP_PRE_MARCH_1_2027",
+      "area": 4,
+      "area_2026": 4,
+      "competency": "4.2",
+      "official_2027_subdomain": null,
+      "kind": "single",
+      "topic": "Wholesaler FIFO default permits only appropriate temporary deviation",
+      "scenario_tags": [
+        "wholesale",
+        "inventory_rotation",
+        "FIFO",
+        "product_quality"
+      ],
+      "actor": "wholesale warehouse operations manager",
+      "jurisdiction": "Massachusetts and applicable federal law",
+      "trigger": "A Massachusetts wholesale distributor holds two intact, approved lots of the same prescription medicine. The older approved lot has a shorter expiration but remains suitable for distribution; the newer lot was received yesterday. The facili",
+      "legal_decision": "Distribute oldest approved stock first unless deviation is temporary and appropriate.",
+      "critical_exception": "Both lots acceptable for release; promotional preference alone does not justify arbitrary permanent reversal of policy.",
+      "counterfactual_flip": "If a temporary deviation were necessary for a documented quality, safety or appropriate operational reason, the written policy could permit it if otherwise compliant.",
+      "stem": "A Massachusetts wholesale distributor holds two intact, approved lots of the same prescription medicine. The older approved lot has a shorter expiration but remains suitable for distribution; the newer lot was received yesterday. The facility's ordinary procedures require the oldest approved stock to go out first. Sales management directs staff to ship the newer lot exclusively for a month to satisfy a promotional program, with no documented quality or operational reason supporting a temporary exception. What principle governs under 247 CMR 7.04(7)?",
+      "choices": [
+        {
+          "text": "The newest drug stock must always be shipped first, even when a facility has a more appropriate documented older-stock policy.",
+          "why": "Incorrect. Section 7.04(7)(a) expressly describes a procedure in which the oldest approved stock is distributed first."
+        },
+        {
+          "text": "Lot age is irrelevant to wholesale distributor stock procedures whenever both lots remain within labeled expiration dates.",
+          "why": "Incorrect. The regulation specifically requires a written procedure for priority of oldest approved stock."
+        },
+        {
+          "text": "The distributor may freely abandon FIFO for an indefinite promotional program without evaluating whether the deviation is temporary or appropriate.",
+          "why": "Incorrect. Section 7.04(7)(a) allows departures only when temporary and appropriate."
+        },
+        {
+          "text": "All older approved lots must be immediately destroyed as defective simply because a newer shipment arrived.",
+          "why": "Incorrect. Older approved stock may still be legally marketable and is typically distributed first under written policy."
+        },
+        {
+          "text": "Follow the oldest-approved-stock-first procedure unless a specific temporary and appropriate deviation is justified under the written policy.",
+          "why": "Correct. Section 7.04(7)(a) establishes this FIFO default with only an appropriate temporary departure."
+        }
+      ],
+      "correct": [
+        "E"
+      ],
+      "citation": "247 CMR 7.04(7)(a)",
+      "source_urls": [
+        "https://www.mass.gov/doc/247-cmr-7-wholesale-druggists/download"
+      ],
+      "verified_at": "2026-11-23",
+      "law_review_status": "AI_PRIMARY_TEXT_CHECK__HUMAN_EXPERT_NOT_CERTIFIED",
+      "reviewer_type": "AI_AUTHOR",
+      "closest_existing_ids": [
+        "E30-075",
+        "D112",
+        "F058"
+      ],
+      "revision": 1,
+      "publication_status": "DRAFT_NOT_PUBLIC"
+    },
+    {
+      "id": "F060",
+      "slotId": "F060",
+      "form": "F",
+      "exam_era": "NABP_PRE_MARCH_1_2027",
+      "area": 4,
+      "area_2026": 4,
+      "competency": "4.1",
+      "official_2027_subdomain": null,
+      "kind": "multi",
+      "topic": "Nonresident pharmacy explicit exemptions do not waive all Massachusetts dispensing law",
+      "scenario_tags": [
+        "nonresident",
+        "pharmacy_operations",
+        "specific_exemptions",
+        "interstate_shipping"
+      ],
+      "actor": "licensed Rhode Island nonresident pharmacy MOR; MA inspector",
+      "jurisdiction": "Massachusetts and applicable federal law",
+      "trigger": "A Rhode Island pharmacy holds the required Massachusetts nonresident pharmacy license and sends valid mail-order prescriptions to Massachusetts patients. It has no Massachusetts storefront, and a Massachusetts inspector asks it to comply wi",
+      "legal_decision": "Invoke narrow nonresident exemptions from local storefront staff/sign requirements but preserve other applicable MA pharmacy laws.",
+      "critical_exception": "Nonresident licensed, no MA storefront; enumerated 9.19(11)/(16) exceptions apply but 9.20 remains.",
+      "counterfactual_flip": "If the pharmacy instead operated a Massachusetts resident Drug Store location, those 9.19(23) nonresident exclusions would no longer be available.",
+      "stem": "A Rhode Island pharmacy holds the required Massachusetts nonresident pharmacy license and sends valid mail-order prescriptions to Massachusetts patients. It has no Massachusetts storefront, and a Massachusetts inspector asks it to comply with the resident retail store's mandatory sign displaying the MOR's name in one-inch lettering above the building entrance and a local retail pharmacist-on-premises arrangement under 247 CMR 9.19(16). The owner argues that nonresident status therefore exempts every Massachusetts pharmacy practice requirement, including patient protection and general validity rules. Which conclusions follow? SELECT ALL THAT APPLY.",
+      "choices": [
+        {
+          "text": "The specified resident storefront MOR signage and 9.19(16) on-duty pharmacist-at-Massachusetts-premises provisions are among the express 9.19(23) nonresident exclusions.",
+          "why": "Correct. Section 9.19(23) excludes 9.19(11) and (16), among other enumerated subparts, for nonresident pharmacies."
+        },
+        {
+          "text": "Every Massachusetts rule regarding legitimate prescriptions, counseling, delivery, and quality automatically ceases to apply once a nonresident pharmacy is licensed.",
+          "why": "Incorrect. Section 9.20 requires nonresident pharmacies to comply with Massachusetts pharmacy practice laws when shipping into the Commonwealth unless a specific exception exists."
+        },
+        {
+          "text": "The nonresident pharmacy remains obligated to comply with otherwise applicable Massachusetts dispensing rules unless expressly exempted.",
+          "why": "Correct. Section 9.20 establishes general applicability; only enumerated exceptions such as 9.19(23) can be invoked."
+        },
+        {
+          "text": "The nonresident pharmacy must physically relocate into Massachusetts because 247 CMR 9.19 excludes some storefront posting requirements.",
+          "why": "Incorrect. A Massachusetts nonresident pharmacy license is the route for out-of-state operations shipping to patients."
+        },
+        {
+          "text": "The absence of a Massachusetts retail storefront automatically invalidates all properly issued prescriptions received by the pharmacy.",
+          "why": "Incorrect. Nonresident licensing does not independently invalidate legitimate, otherwise compliant prescriptions."
+        }
+      ],
+      "correct": [
+        "A",
+        "C"
+      ],
+      "citation": "247 CMR 9.19(23) (9.19(11),(16) exceptions); 9.20",
+      "source_urls": [
+        "https://www.mass.gov/doc/247-cmr-9-professional-practice-standards/download"
+      ],
+      "verified_at": "2026-11-23",
+      "law_review_status": "AI_PRIMARY_TEXT_CHECK__HUMAN_EXPERT_NOT_CERTIFIED",
+      "reviewer_type": "AI_AUTHOR",
+      "closest_existing_ids": [
+        "E100",
+        "E078",
+        "D097"
       ],
       "revision": 1,
       "publication_status": "DRAFT_NOT_PUBLIC"
