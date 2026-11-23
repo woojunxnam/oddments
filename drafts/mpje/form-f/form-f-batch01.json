@@ -143,56 +143,56 @@
       "competency": "1.1",
       "official_2027_subdomain": null,
       "kind": "single",
-      "topic": "Senior pharmacy technician asks to independently release prescription on pharmacist break",
+      "topic": "Sole retail pharmacist wants to leave premises during a permitted break",
       "scenario_tags": [
         "personnel",
-        "final_validation",
-        "patient_safety"
+        "retail_break",
+        "on_premises",
+        "technician_handoff"
       ],
-      "actor": "licensed certified technician; on-duty pharmacist",
-      "trigger": "A retail pharmacy's only pharmacist is still on the premises but temporarily unavailable for final dispensing review. A licensed certified technician has entered the prescription correctly, resolved no clinical issue, and prepared a labeled",
-      "legal_decision": "Do not release any unvalidated patient prescription from a technician.",
-      "critical_exception": "Even when a pharmacist is in the building, a technician cannot substitute for pharmacist final review.",
-      "counterfactual_flip": "Once a licensed pharmacist completes final dispensing validation, the verified prepared prescription may proceed under lawful handoff arrangements.",
-      "stem": "A retail pharmacy's only pharmacist is still on the premises but temporarily unavailable for final dispensing review. A licensed certified technician has entered the prescription correctly, resolved no clinical issue, and prepared a labeled patient package. The prescriber is properly registered; the pharmacist has NOT yet performed final validation for this prescription. The patient has an urgent ride home. What is the legally appropriate action?",
+      "actor": "sole retail pharmacist; certified technicians",
+      "trigger": "A Massachusetts retail pharmacy has only one pharmacist on duty. After six hours of duty, the pharmacist plans to take a 25-minute meal break and DRIVE to a restaurant two blocks away. Certified technicians would keep the pharmacy open and ",
+      "legal_decision": "Decline sole-pharmacist off-premises break while pharmacy remains open; telephone access cannot replace on-premises presence.",
+      "critical_exception": "One pharmacist on duty; the break is off-premises while the prescription service remains open.",
+      "counterfactual_flip": "If the sole pharmacist stayed on pharmacy premises during a qualifying break, and all §9.19(17) safeguards were satisfied, the break could be lawful.",
+      "stem": "A Massachusetts retail pharmacy has only one pharmacist on duty. After six hours of duty, the pharmacist plans to take a 25-minute meal break and DRIVE to a restaurant two blocks away. Certified technicians would keep the pharmacy open and hand out prescriptions the pharmacist already verified using a compliant log. The pharmacy has written break procedures and the pharmacist can be contacted by telephone. Is the proposed break permissible?",
       "choices": [
         {
-          "text": "Hold the prescription for pharmacist final validation rather than allow the technician to independently release it.",
-          "why": "Correct. 247 CMR 9.04(1) assigns final dispensing process validation to a licensed pharmacist; the technician's certification and urgency do not confer that authority."
+          "text": "No. Without a second on-site pharmacist, the sole on-duty pharmacist cannot leave the premises while the pharmacy remains open.",
+          "why": "Correct. 247 CMR 9.19(16)(a),(17)(a) permits an uninterrupted break only while the sole pharmacist remains on the pharmacy premises; telephone contact is not a substitute."
         },
         {
-          "text": "Release it after the technician signs the pharmacist's initials and promises a later clinical review.",
-          "why": "Incorrect. Impersonation and retrospective signoff cannot replace pharmacist final validation."
+          "text": "Yes, but only if the pharmacist calls every 10 minutes, a certified technician signs the transaction log, and the drug storage area stays secured until the pharmacist returns.",
+          "why": "Incorrect. A technician log and remote telephone availability do not waive the on-premises requirement."
         },
         {
-          "text": "Convert the prescription to a verbal order to avoid final validation while the pharmacist is away.",
-          "why": "Incorrect. Changing the transmission format does not remove the professional validation requirement."
+          "text": "Yes, because previously checked prescriptions are not legally dispensed until the patient pays, so no pharmacist need be present during any part of the meal break.",
+          "why": "Incorrect. Previously checked prescriptions may be handed off under the limited break procedure only when the sole pharmacist remains on the premises."
         },
         {
-          "text": "Have a cashier independently check accuracy and issue the medication on behalf of the pharmacist.",
-          "why": "Incorrect. The cashier lacks the required professional role to validate and release a new prescription."
+          "text": "Yes, provided the store does not fill any new prescriptions during the pharmacist's absence and the patient agrees to receive counseling after the meal break concludes.",
+          "why": "Incorrect. Suspending new fills does not change the physical on-premises requirement for the sole pharmacist while the pharmacy stays open."
         },
         {
-          "text": "Allow release because any prescription from a verified prescriber is automatically considered pharmacist-validated.",
-          "why": "Incorrect. Prescriber authenticity is a separate requirement from pharmacist final validation."
+          "text": "No break is ever permitted for a retail pharmacist working more than six consecutive hours, even if the pharmacist remains on premises and follows every Board break condition.",
+          "why": "Incorrect. Section 9.19(17) expressly permits a qualifying 30-minute break with safeguards while the sole pharmacist remains on premises."
         }
       ],
       "correct": [
         "A"
       ],
-      "citation": "247 CMR 9.04(1); 247 CMR 8.05–8.06",
+      "citation": "247 CMR 9.19(16)(a),(17)(a)–(c)",
       "source_urls": [
-        "https://www.mass.gov/doc/247-cmr-9-professional-practice-standards/download",
-        "https://www.mass.gov/doc/247-cmr-8-pharmacy-interns-and-technicians/download"
+        "https://www.mass.gov/doc/247-cmr-9-professional-practice-standards/download"
       ],
       "verified_at": "2026-11-23",
       "law_review_status": "AI_PRIMARY_TEXT_CHECK__HUMAN_EXPERT_NOT_CERTIFIED",
       "reviewer_type": "AI_AUTHOR",
       "closest_existing_ids": [
-        "E30-248",
-        "E30-161"
+        "E30-016",
+        "E30-248"
       ],
-      "revision": 1,
+      "revision": 2,
       "publication_status": "DRAFT_NOT_PUBLIC"
     },
     {
@@ -332,56 +332,56 @@
       "competency": "1.1",
       "official_2027_subdomain": null,
       "kind": "multi",
-      "topic": "2026 computer-only trainee classification changes when entering fill workflow",
+      "topic": "On-duty pharmacist detects unsafe sanitation while MOR is offsite",
       "scenario_tags": [
-        "training",
-        "personnel_ratio",
-        "operational_change"
+        "personnel",
+        "MOR",
+        "sanitation",
+        "patient_safety"
       ],
-      "actor": "pharmacy technician trainee; designated trainer",
-      "trigger": "A pharmacy posts a licensed trainee on its approved schedule for a two-hour computer-based learning module. During the first hour the trainee does not process or support prescriptions. In the second hour, without updating work assignments, ",
-      "legal_decision": "Recalculate the true support ratio as soon as computer-only and dedicated training status change.",
-      "critical_exception": "A previously printed schedule does not override actual professional tasks performed.",
-      "counterfactual_flip": "If the trainee remained exclusively on computer modules and the trainer performed only dedicated supervision, the exclusions could remain under the applicable policy.",
-      "stem": "A pharmacy posts a licensed trainee on its approved schedule for a two-hour computer-based learning module. During the first hour the trainee does not process or support prescriptions. In the second hour, without updating work assignments, the trainee begins labeling actual patient prescriptions while the dedicated trainer also fills unrelated orders. Which statements follow from Board Policy 2026-02? SELECT ALL THAT APPLY.",
+      "actor": "on-duty pharmacist; offsite MOR",
+      "trigger": "A Massachusetts pharmacy's Manager of Record (MOR) is offsite for an approved meeting. The on-duty pharmacist discovers rodent droppings next to a dispensing work surface and a broken sink that prevents appropriate sanitation. The shift sup",
+      "legal_decision": "On-duty pharmacist reports pharmacy sanitation/repair problems to MOR rather than defer until next inspection.",
+      "critical_exception": "MOR is away but an on-duty pharmacist independently identifies unsafe physical conditions.",
+      "counterfactual_flip": "If the sink and surrounding work area were sanitary and fully functional, no identified repair/sanitation defect would need escalation.",
+      "stem": "A Massachusetts pharmacy's Manager of Record (MOR) is offsite for an approved meeting. The on-duty pharmacist discovers rodent droppings next to a dispensing work surface and a broken sink that prevents appropriate sanitation. The shift supervisor says the pharmacist should finish the shift without telling the MOR because the MOR will see the condition at the next scheduled inspection. What action is required from the on-duty pharmacist?",
       "choices": [
         {
-          "text": "The trainee never counts in the staffing ratio for the entire shift because the schedule originally said 'computer training'.",
-          "why": "Incorrect. A trainee's exclusion applies only during exclusively computer training with no professional capacity assisting the pharmacist."
+          "text": "Wait until the next annual Board inspection because sanitation problems are reportable only after an inspector cites the pharmacy.",
+          "why": "Incorrect. 247 CMR 9.19(16)(b)3 imposes a direct duty on the on-duty pharmacist to report problems with sanitary conditions or repair to the MOR."
         },
         {
-          "text": "Once the trainee assists with actual prescription work, the trainee must be counted in the applicable support-personnel ratio.",
-          "why": "Correct. Section III(A)(3) excludes only exclusive computer-based training; actual filling work is a ratio-counted activity."
+          "text": "Immediately report the identified sanitary and repair problems to the MOR and address product-safety risks before further affected dispensing.",
+          "why": "Correct. Section 9.19(16)(b)3 specifically assigns the report to the on-duty pharmacist, and the pharmacy must avoid compromising safe medication handling."
         },
         {
-          "text": "A dedicated trainer remains excluded while independently filling unrelated prescriptions for other patients.",
-          "why": "Incorrect. Section III(A)(1)(c) requires counting a trainer who performs duties beyond the dedicated trainer/trainee relationship."
+          "text": "Ask an unlicensed cashier to sign the MOR's name on an inspection report and keep the event confidential from the actual manager.",
+          "why": "Incorrect. Unauthorized signatures and withholding the defect from the MOR do not meet professional duties."
         },
         {
-          "text": "The trainee may independently validate the patient's prescription because computer-based modules were completed.",
-          "why": "Incorrect. Neither completion of modules nor a trainee credential confers pharmacist final validation authority."
+          "text": "Continue dispensing from the affected work surface but move rodent droppings out of camera view, because product defects require independent laboratory confirmation before any action.",
+          "why": "Incorrect. An obvious sanitation failure requires professional assessment and reporting; a laboratory finding is not a prerequisite for alerting the MOR."
         },
         {
-          "text": "The trainer must also be included when independently supporting the pharmacist outside the designated training relationship.",
-          "why": "Correct. Under §III(A)(1)(c), a trainer loses the ratio exclusion by independently supporting prescription processing."
+          "text": "Record the event as a controlled-substance theft even though the pharmacy discovered no theft, diversion or unexplained inventory loss.",
+          "why": "Incorrect. The stated event is a sanitation and repair problem, not a confirmed controlled-substance theft."
         }
       ],
       "correct": [
-        "B",
-        "E"
+        "B"
       ],
-      "citation": "Board Policy 2026-02 §III(A)(1)–(3), (B)(1)–(5)",
+      "citation": "247 CMR 9.19(16)(b)3; 247 CMR 9.01(3)",
       "source_urls": [
-        "https://www.mass.gov/doc/2026-02-ratios-supervision-and-dedicated-training-personnel/download"
+        "https://www.mass.gov/doc/247-cmr-9-professional-practice-standards/download"
       ],
       "verified_at": "2026-11-23",
       "law_review_status": "AI_PRIMARY_TEXT_CHECK__HUMAN_EXPERT_NOT_CERTIFIED",
       "reviewer_type": "AI_AUTHOR",
       "closest_existing_ids": [
-        "E30-091",
-        "E30-250"
+        "E30-135",
+        "E30-171"
       ],
-      "revision": 1,
+      "revision": 2,
       "publication_status": "DRAFT_NOT_PUBLIC"
     },
     {
@@ -394,44 +394,45 @@
       "competency": "1.2",
       "official_2027_subdomain": null,
       "kind": "single",
-      "topic": "Manager of Record resists surprise inspection and records request",
+      "topic": "Two on-duty pharmacists propose simultaneous meal breaks",
       "scenario_tags": [
-        "discipline",
-        "inspection",
-        "MOR"
+        "personnel",
+        "on_duty",
+        "break_schedule",
+        "retail"
       ],
-      "actor": "MOR; Board inspector",
-      "trigger": "A Massachusetts pharmacy is open during normal operations when a Board inspector arrives without prior notice and requests records needed for a compliance investigation. The MOR refuses because the Board did not book an appointment and offe",
-      "legal_decision": "Facilitate inspection and provide requested legal pharmacy records.",
-      "critical_exception": "Absence of advance appointment does not remove the Board's inspection authority.",
-      "counterfactual_flip": "If there were no valid Board request for operational records, the particular duty to produce those documents would not yet be triggered.",
-      "stem": "A Massachusetts pharmacy is open during normal operations when a Board inspector arrives without prior notice and requests records needed for a compliance investigation. The MOR refuses because the Board did not book an appointment and offers to provide only sales summaries instead of the specifically requested relevant records. What is the correct legal response?",
+      "actor": "two on-duty pharmacists; MOR",
+      "trigger": "A Massachusetts community pharmacy has two pharmacists scheduled on duty and plans to remain open throughout lunch. Both pharmacists arrange to take their allowed 30-minute breaks AT THE SAME TIME while two certified technicians stay inside",
+      "legal_decision": "Stagger meal breaks for two-or-more pharmacists rather than invoke lone-pharmacist exception simultaneously.",
+      "critical_exception": "Two pharmacists are on duty, so staggered-break clause applies despite both remaining physically on premises.",
+      "counterfactual_flip": "If only one pharmacist were on duty and remained on premises during a compliant break, the lone-pharmacist rules would apply rather than the multiple-pharmacist stagger clause.",
+      "stem": "A Massachusetts community pharmacy has two pharmacists scheduled on duty and plans to remain open throughout lunch. Both pharmacists arrange to take their allowed 30-minute breaks AT THE SAME TIME while two certified technicians stay inside the secured prescription area. The pharmacists say they will remain somewhere on the premises and can both be paged. The pharmacy has otherwise adequate written break procedures. What must the MOR change?",
       "choices": [
         {
-          "text": "Demand that the Board obtain written permission from the pharmacy's parent corporation before any unannounced inspection.",
-          "why": "Incorrect. Section 9.24(1) permits the Board or its designees to inspect licensed pharmacies without notice."
+          "text": "Allow the simultaneous breaks because the policy for a lone pharmacist automatically extends to any number of pharmacists on duty.",
+          "why": "Incorrect. 247 CMR 9.19(17)(d) specifically requires staggered breaks when two or more pharmacists are on duty."
         },
         {
-          "text": "Require the Board to wait until the annual pharmacist renewal date before reviewing any operational records.",
-          "why": "Incorrect. Board examination of pharmacy records is not limited to renewal dates."
+          "text": "Have the technicians complete all new clinical and final dispensing validation during the overlap, then ask the pharmacists to sign after returning.",
+          "why": "Incorrect. Technicians do not acquire independent pharmacist authority during simultaneous breaks."
         },
         {
-          "text": "Provide only the requested sales summary because the pharmacy can unilaterally decide which records the Board is allowed to inspect.",
-          "why": "Incorrect. Section 9.24(3) requires the pharmacy to provide records requested in connection with inspection or investigation."
+          "text": "Keep both pharmacists on break together as long as the register labels every handoff a previously validated transaction and stores transaction logs.",
+          "why": "Incorrect. Recording handoffs does not waive the specific staggered-break requirement for multiple on-duty pharmacists."
         },
         {
-          "text": "Offer copies only if inspectors first state a specific violation that has already been proven.",
-          "why": "Incorrect. Compliance inspections may ascertain whether violations exist; proof of a violation need not precede inspection."
+          "text": "Require both pharmacists to cancel all meal breaks, because Massachusetts categorically prohibits breaks whenever the pharmacy serves patients.",
+          "why": "Incorrect. Pharmacist breaks are expressly allowed if the statutory operational safeguards, including staggered timing, are followed."
         },
         {
-          "text": "Cooperate with the unannounced inspection and provide the documents requested for the investigation.",
-          "why": "Correct. 247 CMR 9.24(1),(3) expressly authorizes unannounced inspections and requires requested documents."
+          "text": "Stagger the pharmacists' meal breaks so they do not both leave active professional duty at once while the pharmacy operates.",
+          "why": "Correct. 247 CMR 9.19(17)(d) requires breaks to be staggered when the pharmacy has two or more pharmacists on duty."
         }
       ],
       "correct": [
         "E"
       ],
-      "citation": "247 CMR 9.24(1),(3)",
+      "citation": "247 CMR 9.19(17)(a),(d)",
       "source_urls": [
         "https://www.mass.gov/doc/247-cmr-9-professional-practice-standards/download"
       ],
@@ -439,10 +440,10 @@
       "law_review_status": "AI_PRIMARY_TEXT_CHECK__HUMAN_EXPERT_NOT_CERTIFIED",
       "reviewer_type": "AI_AUTHOR",
       "closest_existing_ids": [
-        "E30-135",
-        "D078"
+        "E30-016",
+        "E30-136"
       ],
-      "revision": 1,
+      "revision": 2,
       "publication_status": "DRAFT_NOT_PUBLIC"
     },
     {
@@ -455,47 +456,45 @@
       "competency": "2.1",
       "official_2027_subdomain": null,
       "kind": "multi",
-      "topic": "Repeat viable environmental action result within 60 days requires microbiologist",
+      "topic": "Sterile pass-through environmental sample uses cleaner adjacent ISO classification",
       "scenario_tags": [
-        "USP797",
+        "sterile",
+        "pass_through",
         "environmental_monitoring",
-        "repeat_excursion",
-        "hospital"
+        "ISO_class"
       ],
-      "actor": "MOR; microbiologist; sterile compounding team",
-      "trigger": "A Massachusetts hospital sterile-compounding pharmacy receives an action-level viable-air finding in its ISO Class 7 buffer room. A second action-level finding is reported 43 days later at the same classified location, with interim remediat",
-      "legal_decision": "Engage microbiologist and perform longitudinal trend-based remediation for repeated EM findings.",
-      "critical_exception": "Repeat findings in the same classified area within 60 days trigger engagement even if nonconsecutive.",
-      "counterfactual_flip": "With no repeat action-level result in the same area inside 60 days, §III(G)'s repeat-trigger would not apply although the first result still needs remediation.",
-      "stem": "A Massachusetts hospital sterile-compounding pharmacy receives an action-level viable-air finding in its ISO Class 7 buffer room. A second action-level finding is reported 43 days later at the same classified location, with interim remediation already documented. The manager proposes simply resetting the trending spreadsheet and continuing ordinary BUDs because the findings were not on consecutive samples. Which actions are supported by Board Policy 2026-03? SELECT ALL THAT APPLY.",
+      "actor": "sterile quality pharmacist; environmental monitoring manager",
+      "trigger": "A Massachusetts sterile-compounding pharmacy samples a pass-through transfer opening connecting an ISO Class 5 work zone to an ISO Class 7 classified space. Its environmental monitoring worksheet lists a valid surface sample of FOUR CFU per",
+      "legal_decision": "Apply cleaner ISO side's surface action level to pass-through between different classifications.",
+      "critical_exception": "Pass-through links ISO5 and ISO7; 4 CFU exceeds ISO5 surface action level.",
+      "counterfactual_flip": "If the interface instead joined ISO7 and ISO8 spaces, the cleaner-side ISO7 threshold, rather than ISO5, would govern.",
+      "stem": "A Massachusetts sterile-compounding pharmacy samples a pass-through transfer opening connecting an ISO Class 5 work zone to an ISO Class 7 classified space. Its environmental monitoring worksheet lists a valid surface sample of FOUR CFU per contact plate. The manager applies the less stringent ISO Class 7 surface threshold and declares there was no action-level finding. The sample is representative and no other sources of contamination are known. How must this specific sample be assessed?",
       "choices": [
         {
-          "text": "Engage a microbiologist for repeat action-level findings in the same classified area within 60 days even if the results were nonconsecutive.",
-          "why": "Correct. Policy 2026-03 §III(G) includes consecutive or nonconsecutive repeat results in the same ISO classified area within 60 days."
+          "text": "Use the ISO Class 7 limit because the transfer opening is physically closer to the room than to the hood.",
+          "why": "Incorrect. Policy 2026-03 §I specifically requires the classification of the cleaner space at a pass-through with two different ISO classifications."
         },
         {
-          "text": "Remove the earlier finding from trend analysis once cleaning has occurred.",
-          "why": "Incorrect. §III(H) requires longitudinal trends and records of CFUs and organisms."
+          "text": "Ignore the sample entirely because pass-through locations do not appear in the environmental monitoring program.",
+          "why": "Incorrect. The policy expressly provides for pass-through action levels and does not exclude their samples."
         },
         {
-          "text": "Investigate and document both results as part of environmental control risk assessment and CAPA.",
-          "why": "Correct. §§III–IV require assessment, root-cause review, and remediation records."
+          "text": "Apply the ISO Class 5 surface action level because the cleaner adjacent space determines the threshold; 4 CFU exceeds the ISO 5 action limit.",
+          "why": "Correct. Policy §I directs pass-throughs to use the cleaner space's ISO classification, and the ISO 5 surface action threshold is exceeded at 4 CFU."
         },
         {
-          "text": "Maintain required trend analysis including site-specific CFUs and organism history.",
-          "why": "Correct. §III(H) expressly requires this monitoring analysis."
+          "text": "Automatically treat 4 CFU as a federal controlled-substance loss and file DEA Form 106.",
+          "why": "Incorrect. A surface bioburden finding is an environmental quality issue, not inventory theft or significant loss."
         },
         {
-          "text": "Treat the 43-day gap as automatically restoring full routine BUDs without repeat EM showing successful remediation.",
-          "why": "Incorrect. §IV(B) requires repeat sampling demonstrating action levels are below threshold before standard BUDs resume."
+          "text": "Average the two ISO surface action levels and round them upward without documenting the actual organisms or sample site.",
+          "why": "Incorrect. The Board's pass-through instruction is to use the cleaner ISO classification, not a mathematical mean of two limits."
         }
       ],
       "correct": [
-        "A",
-        "C",
-        "D"
+        "C"
       ],
-      "citation": "Board Policy 2026-03 §§III(G)–(H), IV(A)–(C), adopted 09/03/2026",
+      "citation": "Massachusetts Board Policy 2026-03 §I (Surface Environmental Monitoring action-level table and pass-through footnote)",
       "source_urls": [
         "https://www.mass.gov/doc/2026-03-action-level-environmental-monitoring-results/download"
       ],
@@ -503,10 +502,11 @@
       "law_review_status": "AI_PRIMARY_TEXT_CHECK__HUMAN_EXPERT_NOT_CERTIFIED",
       "reviewer_type": "AI_AUTHOR",
       "closest_existing_ids": [
-        "E30-342",
-        "D023"
+        "D021",
+        "D023",
+        "D022"
       ],
-      "revision": 1,
+      "revision": 2,
       "publication_status": "DRAFT_NOT_PUBLIC"
     },
     {
@@ -519,45 +519,46 @@
       "competency": "2.1",
       "official_2027_subdomain": null,
       "kind": "single",
-      "topic": "Sterile compounding under ISO 7 buffer viable remediation has temporary BUD limits",
+      "topic": "ISO Class 8 remediation BUD differs by sterile versus nonsterile starting components",
       "scenario_tags": [
         "USP797",
+        "ISO8",
         "BUD",
-        "environmental_monitoring",
-        "sterile"
+        "starting_component",
+        "remediation"
       ],
-      "actor": "sterile compounding pharmacist; MOR",
-      "trigger": "A licensed Massachusetts sterile-compounding pharmacy receives a viable action-level environmental monitoring result in its ISO Class 7 buffer room, but not in the ISO Class 5 PEC. It immediately assesses the finding, implements an appropri",
-      "legal_decision": "Use temporary 24h room temperature / 4d refrigerated BUDs if resuming during ISO7 buffer viable remediation.",
-      "critical_exception": "Affected buffer room and viable—not nonviable—results; full §V risk controls and Board directions govern.",
-      "counterfactual_flip": "When repeat EM confirms action levels below the policy limits and remediation is successful, standard BUDs may resume if otherwise justified.",
-      "stem": "A licensed Massachusetts sterile-compounding pharmacy receives a viable action-level environmental monitoring result in its ISO Class 7 buffer room, but not in the ISO Class 5 PEC. It immediately assesses the finding, implements an appropriate remediation and product-risk plan, schedules repeat sampling, and the Board has not ordered a broader shutdown. Repeat environmental results have NOT yet confirmed recovery. The manager proposes using usual Category 2 refrigerated BUDs during remediation. What is the most defensible decision under Board Policy 2026-03?",
+      "actor": "sterile compounding pharmacist; cleanroom QA",
+      "trigger": "During remediation of an action-level VIABLE environmental result in an ISO Class 8 area, a Massachusetts sterile-compounding pharmacy has completed the required initial assessment, risk assessment and approved remediation plan. The Board h",
+      "legal_decision": "Choose distinct ISO8 viable-remediation refrigerated CSP BUD according to sterile/nonsterile starting components.",
+      "critical_exception": "ISO Class 8/ISO7 nonbuffer, viable action-level remediation permitted; sterile versus nonsterile starting materials cause 10d versus 4d maximum.",
+      "counterfactual_flip": "Replacing all nonsterile starting components of batch N with sterile starting components changes the temporary refrigerated BUD ceiling from 4 days to 10 days if all other requirements remain satisfied.",
+      "stem": "During remediation of an action-level VIABLE environmental result in an ISO Class 8 area, a Massachusetts sterile-compounding pharmacy has completed the required initial assessment, risk assessment and approved remediation plan. The Board has not imposed additional restrictions, and continued compounding in that area is otherwise permitted under Board Policy 2026-03. Two prospective CSP batches differ only in that batch S is prepared exclusively from STERILE starting components and batch N uses at least one NONSTERILE starting component. What maximum refrigerated BUDs does the state policy allow during the remediation?",
       "choices": [
         {
-          "text": "Use routine long BUDs because the ISO Class 5 PEC itself had no positive sample.",
-          "why": "Incorrect. Under §V, an affected ISO Class 7 buffer room still triggers temporary BUD limits during permitted remediation compounding."
+          "text": "Four days for both batches, because all ISO Class 8 remediation CSPs are treated as if they use nonsterile starting materials.",
+          "why": "Incorrect. Policy 2026-03 §V distinguishes BUDs for sterile-only versus nonsterile starting components in ISO7 nonbuffer and ISO8 areas."
         },
         {
-          "text": "If continued compounding is permitted by the risk assessment, limit all affected CSPs to 24 hours at room temperature or four days refrigerated until proper remediation.",
-          "why": "Correct. Policy 2026-03 §V, ISO Class 7 Buffer Rooms, imposes these maximum BUDs pending successful remediation, absent contrary Board direction."
+          "text": "Thirty days for batch S and ten days for batch N, because sterile starting materials waive the temporary remediation limits.",
+          "why": "Incorrect. Neither starting material category has such a 30-day default exemption during the affected-area viable remediation."
         },
         {
-          "text": "Use a 30-day refrigerated BUD whenever the manager verbally states there is no patient risk.",
-          "why": "Incorrect. A verbal assurance does not satisfy §V risk assessment and the specified temporary limits."
+          "text": "Ten days for both batches, provided the operator documents a successful process simulation before production.",
+          "why": "Incorrect. Process simulation does not override the specified shorter temporary BUD for batches with nonsterile starting components."
         },
         {
-          "text": "Discard the EM results because a viable-air finding can never affect room BUD decisions.",
-          "why": "Incorrect. Viable action levels in a classified buffer room may limit compounding and BUDs under Policy 2026-03."
+          "text": "Up to ten days refrigerated for batch S, and up to four days refrigerated for batch N, subject to every other applicable restriction.",
+          "why": "Correct. Policy 2026-03 §V for ISO7 nonbuffer and ISO8 rooms assigns 10 days refrigerated for sterile starting components and 4 days refrigerated if any nonsterile component is used."
         },
         {
-          "text": "Replace the results with a photograph of the cleanroom and keep standard BUDs without repeat testing.",
-          "why": "Incorrect. §IV(B) requires repeat EM below action levels to demonstrate proper remediation."
+          "text": "No refrigerated BUD may ever be assigned to a CSP made during any viable EM remediation, even if the Board's risk-based temporary pathway explicitly permits compounding.",
+          "why": "Incorrect. Section V contains a conditional temporary compounding pathway with specified BUD limits for the affected ISO classes."
         }
       ],
       "correct": [
-        "B"
+        "D"
       ],
-      "citation": "Board Policy 2026-03 §§III(A),(E), IV(B), V (ISO Class 7 Buffer Rooms)",
+      "citation": "Massachusetts Board Policy 2026-03 §V (ISO Class 7 except buffer rooms, ISO Class 8 areas: starting component-specific BUD)",
       "source_urls": [
         "https://www.mass.gov/doc/2026-03-action-level-environmental-monitoring-results/download"
       ],
@@ -565,10 +566,11 @@
       "law_review_status": "AI_PRIMARY_TEXT_CHECK__HUMAN_EXPERT_NOT_CERTIFIED",
       "reviewer_type": "AI_AUTHOR",
       "closest_existing_ids": [
-        "E30-342",
-        "E30-100"
+        "E30-160",
+        "E30-225",
+        "D021"
       ],
-      "revision": 1,
+      "revision": 2,
       "publication_status": "DRAFT_NOT_PUBLIC"
     },
     {
@@ -581,47 +583,46 @@
       "competency": "2.1",
       "official_2027_subdomain": null,
       "kind": "multi",
-      "topic": "Significant ISO 5 microbial contamination creates recall and prescriber duties",
+      "topic": "Only affected ISO Class 5 hood: temporary immediate-use CSP exception",
       "scenario_tags": [
-        "sterile",
-        "recall",
         "USP797",
-        "patient_safety"
+        "sterile",
+        "sole_PEC",
+        "immediate_use",
+        "EM"
       ],
-      "actor": "MOR; affected sterile-composition pharmacist",
-      "trigger": "Environmental monitoring in an ISO Class 5 compounding hood identifies a confirmed 19-CFU excursion. Some CSPs prepared in the affected area have already been dispensed and remain within their assigned BUDs. The manager wants to perform a d",
-      "legal_decision": "Recall current-BUD CSPs plus surveillance, prescriber outreach, microbiologist and remediation.",
-      "critical_exception": "ISO 5 viable excursion >15 CFU qualifies as significant loss of control, not merely a routine ISO7 action.",
-      "counterfactual_flip": "If an action-level result was confined to an ISO7 anteroom and ISO5 remained controlled, the automatic >15 ISO5 significant-loss recall rule would not apply.",
-      "stem": "Environmental monitoring in an ISO Class 5 compounding hood identifies a confirmed 19-CFU excursion. Some CSPs prepared in the affected area have already been dispensed and remain within their assigned BUDs. The manager wants to perform a deep clean, avoid notifying prescribers, and wait for patient complaints before investigating previous doses. What actions are required by Massachusetts Board Policy 2026-03? SELECT ALL THAT APPLY.",
+      "actor": "institutional sterile pharmacist; MOR",
+      "trigger": "An institutional sterile-compounding pharmacy has only ONE ISO Class 5 PEC. Viable environmental monitoring identifies an action-level finding directly in that PEC. The pharmacy begins an appropriate documented response and product-risk ass",
+      "legal_decision": "Allow at most absolutely necessary USP-qualified immediate-use compounding in sole affected ISO5 PEC until remediation, not ordinary sterile production.",
+      "critical_exception": "Single affected ISO5 PEC, not multiple unaffected PECs; immediate-use threshold and otherwise safe remediation circumstances assumed.",
+      "counterfactual_flip": "With a separate unaffected certified ISO5 PEC and a supportive risk assessment, §V(B) could permit compounding in that unaffected PEC without invoking the sole-PEC immediate-use exception.",
+      "stem": "An institutional sterile-compounding pharmacy has only ONE ISO Class 5 PEC. Viable environmental monitoring identifies an action-level finding directly in that PEC. The pharmacy begins an appropriate documented response and product-risk assessment, but remediation has not yet been completed. A prescriber requests urgent access to a CSP that satisfies all USP <797> IMMEDIATE-USE conditions; the pharmacy has no unaffected ISO Class 5 PEC, and the Board has not ordered a broader restriction. Which action is supportable under Board Policy 2026-03?",
       "choices": [
         {
-          "text": "Dispense remaining in-date CSPs from the affected area because a BUD is a guarantee of sterility.",
-          "why": "Incorrect. The policy treats >15 CFU in ISO 5 as significant loss of control; an assigned BUD does not waive recall or remediation duties."
+          "text": "Resume routine Category 2 production in the affected hood because a physician considers the CSP clinically urgent.",
+          "why": "Incorrect. Policy 2026-03 §V generally prohibits normal compounding in an affected ISO5 PEC until proper remediation."
         },
         {
-          "text": "Recall implicated CSPs that remain within their BUDs following a significant ISO Class 5 loss of control.",
-          "why": "Correct. §III(C) expressly requires recall of CSPs within BUDs for >15 CFU ISO 5 excursion."
+          "text": "Use the contaminated hood for ordinary stockpiling if a certified technician documents a deep cleaning without verifying remediation.",
+          "why": "Incorrect. Routine stock compounding is not authorized simply because cleaning was attempted."
         },
         {
-          "text": "Conduct adverse-event surveillance and contact the relevant prescribers.",
-          "why": "Correct. The same §III(C) requires adverse-event surveillance and prescriber contact."
+          "text": "Treat any sterile CSP as immediate-use after removing its printed BUD label, without checking USP immediate-use criteria.",
+          "why": "Incorrect. The immediate-use pathway depends on the actual USP-defined requirements, not a label modification."
         },
         {
-          "text": "Engage a microbiologist and investigate/remediate the affected ISO Class 5 environment.",
-          "why": "Correct. §III(C), §IV and the general environmental policy impose microbiologist engagement and remediation."
+          "text": "Wait until the next annual license inspection to decide whether the action-level result needs remediation.",
+          "why": "Incorrect. Environmental action-level findings require prompt reporting, assessment and remediation under Board policy."
         },
         {
-          "text": "Return to standard Category 2 BUDs immediately after surface cleaning, without repeat EM.",
-          "why": "Incorrect. Policy §IV(B) requires demonstrated successful repeat monitoring to resume ordinary BUDs."
+          "text": "Only if absolutely necessary, consider an immediate-use CSP under its actual USP criteria; do not restart ordinary affected-PEC compounding before remediation.",
+          "why": "Correct. Policy §V(C) permits only USP-defined immediate-use CSPs if absolutely necessary when a pharmacy has a sole affected ISO5 PEC, subject to all other safety conditions."
         }
       ],
       "correct": [
-        "B",
-        "C",
-        "D"
+        "E"
       ],
-      "citation": "Board Policy 2026-03 §III(C) (>15 CFU ISO Class 5), §IV(B), §V",
+      "citation": "Massachusetts Board Policy 2026-03 §V (ISO Class 5 Area(s), particularly subsection C); USP <797> immediate-use provisions",
       "source_urls": [
         "https://www.mass.gov/doc/2026-03-action-level-environmental-monitoring-results/download"
       ],
@@ -629,10 +630,11 @@
       "law_review_status": "AI_PRIMARY_TEXT_CHECK__HUMAN_EXPERT_NOT_CERTIFIED",
       "reviewer_type": "AI_AUTHOR",
       "closest_existing_ids": [
-        "D082",
-        "E30-141"
+        "E30-215",
+        "F017",
+        "E30-160"
       ],
-      "revision": 1,
+      "revision": 2,
       "publication_status": "DRAFT_NOT_PUBLIC"
     },
     {
