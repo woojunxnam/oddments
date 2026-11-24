@@ -1,0 +1,1295 @@
+/* Form F batch 1; AI-authored source-linked educational questions. */
+window.MPJE_CH30_FORM_F_QUESTIONS = (window.MPJE_CH30_FORM_F_QUESTIONS || []).concat([
+  {
+    "id": "F001",
+    "area": 1,
+    "competency": "1.1",
+    "kind": "single",
+    "topic": "Vaccination services end: restoration of ordinary prescription-filling ratio",
+    "stem": "A Massachusetts pharmacy provides vaccination services with one pharmacist and six support workers under the 2026-02 expanded supervision ratio, meeting all of its personnel qualifications. Vaccination services end for the day, and the pharmacy is no longer providing vaccinations. The manager directs all six workers to assist the sole pharmacist with ordinary outpatient prescription filling. No additional pharmacist or waiver is available. What should the pharmacist do?",
+    "choices": [
+      {
+        "text": "Keep the six-to-one ratio because the pharmacy offered vaccinations earlier in the day.",
+        "why": "Incorrect. The expanded ratio applies to pharmacies providing vaccination services; the stated shift has become ordinary prescription filling only."
+      },
+      {
+        "text": "Allow the technicians to fill but suspend all counseling until the clinic closes.",
+        "why": "Incorrect. Withholding counseling does not cure a staffing ratio violation."
+      },
+      {
+        "text": "Restore the applicable ordinary filling ratio or arrange additional pharmacist coverage.",
+        "why": "Correct. Policy 2026-02 §I(A) specifies ordinary 1:3 or 1:4 staffing conditions; §I(B) is the vaccination-service allowance."
+      },
+      {
+        "text": "Require all six support workers to obtain CPR training; this alone converts routine filling into vaccination staffing.",
+        "why": "Incorrect. CPR credentials do not determine which supervisory ratio applies to routine prescription filling."
+      },
+      {
+        "text": "Have the pharmacist supervise remotely from home while the six workers complete all prescription processing.",
+        "why": "Incorrect. Nothing in the expanded clinic ratio removes the on-premises pharmacist supervision requirement for routine filling."
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "citation": "Board Policy 2026-02 §I(A)–(D), adopted 09/03/2026; 247 CMR 8.06(3)",
+    "url": "https://www.mass.gov/doc/2026-02-ratios-supervision-and-dedicated-training-personnel/download",
+    "source_urls": [
+      "https://www.mass.gov/doc/2026-02-ratios-supervision-and-dedicated-training-personnel/download",
+      "https://www.mass.gov/doc/247-cmr-8-pharmacy-interns-and-technicians/download"
+    ],
+    "verified": "2026-11-23",
+    "reviewStatus": "AI_AUTHOR_SOURCE_CHECK_NOT_INDEPENDENT_EXPERT",
+    "exam_era": "NABP_PRE_MARCH_1_2027",
+    "revision": 4
+  },
+  {
+    "id": "F002",
+    "area": 1,
+    "competency": "1.1",
+    "kind": "multi",
+    "topic": "Intern consultation requires active preceptor presence despite same-building location",
+    "stem": "A Massachusetts pharmacy intern begins counseling a patient on a potentially high-risk drug change. The licensed supervising pharmacist is physically elsewhere in the pharmacy reviewing invoices, cannot contemporaneously observe or hear the consultation, and is not monitoring it virtually. A second licensed pharmacist is on-site and available. Which actions are appropriate under Board Policy 2026-02? SELECT ALL THAT APPLY.",
+    "choices": [
+      {
+        "text": "Allow the intern to complete the consultation independently because the assigned preceptor is somewhere in the building.",
+        "why": "Incorrect. Section II(C) requires a preceptor actively present in person or virtually for patient or practitioner consultation with material patient-safety implications."
+      },
+      {
+        "text": "Arrange active in-person or virtual pharmacist supervision of the consultation before it proceeds.",
+        "why": "Correct. Contemporaneous direction or observation by a qualified supervising pharmacist is required for this patient-facing high-risk counseling."
+      },
+      {
+        "text": "Treat the intern's license alone as authority for unsupervised pharmacist-level consultation.",
+        "why": "Incorrect. Intern licensure does not eliminate direct supervision requirements."
+      },
+      {
+        "text": "Have the available second pharmacist assume and actively provide appropriate direct supervision if the original preceptor cannot.",
+        "why": "Correct. Policy §II expressly permits a different on-site pharmacist to provide direct supervision when the original preceptor is unavailable."
+      },
+      {
+        "text": "Record counseling as completed by a fully licensed independent pharmacist without changing the actual supervisory arrangements.",
+        "why": "Incorrect. Documentation does not substitute for required active supervision and must not misrepresent the personnel performing the service."
+      }
+    ],
+    "correct": [
+      "B",
+      "D"
+    ],
+    "citation": "Board Policy 2026-02 §II and §II(C); 247 CMR 8.01(15)–(16)",
+    "url": "https://www.mass.gov/doc/2026-02-ratios-supervision-and-dedicated-training-personnel/download",
+    "source_urls": [
+      "https://www.mass.gov/doc/2026-02-ratios-supervision-and-dedicated-training-personnel/download",
+      "https://www.mass.gov/doc/247-cmr-8-pharmacy-interns-and-technicians/download"
+    ],
+    "verified": "2026-11-23",
+    "reviewStatus": "AI_AUTHOR_SOURCE_CHECK_NOT_INDEPENDENT_EXPERT",
+    "exam_era": "NABP_PRE_MARCH_1_2027",
+    "revision": 1
+  },
+  {
+    "id": "F003",
+    "area": 1,
+    "competency": "1.1",
+    "kind": "single",
+    "topic": "Sole retail pharmacist wants to leave premises during a permitted break",
+    "stem": "A Massachusetts retail pharmacy has only one pharmacist on duty. After six hours of duty, the pharmacist plans to take a 25-minute meal break and DRIVE to a restaurant two blocks away. Certified technicians would keep the pharmacy open and hand out prescriptions the pharmacist already verified using a compliant log. The pharmacy has written break procedures and the pharmacist can be contacted by telephone. Is the proposed break permissible?",
+    "choices": [
+      {
+        "text": "No. Without a second on-site pharmacist, the sole on-duty pharmacist cannot leave the premises while the pharmacy remains open.",
+        "why": "Correct. 247 CMR 9.19(16)(a),(17)(a) permits an uninterrupted break only while the sole pharmacist remains on the pharmacy premises; telephone contact is not a substitute."
+      },
+      {
+        "text": "Yes, but only if the pharmacist calls every 10 minutes, a certified technician signs the transaction log, and the drug storage area stays secured until the pharmacist returns.",
+        "why": "Incorrect. A technician log and remote telephone availability do not waive the on-premises requirement."
+      },
+      {
+        "text": "Yes, because previously checked prescriptions are not legally dispensed until the patient pays, so no pharmacist need be present during any part of the meal break.",
+        "why": "Incorrect. Previously checked prescriptions may be handed off under the limited break procedure only when the sole pharmacist remains on the premises."
+      },
+      {
+        "text": "Yes, provided the store does not fill any new prescriptions during the pharmacist's absence and the patient agrees to receive counseling after the meal break concludes.",
+        "why": "Incorrect. Suspending new fills does not change the physical on-premises requirement for the sole pharmacist while the pharmacy stays open."
+      },
+      {
+        "text": "No break is ever permitted for a retail pharmacist working more than six consecutive hours, even if the pharmacist remains on premises and follows every Board break condition.",
+        "why": "Incorrect. Section 9.19(17) expressly permits a qualifying 30-minute break with safeguards while the sole pharmacist remains on premises."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "citation": "247 CMR 9.19(16)(a),(17)(a)–(c)",
+    "url": "https://www.mass.gov/doc/247-cmr-9-professional-practice-standards/download",
+    "source_urls": [
+      "https://www.mass.gov/doc/247-cmr-9-professional-practice-standards/download"
+    ],
+    "verified": "2026-11-23",
+    "reviewStatus": "AI_AUTHOR_SOURCE_CHECK_NOT_INDEPENDENT_EXPERT",
+    "exam_era": "NABP_PRE_MARCH_1_2027",
+    "revision": 2
+  },
+  {
+    "id": "F004",
+    "area": 1,
+    "competency": "1.1",
+    "kind": "single",
+    "topic": "Specialty compounding MOR must certify staff training before new employee compounds",
+    "stem": "A Massachusetts-licensed complex nonsterile compounding pharmacy recruits a technician experienced in ordinary retail prescription filling but with no documented training in the specialty compounding activities the technician will perform. The Manager of Record (MOR) has personally completed the required CE and plans to certify to the Board that all pharmacy staff are appropriately trained, while assigning the untrained technician to compound tomorrow. No applicable exemption or competency completion is assumed. What is required?",
+    "choices": [
+      {
+        "text": "The MOR's personal continuing-education completion automatically substitutes for specialty training of every other staff member.",
+        "why": "Incorrect. Section 20.06(6)(c) requires the MOR to ensure all pharmacy staff obtain appropriate training and education before engaging in compounding."
+      },
+      {
+        "text": "The technician may perform specialty compounding without training when a pharmacist signs the batch record afterward.",
+        "why": "Incorrect. Retrospective signature does not replace required pre-task training and qualification."
+      },
+      {
+        "text": "The pharmacy may describe the technician as an intern on scheduling forms to avoid the specialty training standard.",
+        "why": "Incorrect. Renaming staff on paperwork does not create the required competence or credentials."
+      },
+      {
+        "text": "Keep the technician off specialty compounding until required training is completed and documented.",
+        "why": "Correct. 247 CMR 20.06(6)(c) places the duty on the MOR and requires training before pharmacy staff engage in compounding."
+      },
+      {
+        "text": "The Board's specialty reporting duties arise only if a patient dies or a compounding error is discovered after dispensing.",
+        "why": "Incorrect. Staff-training certification is a standing MOR responsibility independent of a serious adverse event."
+      }
+    ],
+    "correct": [
+      "D"
+    ],
+    "citation": "247 CMR 20.06(6)(c); M.G.L. c.112 §39G(b)(iii)",
+    "url": "https://www.mass.gov/doc/247-cmr-20-reporting/download",
+    "source_urls": [
+      "https://www.mass.gov/doc/247-cmr-20-reporting/download",
+      "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXVI/Chapter112/Section39G"
+    ],
+    "verified": "2026-11-23",
+    "reviewStatus": "AI_AUTHOR_SOURCE_CHECK_NOT_INDEPENDENT_EXPERT",
+    "exam_era": "NABP_PRE_MARCH_1_2027",
+    "revision": 3
+  },
+  {
+    "id": "F005",
+    "area": 1,
+    "competency": "1.2",
+    "kind": "single",
+    "topic": "On-duty pharmacist lacks access to Board audit tools and inspection records when MOR is absent",
+    "stem": "A Massachusetts community pharmacy's Manager of Record (MOR) has gone to another site for the day. During regular business hours, the Board investigator asks the ON-DUTY licensed pharmacist for the current Board-approved audit tool and relevant pharmacy records. Corporate IT has restricted both to the MOR's personal account, so the pharmacist has no access and says inspection must wait for the MOR. The pharmacy is still open and filling prescriptions. What is the primary duty of the on-duty pharmacist?",
+    "choices": [
+      {
+        "text": "Tell the investigator that only the MOR is ever required to know or access Board audit tools and pharmacy records, even when another pharmacist is on duty and the pharmacy is actively dispensing.",
+        "why": "Incorrect. 247 CMR 9.19(16)(b)5–6 imposes personal operational duties on the pharmacist on duty; MOR absence does not remove them."
+      },
+      {
+        "text": "Close the prescription counter but continue dispensing from a self-service retail machine that bypasses pharmacy audit trails until the MOR returns.",
+        "why": "Incorrect. A technology workaround cannot replace applicable on-duty pharmacist duties or permit unvalidated dispensing."
+      },
+      {
+        "text": "Delegate the investigator's requested access to a cashier and provide no relevant records unless the patient signs a new consent permitting the Board's lawful inspection.",
+        "why": "Incorrect. A cashier's role and routine patient consent do not substitute for the on-duty pharmacist's legal obligation to have access to inspection records."
+      },
+      {
+        "text": "Ensure on-duty familiarity with the applicable Board audit tool and access to records needed for the investigator, with appropriate authorized system access arranged immediately.",
+        "why": "Correct. Section 9.19(16)(b)5–6 expressly requires familiarity with applicable Board audit tools and access to records for Board investigators by the on-duty pharmacist."
+      },
+      {
+        "text": "Demand a sworn affidavit proving a violation before giving the investigator any tool or record, regardless of the Board's normal inspection authority.",
+        "why": "Incorrect. Board inspections may verify compliance, and proof of a violation is not a prerequisite to the on-duty pharmacist's record access obligations."
+      }
+    ],
+    "correct": [
+      "D"
+    ],
+    "citation": "247 CMR 9.19(16)(b)5–6; 247 CMR 9.24(3)",
+    "url": "https://www.mass.gov/doc/247-cmr-9-professional-practice-standards/download",
+    "source_urls": [
+      "https://www.mass.gov/doc/247-cmr-9-professional-practice-standards/download"
+    ],
+    "verified": "2026-11-23",
+    "reviewStatus": "AI_AUTHOR_SOURCE_CHECK_NOT_INDEPENDENT_EXPERT",
+    "exam_era": "NABP_PRE_MARCH_1_2027",
+    "revision": 3
+  },
+  {
+    "id": "F006",
+    "area": 1,
+    "competency": "1.1",
+    "kind": "single",
+    "topic": "On-duty pharmacist detects unsafe sanitation while MOR is offsite",
+    "stem": "A Massachusetts pharmacy's Manager of Record (MOR) is offsite for an approved meeting. The on-duty pharmacist discovers rodent droppings next to a dispensing work surface and a broken sink that prevents appropriate sanitation. The shift supervisor says the pharmacist should finish the shift without telling the MOR because the MOR will see the condition at the next scheduled inspection. What action is required from the on-duty pharmacist?",
+    "choices": [
+      {
+        "text": "Wait until the next annual Board inspection because sanitation problems are reportable only after an inspector cites the pharmacy.",
+        "why": "Incorrect. 247 CMR 9.19(16)(b)3 imposes a direct duty on the on-duty pharmacist to report problems with sanitary conditions or repair to the MOR."
+      },
+      {
+        "text": "Immediately report the identified sanitary and repair problems to the MOR and address product-safety risks before further affected dispensing.",
+        "why": "Correct. Section 9.19(16)(b)3 specifically assigns the report to the on-duty pharmacist, and the pharmacy must avoid compromising safe medication handling."
+      },
+      {
+        "text": "Ask an unlicensed cashier to sign the MOR's name on an inspection report and keep the event confidential from the actual manager.",
+        "why": "Incorrect. Unauthorized signatures and withholding the defect from the MOR do not meet professional duties."
+      },
+      {
+        "text": "Continue dispensing from the affected work surface but move rodent droppings out of camera view, because product defects require independent laboratory confirmation before any action.",
+        "why": "Incorrect. An obvious sanitation failure requires professional assessment and reporting; a laboratory finding is not a prerequisite for alerting the MOR."
+      },
+      {
+        "text": "Record the event as a controlled-substance theft even though the pharmacy discovered no theft, diversion or unexplained inventory loss.",
+        "why": "Incorrect. The stated event is a sanitation and repair problem, not a confirmed controlled-substance theft."
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "citation": "247 CMR 9.19(16)(b)3; 247 CMR 9.01(3)",
+    "url": "https://www.mass.gov/doc/247-cmr-9-professional-practice-standards/download",
+    "source_urls": [
+      "https://www.mass.gov/doc/247-cmr-9-professional-practice-standards/download"
+    ],
+    "verified": "2026-11-23",
+    "reviewStatus": "AI_AUTHOR_SOURCE_CHECK_NOT_INDEPENDENT_EXPERT",
+    "exam_era": "NABP_PRE_MARCH_1_2027",
+    "revision": 3
+  },
+  {
+    "id": "F007",
+    "area": 1,
+    "competency": "1.2",
+    "kind": "single",
+    "topic": "Two on-duty pharmacists propose simultaneous meal breaks",
+    "stem": "A Massachusetts community pharmacy has two pharmacists scheduled on duty and plans to remain open throughout lunch. Both pharmacists arrange to take their allowed 30-minute breaks AT THE SAME TIME while two certified technicians stay inside the secured prescription area. The pharmacists say they will remain somewhere on the premises and can both be paged. The pharmacy has otherwise adequate written break procedures. What must the MOR change?",
+    "choices": [
+      {
+        "text": "Allow the simultaneous breaks because the policy for a lone pharmacist automatically extends to any number of pharmacists on duty.",
+        "why": "Incorrect. 247 CMR 9.19(17)(d) specifically requires staggered breaks when two or more pharmacists are on duty."
+      },
+      {
+        "text": "Have the technicians complete all new clinical and final dispensing validation during the overlap, then ask the pharmacists to sign after returning.",
+        "why": "Incorrect. Technicians do not acquire independent pharmacist authority during simultaneous breaks."
+      },
+      {
+        "text": "Keep both pharmacists on break together as long as the register labels every handoff a previously validated transaction and stores transaction logs.",
+        "why": "Incorrect. Recording handoffs does not waive the specific staggered-break requirement for multiple on-duty pharmacists."
+      },
+      {
+        "text": "Require both pharmacists to cancel all meal breaks, because Massachusetts categorically prohibits breaks whenever the pharmacy serves patients.",
+        "why": "Incorrect. Pharmacist breaks are expressly allowed if the statutory operational safeguards, including staggered timing, are followed."
+      },
+      {
+        "text": "Stagger the pharmacists' meal breaks so they do not both leave active professional duty at once while the pharmacy operates.",
+        "why": "Correct. 247 CMR 9.19(17)(d) requires breaks to be staggered when the pharmacy has two or more pharmacists on duty."
+      }
+    ],
+    "correct": [
+      "E"
+    ],
+    "citation": "247 CMR 9.19(17)(a),(d)",
+    "url": "https://www.mass.gov/doc/247-cmr-9-professional-practice-standards/download",
+    "source_urls": [
+      "https://www.mass.gov/doc/247-cmr-9-professional-practice-standards/download"
+    ],
+    "verified": "2026-11-23",
+    "reviewStatus": "AI_AUTHOR_SOURCE_CHECK_NOT_INDEPENDENT_EXPERT",
+    "exam_era": "NABP_PRE_MARCH_1_2027",
+    "revision": 2
+  },
+  {
+    "id": "F008",
+    "area": 2,
+    "competency": "2.1",
+    "kind": "multi",
+    "topic": "Sterile pass-through environmental sample uses cleaner adjacent ISO classification",
+    "stem": "A Massachusetts sterile-compounding pharmacy samples a pass-through transfer opening connecting an ISO Class 5 work zone to an ISO Class 7 classified space. Its environmental monitoring worksheet lists a valid surface sample of FOUR CFU per contact plate. The manager applies the less stringent ISO Class 7 surface threshold and declares there was no action-level finding. The sample is representative and no other sources of contamination are known. Which actions or conclusions are appropriate? SELECT ALL THAT APPLY.",
+    "choices": [
+      {
+        "text": "Report and investigate the above-action-level result under the Board's applicable monitoring response requirements.",
+        "why": "Correct. Once an action-level result is identified, reporting and appropriate assessment/remediation are required under Policy 2026-03 §§II–III."
+      },
+      {
+        "text": "Ignore the sample entirely because pass-through locations do not appear in the environmental monitoring program.",
+        "why": "Incorrect. The policy expressly provides for pass-through action levels and does not exclude their samples."
+      },
+      {
+        "text": "Apply the ISO Class 5 surface action level because the cleaner adjacent space determines the threshold; 4 CFU exceeds the ISO 5 action limit.",
+        "why": "Correct. Policy §I directs pass-throughs to use the cleaner space's ISO classification, and the ISO 5 surface action threshold is exceeded at 4 CFU."
+      },
+      {
+        "text": "Automatically treat 4 CFU as a federal controlled-substance loss and file DEA Form 106.",
+        "why": "Incorrect. A surface bioburden finding is an environmental quality issue, not inventory theft or significant loss."
+      },
+      {
+        "text": "Trend each action-level surface result by ISO zone and sampling location, retaining organism history for subsequent comparison.",
+        "why": "Correct. Board Policy 2026-03 §III(H) separately requires site-specific CFU trends and historical organism log to identify repeat findings."
+      }
+    ],
+    "correct": [
+      "A",
+      "C",
+      "E"
+    ],
+    "citation": "Massachusetts Board Policy 2026-03 §I (Surface Environmental Monitoring action-level table and pass-through footnote); Board Policy 2026-03 §III(H)",
+    "url": "https://www.mass.gov/doc/2026-03-action-level-environmental-monitoring-results/download",
+    "source_urls": [
+      "https://www.mass.gov/doc/2026-03-action-level-environmental-monitoring-results/download"
+    ],
+    "verified": "2026-11-23",
+    "reviewStatus": "AI_AUTHOR_SOURCE_CHECK_NOT_INDEPENDENT_EXPERT",
+    "exam_era": "NABP_PRE_MARCH_1_2027",
+    "revision": 5
+  },
+  {
+    "id": "F009",
+    "area": 2,
+    "competency": "2.1",
+    "kind": "single",
+    "topic": "ISO Class 8 remediation BUD differs by sterile versus nonsterile starting components",
+    "stem": "During remediation of an action-level VIABLE environmental result in an ISO Class 8 area, a Massachusetts sterile-compounding pharmacy has completed the required initial assessment, risk assessment and approved remediation plan. The Board has not imposed additional restrictions, and continued compounding in that area is otherwise permitted under Board Policy 2026-03. Two prospective CSP batches differ only in that batch S is prepared exclusively from STERILE starting components and batch N uses at least one NONSTERILE starting component. What maximum refrigerated BUDs does the state policy allow during the remediation?",
+    "choices": [
+      {
+        "text": "Four days for both batches, because all ISO Class 8 remediation CSPs are treated as if they use nonsterile starting materials.",
+        "why": "Incorrect. Policy 2026-03 §V distinguishes BUDs for sterile-only versus nonsterile starting components in ISO7 nonbuffer and ISO8 areas."
+      },
+      {
+        "text": "Thirty days for batch S and ten days for batch N, because sterile starting materials waive the temporary remediation limits.",
+        "why": "Incorrect. Neither starting material category has such a 30-day default exemption during the affected-area viable remediation."
+      },
+      {
+        "text": "Ten days for both batches, provided the operator documents a successful process simulation before production.",
+        "why": "Incorrect. Process simulation does not override the specified shorter temporary BUD for batches with nonsterile starting components."
+      },
+      {
+        "text": "Up to ten days refrigerated for batch S, and up to four days refrigerated for batch N, subject to every other applicable restriction.",
+        "why": "Correct. Policy 2026-03 §V for ISO7 nonbuffer and ISO8 rooms assigns 10 days refrigerated for sterile starting components and 4 days refrigerated if any nonsterile component is used."
+      },
+      {
+        "text": "No refrigerated BUD may ever be assigned to a CSP made during any viable EM remediation, even if the Board's risk-based temporary pathway explicitly permits compounding.",
+        "why": "Incorrect. Section V contains a conditional temporary compounding pathway with specified BUD limits for the affected ISO classes."
+      }
+    ],
+    "correct": [
+      "D"
+    ],
+    "citation": "Massachusetts Board Policy 2026-03 §V (ISO Class 7 except buffer rooms, ISO Class 8 areas: starting component-specific BUD)",
+    "url": "https://www.mass.gov/doc/2026-03-action-level-environmental-monitoring-results/download",
+    "source_urls": [
+      "https://www.mass.gov/doc/2026-03-action-level-environmental-monitoring-results/download"
+    ],
+    "verified": "2026-11-23",
+    "reviewStatus": "AI_AUTHOR_SOURCE_CHECK_NOT_INDEPENDENT_EXPERT",
+    "exam_era": "NABP_PRE_MARCH_1_2027",
+    "revision": 2
+  },
+  {
+    "id": "F010",
+    "area": 2,
+    "competency": "2.1",
+    "kind": "multi",
+    "topic": "Only affected ISO Class 5 hood: temporary immediate-use CSP exception",
+    "stem": "An institutional sterile-compounding pharmacy has only ONE ISO Class 5 PEC. Viable environmental monitoring identifies an action-level finding directly in that PEC. The pharmacy begins an appropriate documented response and product-risk assessment, but remediation has not yet been completed. A prescriber requests urgent access to a CSP that satisfies all USP <797> IMMEDIATE-USE conditions; the pharmacy has no unaffected ISO Class 5 PEC, and the Board has not ordered a broader restriction. Which actions are appropriate under Board Policy 2026-03? SELECT ALL THAT APPLY.",
+    "choices": [
+      {
+        "text": "Resume routine Category 2 production in the affected hood because a physician considers the CSP clinically urgent.",
+        "why": "Incorrect. Policy 2026-03 §V generally prohibits normal compounding in an affected ISO5 PEC until proper remediation."
+      },
+      {
+        "text": "If affected compounding must be suspended, implement the pharmacy's continuity-of-care plan for patients needing the sterile preparations.",
+        "why": "Correct. Board Policy 2026-03 §III(F) imposes continuity-of-care measures when sterile compounding activities are suspended."
+      },
+      {
+        "text": "Treat any sterile CSP as immediate-use after removing its printed BUD label, without checking USP immediate-use criteria.",
+        "why": "Incorrect. The immediate-use pathway depends on the actual USP-defined requirements, not a label modification."
+      },
+      {
+        "text": "Notify the Board of the action-level finding within one business day of receiving the microbiology report and perform required assessment/remediation.",
+        "why": "Correct. Board Policy 2026-03 §II requires prompt Board notification; §III requires investigation and the remediation plan even if immediate-use compounding is considered."
+      },
+      {
+        "text": "Only if absolutely necessary, consider an immediate-use CSP under its actual USP criteria; do not restart ordinary affected-PEC compounding before remediation.",
+        "why": "Correct. Policy §V(C) permits only USP-defined immediate-use CSPs if absolutely necessary when a pharmacy has a sole affected ISO5 PEC, subject to all other safety conditions."
+      }
+    ],
+    "correct": [
+      "B",
+      "D",
+      "E"
+    ],
+    "citation": "Massachusetts Board Policy 2026-03 §V (ISO Class 5 Area(s), particularly subsection C); USP <797> immediate-use provisions; Board Policy 2026-03 §III(F)",
+    "url": "https://www.mass.gov/doc/2026-03-action-level-environmental-monitoring-results/download",
+    "source_urls": [
+      "https://www.mass.gov/doc/2026-03-action-level-environmental-monitoring-results/download"
+    ],
+    "verified": "2026-11-23",
+    "reviewStatus": "AI_AUTHOR_SOURCE_CHECK_NOT_INDEPENDENT_EXPERT",
+    "exam_era": "NABP_PRE_MARCH_1_2027",
+    "revision": 5
+  },
+  {
+    "id": "F011",
+    "area": 2,
+    "competency": "2.1",
+    "kind": "single",
+    "topic": "Nonviable particle action level: cannot use viable BUD exception to keep compounding",
+    "stem": "A Massachusetts compounding pharmacy's ISO Class 7 secondary engineering control fails the action-level NONVIABLE particle count. Staff immediately establish a remediation plan, but the affected classified rooms have not been fully remediated or recertified. A supervisor argues that the pharmacy can continue compounding with the temporary 24-hour BUD used for some VIABLE microbial excursions. What is the correct distinction?",
+    "choices": [
+      {
+        "text": "Continue any Category 2 production as long as the ISO Class 5 hood has passed its last gloved fingertip test.",
+        "why": "Incorrect. The policy imposes an affected-area suspension and recertification requirement for nonviable particle action levels."
+      },
+      {
+        "text": "Reclassify the excursion as viable because viable-results rules permit temporary BUDs.",
+        "why": "Incorrect. The type of environmental failure must be interpreted accurately; the viable pathway does not override §III(D)."
+      },
+      {
+        "text": "Use only a shortened BUD and skip any recertification if the product is urgently needed.",
+        "why": "Incorrect. The policy explicitly requires full remediation and recertification for action-level nonviable particle counts unless the Board directs otherwise."
+      },
+      {
+        "text": "Suspend affected compounding until remediation and recertification, unless the Board directs otherwise.",
+        "why": "Correct. Policy 2026-03 §III(D) treats nonviable particulate action levels differently from the limited viable remediation pathway."
+      },
+      {
+        "text": "Change the sample date in the record and treat the result as no longer actionable.",
+        "why": "Incorrect. Falsifying records does not satisfy environmental monitoring and reporting requirements."
+      }
+    ],
+    "correct": [
+      "D"
+    ],
+    "citation": "Board Policy 2026-03 §§II, III(A),(D)–(E), IV(B)",
+    "url": "https://www.mass.gov/doc/2026-03-action-level-environmental-monitoring-results/download",
+    "source_urls": [
+      "https://www.mass.gov/doc/2026-03-action-level-environmental-monitoring-results/download"
+    ],
+    "verified": "2026-11-23",
+    "reviewStatus": "AI_AUTHOR_SOURCE_CHECK_NOT_INDEPENDENT_EXPERT",
+    "exam_era": "NABP_PRE_MARCH_1_2027",
+    "revision": 3
+  },
+  {
+    "id": "F012",
+    "area": 2,
+    "competency": "2.3",
+    "kind": "single",
+    "topic": "Defective simple nonsterile compound dispensed: recall without automatic seven-day Board defective-report trigger",
+    "stem": "A Massachusetts community pharmacy dispensed a patient-specific SIMPLE nonsterile compounded cream. Later laboratory testing establishes a harmful potency defect; patients have not reported a serious adverse event, and the preparation is not classified as complex nonsterile. The pharmacy immediately identifies another patient who received the same preparation. Does Board Policy 2024-04 permit waiting for an adverse event before acting, and does its seven-day defective-preparation report automatically apply?",
+    "choices": [
+      {
+        "text": "Wait until a patient develops serious injury because a simple nonsterile preparation is excluded from all recall rules.",
+        "why": "Incorrect. M.G.L. c.112 §39D(e) and Policy 2024-04 require immediate recall whenever a compounded preparation may be defective."
+      },
+      {
+        "text": "Keep distributing the stock and submit only a normal CQI report, because the pharmacy is not a sterile compounder.",
+        "why": "Incorrect. Compounded defective products already dispensed trigger recall obligations regardless of sterility category."
+      },
+      {
+        "text": "Report every simple nonsterile defect to DEA Form 106 within one business day and dispense unaffected-looking units.",
+        "why": "Incorrect. DEA Form 106 concerns theft/significant loss, and a simple CNSP defect is not automatically reportable under this policy's seven-day Board defect rule."
+      },
+      {
+        "text": "Keep the remaining compounded stock available but email recipients when a complaint arrives.",
+        "why": "Incorrect. The policy requires segregation, no further dispensing, and immediate recipient contact upon recall."
+      },
+      {
+        "text": "Recall and log the defective cream; the specific seven-day Board defect report does not automatically cover a simple CNSP.",
+        "why": "Correct. Policy 2024-04 and §39D(e) require immediate recall and appropriate records for any defective dispensed compound, whereas its specific seven-day Board report covers defective CSPs and complex-category CNSPs."
+      }
+    ],
+    "correct": [
+      "E"
+    ],
+    "citation": "M.G.L. c.112 §39D(e); Board Policy 2024-04 pp.1–2",
+    "url": "https://www.mass.gov/doc/2024-04-defective-drug-preparations-pdf/download",
+    "source_urls": [
+      "https://www.mass.gov/doc/2024-04-defective-drug-preparations-pdf/download",
+      "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXVI/Chapter112/Section39D"
+    ],
+    "verified": "2026-11-23",
+    "reviewStatus": "AI_AUTHOR_SOURCE_CHECK_NOT_INDEPENDENT_EXPERT",
+    "exam_era": "NABP_PRE_MARCH_1_2027",
+    "revision": 3
+  },
+  {
+    "id": "F013",
+    "area": 2,
+    "competency": "2.3",
+    "kind": "multi",
+    "topic": "Defective compounded preparation discovered before dispensing",
+    "stem": "A pharmacy's pharmacist identifies an out-of-specification compounded nonsterile batch during an internal quality check before any part has been dispensed or distributed. The batch remains secured within the pharmacy. There is no patient exposure or suspected serious adverse drug event. Which actions are supported by Board Policy 2024-04? SELECT ALL THAT APPLY.",
+    "choices": [
+      {
+        "text": "Prevent dispensing of the out-of-specification preparation and correct or dispose of it lawfully as appropriate.",
+        "why": "Correct. Product integrity requires withholding defective material from patient distribution."
+      },
+      {
+        "text": "Contact all patients to announce a product recall even though no patient has received any batch unit.",
+        "why": "Incorrect. The mandatory recipient recall/contact pathway presupposes dispensed or distributed affected drug preparations."
+      },
+      {
+        "text": "Automatically submit the seven-day Board defective-drug notification because the batch was compounded, regardless of distribution status.",
+        "why": "Incorrect. Policy 2024-04 specifically says defects discovered before dispensing do not need to be reported through that Board form."
+      },
+      {
+        "text": "Continue dispensing if the product's original calculated BUD has not passed.",
+        "why": "Incorrect. A computed BUD does not override confirmed potency or quality failure."
+      },
+      {
+        "text": "Document this pre-dispensing event in the pharmacy's CQI process as recommended; the Board's specific defective-preparation form is not mandatory for that undistributed batch.",
+        "why": "Correct. Policy 2024-04 specifically recommends CQI documentation for defects found before dispensing and says these events do not need Board defective-drug reporting."
+      }
+    ],
+    "correct": [
+      "A",
+      "E"
+    ],
+    "citation": "Board Policy 2024-04, p.2 (pre-dispensing defect), 247 CMR 9.01(12)",
+    "url": "https://www.mass.gov/doc/2024-04-defective-drug-preparations-pdf/download",
+    "source_urls": [
+      "https://www.mass.gov/doc/2024-04-defective-drug-preparations-pdf/download",
+      "https://www.mass.gov/doc/247-cmr-9-professional-practice-standards/download"
+    ],
+    "verified": "2026-11-23",
+    "reviewStatus": "AI_AUTHOR_SOURCE_CHECK_NOT_INDEPENDENT_EXPERT",
+    "exam_era": "NABP_PRE_MARCH_1_2027",
+    "revision": 1
+  },
+  {
+    "id": "F014",
+    "area": 2,
+    "competency": "2.3",
+    "kind": "multi",
+    "topic": "DSCSA illegitimate drug confirmation: 24-hour notification after investigation",
+    "stem": "A pharmacy has quarantined a suspicious prescription-drug shipment and investigated it with the manufacturer. The manufacturer verifies that several packages are counterfeit; the pharmacy has determined the product is illegitimate. Records show some units were already transferred to an immediate trading partner, and unshipped units remain quarantined. The team proposes waiting for a wholesaler's monthly meeting before reporting. Under FD&C Act §582(d)(4), which steps are appropriate? SELECT ALL THAT APPLY.",
+    "choices": [
+      {
+        "text": "Notify FDA and immediate trading partners believed to have received the illegitimate product within 24 hours of that determination.",
+        "why": "Correct. Section 582(d)(4)(B)(ii) requires notification to FDA and immediate partners likely to have received the product not later than 24 hours after the illegitimacy determination."
+      },
+      {
+        "text": "Disposition the illegitimate products under pharmacy control and assist affected trading partners with disposition as required.",
+        "why": "Correct. Section 582(d)(4)(B)(i) imposes these controls and cooperation duties."
+      },
+      {
+        "text": "Release the quarantine because the manufacturer confirmed the product's identity as counterfeit.",
+        "why": "Incorrect. Confirmation of illegitimacy demands disposition, not release into patient dispensing stock."
+      },
+      {
+        "text": "Keep required investigation and disposition records for the applicable federal retention period.",
+        "why": "Correct. Section 582(d)(4)(A)(iv) requires suspect investigation records for at least six years after conclusion; associated illegitimate-product records remain subject to applicable record requirements."
+      },
+      {
+        "text": "Notify FDA only when a patient reports an injury; confirmed counterfeit stock by itself requires no notification.",
+        "why": "Incorrect. The statutory notification trigger is the determination of illegitimacy, not a patient harm report."
+      }
+    ],
+    "correct": [
+      "A",
+      "B",
+      "D"
+    ],
+    "citation": "21 U.S.C. §360eee-1(d)(4)(A),(B)(i)–(ii) (DSCSA)",
+    "url": "https://uscode.house.gov/us/usc/119-120/t21/s360eee-1/",
+    "source_urls": [
+      "https://uscode.house.gov/us/usc/119-120/t21/s360eee-1/",
+      "https://www.fda.gov/drugs/drug-supply-chain-security-act-dscsa/pharmacists-utilize-dscsa-requirements-protect-your-patients",
+      "https://www.law.cornell.edu/uscode/text/21/360eee-1"
+    ],
+    "verified": "2026-11-23",
+    "reviewStatus": "AI_AUTHOR_SOURCE_CHECK_NOT_INDEPENDENT_EXPERT",
+    "exam_era": "NABP_PRE_MARCH_1_2027",
+    "revision": 1
+  },
+  {
+    "id": "F015",
+    "area": 2,
+    "competency": "2.3",
+    "kind": "single",
+    "topic": "DSCSA product delivered without required trace records: obtain documentation before acceptance",
+    "stem": "A Massachusetts retail pharmacy receives a new bulk shipment of covered prescription drugs from its usual licensed wholesale distributor. Shipping boxes are intact, but the distributor has provided no required DSCSA product tracing information, and no applicable transaction exemption applies. Management says the pharmacy can permanently accept the product into saleable stock because the seller is trusted and supply is short. What is the best first compliance action?",
+    "choices": [
+      {
+        "text": "Accept the shipment without tracing documents because the supplier has a current distributor license.",
+        "why": "Incorrect. Trading-partner authorization and product-tracing documentation are separate obligations under §582(d)(1)."
+      },
+      {
+        "text": "Add an invented trace record showing a typical manufacturer and release all units.",
+        "why": "Incorrect. Fabricated records cannot substitute for required tracing information and undermine supply-chain integrity."
+      },
+      {
+        "text": "Obtain missing tracing records and verify the shipment before accepting it as saleable stock.",
+        "why": "Correct. FD&C Act §582(d)(1)(A) requires required transaction documentation with ownership transfer, and FDA advises dispensers to work with trading partners to obtain missing documents."
+      },
+      {
+        "text": "Treat every missing invoice automatically as proof of an illegitimate counterfeit requiring a 24-hour notice.",
+        "why": "Incorrect. Missing transaction documentation must be resolved; it does not by itself prove the separate 'illegitimate product' notification threshold."
+      },
+      {
+        "text": "Ignore the missing records for six years because trace documentation is required only after a pharmacy resells the medicine.",
+        "why": "Incorrect. Dispenser tracing obligations apply when accepting ownership, and records generally must be maintained for six years."
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "citation": "21 U.S.C. §360eee-1(d)(1)(A)(i)–(iii); FDA 'Pharmacists: Utilize DSCSA Requirements to Protect Your Patients'",
+    "url": "https://uscode.house.gov/us/usc/119-120/t21/s360eee-1/",
+    "source_urls": [
+      "https://uscode.house.gov/us/usc/119-120/t21/s360eee-1/",
+      "https://www.fda.gov/drugs/drug-supply-chain-security-act-dscsa/pharmacists-utilize-dscsa-requirements-protect-your-patients",
+      "https://www.law.cornell.edu/uscode/text/21/360eee-1"
+    ],
+    "verified": "2026-11-23",
+    "reviewStatus": "AI_AUTHOR_SOURCE_CHECK_NOT_INDEPENDENT_EXPERT",
+    "exam_era": "NABP_PRE_MARCH_1_2027",
+    "revision": 3
+  },
+  {
+    "id": "F016",
+    "area": 2,
+    "competency": "2.3",
+    "kind": "single",
+    "topic": "Patient refuses after-hours automated pickup: right to non-APS option",
+    "stem": "A pharmacy has an appropriately secured, approved Automated Pharmacy System (APS) in the same building. The prescription is for an ordinary Schedule VI medicine eligible for APS release, and pharmacist consultation is available by phone. A patient says they do not want to use the machine, asks to receive medication through the normal pharmacy counter when it opens, and is not asking for earlier delivery. What should the pharmacy do?",
+    "choices": [
+      {
+        "text": "Honor the patient's refusal of APS and arrange a conventional pharmacy pickup.",
+        "why": "Correct. 247 CMR 9.10(1)(h) requires allowing the patient to choose whether or not to use the APS; the pharmacy may provide another lawful handoff."
+      },
+      {
+        "text": "Require machine pickup because the prescription was already filled and eligible for APS dispensing.",
+        "why": "Incorrect. APS eligibility does not remove the patient's express choice not to use it."
+      },
+      {
+        "text": "Delete the patient's prescription if they decline APS; no nonautomated option may be offered.",
+        "why": "Incorrect. The rule does not require cancellation when APS is declined."
+      },
+      {
+        "text": "Transfer the order into an unlicensed retail pickup machine because the patient refused the licensed APS.",
+        "why": "Incorrect. Changing machines does not create lawful dispensing authorization."
+      },
+      {
+        "text": "Charge the patient an extra controlled-substance transfer fee solely as a condition of refusing APS.",
+        "why": "Incorrect. An APS choice is not authorization to impose a punitive refusal fee or circumvent transfer rules."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "citation": "247 CMR 9.10(1)(h), (1)(g)",
+    "url": "https://www.mass.gov/doc/247-cmr-9-professional-practice-standards/download",
+    "source_urls": [
+      "https://www.mass.gov/doc/247-cmr-9-professional-practice-standards/download"
+    ],
+    "verified": "2026-11-23",
+    "reviewStatus": "AI_AUTHOR_SOURCE_CHECK_NOT_INDEPENDENT_EXPERT",
+    "exam_era": "NABP_PRE_MARCH_1_2027",
+    "revision": 3
+  },
+  {
+    "id": "F017",
+    "area": 2,
+    "competency": "2.1",
+    "kind": "multi",
+    "topic": "Uncontaminated ISO Class 5 PEC during remediation of another PEC",
+    "stem": "A sterile compounding pharmacy has TWO separate certified ISO Class 5 PECs in its classified compounding suite. Environmental monitoring finds an action-level VIABLE result inside PEC A; PEC B and its surrounding classified area show no implicated contamination. The pharmacy has already performed an immediate root-cause assessment, initiated a remediation and product-risk plan, and scheduled repeat sampling. The Board has not directed a complete shutdown. Which statements follow Board Policy 2026-03? SELECT ALL THAT APPLY.",
+    "choices": [
+      {
+        "text": "Both PECs must always be closed until PEC A is recertified, even when assessment shows PEC B is unaffected.",
+        "why": "Incorrect. Policy 2026-03 §V expressly permits continued compounding in unaffected ISO 5 PECs when the documented risk assessment deems it appropriate."
+      },
+      {
+        "text": "The pharmacy may continue compounding in PEC B if the risk assessment supports its being unaffected and all other requirements remain met.",
+        "why": "Correct. Section V, ISO Class 5 Area(s) B, allows the unaffected PEC to continue with suitable risk assessment."
+      },
+      {
+        "text": "The pharmacy may use PEC A for ordinary Category 2 work immediately because PEC B is uncontaminated.",
+        "why": "Incorrect. Section V(A) restricts resumption in the affected ISO 5 PEC until proper remediation, subject to the specific limited exception."
+      },
+      {
+        "text": "PEC A generally must not resume ordinary compounding before remediation; product risk from the excursion still requires review.",
+        "why": "Correct. Section V(A) restricts affected-PEC compounding while §§III–IV require appropriate remediation and assessment."
+      },
+      {
+        "text": "Report the action-level environmental finding to the Board within one business day of the microbiology report, even if PEC B continues.",
+        "why": "Correct. Board Policy 2026-03 §II requires timely reporting independent of whether an unaffected PEC can stay operational."
+      }
+    ],
+    "correct": [
+      "B",
+      "D",
+      "E"
+    ],
+    "citation": "Board Policy 2026-03 §§II–V, especially §V ISO Class 5 Area(s) A–B; Board Policy 2026-03 §II",
+    "url": "https://www.mass.gov/doc/2026-03-action-level-environmental-monitoring-results/download",
+    "source_urls": [
+      "https://www.mass.gov/doc/2026-03-action-level-environmental-monitoring-results/download"
+    ],
+    "verified": "2026-11-23",
+    "reviewStatus": "AI_AUTHOR_SOURCE_CHECK_NOT_INDEPENDENT_EXPERT",
+    "exam_era": "NABP_PRE_MARCH_1_2027",
+    "revision": 4
+  },
+  {
+    "id": "F018",
+    "area": 3,
+    "competency": "3.4",
+    "kind": "single",
+    "topic": "LTCF discontinuation: controlled-drug collection within three business days",
+    "stem": "A resident of a Massachusetts long-term care facility dies on Monday. The facility holds that resident's lawful Schedule II medication previously dispensed to the resident. A DEA-authorized retail-pharmacy collector maintains a properly registered collection receptacle at the LTCF. On Friday, facility staff plan to dispose of the drug in that receptacle for the first time; The week contains no holidays and the facility operates Monday through Friday. The facility has not taken another authorized disposal route. What is the applicable federal time limit?",
+    "choices": [
+      {
+        "text": "The LTCF can keep the medicine indefinitely if it remains inside an individually labeled, locked resident medication drawer.",
+        "why": "Incorrect. 21 CFR 1317.80(a) sets a prompt disposal deadline when the LTCF uses an authorized LTCF collection receptacle after discontinuation, including death."
+      },
+      {
+        "text": "Use the LTCF receptacle within three business days after discontinuation; Friday is too late under the stated facts.",
+        "why": "Correct. 21 CFR 1317.80(a) sets a three-business-day outer limit for LTCF transfer into its authorized onsite receptacle after death, transfer, or treatment discontinuation."
+      },
+      {
+        "text": "Place the drug in the pharmacy's own expired-inventory reverse distributor bin because all LTCF resident medicines become pharmacy inventory upon death.",
+        "why": "Incorrect. This is a drug previously lawfully possessed for the ultimate user; the applicable collector mechanism is not automatically the pharmacy's registrant-owned stock process."
+      },
+      {
+        "text": "Wait until 30 days after the resident's death because the DEA collection time limit begins only when the facility conducts monthly controlled counts.",
+        "why": "Incorrect. The three-business-day timeframe is tied to discontinuation of use, not monthly inventory timing."
+      },
+      {
+        "text": "A facility employee can make the resident's medication part of another resident's medication supply without a new prescription because the original resident is deceased.",
+        "why": "Incorrect. Prescription identity and controlled-substance law prohibit using one patient's patient-specific medicine as another patient's routine stock."
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "citation": "21 CFR 1317.80(a) (discontinuation, death or transfer; 3-business-day LTCF disposal when using authorized receptacle)",
+    "url": "https://www.law.cornell.edu/cfr/text/21/1317.80",
+    "source_urls": [
+      "https://www.law.cornell.edu/cfr/text/21/1317.80"
+    ],
+    "verified": "2026-11-23",
+    "reviewStatus": "AI_AUTHOR_SOURCE_CHECK_NOT_INDEPENDENT_EXPERT",
+    "exam_era": "NABP_PRE_MARCH_1_2027",
+    "revision": 3
+  },
+  {
+    "id": "F019",
+    "area": 3,
+    "competency": "3.1",
+    "kind": "multi",
+    "topic": "Defective DEA Form 222 cannot be corrected at supplier",
+    "stem": "A Massachusetts retail pharmacy submits a properly signed paper DEA Form 222 to a distributor to purchase Schedule II stock. After the purchaser executed the form, a distributor employee notices that the item description was altered in ink. The distributor offers to initial the change and fill the form without returning it. The purchaser agrees that the submitted paper order bears an unauthorized alteration. What is the correct workflow? SELECT ALL THAT APPLY.",
+    "choices": [
+      {
+        "text": "The supplier must not fill an altered DEA Form 222, even if a pharmacy employee offers to initial the changed description.",
+        "why": "Correct. 21 CFR 1305.15(a)(2) prohibits filling a form showing any alteration, erasure, or change of description; purchaser initials cannot cure it."
+      },
+      {
+        "text": "The supplier can ignore the alteration after verifying the pharmacy's DEA registration through its online database.",
+        "why": "Incorrect. Registration verification and the separate requirement that DEA Form 222 be complete, properly executed and unaltered are cumulative obligations."
+      },
+      {
+        "text": "The supplier must return the original unaccepted Form 222 with an explanation; the purchaser retains it and must execute a new compliant Form 222.",
+        "why": "Correct. 21 CFR 1305.15(b),(d) requires return with a statement, retention of the defective form/statement, and a new valid 222 rather than a correction."
+      },
+      {
+        "text": "A technician can convert the original Schedule II purchase into a Schedule IV invoice if the distributor still wants to provide the same drug.",
+        "why": "Incorrect. The controlled schedule remains II and cannot be changed by purchase-invoice labeling or staff convenience."
+      },
+      {
+        "text": "A supplier may erase the altered description and then ship a partial quantity within 60 days after the original order's issuance.",
+        "why": "Incorrect. The 60-day partial-shipment option does not authorize filling a defective or altered Form 222."
+      }
+    ],
+    "correct": [
+      "A",
+      "C"
+    ],
+    "citation": "21 CFR 1305.15(a)(2),(b),(d)",
+    "url": "https://www.law.cornell.edu/cfr/text/21/1305.15",
+    "source_urls": [
+      "https://www.law.cornell.edu/cfr/text/21/1305.15"
+    ],
+    "verified": "2026-11-23",
+    "reviewStatus": "AI_AUTHOR_SOURCE_CHECK_NOT_INDEPENDENT_EXPERT",
+    "exam_era": "NABP_PRE_MARCH_1_2027",
+    "revision": 4
+  },
+  {
+    "id": "F020",
+    "area": 3,
+    "competency": "3.1",
+    "kind": "single",
+    "topic": "Unfilled paper DEA Form 222 lost in transit before distributor receives it",
+    "stem": "A DEA-registered Massachusetts pharmacy mails a properly executed original DEA Form 222 to its Schedule II supplier. The pharmacy later confirms the order was lost while in transit, no containers were furnished, and the supplier never received that original. The pharmacist wants to reorder promptly without causing the original order to be filled a second time if recovered. What documentation procedure is correct?",
+    "choices": [
+      {
+        "text": "Send an email requesting goods under the same lost Form 222 number, and omit all records because no stock arrived.",
+        "why": "Incorrect. 21 CFR 1305.16(a) specifies a replacement Form 222 and written statement/copy retention procedure for an unfilled lost form."
+      },
+      {
+        "text": "Change the mailing date on the pharmacy's archived photocopy to generate a new controlling original Form 222.",
+        "why": "Incorrect. Altering an archival copy does not create a valid replacement order."
+      },
+      {
+        "text": "Telephone the supplier to fill the missing original and disregard the risk that the first signed original could later be recovered.",
+        "why": "Incorrect. The rule expressly provides a new form, a statement documenting the original and a supplier response if the first original appears."
+      },
+      {
+        "text": "Replace the lost Form 222 with the required statement and copies; a recovered original must be marked 'Not accepted'.",
+        "why": "Correct. This is the replacement protocol under 21 CFR 1305.16(a), including retention and recovered original disposition."
+      },
+      {
+        "text": "Convert the lost Schedule II paper order into an ordinary verbal Schedule III invoice and let the supplier ship the identical drug.",
+        "why": "Incorrect. A lost CII ordering form cannot be replaced by a verbal or nonscheduled invoice."
+      }
+    ],
+    "correct": [
+      "D"
+    ],
+    "citation": "21 CFR 1305.16(a) (unfilled DEA Form 222 lost in transmission)",
+    "url": "https://www.law.cornell.edu/cfr/text/21/1305.16",
+    "source_urls": [
+      "https://www.law.cornell.edu/cfr/text/21/1305.16",
+      "https://www.deadiversion.usdoj.gov/faq/form-222-faq.html"
+    ],
+    "verified": "2026-11-23",
+    "reviewStatus": "AI_AUTHOR_SOURCE_CHECK_NOT_INDEPENDENT_EXPERT",
+    "exam_era": "NABP_PRE_MARCH_1_2027",
+    "revision": 3
+  },
+  {
+    "id": "F021",
+    "area": 3,
+    "competency": "3.1",
+    "kind": "multi",
+    "topic": "LTCF collector liner exchange: authorized staffing combinations",
+    "stem": "A DEA-authorized retail pharmacy operates a controlled-substance collection receptacle inside a Massachusetts long-term care facility under an appropriately modified DEA registration. The inner liner is full and must be removed and replaced. Exactly one employee of the authorized pharmacy collector is present, along with the LTCF's designated charge nurse who is a supervisor-level LTCF employee. A second collector employee cannot attend. Under 21 CFR 1317.80, which procedures are permissible? SELECT ALL THAT APPLY.",
+    "choices": [
+      {
+        "text": "The one collector employee and the designated supervisor-level LTCF employee may perform or supervise the liner removal and installation under the permitted LTCF staffing alternative.",
+        "why": "Correct. 21 CFR 1317.80(c) allows one authorized collector employee plus one supervisor-level LTCF employee designated by the collector, as an alternative to two collector employees."
+      },
+      {
+        "text": "Any two LTCF residents may install and remove the inner liner without the authorized collector's employee because the liner belongs to the LTCF.",
+        "why": "Incorrect. Section 1317.80(c) defines the authorized personnel alternatives and does not permit an unsupervised residents-only handling process."
+      },
+      {
+        "text": "Two employees of the authorized collector would be another expressly permitted staffing arrangement, even without the charge nurse participating.",
+        "why": "Correct. Section 1317.80(c) separately permits two authorized collector employees."
+      },
+      {
+        "text": "Facility staff may open an already-sealed liner and hand-sort individual tablets so that controlled-substance counts can be corrected.",
+        "why": "Incorrect. Federal collection rules prohibit individually handling, sorting and accounting for deposited medications after collection."
+      },
+      {
+        "text": "If a removed sealed liner is temporarily stored at the LTCF, keep it securely locked and transfer it within the three-business-day storage limit.",
+        "why": "Correct. 21 CFR 1317.80(d) separately restricts secured onsite storage of removed sealed liners to no more than three business days."
+      }
+    ],
+    "correct": [
+      "A",
+      "C",
+      "E"
+    ],
+    "citation": "21 CFR 1317.80(b)–(e); 21 CFR 1317.75(c),(g); 21 CFR 1317.80(d)",
+    "url": "https://www.law.cornell.edu/cfr/text/21/1317.80",
+    "source_urls": [
+      "https://www.law.cornell.edu/cfr/text/21/1317.80",
+      "https://www.law.cornell.edu/cfr/text/21/1317.75"
+    ],
+    "verified": "2026-11-23",
+    "reviewStatus": "AI_AUTHOR_SOURCE_CHECK_NOT_INDEPENDENT_EXPERT",
+    "exam_era": "NABP_PRE_MARCH_1_2027",
+    "revision": 4
+  },
+  {
+    "id": "F022",
+    "area": 3,
+    "competency": "3.1",
+    "kind": "multi",
+    "topic": "Confirmed theft of an ordinary Massachusetts Schedule VI medicine: state report versus DEA Form 106",
+    "stem": "A Massachusetts resident retail pharmacy discovers camera evidence that an employee intentionally diverted 12 tablets of an ordinary prescription-only Massachusetts Schedule VI medicine that is NOT federally controlled and is NOT a PMP-designated Schedule VI drug. The loss has been CONFIRMED. The owner argues that no reporting is needed because the amount is small and the drug is not Schedule II–V. Which conclusions follow from Massachusetts Board Policy 2026-01? SELECT ALL THAT APPLY.",
+    "choices": [
+      {
+        "text": "Report the confirmed employee diversion to the Board within seven calendar days using the required pharmacy loss reporting process.",
+        "why": "Correct. Policy 2026-01 §II(A) covers every theft, employee pilferage or diversion regardless of quantity or schedule."
+      },
+      {
+        "text": "Because this product is Massachusetts Schedule VI only and federally unscheduled, this event does not itself require a federal DEA Form 106.",
+        "why": "Correct. The federal DEA Form 106 theft and significant-loss mechanism applies to federally controlled drugs, not solely state Schedule VI stock."
+      },
+      {
+        "text": "Do not document the event because it involves a medication outside MassPAT reporting.",
+        "why": "Incorrect. The policy's employee pilferage category does not require PMP reporting status to be reportable."
+      },
+      {
+        "text": "Preserve investigation records, report under the applicable Massachusetts confirmed-theft policy, and address any other applicable state/local reporting.",
+        "why": "Correct. The Board policy imposes a timely RLCS state report and separately requires compliance with other applicable authorities."
+      },
+      {
+        "text": "Classify the diversion as an insignificant nonreportable unexplained loss without considering confirmed employee intent.",
+        "why": "Incorrect. Section III's insignificant-loss documentation-only provision does not excuse theft or employee diversion that is confirmed."
+      }
+    ],
+    "correct": [
+      "A",
+      "B",
+      "D"
+    ],
+    "citation": "Board Policy 2026-01 §§I–III (03/26/2026); 247 CMR 20.03(7); 21 CFR 1301.76(b)",
+    "url": "https://www.mass.gov/doc/2026-01-loss-or-theft-of-controlled-substances-pdf/download",
+    "source_urls": [
+      "https://www.mass.gov/doc/2026-01-loss-or-theft-of-controlled-substances-pdf/download",
+      "https://www.mass.gov/doc/247-cmr-20-reporting/download"
+    ],
+    "verified": "2026-11-23",
+    "reviewStatus": "AI_AUTHOR_SOURCE_CHECK_NOT_INDEPENDENT_EXPERT",
+    "exam_era": "NABP_PRE_MARCH_1_2027",
+    "revision": 4
+  },
+  {
+    "id": "F023",
+    "area": 3,
+    "competency": "3.5",
+    "kind": "single",
+    "topic": "Scheduled medication incompatible with multi-drug single-dose adherence pack",
+    "stem": "A Massachusetts pharmacy prepares a patient's 30-day multidrug single-dose adherence pouches. The daily maintenance regimen contains a Schedule III medication, a Schedule IV medicine and two Schedule VI tablets; all are intended for scheduled daily use, not as needed, and are otherwise compatible with the pouches. The pharmacist proposes putting every drug in each daily combined pouch because 30 days is under the 60-day packaging cap. What must change?",
+    "choices": [
+      {
+        "text": "Use the 30-day package exactly as proposed because the 60-day maximum overrides all Schedule exclusions in the compliance-packaging rule.",
+        "why": "Incorrect. The 60-day maximum is separate from the categorical prohibition on including Schedule II or III in a multi-drug-single-dose package."
+      },
+      {
+        "text": "Exclude only Schedule VI drugs, because Massachusetts permits combined packaging for all federally controlled medications.",
+        "why": "Incorrect. Section 9.08(3)(b) specifically excludes Schedule II and III—not IV and VI—from these multi-drug packages."
+      },
+      {
+        "text": "Keep Schedule III out of the multi-drug pack; compatible daily Schedule IV/VI medicines may be packaged together.",
+        "why": "Correct. Section 9.08(3)(b) prohibits Schedule III in multi-drug-single-dose packaging but allows compatible scheduled Schedule IV/VI products if other requirements are met."
+      },
+      {
+        "text": "Change the patient directions to 'PRN' so that Schedule III drugs are permitted in multi-drug packs.",
+        "why": "Incorrect. Section 9.08(3)(c) separately prohibits as-needed medicines; falsifying directions would add another violation."
+      },
+      {
+        "text": "Remove the patient's name from all pouches and treat the schedule conflict as resolved through anonymized packaging.",
+        "why": "Incorrect. A labeling change does not eliminate the Schedule II/III prohibition in 9.08(3)(b)."
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "citation": "247 CMR 9.08(3)(a)–(c),(5)",
+    "url": "https://www.mass.gov/doc/247-cmr-9-professional-practice-standards/download",
+    "source_urls": [
+      "https://www.mass.gov/doc/247-cmr-9-professional-practice-standards/download"
+    ],
+    "verified": "2026-11-23",
+    "reviewStatus": "AI_AUTHOR_SOURCE_CHECK_NOT_INDEPENDENT_EXPERT",
+    "exam_era": "NABP_PRE_MARCH_1_2027",
+    "revision": 3
+  },
+  {
+    "id": "F024",
+    "area": 3,
+    "competency": "3.6",
+    "kind": "single",
+    "topic": "Massachusetts licensed technician remote processing does not confer final clinical validation",
+    "stem": "A Massachusetts retail pharmacy uses a properly established shared remote-processing workflow. A Massachusetts-licensed pharmacy technician working from home enters factual prescription data into the secured system. A licensed Massachusetts pharmacist can review the remote work and is responsible for validation. The owner proposes prohibiting the technician's offsite entry solely because no pharmacist is physically in the technician's home, but alternatively allowing the technician to independently perform DUR and final product validation if the home computer is secure. Which conclusion best follows Board Policy 2021-02?",
+    "choices": [
+      {
+        "text": "Permit licensed remote data entry, subject to pharmacist verification and final clinical review.",
+        "why": "Correct. Board Policy 2021-02 §V(b)(i) expressly permits Massachusetts-licensed technicians to remotely process for a Massachusetts pharmacy without onsite pharmacist supervision, while 247 CMR 9.04(1),(11) preserves pharmacist verification."
+      },
+      {
+        "text": "A technician working at home may independently resolve clinical DUR problems and release prescriptions if the pharmacy's electronic audit trail captures their login.",
+        "why": "Incorrect. Technology does not confer pharmacist-level judgment or final dispensing validation on a technician."
+      },
+      {
+        "text": "No person may ever process prescription data outside a licensed physical pharmacy, including licensed pharmacists and technicians acting under a valid shared-service policy.",
+        "why": "Incorrect. The policy permits remote processing subject to professional licensure, verification, secure data and approved workflow."
+      },
+      {
+        "text": "The technician's private home automatically becomes a licensed full-service Massachusetts pharmacy authorized to dispense physical drug products to patients.",
+        "why": "Incorrect. A remote processing site is not a new licensed dispensing pharmacy or an authorization for technician physical dispensing."
+      },
+      {
+        "text": "A nonlicensed cashier can perform the same remote processing duties and issue new controlled prescriptions merely because the computer has a password.",
+        "why": "Incorrect. The remote-processing technician exception requires the appropriate pharmacy technician license and does not expand cashier or prescriber authority."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "citation": "Board Policy 2021-02 §V(a)–(b), revised 02/06/2025; 247 CMR 9.04(1),(11)",
+    "url": "https://www.mass.gov/doc/2021-02-shared-pharmacy-service-models-including-central-fill-remote-processing-and-telepharmacy-pdf/download",
+    "source_urls": [
+      "https://www.mass.gov/doc/2021-02-shared-pharmacy-service-models-including-central-fill-remote-processing-and-telepharmacy-pdf/download",
+      "https://www.mass.gov/doc/247-cmr-9-professional-practice-standards/download"
+    ],
+    "verified": "2026-11-23",
+    "reviewStatus": "AI_AUTHOR_SOURCE_CHECK_NOT_INDEPENDENT_EXPERT",
+    "exam_era": "NABP_PRE_MARCH_1_2027",
+    "revision": 4
+  },
+  {
+    "id": "F025",
+    "area": 4,
+    "competency": "4.7",
+    "kind": "single",
+    "topic": "Unexpected pharmacy closure exceeds 24 hours: continuity and Board notification",
+    "stem": "A Massachusetts community pharmacy loses electrical power in a storm on Monday morning. Technicians secure all drug stock; the pharmacy cannot safely dispense prescriptions and expects the service interruption to last 36 hours. It is a temporary unplanned service suspension, not permanent business closure. Management posts a closed sign but has no plan to provide continuity of prescription therapy and says no Board notice is needed until reopening. What is the correct regulatory response?",
+    "choices": [
+      {
+        "text": "Use the permanent business-closure patient letter process exclusively and treat the temporary outage as a completed permanent pharmacy closure.",
+        "why": "Incorrect. This is an unexpected temporary interruption; 247 CMR 9.19(15) imposes its own continuity-of-care and notification requirements."
+      },
+      {
+        "text": "No Board notification is necessary because a weather-related outage can never be a regulated pharmacy-operation suspension.",
+        "why": "Incorrect. Section 9.19(15) requires Board notification if pharmacy operations are unexpectedly suspended for more than 24 hours, without a blanket weather exception."
+      },
+      {
+        "text": "Create and execute the required continuity-of-care arrangements and notify the Board of the unexpected suspension exceeding 24 hours.",
+        "why": "Correct. 247 CMR 9.19(15) imposes both a written continuity-of-care plan and Board notification after an unexpected operational suspension lasting more than 24 hours."
+      },
+      {
+        "text": "Leave prescription orders and medications unattended in the unlocked building so patients may self-select their next maintenance doses while service is offline.",
+        "why": "Incorrect. Patient access and pharmacy security remain regulated; a continuity plan cannot authorize uncontrolled self-service."
+      },
+      {
+        "text": "Refill and dispense all affected Schedule II prescriptions from an unsecured temporary kiosk without a pharmacist, as long as the patient calls for counseling.",
+        "why": "Incorrect. Emergency continuity does not dispense with pharmacy licensure, controlled-substance security, pharmacist oversight or dispensing requirements."
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "citation": "247 CMR 9.19(15) (written continuity of care and Board notice on unexpected >24-hour suspension)",
+    "url": "https://www.mass.gov/doc/247-cmr-9-professional-practice-standards/download",
+    "source_urls": [
+      "https://www.mass.gov/doc/247-cmr-9-professional-practice-standards/download"
+    ],
+    "verified": "2026-11-23",
+    "reviewStatus": "AI_AUTHOR_SOURCE_CHECK_NOT_INDEPENDENT_EXPERT",
+    "exam_era": "NABP_PRE_MARCH_1_2027",
+    "revision": 2
+  },
+  {
+    "id": "F026",
+    "area": 4,
+    "competency": "4.3",
+    "kind": "multi",
+    "topic": "Specialty compounding annual report: interstate dispensing volume and license status",
+    "stem": "A Massachusetts-licensed sterile compounding pharmacy dispenses CSP prescriptions both to Massachusetts patients and patients in neighboring states. At annual licensing/reporting time, management offers a summary of only the prescriptions delivered within Massachusetts, excluding out-of-state volumes and the status of licenses held elsewhere. No Board waiver applies. What must the annual specialty report include? SELECT ALL THAT APPLY.",
+    "choices": [
+      {
+        "text": "The facility must also supply the same required compounding-dispensing information upon Board request, not only in its ordinary annual report.",
+        "why": "Correct. 247 CMR 20.06(1) requires the specified dispensing volume and destination-state information annually or upon Board request."
+      },
+      {
+        "text": "Only the count of CSP prescriptions administered in a hospital inpatient unit, excluding outpatient and interstate prescriptions.",
+        "why": "Incorrect. Section 20.06(1) is not limited to hospital administrations and requires dispensing information within and outside Massachusetts."
+      },
+      {
+        "text": "Only the pharmacy's DEA registration number and annual Schedule II purchase volume, because sterile compounding involves controlled substances.",
+        "why": "Incorrect. The 20.06(1) specialty report covers compounded sterile and complex nonsterile prescriptions, regardless of federal schedule."
+      },
+      {
+        "text": "A copy of the pharmacy's ordinary IRS tax filing instead of any pharmacy-specific prescription figures or destination-state licensure information.",
+        "why": "Incorrect. Tax returns do not supply the required compounding prescription and state-licensing data."
+      },
+      {
+        "text": "Report applicable compounded prescriptions and volumes dispensed within and outside Massachusetts, destination states, and other states' nonresident license status.",
+        "why": "Correct. The annual/on-request reporting requirements in 247 CMR 20.06(1)(a)–(b) include each of these categories."
+      }
+    ],
+    "correct": [
+      "A",
+      "E"
+    ],
+    "citation": "247 CMR 20.06(1)(a)–(b)",
+    "url": "https://www.mass.gov/doc/247-cmr-20-reporting/download",
+    "source_urls": [
+      "https://www.mass.gov/doc/247-cmr-20-reporting/download"
+    ],
+    "verified": "2026-11-23",
+    "reviewStatus": "AI_AUTHOR_SOURCE_CHECK_NOT_INDEPENDENT_EXPERT",
+    "exam_era": "NABP_PRE_MARCH_1_2027",
+    "revision": 4
+  },
+  {
+    "id": "F027",
+    "area": 4,
+    "competency": "4.2",
+    "kind": "single",
+    "topic": "Automated pharmacy vial-filling scanner malfunction: no verified automation output",
+    "stem": "A Massachusetts pharmacy uses Pharmacy Processing Automation (PPA) to count and label outpatient prescription vials. Its product barcode verification module has failed, and its backup automated weight and other technological verification systems are also unavailable. A technician proposes continuing to release vials through the PPA on the assumption that the machine is usually accurate. An on-duty pharmacist is available to use conventional manual dispensing workflows instead. What is the lawful response?",
+    "choices": [
+      {
+        "text": "Keep automated release unchanged because yesterday's quality assurance validation covers all future machine output.",
+        "why": "Incorrect. A prior QA record does not establish contemporaneous verification when all technological safeguards are unavailable."
+      },
+      {
+        "text": "Let a certified technician override the final dispensing process validation whenever the automation audit log is blank.",
+        "why": "Incorrect. Technician certification does not confer pharmacist final validation authority."
+      },
+      {
+        "text": "Record a fabricated machine barcode match for each package so that electronic output looks compliant.",
+        "why": "Incorrect. False system records cannot satisfy §9.11(1)(a) technological verification."
+      },
+      {
+        "text": "Stop unverified PPA operation; use a properly validated manual dispensing process instead.",
+        "why": "Correct. Section 9.11(1)(a) conditions PPA use on technological verification for correct medication; section 9.04(1) still requires pharmacist final validation."
+      },
+      {
+        "text": "Continue PPA because no federal law limits automated dispensing of Schedule VI medicines.",
+        "why": "Incorrect. Massachusetts PPA requirements apply regardless of federal scheduling."
+      }
+    ],
+    "correct": [
+      "D"
+    ],
+    "citation": "247 CMR 9.11(1)(a), (2)(d); 9.04(1)",
+    "url": "https://www.mass.gov/doc/247-cmr-9-professional-practice-standards/download",
+    "source_urls": [
+      "https://www.mass.gov/doc/247-cmr-9-professional-practice-standards/download"
+    ],
+    "verified": "2026-11-23",
+    "reviewStatus": "AI_AUTHOR_SOURCE_CHECK_NOT_INDEPENDENT_EXPERT",
+    "exam_era": "NABP_PRE_MARCH_1_2027",
+    "revision": 3
+  },
+  {
+    "id": "F028",
+    "area": 4,
+    "competency": "4.2",
+    "kind": "multi",
+    "topic": "After-hours APS releases Schedule VI drug but lacks pharmacist consultation opportunity",
+    "stem": "A Massachusetts retail pharmacy operates an Automated Pharmacy System (APS) after its regular counter closes. The APS is secured, monitored and has a reliable patient-identification audit trail; it contains only room-temperature Schedule VI products. Tonight the contracted live pharmacist consultation service is offline and the pharmacy cannot provide any alternative real-time pharmacist consultation opportunity while the machine remains dispensing. Which conclusions are supported by 247 CMR 9.10? SELECT ALL THAT APPLY.",
+    "choices": [
+      {
+        "text": "Continue releasing prescriptions as usual because an audit trail is the only requirement after closing.",
+        "why": "Incorrect. Section 9.10(1)(g) separately requires a pharmacist consultation opportunity at every time the APS dispenses."
+      },
+      {
+        "text": "Suspend APS dispensing until a pharmacist consultation opportunity is available during operation.",
+        "why": "Correct. The pharmacy may not use APS for dispensing without the required consultation opportunity."
+      },
+      {
+        "text": "Restoring accessible pharmacist consultation would correct this particular APS deficiency if all other conditions remain satisfied.",
+        "why": "Correct. Section 9.10(1)(g) is the missing operation requirement in the scenario."
+      },
+      {
+        "text": "A technician's prerecorded counseling voicemail is automatically equivalent to the required pharmacist consultation opportunity.",
+        "why": "Incorrect. An automated prerecorded technician message cannot itself substitute for access to a pharmacist."
+      },
+      {
+        "text": "Dispense from APS only if the patient signs a waiver of every right to speak with a pharmacist.",
+        "why": "Incorrect. The section does not offer a patient waiver that eliminates the pharmacy's duty to provide a consultation opportunity."
+      }
+    ],
+    "correct": [
+      "B",
+      "C"
+    ],
+    "citation": "247 CMR 9.10(1)(a)–(h), especially (g)",
+    "url": "https://www.mass.gov/doc/247-cmr-9-professional-practice-standards/download",
+    "source_urls": [
+      "https://www.mass.gov/doc/247-cmr-9-professional-practice-standards/download"
+    ],
+    "verified": "2026-11-23",
+    "reviewStatus": "AI_AUTHOR_SOURCE_CHECK_NOT_INDEPENDENT_EXPERT",
+    "exam_era": "NABP_PRE_MARCH_1_2027",
+    "revision": 1
+  },
+  {
+    "id": "F029",
+    "area": 4,
+    "competency": "4.1",
+    "kind": "single",
+    "topic": "Sterile compounding manager change: 30-day specialty filing in addition to usual MOR notice",
+    "stem": "A Massachusetts resident sterile-compounding pharmacy changes its corporate president but retains the same Manager of Record, facility license number, premises and compounding services. Management has updated its corporate minute book and argues that the unchanged MOR means the Board needs no separate updated management-information report. The change became effective 18 days ago. What additional requirement applies under 247 CMR 20.06?",
+    "choices": [
+      {
+        "text": "File the specialty management-information report within 30 days despite the unchanged MOR.",
+        "why": "Correct. 247 CMR 20.06(6)(e) expressly triggers a 30-day report on a change in corporate officers or management, even without a MOR change."
+      },
+      {
+        "text": "No report is due because 247 CMR 20.06(6)(e) applies only if the physical pharmacy changes street address.",
+        "why": "Incorrect. The enumerated triggers include a change in corporate officers, management personnel, ownership or MOR."
+      },
+      {
+        "text": "The pharmacy must submit a new federal controlled-substance destruction form to report the change in corporate president.",
+        "why": "Incorrect. DEA Form 41 concerns destruction; it is not the reporting channel for corporate-officer changes."
+      },
+      {
+        "text": "The pharmacy may defer all updates until a five-year inspection cycle because the existing MOR remains licensed.",
+        "why": "Incorrect. The separate 30-day specialty compounding management report is triggered by the corporate change."
+      },
+      {
+        "text": "The new officer must wait until the next physician prescribing renewal before the state pharmacy can disclose updated management information.",
+        "why": "Incorrect. Physician prescribing cycles have no bearing on the 247 CMR 20.06(6)(e) pharmacy reporting duty."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "citation": "247 CMR 20.06(6)(a),(e); distinct from 247 CMR 20.05(1) MOR change",
+    "url": "https://www.mass.gov/doc/247-cmr-20-reporting/download",
+    "source_urls": [
+      "https://www.mass.gov/doc/247-cmr-20-reporting/download"
+    ],
+    "verified": "2026-11-23",
+    "reviewStatus": "AI_AUTHOR_SOURCE_CHECK_NOT_INDEPENDENT_EXPERT",
+    "exam_era": "NABP_PRE_MARCH_1_2027",
+    "revision": 3
+  },
+  {
+    "id": "F030",
+    "area": 4,
+    "competency": "4.7",
+    "kind": "multi",
+    "topic": "Confirmed dispensing error creates shortage but not Board theft/loss report",
+    "stem": "A Massachusetts resident pharmacy dispenses 30 Schedule IV tablets to the wrong patient, immediately confirms the DISPENSING ERROR in its records, and investigates; there is no evidence of theft, employee pilferage, or intentional diversion, and no serious injury or other reporting trigger is present. The inventory now shows 30 fewer tablets than intended. A manager proposes automatically filing DEA Form 106 and a Board Pharmacy Loss Report for any such discrepancy without investigating the cause. What steps correctly distinguish the duties? SELECT ALL THAT APPLY.",
+    "choices": [
+      {
+        "text": "The dispensing error is automatically treated as a confirmed theft solely because the perpetual balance fell.",
+        "why": "Incorrect. Policy 2026-01 §III distinguishes confirmed dispensing errors from theft/diversion; a quantity difference does not by itself establish theft."
+      },
+      {
+        "text": "Document, investigate and address the dispensing error under the pharmacy's Continuous Quality Improvement process.",
+        "why": "Correct. Policy 2026-01 §III expressly requires compliance with 247 CMR 15 CQI for confirmed dispensing errors."
+      },
+      {
+        "text": "Report all confirmed dispensing errors as controlled-substance theft no matter the cause, without distinguishing theft from patient-safety error.",
+        "why": "Incorrect. The policy says confirmed dispensing errors do not have to be reported under the loss/theft policy, though other separate harm-based duties may apply."
+      },
+      {
+        "text": "Do not automatically submit the Board RLCS or federal theft/loss Form 106 solely for this confirmed non-theft dispensing error; investigate other separate reporting triggers.",
+        "why": "Correct. A confirmed dispensing error is excluded from the 2026-01 theft/loss reporting pathway; other duties remain independently applicable."
+      },
+      {
+        "text": "Delete the patient profile to eliminate evidence of the incorrect dispensing transaction.",
+        "why": "Incorrect. Record destruction violates documentation and patient-safety duties and undermines quality improvement."
+      }
+    ],
+    "correct": [
+      "B",
+      "D"
+    ],
+    "citation": "Board Policy 2026-01 §III; 247 CMR 15.00; 247 CMR 20.02 where serious injury applies",
+    "url": "https://www.mass.gov/doc/2026-01-loss-or-theft-of-controlled-substances-pdf/download",
+    "source_urls": [
+      "https://www.mass.gov/doc/2026-01-loss-or-theft-of-controlled-substances-pdf/download",
+      "https://www.mass.gov/regulations/247-CMR-1500-continuous-quality-improvement-program"
+    ],
+    "verified": "2026-11-23",
+    "reviewStatus": "AI_AUTHOR_SOURCE_CHECK_NOT_INDEPENDENT_EXPERT",
+    "exam_era": "NABP_PRE_MARCH_1_2027",
+    "revision": 1
+  }
+]);
