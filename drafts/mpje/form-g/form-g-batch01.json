@@ -142,7 +142,7 @@
         {
           "letter": "C",
           "mode": "selected",
-          "reason": "Assigns a expressly prohibited product-handling duty to a technician."
+          "reason": "Assigns an expressly prohibited product-handling duty to a technician."
         }
       ],
       "revision": 1,
@@ -289,7 +289,7 @@
       "area_2026": 1,
       "competency": "1.2",
       "official_2027_subdomain": null,
-      "kind": "single",
+      "kind": "multi",
       "difficulty_tier": "integrated",
       "topic": "Annual pharmacy-law CE within a complete renewal cycle",
       "scenario_tags": [
@@ -298,35 +298,36 @@
       ],
       "actor": "Pharmacist renewing registration",
       "jurisdiction": "Massachusetts and applicable federal law",
-      "trigger": "A Massachusetts pharmacist seeking renewal has 20 otherwise eligible contact hours in 2025, including one law hour, and 20 in 2026, including three law hours. Both years meet the live/mediated and daily limits. The pharmacist is not exempt and has no Board-approved exception. Which conclusion is correct?",
+      "trigger": "A Massachusetts pharmacist seeking renewal has 20 otherwise eligible contact hours in 2025, including one law hour, and 20 in 2026, including three law hours. Both years meet the live/mediated and daily limits. The pharmacist is not exempt and has no Board-approved exception. Which conclusions are correct? SELECT ALL THAT APPLY.",
       "legal_decision": "The general total is met but the 2025 annual law minimum is not; excess 2026 law credit cannot be applied backward.",
       "critical_exception": "Calendar-year minimum of two pharmacy-law hours; no carryover or exception.",
       "counterfactual_flip": "If 2025 had at least two eligible law hours and all other conditions were satisfied, this law-credit deficiency would be removed.",
-      "stem": "A Massachusetts pharmacist seeking renewal has 20 otherwise eligible contact hours in 2025, including one law hour, and 20 in 2026, including three law hours. Both years meet the live/mediated and daily limits. The pharmacist is not exempt and has no Board-approved exception. Which conclusion is correct?",
+      "stem": "A Massachusetts pharmacist seeking renewal has 20 otherwise eligible contact hours in 2025, including one law hour, and 20 in 2026, including three law hours. Both years meet the live/mediated and daily limits. The pharmacist is not exempt and has no Board-approved exception. Which conclusions are correct? SELECT ALL THAT APPLY.",
       "choices": [
         {
-          "text": "The pharmacist meets all CE requirements because the cycle contains four law hours.",
-          "why": "Incorrect. Law credits must satisfy each year's separate minimum."
+          "text": "The aggregate 40-hour total is sufficient by itself to establish compliance.",
+          "why": "Incorrect. The separate calendar-year requirements still apply."
         },
         {
-          "text": "The pharmacist can apply the extra 2026 law hour to 2025.",
-          "why": "Incorrect. The rule does not permit cross-year carryover."
+          "text": "The 2025 pharmacy-law requirement remains unmet.",
+          "why": "Correct. One law hour is below the two-hour annual minimum."
         },
         {
-          "text": "Only the 2026 CE hours matter because the renewal occurs in 2026.",
-          "why": "Incorrect. The general minimum and law requirement apply in both calendar years."
+          "text": "The three law hours from 2026 can be averaged with the one from 2025.",
+          "why": "Incorrect. Law credit is required in each calendar year."
         },
         {
-          "text": "The pharmacist may certify completion if the CE provider accredited both law courses.",
-          "why": "Incorrect. Provider accreditation does not cure the annual distribution deficiency."
+          "text": "Excess 2026 credit cannot be carried backward to remedy the 2025 deficiency.",
+          "why": "Correct. The regulation does not allow carryover or averaging between calendar years."
         },
         {
-          "text": "The 2025 law requirement is unmet despite the 40-hour total.",
-          "why": "Correct. One law hour in 2025 is below the two-hour calendar-year requirement."
+          "text": "Accreditation of the courses eliminates the annual law minimum.",
+          "why": "Incorrect. Course accreditation does not override the required subject distribution."
         }
       ],
       "correct": [
-        "E"
+        "B",
+        "D"
       ],
       "citation": "247 CMR 4.03(3)-(5)",
       "source_urls": [
@@ -342,7 +343,7 @@
         "F062"
       ],
       "critical_error_options": [],
-      "revision": 1,
+      "revision": 2,
       "publication_status": "DRAFT_NOT_PUBLIC"
     },
     {
@@ -354,47 +355,49 @@
       "area_2026": 1,
       "competency": "1.2",
       "official_2027_subdomain": null,
-      "kind": "single",
+      "kind": "multi",
       "difficulty_tier": "direct",
-      "topic": "Technician license by equivalent out-of-state credential",
+      "topic": "Initial technician licensure when out-of-state requirements are not equivalent",
       "scenario_tags": [
         "licensure",
         "technician",
-        "reciprocity"
+        "credential"
       ],
       "actor": "Technician applicant",
       "jurisdiction": "Massachusetts and applicable federal law",
-      "trigger": "A technician who meets the Massachusetts age, education and character conditions holds a current license in another state. That state's licensure requirements are substantially equivalent to Massachusetts requirements, and the license is in good standing. Which statement about the Massachusetts initial license application is accurate?",
-      "legal_decision": "The equivalent good-standing license is an alternative eligibility route; a Massachusetts license still must be issued before practice.",
-      "critical_exception": "All other Massachusetts application conditions are assumed met, and the out-of-state requirements are substantially equivalent.",
-      "counterfactual_flip": "If the other state's licensure requirements are not substantially equivalent, this route is unavailable and another qualifying pathway is necessary.",
-      "stem": "A technician who meets the Massachusetts age, education and character conditions holds a current license in another state. That state's licensure requirements are substantially equivalent to Massachusetts requirements, and the license is in good standing. Which statement about the Massachusetts initial license application is accurate?",
+      "trigger": "An adult applies for an initial Massachusetts pharmacy technician license. Her out-of-state technician license is in good standing, but the Board determines that the original state's licensing requirements are not substantially equivalent. She meets all other personal eligibility requirements and has no national certification. Which developments could establish an alternative qualifying pathway? SELECT ALL THAT APPLY.",
+      "legal_decision": "A non-equivalent out-of-state license cannot establish eligibility on its own; approved certification or approved examination following qualifying training or experience can establish an alternative pathway.",
+      "critical_exception": "Good standing alone is insufficient under the out-of-state equivalency route; the other personal eligibility conditions remain applicable.",
+      "counterfactual_flip": "If the original state's requirements are substantially equivalent and the license is in good standing, the out-of-state credential route can qualify without an additional assessment examination.",
+      "stem": "An adult applies for an initial Massachusetts pharmacy technician license. Her out-of-state technician license is in good standing, but the Board determines that the original state's licensing requirements are not substantially equivalent. She meets all other personal eligibility requirements and has no national certification. Which developments could establish an alternative qualifying pathway? SELECT ALL THAT APPLY.",
       "choices": [
         {
-          "text": "The applicant must obtain national certification despite qualifying through equivalent licensure.",
-          "why": "Incorrect. National certification is one alternative, not an additional condition of this route."
+          "text": "Obtain certification from a Board-approved certifying body.",
+          "why": "Correct. This is a separate qualification route."
         },
         {
-          "text": "The equivalent license can satisfy the alternative eligibility route, subject to Massachusetts issuance.",
-          "why": "Correct. Section 8.02 recognizes equivalent good-standing out-of-state licensure."
+          "text": "Renew the non-equivalent out-of-state license without any further qualification.",
+          "why": "Incorrect. Renewal does not cure the lack of substantial equivalency."
         },
         {
-          "text": "The applicant may start technician work immediately using the other state's license.",
-          "why": "Incorrect. Massachusetts requires a valid Board-issued technician license."
+          "text": "Complete Board-approved training and achieve a Board-approved passing score on the assessment examination.",
+          "why": "Correct. The training and examination pathway is separately available."
         },
         {
-          "text": "The applicant must first complete 500 trainee hours even under this route.",
-          "why": "Incorrect. The trainee-hours pathway is a different eligibility option."
+          "text": "Accumulate 500 qualifying trainee employment hours, document them as required, and achieve a Board-approved passing assessment score.",
+          "why": "Correct. This is another permitted combination of experience and examination."
         },
         {
-          "text": "The employer may issue a temporary state license after checking the credential.",
-          "why": "Incorrect. The employer is not the Massachusetts licensing authority."
+          "text": "Have a Massachusetts pharmacist sign an employment offer and start work before licensure.",
+          "why": "Incorrect. An employment offer is not a qualifying credential or a Board-issued license."
         }
       ],
       "correct": [
-        "B"
+        "A",
+        "C",
+        "D"
       ],
-      "citation": "247 CMR 8.02(1), (3)(e)2",
+      "citation": "247 CMR 8.02(1), (3)(e)1–3",
       "source_urls": [
         "https://www.mass.gov/doc/247-cmr-8-pharmacy-interns-and-technicians/download",
         "https://www.law.cornell.edu/regulations/massachusetts/247-CMR-8-02"
@@ -408,7 +411,7 @@
         "F065"
       ],
       "critical_error_options": [],
-      "revision": 1,
+      "revision": 2,
       "publication_status": "DRAFT_NOT_PUBLIC"
     },
     {
@@ -821,7 +824,7 @@
       "area_2026": 2,
       "competency": "2.2",
       "official_2027_subdomain": null,
-      "kind": "single",
+      "kind": "multi",
       "difficulty_tier": "scenario",
       "topic": "Nonroutine travel vaccines in nonretail CDTM setting",
       "scenario_tags": [
@@ -831,35 +834,36 @@
       ],
       "actor": "Hospital outpatient pharmacist",
       "jurisdiction": "Massachusetts and applicable federal law",
-      "trigger": "A pharmacist in a hospital ambulatory clinic has a compliant CDTM agreement expressly authorizing an indicated nonroutine travel vaccine. A community retail pharmacist has the same immunization training and a community CDTM agreement. Both intend to administer under the special nonroutine-vaccine CDTM provision of Policy 2023-02. Which conclusion is appropriate?",
+      "trigger": "A pharmacist in a hospital ambulatory clinic has a compliant CDTM agreement expressly authorizing an indicated nonroutine travel vaccine. A community retail pharmacist has the same immunization training and a community CDTM agreement. Both intend to administer under the special nonroutine-vaccine CDTM provision of Policy 2023-02. Which statements are correct? SELECT ALL THAT APPLY.",
       "legal_decision": "The hospital/clinic CDTM pharmacist may administer if all requirements are met; the special CDTM provision excludes community/retail settings.",
       "critical_exception": "The vaccine is nonroutine and the authorization asserted is specifically Policy 2023-02 §I(C), not another independently authorized route.",
       "counterfactual_flip": "If the community pharmacist is administering a routine vaccine covered under the general policy instead, the community exclusion from §I(C) is not the controlling rule.",
-      "stem": "A pharmacist in a hospital ambulatory clinic has a compliant CDTM agreement expressly authorizing an indicated nonroutine travel vaccine. A community retail pharmacist has the same immunization training and a community CDTM agreement. Both intend to administer under the special nonroutine-vaccine CDTM provision of Policy 2023-02. Which conclusion is appropriate?",
+      "stem": "A pharmacist in a hospital ambulatory clinic has a compliant CDTM agreement expressly authorizing an indicated nonroutine travel vaccine. A community retail pharmacist has the same immunization training and a community CDTM agreement. Both intend to administer under the special nonroutine-vaccine CDTM provision of Policy 2023-02. Which statements are correct? SELECT ALL THAT APPLY.",
       "choices": [
         {
-          "text": "Both pharmacists are authorized under the special provision merely because they have CDTM agreements.",
-          "why": "Incorrect. The nonroutine-vaccine provision specifically excludes community or retail settings."
+          "text": "The clinic pharmacist may administer under the provision if all its requirements are satisfied.",
+          "why": "Correct. The provision allows eligible pharmacists in nonretail settings to administer vaccines included in their CDTM agreements."
         },
         {
-          "text": "Neither is authorized under the special provision because all travel vaccines require physician administration.",
-          "why": "Incorrect. The policy expressly permits qualifying CDTM pharmacists in eligible settings."
+          "text": "The special provision excludes community or retail settings.",
+          "why": "Correct. The provision expressly limits this pathway by setting."
         },
         {
-          "text": "Only the community pharmacist qualifies because retail immunization services are the default setting.",
-          "why": "Incorrect. The special CDTM provision excludes that setting."
+          "text": "A community CDTM agreement alone removes the setting restriction.",
+          "why": "Incorrect. The provision excludes that practice setting regardless of the agreement."
         },
         {
-          "text": "The clinic pharmacist may qualify if the agreement and all applicable training and other requirements are satisfied.",
-          "why": "Correct. The nonretail CDTM setting with agreement authorization fits the specified pathway."
+          "text": "The clinic pharmacist may use this pathway even when the vaccine is not included in the agreement.",
+          "why": "Incorrect. Agreement authorization for the vaccine is required."
         },
         {
-          "text": "Either pharmacist can rely on the provision even when the vaccine is not included in the agreement.",
-          "why": "Incorrect. Inclusion of the vaccine in the CDTM agreement is required."
+          "text": "Having immunization training alone authorizes both pharmacists under the special provision.",
+          "why": "Incorrect. Training alone does not meet the setting and agreement conditions."
         }
       ],
       "correct": [
-        "D"
+        "A",
+        "B"
       ],
       "citation": "Board/DCP Policy 2023-02 §I(A),(C), revised 9/4/2025",
       "source_urls": [
@@ -874,7 +878,7 @@
         "F098"
       ],
       "critical_error_options": [],
-      "revision": 1,
+      "revision": 2,
       "publication_status": "DRAFT_NOT_PUBLIC"
     },
     {
@@ -1395,67 +1399,60 @@
       "official_2027_subdomain": null,
       "kind": "multi",
       "difficulty_tier": "scenario",
-      "topic": "DUR identifies therapeutic duplication after new order",
+      "topic": "PMP reporting when electronic submission is unavailable",
       "scenario_tags": [
-        "DUR",
-        "patient_safety",
-        "medication_reconciliation"
+        "PMP",
+        "reporting",
+        "waiver"
       ],
-      "actor": "Community pharmacist",
+      "actor": "Pharmacy manager",
       "jurisdiction": "Massachusetts and applicable federal law",
-      "trigger": "A patient's profile shows an active lisinopril prescription. A new prescription for enalapril arrives from a different prescriber, with no instruction to stop the first medication. The patient confirms taking lisinopril. No explanation for concurrent use is available. Which actions follow Massachusetts prospective DUR duties? SELECT ALL THAT APPLY.",
-      "legal_decision": "Identify the possible therapeutic duplication, obtain appropriate clarification before release, and document the intervention.",
-      "critical_exception": "New prescription with unresolved clinically significant duplication; no established plan to replace the first medication.",
-      "counterfactual_flip": "If clarification establishes that enalapril is intended to replace lisinopril and the regimen is appropriate, the pharmacist may proceed after reconciliation and other checks.",
-      "stem": "A patient's profile shows an active lisinopril prescription. A new prescription for enalapril arrives from a different prescriber, with no instruction to stop the first medication. The patient confirms taking lisinopril. No explanation for concurrent use is available. Which actions follow Massachusetts prospective DUR duties? SELECT ALL THAT APPLY.",
+      "trigger": "A Massachusetts outpatient pharmacy must report covered controlled-substance dispensing. It cannot submit dispensing information electronically because of a persistent technical limitation. No reporting waiver has been issued. Which statements correctly describe the alternative reporting pathway? SELECT ALL THAT APPLY.",
+      "legal_decision": "Seek authorization from the Commissioner for another transmission means; continue to provide all required reporting information in the authorized alternate format.",
+      "critical_exception": "Inability to submit electronically is not itself a reporting exemption; an authorized alternative requires a waiver.",
+      "counterfactual_flip": "If the Commissioner issues a waiver permitting alternate transmission, the pharmacy may use the authorized format while supplying the required information.",
+      "stem": "A Massachusetts outpatient pharmacy must report covered controlled-substance dispensing. It cannot submit dispensing information electronically because of a persistent technical limitation. No reporting waiver has been issued. Which statements correctly describe the alternative reporting pathway? SELECT ALL THAT APPLY.",
       "choices": [
         {
-          "text": "Assess the possible therapeutic duplication and clarify the intended regimen.",
-          "why": "Correct. Prospective DUR expressly includes therapeutic duplication."
+          "text": "The Commissioner may authorize a different means of transmission by issuing a waiver.",
+          "why": "Correct. The regulation specifically allows this alternative when electronic submission is not possible."
         },
         {
-          "text": "Dispense both because each prescriber separately authorized a drug.",
-          "why": "Incorrect. Separate prescriber authorization does not resolve duplication."
+          "text": "The pharmacy can stop reporting until its electronic system is repaired.",
+          "why": "Incorrect. The technical limitation alone does not waive the duty."
         },
         {
-          "text": "Let a technician independently determine whether both ACE inhibitors should be used.",
-          "why": "Incorrect. This clinical judgment belongs to the pharmacist."
+          "text": "A pharmacist's own approval is sufficient to substitute any reporting method.",
+          "why": "Incorrect. Authorization comes from the Commissioner, not the pharmacist."
         },
         {
-          "text": "Document the pharmacist's response to the DUR finding.",
-          "why": "Correct. Actions taken in response to a DUR must be documented."
+          "text": "The approved alternate format must still include all required dispensing information.",
+          "why": "Correct. The waiver changes the transmission means, not the requirement to submit the required information."
         },
         {
-          "text": "Delete the first medication from the profile without confirming its status.",
-          "why": "Incorrect. An unsupported deletion does not establish a safe regimen."
+          "text": "Only Schedule II drugs need to be reported while the technical problem continues.",
+          "why": "Incorrect. The reporting scope does not automatically narrow because of technical difficulty."
         }
       ],
       "correct": [
         "A",
         "D"
       ],
-      "citation": "247 CMR 9.17(1)(b),(2); 9.04(1)",
+      "citation": "105 CMR 700.012(A)(4)–(6)",
       "source_urls": [
-        "https://www.mass.gov/doc/247-cmr-9-professional-practice-standards/download",
-        "https://www.law.cornell.edu/regulations/massachusetts/247-CMR-9-17",
-        "https://www.law.cornell.edu/regulations/massachusetts/247-CMR-9-04"
+        "https://www.mass.gov/doc/105-cmr-700-implementation-of-mgl-c94c-0/download",
+        "https://www.law.cornell.edu/regulations/massachusetts/105-CMR-700-012"
       ],
       "verified_at": "2026-11-23",
       "law_review_status": "AI_SOURCE_TEXT_REVIEW__HUMAN_EXPERT_NOT_CERTIFIED",
       "reviewer_type": "AI_AUTHOR",
       "closest_existing_ids": [
-        "E093",
-        "F044",
-        "F049"
+        "E30-012",
+        "E30-184",
+        "E30-324"
       ],
-      "critical_error_options": [
-        {
-          "letter": "B",
-          "mode": "selected",
-          "reason": "Releases an unresolved clinically significant therapeutic duplication."
-        }
-      ],
-      "revision": 1,
+      "critical_error_options": [],
+      "revision": 2,
       "publication_status": "DRAFT_NOT_PUBLIC"
     },
     {
@@ -1662,62 +1659,63 @@
       "area_2026": 4,
       "competency": "4.1",
       "official_2027_subdomain": null,
-      "kind": "single",
+      "kind": "multi",
       "difficulty_tier": "scenario",
-      "topic": "DSCSA specific patient need versus replenishing stock",
+      "topic": "Schedule II supplier reporting after partial Form 222 shipments",
       "scenario_tags": [
-        "DSCSA",
-        "drug_acquisition",
-        "pharmacy_transfer"
+        "DEA",
+        "Form222",
+        "inventory",
+        "distribution"
       ],
-      "actor": "Retail pharmacy purchaser",
+      "actor": "Authorized supplier not subject to ARCOS reporting",
       "jurisdiction": "Massachusetts and applicable federal law",
-      "trigger": "Pharmacy A has a prescription for an identified patient but lacks the covered prescription drug. It buys the necessary package from unrelated Pharmacy B for this prescription. Pharmacy A later proposes buying an additional case to replenish general inventory. Both pharmacies are properly authorized, and no other exemption applies. Which statement correctly describes the DSCSA product-tracing exception?",
-      "legal_decision": "Apply the specific-patient-need tracing exception to the first transaction, not the general inventory purchase.",
-      "critical_exception": "Only the first sale fills an identified patient's prescription; general stock replenishment is outside the statutory definition.",
-      "counterfactual_flip": "If the second transfer is instead solely to fill another identified patient's prescription, the specific-patient-need tracing exception may apply to it as well.",
-      "stem": "Pharmacy A has a prescription for an identified patient but lacks the covered prescription drug. It buys the necessary package from unrelated Pharmacy B for this prescription. Pharmacy A later proposes buying an additional case to replenish general inventory. Both pharmacies are properly authorized, and no other exemption applies. Which statement correctly describes the DSCSA product-tracing exception?",
+      "trigger": "An authorized Schedule II supplier is not required to report its acquisition and disposition transactions to ARCOS. It receives a valid paper DEA Form 222, fills part of the order in November, and completes the remaining shipment in December within the form's 60-day validity period. All other distribution requirements are met. Which record and reporting actions are required? SELECT ALL THAT APPLY.",
+      "legal_decision": "Retain the original order form and forward its copy to DEA at the close of the month of final shipment.",
+      "critical_exception": "The supplier is not an ARCOS-reporting supplier; partial shipments were completed before expiration.",
+      "counterfactual_flip": "If the remaining order expires unfilled, the copy is due at the close of the month when the 60-day validity period expires.",
+      "stem": "An authorized Schedule II supplier is not required to report its acquisition and disposition transactions to ARCOS. It receives a valid paper DEA Form 222, fills part of the order in November, and completes the remaining shipment in December within the form's 60-day validity period. All other distribution requirements are met. Which record and reporting actions are required? SELECT ALL THAT APPLY.",
       "choices": [
         {
-          "text": "Both sales qualify because pharmacies may transfer prescription drugs to one another.",
-          "why": "Incorrect. The exception does not cover general replenishment."
+          "text": "Retain the original Form 222 in the supplier's files.",
+          "why": "Correct. The supplier must preserve the original for its records."
         },
         {
-          "text": "Neither sale qualifies because the pharmacies are unrelated.",
-          "why": "Incorrect. The identified-patient exception does not depend on common ownership."
+          "text": "Forward a copy to DEA only at the close of November, regardless of the later completion.",
+          "why": "Incorrect. For partial shipments the reporting month is tied to the final shipment or expiration."
         },
         {
-          "text": "The first sale qualifies; the general replenishment sale does not qualify under this exception.",
-          "why": "Correct. A specific patient need means filling an identified patient's prescription, not acquiring anticipated stock."
+          "text": "Forward the copy to DEA at the close of December, when the final shipment was made.",
+          "why": "Correct. The non-ARCOS supplier's forwarding requirement follows the final shipment in this case."
         },
         {
-          "text": "The second sale qualifies if the purchaser expects demand later that week.",
-          "why": "Incorrect. Expected demand is expressly distinguished from the specific-patient need."
+          "text": "Send the original Form 222 to DEA and retain no supplier copy.",
+          "why": "Incorrect. The regulation requires the supplier to retain the original."
         },
         {
-          "text": "The first sale eliminates all other applicable supply-chain and pharmacy duties.",
-          "why": "Incorrect. This is a product-tracing exception, not a blanket regulatory exemption."
+          "text": "Skip forwarding to DEA because the order was recorded in the supplier's local inventory system.",
+          "why": "Incorrect. Local inventory documentation does not eliminate the specific non-ARCOS reporting requirement."
         }
       ],
       "correct": [
+        "A",
         "C"
       ],
-      "citation": "21 USC 360eee(19), 360eee-1(d)(1)(A)(ii); FDA DSCSA product tracing FAQ",
+      "citation": "21 CFR 1305.13(b),(d); 1305.17(c)",
       "source_urls": [
-        "https://www.fda.gov/drugs/drug-supply-chain-security-act-dscsa/drug-supply-chain-security-act-product-tracing-requirements-frequently-asked-questions",
-        "https://www.law.cornell.edu/uscode/text/21/360eee",
-        "https://www.law.cornell.edu/uscode/text/21/360eee-1"
+        "https://www.ecfr.gov/current/title-21/chapter-II/part-1305/subpart-B/section-1305.13",
+        "https://www.law.cornell.edu/cfr/text/21/1305.13"
       ],
       "verified_at": "2026-11-23",
       "law_review_status": "AI_SOURCE_TEXT_REVIEW__HUMAN_EXPERT_NOT_CERTIFIED",
       "reviewer_type": "AI_AUTHOR",
       "closest_existing_ids": [
-        "F014",
-        "F015",
-        "E30-202"
+        "E30-040",
+        "E018",
+        "D062"
       ],
       "critical_error_options": [],
-      "revision": 1,
+      "revision": 2,
       "publication_status": "DRAFT_NOT_PUBLIC"
     },
     {
@@ -1868,7 +1866,7 @@
       "official_2027_subdomain": null,
       "kind": "multi",
       "difficulty_tier": "integrated",
-      "topic": "503A bulk API eligibility and certificate of analysis",
+      "topic": "503A ingredient pathway when no applicable monograph exists",
       "scenario_tags": [
         "503A",
         "compounding",
@@ -1877,39 +1875,39 @@
       ],
       "actor": "Nonsterile compounding pharmacist",
       "jurisdiction": "Massachusetts and applicable federal law",
-      "trigger": "A 503A pharmacy has a patient-specific prescription for a nonsterile compound. The proposed bulk active ingredient has an applicable USP/NF monograph and was manufactured by an FDA-registered establishment. The pharmacy cannot obtain a valid certificate of analysis for the supplied material. Which conditions must the pharmacist satisfy before relying on section 503A for this preparation? SELECT ALL THAT APPLY.",
-      "legal_decision": "Require the applicable monograph and compounding standards, a valid certificate of analysis and a registered manufacturing establishment.",
-      "critical_exception": "Bulk drug substance used under 503A; valid patient-specific order does not waive ingredient eligibility.",
-      "counterfactual_flip": "If a valid certificate of analysis is obtained and compliance with the applicable standards and registered-manufacturer requirement is established, the specified ingredient deficiency is resolved.",
-      "stem": "A 503A pharmacy has a patient-specific prescription for a nonsterile compound. The proposed bulk active ingredient has an applicable USP/NF monograph and was manufactured by an FDA-registered establishment. The pharmacy cannot obtain a valid certificate of analysis for the supplied material. Which conditions must the pharmacist satisfy before relying on section 503A for this preparation? SELECT ALL THAT APPLY.",
+      "trigger": "A state-licensed 503A pharmacy receives a valid patient-specific order for a nonsterile compound. The proposed bulk drug substance has no applicable USP or NF monograph but is a component of an FDA-approved drug. It is not on the 503A bulks list. Assume no withdrawn-drug or other exclusion applies. Which statements correctly apply the bulk-substance conditions? SELECT ALL THAT APPLY.",
+      "legal_decision": "The approved-product component satisfies the applicable alternative ingredient pathway; registered manufacturing establishment and valid certificate of analysis remain separately required.",
+      "critical_exception": "The ingredient has no applicable monograph but is a component of an FDA-approved drug. The bulks list pathway is used when neither of these criteria is met.",
+      "counterfactual_flip": "If the substance has no monograph and is not a component of an FDA-approved drug, it must satisfy the list pathway to meet the statutory bulk-substance criteria; separate enforcement discretion is not statutory eligibility.",
+      "stem": "A state-licensed 503A pharmacy receives a valid patient-specific order for a nonsterile compound. The proposed bulk drug substance has no applicable USP or NF monograph but is a component of an FDA-approved drug. It is not on the 503A bulks list. Assume no withdrawn-drug or other exclusion applies. Which statements correctly apply the bulk-substance conditions? SELECT ALL THAT APPLY.",
       "choices": [
         {
-          "text": "Use the bulk ingredient because the prescriber has identified the patient.",
-          "why": "Incorrect. A patient-specific prescription does not eliminate the bulk-substance conditions."
+          "text": "The ingredient automatically fails because it does not appear on the 503A bulks list.",
+          "why": "Incorrect. The approved-product component route is available without a monograph or list entry."
         },
         {
-          "text": "Confirm compliance with the applicable USP/NF monograph and compounding standards.",
-          "why": "Correct. The existing monograph controls the applicable ingredient eligibility pathway."
+          "text": "The ingredient can meet the statutory ingredient-selection condition through its status as a component of an FDA-approved drug.",
+          "why": "Correct. The statute recognizes this alternative when an applicable monograph does not exist."
         },
         {
-          "text": "Obtain a valid certificate of analysis for the bulk substance.",
-          "why": "Correct. A valid certificate of analysis is separately required."
+          "text": "The pharmacy may disregard the manufacturer's registration because an FDA-approved drug contains the ingredient.",
+          "why": "Incorrect. Manufacturing-establishment registration is a separate condition."
         },
         {
-          "text": "Confirm that the ingredient was manufactured by an establishment registered with FDA.",
-          "why": "Correct. The statute requires a registered manufacturing establishment."
+          "text": "The pharmacy still needs a valid certificate of analysis for the bulk substance.",
+          "why": "Correct. The certificate condition applies regardless of which ingredient-selection pathway is used."
         },
         {
-          "text": "Use an unsigned sales invoice as the certificate of analysis.",
-          "why": "Incorrect. An ordinary invoice does not establish the required analytical certification."
+          "text": "The bulk substance must still be manufactured by an appropriately registered establishment.",
+          "why": "Correct. Manufacturing-establishment registration remains required."
         }
       ],
       "correct": [
         "B",
-        "C",
-        "D"
+        "D",
+        "E"
       ],
-      "citation": "21 USC 353a(b)(1)(A)(i)-(iii); FDA Bulk Drug Substances Used in Compounding Under Section 503A",
+      "citation": "21 USC 353a(b)(1)(A)(i)(II)–(III), (ii)–(iii)",
       "source_urls": [
         "https://www.fda.gov/drugs/human-drug-compounding/bulk-drug-substances-used-compounding-under-section-503a-fdc-act",
         "https://www.law.cornell.edu/uscode/text/21/353a"
@@ -1918,18 +1916,12 @@
       "law_review_status": "AI_SOURCE_TEXT_REVIEW__HUMAN_EXPERT_NOT_CERTIFIED",
       "reviewer_type": "AI_AUTHOR",
       "closest_existing_ids": [
-        "F069",
-        "E30-095",
-        "E30-337"
+        "E30-187",
+        "D015",
+        "F069"
       ],
-      "critical_error_options": [
-        {
-          "letter": "A",
-          "mode": "selected",
-          "reason": "Uses bulk material despite unmet federal ingredient eligibility conditions."
-        }
-      ],
-      "revision": 1,
+      "critical_error_options": [],
+      "revision": 2,
       "publication_status": "DRAFT_NOT_PUBLIC"
     },
     {
@@ -2010,61 +2002,63 @@
       "area_2026": 4,
       "competency": "4.7",
       "official_2027_subdomain": null,
-      "kind": "single",
+      "kind": "multi",
       "difficulty_tier": "direct",
-      "topic": "Board rejects pharmacy plan of correction",
+      "topic": "Application materials for retail pharmacy configuration changes",
       "scenario_tags": [
         "Board",
-        "inspection",
-        "plan_of_correction"
+        "pharmacy_license",
+        "remodeling"
       ],
       "actor": "Pharmacy manager of record",
       "jurisdiction": "Massachusetts and applicable federal law",
-      "trigger": "The Board returns a pharmacy's submitted plan of correction as unacceptable because the plan does not meet the applicable requirements. What is the default deadline to submit a revised plan under 247 CMR 9.25(5)?",
-      "legal_decision": "Submit a revised plan of correction within seven days.",
-      "critical_exception": "This is a rejected plan, not the initial inspection report or first plan deadline.",
-      "counterfactual_flip": "If the pharmacy is submitting the original plan following the deficiency report, the usual initial deadline is 21 days or the timeframe directed by the Board.",
-      "stem": "The Board returns a pharmacy's submitted plan of correction as unacceptable because the plan does not meet the applicable requirements. What is the default deadline to submit a revised plan under 247 CMR 9.25(5)?",
+      "trigger": "A Massachusetts drug store pharmacy plans to change its prescription-area configuration and square footage. The project involves transportation of controlled stock during construction. Before construction begins, the owner prepares a Board application. Which materials are required to support this application? SELECT ALL THAT APPLY.",
+      "legal_decision": "Submit architectural layout drawings showing prescription and counseling areas, and a written controlled-substance transportation security plan; supply any additional information the Board requires.",
+      "critical_exception": "The pharmacy is in Massachusetts and the project involves controlled-substance transportation. This is not a sterile compounding pharmacy.",
+      "counterfactual_flip": "If it were a sterile compounding pharmacy, the additional applicable compounding-specific plans and drawings under subsection (4) would also be required.",
+      "stem": "A Massachusetts drug store pharmacy plans to change its prescription-area configuration and square footage. The project involves transportation of controlled stock during construction. Before construction begins, the owner prepares a Board application. Which materials are required to support this application? SELECT ALL THAT APPLY.",
       "choices": [
         {
-          "text": "Within 14 days, the general inspection-report forwarding period.",
-          "why": "Incorrect. The rejected-plan deadline is distinct from reporting an outside inspection report."
+          "text": "Architectural drawings or equivalent blueprints depicting the pharmacy, prescription area and counseling area.",
+          "why": "Correct. The drawings must show these areas."
         },
         {
-          "text": "Within 21 days, the ordinary initial plan-of-correction period.",
-          "why": "Incorrect. The initial-plan rule does not govern a rejected plan's revision."
+          "text": "A new personal pharmacist license application for every pharmacist on staff.",
+          "why": "Incorrect. The configuration-change application is not a new personal licensure application."
         },
         {
-          "text": "At the next scheduled pharmacy renewal.",
-          "why": "Incorrect. Renewal timing does not satisfy the revision requirement."
+          "text": "A written plan for securing controlled substances during transportation.",
+          "why": "Correct. This is expressly required for a pharmacy located in Massachusetts."
         },
         {
-          "text": "Within seven days after the plan is returned as unacceptable.",
-          "why": "Correct. The regulation expressly states the seven-day revision period."
+          "text": "Any additional information required by the Board.",
+          "why": "Correct. The Board can require additional supporting information."
         },
         {
-          "text": "Within 30 days of the original inspection, regardless of rejection date.",
-          "why": "Incorrect. That is not the applicable revised-plan deadline."
+          "text": "ISO-classified sterile-compounding area drawings solely because the retail prescription area's square footage changes.",
+          "why": "Incorrect. This additional compounding-specific requirement does not apply merely because a noncompounding retail pharmacy changes configuration."
         }
       ],
       "correct": [
+        "A",
+        "C",
         "D"
       ],
-      "citation": "247 CMR 9.25(1),(5)",
+      "citation": "247 CMR 6.15(1),(3)–(4)",
       "source_urls": [
-        "https://www.mass.gov/doc/247-cmr-9-professional-practice-standards/download",
-        "https://www.law.cornell.edu/regulations/massachusetts/247-CMR-9-25"
+        "https://www.mass.gov/law-library/247-cmr",
+        "https://www.law.cornell.edu/regulations/massachusetts/247-CMR-6-15"
       ],
       "verified_at": "2026-11-23",
       "law_review_status": "AI_SOURCE_TEXT_REVIEW__HUMAN_EXPERT_NOT_CERTIFIED",
       "reviewer_type": "AI_AUTHOR",
       "closest_existing_ids": [
+        "E077",
         "E30-135",
-        "E30-355",
-        "F005"
+        "D078"
       ],
       "critical_error_options": [],
-      "revision": 1,
+      "revision": 2,
       "publication_status": "DRAFT_NOT_PUBLIC"
     }
   ]
