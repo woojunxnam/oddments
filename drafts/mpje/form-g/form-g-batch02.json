@@ -18,8 +18,8 @@
       "competency": "1.1",
       "official_2027_subdomain": null,
       "kind": "multi",
-      "difficulty_tier": "scenario",
-      "topic": "Transport versus handling of an ordinary Schedule II drug",
+      "difficulty_tier": "integrated",
+      "topic": "Schedule II technician assistance requires pharmacist approval evidenced by written policies",
       "scenario_tags": [
         "community",
         "personnel",
@@ -27,38 +27,39 @@
       ],
       "actor": "Supervising pharmacist",
       "jurisdiction": "Massachusetts and applicable federal law",
-      "trigger": "A Massachusetts retail pharmacist needs help moving and counting oxycodone tablets. Both a licensed noncertified pharmacy technician and a licensed certified pharmacy technician are available. The pharmacist has approved the relevant tasks under the pharmacy's written procedures and will supervise them. Which assignments are permitted? SELECT ALL THAT APPLY.",
-      "legal_decision": "Ordinary technician may assist transport; certified technician may assist transport and handling under supervision and documented approval.",
-      "critical_exception": "Certification and the nature of the task matter; this is not the special non-abuse-deterrent hydrocodone-only rule.",
-      "counterfactual_flip": "Without certification, assign transport rather than counting.",
-      "stem": "A Massachusetts retail pharmacist needs help moving and counting oxycodone tablets. Both a licensed noncertified pharmacy technician and a licensed certified pharmacy technician are available. The pharmacist has approved the relevant tasks under the pharmacy's written procedures and will supervise them. Which assignments are permitted? SELECT ALL THAT APPLY.",
+      "trigger": "A Massachusetts pharmacy employs a licensed certified pharmacy technician. The pharmacist supervises counting ordinary oxycodone tablets and verbally approves the task, but the pharmacy has no written policies or procedures evidencing the approval for Schedule II handling. Which conclusions follow? SELECT ALL THAT APPLY.",
+      "legal_decision": "Certification and supervision alone do not satisfy the approval and written-procedure condition; the pharmacy must establish the required procedures and make them available to the Board on request.",
+      "critical_exception": "The specific authorization for Schedule II assistance includes documented approval evidenced by written pharmacy procedures.",
+      "counterfactual_flip": "With approval evidenced by appropriate written procedures and supervision, a certified technician can assist ordinary Schedule II handling.",
+      "stem": "A Massachusetts pharmacy employs a licensed certified pharmacy technician. The pharmacist supervises counting ordinary oxycodone tablets and verbally approves the task, but the pharmacy has no written policies or procedures evidencing the approval for Schedule II handling. Which conclusions follow? SELECT ALL THAT APPLY.",
       "choices": [
         {
-          "text": "Have the noncertified technician assist with transport.",
-          "why": "Correct. Section 8.05(2)(a) expressly allows supervised, approved transport."
+          "text": "Verbal approval and certification alone satisfy every requirement.",
+          "why": "Incorrect. Written policies and procedures must evidence approval."
         },
         {
-          "text": "Have the noncertified technician count oxycodone tablets.",
-          "why": "Incorrect. Handling is not authorized for the noncertified technician under this provision."
+          "text": "The pharmacy must have the required written policies and procedures for the assistance.",
+          "why": "Correct. The regulation specifies this evidence of pharmacist approval."
         },
         {
-          "text": "Have the certified technician count oxycodone tablets.",
-          "why": "Correct. Approved supervised handling of ordinary Schedule II products is within certified technician scope."
+          "text": "The Board may not request these procedures.",
+          "why": "Incorrect. The procedures must be available to the Board upon request."
         },
         {
-          "text": "Transfer responsibility for Schedule II security entirely to the certified technician.",
-          "why": "Incorrect. The pharmacist retains direct responsibility."
+          "text": "The pharmacy must make those procedures available to the Board on request.",
+          "why": "Correct. This is an explicit requirement."
         },
         {
-          "text": "Permit the certified technician to perform these tasks without pharmacist supervision.",
-          "why": "Incorrect. The authorization requires supervision."
+          "text": "The pharmacist retains direct accountability for Schedule II security.",
+          "why": "Correct. The pharmacist's responsibility is not delegated to the technician."
         }
       ],
       "correct": [
-        "A",
-        "C"
+        "B",
+        "D",
+        "E"
       ],
-      "citation": "247 CMR 8.05(1)–(3)",
+      "citation": "247 CMR 8.05(1)–(2)",
       "source_urls": [
         "https://www.mass.gov/doc/247-cmr-8-pharmacy-interns-and-technicians/download",
         "https://www.law.cornell.edu/regulations/massachusetts/247-CMR-8-05"
@@ -67,17 +68,17 @@
       "law_review_status": "AI_SOURCE_TEXT_REVIEW__HUMAN_EXPERT_NOT_CERTIFIED",
       "reviewer_type": "AI_AUTHOR",
       "closest_existing_ids": [
-        "F061",
-        "G004"
+        "E30-066",
+        "G002"
       ],
       "critical_error_options": [
         {
-          "letter": "B",
+          "letter": "A",
           "mode": "selected",
-          "reason": "Assigns unauthorized Schedule II handling."
+          "reason": "Permits controlled-drug handling without required written authorization procedures."
         }
       ],
-      "revision": 2,
+      "revision": 3,
       "publication_status": "DRAFT_NOT_PUBLIC"
     },
     {
@@ -230,7 +231,7 @@
       "official_2027_subdomain": null,
       "kind": "single",
       "difficulty_tier": "scenario",
-      "topic": "On-duty pharmacist access to records when MOR absent",
+      "topic": "On-duty pharmacist limits access to authorized personnel",
       "scenario_tags": [
         "community",
         "inspection",
@@ -238,50 +239,57 @@
       ],
       "actor": "On-duty pharmacist",
       "jurisdiction": "Massachusetts and applicable federal law",
-      "trigger": "An investigator of the Massachusetts Board requests pharmacy records during normal operating hours. The manager of record is off site. The on-duty pharmacist says that only the manager has permission to access the files. Which conclusion best describes the on-duty pharmacist's responsibility?",
-      "legal_decision": "On-duty pharmacist must have access to all pharmacy records and be able to provide requested records to Board investigators.",
-      "critical_exception": "The manager's absence does not transfer away the on-duty duty.",
-      "counterfactual_flip": "The on-duty pharmacist can comply when authorized access and retrieval are available.",
-      "stem": "An investigator of the Massachusetts Board requests pharmacy records during normal operating hours. The manager of record is off site. The on-duty pharmacist says that only the manager has permission to access the files. Which conclusion best describes the on-duty pharmacist's responsibility?",
+      "trigger": "A retail pharmacy is open. The store's general manager has no assigned authorized pharmacy function but requests unrestricted access to the prescription area and controlled-stock storage to conduct a routine commercial inventory. Which action best follows the pharmacist's duty?",
+      "legal_decision": "Limit access to pharmacy areas to authorized personnel and maintain proper security; managerial status outside the pharmacy does not itself confer unrestricted access.",
+      "critical_exception": "The stem expressly excludes authorization for the requested access.",
+      "counterfactual_flip": "A duly authorized person with an appropriate role may access pharmacy areas within authorized limits.",
+      "stem": "A retail pharmacy is open. The store's general manager has no assigned authorized pharmacy function but requests unrestricted access to the prescription area and controlled-stock storage to conduct a routine commercial inventory. Which action best follows the pharmacist's duty?",
       "choices": [
         {
-          "text": "Only the manager must be able to retrieve records.",
-          "why": "Incorrect. The duty also applies to the on-duty pharmacist."
+          "text": "Allow access whenever the pharmacy is open, regardless of authorization.",
+          "why": "Incorrect. The restriction applies while the pharmacist is on duty."
         },
         {
-          "text": "The pharmacist must have access and be able to provide the requested pharmacy records.",
-          "why": "Correct. This is an express on-duty responsibility."
+          "text": "Allow unrestricted access because the person manages the retail store.",
+          "why": "Incorrect. Retail managerial status alone does not establish authorized pharmacy access."
         },
         {
-          "text": "The pharmacist may permanently defer all requests until the manager returns.",
-          "why": "Incorrect. The rule requires ability to provide requested records while on duty."
+          "text": "Allow access if the person promises not to touch medications.",
+          "why": "Incorrect. The access restriction is not satisfied by a promise."
         },
         {
-          "text": "A technician's ability to access records eliminates the pharmacist's duty.",
-          "why": "Incorrect. Delegation does not remove the pharmacist's responsibility."
+          "text": "Transfer security responsibility to the retail manager for the duration of inventory.",
+          "why": "Incorrect. The on-duty pharmacist retains the duty."
         },
         {
-          "text": "The duty only applies to Schedule II records.",
-          "why": "Incorrect. The rule refers to all pharmacy records."
+          "text": "Limit access to authorized personnel and maintain controlled-stock security.",
+          "why": "Correct. Both are express on-duty responsibilities."
         }
       ],
       "correct": [
-        "B"
+        "E"
       ],
-      "citation": "247 CMR 9.19(16)(b)(5)–(6)",
+      "citation": "247 CMR 9.19(16)(b)(2), (4); 9.01(8)",
       "source_urls": [
         "https://www.mass.gov/doc/247-cmr-9-professional-practice-standards/download",
-        "https://www.law.cornell.edu/regulations/massachusetts/247-CMR-9-19"
+        "https://www.law.cornell.edu/regulations/massachusetts/247-CMR-9-19",
+        "https://www.law.cornell.edu/regulations/massachusetts/247-CMR-9-01"
       ],
       "verified_at": "2026-11-24",
       "law_review_status": "AI_SOURCE_TEXT_REVIEW__HUMAN_EXPERT_NOT_CERTIFIED",
       "reviewer_type": "AI_AUTHOR",
       "closest_existing_ids": [
-        "E30-173",
+        "F005",
         "E30-236"
       ],
-      "critical_error_options": [],
-      "revision": 2,
+      "critical_error_options": [
+        {
+          "letter": "B",
+          "mode": "selected",
+          "reason": "Grants uncontrolled access to pharmacy controlled-stock storage."
+        }
+      ],
+      "revision": 3,
       "publication_status": "DRAFT_NOT_PUBLIC"
     },
     {
@@ -365,9 +373,9 @@
       "area_2026": 1,
       "competency": "1.2",
       "official_2027_subdomain": null,
-      "kind": "single",
-      "difficulty_tier": "scenario",
-      "topic": "Reporting loss of national technician certification",
+      "kind": "multi",
+      "difficulty_tier": "direct",
+      "topic": "Certification lapse changes role and staffing-ratio classification",
       "scenario_tags": [
         "licensure",
         "certification",
@@ -375,53 +383,53 @@
       ],
       "actor": "Pharmacy and technician",
       "jurisdiction": "Massachusetts and applicable federal law",
-      "trigger": "A Massachusetts pharmacy employs a licensed certified technician whose national certification has been revoked. The technician's Massachusetts pharmacy technician license remains active. Which reporting obligation applies specifically to the loss of certification?",
-      "legal_decision": "Both pharmacy and individual licensee must report loss of certification within 14 calendar days.",
-      "critical_exception": "State licensure remaining active does not eliminate certification-loss reporting.",
-      "counterfactual_flip": "If no loss of certification or other reportable event occurred this particular reporting rule would not trigger.",
-      "stem": "A Massachusetts pharmacy employs a licensed certified technician whose national certification has been revoked. The technician's Massachusetts pharmacy technician license remains active. Which reporting obligation applies specifically to the loss of certification?",
+      "trigger": "A Massachusetts certified pharmacy technician's national certification lapses, but the technician's Massachusetts pharmacy technician license remains active. There is no other restriction on the state license. Which consequences apply under 247 CMR 8.04(3)? SELECT ALL THAT APPLY.",
+      "legal_decision": "Limit duties to noncertified pharmacy technician scope, use pharmacy technician title, and count worker as noncertified technician for supervisory ratios.",
+      "critical_exception": "An active state technician license permits the ordinary technician role but does not preserve certified status.",
+      "counterfactual_flip": "If Board-accepted certification becomes current again and the state license remains active, certified status may be restored.",
+      "stem": "A Massachusetts certified pharmacy technician's national certification lapses, but the technician's Massachusetts pharmacy technician license remains active. There is no other restriction on the state license. Which consequences apply under 247 CMR 8.04(3)? SELECT ALL THAT APPLY.",
       "choices": [
         {
-          "text": "The technician and the pharmacy must report within 14 calendar days.",
-          "why": "Correct. Subsection (4) applies to each pharmacy and individual licensed by the Board."
+          "text": "Limit the technician's duties to the ordinary pharmacy technician scope.",
+          "why": "Correct. The active state license does not preserve certified duties."
         },
         {
-          "text": "No report is required because the technician license is still active.",
-          "why": "Incorrect. Loss of certification is separately reportable."
+          "text": "Count the employee as a certified technician until state license renewal.",
+          "why": "Incorrect. The worker must be counted as a pharmacy technician for ratios."
         },
         {
-          "text": "Only the pharmacy must report and the technician need not report.",
-          "why": "Incorrect. Both licensees have a duty."
+          "text": "Use the title pharmacy technician.",
+          "why": "Correct. Subsection (3)(b) expressly requires this."
         },
         {
-          "text": "Only the national certifying body must report.",
-          "why": "Incorrect. The Massachusetts rule imposes duties on licensees."
+          "text": "Count the employee as a pharmacy technician in the supervisory ratio.",
+          "why": "Correct. Subsection (3)(c) expressly requires this."
         },
         {
-          "text": "The technician reports only at the next renewal.",
-          "why": "Incorrect. The deadline is 14 calendar days."
+          "text": "The technician may continue using the certified technician title.",
+          "why": "Incorrect. The regulation requires using the ordinary pharmacy technician title after lapse."
         }
       ],
       "correct": [
-        "A"
+        "A",
+        "C",
+        "D"
       ],
-      "citation": "247 CMR 20.03(4); 8.04(3)",
+      "citation": "247 CMR 8.04(1)–(3); 8.06(3)",
       "source_urls": [
-        "https://www.mass.gov/regulations/247-CMR-2000-reporting",
-        "https://www.law.cornell.edu/regulations/massachusetts/247-CMR-20-03",
         "https://www.mass.gov/doc/247-cmr-8-pharmacy-interns-and-technicians/download",
-        "https://www.law.cornell.edu/regulations/massachusetts/247-CMR-8-04"
+        "https://www.law.cornell.edu/regulations/massachusetts/247-CMR-8-04",
+        "https://www.law.cornell.edu/regulations/massachusetts/247-CMR-8-06"
       ],
       "verified_at": "2026-11-24",
       "law_review_status": "AI_SOURCE_TEXT_REVIEW__HUMAN_EXPERT_NOT_CERTIFIED",
       "reviewer_type": "AI_AUTHOR",
       "closest_existing_ids": [
-        "E30-131",
-        "E30-260",
-        "D090"
+        "E30-264",
+        "G001"
       ],
       "critical_error_options": [],
-      "revision": 2,
+      "revision": 3,
       "publication_status": "DRAFT_NOT_PUBLIC"
     },
     {
@@ -580,8 +588,8 @@
       "competency": "2.1",
       "official_2027_subdomain": null,
       "kind": "single",
-      "difficulty_tier": "scenario",
-      "topic": "Hospital internal practitioner code verification list",
+      "difficulty_tier": "integrated",
+      "topic": "Hospital-exempt practitioner paper prescription requires printed name as well as signature",
       "scenario_tags": [
         "hospital",
         "dea",
@@ -589,52 +597,57 @@
       ],
       "actor": "Institutional registrant",
       "jurisdiction": "Massachusetts and applicable federal law",
-      "trigger": "A DEA-registered hospital authorizes employed practitioners to prescribe controlled substances under its institutional registration. An outside dispensing pharmacy asks the hospital to verify which practitioner is assigned a particular internal suffix. Which requirement applies under federal law?",
-      "legal_decision": "Hospital keeps a current practitioner/code list and makes it available at all times to other registrants and law enforcement on request.",
-      "critical_exception": "The hospital's list is not restricted to its own staff or DEA alone.",
-      "counterfactual_flip": "If the practitioner uses an individual DEA registration, this institutional-suffix verification rule does not apply to that prescription.",
-      "stem": "A DEA-registered hospital authorizes employed practitioners to prescribe controlled substances under its institutional registration. An outside dispensing pharmacy asks the hospital to verify which practitioner is assigned a particular internal suffix. Which requirement applies under federal law?",
+      "trigger": "An otherwise authorized hospital-employed practitioner issues a Schedule III paper prescription under a lawful electronic-prescribing exception. The prescription includes the hospital DEA number and assigned internal suffix and is manually signed. The practitioner's name is not stamped, typed or handprinted anywhere on the prescription. Which conclusion is correct under the federal rule for institutional-registration-exempt practitioners?",
+      "legal_decision": "Paper prescription must also include the practitioner's name stamped, typed or handprinted; obtain a compliant prescription before dispensing.",
+      "critical_exception": "Signature and institutional suffix do not eliminate the additional paper-name requirement.",
+      "counterfactual_flip": "A stamped, typed or handprinted practitioner name plus signature and all other required information satisfies this aspect of the rule.",
+      "stem": "An otherwise authorized hospital-employed practitioner issues a Schedule III paper prescription under a lawful electronic-prescribing exception. The prescription includes the hospital DEA number and assigned internal suffix and is manually signed. The practitioner's name is not stamped, typed or handprinted anywhere on the prescription. Which conclusion is correct under the federal rule for institutional-registration-exempt practitioners?",
       "choices": [
         {
-          "text": "Only the hospital's own pharmacy can request verification.",
-          "why": "Incorrect. Other registrants may request the list."
+          "text": "Dispense if the hospital name is printed, regardless of whether the practitioner is named.",
+          "why": "Incorrect. The individual practitioner's name is required."
         },
         {
-          "text": "The hospital may make the list available only during annual inspections.",
-          "why": "Incorrect. It must be available at all times upon qualifying request."
+          "text": "Dispense because a manual signature replaces the separate name requirement.",
+          "why": "Incorrect. The rule requires a name in addition to a signature."
         },
         {
-          "text": "The hospital must maintain the current list and make it available to other registrants and law enforcement upon request.",
-          "why": "Correct. This permits verification of the practitioner's authority."
+          "text": "Obtain a compliant prescription containing the practitioner's stamped, typed or handprinted name.",
+          "why": "Correct. This is expressly required on paper prescriptions issued under the institutional exemption."
         },
         {
-          "text": "The hospital should assign one shared suffix to all practitioners.",
-          "why": "Incorrect. A specific internal code is assigned to each authorized practitioner."
+          "text": "Dispense because the suffix alone replaces both the name and signature.",
+          "why": "Incorrect. The suffix substitutes for an individual DEA registration number, not the practitioner name and signature."
         },
         {
-          "text": "The hospital need not retain the list once suffixes are assigned.",
-          "why": "Incorrect. A current list must be kept."
+          "text": "Require an individual DEA registration even though institutional authorization is valid.",
+          "why": "Incorrect. The institutional exemption can be used when its conditions are met."
         }
       ],
       "correct": [
         "C"
       ],
-      "citation": "21 CFR 1301.22(c)(5)–(6); 1306.05(g)",
+      "citation": "21 CFR 1306.05(a), (g); 1301.22(c)",
       "source_urls": [
-        "https://www.ecfr.gov/current/title-21/section-1301.22",
-        "https://www.law.cornell.edu/cfr/text/21/1301.22",
+        "https://www.ecfr.gov/current/title-21/section-1306.05",
         "https://www.law.cornell.edu/cfr/text/21/1306.05"
       ],
       "verified_at": "2026-11-24",
       "law_review_status": "AI_SOURCE_TEXT_REVIEW__HUMAN_EXPERT_NOT_CERTIFIED",
       "reviewer_type": "AI_AUTHOR",
       "closest_existing_ids": [
-        "E30-267",
-        "E30-268",
-        "E086"
+        "E30-117",
+        "G019",
+        "E30-267"
       ],
-      "critical_error_options": [],
-      "revision": 2,
+      "critical_error_options": [
+        {
+          "letter": "B",
+          "mode": "selected",
+          "reason": "Dispenses a paper controlled prescription missing a required practitioner name."
+        }
+      ],
+      "revision": 3,
       "publication_status": "DRAFT_NOT_PUBLIC"
     },
     {
@@ -646,9 +659,9 @@
       "area_2026": 2,
       "competency": "2.1",
       "official_2027_subdomain": null,
-      "kind": "single",
+      "kind": "multi",
       "difficulty_tier": "integrated",
-      "topic": "Individual practitioner's employee DEA exemption does not authorize prescriptions",
+      "topic": "DEA exemption for employees of an individual registered practitioner",
       "scenario_tags": [
         "prescriber",
         "dea",
@@ -656,34 +669,35 @@
       ],
       "actor": "Employed physician",
       "jurisdiction": "Massachusetts and applicable federal law",
-      "trigger": "A physician employed in another individually DEA-registered physician's private practice has no individual DEA registration. The employee is authorized under state law to administer and dispense controlled substances within the employment and meets the federal employee exemption. The employer is not a mid-level practitioner or institutional registrant. Under 21 CFR 1301.22(b), which action is NOT covered by this exemption?",
-      "legal_decision": "Issuing controlled-substance prescriptions is excluded from this particular individual-practitioner employee exemption.",
-      "critical_exception": "Institutional practitioner registration under subsection (c) is a distinct route.",
-      "counterfactual_flip": "An appropriate individual DEA registration or applicable institutional exemption could change prescribing authority.",
-      "stem": "A physician employed in another individually DEA-registered physician's private practice has no individual DEA registration. The employee is authorized under state law to administer and dispense controlled substances within the employment and meets the federal employee exemption. The employer is not a mid-level practitioner or institutional registrant. Under 21 CFR 1301.22(b), which action is NOT covered by this exemption?",
+      "trigger": "A physician employed by an individually DEA-registered physician has no separate DEA registration. The employer is not a mid-level practitioner or institutional registrant. The employee acts in the normal course of employment and has the requisite state authority to administer and directly dispense controlled substances. Which federal conclusions apply under 21 CFR 1301.22(b)? SELECT ALL THAT APPLY.",
+      "legal_decision": "The employee may administer and directly dispense under the employer's registration within state authority; this exemption does not cover prescribing.",
+      "critical_exception": "Individual-practitioner employee exemption is not the hospital exemption.",
+      "counterfactual_flip": "An authorized institutional registration arrangement under subsection (c) can cover prescribing if all applicable conditions are met.",
+      "stem": "A physician employed by an individually DEA-registered physician has no separate DEA registration. The employer is not a mid-level practitioner or institutional registrant. The employee acts in the normal course of employment and has the requisite state authority to administer and directly dispense controlled substances. Which federal conclusions apply under 21 CFR 1301.22(b)? SELECT ALL THAT APPLY.",
       "choices": [
         {
-          "text": "Administering an authorized controlled drug in normal employment.",
-          "why": "Incorrect. Administration within applicable jurisdictional authority is covered."
+          "text": "The employee may administer controlled substances under the employer's registration within the stated employment and state authority.",
+          "why": "Correct. Subsection (b) covers authorized administration."
         },
         {
-          "text": "Dispensing a controlled drug directly, other than by prescription issuance, within the stated authority.",
-          "why": "Incorrect. The exemption expressly covers that form of dispensing."
+          "text": "The employee may write controlled-substance prescriptions under the individual employer's registration solely because of this exemption.",
+          "why": "Incorrect. Issuing prescriptions is expressly excluded."
         },
         {
-          "text": "Issuing a controlled-substance prescription using the employer's individual DEA registration.",
-          "why": "Correct. Prescription issuance is specifically excluded from subsection (b)."
+          "text": "The employee may directly dispense controlled substances within the stated authority, other than by issuing a prescription.",
+          "why": "Correct. The exemption covers this limited dispensing activity."
         },
         {
-          "text": "Administering a controlled drug while acting within the employee's authorized practice.",
-          "why": "Incorrect. That action is within the stated exemption."
+          "text": "This exemption supersedes any state restriction on the employee's practice.",
+          "why": "Incorrect. Federal exemption is limited by jurisdictional authority."
         },
         {
-          "text": "Directly dispensing under the employer registration within state-authorized limits without writing a prescription.",
-          "why": "Incorrect. This is within the described exemption."
+          "text": "The employee may use the employer's registration for unrelated independent practice.",
+          "why": "Incorrect. The exemption applies in the normal course of business or employment."
         }
       ],
       "correct": [
+        "A",
         "C"
       ],
       "citation": "21 CFR 1301.22(b)–(c)",
@@ -699,8 +713,14 @@
         "E30-218",
         "E086"
       ],
-      "critical_error_options": [],
-      "revision": 2,
+      "critical_error_options": [
+        {
+          "letter": "B",
+          "mode": "selected",
+          "reason": "Treats an employee exemption as authority to prescribe."
+        }
+      ],
+      "revision": 3,
       "publication_status": "DRAFT_NOT_PUBLIC"
     },
     {
@@ -919,7 +939,7 @@
       "competency": "2.3",
       "official_2027_subdomain": null,
       "kind": "single",
-      "difficulty_tier": "scenario",
+      "difficulty_tier": "direct",
       "topic": "Patient counseling tailored to relevant missed-dose and monitoring instructions",
       "scenario_tags": [
         "community",
@@ -1130,7 +1150,7 @@
       "competency": "3.1",
       "official_2027_subdomain": null,
       "kind": "single",
-      "difficulty_tier": "scenario",
+      "difficulty_tier": "direct",
       "topic": "Schedule V refill limit in Massachusetts despite federal distinction",
       "scenario_tags": [
         "community",
@@ -1202,7 +1222,7 @@
       "competency": "3.1",
       "official_2027_subdomain": null,
       "kind": "multi",
-      "difficulty_tier": "scenario",
+      "difficulty_tier": "integrated",
       "topic": "Positive identification of the person collecting a controlled prescription",
       "scenario_tags": [
         "controlled-substances",
@@ -1318,6 +1338,7 @@
       ],
       "citation": "21 CFR 1306.08(d)–(h); Board Policy 2023-10 §I",
       "source_urls": [
+        "https://www.ecfr.gov/current/title-21/section-1306.08",
         "https://www.law.cornell.edu/cfr/text/21/1306.08",
         "https://www.mass.gov/doc/2023-10-unfilled-prescriptions-pdf/download"
       ],
@@ -1587,11 +1608,10 @@
       "correct": [
         "E"
       ],
-      "citation": "15 USC 1473(b); CPSC Poison Prevention Packaging Guide, Part 3",
+      "citation": "15 USC 1473(b)",
       "source_urls": [
-        "https://uscode.house.gov/us/usc/119-120/t15/s1473/",
-        "https://www.cpsc.gov/Poison-Prevention-Packaging-Act",
-        "https://www.cpsc.gov/s3fs-public/PoisonPreventionPackagingAGuideforHealthcareProfessionals.pdf?VersionId=vz7Fa"
+        "https://www.law.cornell.edu/uscode/text/15/1473",
+        "https://www.cpsc.gov/Poison-Prevention-Packaging-Act"
       ],
       "verified_at": "2026-11-24",
       "law_review_status": "AI_SOURCE_TEXT_REVIEW__HUMAN_EXPERT_NOT_CERTIFIED",
@@ -1733,7 +1753,7 @@
       ],
       "citation": "21 CFR 1305.12(e)",
       "source_urls": [
-        "https://www.govinfo.gov/content/pkg/CFR-2025-title21-vol9/xhtml/CFR-2025-title21-vol9-sec1305-12.html",
+        "https://www.ecfr.gov/current/title-21/section-1305.12",
         "https://www.law.cornell.edu/cfr/text/21/1305.12"
       ],
       "verified_at": "2026-11-24",
@@ -1823,9 +1843,9 @@
       "area_2026": 4,
       "competency": "4.3",
       "official_2027_subdomain": null,
-      "kind": "single",
-      "difficulty_tier": "scenario",
-      "topic": "Required policies for controlled medication delivery by common carrier",
+      "kind": "multi",
+      "difficulty_tier": "integrated",
+      "topic": "Distinguishing mandatory shipping policy from Board delivery best-practice advisory",
       "scenario_tags": [
         "delivery",
         "controlled-substances",
@@ -1833,51 +1853,54 @@
       ],
       "actor": "Pharmacy management",
       "jurisdiction": "Massachusetts and applicable federal law",
-      "trigger": "A Massachusetts pharmacy starts mailing controlled prescriptions through an independent common carrier. The carrier has general parcel procedures, but the pharmacy has no policies or procedures for packing, shipping, transporting or delivering controlled substances. Which action is required?",
-      "legal_decision": "Maintain pharmacy policies and procedures addressing packing, shipping, transportation and delivery of controlled substances.",
-      "critical_exception": "Using an outside carrier does not remove the pharmacy's obligation.",
-      "counterfactual_flip": "A pharmacy with appropriate policies that address these processes would satisfy this specific requirement.",
-      "stem": "A Massachusetts pharmacy starts mailing controlled prescriptions through an independent common carrier. The carrier has general parcel procedures, but the pharmacy has no policies or procedures for packing, shipping, transporting or delivering controlled substances. Which action is required?",
+      "trigger": "A Massachusetts pharmacy ships Schedule II–V prescriptions in accordance with applicable law. During policy review, the manager reads the Board's January 9, 2025 Medication Delivery and Shipping advisory. Which statements correctly distinguish the advisory recommendations from the express requirements of 247 CMR 9.02? SELECT ALL THAT APPLY.",
+      "legal_decision": "Pharmacy shipping policies are mandatory under 9.02; the advisory recommends documented tracking and signature on delivery, and distinguishes best-practice recommendations from independent legal obligations.",
+      "critical_exception": "Do not characterize every advisory recommendation as an unconditional statutory mandate.",
+      "counterfactual_flip": "An independently applicable law or rule can make a particular action mandatory; the advisory alone does not establish that conclusion.",
+      "stem": "A Massachusetts pharmacy ships Schedule II–V prescriptions in accordance with applicable law. During policy review, the manager reads the Board's January 9, 2025 Medication Delivery and Shipping advisory. Which statements correctly distinguish the advisory recommendations from the express requirements of 247 CMR 9.02? SELECT ALL THAT APPLY.",
       "choices": [
         {
-          "text": "Rely exclusively on the carrier's general parcel procedures without pharmacy procedures.",
-          "why": "Incorrect. The pharmacy must maintain its own applicable policies and procedures."
+          "text": "The advisory recommends a signature upon delivery for Schedule II–V shipments.",
+          "why": "Correct. This is listed as a best-practice recommendation."
         },
         {
-          "text": "Maintain policies only for packing, not transport or delivery.",
-          "why": "Incorrect. All four processes are specified."
+          "text": "Every recommendation in the advisory is automatically a separate statutory mandate.",
+          "why": "Incorrect. The document identifies itself as best-practice recommendations; check independent mandates separately."
         },
         {
-          "text": "Maintain pharmacy policies and procedures covering packing, shipping, transporting and delivering controlled substances.",
-          "why": "Correct. This is the express requirement."
+          "text": "The pharmacy must maintain policies and procedures for packing, shipping, transporting and delivering controlled substances under 9.02(3).",
+          "why": "Correct. This is an express regulation, unlike a mere advisory recommendation."
         },
         {
-          "text": "Prohibit all mailing of controlled drugs solely because they are controlled.",
-          "why": "Incorrect. Mail or common-carrier dispensing is allowed when consistent with other laws."
+          "text": "The advisory recommends recording and documenting tracking numbers for Schedule II–V shipments.",
+          "why": "Correct. This is listed under the controlled-substance shipping recommendations."
         },
         {
-          "text": "Create delivery procedures only after a loss occurs.",
-          "why": "Incorrect. The rule is not triggered only after a loss."
+          "text": "The pharmacy need not maintain its own controlled-substance shipping policies if a carrier has procedures.",
+          "why": "Incorrect. Section 9.02(3) imposes that duty on the pharmacy."
         }
       ],
       "correct": [
-        "C"
+        "A",
+        "C",
+        "D"
       ],
-      "citation": "247 CMR 9.02(1)–(3)",
+      "citation": "247 CMR 9.02(1)–(3); Board Advisory: Medication Delivery and Shipping (rev. 1/9/2025), p.1",
       "source_urls": [
         "https://www.mass.gov/doc/247-cmr-9-professional-practice-standards/download",
-        "https://www.law.cornell.edu/regulations/massachusetts/247-CMR-9-02"
+        "https://www.law.cornell.edu/regulations/massachusetts/247-CMR-9-02",
+        "https://www.mass.gov/doc/medication-delivery-and-shipping-pdf/download"
       ],
       "verified_at": "2026-11-24",
       "law_review_status": "AI_SOURCE_TEXT_REVIEW__HUMAN_EXPERT_NOT_CERTIFIED",
       "reviewer_type": "AI_AUTHOR",
       "closest_existing_ids": [
+        "E30-110",
         "D113",
-        "E30-351",
-        "E30-103"
+        "F045"
       ],
       "critical_error_options": [],
-      "revision": 2,
+      "revision": 3,
       "publication_status": "DRAFT_NOT_PUBLIC"
     },
     {
@@ -1890,7 +1913,7 @@
       "competency": "4.4",
       "official_2027_subdomain": null,
       "kind": "multi",
-      "difficulty_tier": "scenario",
+      "difficulty_tier": "integrated",
       "topic": "Interoperable electronic prescribing technology and biologic substitution",
       "scenario_tags": [
         "biologic",
