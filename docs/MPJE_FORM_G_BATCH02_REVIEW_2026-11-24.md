@@ -4,7 +4,7 @@
 ## Read-back validation
 - Batch 2: 30 contiguous items; cumulative G: 60 contiguous unique IDs. All 60 five-option items have nonempty choices and keyed explanations, source and decision fields; all key/explanation and critical-error tag checks passed.
 - Batch 2: 18 SBA, 12 SATA; 7 direct, 15 scenario, 8 integrated; 17 selected-option critical error tags. Cumulative G format: {"multi":23,"single":37}; difficulty: {"scenario":32,"direct":14,"integrated":14}.
-- Areas (batch 2): 6 / 10 / 8 / 6. Cumulative: 13 / 20 / 15 / 12. All 22 legacy competency identifiers are represented; 18 in batch 2. This is editorial coverage, not evidence that every legal rule is tested.
+- Areas (batch 2): 6 / 10 / 8 / 6. Cumulative: 13 / 20 / 15 / 12. All 22 legacy competency identifiers are represented; 19 in batch 2. This is editorial coverage, not evidence that every legal rule is tested.
 - Read-only comparison: 480 A–D indexed stems/decisions + 120 E + 120 F + 30 G batch 1 = 750 unique comparison IDs. No exact normalized stem or ID collisions. Token-Jaccard screening of stems and topics/decisions plus author review of close candidates; not an independent semantic duplicate classifier. Repeated high-value laws are allowed when the deciding fact, role, or action changes.
 - Twenty-three initial draft items underwent substantive rewrites; six received a second focused revision. Critical-error objects match batch 1's letter/mode/reason format.
 - Batch 2 GitHub file content SHA: `f50e126dba433deb06e460736a26e2367510dd9e`.
