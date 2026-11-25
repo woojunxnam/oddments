@@ -7,6 +7,7 @@ on:
       - 'scripts/verify_ch30_form_c_browser.py'
       - 'scripts/verify_ch30_form_d_browser.py'
       - 'scripts/verify_ch30_form_e_browser.py'
+      - 'scripts/verify_ch30_form_g_browser.py'
       - 'scripts/verify_ch30_mixes_browser.py'
       - 'scripts/verify_ch30_revision_history_browser.py'
       - '.github/workflows/ch30-mock120-qa.yml'
@@ -85,3 +86,27 @@ jobs:
           SERVER_PID=$!
           trap 'kill $SERVER_PID 2>/dev/null || true' EXIT
           python scripts/verify_ch30_form_e_browser.py --base-url http://127.0.0.1:8174/
+
+  verify-form-g:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Validate frozen Form G scripts
+        run: |
+          for file in mock-120-g.js mock-review-tools-g.js form-g-questions.js form-g-manifest.js; do
+            node --check "site/mpje-side-notes/exam-simulation-30/$file"
+          done
+      - name: Install focused browser-test dependencies
+        run: |
+          python -m pip install playwright==1.57.0
+          python -m playwright install --with-deps chromium
+      - name: Verify Form G on mobile and desktop
+        run: |
+          python -m http.server 8175 --bind 127.0.0.1 --directory site > /tmp/ch30-g-server.log 2>&1 &
+          SERVER_PID=$!
+          trap 'kill $SERVER_PID 2>/dev/null || true' EXIT
+          python scripts/verify_ch30_form_g_browser.py --base-url http://127.0.0.1:8175/

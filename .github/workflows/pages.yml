@@ -248,6 +248,42 @@ jobs:
         shell: bash
         run: |
           python scripts/verify_ch30_revision_history_browser.py --base-url "$PAGE_URL" --output test-results/ch30-public/revision-history.json 2>&1 | tee test-results/ch30-public/revision-history.log
+      - name: Verify published Form G assets and isolated exam behavior
+        env:
+          PAGE_URL: ${{ steps.deployment.outputs.page_url }}
+        shell: bash
+        run: |
+          python - <<'PY'
+          import hashlib, os, time, urllib.request
+          from pathlib import Path
+          base = os.environ['PAGE_URL'].rstrip('/') + '/mpje-side-notes/exam-simulation-30/'
+          paths = ['mock-120-g.html', 'mock-120-g.js', 'mock-review-tools-g.js',
+                   'form-g-questions.js', 'form-g-manifest.js']
+          evidence = Path('test-results/ch30-public')
+          evidence.mkdir(parents=True, exist_ok=True)
+          for attempt in range(12):
+              try:
+                  verified = {}
+                  for path in paths:
+                      request = urllib.request.Request(base + path + '?release=' + os.environ['GITHUB_SHA'],
+                                                       headers={'Cache-Control': 'no-cache'})
+                      with urllib.request.urlopen(request, timeout=30) as response:
+                          actual = response.read()
+                      expected = (Path('/tmp/mpje-public-site/mpje-side-notes/exam-simulation-30') / path).read_bytes()
+                      digest = hashlib.sha256(actual).hexdigest()
+                      assert digest == hashlib.sha256(expected).hexdigest(), path
+                      verified[path] = digest
+                  import json
+                  (evidence / 'form-g-assets.json').write_text(json.dumps({'passed': True, 'release': os.environ['GITHUB_SHA'], 'verified_sha256': verified}, indent=2) + '\n')
+                  print('Published Form G assets match the deployed build exactly.')
+                  break
+              except Exception:
+                  if attempt == 11:
+                      raise
+                  time.sleep(5)
+          PY
+          set -o pipefail
+          python scripts/verify_ch30_form_g_browser.py --base-url "$PAGE_URL" 2>&1 | tee test-results/ch30-public/form-g.log
       - name: Retain published Chapter 30 verification evidence
         if: always()
         uses: actions/upload-artifact@v4
