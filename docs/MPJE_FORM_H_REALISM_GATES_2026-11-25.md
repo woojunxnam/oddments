@@ -1,0 +1,11 @@
+# Form H — Exam-day reality and transfer assessment — November 25, 2026
+
+Supplement to the frozen November 23 G/H/EFGH production contract. Retain the pre-March 1, 2027 NABP legacy 22 competencies, 26/40/29/25 Area counts, 120 five-choice English items, 150 minutes, 36 direct / 60 scenario / 24 integrated, four 30-item batches. Editorial target 72 SBA / 48 SATA (not an official ratio); 18/12 and 9/15/6 per batch. H is an unseen parallel assessment, not a harder-for-its-own-sake extension or a retest based on the learner's G answers.
+
+## H-specific release controls
+- At least 24 stems of 25 words or less across H, with varied longer natural scenarios. No explicit regulatory citations in stems unless needed for interpretation; no gratuitous qualifiers, answer-count hints or intentionally ambiguous wording.
+- Plausible distractors based on nearby legal rules, roles, dates, thresholds, exceptions, and workflows; comparable specificity and length. Screen longest/shortest and extreme-word cues; do not mechanically force equal lengths or artificial answer distributions. Preserve natural 2–4-correct SATA keys while reducing predictable key-count patterns. All choices have a legal rationale and sources.
+- Use core law in materially different situations and brand/generic drug names, not new obscurity quotas. Read all A–G as read-only references; use Form F at pinned PR #297 SHA until merged. Exact stem/ID and nearest lexical screens do not prove semantic novelty; judge decisive facts separately. No edits to old banks or histories.
+- Current official law, Board policy, federal CFR and official USP guidance; distinguish legal requirements, recommendations and professional discretion. Record source limitations, counterfactual and critical errors. No independent expert or psychometric claims.
+- At 120 conduct one bounded H-specific final review and manifest freeze, isolated exam UI and history checks, then merge and public asset/browser verification. No retrospective A–G audit. Do not print questions or keys in chat. EFGH mixes remain later and require F release.
+- First-attempt educational benchmarks: 100/120, each Area ≥75%, complete in time and zero selected critical errors as target. Raw scores cannot establish actual MPJE pass probability. Official blueprint https://nabp.pharmacy/programs/examinations/mpje/competency-statements/.
